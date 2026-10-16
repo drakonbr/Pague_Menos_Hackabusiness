@@ -1,0 +1,3742 @@
+[
+  {
+    "id": "p001",
+    "name": "Gel de Limpeza Purificante",
+    "brand": "Clara Pele",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "acido_salicilico",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Purificante: produto do tipo gel de limpeza, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne, oleosidade e poros. Principais ativos: Ácido salicílico e Zinco PCA. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p002",
+    "name": "Sabonete Líquido Facial Oil Control",
+    "brand": "Clara Pele",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "sabonete líquido facial",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "zinco_pca",
+      "cha_verde"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sabonete Líquido Facial Oil Control: produto do tipo sabonete líquido facial, da marca Clara Pele, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Zinco PCA e Extrato de chá verde. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p003",
+    "name": "Gel de Limpeza Facial Diário",
+    "brand": "Pura Base",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "tensoativo_suave",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Facial Diário: produto do tipo gel de limpeza, da marca Pura Base, indicado para todos os tipos de pele. Foco em limpeza diária. Principais ativos: Tensoativo suave e Glicerina. Sem fragrância.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p004",
+    "name": "Água Micelar 5 em 1",
+    "brand": "Pura Base",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "água micelar",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desmaquilagem",
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Água Micelar 5 em 1: produto do tipo água micelar, da marca Pura Base, indicado para todos os tipos de pele. Foco em remoção de make e protetor e limpeza diária. Principais ativos: Glicerina. Sem fragrância.",
+    "how_to_use": "Aplique com algodão sobre o rosto e remova sem enxaguar.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p005",
+    "name": "Espuma de Limpeza Facial",
+    "brand": "Bem Simples",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "espuma de limpeza",
+    "form": "pump",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "tensoativo_suave",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Espuma de Limpeza Facial: produto do tipo espuma de limpeza, da marca Bem Simples, indicado para pele normal e mista. Foco em limpeza diária. Principais ativos: Tensoativo suave e Pantenol.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p006",
+    "name": "Gel de Limpeza Suave Pele Sensível",
+    "brand": "Aurora Dermo",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "sensível"
+    ],
+    "concerns": [
+      "sensibilidade",
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "centella_asiatica",
+      "alantoina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Suave Pele Sensível: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele sensível. Foco em sensibilidade e limpeza diária. Principais ativos: Centella asiática e Alantoína. Sem fragrância e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p007",
+    "name": "Gel de Limpeza Anti-Acne",
+    "brand": "Aurora Dermo",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "acido_salicilico",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Anti-Acne: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico e Niacinamida. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p008",
+    "name": "Sabonete Facial Chá Verde",
+    "brand": "Vita Verde",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "sabonete líquido facial",
+    "form": "bottle",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "oleosidade",
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "cha_verde",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Sabonete Facial Chá Verde: produto do tipo sabonete líquido facial, da marca Vita Verde, indicado para pele oleosa e mista. Foco em oleosidade e limpeza diária. Principais ativos: Extrato de chá verde e Glicerina. Vegano.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p009",
+    "name": "Óleo de Limpeza Demaquilante",
+    "brand": "Vita Verde",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "óleo de limpeza",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "seca",
+      "normal"
+    ],
+    "concerns": [
+      "desmaquilagem",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [
+      "evitar_contato_olhos"
+    ],
+    "description": "Óleo de Limpeza Demaquilante: produto do tipo óleo de limpeza, da marca Vita Verde, indicado para pele seca e normal. Foco em remoção de make e protetor e ressecamento. Principais ativos: Vitamina E. Vegano.",
+    "how_to_use": "Massageie na pele seca, adicione água para emulsionar e enxágue.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p010",
+    "name": "Gel de Limpeza Niacinamida",
+    "brand": "Lume Lab",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Niacinamida: produto do tipo gel de limpeza, da marca Lume Lab, indicado para pele oleosa e mista. Foco em oleosidade e poros. Principais ativos: Niacinamida. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p011",
+    "name": "Leite de Limpeza Hidratante",
+    "brand": "Lume Lab",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "leite de limpeza",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "seca",
+      "sensível"
+    ],
+    "concerns": [
+      "ressecamento",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "ceramidas",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Leite de Limpeza Hidratante: produto do tipo leite de limpeza, da marca Lume Lab, indicado para pele seca e sensível. Foco em ressecamento e sensibilidade. Principais ativos: Ceramidas e Glicerina. Sem fragrância.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p012",
+    "name": "Gel de Limpeza Pós-Sol",
+    "brand": "Solare",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desmaquilagem",
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "aloe_vera",
+      "tensoativo_suave"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem álcool"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Pós-Sol: produto do tipo gel de limpeza, da marca Solare, indicado para todos os tipos de pele. Foco em remoção de make e protetor e limpeza diária. Principais ativos: Aloe vera e Tensoativo suave. Sem álcool.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p013",
+    "name": "Sabonete Facial Antiacne em Barra",
+    "brand": "Pura Base",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "sabonete facial em barra",
+    "form": "bar",
+    "size": {
+      "value": 80,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "enxofre"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Sabonete Facial Antiacne em Barra: produto do tipo sabonete facial em barra, da marca Pura Base, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Enxofre.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p014",
+    "name": "Água Micelar Pele Oleosa",
+    "brand": "Bem Simples",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "água micelar",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade",
+      "desmaquilagem"
+    ],
+    "ingredients": [
+      "zinco_pca",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Água Micelar Pele Oleosa: produto do tipo água micelar, da marca Bem Simples, indicado para pele oleosa. Foco em oleosidade e remoção de make e protetor. Principais ativos: Zinco PCA e Glicerina. Oil free.",
+    "how_to_use": "Aplique com algodão sobre o rosto e remova sem enxaguar.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p015",
+    "name": "Tônico Renovador Mandélico",
+    "brand": "Lume Lab",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "tônico esfoliante",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "mista",
+      "normal"
+    ],
+    "concerns": [
+      "manchas",
+      "textura"
+    ],
+    "ingredients": [
+      "acido_mandelico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Tônico Renovador Mandélico: produto do tipo tônico esfoliante, da marca Lume Lab, indicado para pele mista e normal. Foco em manchas e textura irregular. Principais ativos: Ácido mandélico.",
+    "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p016",
+    "name": "Tônico Adstringente Sem Álcool",
+    "brand": "Clara Pele",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "tônico facial",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "poros",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "cha_verde",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem álcool",
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Tônico Adstringente Sem Álcool: produto do tipo tônico facial, da marca Clara Pele, indicado para pele oleosa. Foco em poros e oleosidade. Principais ativos: Extrato de chá verde e Zinco PCA. Sem álcool e oil free.",
+    "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p017",
+    "name": "Tônico Facial Calmante",
+    "brand": "Pura Base",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "tônico facial",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas",
+      "sensível"
+    ],
+    "concerns": [
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "centella_asiatica",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem álcool",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Tônico Facial Calmante: produto do tipo tônico facial, da marca Pura Base, indicado para pele todas e sensível. Foco em sensibilidade. Principais ativos: Centella asiática e Glicerina. Sem álcool e sem fragrância.",
+    "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p018",
+    "name": "Solução Esfoliante Salicílica",
+    "brand": "Aurora Dermo",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "esfoliante químico",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "textura",
+      "poros"
+    ],
+    "ingredients": [
+      "acido_salicilico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Solução Esfoliante Salicílica: produto do tipo esfoliante químico, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne, textura irregular e poros. Principais ativos: Ácido salicílico. Oil free.",
+    "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p019",
+    "name": "Tônico Glicólico Noturno",
+    "brand": "Aurora Dermo",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "tônico esfoliante",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "mista",
+      "normal"
+    ],
+    "concerns": [
+      "textura",
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_glicolico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "nao_usar_pele_irritada",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Tônico Glicólico Noturno: produto do tipo tônico esfoliante, da marca Aurora Dermo, indicado para pele mista e normal. Foco em textura irregular e manchas. Principais ativos: Ácido glicólico.",
+    "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p020",
+    "name": "Tônico de Rosas Hidratante",
+    "brand": "Vita Verde",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "tônico facial",
+    "form": "bottle",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "seca",
+      "normal"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "glicerina",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "sem álcool"
+    ],
+    "warnings": [],
+    "description": "Tônico de Rosas Hidratante: produto do tipo tônico facial, da marca Vita Verde, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Glicerina e Ácido hialurônico. Vegano e sem álcool.",
+    "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p021",
+    "name": "Esfoliante Facial Suave",
+    "brand": "Bem Simples",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "esfoliante físico",
+    "form": "tube",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "textura"
+    ],
+    "ingredients": [
+      "argila"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Esfoliante Facial Suave: produto do tipo esfoliante físico, da marca Bem Simples, indicado para pele oleosa e mista. Foco em textura irregular. Principais ativos: Argila.",
+    "how_to_use": "Massageie suavemente com a pele úmida e enxágue. Use 1 a 2 vezes por semana.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p022",
+    "name": "Máscara de Argila Purificante",
+    "brand": "Lume Lab",
+    "line": "preparo",
+    "step": "preparo",
+    "covers_steps": [
+      "preparo"
+    ],
+    "product_type": "máscara de argila",
+    "form": "jar",
+    "size": {
+      "value": 60,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "argila",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Máscara de Argila Purificante: produto do tipo máscara de argila, da marca Lume Lab, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Argila e Zinco PCA. Oil free.",
+    "how_to_use": "Aplique uma camada fina, aguarde 10 minutos e enxágue. Use 1 a 2 vezes por semana.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p023",
+    "name": "Gel Secativo Antiacne",
+    "brand": "Clara Pele",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "gel secativo",
+    "form": "tube",
+    "size": {
+      "value": 15,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne"
+    ],
+    "ingredients": [
+      "acido_salicilico",
+      "enxofre"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Gel Secativo Antiacne: produto do tipo gel secativo, da marca Clara Pele, indicado para pele oleosa. Foco em acne. Principais ativos: Ácido salicílico e Enxofre. Oil free.",
+    "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p024",
+    "name": "Sérum Niacinamida + Zinco",
+    "brand": "Clara Pele",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Niacinamida + Zinco: produto do tipo sérum, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne, oleosidade e poros. Principais ativos: Niacinamida e Zinco PCA. Oil free e não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p025",
+    "name": "Adesivos Hidrocoloide Anti-Espinha (24 un)",
+    "brand": "Clara Pele",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "adesivo hidrocoloide",
+    "form": "patch",
+    "size": {
+      "value": 24,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "acne"
+    ],
+    "ingredients": [
+      "hidrocoloide"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Adesivos Hidrocoloide Anti-Espinha (24 un): produto do tipo adesivo hidrocoloide, da marca Clara Pele, indicado para todos os tipos de pele. Foco em acne. Principais ativos: Hidrocoloide. Sem fragrância.",
+    "how_to_use": "Aplique sobre a espinha com a pele limpa e seca e deixe agir por 6 a 8 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p026",
+    "name": "Loção Secativa Pontual",
+    "brand": "Pura Base",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "loção secativa",
+    "form": "bottle",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne"
+    ],
+    "ingredients": [
+      "enxofre",
+      "acido_salicilico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Loção Secativa Pontual: produto do tipo loção secativa, da marca Pura Base, indicado para pele oleosa. Foco em acne. Principais ativos: Enxofre e Ácido salicílico.",
+    "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p027",
+    "name": "Sérum Niacinamida 5%",
+    "brand": "Pura Base",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros",
+      "manchas"
+    ],
+    "ingredients": [
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Sérum Niacinamida 5%: produto do tipo sérum, da marca Pura Base, indicado para pele oleosa e mista. Foco em oleosidade, poros e manchas. Principais ativos: Niacinamida. Oil free.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p028",
+    "name": "Gel Antiacne Diário",
+    "brand": "Bem Simples",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "gel secativo",
+    "form": "tube",
+    "size": {
+      "value": 30,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "acido_salicilico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Gel Antiacne Diário: produto do tipo gel secativo, da marca Bem Simples, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico. Oil free.",
+    "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p029",
+    "name": "Sérum Ácido Azelaico Controle de Acne",
+    "brand": "Aurora Dermo",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista",
+      "sensível"
+    ],
+    "concerns": [
+      "acne",
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_azelaico",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Ácido Azelaico Controle de Acne: produto do tipo sérum, da marca Aurora Dermo, indicado para pele oleosa, mista e sensível. Foco em acne e manchas. Principais ativos: Ácido azelaico e Niacinamida. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p030",
+    "name": "Gel-Creme Regulador Anti-Acne",
+    "brand": "Aurora Dermo",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "gel-creme de tratamento",
+    "form": "tube",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "acido_salicilico",
+      "niacinamida",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada"
+    ],
+    "description": "Gel-Creme Regulador Anti-Acne: produto do tipo gel-creme de tratamento, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico, Niacinamida e Zinco PCA. Oil free e não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p031",
+    "name": "Sérum Salicílico + Niacinamida",
+    "brand": "Lume Lab",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "acne",
+      "poros"
+    ],
+    "ingredients": [
+      "acido_salicilico",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Salicílico + Niacinamida: produto do tipo sérum, da marca Lume Lab, indicado para pele oleosa. Foco em acne e poros. Principais ativos: Ácido salicílico e Niacinamida. Oil free.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p032",
+    "name": "Sérum Pós-Acne Uniformizador",
+    "brand": "Lume Lab",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "acne",
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_azelaico",
+      "acido_tranexamico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Pós-Acne Uniformizador: produto do tipo sérum, da marca Lume Lab, indicado para pele oleosa e mista. Foco em acne e manchas. Principais ativos: Ácido azelaico e Ácido tranexâmico. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p033",
+    "name": "Sérum Chá Verde Calmante Anti-Acne",
+    "brand": "Vita Verde",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "sensível"
+    ],
+    "concerns": [
+      "acne",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "cha_verde",
+      "centella_asiatica",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Chá Verde Calmante Anti-Acne: produto do tipo sérum, da marca Vita Verde, indicado para pele oleosa e sensível. Foco em acne e sensibilidade. Principais ativos: Extrato de chá verde, Centella asiática e Zinco PCA. Vegano e não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p034",
+    "name": "Gel de Centella Pós-Espinha",
+    "brand": "Vita Verde",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "gel calmante",
+    "form": "tube",
+    "size": {
+      "value": 30,
+      "unit": "g"
+    },
+    "skin_types": [
+      "sensível"
+    ],
+    "concerns": [
+      "acne",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "centella_asiatica",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Gel de Centella Pós-Espinha: produto do tipo gel calmante, da marca Vita Verde, indicado para pele sensível. Foco em acne e sensibilidade. Principais ativos: Centella asiática e Pantenol. Vegano e sem fragrância.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p035",
+    "name": "Sérum Oil Control Matificante",
+    "brand": "Solare",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "zinco_pca"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Oil Control Matificante: produto do tipo sérum, da marca Solare, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Niacinamida e Zinco PCA. Oil free e não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p036",
+    "name": "Sérum Anti-Cravos Salicílico",
+    "brand": "Aurora Dermo",
+    "line": "tratamento_acne",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "poros",
+      "acne"
+    ],
+    "ingredients": [
+      "acido_salicilico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "nao_usar_pele_irritada",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Anti-Cravos Salicílico: produto do tipo sérum, da marca Aurora Dermo, indicado para pele oleosa. Foco em poros e acne. Principais ativos: Ácido salicílico. Oil free.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p037",
+    "name": "Sérum Vitamina C 10%",
+    "brand": "Pura Base",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "vitamina_c"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Vitamina C 10%: produto do tipo sérum, da marca Pura Base, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p038",
+    "name": "Sérum Clareador Ácido Tranexâmico",
+    "brand": "Pura Base",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_tranexamico",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Sérum Clareador Ácido Tranexâmico: produto do tipo sérum, da marca Pura Base, indicado para pele normal e mista. Foco em manchas. Principais ativos: Ácido tranexâmico e Niacinamida.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p039",
+    "name": "Gel Uniformizador Niacinamida",
+    "brand": "Bem Simples",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "gel de tratamento",
+    "form": "tube",
+    "size": {
+      "value": 30,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Gel Uniformizador Niacinamida: produto do tipo gel de tratamento, da marca Bem Simples, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Niacinamida. Oil free.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p040",
+    "name": "Sérum Vitamina C 15% Antioxidante",
+    "brand": "Lume Lab",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "manchas",
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Vitamina C 15% Antioxidante: produto do tipo sérum, da marca Lume Lab, indicado para pele normal e mista. Foco em manchas e sinais de idade. Principais ativos: Vitamina C e Vitamina E.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p041",
+    "name": "Sérum Tranexâmico + Niacinamida",
+    "brand": "Lume Lab",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_tranexamico",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Tranexâmico + Niacinamida: produto do tipo sérum, da marca Lume Lab, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Ácido tranexâmico e Niacinamida. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p042",
+    "name": "Sérum Despigmentante Noturno",
+    "brand": "Aurora Dermo",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "acido_azelaico",
+      "acido_tranexamico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Despigmentante Noturno: produto do tipo sérum, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Ácido azelaico e Ácido tranexâmico. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p043",
+    "name": "Sérum Vitamina C Estabilizada 20%",
+    "brand": "Aurora Dermo",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "manchas",
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Vitamina C Estabilizada 20%: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal e seca. Foco em manchas e sinais de idade. Principais ativos: Vitamina C e Vitamina E.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p044",
+    "name": "Sérum Iluminador Vitamina C Natural",
+    "brand": "Vita Verde",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Iluminador Vitamina C Natural: produto do tipo sérum, da marca Vita Verde, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C e Vitamina E. Vegano.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p045",
+    "name": "Creme Uniformizador Noturno",
+    "brand": "Vita Verde",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "creme de tratamento",
+    "form": "jar",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "acido_tranexamico"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Creme Uniformizador Noturno: produto do tipo creme de tratamento, da marca Vita Verde, indicado para pele normal e seca. Foco em manchas. Principais ativos: Niacinamida e Ácido tranexâmico. Vegano.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p046",
+    "name": "Sérum Antimanchas Dia",
+    "brand": "Solare",
+    "line": "tratamento_manchas",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "manchas"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Antimanchas Dia: produto do tipo sérum, da marca Solare, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C e Niacinamida. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p047",
+    "name": "Creme Antissinais com Peptídeos",
+    "brand": "Pura Base",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "creme antissinais",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "peptideos",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Creme Antissinais com Peptídeos: produto do tipo creme antissinais, da marca Pura Base, indicado para pele normal e seca. Foco em sinais de idade. Principais ativos: Peptídeos e Glicerina.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p048",
+    "name": "Sérum Retinol 0,2% Iniciante",
+    "brand": "Bem Simples",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum de retinol",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "textura"
+    ],
+    "ingredients": [
+      "retinol"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "consultar_se_gestante",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Retinol 0,2% Iniciante: produto do tipo sérum de retinol, da marca Bem Simples, indicado para pele normal e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p049",
+    "name": "Sérum Retinol 0,5%",
+    "brand": "Lume Lab",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum de retinol",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "textura"
+    ],
+    "ingredients": [
+      "retinol",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "consultar_se_gestante",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Retinol 0,5%: produto do tipo sérum de retinol, da marca Lume Lab, indicado para pele normal e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol e Vitamina E.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p050",
+    "name": "Sérum Bakuchiol Alternativo ao Retinol",
+    "brand": "Lume Lab",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas",
+      "sensível"
+    ],
+    "concerns": [
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "bakuchiol",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Bakuchiol Alternativo ao Retinol: produto do tipo sérum, da marca Lume Lab, indicado para pele todas e sensível. Foco em sinais de idade. Principais ativos: Bakuchiol e Vitamina E. Vegano e não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p051",
+    "name": "Creme Retinol + Ceramidas Noturno",
+    "brand": "Aurora Dermo",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "creme de retinol",
+    "form": "jar",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "retinol",
+      "ceramidas"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "consultar_se_gestante",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Creme Retinol + Ceramidas Noturno: produto do tipo creme de retinol, da marca Aurora Dermo, indicado para pele normal e seca. Foco em sinais de idade e ressecamento. Principais ativos: Retinol e Ceramidas.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p052",
+    "name": "Sérum Peptídeos Firmador",
+    "brand": "Aurora Dermo",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "seca",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "peptideos",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Sérum Peptídeos Firmador: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade. Principais ativos: Peptídeos e Ácido hialurônico. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p053",
+    "name": "Óleo Facial Antissinais",
+    "brand": "Vita Verde",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "óleo facial",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "seca"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "vitamina_e",
+      "bakuchiol"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Óleo Facial Antissinais: produto do tipo óleo facial, da marca Vita Verde, indicado para pele seca. Foco em sinais de idade e ressecamento. Principais ativos: Vitamina E e Bakuchiol. Vegano.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p054",
+    "name": "Creme Noturno Regenerador",
+    "brand": "Vita Verde",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "creme noturno",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca",
+      "normal"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "ceramidas",
+      "peptideos"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Creme Noturno Regenerador: produto do tipo creme noturno, da marca Vita Verde, indicado para pele seca e normal. Foco em sinais de idade e ressecamento. Principais ativos: Ceramidas e Peptídeos. Vegano.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p055",
+    "name": "Sérum Retinol Oil-Free",
+    "brand": "Clara Pele",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum de retinol",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "textura"
+    ],
+    "ingredients": [
+      "retinol",
+      "niacinamida"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [
+      "fotossensibilizante",
+      "consultar_se_gestante",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Retinol Oil-Free: produto do tipo sérum de retinol, da marca Clara Pele, indicado para pele oleosa e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol e Niacinamida. Oil free.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p056",
+    "name": "Sérum Antioxidante Dia",
+    "brand": "Solare",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "manchas"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Antioxidante Dia: produto do tipo sérum, da marca Solare, indicado para todos os tipos de pele. Foco em sinais de idade e manchas. Principais ativos: Vitamina C e Vitamina E.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p057",
+    "name": "Gel Hidratante Oil-Free",
+    "brand": "Pura Base",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "ingredients": [
+      "glicerina",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel Hidratante Oil-Free: produto do tipo gel hidratante, da marca Pura Base, indicado para pele oleosa e mista. Foco em oleosidade e poros. Principais ativos: Glicerina e Ácido hialurônico. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p058",
+    "name": "Creme Hidratante Facial Nutritivo",
+    "brand": "Pura Base",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca",
+      "normal"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "glicerina",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Creme Hidratante Facial Nutritivo: produto do tipo creme hidratante, da marca Pura Base, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Glicerina e Pantenol.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p059",
+    "name": "Hidratante Facial Dia e Noite",
+    "brand": "Bem Simples",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Hidratante Facial Dia e Noite: produto do tipo creme hidratante, da marca Bem Simples, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Glicerina.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p060",
+    "name": "Gel Hidratante Pele Oleosa",
+    "brand": "Bem Simples",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade"
+    ],
+    "ingredients": [
+      "glicerina",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Gel Hidratante Pele Oleosa: produto do tipo gel hidratante, da marca Bem Simples, indicado para pele oleosa. Foco em oleosidade. Principais ativos: Glicerina e Aloe vera. Oil free.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p061",
+    "name": "Gel-Creme Oil-Free Anti-Brilho",
+    "brand": "Clara Pele",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel-creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "oleosidade",
+      "acne"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "zinco_pca",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel-Creme Oil-Free Anti-Brilho: produto do tipo gel-creme hidratante, da marca Clara Pele, indicado para pele oleosa. Foco em oleosidade e acne. Principais ativos: Niacinamida, Zinco PCA e Ácido hialurônico. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p062",
+    "name": "Hidratante Matificante Pós-Tratamento",
+    "brand": "Clara Pele",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "hidratante matificante",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Hidratante Matificante Pós-Tratamento: produto do tipo hidratante matificante, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne e oleosidade. Principais ativos: Niacinamida e Pantenol. Oil free e não comedogênico.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p063",
+    "name": "Gel Hidratante Ácido Hialurônico",
+    "brand": "Lume Lab",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "acido_hialuronico",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Gel Hidratante Ácido Hialurônico: produto do tipo gel hidratante, da marca Lume Lab, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Ácido hialurônico e Pantenol. Sem fragrância.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p064",
+    "name": "Creme Barreira Ceramidas",
+    "brand": "Lume Lab",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca",
+      "sensível"
+    ],
+    "concerns": [
+      "ressecamento",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "ceramidas",
+      "pantenol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Creme Barreira Ceramidas: produto do tipo creme hidratante, da marca Lume Lab, indicado para pele seca e sensível. Foco em ressecamento e sensibilidade. Principais ativos: Ceramidas e Pantenol. Sem fragrância e não comedogênico.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p065",
+    "name": "Hidratante Facial Calmante Pele Sensível",
+    "brand": "Aurora Dermo",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "sensível"
+    ],
+    "concerns": [
+      "sensibilidade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "centella_asiatica",
+      "ceramidas",
+      "alantoina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Hidratante Facial Calmante Pele Sensível: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele sensível. Foco em sensibilidade e ressecamento. Principais ativos: Centella asiática, Ceramidas e Alantoína. Sem fragrância e não comedogênico.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p066",
+    "name": "Gel-Creme Oil-Free Dermatológico",
+    "brand": "Aurora Dermo",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel-creme hidratante",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "oleosidade",
+      "acne"
+    ],
+    "ingredients": [
+      "niacinamida",
+      "acido_hialuronico",
+      "ceramidas"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "oil free",
+      "não comedogênico",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Gel-Creme Oil-Free Dermatológico: produto do tipo gel-creme hidratante, da marca Aurora Dermo, indicado para pele oleosa e mista. Foco em oleosidade e acne. Principais ativos: Niacinamida, Ácido hialurônico e Ceramidas. Oil free, não comedogênico e sem fragrância.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p067",
+    "name": "Creme Hidratante Rico Pele Seca",
+    "brand": "Aurora Dermo",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "ceramidas",
+      "manteiga_karite",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Creme Hidratante Rico Pele Seca: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele seca. Foco em ressecamento. Principais ativos: Ceramidas, Manteiga de karité e Glicerina. Sem fragrância.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p068",
+    "name": "Gel Hidratante Aloe e Chá Verde",
+    "brand": "Vita Verde",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "gel hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista",
+      "normal"
+    ],
+    "concerns": [
+      "oleosidade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "aloe_vera",
+      "cha_verde",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Gel Hidratante Aloe e Chá Verde: produto do tipo gel hidratante, da marca Vita Verde, indicado para pele oleosa, mista e normal. Foco em oleosidade e ressecamento. Principais ativos: Aloe vera, Extrato de chá verde e Glicerina. Vegano e oil free.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p069",
+    "name": "Creme Hidratante Vegano Karité",
+    "brand": "Vita Verde",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca",
+      "normal"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "manteiga_karite",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Creme Hidratante Vegano Karité: produto do tipo creme hidratante, da marca Vita Verde, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Manteiga de karité e Glicerina. Vegano.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p070",
+    "name": "Hidratante Facial FPS 30 Toque Seco",
+    "brand": "Solare",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "product_type": "hidratante com FPS",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "niacinamida"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "toque seco"
+    ],
+    "warnings": [],
+    "description": "Hidratante Facial FPS 30 Toque Seco: produto do tipo hidratante com FPS, da marca Solare, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 30. Oil free e toque seco.",
+    "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p071",
+    "name": "Creme Hidratante Antissinais FPS 50",
+    "brand": "Solare",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "product_type": "hidratante com FPS",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "peptideos",
+      "vitamina_e"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Creme Hidratante Antissinais FPS 50: produto do tipo hidratante com FPS, da marca Solare, indicado para pele normal e seca. Foco em proteção solar e sinais de idade. Principais ativos: Filtros UVA/UVB, Peptídeos e Vitamina E. FPS 50.",
+    "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p072",
+    "name": "Hidratante Facial FPS 30",
+    "brand": "Pura Base",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "product_type": "hidratante com FPS",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "glicerina"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Hidratante Facial FPS 30: produto do tipo hidratante com FPS, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB e Glicerina. FPS 30.",
+    "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p073",
+    "name": "Protetor Solar Facial FPS 50 Toque Seco",
+    "brand": "Pura Base",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "toque seco"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 50 Toque Seco: produto do tipo protetor solar facial, da marca Pura Base, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 50. Oil free e toque seco.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p074",
+    "name": "Protetor Solar Facial FPS 30",
+    "brand": "Pura Base",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 30: produto do tipo protetor solar facial, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p075",
+    "name": "Protetor Solar Facial FPS 60 Oil-Free",
+    "brand": "Bem Simples",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 60,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 60 Oil-Free: produto do tipo protetor solar facial, da marca Bem Simples, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 60. Oil free e não comedogênico.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p076",
+    "name": "Protetor Solar Facial FPS 50 Gel",
+    "brand": "Bem Simples",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "aloe_vera"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "oil free"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 50 Gel: produto do tipo protetor solar facial, da marca Bem Simples, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Aloe vera. FPS 50. Oil free.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p077",
+    "name": "Protetor Solar Facial Anti-Acne FPS 50",
+    "brand": "Clara Pele",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "acne",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "niacinamida"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "não comedogênico",
+      "toque seco"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial Anti-Acne FPS 50: produto do tipo protetor solar facial, da marca Clara Pele, indicado para pele oleosa. Foco em proteção solar, acne e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 50. Oil free, não comedogênico e toque seco.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p078",
+    "name": "Protetor Solar FPS 70 Oil Control com Cor",
+    "brand": "Clara Pele",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "zinco_pca"
+    ],
+    "fps": 70,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "com cor"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar FPS 70 Oil Control com Cor: produto do tipo protetor solar facial, da marca Clara Pele, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Zinco PCA. FPS 70. Oil free e com cor.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p079",
+    "name": "Protetor Solar Facial FPS 60 Fluido Ultraleve",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 60,
+    "usage_period": "dia",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 60 Fluido Ultraleve: produto do tipo protetor solar facial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 60. Não comedogênico.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p080",
+    "name": "Protetor Solar Facial FPS 50 Toque Seco",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "mista"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "toque seco"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 50 Toque Seco: produto do tipo protetor solar facial, da marca Solare, indicado para pele normal e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 50. Toque seco.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p081",
+    "name": "Protetor Solar Facial FPS 70 Sensitive",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "sensível"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "oxido_de_zinco",
+      "dioxido_titanio"
+    ],
+    "fps": 70,
+    "usage_period": "dia",
+    "claims": [
+      "filtro mineral",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 70 Sensitive: produto do tipo protetor solar facial, da marca Solare, indicado para pele sensível. Foco em proteção solar e sensibilidade. Principais ativos: Óxido de zinco e Dióxido de titânio. FPS 70. Filtro mineral e sem fragrância.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p082",
+    "name": "Protetor Solar Facial FPS 50 com Cor",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "com cor"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 50 com Cor: produto do tipo protetor solar facial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Com cor.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p083",
+    "name": "Protetor Solar FPS 50 Antioxidante",
+    "brand": "Lume Lab",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "manchas"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "vitamina_e",
+      "niacinamida"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Solar FPS 50 Antioxidante: produto do tipo protetor solar facial, da marca Lume Lab, indicado para todos os tipos de pele. Foco em proteção solar e manchas. Principais ativos: Filtros UVA/UVB, Vitamina E e Niacinamida. FPS 50.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p084",
+    "name": "Protetor Solar Facial FPS 60 Dermatológico Toque Seco",
+    "brand": "Aurora Dermo",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "oleosa",
+      "mista"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "oleosidade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "niacinamida"
+    ],
+    "fps": 60,
+    "usage_period": "dia",
+    "claims": [
+      "oil free",
+      "não comedogênico",
+      "toque seco"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 60 Dermatológico Toque Seco: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 60. Oil free, não comedogênico e toque seco.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p085",
+    "name": "Protetor Solar Mineral FPS 50 Pele Sensível",
+    "brand": "Aurora Dermo",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "sensível"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "sensibilidade"
+    ],
+    "ingredients": [
+      "oxido_de_zinco",
+      "dioxido_titanio"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "filtro mineral",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Mineral FPS 50 Pele Sensível: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para pele sensível. Foco em proteção solar e sensibilidade. Principais ativos: Óxido de zinco e Dióxido de titânio. FPS 50. Filtro mineral e sem fragrância.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p086",
+    "name": "Protetor Solar Antimanchas FPS 70 com Cor",
+    "brand": "Aurora Dermo",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 40,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "manchas"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "acido_tranexamico"
+    ],
+    "fps": 70,
+    "usage_period": "dia",
+    "claims": [
+      "com cor"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Antimanchas FPS 70 com Cor: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em proteção solar e manchas. Principais ativos: Filtros UVA/UVB e Ácido tranexâmico. FPS 70. Com cor.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p087",
+    "name": "Protetor Solar Facial FPS 50 Vegano",
+    "brand": "Vita Verde",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "vitamina_e"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 50 Vegano: produto do tipo protetor solar facial, da marca Vita Verde, indicado para pele normal e seca. Foco em proteção solar. Principais ativos: Filtros UVA/UVB e Vitamina E. FPS 50. Vegano.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p088",
+    "name": "Protetor Solar Mineral Hidratante FPS 30",
+    "brand": "Vita Verde",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "seca",
+      "sensível"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "oxido_de_zinco",
+      "glicerina"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [
+      "vegano",
+      "filtro mineral"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Mineral Hidratante FPS 30: produto do tipo protetor solar facial, da marca Vita Verde, indicado para pele seca e sensível. Foco em proteção solar e ressecamento. Principais ativos: Óxido de zinco e Glicerina. FPS 30. Vegano e filtro mineral.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p089",
+    "name": "Protetor Solar Corporal FPS 30",
+    "brand": "Pura Base",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 30: produto do tipo protetor solar corporal, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p090",
+    "name": "Protetor Solar Corporal FPS 50 Resistente à Água",
+    "brand": "Pura Base",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "resistente à água"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 50 Resistente à Água: produto do tipo protetor solar corporal, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Resistente à água.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p091",
+    "name": "Protetor Solar Corporal FPS 30 Econômico",
+    "brand": "Bem Simples",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 30 Econômico: produto do tipo protetor solar corporal, da marca Bem Simples, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p092",
+    "name": "Protetor Solar Corporal FPS 50 Spray",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "spray",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "resistente à água"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 50 Spray: produto do tipo protetor solar corporal, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Resistente à água.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p093",
+    "name": "Protetor Solar Corporal FPS 70 Toque Seco",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 70,
+    "usage_period": "dia",
+    "claims": [
+      "toque seco",
+      "resistente à água"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 70 Toque Seco: produto do tipo protetor solar corporal, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 70. Toque seco e resistente à água.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p094",
+    "name": "Protetor Solar Corporal FPS 50 Vegano",
+    "brand": "Vita Verde",
+    "line": "protetor_solar",
+    "step": "protecao_corporal",
+    "covers_steps": [
+      "protecao_corporal"
+    ],
+    "product_type": "protetor solar corporal",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "aloe_vera"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Corporal FPS 50 Vegano: produto do tipo protetor solar corporal, da marca Vita Verde, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB e Aloe vera. FPS 50. Vegano.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p095",
+    "name": "Protetor Labial FPS 30",
+    "brand": "Pura Base",
+    "line": "protetor_solar",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "protetor labial",
+    "form": "stick",
+    "size": {
+      "value": 4,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "filtro_uv"
+    ],
+    "fps": 30,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Labial FPS 30: produto do tipo protetor labial, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB. FPS 30.",
+    "how_to_use": "Aplique nos lábios quantas vezes for necessário, principalmente antes de sair.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p096",
+    "name": "Protetor Labial FPS 50",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "protetor labial",
+    "form": "stick",
+    "size": {
+      "value": 4,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "vitamina_e"
+    ],
+    "fps": 50,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [],
+    "description": "Protetor Labial FPS 50: produto do tipo protetor labial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB e Vitamina E. FPS 50.",
+    "how_to_use": "Aplique nos lábios quantas vezes for necessário, principalmente antes de sair.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p097",
+    "name": "Sérum Contorno dos Olhos Cafeína",
+    "brand": "Lume Lab",
+    "line": "olhos_labios",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "contorno dos olhos",
+    "form": "dropper",
+    "size": {
+      "value": 15,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "olheiras"
+    ],
+    "ingredients": [
+      "cafeina",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [
+      "evitar_contato_olhos"
+    ],
+    "description": "Sérum Contorno dos Olhos Cafeína: produto do tipo contorno dos olhos, da marca Lume Lab, indicado para todos os tipos de pele. Foco em olheiras. Principais ativos: Cafeína e Ácido hialurônico.",
+    "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
+    "image": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p098",
+    "name": "Gel para Olhos Anti-Olheiras",
+    "brand": "Pura Base",
+    "line": "olhos_labios",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "contorno dos olhos",
+    "form": "tube",
+    "size": {
+      "value": 15,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "olheiras"
+    ],
+    "ingredients": [
+      "cafeina",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [
+      "evitar_contato_olhos"
+    ],
+    "description": "Gel para Olhos Anti-Olheiras: produto do tipo contorno dos olhos, da marca Pura Base, indicado para todos os tipos de pele. Foco em olheiras. Principais ativos: Cafeína e Glicerina.",
+    "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
+    "image": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p099",
+    "name": "Bálsamo Labial Hidratante",
+    "brand": "Vita Verde",
+    "line": "olhos_labios",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "bálsamo labial",
+    "form": "stick",
+    "size": {
+      "value": 4,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "ressecamento"
+    ],
+    "ingredients": [
+      "manteiga_karite",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Bálsamo Labial Hidratante: produto do tipo bálsamo labial, da marca Vita Verde, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Manteiga de karité e Vitamina E. Vegano.",
+    "how_to_use": "Aplique nos lábios quantas vezes for necessário.",
+    "image": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p100",
+    "name": "Creme para Área dos Olhos Antissinais",
+    "brand": "Aurora Dermo",
+    "line": "olhos_labios",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "contorno dos olhos",
+    "form": "jar",
+    "size": {
+      "value": 15,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "olheiras"
+    ],
+    "ingredients": [
+      "peptideos",
+      "cafeina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [
+      "evitar_contato_olhos"
+    ],
+    "description": "Creme para Área dos Olhos Antissinais: produto do tipo contorno dos olhos, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em sinais de idade e olheiras. Principais ativos: Peptídeos e Cafeína.",
+    "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
+    "image": null,
+    "price_tier": "premium"
+  }
+]

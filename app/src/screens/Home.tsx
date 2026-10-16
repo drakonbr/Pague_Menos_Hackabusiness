@@ -1,0 +1,163 @@
+import { BasketButton } from "../components/Bars";
+import { Icon, LogoMark, type IconName } from "../components/Icon";
+import { ProductCard } from "../components/ProductCard";
+import type { Product } from "../contracts/types";
+import { BRAND } from "../brand";
+import { useNav, useServices } from "../nav";
+import { SIMULATED_LOCATION } from "../location";
+import { useApp } from "../state/app";
+import { useAsync } from "../useAsync";
+
+function greeting(): string {
+  const h = new Date().getHours();
+  return h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
+}
+
+const TOP_CATEGORIES: Array<{ label: string; icon: IconName; id?: string }> = [
+  { label: "Medicamentos e saúde", icon: "pill" },
+  { label: "Dermo e beleza", icon: "lipstick", id: "dermo" },
+  { label: "Mamães e bebês", icon: "stroller" },
+  { label: "Vida saudável", icon: "dumbbell" },
+];
+
+export function Home() {
+  const { push, goTab } = useNav();
+  const { commerce } = useServices();
+  const { store, storeId } = useApp();
+  const home = useAsync(async () => {
+    const h = await commerce.home();
+    const rows = await Promise.all(
+      h.showcases.filter((s) => s.type === "products").map(async (s) => ({ s, products: await commerce.products(s.productIds ?? [], "relevancia") })),
+    );
+    return { ...h, rows };
+  }, [commerce]);
+  const banner = home.data?.banners ?? [];
+
+  return (
+    <div className="screen">
+      <div className="scroll">
+        <div className="home-head">
+          <div className="row">
+            <LogoMark size={40} />
+            <p className="hello">
+              {greeting()}, <b>visitante!</b>
+            </p>
+            <BasketButton />
+          </div>
+        </div>
+        <div className="home-search">
+          <button className="searchpill" onClick={() => push({ name: "searchFocus" })}>
+            <Icon name="search" />
+            <span className="ph">O que você procura?</span>
+            <span className="soft"><Icon name="camera" /></span>
+            <span className="soft"><Icon name="mic" /></span>
+          </button>
+        </div>
+        <button className="loc" onClick={() => push({ name: "stores" })}>
+          <Icon name="pin" size={20} />
+          <span>{store ? `Retirar na ${store.name} · ${store.neighborhood}` : SIMULATED_LOCATION.label}</span>
+          <Icon name="chevronDown" size={20} />
+        </button>
+
+        <div className="pad">
+          <div className="shortcuts">
+            <button className="shortcut" onClick={() => push({ name: "searchFocus" })}>
+              <Icon name="sparkle" size={30} />
+              <span className="pill-new">Novo</span>
+              <b>Monte um kit pelo que você precisa</b>
+            </button>
+            <button className="shortcut" disabled title="Fora do escopo do protótipo (medicamentos)">
+              <Icon name="receipt" size={30} />
+              <span className="pill-off">fora do protótipo</span>
+              <b>Busque produtos usando sua receita</b>
+            </button>
+          </div>
+
+          <div className="banners" aria-label="Destaques">
+            <button className="banner" onClick={() => push({ name: "searchFocus" })}>
+              {banner[0] ? <img src={banner[0].src} alt="" /> : null}
+              <span className="shade" />
+              <span className="txt">
+                <b>Kits inteligentes</b>
+                <span>Diga o que precisa: a rotina vem completa, sem item repetido e no seu orçamento.</span>
+                <span className="cta">Montar meu kit</span>
+              </span>
+            </button>
+            <button className="banner" onClick={() => push({ name: "stores" })}>
+              {banner[1] ? <img src={banner[1].src} alt="" /> : null}
+              <span className="shade" />
+              <span className="txt">
+                <b>Kit completo na sua loja</b>
+                <span>Escolha a loja e os kits usam só o que ela tem em estoque. Retire em até 60 minutos.</span>
+                <span className="cta">Escolher loja</span>
+              </span>
+            </button>
+            <button className="banner" onClick={() => push({ name: "category", id: "solar-facial" })}>
+              {banner[2] ? <img src={banner[2].src} alt="" /> : null}
+              <span className="shade" />
+              <span className="txt">
+                <b>Protetor solar facial</b>
+                <span>Toque seco, com cor ou mineral.</span>
+                <span className="cta">Ver produtos</span>
+              </span>
+            </button>
+          </div>
+
+          <section aria-labelledby="h-cat">
+            <div className="sec-head">
+              <h2 id="h-cat">Categorias</h2>
+              <button className="link plain" onClick={() => goTab("categorias")}>Exibir tudo</button>
+            </div>
+            <div className="cat-tiles" style={{ marginTop: 12 }}>
+              {TOP_CATEGORIES.map((c) => (
+                <button key={c.label} className="cat-tile" disabled={!c.id} onClick={() => c.id && push({ name: "category", id: c.id })}
+                  title={c.id ? undefined : "Fora do escopo do protótipo"}>
+                  <span className="ico"><Icon name={c.icon} size={30} /></span>
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="h-kits">
+            <div className="sec-head">
+              <h2 id="h-kits">Kits inteligentes para você</h2>
+            </div>
+            <div className="presets" style={{ marginTop: 12 }}>
+              {(home.data?.kitPresets ?? []).map((k) => (
+                <button key={k.id} className="preset" onClick={() => push({ name: "results", req: { query: k.query, storeId } })}>
+                  <Icon name="sparkle" size={22} />
+                  <b>{k.label}</b>
+                  <small>3 faixas de preço</small>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {home.loading && !home.data ? <div className="skeleton" style={{ height: 260 }} /> : null}
+          {(home.data?.rows ?? []).map(({ s, products }) => (
+            <Shelf key={s.id} title={s.id === "ofertas" ? "Aproveite as Melhores Ofertas para Você!" : s.title} products={products}
+              tag={s.id === "ofertas" ? "Super oferta" : undefined} />
+          ))}
+          <p className="footnote">{BRAND.protoNote} Fotos: Pexels (créditos em Mais).</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Shelf({ title, products, tag }: { title: string; products: Product[]; tag?: string }) {
+  if (!products.length) return null;
+  return (
+    <section aria-label={title}>
+      <div className="sec-head">
+        <h2>{title}</h2>
+      </div>
+      <div className="hscroll" style={{ marginTop: 12 }}>
+        {products.map((p) => (
+          <ProductCard key={p.id} product={p} tag={tag} />
+        ))}
+      </div>
+    </section>
+  );
+}

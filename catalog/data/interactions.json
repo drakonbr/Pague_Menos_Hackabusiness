@@ -1,0 +1,56 @@
+[
+  {
+    "a": "retinol",
+    "b": "acido_glicolico",
+    "severity": "evitar",
+    "reason": "Esfoliante forte junto com retinol aumenta o risco de irritação."
+  },
+  {
+    "a": "retinol",
+    "b": "acido_mandelico",
+    "severity": "evitar",
+    "reason": "Esfoliante junto com retinol aumenta o risco de irritação."
+  },
+  {
+    "a": "retinol",
+    "b": "acido_salicilico",
+    "severity": "evitar",
+    "reason": "Ácido esfoliante junto com retinol aumenta o risco de irritação."
+  },
+  {
+    "a": "acido_glicolico",
+    "b": "acido_mandelico",
+    "severity": "evitar",
+    "reason": "Dois ácidos esfoliantes no mesmo kit é excesso de esfoliação."
+  },
+  {
+    "a": "acido_glicolico",
+    "b": "acido_salicilico",
+    "severity": "evitar",
+    "reason": "Dois ácidos esfoliantes no mesmo kit é excesso de esfoliação."
+  },
+  {
+    "a": "acido_mandelico",
+    "b": "acido_salicilico",
+    "severity": "evitar",
+    "reason": "Dois ácidos esfoliantes no mesmo kit é excesso de esfoliação."
+  },
+  {
+    "a": "retinol",
+    "b": "vitamina_c",
+    "severity": "separar",
+    "reason": "Usar vitamina C de dia e retinol à noite."
+  },
+  {
+    "a": "acido_glicolico",
+    "b": "vitamina_c",
+    "severity": "separar",
+    "reason": "Usar vitamina C de dia e o ácido à noite."
+  },
+  {
+    "a": "retinol",
+    "b": "acido_azelaico",
+    "severity": "separar",
+    "reason": "Usar em períodos diferentes para reduzir irritação."
+  }
+]

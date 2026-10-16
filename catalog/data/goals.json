@@ -1,0 +1,166 @@
+[
+  {
+    "id": "acne",
+    "label": "Controle de acne",
+    "concerns": [
+      "acne",
+      "oleosidade",
+      "poros"
+    ],
+    "required_steps": [
+      "limpeza",
+      "tratamento",
+      "hidratacao"
+    ],
+    "optional_steps": [
+      "protecao_solar",
+      "preparo"
+    ],
+    "synonyms": [
+      "acne",
+      "espinha",
+      "espinhas",
+      "cravo",
+      "cravos",
+      "pele acneica"
+    ]
+  },
+  {
+    "id": "manchas",
+    "label": "Uniformizar manchas",
+    "concerns": [
+      "manchas"
+    ],
+    "required_steps": [
+      "limpeza",
+      "tratamento",
+      "protecao_solar"
+    ],
+    "optional_steps": [
+      "hidratacao"
+    ],
+    "synonyms": [
+      "mancha",
+      "manchas",
+      "uniformizar",
+      "clarear",
+      "tom da pele",
+      "pós-acne"
+    ]
+  },
+  {
+    "id": "skincare_basico",
+    "label": "Rotina básica de skin care",
+    "concerns": [
+      "limpeza_diaria",
+      "ressecamento"
+    ],
+    "required_steps": [
+      "limpeza",
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "optional_steps": [
+      "complemento"
+    ],
+    "synonyms": [
+      "skin care",
+      "skincare",
+      "cuidar da pele",
+      "cuidado com a pele",
+      "rotina",
+      "começar a cuidar"
+    ]
+  },
+  {
+    "id": "protecao_solar",
+    "label": "Proteção solar",
+    "concerns": [
+      "fotoprotecao"
+    ],
+    "required_steps": [
+      "protecao_solar",
+      "protecao_corporal"
+    ],
+    "optional_steps": [
+      "complemento"
+    ],
+    "synonyms": [
+      "protetor",
+      "protetor solar",
+      "filtro solar",
+      "fps",
+      "sol",
+      "praia"
+    ]
+  },
+  {
+    "id": "anti_idade",
+    "label": "Cuidado antissinais",
+    "concerns": [
+      "sinais_idade",
+      "olheiras"
+    ],
+    "required_steps": [
+      "limpeza",
+      "tratamento",
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "optional_steps": [
+      "complemento"
+    ],
+    "synonyms": [
+      "anti-idade",
+      "antiidade",
+      "antissinais",
+      "rugas",
+      "linhas de expressão",
+      "envelhecimento"
+    ]
+  },
+  {
+    "id": "pele_sensivel",
+    "label": "Cuidado para pele sensível",
+    "concerns": [
+      "sensibilidade"
+    ],
+    "required_steps": [
+      "limpeza",
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "optional_steps": [
+      "tratamento"
+    ],
+    "synonyms": [
+      "pele sensível",
+      "sensível",
+      "irritada",
+      "reativa"
+    ]
+  },
+  {
+    "id": "oleosidade",
+    "label": "Controle de oleosidade",
+    "concerns": [
+      "oleosidade",
+      "poros"
+    ],
+    "required_steps": [
+      "limpeza",
+      "hidratacao",
+      "protecao_solar"
+    ],
+    "optional_steps": [
+      "tratamento",
+      "preparo"
+    ],
+    "synonyms": [
+      "oleosa",
+      "oleosidade",
+      "brilho",
+      "pele oleosa"
+    ]
+  }
+]

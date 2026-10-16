@@ -1,0 +1,205 @@
+[
+  {
+    "id": "niacinamida",
+    "name": "Niacinamida",
+    "family": "vitamina",
+    "function": "controle de oleosidade, uniformização",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_salicilico",
+    "name": "Ácido salicílico",
+    "family": "BHA",
+    "function": "esfoliação dentro dos poros",
+    "photosensitizing": false
+  },
+  {
+    "id": "zinco_pca",
+    "name": "Zinco PCA",
+    "family": "mineral",
+    "function": "regulação de oleosidade",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_azelaico",
+    "name": "Ácido azelaico",
+    "family": "ácido dicarboxílico",
+    "function": "uniformização e controle de acne",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_hialuronico",
+    "name": "Ácido hialurônico",
+    "family": "umectante",
+    "function": "hidratação",
+    "photosensitizing": false
+  },
+  {
+    "id": "ceramidas",
+    "name": "Ceramidas",
+    "family": "lipídio",
+    "function": "reforço da barreira da pele",
+    "photosensitizing": false
+  },
+  {
+    "id": "pantenol",
+    "name": "Pantenol",
+    "family": "provitamina",
+    "function": "hidratação e conforto",
+    "photosensitizing": false
+  },
+  {
+    "id": "vitamina_c",
+    "name": "Vitamina C",
+    "family": "antioxidante",
+    "function": "antioxidante, uniformização",
+    "photosensitizing": false
+  },
+  {
+    "id": "vitamina_e",
+    "name": "Vitamina E",
+    "family": "antioxidante",
+    "function": "antioxidante",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_tranexamico",
+    "name": "Ácido tranexâmico",
+    "family": "ativo clareador cosmético",
+    "function": "uniformização de manchas",
+    "photosensitizing": false
+  },
+  {
+    "id": "retinol",
+    "name": "Retinol",
+    "family": "retinoide cosmético",
+    "function": "renovação e sinais de idade",
+    "photosensitizing": true
+  },
+  {
+    "id": "bakuchiol",
+    "name": "Bakuchiol",
+    "family": "ativo vegetal",
+    "function": "alternativa ao retinol",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_glicolico",
+    "name": "Ácido glicólico",
+    "family": "AHA",
+    "function": "esfoliação superficial",
+    "photosensitizing": true
+  },
+  {
+    "id": "acido_mandelico",
+    "name": "Ácido mandélico",
+    "family": "AHA",
+    "function": "esfoliação suave",
+    "photosensitizing": true
+  },
+  {
+    "id": "argila",
+    "name": "Argila",
+    "family": "mineral",
+    "function": "absorção de oleosidade",
+    "photosensitizing": false
+  },
+  {
+    "id": "cha_verde",
+    "name": "Extrato de chá verde",
+    "family": "extrato vegetal",
+    "function": "calmante e antioxidante",
+    "photosensitizing": false
+  },
+  {
+    "id": "centella_asiatica",
+    "name": "Centella asiática",
+    "family": "extrato vegetal",
+    "function": "calmante",
+    "photosensitizing": false
+  },
+  {
+    "id": "alantoina",
+    "name": "Alantoína",
+    "family": "calmante",
+    "function": "conforto da pele",
+    "photosensitizing": false
+  },
+  {
+    "id": "glicerina",
+    "name": "Glicerina",
+    "family": "umectante",
+    "function": "hidratação",
+    "photosensitizing": false
+  },
+  {
+    "id": "tensoativo_suave",
+    "name": "Tensoativo suave",
+    "family": "limpeza",
+    "function": "limpeza suave",
+    "photosensitizing": false
+  },
+  {
+    "id": "filtro_uv",
+    "name": "Filtros UVA/UVB",
+    "family": "filtro químico",
+    "function": "proteção solar",
+    "photosensitizing": false
+  },
+  {
+    "id": "oxido_de_zinco",
+    "name": "Óxido de zinco",
+    "family": "filtro mineral",
+    "function": "proteção solar mineral",
+    "photosensitizing": false
+  },
+  {
+    "id": "dioxido_titanio",
+    "name": "Dióxido de titânio",
+    "family": "filtro mineral",
+    "function": "proteção solar mineral",
+    "photosensitizing": false
+  },
+  {
+    "id": "peptideos",
+    "name": "Peptídeos",
+    "family": "peptídeo",
+    "function": "firmeza e sinais de idade",
+    "photosensitizing": false
+  },
+  {
+    "id": "cafeina",
+    "name": "Cafeína",
+    "family": "estimulante",
+    "function": "olheiras e inchaço",
+    "photosensitizing": false
+  },
+  {
+    "id": "enxofre",
+    "name": "Enxofre",
+    "family": "mineral",
+    "function": "controle de oleosidade e acne",
+    "photosensitizing": false
+  },
+  {
+    "id": "hidrocoloide",
+    "name": "Hidrocoloide",
+    "family": "curativo cosmético",
+    "function": "proteção da espinha",
+    "photosensitizing": false
+  },
+  {
+    "id": "aloe_vera",
+    "name": "Aloe vera",
+    "family": "extrato vegetal",
+    "function": "hidratação leve",
+    "photosensitizing": false
+  },
+  {
+    "id": "manteiga_karite",
+    "name": "Manteiga de karité",
+    "family": "emoliente",
+    "function": "nutrição",
+    "photosensitizing": false
+  }
+]

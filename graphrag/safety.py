@@ -16,7 +16,9 @@ REFERRAL = "Falar com um farmacêutico"
 RECOMMEND = re.compile(
     r"\b(o que (eu )?(posso |devo )?tomar|qual (remedio|medicamento)\b|indica\w* (um |algum )?(remedio|medicamento)|"
     r"recomend\w* (um |algum )?(remedio|medicamento)|dose|doses|posologia|quantos comprimidos|parar de tomar|"
-    r"sem receita|trocar (a )?dose|aumentar (a )?dose|misturar (com )?(remedio|medicamento)|tomar junto)\b")
+    r"sem receita|trocar (a )?dose|aumentar (a )?dose|misturar (com )?(remedio|medicamento)|tomar junto)\b|"
+    r"\b(posso|pode|devo|podem) (tomar|usar|misturar|combinar)\b.*\b(remedio|remedios|medicamento|medicamentos)\b|"
+    r"\binterage\w* com (o |meu |meus )?(remedio|medicamento)")
 
 BLOCK_RULES: list[tuple[str, re.Pattern, str]] = [
     ("medicamento", re.compile(

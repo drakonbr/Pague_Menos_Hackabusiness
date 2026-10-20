@@ -16,11 +16,13 @@ from .data import Catalog, load_catalog
 from .graph import KnowledgeGraph, build_graph
 from .ingest import IngestReport, ingest_records, load_catalog_with_delta, write_delta
 from .ontology import validate_graph
-from .nlu import ActClassifier, Understander, Understanding
+from .nlu import ActClassifier, Understander, Understanding, _MED
 from .nlu_corpus import TRAIN
 from .retrieval import Retriever, load_weights
 from .rewrite import rewrite_query
 from .safety import assess
+from .scope import MAX_LIST, VOTE_REL, Scope, ScopeResolver
+from .spell import Speller
 from .text import money, norm, raw_tokens
 
 SKIN_OPTIONS = [{"value": v, "label": l} for v, l in
@@ -28,6 +30,11 @@ SKIN_OPTIONS = [{"value": v, "label": l} for v, l in
 DERMO_GOALS = {"acne", "manchas", "skincare_basico", "protecao_solar", "anti_idade", "pele_sensivel", "oleosidade"}
 RERANK_LAMBDA = 0.9           # medido em eval/rerank_eval.py: variedade um pouco maior sem perder relevância
 BARE_TERM_ACTS = {"trocar_item", "pergunta_produto", "similar"}
+# o classificador de atos às vezes lê "quero dormir melhor" como negação e "suor demais na axila" como frete; se a frase
+# fala de algo que existe (ou falta) na prateleira e não aponta para um kit já mostrado, é busca.
+SOFT_ACTS = {"negacao", "afirmacao", "saudacao", "agradecimento", "ajuda"}
+CTX_ACTS = {"trocar_item", "pergunta_produto", "similar", "entrega_frete"}
+DELIVERY_CUE = re.compile(r"\b(frete|entreg\w*|prazo|retir\w*|chega\w*|receb\w*|envio|enviar)\b")
 POINTING_CUE = re.compile(r"\?|\b(troc\w*|mud\w*|substitu\w*|outr[oa]s?|ess[ea]s?|est[ea]s?|isso|isto|aquel\w+|"
                           r"parecid\w*|similar\w*|equival\w*)\b")
 TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "alternativo": "Alternativo"}
@@ -40,6 +47,8 @@ class Engine:
         self.nlu = Understander(cat, wv, clf)
         self.ret = Retriever(cat, graph, wv, self.weights)
         self.comp = Composer(cat)
+        self.speller = Speller(cat)
+        self.scope = ScopeResolver(cat, self.speller.catalog_vocab)
         self.store_names = {s["id"]: s["name"] for s in cat.stores}
 
     # ------------------------------------------------------------ construção
@@ -66,6 +75,8 @@ class Engine:
             errs = validate_graph(graph.g)
             assert not errs, f"ingestão deixou o grafo fora da ontologia: {errs[:3]}"
             ret, comp = Retriever(self.cat, graph, self.wv, self.weights), Composer(self.cat)
+            self.speller = Speller(self.cat)
+            self.scope = ScopeResolver(self.cat, self.speller.catalog_vocab)
             nlu = Understander(self.cat, self.wv, self.clf)
             self.graph, self.ret, self.comp, self.nlu = graph, ret, comp, nlu
             if persist:
@@ -129,18 +140,26 @@ class Engine:
         return kits[0]
 
     def _out(self, req, query, safety, intent, act, reply, *, kits_status="not_applicable", kits=None, closest=None,
-             products=None, notes=None, suggestions=None, action=None, ctx_out=None, clarification=None) -> dict:
+             products=None, notes=None, suggestions=None, action=None, ctx_out=None, clarification=None,
+             catalog_notice=None, scope_info=None) -> dict:
         res = {"requestId": self._rid(req), "query": query, "safety": safety, "intent": intent, "act": act,
                "kitsStatus": kits_status, "kits": kits or [], "closestKit": closest, "products": products or [],
                "notes": notes or [], "reply": reply, "suggestions": (suggestions or [])[:5],
                "action": action or {"type": "none"}, "context": ctx_out or {}}
         if clarification:
             res["clarification"] = clarification
+        if catalog_notice:
+            res["catalogNotice"] = catalog_notice
+        if scope_info:
+            res["scope"] = scope_info
         return res
 
-    def _ctx_out(self, intent, u_req, excluded, requested, kits, act, turn, focus_tier=None, focus_product=None):
+    def _ctx_out(self, intent, u_req, excluded, requested, kits, act, turn, focus_tier=None, focus_product=None, scope=None):
         c = {"intent": intent, "requested": requested, "excluded": excluded, "kits": self._compact(kits),
              "lastAct": act, "turn": turn + 1}
+        if scope is not None and scope.kind != "unknown":
+            c["scope"] = {"kind": scope.kind, "steps": sorted(scope.steps), "concerns": sorted(scope.concerns),
+                          "ingredients": list(scope.ingredients), "concepts": [c.id for c in scope.concept_filters]}
         if focus_tier:
             c["focusTier"] = focus_tier
         if focus_product:
@@ -149,18 +168,34 @@ class Engine:
 
     # ------------------------------------------------------------ entrada principal
     def search(self, req: dict) -> dict:
-        query = req.get("query", "")
+        orig_query = req.get("query", "")
+        query, fixes = self.speller.fix(orig_query)
+        res = self._search(req, query, orig_query)
+        res["query"] = orig_query
+        if fixes:
+            res["correctedQuery"] = query
+        return res
+
+    def _search(self, req: dict, query: str, orig_query: str = "") -> dict:
         cin = req.get("context") or {}
         prev_intent = cin.get("intent")
-        has_ctx = bool(prev_intent and (cin.get("kits") or prev_intent.get("primaryGoal")))
+        has_ctx = bool(prev_intent and (cin.get("kits") or prev_intent.get("primaryGoal") or cin.get("scope")))
         turn = int(cin.get("turn", 0))
         u = self.nlu.understand(query, has_context=has_ctx)
         act = u.act
         # termo solto na barra ("ômega 3", "sabonete", "sérum"): sem conversa anterior e sem pista de que aponta para algo
         # já mostrado (troque, esse, ?...), não há o que trocar nem sobre o que perguntar: é uma busca nova.
-        if (not has_ctx and act in BARE_TERM_ACTS and not u.product_ids and not POINTING_CUE.search(norm(query))
+        if (not has_ctx and act in BARE_TERM_ACTS and not POINTING_CUE.search(norm(query))
                 and len(raw_tokens(query)) <= 5):
             act = u.act = "busca"
+        if act in SOFT_ACTS | CTX_ACTS and len(raw_tokens(query)) <= 18 and not (has_ctx and u.product_ids):
+            nq = norm(query)
+            heard = self.scope.match(query) or u.has_domain_signal
+            if heard and (act in SOFT_ACTS or (not has_ctx and not POINTING_CUE.search(nq.replace("?", ""))
+                                                and not (act == "entrega_frete" and DELIVERY_CUE.search(nq)))):
+                act = u.act = "busca"
+        if act == "repor_medicamento" and not _MED.search(norm(query)) and (self.scope.match(query) or u.has_domain_signal):
+            act = u.act = "busca"                       # "acabar com os cravos" não é reposição de remédio
         blank_intent = {"goals": [], "primaryGoal": None, "budgetCents": None, "skinType": None, "preferences": [],
                         "pregnancy": False, "storeId": req.get("storeId"), "missing": []}
         carry = prev_intent or blank_intent
@@ -168,7 +203,10 @@ class Engine:
             carry = {**carry, "storeId": req["storeId"]}
 
         # --- segurança primeiro
-        safety = assess(query, u.pregnancy, u.primary_goal, refill_flow=(act == "repor_medicamento"))
+        # a segurança lê o texto ORIGINAL também: o corretor nunca pode transformar um termo de saúde em outra palavra
+        safety = assess(orig_query or query, u.pregnancy, u.primary_goal, refill_flow=(act == "repor_medicamento"))
+        if safety["decision"] != "blocked" and orig_query and orig_query != query:
+            safety = assess(query, u.pregnancy, u.primary_goal, refill_flow=(act == "repor_medicamento"))
         if safety["decision"] == "blocked":
             sug = [safety["alternativeQuery"]] if safety.get("alternativeQuery") else []
             sug += ["Montar kit de skin care", "Kit de suplementos"]
@@ -252,69 +290,173 @@ class Engine:
 
     # ------------------------------------------------------------ busca nova
     def _search_new(self, req, query, u: Understanding, safety, cin, carry, turn):
+        rel = self.ret.score(u, query)
+        scope = self.scope.resolve(u, query, rel)
+        if scope.kind == "unknown":
+            return self._not_found(req, query, safety, carry, cin, turn)
         intent = self._intent_from(u, req, None)
         if "storeId" not in req:
             intent["storeId"] = carry.get("storeId")
-        rel = self.ret.score(u, query)
-        # frase sem objetivo: lista por recuperação
-        if not intent["primaryGoal"] or u.want_products:
-            return self._product_list(req, query, u, safety, intent, rel, turn)
+        if scope.kind == "absent":
+            return self._absent(req, query, u, safety, intent, scope, rel, turn)
+        if not self._kits_ok(scope, intent):
+            return self._shelf_list(req, query, u, safety, intent, scope, rel, turn)
+
         ctx = build_ctx(self.cat, intent, u.requested_ingredients, u.excluded_ingredients, rel, self.weights["ret_in_kit"])
         rid = self._rid(req)
         comp = self.comp.compose(ctx, rid)
-        prods = self.comp.rank_products(ctx, [], rel, limit=12)
+        prods = self._scope_products(scope, intent, u, rel, ctx=ctx)
         clar = None
         if "skinType" in intent["missing"]:
             clar = {"id": "skinType", "question": "Como é a sua pele?", "options": SKIN_OPTIONS}
         reply = self._reply_kits(comp, intent, ctx, u)
         sug = self._suggest_after(comp, intent)
+        notice = self._notice(scope)
+        if notice:
+            reply = notice["message"] + " " + reply
         if not comp["kits"] and comp["status"] == "not_applicable":
             # nenhum kit fecha com essas preferências: em vez de uma lista solta (que misturava outras etapas), mostra só
             # os produtos das etapas desse objetivo que respeitam o pedido e diz com clareza o que aconteceu.
             steps = sorted({s for g in intent["goals"] for s in self.cat.goal_by_id[g]["required_steps"]
                             + self.cat.goal_by_id[g]["optional_steps"]})
-            focused = self.comp.rank_products(ctx, steps, rel, limit=8)
+            focused = self.comp.rank_products(ctx, steps, rel, limit=MAX_LIST)
             if focused:
-                prods = focused
                 reply = (f"Não consegui fechar um kit completo com essas preferências, mas encontrei {len(focused)} "
                          "produtos que combinam com o seu pedido. Quer ver, ou prefere flexibilizar alguma preferência?")
                 sug = ["Montar um kit com isso", "Mais barato", "Tirar uma preferência"]
-                return self._out(req, query, safety, intent, "busca", reply, kits_status=comp["status"], products=prods,
+                return self._out(req, query, safety, intent, "busca", reply, kits_status=comp["status"], products=focused,
                                  notes=[], suggestions=sug, action={"type": "show_products"}, clarification=clar,
+                                 catalog_notice=notice, scope_info=self._scope_info(scope, len(focused)),
                                  ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, [],
-                                                       "busca", turn))
+                                                       "busca", turn, scope=scope))
         return self._out(req, query, safety, intent, "busca", reply, kits_status=comp["status"], kits=comp["kits"],
                          closest=comp["closestKit"], products=prods, notes=comp["notes"], suggestions=sug,
                          action={"type": "show_kits"} if comp["kits"] else None, clarification=clar,
+                         catalog_notice=notice, scope_info=self._scope_info(scope, len(prods)),
                          ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, comp["kits"],
-                                               "busca", turn))
+                                               "busca", turn, scope=scope))
 
-    def _product_list(self, req, query, u, safety, intent, rel, turn):
-        ranked = self.ret.rerank_mmr(self.ret.rank(u, query, k=40), k=40, lam=RERANK_LAMBDA)
-        steps = u.steps
-        strong = ranked and ranked[0][1] >= 0.25
-        if steps:
-            prods = self.comp.rank_products(None, steps, rel, limit=12, prefs=intent["preferences"],
-                                            excluded=u.excluded_ingredients, store_id=intent.get("storeId"),
-                                            skin=intent.get("skinType"), pregnancy=intent["pregnancy"])
-        elif strong:
-            prods = [self.cat.by_id[pid] for pid, _ in ranked
-                     if self.comp.base_eligible(self.cat.by_id[pid], build_probe(intent, u), True)][:8]
+    # ---- escopo, lista e avisos
+    def _kits_ok(self, scope: Scope, intent: dict) -> bool:
+        """Kit só quando há objetivo e a busca cobre o objetivo inteiro (ou fala de preocupação/ingrediente).
+        'Higiene bucal' é uma etapa de um objetivo de quatro: mostra os itens, sem kit forçado."""
+        goal = intent.get("primaryGoal")
+        if not goal or goal not in self.cat.goal_by_id:
+            return False
+        if scope.kind in ("concern", "goal", "ingredient"):
+            return True
+        if scope.kind == "shelf":
+            return set(self.cat.goal_by_id[goal]["required_steps"]) <= scope.steps
+        return False
+
+    def _scope_products(self, scope: Scope, intent: dict, u: Understanding, rel: dict, ctx=None, limit: int = MAX_LIST) -> list[dict]:
+        probe = ctx or build_probe(intent, u)
+        cands = [p for p in self.comp.pool if self.scope.in_scope(scope, p)]
+        strict = [p for p in cands if self.comp.base_eligible(p, probe, False)]
+        use = strict or [p for p in cands if self.comp.base_eligible(p, probe, True)]
+        if scope.kind == "shelf" and scope.ingredients:
+            # "sérum de vitamina c": dentro da prateleira, quem tem o ingrediente; se ninguém tem, a prateleira toda
+            use = [p for p in use if self.scope.has_ing(p, scope.ingredients)] or use
+        if scope.kind in ("vote", "goal") and use:
+            # sem enchimento: só entra o que tem nota perto da do melhor item desta prateleira
+            top = max(rel.get(p["id"], 0.0) for p in use)
+            use = [p for p in use if rel.get(p["id"], 0.0) >= VOTE_REL * top]
+
+        def spec(p):
+            return max((2 if c.types else 1 for c in scope.concept_filters
+                        if self.scope.in_scope(Scope("shelf", concept_filters=[c], steps=set(c.steps)), p)), default=0)
+
+        def key(p):
+            s = self.comp.score(p, ctx) if ctx else 0.0
+            return (p["id"] not in u.product_ids, -spec(p), -(10 * rel.get(p["id"], 0.0) + s), p["priceCents"], p["id"])
+        return sorted(use, key=key)[:limit]
+
+    def _scope_label(self, scope: Scope) -> str:
+        if scope.shelves:
+            return list_pt(scope.shelves[:3])
+        if scope.kind == "concern":
+            return list_pt([self.cat.concerns.get(c, c) for c in sorted(scope.concerns)][:3]) or "cuidados com a pele"
+        if scope.kind == "ingredient":
+            return list_pt([self.cat.ingredients[i]["name"].lower() for i in scope.ingredients if i in self.cat.ingredients][:3])
+        if scope.steps:
+            return list_pt([self.cat.steps[s].lower() for s in sorted(scope.steps) if s in self.cat.steps][:3])
+        return "o que você descreveu"
+
+    def _scope_info(self, scope: Scope, n: int) -> dict:
+        return {"kind": scope.kind, "label": self._scope_label(scope), "items": n}
+
+    def _notice(self, scope: Scope) -> dict | None:
+        if not scope.missing:
+            return None
+        labels = list_pt([c.label for c in scope.missing])
+        shelf = list_pt(list(dict.fromkeys(c.shelf for c in scope.missing if c.shelf and c.near))[:2])   # só prateleira vizinha de verdade
+        return {"missing": [c.label for c in scope.missing], "shelf": shelf or None,
+                "message": f"Não temos {labels} no catálogo."}
+
+    def _dept_suggestions(self, scope: Scope, intent: dict) -> list[str]:
+        sug = ["Mais barato"]
+        steps = scope.steps
+        if steps & {"higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"}:
+            sug.insert(0, "Higiene premium")
+        elif steps & {"omega3", "colageno", "magnesio", "vitaminas"}:
+            sug.insert(0, "Kit de suplementos")
+        elif steps & {"protecao_solar", "protecao_corporal"}:
+            sug.insert(0, "Kit de proteção solar")
         else:
-            prods = []
+            sug.insert(0, "Montar uma rotina de skin care")
+        return sug + ["Sem fragrância"]
+
+    def _shelf_list(self, req, query, u, safety, intent, scope, rel, turn):
+        # sem kit: o objetivo não fica no contexto, para "mais barato" depois filtrar esta lista e não montar outro kit
+        intent = {**intent, "goals": [], "primaryGoal": None,
+                  "missing": [m for m in intent.get("missing", []) if m != "skinType"]}
+        prods = self._scope_products(scope, intent, u, rel)
+        notice = self._notice(scope)
+        label = self._scope_label(scope)
+        if not prods:
+            return self._not_found(req, query, safety, intent, {}, turn, label=label)
+        n = len(prods)
+        reply = f"Encontrei {n} {'item' if n == 1 else 'itens'} de {label}."
+        if notice:
+            reply = f"{notice['message']} {reply}"
+        reply += " Toque numa sugestão para montar um kit ou ajustar a lista."
+        return self._out(req, query, safety, intent, "busca", reply, products=prods,
+                         suggestions=self._dept_suggestions(scope, intent), action={"type": "show_products"},
+                         catalog_notice=notice, scope_info=self._scope_info(scope, n),
+                         ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, [], "busca", turn,
+                                               scope=scope))
+
+    def _absent(self, req, query, u, safety, intent, scope, rel, turn):
+        notice = self._notice(scope)
+        intent = {**intent, "goals": [], "primaryGoal": None,
+                  "missing": [m for m in intent.get("missing", []) if m != "skinType"]}
+        prods = self._scope_products(scope, intent, u, rel, limit=12) if scope.steps else []
         if prods:
-            label = list_pt([self.cat.steps[s].lower() for s in steps]) if steps else "o que você descreveu"
-            reply = (f"Encontrei {len(prods)} produtos de {label}. Quer que eu monte um kit completo com eles "
-                     "ou prefere ver o total com entrega?")
-            sug = ["Montar um kit com isso", "Mais barato", "Sem fragrância"]
-        else:
-            reply = ("Não consegui entender bem o pedido. Tente algo como “pele oleosa até R$ 100”, “kit de suplementos” "
-                     "ou “higiene premium”.")
-            sug = ["Kit de suplementos", "Higiene premium", "Pele oleosa até R$ 100"]
-        ctx_out = {"intent": intent, "requested": u.requested_ingredients, "excluded": u.excluded_ingredients, "kits": [],
-                   "lastAct": "busca", "turn": turn + 1}
-        return self._out(req, query, safety, intent, "busca", reply, products=prods, suggestions=sug,
-                         action={"type": "show_products"} if prods else None, ctx_out=ctx_out)
+            shelf = notice["shelf"] or self._scope_label(scope)
+            reply = f"{notice['message']} Posso mostrar o que temos de {shelf}: {len(prods)} {'item' if len(prods) == 1 else 'itens'}."
+            return self._out(req, query, safety, intent, "busca", reply, products=prods,
+                             suggestions=self._dept_suggestions(scope, intent), action={"type": "show_products"},
+                             catalog_notice={**notice, "nearest": shelf}, scope_info=self._scope_info(scope, len(prods)),
+                             ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, [], "busca",
+                                                   turn, scope=scope))
+        reply = (f"{notice['message']} Por aqui eu ajudo com cuidados com a pele, suplementos e higiene "
+                 "(banho, cabelo, boca e desodorante).")
+        return self._out(req, query, safety, intent, "busca", reply,
+                         suggestions=["Higiene premium", "Kit de suplementos", "Pele oleosa até R$ 100"],
+                         catalog_notice=notice, scope_info={"kind": "absent", "label": notice["missing"][0], "items": 0},
+                         ctx_out={"intent": intent, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
+                                  "turn": turn + 1})
+
+    def _not_found(self, req, query, safety, carry, cin, turn, label=None):
+        what = f"itens de {label}" if label else "esse item"
+        reply = (f"Não encontrei {what} no catálogo. Tente por categoria, como “higiene bucal”, “pele oleosa até R$ 100” "
+                 "ou “kit de suplementos”.")
+        notice = {"missing": [label or "item pedido"], "shelf": None, "message": f"Não encontrei {what} no catálogo."}
+        return self._out(req, query, safety, carry, "busca", reply,
+                         suggestions=["Higiene bucal", "Kit de suplementos", "Pele oleosa até R$ 100", "Protetor solar"],
+                         catalog_notice=notice, scope_info={"kind": "unknown", "label": label or "", "items": 0},
+                         ctx_out={"intent": carry, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
+                                  "turn": turn + 1})
 
     # ------------------------------------------------------------ refinar
     def _refine(self, req, query, u: Understanding, safety, cin, carry, turn):
@@ -345,6 +487,8 @@ class Engine:
         if "storeId" in req:
             intent["storeId"] = req["storeId"]
         intent["missing"] = self._missing(intent)
+        if not intent.get("primaryGoal") and cin.get("scope"):
+            return self._refine_list(req, query, u, safety, cin, intent, requested, excluded, turn)
         if not intent.get("primaryGoal"):
             return self._basic(req, query, safety, intent, cin, turn, "refinar",
                                "Entendi. Me diga primeiro o que você procura (por exemplo, pele oleosa, suplementos ou higiene) "
@@ -364,6 +508,39 @@ class Engine:
                          action={"type": "show_kits", **({"tier": focus} if focus else {})} if comp["kits"] else None,
                          clarification=clar,
                          ctx_out=self._ctx_out(intent, req, excluded, requested, comp["kits"], "refinar", turn, focus_tier=focus))
+
+    def _refine_list(self, req, query, u, safety, cin, intent, requested, excluded, turn):
+        """"mais barato", "sem álcool", "vegano" depois de uma LISTA de itens (sem kit): refaz a mesma prateleira com o ajuste."""
+        scope = self.scope.restore(cin["scope"])
+        intent = {**intent, "goals": [], "primaryGoal": None}
+        u.excluded_ingredients, u.requested_ingredients = excluded, requested
+        proxy = Understanding(text=query, requested_ingredients=requested, excluded_ingredients=excluded,
+                              steps=sorted(scope.steps), preferences=intent["preferences"], skin=intent.get("skinType"))
+        rel = self.ret.score(proxy, query)
+        prods = self._scope_products(scope, intent, u, rel)
+        notes = []
+        if u.budget_mentioned and u.budget_cents:
+            before = len(prods)
+            prods = [p for p in prods if p["priceCents"] <= u.budget_cents]
+            notes.append(f"Mostrando só itens até {money(u.budget_cents)}.")
+            intent["budgetCents"] = u.budget_cents
+        if u.cheaper:
+            prods = sorted(prods, key=lambda p: (p["priceCents"], p["id"]))
+            notes.append("Ordenei do mais barato para o mais caro.")
+        label = self._scope_label(scope)
+        if not prods:
+            reply = f"Com esses ajustes não sobrou nenhum item de {label}. Quer tirar alguma preferência?"
+            sug = ["Tirar uma preferência", "Recomeçar"]
+        else:
+            n = len(prods)
+            extra = f" Sem {list_pt([self.cat.ingredients[i]['name'].lower() for i in excluded if i in self.cat.ingredients])}." \
+                if excluded and any(i in self.cat.ingredients for i in excluded) else ""
+            pref = f" Filtro: {list_pt(intent['preferences'])}." if intent.get("preferences") else ""
+            reply = f"Ajustei: {n} {'item' if n == 1 else 'itens'} de {label}.{pref}{extra} {' '.join(notes)}".strip()
+            sug = self._dept_suggestions(scope, intent)
+        return self._out(req, query, safety, intent, "refinar", reply, products=prods, notes=notes, suggestions=sug,
+                         action={"type": "show_products"} if prods else None, scope_info=self._scope_info(scope, len(prods)),
+                         ctx_out=self._ctx_out(intent, req, excluded, requested, [], "refinar", turn, scope=scope))
 
     # ------------------------------------------------------------ trocar item
     def _swap_chat(self, req, query, u, safety, cin, carry, turn):

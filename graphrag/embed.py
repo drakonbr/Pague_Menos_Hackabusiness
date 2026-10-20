@@ -21,6 +21,8 @@ from pathlib import Path
 import numpy as np
 
 from . import lexicon
+from .concepts import CONCEPTS
+from .corpus_extra import EXTRA_PARAPHRASES
 from .data import Catalog
 from .text import stem, tokens
 
@@ -71,6 +73,13 @@ def build_corpus(cat: Catalog) -> list[list[str]]:
             sents.append(f"{cat.ingredients[ing]['name']} {' '.join(aliases)} {cat.ingredients[ing]['function']}")
     sents.extend(lexicon.PARAPHRASE_CORPUS)
     sents.extend(lexicon.PARAPHRASE_CORPUS)   # peso dobrado: é a fala "do dia a dia"
+    sents.extend(EXTRA_PARAPHRASES)
+    sents.extend(EXTRA_PARAPHRASES)
+    # cada conceito de prateleira: seus jeitos de falar juntos com o nome da prateleira e as etapas/tipos dele
+    for c in CONCEPTS:
+        steps = " ".join(cat.steps.get(st, st) for st in c.steps)
+        for k in range(0, len(c.phrases), 4):
+            sents.append(f"{' '.join(c.phrases[k:k + 4])} {c.label} {c.shelf} {steps} {' '.join(c.types)}")
     return [tokens(s) for s in sents if s.strip()]
 
 

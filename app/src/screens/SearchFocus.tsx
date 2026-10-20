@@ -13,14 +13,14 @@ const EXAMPLES = [
 
 export function SearchFocus({ initial = "" }: { initial?: string }) {
   const { pop, replace, view } = useNav();
-  const { recents, dispatch } = useApp();
+  const { recents, dispatch, storeId } = useApp();
   const [q, setQ] = useState(initial);
 
   const go = (query: string) => {
     const t = query.trim();
     if (!t) return;
     dispatch({ type: "recent", q: t });
-    replace({ name: "chat", initial: t });
+    replace({ name: "results", req: { query: t, storeId, context: null } });
   };
   const submit = (e: FormEvent) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ export function SearchFocus({ initial = "" }: { initial?: string }) {
           <div className="note">
             <Icon name="sparkle" size={20} />
             <p>
-              <b>Converse com o assistente:</b> escreva do seu jeito o que você precisa e quanto quer gastar. Ele monta kits, troca itens, mostra o total com entrega e ajuda a repor o que você já usa.
+              <b>Escreva do seu jeito</b> o que você precisa e quanto quer gastar. Você vê os kits montados e, logo abaixo, todos os itens relacionados. Também ajuda a repor o que você já usa.
             </p>
           </div>
 

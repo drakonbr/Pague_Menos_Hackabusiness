@@ -1,8 +1,8 @@
 {
- "treino": 198,
+ "treino": 256,
  "teste": 60,
- "acertos": 59,
- "acuracia": 0.9833,
+ "acertos": 57,
+ "acuracia": 0.95,
  "porAto": {
   "busca": {
    "acertos": 6,
@@ -13,7 +13,7 @@
    "total": 6
   },
   "trocar_item": {
-   "acertos": 5,
+   "acertos": 4,
    "total": 5
   },
   "pergunta_produto": {
@@ -45,7 +45,7 @@
    "total": 4
   },
   "negacao": {
-   "acertos": 4,
+   "acertos": 3,
    "total": 4
   },
   "reiniciar": {

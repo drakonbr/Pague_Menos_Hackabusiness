@@ -152,6 +152,8 @@ export interface ChatContext {
   kits: Array<{ id: string; tier: KitTier; totalCents: number; items: Array<{ step: StepId; productId: string }> } & Record<string, unknown>>;
   lastAct: string;
   turn: number;
+  /** Prateleira da última lista (ids), para "mais barato"/"sem álcool" ajustarem a mesma lista. */
+  scope?: { kind: string; steps: string[]; concerns: string[]; ingredients: string[]; concepts: string[] };
   focusTier?: KitTier;
   focusProductId?: string;
 }
@@ -248,6 +250,21 @@ export interface SimilarsResponse {
   options: Array<Omit<SimilarOption, "productId"> & { product: Product }>;
 }
 
+/** Aviso de que o pedido cita algo que o catálogo não tem ("Não temos maquiagem no catálogo."). */
+export interface CatalogNotice {
+  missing: string[];
+  /** Prateleira vizinha que existe, quando há. */
+  shelf: string | null;
+  message: string;
+}
+
+/** De que prateleira a busca está falando e quantos itens vieram. */
+export interface ScopeInfo {
+  kind: "shelf" | "concern" | "ingredient" | "goal" | "vote" | "absent" | "unknown";
+  label: string;
+  items: number;
+}
+
 export interface SearchResponse {
   requestId: string;
   query: string;
@@ -256,6 +273,10 @@ export interface SearchResponse {
   /** Texto da resposta na conversa. */
   reply?: string;
   suggestions?: string[];
+  catalogNotice?: CatalogNotice;
+  scope?: ScopeInfo;
+  /** Frase depois de corrigir erros de digitação (só vem quando algo mudou). */
+  correctedQuery?: string;
   /** Pedido de agora + o que a conversa já sabia, numa frase autônoma (chip "Buscando: …"). Nunca contém dado de saúde. */
   rewrittenQuery?: string | null;
   action?: ChatAction;

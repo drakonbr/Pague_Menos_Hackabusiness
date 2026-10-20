@@ -19,6 +19,8 @@ const SKINS: Array<{ value: SkinType; label: string }> = [
   { value: "sensível", label: "Sensível" },
 ];
 
+const SEARCH_ACTS = new Set(["busca", "refinar", "bloqueado", "negacao"]);
+
 export function sortList(list: Product[], sort: SortKey): Product[] {
   const stock = (a: Product, b: Product) => Number(b.stockQty > 0) - Number(a.stockQty > 0);
   const c = [...list];
@@ -52,6 +54,17 @@ export function Results({ req }: { req: SearchRequest }) {
   }, [req, search]);
 
   const patch = (p: Partial<SearchRequest>) => replace({ name: "results", req: { ...req, ...p } });
+  // chip de ajuste ("Mais barato", "Sem fragrância"): refaz a MESMA lista, levando o contexto da resposta atual
+  const refine = (q: string) => {
+    if (state.status !== "done") return;
+    replace({ name: "results", req: { query: q, storeId, context: state.res.context ?? null } });
+  };
+
+  // pedidos de conversa (repor remédio, entrega, trocar item...) continuam no assistente; busca e ajustes ficam aqui
+  const act = state.status === "done" ? state.res.act : undefined;
+  useEffect(() => {
+    if (act && !SEARCH_ACTS.has(act)) replace({ name: "chat", initial: req.query });
+  }, [act, req.query, replace]);
 
   return (
     <div className="screen">
@@ -78,24 +91,67 @@ export function Results({ req }: { req: SearchRequest }) {
             {state.res.safety.decision === "blocked" ? (
               <Safety res={state.res} onSearch={(q) => push({ name: "results", req: { query: q, storeId } })} onPharmacist={() => push({ name: "pharmacist" })} />
             ) : (
-              <>
-                {state.res.kitsStatus !== "not_applicable" ? (
-                  <KitZone res={state.res} storeName={store?.name ?? null} onPatch={patch}
-                    onOpen={(kit) => push({ name: "kit", kit, intent: state.res.intent })} onStores={() => push({ name: "stores" })} />
-                ) : (
-                  <div className="pad" style={{ paddingBottom: 0 }}>
-                    {state.res.notes.map((n) => (
-                      <div key={n} className="note"><Icon name="info" size={18} /><p>{n}</p></div>
-                    ))}
-                  </div>
-                )}
-                <ProductList products={state.res.products} />
-              </>
+              <ResultBody res={state.res} storeName={store?.name ?? null} onPatch={patch} onRefine={refine}
+                onOpen={(kit) => push({ name: "kit", kit, intent: state.res.intent })} onStores={() => push({ name: "stores" })} />
             )}
           </div>
         ) : null}
       </div>
     </div>
+  );
+}
+
+/** Kits em cima (quando há), a lista COMPLETA de itens individuais logo abaixo, e ajustes em chips. */
+function ResultBody({ res, storeName, onPatch, onRefine, onOpen, onStores }: {
+  res: SearchResponse;
+  storeName: string | null;
+  onPatch: (p: Partial<SearchRequest>) => void;
+  onRefine: (q: string) => void;
+  onOpen: (k: Kit) => void;
+  onStores: () => void;
+}) {
+  const hasKits = res.kitsStatus !== "not_applicable";
+  const label = res.scope?.label;
+  const listTitle = label ? `Todos os itens de ${label}` : "Itens relacionados";
+  const empty = !res.products.length && !res.kits.length && !res.closestKit;
+  const lead = res.reply && !hasKits ? res.reply : null;
+  return (
+    <>
+      {res.correctedQuery ? (
+        <div className="pad" style={{ paddingBottom: 0 }}>
+          <div className="note" role="status"><Icon name="info" size={18} /><p>Mostrando resultados para <b>{res.correctedQuery}</b>.</p></div>
+        </div>
+      ) : null}
+      {res.catalogNotice ? (
+        <div className="pad" style={{ paddingBottom: 0 }}>
+          <div className="note warn" role="status" data-testid="catalog-notice">
+            <Icon name="alert" size={18} />
+            <p>{res.catalogNotice.message}{res.catalogNotice.shelf ? ` Veja o que temos em ${res.catalogNotice.shelf}.` : ""}</p>
+          </div>
+        </div>
+      ) : null}
+      {hasKits ? (
+        <KitZone res={res} storeName={storeName} onPatch={onPatch} onOpen={onOpen} onStores={onStores} />
+      ) : (
+        <div className="pad" style={{ paddingBottom: 0 }}>
+          {res.safety.decision === "caution" && res.safety.message ? (
+            <div className="note warn" role="note"><Icon name="alert" size={18} /><p>{res.safety.message}</p></div>
+          ) : null}
+          {lead && !res.catalogNotice ? <div className="note" role="status"><Icon name="info" size={18} /><p>{lead}</p></div> : null}
+          {res.notes.filter((n) => !res.reply?.includes(n)).map((n) => <div key={n} className="note"><Icon name="info" size={18} /><p>{n}</p></div>)}
+        </div>
+      )}
+      {res.products.length ? (
+        <ProductList products={res.products} title={hasKits ? `${listTitle} (${res.products.length})` : undefined} />
+      ) : empty && !res.catalogNotice && !lead ? (
+        <p className="count">Não encontrei itens para esse pedido. Tente outras palavras ou escolha uma das sugestões abaixo.</p>
+      ) : null}
+      {res.suggestions?.length ? (
+        <div className="chips" style={{ padding: "4px 16px 20px" }} aria-label="Ajustar a busca">
+          {res.suggestions.map((c) => <button key={c} className="chip" onClick={() => onRefine(c)}>{c}</button>)}
+        </div>
+      ) : null}
+    </>
   );
 }
 
@@ -182,7 +238,7 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
   );
 }
 
-export function ProductList({ products, emptyText }: { products: Product[]; emptyText?: string }) {
+export function ProductList({ products, emptyText, title }: { products: Product[]; emptyText?: string; title?: string }) {
   const [sort, setSort] = useState<SortKey>("relevancia");
   const [filters, setFilters] = useState<{ inStock: boolean; skin: SkinType | null; claims: string[] }>({ inStock: false, skin: null, claims: [] });
   const [open, setOpen] = useState(false);
@@ -213,7 +269,8 @@ export function ProductList({ products, emptyText }: { products: Product[]; empt
           <Icon name="filter" /> Filtros{active ? ` (${active})` : ""}
         </button>
       </div>
-      <p className="count">{shown.length} produtos encontrados</p>
+      {title ? <h2 className="sec-title" style={{ fontSize: 18, margin: "12px 16px 0" }}>{title}</h2> : null}
+      <p className="count">{shown.length} {shown.length === 1 ? "produto encontrado" : "produtos encontrados"}</p>
       <div className="grid2 listpad">
         {shown.map((p) => (
           <ProductCard key={p.id} product={p} />

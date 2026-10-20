@@ -90,3 +90,16 @@ Ao testar termos curtos na barra (o prompt pede isso), 5 de 40 caíam no ato err
 - O conjunto de ranking continua pequeno (30 frases, 14 de teste).
 - Ingestão: produtos novos não ganham foto, categoria nem estoque por loja, a menos que venham no registro; o app (mock estático) não os enxerga até exportar.
 - A API de ingestão não tem autenticação; por isso só liga com `--allow-ingest` e em `127.0.0.1`.
+
+## Qualidade da busca (branch `feat/qualidade-busca`)
+
+A busca agora decide **de que prateleira** a pessoa está falando antes de ranquear (`graphrag/scope.py`, `concepts.py`):
+
+- **Prateleira (`scope`)**: conceitos escritos à mão + um conceito automático por tipo de produto. "higiene bucal" só traz higiene bucal. Se nada casa, vale a votação da recuperação; se nem ela, a resposta diz que não encontrou.
+- **Kit só quando o pedido cobre as etapas do objetivo.** Prateleira de uma etapa só mostra a lista de itens; o chip "Higiene premium" monta o kit.
+- **Item que não existe** devolve `catalogNotice` ("Não temos escova de dente no catálogo.") e, se há prateleira vizinha, a lista dela.
+- **Erro de digitação** (`spell.py`, do zero): `correctedQuery` só vem quando algo mudou; a camada de segurança sempre lê o texto original.
+- **Ajustes sobre a lista** ("mais barato", "sem álcool", "até R$ 30") refazem a mesma prateleira com o `context.scope`.
+- **App**: a busca abre a tela de resultados (kits em cima, "Todos os itens de …" embaixo, chips de ajuste). Pedidos de conversa (repor, entrega, trocar item) continuam no assistente.
+
+Medição (`python3 graphrag/eval/search_quality.py`): 21/77 listas limpas antes; 100% nos conjuntos usados no ajuste. No conjunto nunca visto antes (cego 4) o primeiro resultado foi 86%; conjuntos cegos anteriores começaram entre 50% e 85%. Limites conhecidos: "o que passo na pele depois de lavar o rosto" e "onde fica a seção de brinquedos".

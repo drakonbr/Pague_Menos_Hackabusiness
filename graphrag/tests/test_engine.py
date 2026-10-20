@@ -86,7 +86,8 @@ class TestScenariosDoc08(unittest.TestCase):
 
     def test_T12(self):
         r = S("asdfgh"); self.ok(r)
-        self.assertEqual(r["kits"], []); self.assertIn("Não consegui entender", r["reply"])
+        self.assertEqual(r["kits"], []); self.assertEqual(r["products"], []); self.assertIn("Não encontrei", r["reply"])
+        self.assertTrue(r["catalogNotice"])
 
 
 class TestPersona(unittest.TestCase):

@@ -98,14 +98,14 @@ class TestTermosSoltos(unittest.TestCase):
         for q in ["troca o hidratante", "quero outro sérum", "esse protetor é vegano?", "tem similar?"]:
             self.assertNotEqual(self.e.search({"query": q})["act"], "busca", q)
 
-    def test_kit_que_nao_fecha_mostra_so_produtos_do_objetivo(self):
+    def test_pedido_de_uma_prateleira_mostra_so_itens_dela(self):
+        # "ômega 3 vegano" é uma prateleira só dos suplementos: lista direta, sem kit forçado nem item de outra etapa
         r = self.e.search({"query": "ômega 3 de algas vegano"})
         self.assertEqual(r["action"]["type"], "show_products")
         self.assertEqual(r["kits"], [])
-        passos = {s for g in r["intent"]["goals"] for s in self.e.cat.goal_by_id[g]["required_steps"] + self.e.cat.goal_by_id[g]["optional_steps"]}
         self.assertTrue(r["products"])
         for p in r["products"]:
-            self.assertIn(p["step"], passos)
+            self.assertEqual(p["step"], "omega3")
             self.assertIn("vegano", p["claims"])
 
 

@@ -72,6 +72,7 @@ export function buildCtx(intent: Intent, requestedIngredients: string[]): Ctx | 
 // Elegibilidade e relevância
 // ---------------------------------------------------------------------------
 export function baseEligible(p: Product, ctx: Ctx, relaxSkin = false): boolean {
+  if (p.domain === "medicamento") return false; // medicamento nunca entra em kit nem na busca livre
   if (stockAt(p.id, ctx.storeId) <= 0) return false;
   if (ctx.pregnancy && p.warnings.includes("consultar_se_gestante")) return false;
   if (!ctx.prefs.every((pref) => p.claims.includes(pref))) return false;
@@ -256,6 +257,15 @@ const DEFAULT_REASON: Record<StepId, string> = {
   protecao_solar: "Proteção diária contra o sol, etapa essencial.",
   protecao_corporal: "Proteção solar para o corpo.",
   complemento: "Cuidado complementar para áreas específicas.",
+  omega3: "Suplemento de ômega 3 para a rotina diária.",
+  colageno: "Suplemento de colágeno para a rotina diária.",
+  magnesio: "Suplemento de magnésio para a rotina diária.",
+  vitaminas: "Complemento de vitaminas para a rotina diária.",
+  higiene_corpo: "Higiene do banho com toque premium.",
+  higiene_cabelo: "Cuidado diário com os cabelos.",
+  higiene_oral: "Higiene bucal completa.",
+  desodorante: "Desodorante de uso diário.",
+  reposicao: "Reposição do que você já usa.",
 };
 
 function listPt(items: string[]): string {
@@ -292,7 +302,7 @@ export function buildAlerts(products: Product[]): Alert[] {
     const c = code as keyof typeof WARNING_TEXT;
     alerts.push({
       code: c,
-      severity: c === "fotossensibilizante" || c === "consultar_se_gestante" ? "atencao" : "info",
+      severity: c === "fotossensibilizante" || c === "consultar_se_gestante" || c === "consultar_se_medicacao" ? "atencao" : "info",
       text: WARNING_TEXT[c],
       productIds,
     });

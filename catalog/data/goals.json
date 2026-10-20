@@ -162,5 +162,67 @@
       "brilho",
       "pele oleosa"
     ]
+  },
+  {
+    "id": "suplementos",
+    "label": "Suplementos e vitaminas",
+    "concerns": [
+      "nutricao",
+      "beleza_interna"
+    ],
+    "required_steps": [
+      "omega3",
+      "colageno",
+      "magnesio"
+    ],
+    "optional_steps": [
+      "vitaminas"
+    ],
+    "synonyms": [
+      "suplemento",
+      "suplementos",
+      "vitamina",
+      "vitaminas",
+      "omega",
+      "ômega",
+      "omega 3",
+      "ômega 3",
+      "colageno",
+      "colágeno",
+      "magnesio",
+      "magnésio"
+    ]
+  },
+  {
+    "id": "higiene_premium",
+    "label": "Higiene premium",
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_cabelo",
+      "higiene_oral",
+      "cuidado_corporal",
+      "desodorizacao"
+    ],
+    "required_steps": [
+      "higiene_corpo",
+      "higiene_cabelo",
+      "higiene_oral"
+    ],
+    "optional_steps": [
+      "desodorante"
+    ],
+    "synonyms": [
+      "higiene",
+      "higiene premium",
+      "banho",
+      "shampoo",
+      "xampu",
+      "condicionador",
+      "creme dental",
+      "pasta de dente",
+      "desodorante",
+      "cabelo",
+      "produtos de higiene"
+    ]
   }
 ]

@@ -1,6 +1,7 @@
 // Estado do app (só na memória da sessão: recarregar a página zera tudo, de propósito).
 import { createContext, useCallback, useContext, useMemo, useReducer, type ReactNode } from "react";
-import type { FulfillmentMode, Intent, Kit, Product, Store } from "../contracts/types";
+import type { ChatContext, FulfillmentMode, Intent, Kit, Product, SearchResponse, Store } from "../contracts/types";
+import { PERSONA, type ConsentFlags } from "../persona";
 
 export type SubscriptionDays = 0 | 30 | 60;
 
@@ -22,7 +23,23 @@ export interface Order {
   status: string;
 }
 
+/** Mensagem da conversa na barra de busca. `res` guarda a resposta completa do motor (kits, produtos, ação). */
+export interface ChatMsg {
+  id: string;
+  role: "user" | "bot";
+  text: string;
+  res?: SearchResponse;
+  /** Texto exibido pelo app, não pelo motor (boas-vindas, erro). */
+  local?: boolean;
+}
+
 interface State {
+  consent: ConsentFlags;
+  chat: { messages: ChatMsg[]; context: ChatContext | null; pending: boolean };
+  /** Reposição automática por produto (premissas fictícias). */
+  refillAuto: Record<string, boolean>;
+  /** Receita SIMULADA anexada nesta sessão. */
+  rxAttached: boolean;
   lines: CartLine[];
   favorites: string[]; // ids de produto
   favoriteKits: Kit[];
@@ -35,6 +52,13 @@ interface State {
 }
 
 type Action =
+  | { type: "chatPush"; msg: ChatMsg }
+  | { type: "chatContext"; context: ChatContext | null }
+  | { type: "chatPending"; pending: boolean }
+  | { type: "chatReset" }
+  | { type: "setConsent"; key: keyof ConsentFlags; value: boolean }
+  | { type: "setRefillAuto"; id: string; on: boolean }
+  | { type: "setRx"; on: boolean }
   | { type: "addKit"; kit: Kit; intent: Intent; everyDays?: SubscriptionDays }
   | { type: "replaceKit"; key: string; kit: Kit; intent: Intent }
   | { type: "setEvery"; key: string; everyDays: SubscriptionDays }
@@ -58,6 +82,20 @@ const kitKey = (kit: Kit) => `kit:${kit.tier}:${kitSignature(kit)}`;
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
+    case "chatPush":
+      return { ...s, chat: { ...s.chat, messages: [...s.chat.messages, a.msg] } };
+    case "chatContext":
+      return { ...s, chat: { ...s.chat, context: a.context } };
+    case "chatPending":
+      return { ...s, chat: { ...s.chat, pending: a.pending } };
+    case "chatReset":
+      return { ...s, chat: { messages: [], context: null, pending: false } };
+    case "setConsent":
+      return { ...s, consent: { ...s.consent, [a.key]: a.value } };
+    case "setRefillAuto":
+      return { ...s, refillAuto: { ...s.refillAuto, [a.id]: a.on }, toast: { text: a.on ? "Reposição automática ativada (simulada)" : "Reposição automática desativada" } };
+    case "setRx":
+      return { ...s, rxAttached: a.on };
     case "addKit": {
       const key = kitKey(a.kit);
       const found = s.lines.find((l) => l.key === key);
@@ -136,6 +174,10 @@ export const cartProductIds = (lines: CartLine[]) => [
 ];
 
 const initial: State = {
+  consent: PERSONA.privacy.consent,
+  chat: { messages: [], context: null, pending: false },
+  refillAuto: {},
+  rxAttached: false,
   lines: [],
   favorites: [],
   favoriteKits: [],

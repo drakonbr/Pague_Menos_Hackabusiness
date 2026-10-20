@@ -17,7 +17,14 @@ from pathlib import Path
 
 DATA = Path(os.environ.get("CATALOG_DATA_DIR") or Path(__file__).resolve().parent / "data")
 
-STEPS = {"limpeza", "preparo", "tratamento", "hidratacao", "protecao_solar", "protecao_corporal", "complemento"}
+STEPS = {"limpeza", "preparo", "tratamento", "hidratacao", "protecao_solar", "protecao_corporal", "complemento",
+         "omega3", "colageno", "magnesio", "vitaminas", "higiene_corpo", "higiene_cabelo", "higiene_oral",
+         "desodorante", "reposicao"}
+DOMAINS = {"dermo", "suplemento", "higiene", "medicamento"}
+# alegações terapêuticas proibidas em tudo que NÃO é medicamento (a persona usa remédio para pressão e colesterol:
+# nenhum suplemento ou cosmético pode sugerir efeito sobre isso)
+THERAPEUTIC = ["colesterol", "hipertens", "pressão arterial", "diabet", "cura ", "previne", "reduz o risco",
+               "emagrec", "trata doença", "controla a pressão", "baixa a pressão"]
 PERIODS = {"dia", "noite", "dia_noite"}
 SKINS = {"oleosa", "mista", "seca", "normal", "sensível", "todas"}
 TIERS = {"economico", "intermediario", "premium"}
@@ -28,6 +35,7 @@ FORBIDDEN_WORDS = [
 # O gabarito abaixo é o preço mínimo aceitável para o kit mais barato de cada objetivo
 # (garante que o exemplo "até R$ 120" do PDF seja viável).
 MAX_CHEAPEST_KIT_REAIS = 100.0
+MAX_CHEAPEST_KIT_OTHER_REAIS = 180.0   # suplementos e higiene premium custam mais que o skin care básico
 
 results: list[tuple[bool, str, str]] = []
 
@@ -50,7 +58,12 @@ def main() -> int:
     by_id = {p["id"]: p for p in products}
 
     # 1. Tamanho e unicidade
-    check("tamanho do catálogo entre 95 e 110", 95 <= len(products) <= 110, f"{len(products)} produtos")
+    check("tamanho do catálogo entre 130 e 145", 130 <= len(products) <= 145, f"{len(products)} produtos")
+    check("domínios válidos", all(p.get("domain") in DOMAINS for p in products))
+    by_domain = Counter(p["domain"] for p in products)
+    check("os 100 produtos de skin care originais continuam (p001–p100, domínio dermo)",
+          all(p["domain"] == "dermo" for p in products if p["id"] <= "p100") and len([p for p in products if p["id"] <= "p100"]) == 100,
+          str(dict(by_domain)))
     ids = [p["id"] for p in products]
     check("ids únicos", len(ids) == len(set(ids)))
     pairs = [(p["brand"], p["name"]) for p in products]
@@ -98,9 +111,13 @@ def main() -> int:
     check("FPS com valor plausível (15 a 100)", all(15 <= p["fps"] <= 100 for p in products if p.get("fps")))
 
     # 5. Segurança do conteúdo
-    texts = " ".join((p["name"] + " " + p["description"] + " " + p["how_to_use"]).lower() for p in products)
+    non_med = [p for p in products if p["domain"] != "medicamento"]
+    texts = " ".join((p["name"] + " " + p["description"] + " " + p["how_to_use"]).lower() for p in non_med)
     hits = [w for w in FORBIDDEN_WORDS if w in texts]
-    check("sem linguagem de medicamento ou promessa terapêutica", not hits, str(hits))
+    check("sem linguagem de medicamento ou promessa terapêutica (fora do domínio medicamento)", not hits, str(hits))
+    hits = [w for w in THERAPEUTIC if w in texts]
+    check("sem alegação sobre pressão, colesterol, diabetes, cura ou prevenção em suplementos e cosméticos",
+          not hits, str(hits))
     photo = {k for k, v in ingredients.items() if v["photosensitizing"]}
     missing_warn = [p["id"] for p in products if set(p["ingredients"]) & photo and "fotossensibilizante" not in p["warnings"]]
     check("ingredientes fotossensibilizantes geram aviso", not missing_warn, str(missing_warn))
@@ -139,9 +156,10 @@ def main() -> int:
             total += min(cands)
         else:
             detail.append(f"{g['id']}: kit mínimo R$ {total/100:.2f}")
-            if total / 100 > MAX_CHEAPEST_KIT_REAIS:
+            cap = MAX_CHEAPEST_KIT_REAIS if g["id"] not in ("suplementos", "higiene_premium") else MAX_CHEAPEST_KIT_OTHER_REAIS
+            if total / 100 > cap:
                 feasible = False
-    check(f"kit mais barato de cada objetivo <= R$ {MAX_CHEAPEST_KIT_REAIS:.0f}", feasible, "; ".join(detail))
+    check(f"kit mais barato de cada objetivo <= R$ {MAX_CHEAPEST_KIT_REAIS:.0f} (suplementos e higiene: R$ {MAX_CHEAPEST_KIT_OTHER_REAIS:.0f})", feasible, "; ".join(detail))
 
     # 9. Cada objetivo tem produtos relevantes suficientes na etapa de tratamento
     for g in goals:
@@ -156,8 +174,8 @@ def main() -> int:
     cats = load("categories.json")
     sids = [x["id"] for x in stores]
     check("lojas: ids únicos e pelo menos 5", len(sids) == len(set(sids)) and len(sids) >= 5, f"{len(sids)} lojas")
-    check("lojas: coordenadas dentro de Fortaleza",
-          all(-3.90 < x["lat"] < -3.68 and -38.65 < x["lng"] < -38.40 for x in stores))
+    check("lojas: coordenadas dentro do Recife",
+          all(-8.20 < x["lat"] < -7.95 and -35.05 < x["lng"] < -34.80 for x in stores))
     pairs_ss = {(x["storeId"], x["productId"]) for x in stock}
     check("estoque por loja: uma linha por (loja, produto)",
           len(pairs_ss) == len(stock) == len(sids) * len(products))
@@ -198,6 +216,56 @@ def main() -> int:
     in_leaf = {pid for n in leaves for pid in n["productIds"]}
     check("categorias: todo produto está em pelo menos uma categoria final", in_leaf == set(ids),
           f"fora: {sorted(set(ids) - in_leaf)}")
+
+    # 14. Ampliação da persona Renata (docs/14-persona-renata.md)
+    meds = [p for p in products if p["domain"] == "medicamento"]
+    check("medicamentos fictícios: 8 apresentações, todas com receita e marcadas como fictícias",
+          len(meds) == 8 and all(p["rx"] and "FICTÍCIO" in p["description"] and "receita_obrigatoria" in p["warnings"] for p in meds),
+          f"{len(meds)} itens")
+    groups = defaultdict(list)
+    for p in meds:
+        groups[p["equivalence"]["group"]].append(p)
+    check("medicamentos: cada grupo tem referência, genérico e similar, com o mesmo princípio ativo e dose",
+          len(groups) == 2 and all(
+              {x["equivalence"]["presentation"] for x in g} >= {"referencia", "generico", "similar"}
+              and len({(x["equivalence"]["active"], x["equivalence"]["dose"]) for x in g}) == 1
+              for g in groups.values()), str({k: len(v) for k, v in groups.items()}))
+    check("medicamentos: nenhum entra em objetivo de kit (etapa reposicao só existe fora dos kits)",
+          all("reposicao" not in g["required_steps"] + g["optional_steps"] for g in goals))
+    meds_ids = {p["id"] for p in meds}
+    in_showcase = {pid for sc in commerce["showcases"] if sc["type"] == "products" for pid in sc["productIds"]}
+    check("medicamentos: fora das vitrines e sem cashback",
+          not (meds_ids & in_showcase) and all(commerce["cashbackPct"][i] == 0 for i in meds_ids))
+    check("medicamentos: só na categoria 'Reposição de uso contínuo' (e nos agrupadores dela)",
+          all(set(n["id"] for n in cats["nodes"] if pid in n["productIds"]) <= {"reposicao", "saude"} for pid in meds_ids))
+    sups = [p for p in products if p["domain"] == "suplemento"]
+    check("suplementos: 12 itens, todos com o aviso de consultar médico/farmacêutico se usa medicação",
+          len(sups) == 12 and all("consultar_se_medicacao" in p["warnings"] for p in sups))
+    for step in ("omega3", "colageno", "magnesio", "vitaminas"):
+        n = sum(1 for p in sups if p["step"] == step)
+        check(f"suplementos: pelo menos 3 itens de {step}", n >= 3, str(n))
+    for step in ("higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"):
+        n = sum(1 for p in products if p["step"] == step)
+        check(f"higiene premium: pelo menos 3 itens de {step}", n >= 3, str(n))
+    new_anti = [p for p in products if p["domain"] == "dermo" and "p101" <= p["id"] <= "p106" and "sinais_idade" in p["concerns"]]
+    check("anti-idade: pelo menos 3 itens novos para a persona", len(new_anti) >= 3, str(len(new_anti)))
+    persona = load("persona.json")
+    check("persona: medicamentos de uso contínuo existem e são do domínio medicamento",
+          all(by_id[m["productId"]]["domain"] == "medicamento" for m in persona["continuousMedications"]))
+    check("persona: consentimento — saúde nunca usada para recomendar nem compartilhada",
+          persona["privacy"]["consent"]["useHealthDataForRecommendations"] is False
+          and persona["privacy"]["consent"]["shareHealthDataWithPartners"] is False)
+    check("persona: pedidos só citam produtos existentes",
+          all(i["productId"] in by_id for o in persona["orderHistory"] for i in o["items"]))
+    sq = {(x["storeId"], x["productId"]): x["qty"] for x in stock}
+    usual = [m["productId"] for m in persona["continuousMedications"]]
+    near = min(stores, key=lambda x: (x["lat"] - persona["address"]["lat"]) ** 2 + (x["lng"] - persona["address"]["lng"]) ** 2)
+    out_here = [pid for pid in usual if sq[(near["id"], pid)] == 0]
+    sims = [p["id"] for p in meds if p["equivalence"]["group"] in {by_id[u]["equivalence"]["group"] for u in out_here}
+            and p["id"] not in out_here and sq[(near["id"], p["id"])] > 0]
+    check("persona: o medicamento dela está em ruptura na loja mais próxima, mas há equivalente em estoque nela",
+          bool(out_here) and bool(sims) and all(inventory[u]["stock_qty"] > 0 for u in out_here),
+          f"loja {near['name']}: sem estoque {out_here}; equivalentes {sims}")
 
     # 13. Banco de imagens (só existe depois da revisão; ver catalog/images/README.md)
     img_path = DATA / "images.json"

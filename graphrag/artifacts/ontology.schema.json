@@ -1,0 +1,410 @@
+{
+ "nodeKinds": [
+  "product",
+  "brand",
+  "ptype",
+  "domain",
+  "step",
+  "concern",
+  "ingredient",
+  "warning",
+  "skin",
+  "claim",
+  "goal",
+  "equiv"
+ ],
+ "closedKinds": [
+  "concern",
+  "domain",
+  "goal",
+  "ingredient",
+  "skin",
+  "step",
+  "warning"
+ ],
+ "openKinds": [
+  "brand",
+  "claim",
+  "ptype"
+ ],
+ "edgeTypes": {
+  "OF_BRAND": {
+   "from": "product",
+   "to": "brand"
+  },
+  "OF_TYPE": {
+   "from": "product",
+   "to": "ptype"
+  },
+  "IN_DOMAIN": {
+   "from": "product",
+   "to": "domain"
+  },
+  "COVERS": {
+   "from": "product",
+   "to": "step"
+  },
+  "ADDRESSES": {
+   "from": "product",
+   "to": "concern"
+  },
+  "CONTAINS": {
+   "from": "product",
+   "to": "ingredient"
+  },
+  "SUITS": {
+   "from": "product",
+   "to": "skin"
+  },
+  "HAS_CLAIM": {
+   "from": "product",
+   "to": "claim"
+  },
+  "HAS_WARNING": {
+   "from": "product",
+   "to": "warning"
+  },
+  "TARGETS": {
+   "from": "goal",
+   "to": "concern"
+  },
+  "REQUIRES": {
+   "from": "goal",
+   "to": "step"
+  },
+  "CONFLICTS_WITH": {
+   "from": "ingredient",
+   "to": "ingredient"
+  },
+  "IN_EQUIV_GROUP": {
+   "from": "product",
+   "to": "equiv"
+  },
+  "EQUIVALENT_TO": {
+   "from": "product",
+   "to": "product"
+  },
+  "SIMILAR_TO": {
+   "from": "product",
+   "to": "product"
+  }
+ },
+ "productRecord": {
+  "$defs": {
+   "Equivalence": {
+    "additionalProperties": false,
+    "properties": {
+     "group": {
+      "title": "Group",
+      "type": "string"
+     },
+     "presentation": {
+      "enum": [
+       "referencia",
+       "generico",
+       "similar"
+      ],
+      "title": "Presentation",
+      "type": "string"
+     },
+     "active": {
+      "title": "Active",
+      "type": "string"
+     },
+     "dose": {
+      "title": "Dose",
+      "type": "string"
+     }
+    },
+    "required": [
+     "group",
+     "presentation",
+     "active",
+     "dose"
+    ],
+    "title": "Equivalence",
+    "type": "object"
+   },
+   "Size": {
+    "additionalProperties": false,
+    "properties": {
+     "value": {
+      "exclusiveMinimum": 0,
+      "title": "Value",
+      "type": "number"
+     },
+     "unit": {
+      "enum": [
+       "g",
+       "ml",
+       "un"
+      ],
+      "title": "Unit",
+      "type": "string"
+     }
+    },
+    "required": [
+     "value",
+     "unit"
+    ],
+    "title": "Size",
+    "type": "object"
+   }
+  },
+  "additionalProperties": false,
+  "description": "Um produto novo (ou alterado) para entrar no grafo e no catálogo do motor. Campos em camelCase, como o contrato.",
+  "properties": {
+   "id": {
+    "anyOf": [
+     {
+      "pattern": "^p\\d{3,}$",
+      "type": "string"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null,
+    "title": "Id"
+   },
+   "name": {
+    "maxLength": 120,
+    "minLength": 3,
+    "title": "Name",
+    "type": "string"
+   },
+   "brand": {
+    "maxLength": 60,
+    "minLength": 2,
+    "title": "Brand",
+    "type": "string"
+   },
+   "line": {
+    "maxLength": 60,
+    "minLength": 2,
+    "title": "Line",
+    "type": "string"
+   },
+   "step": {
+    "title": "Step",
+    "type": "string"
+   },
+   "coversSteps": {
+    "items": {
+     "type": "string"
+    },
+    "minItems": 1,
+    "title": "Coverssteps",
+    "type": "array"
+   },
+   "productType": {
+    "maxLength": 80,
+    "minLength": 3,
+    "title": "Producttype",
+    "type": "string"
+   },
+   "form": {
+    "enum": [
+     "tube",
+     "dropper",
+     "bottle",
+     "jar",
+     "caps",
+     "box",
+     "stick",
+     "powder",
+     "spray",
+     "pump",
+     "bar",
+     "patch"
+    ],
+    "title": "Form",
+    "type": "string"
+   },
+   "size": {
+    "$ref": "#/$defs/Size"
+   },
+   "skinTypes": {
+    "items": {
+     "type": "string"
+    },
+    "minItems": 1,
+    "title": "Skintypes",
+    "type": "array"
+   },
+   "concerns": {
+    "items": {
+     "type": "string"
+    },
+    "minItems": 1,
+    "title": "Concerns",
+    "type": "array"
+   },
+   "ingredients": {
+    "items": {
+     "type": "string"
+    },
+    "title": "Ingredients",
+    "type": "array"
+   },
+   "fps": {
+    "anyOf": [
+     {
+      "maximum": 100,
+      "minimum": 6,
+      "type": "integer"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null,
+    "title": "Fps"
+   },
+   "usagePeriod": {
+    "default": "dia",
+    "enum": [
+     "dia",
+     "noite",
+     "dia_noite"
+    ],
+    "title": "Usageperiod",
+    "type": "string"
+   },
+   "claims": {
+    "items": {
+     "type": "string"
+    },
+    "title": "Claims",
+    "type": "array"
+   },
+   "warnings": {
+    "items": {
+     "type": "string"
+    },
+    "title": "Warnings",
+    "type": "array"
+   },
+   "description": {
+    "maxLength": 600,
+    "minLength": 20,
+    "title": "Description",
+    "type": "string"
+   },
+   "howToUse": {
+    "maxLength": 300,
+    "minLength": 5,
+    "title": "Howtouse",
+    "type": "string"
+   },
+   "priceTier": {
+    "enum": [
+     "economico",
+     "intermediario",
+     "premium"
+    ],
+    "title": "Pricetier",
+    "type": "string"
+   },
+   "priceCents": {
+    "exclusiveMaximum": 10000000,
+    "exclusiveMinimum": 0,
+    "title": "Pricecents",
+    "type": "integer"
+   },
+   "listPriceCents": {
+    "anyOf": [
+     {
+      "type": "integer"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null,
+    "title": "Listpricecents"
+   },
+   "stockQty": {
+    "exclusiveMaximum": 100000,
+    "minimum": 0,
+    "title": "Stockqty",
+    "type": "integer"
+   },
+   "cashbackPct": {
+    "anyOf": [
+     {
+      "maximum": 20,
+      "minimum": 0,
+      "type": "integer"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null,
+    "title": "Cashbackpct"
+   },
+   "domain": {
+    "enum": [
+     "dermo",
+     "suplemento",
+     "higiene",
+     "medicamento"
+    ],
+    "title": "Domain",
+    "type": "string"
+   },
+   "rx": {
+    "anyOf": [
+     {
+      "const": "receita_simples",
+      "type": "string"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null,
+    "title": "Rx"
+   },
+   "equivalence": {
+    "anyOf": [
+     {
+      "$ref": "#/$defs/Equivalence"
+     },
+     {
+      "type": "null"
+     }
+    ],
+    "default": null
+   },
+   "storeStock": {
+    "additionalProperties": {
+     "type": "integer"
+    },
+    "title": "Storestock",
+    "type": "object"
+   }
+  },
+  "required": [
+   "name",
+   "brand",
+   "line",
+   "step",
+   "coversSteps",
+   "productType",
+   "form",
+   "size",
+   "skinTypes",
+   "concerns",
+   "description",
+   "howToUse",
+   "priceTier",
+   "priceCents",
+   "stockQty",
+   "domain"
+  ],
+  "title": "ProductRecord",
+  "type": "object"
+ }
+}

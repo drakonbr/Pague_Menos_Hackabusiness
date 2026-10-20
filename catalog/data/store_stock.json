@@ -500,6 +500,196 @@
     "qty": 2
   },
   {
+    "storeId": "s01",
+    "productId": "p101",
+    "qty": 2
+  },
+  {
+    "storeId": "s01",
+    "productId": "p102",
+    "qty": 9
+  },
+  {
+    "storeId": "s01",
+    "productId": "p103",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p105",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p106",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p107",
+    "qty": 7
+  },
+  {
+    "storeId": "s01",
+    "productId": "p108",
+    "qty": 9
+  },
+  {
+    "storeId": "s01",
+    "productId": "p109",
+    "qty": 10
+  },
+  {
+    "storeId": "s01",
+    "productId": "p110",
+    "qty": 4
+  },
+  {
+    "storeId": "s01",
+    "productId": "p111",
+    "qty": 6
+  },
+  {
+    "storeId": "s01",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p113",
+    "qty": 11
+  },
+  {
+    "storeId": "s01",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p115",
+    "qty": 12
+  },
+  {
+    "storeId": "s01",
+    "productId": "p116",
+    "qty": 7
+  },
+  {
+    "storeId": "s01",
+    "productId": "p117",
+    "qty": 1
+  },
+  {
+    "storeId": "s01",
+    "productId": "p118",
+    "qty": 6
+  },
+  {
+    "storeId": "s01",
+    "productId": "p119",
+    "qty": 2
+  },
+  {
+    "storeId": "s01",
+    "productId": "p120",
+    "qty": 1
+  },
+  {
+    "storeId": "s01",
+    "productId": "p121",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p122",
+    "qty": 7
+  },
+  {
+    "storeId": "s01",
+    "productId": "p123",
+    "qty": 4
+  },
+  {
+    "storeId": "s01",
+    "productId": "p124",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p125",
+    "qty": 5
+  },
+  {
+    "storeId": "s01",
+    "productId": "p126",
+    "qty": 12
+  },
+  {
+    "storeId": "s01",
+    "productId": "p127",
+    "qty": 2
+  },
+  {
+    "storeId": "s01",
+    "productId": "p128",
+    "qty": 8
+  },
+  {
+    "storeId": "s01",
+    "productId": "p129",
+    "qty": 5
+  },
+  {
+    "storeId": "s01",
+    "productId": "p130",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p131",
+    "qty": 3
+  },
+  {
+    "storeId": "s01",
+    "productId": "p132",
+    "qty": 10
+  },
+  {
+    "storeId": "s01",
+    "productId": "p133",
+    "qty": 1
+  },
+  {
+    "storeId": "s01",
+    "productId": "p134",
+    "qty": 1
+  },
+  {
+    "storeId": "s01",
+    "productId": "p135",
+    "qty": 3
+  },
+  {
+    "storeId": "s01",
+    "productId": "p136",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p137",
+    "qty": 0
+  },
+  {
+    "storeId": "s01",
+    "productId": "p138",
+    "qty": 8
+  },
+  {
     "storeId": "s02",
     "productId": "p001",
     "qty": 2
@@ -847,32 +1037,32 @@
   {
     "storeId": "s02",
     "productId": "p070",
-    "qty": 0
+    "qty": 6
   },
   {
     "storeId": "s02",
     "productId": "p071",
-    "qty": 4
+    "qty": 10
   },
   {
     "storeId": "s02",
     "productId": "p072",
-    "qty": 7
-  },
-  {
-    "storeId": "s02",
-    "productId": "p073",
-    "qty": 0
-  },
-  {
-    "storeId": "s02",
-    "productId": "p074",
     "qty": 11
   },
   {
     "storeId": "s02",
-    "productId": "p075",
+    "productId": "p073",
+    "qty": 11
+  },
+  {
+    "storeId": "s02",
+    "productId": "p074",
     "qty": 9
+  },
+  {
+    "storeId": "s02",
+    "productId": "p075",
+    "qty": 5
   },
   {
     "storeId": "s02",
@@ -882,57 +1072,57 @@
   {
     "storeId": "s02",
     "productId": "p077",
-    "qty": 5
+    "qty": 6
   },
   {
     "storeId": "s02",
     "productId": "p078",
-    "qty": 6
-  },
-  {
-    "storeId": "s02",
-    "productId": "p079",
     "qty": 12
   },
   {
     "storeId": "s02",
-    "productId": "p080",
+    "productId": "p079",
     "qty": 1
+  },
+  {
+    "storeId": "s02",
+    "productId": "p080",
+    "qty": 6
   },
   {
     "storeId": "s02",
     "productId": "p081",
-    "qty": 6
+    "qty": 2
   },
   {
     "storeId": "s02",
     "productId": "p082",
-    "qty": 2
-  },
-  {
-    "storeId": "s02",
-    "productId": "p083",
     "qty": 7
   },
   {
     "storeId": "s02",
-    "productId": "p084",
+    "productId": "p083",
     "qty": 1
   },
   {
     "storeId": "s02",
-    "productId": "p085",
+    "productId": "p084",
     "qty": 6
   },
   {
     "storeId": "s02",
-    "productId": "p086",
+    "productId": "p085",
     "qty": 1
   },
   {
     "storeId": "s02",
+    "productId": "p086",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
     "productId": "p087",
-    "qty": 2
+    "qty": 10
   },
   {
     "storeId": "s02",
@@ -942,22 +1132,22 @@
   {
     "storeId": "s02",
     "productId": "p089",
-    "qty": 2
+    "qty": 1
   },
   {
     "storeId": "s02",
     "productId": "p090",
-    "qty": 3
+    "qty": 6
   },
   {
     "storeId": "s02",
     "productId": "p091",
-    "qty": 10
+    "qty": 11
   },
   {
     "storeId": "s02",
     "productId": "p092",
-    "qty": 11
+    "qty": 7
   },
   {
     "storeId": "s02",
@@ -967,12 +1157,12 @@
   {
     "storeId": "s02",
     "productId": "p094",
-    "qty": 7
+    "qty": 6
   },
   {
     "storeId": "s02",
     "productId": "p095",
-    "qty": 6
+    "qty": 7
   },
   {
     "storeId": "s02",
@@ -982,17 +1172,17 @@
   {
     "storeId": "s02",
     "productId": "p097",
-    "qty": 7
-  },
-  {
-    "storeId": "s02",
-    "productId": "p098",
     "qty": 3
   },
   {
     "storeId": "s02",
-    "productId": "p099",
+    "productId": "p098",
     "qty": 1
+  },
+  {
+    "storeId": "s02",
+    "productId": "p099",
+    "qty": 9
   },
   {
     "storeId": "s02",
@@ -1000,49 +1190,239 @@
     "qty": 0
   },
   {
-    "storeId": "s03",
-    "productId": "p001",
+    "storeId": "s02",
+    "productId": "p101",
+    "qty": 11
+  },
+  {
+    "storeId": "s02",
+    "productId": "p102",
+    "qty": 8
+  },
+  {
+    "storeId": "s02",
+    "productId": "p103",
+    "qty": 6
+  },
+  {
+    "storeId": "s02",
+    "productId": "p104",
     "qty": 0
   },
   {
-    "storeId": "s03",
-    "productId": "p002",
+    "storeId": "s02",
+    "productId": "p105",
     "qty": 7
   },
   {
-    "storeId": "s03",
-    "productId": "p003",
-    "qty": 0
+    "storeId": "s02",
+    "productId": "p106",
+    "qty": 7
   },
   {
-    "storeId": "s03",
-    "productId": "p004",
-    "qty": 4
+    "storeId": "s02",
+    "productId": "p107",
+    "qty": 7
   },
   {
-    "storeId": "s03",
-    "productId": "p005",
+    "storeId": "s02",
+    "productId": "p108",
+    "qty": 7
+  },
+  {
+    "storeId": "s02",
+    "productId": "p109",
+    "qty": 8
+  },
+  {
+    "storeId": "s02",
+    "productId": "p110",
     "qty": 5
   },
   {
-    "storeId": "s03",
-    "productId": "p006",
+    "storeId": "s02",
+    "productId": "p111",
+    "qty": 4
+  },
+  {
+    "storeId": "s02",
+    "productId": "p112",
+    "qty": 9
+  },
+  {
+    "storeId": "s02",
+    "productId": "p113",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p115",
+    "qty": 2
+  },
+  {
+    "storeId": "s02",
+    "productId": "p116",
+    "qty": 4
+  },
+  {
+    "storeId": "s02",
+    "productId": "p117",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p118",
+    "qty": 4
+  },
+  {
+    "storeId": "s02",
+    "productId": "p119",
     "qty": 7
   },
   {
-    "storeId": "s03",
-    "productId": "p007",
+    "storeId": "s02",
+    "productId": "p120",
+    "qty": 1
+  },
+  {
+    "storeId": "s02",
+    "productId": "p121",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p122",
+    "qty": 3
+  },
+  {
+    "storeId": "s02",
+    "productId": "p123",
+    "qty": 9
+  },
+  {
+    "storeId": "s02",
+    "productId": "p124",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p125",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p126",
+    "qty": 10
+  },
+  {
+    "storeId": "s02",
+    "productId": "p127",
+    "qty": 8
+  },
+  {
+    "storeId": "s02",
+    "productId": "p128",
+    "qty": 4
+  },
+  {
+    "storeId": "s02",
+    "productId": "p129",
+    "qty": 9
+  },
+  {
+    "storeId": "s02",
+    "productId": "p130",
+    "qty": 2
+  },
+  {
+    "storeId": "s02",
+    "productId": "p131",
+    "qty": 2
+  },
+  {
+    "storeId": "s02",
+    "productId": "p132",
+    "qty": 8
+  },
+  {
+    "storeId": "s02",
+    "productId": "p133",
+    "qty": 4
+  },
+  {
+    "storeId": "s02",
+    "productId": "p134",
+    "qty": 5
+  },
+  {
+    "storeId": "s02",
+    "productId": "p135",
+    "qty": 2
+  },
+  {
+    "storeId": "s02",
+    "productId": "p136",
+    "qty": 0
+  },
+  {
+    "storeId": "s02",
+    "productId": "p137",
+    "qty": 2
+  },
+  {
+    "storeId": "s02",
+    "productId": "p138",
     "qty": 6
   },
   {
     "storeId": "s03",
-    "productId": "p008",
+    "productId": "p001",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p002",
+    "qty": 4
+  },
+  {
+    "storeId": "s03",
+    "productId": "p003",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p004",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
+    "productId": "p005",
+    "qty": 6
+  },
+  {
+    "storeId": "s03",
+    "productId": "p006",
     "qty": 11
   },
   {
     "storeId": "s03",
-    "productId": "p009",
+    "productId": "p007",
     "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p008",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p009",
+    "qty": 11
   },
   {
     "storeId": "s03",
@@ -1052,7 +1432,7 @@
   {
     "storeId": "s03",
     "productId": "p011",
-    "qty": 11
+    "qty": 0
   },
   {
     "storeId": "s03",
@@ -1067,27 +1447,27 @@
   {
     "storeId": "s03",
     "productId": "p014",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p015",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p016",
     "qty": 9
   },
   {
     "storeId": "s03",
-    "productId": "p017",
+    "productId": "p015",
     "qty": 6
   },
   {
     "storeId": "s03",
-    "productId": "p018",
+    "productId": "p016",
     "qty": 1
+  },
+  {
+    "storeId": "s03",
+    "productId": "p017",
+    "qty": 4
+  },
+  {
+    "storeId": "s03",
+    "productId": "p018",
+    "qty": 4
   },
   {
     "storeId": "s03",
@@ -1097,7 +1477,7 @@
   {
     "storeId": "s03",
     "productId": "p020",
-    "qty": 1
+    "qty": 0
   },
   {
     "storeId": "s03",
@@ -1107,12 +1487,12 @@
   {
     "storeId": "s03",
     "productId": "p022",
-    "qty": 3
+    "qty": 0
   },
   {
     "storeId": "s03",
     "productId": "p023",
-    "qty": 0
+    "qty": 6
   },
   {
     "storeId": "s03",
@@ -1122,27 +1502,27 @@
   {
     "storeId": "s03",
     "productId": "p025",
-    "qty": 6
-  },
-  {
-    "storeId": "s03",
-    "productId": "p026",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p027",
     "qty": 5
   },
   {
     "storeId": "s03",
-    "productId": "p028",
+    "productId": "p026",
     "qty": 4
   },
   {
     "storeId": "s03",
-    "productId": "p029",
+    "productId": "p027",
     "qty": 8
+  },
+  {
+    "storeId": "s03",
+    "productId": "p028",
+    "qty": 9
+  },
+  {
+    "storeId": "s03",
+    "productId": "p029",
+    "qty": 0
   },
   {
     "storeId": "s03",
@@ -1152,27 +1532,27 @@
   {
     "storeId": "s03",
     "productId": "p031",
-    "qty": 8
-  },
-  {
-    "storeId": "s03",
-    "productId": "p032",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p033",
     "qty": 5
   },
   {
     "storeId": "s03",
-    "productId": "p034",
+    "productId": "p032",
     "qty": 11
   },
   {
     "storeId": "s03",
-    "productId": "p035",
+    "productId": "p033",
     "qty": 8
+  },
+  {
+    "storeId": "s03",
+    "productId": "p034",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p035",
+    "qty": 0
   },
   {
     "storeId": "s03",
@@ -1187,32 +1567,32 @@
   {
     "storeId": "s03",
     "productId": "p038",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p039",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p040",
     "qty": 1
   },
   {
     "storeId": "s03",
+    "productId": "p039",
+    "qty": 2
+  },
+  {
+    "storeId": "s03",
+    "productId": "p040",
+    "qty": 9
+  },
+  {
+    "storeId": "s03",
     "productId": "p041",
-    "qty": 0
+    "qty": 3
   },
   {
     "storeId": "s03",
     "productId": "p042",
-    "qty": 6
+    "qty": 0
   },
   {
     "storeId": "s03",
     "productId": "p043",
-    "qty": 5
+    "qty": 1
   },
   {
     "storeId": "s03",
@@ -1222,12 +1602,12 @@
   {
     "storeId": "s03",
     "productId": "p045",
-    "qty": 1
+    "qty": 10
   },
   {
     "storeId": "s03",
     "productId": "p046",
-    "qty": 12
+    "qty": 7
   },
   {
     "storeId": "s03",
@@ -1237,17 +1617,17 @@
   {
     "storeId": "s03",
     "productId": "p048",
-    "qty": 10
+    "qty": 9
   },
   {
     "storeId": "s03",
     "productId": "p049",
-    "qty": 7
+    "qty": 0
   },
   {
     "storeId": "s03",
     "productId": "p050",
-    "qty": 9
+    "qty": 0
   },
   {
     "storeId": "s03",
@@ -1257,122 +1637,122 @@
   {
     "storeId": "s03",
     "productId": "p052",
-    "qty": 0
+    "qty": 3
   },
   {
     "storeId": "s03",
     "productId": "p053",
-    "qty": 0
+    "qty": 6
   },
   {
     "storeId": "s03",
     "productId": "p054",
-    "qty": 3
+    "qty": 5
   },
   {
     "storeId": "s03",
     "productId": "p055",
-    "qty": 6
+    "qty": 10
   },
   {
     "storeId": "s03",
     "productId": "p056",
-    "qty": 5
-  },
-  {
-    "storeId": "s03",
-    "productId": "p057",
-    "qty": 10
-  },
-  {
-    "storeId": "s03",
-    "productId": "p058",
-    "qty": 4
-  },
-  {
-    "storeId": "s03",
-    "productId": "p059",
-    "qty": 5
-  },
-  {
-    "storeId": "s03",
-    "productId": "p060",
-    "qty": 5
-  },
-  {
-    "storeId": "s03",
-    "productId": "p061",
-    "qty": 7
-  },
-  {
-    "storeId": "s03",
-    "productId": "p062",
-    "qty": 12
-  },
-  {
-    "storeId": "s03",
-    "productId": "p063",
-    "qty": 10
-  },
-  {
-    "storeId": "s03",
-    "productId": "p064",
-    "qty": 7
-  },
-  {
-    "storeId": "s03",
-    "productId": "p065",
-    "qty": 9
-  },
-  {
-    "storeId": "s03",
-    "productId": "p066",
-    "qty": 9
-  },
-  {
-    "storeId": "s03",
-    "productId": "p067",
-    "qty": 6
-  },
-  {
-    "storeId": "s03",
-    "productId": "p068",
-    "qty": 3
-  },
-  {
-    "storeId": "s03",
-    "productId": "p069",
-    "qty": 2
-  },
-  {
-    "storeId": "s03",
-    "productId": "p070",
-    "qty": 12
-  },
-  {
-    "storeId": "s03",
-    "productId": "p071",
     "qty": 0
   },
   {
     "storeId": "s03",
-    "productId": "p072",
-    "qty": 6
-  },
-  {
-    "storeId": "s03",
-    "productId": "p073",
+    "productId": "p057",
     "qty": 5
   },
   {
     "storeId": "s03",
-    "productId": "p074",
+    "productId": "p058",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p059",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
+    "productId": "p060",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p061",
+    "qty": 10
+  },
+  {
+    "storeId": "s03",
+    "productId": "p062",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
+    "productId": "p063",
+    "qty": 9
+  },
+  {
+    "storeId": "s03",
+    "productId": "p064",
+    "qty": 9
+  },
+  {
+    "storeId": "s03",
+    "productId": "p065",
+    "qty": 6
+  },
+  {
+    "storeId": "s03",
+    "productId": "p066",
     "qty": 3
   },
   {
     "storeId": "s03",
-    "productId": "p075",
+    "productId": "p067",
+    "qty": 2
+  },
+  {
+    "storeId": "s03",
+    "productId": "p068",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p069",
+    "qty": 1
+  },
+  {
+    "storeId": "s03",
+    "productId": "p070",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p071",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p072",
+    "qty": 3
+  },
+  {
+    "storeId": "s03",
+    "productId": "p073",
     "qty": 4
+  },
+  {
+    "storeId": "s03",
+    "productId": "p074",
+    "qty": 6
+  },
+  {
+    "storeId": "s03",
+    "productId": "p075",
+    "qty": 12
   },
   {
     "storeId": "s03",
@@ -1382,57 +1762,57 @@
   {
     "storeId": "s03",
     "productId": "p077",
-    "qty": 6
-  },
-  {
-    "storeId": "s03",
-    "productId": "p078",
-    "qty": 12
-  },
-  {
-    "storeId": "s03",
-    "productId": "p079",
     "qty": 5
   },
   {
     "storeId": "s03",
-    "productId": "p080",
+    "productId": "p078",
     "qty": 11
   },
   {
     "storeId": "s03",
-    "productId": "p081",
+    "productId": "p079",
     "qty": 8
   },
   {
     "storeId": "s03",
-    "productId": "p082",
+    "productId": "p080",
     "qty": 0
   },
   {
     "storeId": "s03",
-    "productId": "p083",
+    "productId": "p081",
     "qty": 9
   },
   {
     "storeId": "s03",
-    "productId": "p084",
+    "productId": "p082",
     "qty": 6
   },
   {
     "storeId": "s03",
-    "productId": "p085",
+    "productId": "p083",
     "qty": 0
   },
   {
     "storeId": "s03",
-    "productId": "p086",
+    "productId": "p084",
     "qty": 10
   },
   {
     "storeId": "s03",
-    "productId": "p087",
+    "productId": "p085",
     "qty": 2
+  },
+  {
+    "storeId": "s03",
+    "productId": "p086",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p087",
+    "qty": 8
   },
   {
     "storeId": "s03",
@@ -1442,22 +1822,22 @@
   {
     "storeId": "s03",
     "productId": "p089",
-    "qty": 2
-  },
-  {
-    "storeId": "s03",
-    "productId": "p090",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p091",
     "qty": 5
   },
   {
     "storeId": "s03",
+    "productId": "p090",
+    "qty": 4
+  },
+  {
+    "storeId": "s03",
+    "productId": "p091",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
     "productId": "p092",
-    "qty": 0
+    "qty": 6
   },
   {
     "storeId": "s03",
@@ -1467,47 +1847,237 @@
   {
     "storeId": "s03",
     "productId": "p094",
-    "qty": 6
+    "qty": 12
   },
   {
     "storeId": "s03",
     "productId": "p095",
-    "qty": 9
-  },
-  {
-    "storeId": "s03",
-    "productId": "p096",
-    "qty": 12
-  },
-  {
-    "storeId": "s03",
-    "productId": "p097",
-    "qty": 0
-  },
-  {
-    "storeId": "s03",
-    "productId": "p098",
-    "qty": 6
-  },
-  {
-    "storeId": "s03",
-    "productId": "p099",
     "qty": 8
   },
   {
     "storeId": "s03",
-    "productId": "p100",
+    "productId": "p096",
+    "qty": 3
+  },
+  {
+    "storeId": "s03",
+    "productId": "p097",
+    "qty": 8
+  },
+  {
+    "storeId": "s03",
+    "productId": "p098",
     "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p099",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p100",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p101",
+    "qty": 11
+  },
+  {
+    "storeId": "s03",
+    "productId": "p102",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p103",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p105",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
+    "productId": "p106",
+    "qty": 1
+  },
+  {
+    "storeId": "s03",
+    "productId": "p107",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p108",
+    "qty": 2
+  },
+  {
+    "storeId": "s03",
+    "productId": "p109",
+    "qty": 10
+  },
+  {
+    "storeId": "s03",
+    "productId": "p110",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p111",
+    "qty": 4
+  },
+  {
+    "storeId": "s03",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p113",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p115",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p116",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p117",
+    "qty": 7
+  },
+  {
+    "storeId": "s03",
+    "productId": "p118",
+    "qty": 11
+  },
+  {
+    "storeId": "s03",
+    "productId": "p119",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p120",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p121",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p122",
+    "qty": 8
+  },
+  {
+    "storeId": "s03",
+    "productId": "p123",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p124",
+    "qty": 10
+  },
+  {
+    "storeId": "s03",
+    "productId": "p125",
+    "qty": 6
+  },
+  {
+    "storeId": "s03",
+    "productId": "p126",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p127",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p128",
+    "qty": 6
+  },
+  {
+    "storeId": "s03",
+    "productId": "p129",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p130",
+    "qty": 5
+  },
+  {
+    "storeId": "s03",
+    "productId": "p131",
+    "qty": 3
+  },
+  {
+    "storeId": "s03",
+    "productId": "p132",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p133",
+    "qty": 12
+  },
+  {
+    "storeId": "s03",
+    "productId": "p134",
+    "qty": 8
+  },
+  {
+    "storeId": "s03",
+    "productId": "p135",
+    "qty": 0
+  },
+  {
+    "storeId": "s03",
+    "productId": "p136",
+    "qty": 3
+  },
+  {
+    "storeId": "s03",
+    "productId": "p137",
+    "qty": 10
+  },
+  {
+    "storeId": "s03",
+    "productId": "p138",
+    "qty": 9
   },
   {
     "storeId": "s04",
     "productId": "p001",
-    "qty": 0
+    "qty": 10
   },
   {
     "storeId": "s04",
     "productId": "p002",
-    "qty": 6
+    "qty": 3
   },
   {
     "storeId": "s04",
@@ -1522,7 +2092,7 @@
   {
     "storeId": "s04",
     "productId": "p005",
-    "qty": 10
+    "qty": 6
   },
   {
     "storeId": "s04",
@@ -1532,22 +2102,22 @@
   {
     "storeId": "s04",
     "productId": "p007",
-    "qty": 5
-  },
-  {
-    "storeId": "s04",
-    "productId": "p008",
-    "qty": 2
-  },
-  {
-    "storeId": "s04",
-    "productId": "p009",
     "qty": 8
   },
   {
     "storeId": "s04",
-    "productId": "p010",
+    "productId": "p008",
     "qty": 9
+  },
+  {
+    "storeId": "s04",
+    "productId": "p009",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p010",
+    "qty": 3
   },
   {
     "storeId": "s04",
@@ -1562,32 +2132,32 @@
   {
     "storeId": "s04",
     "productId": "p013",
-    "qty": 3
+    "qty": 5
   },
   {
     "storeId": "s04",
     "productId": "p014",
-    "qty": 2
+    "qty": 11
   },
   {
     "storeId": "s04",
     "productId": "p015",
-    "qty": 10
+    "qty": 1
   },
   {
     "storeId": "s04",
     "productId": "p016",
-    "qty": 7
+    "qty": 6
   },
   {
     "storeId": "s04",
     "productId": "p017",
-    "qty": 9
+    "qty": 6
   },
   {
     "storeId": "s04",
     "productId": "p018",
-    "qty": 0
+    "qty": 8
   },
   {
     "storeId": "s04",
@@ -1597,47 +2167,47 @@
   {
     "storeId": "s04",
     "productId": "p020",
-    "qty": 11
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p021",
-    "qty": 8
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p022",
-    "qty": 0
-  },
-  {
-    "storeId": "s04",
-    "productId": "p023",
-    "qty": 0
-  },
-  {
-    "storeId": "s04",
-    "productId": "p024",
-    "qty": 0
-  },
-  {
-    "storeId": "s04",
-    "productId": "p025",
     "qty": 9
   },
   {
     "storeId": "s04",
-    "productId": "p026",
+    "productId": "p023",
     "qty": 7
   },
   {
     "storeId": "s04",
-    "productId": "p027",
+    "productId": "p024",
     "qty": 6
   },
   {
     "storeId": "s04",
-    "productId": "p028",
+    "productId": "p025",
     "qty": 7
+  },
+  {
+    "storeId": "s04",
+    "productId": "p026",
+    "qty": 1
+  },
+  {
+    "storeId": "s04",
+    "productId": "p027",
+    "qty": 12
+  },
+  {
+    "storeId": "s04",
+    "productId": "p028",
+    "qty": 6
   },
   {
     "storeId": "s04",
@@ -1647,87 +2217,87 @@
   {
     "storeId": "s04",
     "productId": "p030",
-    "qty": 9
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p031",
-    "qty": 3
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p032",
-    "qty": 11
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p033",
-    "qty": 8
+    "qty": 0
   },
   {
     "storeId": "s04",
     "productId": "p034",
-    "qty": 0
+    "qty": 1
   },
   {
     "storeId": "s04",
     "productId": "p035",
-    "qty": 1
+    "qty": 4
   },
   {
     "storeId": "s04",
     "productId": "p036",
-    "qty": 4
-  },
-  {
-    "storeId": "s04",
-    "productId": "p037",
     "qty": 11
   },
   {
     "storeId": "s04",
-    "productId": "p038",
+    "productId": "p037",
     "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p038",
+    "qty": 1
   },
   {
     "storeId": "s04",
     "productId": "p039",
-    "qty": 1
-  },
-  {
-    "storeId": "s04",
-    "productId": "p040",
     "qty": 8
   },
   {
     "storeId": "s04",
-    "productId": "p041",
+    "productId": "p040",
     "qty": 10
   },
   {
     "storeId": "s04",
+    "productId": "p041",
+    "qty": 2
+  },
+  {
+    "storeId": "s04",
     "productId": "p042",
-    "qty": 0
+    "qty": 4
   },
   {
     "storeId": "s04",
     "productId": "p043",
-    "qty": 12
-  },
-  {
-    "storeId": "s04",
-    "productId": "p044",
     "qty": 1
   },
   {
     "storeId": "s04",
-    "productId": "p045",
+    "productId": "p044",
     "qty": 0
   },
   {
     "storeId": "s04",
-    "productId": "p046",
+    "productId": "p045",
     "qty": 4
+  },
+  {
+    "storeId": "s04",
+    "productId": "p046",
+    "qty": 0
   },
   {
     "storeId": "s04",
@@ -1737,22 +2307,22 @@
   {
     "storeId": "s04",
     "productId": "p048",
-    "qty": 0
-  },
-  {
-    "storeId": "s04",
-    "productId": "p049",
     "qty": 11
   },
   {
     "storeId": "s04",
-    "productId": "p050",
+    "productId": "p049",
     "qty": 5
   },
   {
     "storeId": "s04",
-    "productId": "p051",
+    "productId": "p050",
     "qty": 7
+  },
+  {
+    "storeId": "s04",
+    "productId": "p051",
+    "qty": 0
   },
   {
     "storeId": "s04",
@@ -1762,27 +2332,27 @@
   {
     "storeId": "s04",
     "productId": "p053",
-    "qty": 9
+    "qty": 2
   },
   {
     "storeId": "s04",
     "productId": "p054",
-    "qty": 1
-  },
-  {
-    "storeId": "s04",
-    "productId": "p055",
     "qty": 7
   },
   {
     "storeId": "s04",
-    "productId": "p056",
+    "productId": "p055",
     "qty": 9
   },
   {
     "storeId": "s04",
+    "productId": "p056",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
     "productId": "p057",
-    "qty": 4
+    "qty": 0
   },
   {
     "storeId": "s04",
@@ -1902,22 +2472,22 @@
   {
     "storeId": "s04",
     "productId": "p081",
-    "qty": 0
+    "qty": 8
   },
   {
     "storeId": "s04",
     "productId": "p082",
-    "qty": 11
+    "qty": 6
   },
   {
     "storeId": "s04",
     "productId": "p083",
-    "qty": 3
+    "qty": 2
   },
   {
     "storeId": "s04",
     "productId": "p084",
-    "qty": 9
+    "qty": 0
   },
   {
     "storeId": "s04",
@@ -1998,6 +2568,196 @@
     "storeId": "s04",
     "productId": "p100",
     "qty": 9
+  },
+  {
+    "storeId": "s04",
+    "productId": "p101",
+    "qty": 7
+  },
+  {
+    "storeId": "s04",
+    "productId": "p102",
+    "qty": 1
+  },
+  {
+    "storeId": "s04",
+    "productId": "p103",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p105",
+    "qty": 3
+  },
+  {
+    "storeId": "s04",
+    "productId": "p106",
+    "qty": 9
+  },
+  {
+    "storeId": "s04",
+    "productId": "p107",
+    "qty": 3
+  },
+  {
+    "storeId": "s04",
+    "productId": "p108",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p109",
+    "qty": 4
+  },
+  {
+    "storeId": "s04",
+    "productId": "p110",
+    "qty": 12
+  },
+  {
+    "storeId": "s04",
+    "productId": "p111",
+    "qty": 10
+  },
+  {
+    "storeId": "s04",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p113",
+    "qty": 5
+  },
+  {
+    "storeId": "s04",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p115",
+    "qty": 12
+  },
+  {
+    "storeId": "s04",
+    "productId": "p116",
+    "qty": 2
+  },
+  {
+    "storeId": "s04",
+    "productId": "p117",
+    "qty": 8
+  },
+  {
+    "storeId": "s04",
+    "productId": "p118",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p119",
+    "qty": 1
+  },
+  {
+    "storeId": "s04",
+    "productId": "p120",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p121",
+    "qty": 3
+  },
+  {
+    "storeId": "s04",
+    "productId": "p122",
+    "qty": 4
+  },
+  {
+    "storeId": "s04",
+    "productId": "p123",
+    "qty": 11
+  },
+  {
+    "storeId": "s04",
+    "productId": "p124",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p125",
+    "qty": 8
+  },
+  {
+    "storeId": "s04",
+    "productId": "p126",
+    "qty": 12
+  },
+  {
+    "storeId": "s04",
+    "productId": "p127",
+    "qty": 11
+  },
+  {
+    "storeId": "s04",
+    "productId": "p128",
+    "qty": 1
+  },
+  {
+    "storeId": "s04",
+    "productId": "p129",
+    "qty": 9
+  },
+  {
+    "storeId": "s04",
+    "productId": "p130",
+    "qty": 3
+  },
+  {
+    "storeId": "s04",
+    "productId": "p131",
+    "qty": 6
+  },
+  {
+    "storeId": "s04",
+    "productId": "p132",
+    "qty": 9
+  },
+  {
+    "storeId": "s04",
+    "productId": "p133",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p134",
+    "qty": 11
+  },
+  {
+    "storeId": "s04",
+    "productId": "p135",
+    "qty": 0
+  },
+  {
+    "storeId": "s04",
+    "productId": "p136",
+    "qty": 11
+  },
+  {
+    "storeId": "s04",
+    "productId": "p137",
+    "qty": 11
+  },
+  {
+    "storeId": "s04",
+    "productId": "p138",
+    "qty": 10
   },
   {
     "storeId": "s05",
@@ -2402,7 +3162,7 @@
   {
     "storeId": "s05",
     "productId": "p081",
-    "qty": 0
+    "qty": 2
   },
   {
     "storeId": "s05",
@@ -2498,6 +3258,196 @@
     "storeId": "s05",
     "productId": "p100",
     "qty": 12
+  },
+  {
+    "storeId": "s05",
+    "productId": "p101",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p102",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p103",
+    "qty": 5
+  },
+  {
+    "storeId": "s05",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p105",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p106",
+    "qty": 8
+  },
+  {
+    "storeId": "s05",
+    "productId": "p107",
+    "qty": 4
+  },
+  {
+    "storeId": "s05",
+    "productId": "p108",
+    "qty": 1
+  },
+  {
+    "storeId": "s05",
+    "productId": "p109",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p110",
+    "qty": 10
+  },
+  {
+    "storeId": "s05",
+    "productId": "p111",
+    "qty": 12
+  },
+  {
+    "storeId": "s05",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p113",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p115",
+    "qty": 11
+  },
+  {
+    "storeId": "s05",
+    "productId": "p116",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p117",
+    "qty": 2
+  },
+  {
+    "storeId": "s05",
+    "productId": "p118",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p119",
+    "qty": 12
+  },
+  {
+    "storeId": "s05",
+    "productId": "p120",
+    "qty": 10
+  },
+  {
+    "storeId": "s05",
+    "productId": "p121",
+    "qty": 3
+  },
+  {
+    "storeId": "s05",
+    "productId": "p122",
+    "qty": 4
+  },
+  {
+    "storeId": "s05",
+    "productId": "p123",
+    "qty": 1
+  },
+  {
+    "storeId": "s05",
+    "productId": "p124",
+    "qty": 4
+  },
+  {
+    "storeId": "s05",
+    "productId": "p125",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p126",
+    "qty": 2
+  },
+  {
+    "storeId": "s05",
+    "productId": "p127",
+    "qty": 4
+  },
+  {
+    "storeId": "s05",
+    "productId": "p128",
+    "qty": 10
+  },
+  {
+    "storeId": "s05",
+    "productId": "p129",
+    "qty": 4
+  },
+  {
+    "storeId": "s05",
+    "productId": "p130",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p131",
+    "qty": 7
+  },
+  {
+    "storeId": "s05",
+    "productId": "p132",
+    "qty": 6
+  },
+  {
+    "storeId": "s05",
+    "productId": "p133",
+    "qty": 1
+  },
+  {
+    "storeId": "s05",
+    "productId": "p134",
+    "qty": 0
+  },
+  {
+    "storeId": "s05",
+    "productId": "p135",
+    "qty": 10
+  },
+  {
+    "storeId": "s05",
+    "productId": "p136",
+    "qty": 2
+  },
+  {
+    "storeId": "s05",
+    "productId": "p137",
+    "qty": 6
+  },
+  {
+    "storeId": "s05",
+    "productId": "p138",
+    "qty": 0
   },
   {
     "storeId": "s06",
@@ -2702,7 +3652,7 @@
   {
     "storeId": "s06",
     "productId": "p041",
-    "qty": 0
+    "qty": 1
   },
   {
     "storeId": "s06",
@@ -2847,7 +3797,7 @@
   {
     "storeId": "s06",
     "productId": "p070",
-    "qty": 0
+    "qty": 11
   },
   {
     "storeId": "s06",
@@ -2857,17 +3807,17 @@
   {
     "storeId": "s06",
     "productId": "p072",
-    "qty": 0
-  },
-  {
-    "storeId": "s06",
-    "productId": "p073",
     "qty": 1
   },
   {
     "storeId": "s06",
-    "productId": "p074",
+    "productId": "p073",
     "qty": 12
+  },
+  {
+    "storeId": "s06",
+    "productId": "p074",
+    "qty": 0
   },
   {
     "storeId": "s06",
@@ -2887,52 +3837,52 @@
   {
     "storeId": "s06",
     "productId": "p078",
-    "qty": 0
-  },
-  {
-    "storeId": "s06",
-    "productId": "p079",
     "qty": 4
   },
   {
     "storeId": "s06",
-    "productId": "p080",
+    "productId": "p079",
     "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p080",
+    "qty": 12
   },
   {
     "storeId": "s06",
     "productId": "p081",
-    "qty": 0
+    "qty": 6
   },
   {
     "storeId": "s06",
     "productId": "p082",
-    "qty": 0
+    "qty": 9
   },
   {
     "storeId": "s06",
     "productId": "p083",
-    "qty": 0
+    "qty": 1
   },
   {
     "storeId": "s06",
     "productId": "p084",
-    "qty": 8
-  },
-  {
-    "storeId": "s06",
-    "productId": "p085",
     "qty": 0
   },
   {
     "storeId": "s06",
+    "productId": "p085",
+    "qty": 12
+  },
+  {
+    "storeId": "s06",
     "productId": "p086",
-    "qty": 7
+    "qty": 0
   },
   {
     "storeId": "s06",
     "productId": "p087",
-    "qty": 12
+    "qty": 10
   },
   {
     "storeId": "s06",
@@ -2942,22 +3892,22 @@
   {
     "storeId": "s06",
     "productId": "p089",
-    "qty": 7
-  },
-  {
-    "storeId": "s06",
-    "productId": "p090",
-    "qty": 0
-  },
-  {
-    "storeId": "s06",
-    "productId": "p091",
     "qty": 6
   },
   {
     "storeId": "s06",
-    "productId": "p092",
+    "productId": "p090",
     "qty": 11
+  },
+  {
+    "storeId": "s06",
+    "productId": "p091",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p092",
+    "qty": 0
   },
   {
     "storeId": "s06",
@@ -2967,7 +3917,7 @@
   {
     "storeId": "s06",
     "productId": "p094",
-    "qty": 0
+    "qty": 7
   },
   {
     "storeId": "s06",
@@ -2977,7 +3927,7 @@
   {
     "storeId": "s06",
     "productId": "p096",
-    "qty": 7
+    "qty": 0
   },
   {
     "storeId": "s06",
@@ -2997,12 +3947,202 @@
   {
     "storeId": "s06",
     "productId": "p100",
+    "qty": 12
+  },
+  {
+    "storeId": "s06",
+    "productId": "p101",
     "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p102",
+    "qty": 2
+  },
+  {
+    "storeId": "s06",
+    "productId": "p103",
+    "qty": 12
+  },
+  {
+    "storeId": "s06",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p105",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p106",
+    "qty": 8
+  },
+  {
+    "storeId": "s06",
+    "productId": "p107",
+    "qty": 3
+  },
+  {
+    "storeId": "s06",
+    "productId": "p108",
+    "qty": 5
+  },
+  {
+    "storeId": "s06",
+    "productId": "p109",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p110",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p111",
+    "qty": 5
+  },
+  {
+    "storeId": "s06",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p113",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p115",
+    "qty": 9
+  },
+  {
+    "storeId": "s06",
+    "productId": "p116",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p117",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p118",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p119",
+    "qty": 9
+  },
+  {
+    "storeId": "s06",
+    "productId": "p120",
+    "qty": 7
+  },
+  {
+    "storeId": "s06",
+    "productId": "p121",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p122",
+    "qty": 5
+  },
+  {
+    "storeId": "s06",
+    "productId": "p123",
+    "qty": 9
+  },
+  {
+    "storeId": "s06",
+    "productId": "p124",
+    "qty": 9
+  },
+  {
+    "storeId": "s06",
+    "productId": "p125",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p126",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p127",
+    "qty": 8
+  },
+  {
+    "storeId": "s06",
+    "productId": "p128",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p129",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p130",
+    "qty": 4
+  },
+  {
+    "storeId": "s06",
+    "productId": "p131",
+    "qty": 1
+  },
+  {
+    "storeId": "s06",
+    "productId": "p132",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p133",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p134",
+    "qty": 4
+  },
+  {
+    "storeId": "s06",
+    "productId": "p135",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p136",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p137",
+    "qty": 0
+  },
+  {
+    "storeId": "s06",
+    "productId": "p138",
+    "qty": 2
   },
   {
     "storeId": "s07",
     "productId": "p001",
-    "qty": 0
+    "qty": 1
   },
   {
     "storeId": "s07",
@@ -3012,22 +4152,22 @@
   {
     "storeId": "s07",
     "productId": "p003",
-    "qty": 1
-  },
-  {
-    "storeId": "s07",
-    "productId": "p004",
-    "qty": 12
-  },
-  {
-    "storeId": "s07",
-    "productId": "p005",
     "qty": 8
   },
   {
     "storeId": "s07",
-    "productId": "p006",
+    "productId": "p004",
     "qty": 4
+  },
+  {
+    "storeId": "s07",
+    "productId": "p005",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p006",
+    "qty": 9
   },
   {
     "storeId": "s07",
@@ -3037,22 +4177,22 @@
   {
     "storeId": "s07",
     "productId": "p008",
-    "qty": 3
+    "qty": 2
   },
   {
     "storeId": "s07",
     "productId": "p009",
-    "qty": 9
+    "qty": 10
   },
   {
     "storeId": "s07",
     "productId": "p010",
-    "qty": 8
+    "qty": 3
   },
   {
     "storeId": "s07",
     "productId": "p011",
-    "qty": 3
+    "qty": 5
   },
   {
     "storeId": "s07",
@@ -3062,17 +4202,17 @@
   {
     "storeId": "s07",
     "productId": "p013",
-    "qty": 9
+    "qty": 10
   },
   {
     "storeId": "s07",
     "productId": "p014",
-    "qty": 7
+    "qty": 3
   },
   {
     "storeId": "s07",
     "productId": "p015",
-    "qty": 0
+    "qty": 11
   },
   {
     "storeId": "s07",
@@ -3082,22 +4222,22 @@
   {
     "storeId": "s07",
     "productId": "p017",
-    "qty": 3
+    "qty": 4
   },
   {
     "storeId": "s07",
     "productId": "p018",
-    "qty": 11
+    "qty": 0
   },
   {
     "storeId": "s07",
     "productId": "p019",
-    "qty": 10
+    "qty": 2
   },
   {
     "storeId": "s07",
     "productId": "p020",
-    "qty": 4
+    "qty": 5
   },
   {
     "storeId": "s07",
@@ -3107,12 +4247,12 @@
   {
     "storeId": "s07",
     "productId": "p022",
-    "qty": 7
+    "qty": 5
   },
   {
     "storeId": "s07",
     "productId": "p023",
-    "qty": 0
+    "qty": 12
   },
   {
     "storeId": "s07",
@@ -3122,37 +4262,37 @@
   {
     "storeId": "s07",
     "productId": "p025",
-    "qty": 5
-  },
-  {
-    "storeId": "s07",
-    "productId": "p026",
-    "qty": 12
-  },
-  {
-    "storeId": "s07",
-    "productId": "p027",
-    "qty": 8
-  },
-  {
-    "storeId": "s07",
-    "productId": "p028",
     "qty": 6
   },
   {
     "storeId": "s07",
+    "productId": "p026",
+    "qty": 2
+  },
+  {
+    "storeId": "s07",
+    "productId": "p027",
+    "qty": 1
+  },
+  {
+    "storeId": "s07",
+    "productId": "p028",
+    "qty": 12
+  },
+  {
+    "storeId": "s07",
     "productId": "p029",
-    "qty": 0
+    "qty": 7
   },
   {
     "storeId": "s07",
     "productId": "p030",
-    "qty": 9
+    "qty": 12
   },
   {
     "storeId": "s07",
     "productId": "p031",
-    "qty": 4
+    "qty": 3
   },
   {
     "storeId": "s07",
@@ -3162,72 +4302,72 @@
   {
     "storeId": "s07",
     "productId": "p033",
-    "qty": 7
-  },
-  {
-    "storeId": "s07",
-    "productId": "p034",
-    "qty": 12
-  },
-  {
-    "storeId": "s07",
-    "productId": "p035",
     "qty": 3
   },
   {
     "storeId": "s07",
-    "productId": "p036",
+    "productId": "p034",
+    "qty": 11
+  },
+  {
+    "storeId": "s07",
+    "productId": "p035",
     "qty": 4
+  },
+  {
+    "storeId": "s07",
+    "productId": "p036",
+    "qty": 5
   },
   {
     "storeId": "s07",
     "productId": "p037",
-    "qty": 10
+    "qty": 9
   },
   {
     "storeId": "s07",
     "productId": "p038",
-    "qty": 9
-  },
-  {
-    "storeId": "s07",
-    "productId": "p039",
-    "qty": 10
-  },
-  {
-    "storeId": "s07",
-    "productId": "p040",
-    "qty": 9
-  },
-  {
-    "storeId": "s07",
-    "productId": "p041",
-    "qty": 7
-  },
-  {
-    "storeId": "s07",
-    "productId": "p042",
     "qty": 0
   },
   {
     "storeId": "s07",
-    "productId": "p043",
+    "productId": "p039",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p040",
     "qty": 8
   },
   {
     "storeId": "s07",
-    "productId": "p044",
+    "productId": "p041",
     "qty": 9
   },
   {
     "storeId": "s07",
-    "productId": "p045",
+    "productId": "p042",
     "qty": 12
   },
   {
     "storeId": "s07",
-    "productId": "p046",
+    "productId": "p043",
     "qty": 4
+  },
+  {
+    "storeId": "s07",
+    "productId": "p044",
+    "qty": 7
+  },
+  {
+    "storeId": "s07",
+    "productId": "p045",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p046",
+    "qty": 7
   },
   {
     "storeId": "s07",
@@ -3237,77 +4377,77 @@
   {
     "storeId": "s07",
     "productId": "p048",
-    "qty": 7
+    "qty": 11
   },
   {
     "storeId": "s07",
     "productId": "p049",
-    "qty": 0
-  },
-  {
-    "storeId": "s07",
-    "productId": "p050",
-    "qty": 7
-  },
-  {
-    "storeId": "s07",
-    "productId": "p051",
-    "qty": 11
-  },
-  {
-    "storeId": "s07",
-    "productId": "p052",
     "qty": 5
   },
   {
     "storeId": "s07",
-    "productId": "p053",
-    "qty": 10
+    "productId": "p050",
+    "qty": 0
   },
   {
     "storeId": "s07",
-    "productId": "p054",
+    "productId": "p051",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p052",
     "qty": 9
   },
   {
     "storeId": "s07",
-    "productId": "p055",
+    "productId": "p053",
     "qty": 7
   },
   {
     "storeId": "s07",
-    "productId": "p056",
+    "productId": "p054",
     "qty": 12
   },
   {
     "storeId": "s07",
-    "productId": "p057",
+    "productId": "p055",
     "qty": 9
+  },
+  {
+    "storeId": "s07",
+    "productId": "p056",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p057",
+    "qty": 0
   },
   {
     "storeId": "s07",
     "productId": "p058",
-    "qty": 9
-  },
-  {
-    "storeId": "s07",
-    "productId": "p059",
     "qty": 11
   },
   {
     "storeId": "s07",
-    "productId": "p060",
+    "productId": "p059",
     "qty": 10
   },
   {
     "storeId": "s07",
-    "productId": "p061",
+    "productId": "p060",
     "qty": 6
   },
   {
     "storeId": "s07",
-    "productId": "p062",
+    "productId": "p061",
     "qty": 9
+  },
+  {
+    "storeId": "s07",
+    "productId": "p062",
+    "qty": 7
   },
   {
     "storeId": "s07",
@@ -3317,12 +4457,12 @@
   {
     "storeId": "s07",
     "productId": "p064",
-    "qty": 7
+    "qty": 6
   },
   {
     "storeId": "s07",
     "productId": "p065",
-    "qty": 6
+    "qty": 0
   },
   {
     "storeId": "s07",
@@ -3332,47 +4472,47 @@
   {
     "storeId": "s07",
     "productId": "p067",
-    "qty": 0
-  },
-  {
-    "storeId": "s07",
-    "productId": "p068",
     "qty": 7
   },
   {
     "storeId": "s07",
-    "productId": "p069",
+    "productId": "p068",
     "qty": 12
   },
   {
     "storeId": "s07",
-    "productId": "p070",
-    "qty": 0
+    "productId": "p069",
+    "qty": 1
   },
   {
     "storeId": "s07",
-    "productId": "p071",
+    "productId": "p070",
     "qty": 4
   },
   {
     "storeId": "s07",
+    "productId": "p071",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
     "productId": "p072",
-    "qty": 8
+    "qty": 3
   },
   {
     "storeId": "s07",
     "productId": "p073",
-    "qty": 8
+    "qty": 4
   },
   {
     "storeId": "s07",
     "productId": "p074",
-    "qty": 0
+    "qty": 9
   },
   {
     "storeId": "s07",
     "productId": "p075",
-    "qty": 9
+    "qty": 2
   },
   {
     "storeId": "s07",
@@ -3382,42 +4522,42 @@
   {
     "storeId": "s07",
     "productId": "p077",
-    "qty": 1
+    "qty": 7
   },
   {
     "storeId": "s07",
     "productId": "p078",
-    "qty": 2
-  },
-  {
-    "storeId": "s07",
-    "productId": "p079",
-    "qty": 7
-  },
-  {
-    "storeId": "s07",
-    "productId": "p080",
     "qty": 10
   },
   {
     "storeId": "s07",
-    "productId": "p081",
+    "productId": "p079",
     "qty": 9
   },
   {
     "storeId": "s07",
-    "productId": "p082",
+    "productId": "p080",
     "qty": 0
   },
   {
     "storeId": "s07",
-    "productId": "p083",
+    "productId": "p081",
     "qty": 7
   },
   {
     "storeId": "s07",
-    "productId": "p084",
+    "productId": "p082",
     "qty": 5
+  },
+  {
+    "storeId": "s07",
+    "productId": "p083",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p084",
+    "qty": 2
   },
   {
     "storeId": "s07",
@@ -3427,12 +4567,12 @@
   {
     "storeId": "s07",
     "productId": "p086",
-    "qty": 2
+    "qty": 0
   },
   {
     "storeId": "s07",
     "productId": "p087",
-    "qty": 11
+    "qty": 7
   },
   {
     "storeId": "s07",
@@ -3442,17 +4582,17 @@
   {
     "storeId": "s07",
     "productId": "p089",
-    "qty": 11
+    "qty": 2
   },
   {
     "storeId": "s07",
     "productId": "p090",
-    "qty": 11
+    "qty": 4
   },
   {
     "storeId": "s07",
     "productId": "p091",
-    "qty": 4
+    "qty": 9
   },
   {
     "storeId": "s07",
@@ -3467,32 +4607,32 @@
   {
     "storeId": "s07",
     "productId": "p094",
-    "qty": 8
-  },
-  {
-    "storeId": "s07",
-    "productId": "p095",
     "qty": 3
   },
   {
     "storeId": "s07",
-    "productId": "p096",
+    "productId": "p095",
     "qty": 6
   },
   {
     "storeId": "s07",
-    "productId": "p097",
+    "productId": "p096",
     "qty": 8
   },
   {
     "storeId": "s07",
-    "productId": "p098",
+    "productId": "p097",
     "qty": 2
   },
   {
     "storeId": "s07",
-    "productId": "p099",
+    "productId": "p098",
     "qty": 9
+  },
+  {
+    "storeId": "s07",
+    "productId": "p099",
+    "qty": 7
   },
   {
     "storeId": "s07",
@@ -3500,14 +4640,204 @@
     "qty": 0
   },
   {
+    "storeId": "s07",
+    "productId": "p101",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p102",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p103",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p104",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p105",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p106",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p107",
+    "qty": 5
+  },
+  {
+    "storeId": "s07",
+    "productId": "p108",
+    "qty": 2
+  },
+  {
+    "storeId": "s07",
+    "productId": "p109",
+    "qty": 4
+  },
+  {
+    "storeId": "s07",
+    "productId": "p110",
+    "qty": 9
+  },
+  {
+    "storeId": "s07",
+    "productId": "p111",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p113",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p115",
+    "qty": 11
+  },
+  {
+    "storeId": "s07",
+    "productId": "p116",
+    "qty": 1
+  },
+  {
+    "storeId": "s07",
+    "productId": "p117",
+    "qty": 5
+  },
+  {
+    "storeId": "s07",
+    "productId": "p118",
+    "qty": 7
+  },
+  {
+    "storeId": "s07",
+    "productId": "p119",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
+    "productId": "p120",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
+    "productId": "p121",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p122",
+    "qty": 1
+  },
+  {
+    "storeId": "s07",
+    "productId": "p123",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p124",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p125",
+    "qty": 1
+  },
+  {
+    "storeId": "s07",
+    "productId": "p126",
+    "qty": 4
+  },
+  {
+    "storeId": "s07",
+    "productId": "p127",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p128",
+    "qty": 2
+  },
+  {
+    "storeId": "s07",
+    "productId": "p129",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p130",
+    "qty": 0
+  },
+  {
+    "storeId": "s07",
+    "productId": "p131",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p132",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
+    "productId": "p133",
+    "qty": 3
+  },
+  {
+    "storeId": "s07",
+    "productId": "p134",
+    "qty": 9
+  },
+  {
+    "storeId": "s07",
+    "productId": "p135",
+    "qty": 10
+  },
+  {
+    "storeId": "s07",
+    "productId": "p136",
+    "qty": 6
+  },
+  {
+    "storeId": "s07",
+    "productId": "p137",
+    "qty": 5
+  },
+  {
+    "storeId": "s07",
+    "productId": "p138",
+    "qty": 6
+  },
+  {
     "storeId": "s08",
     "productId": "p001",
-    "qty": 3
+    "qty": 1
   },
   {
     "storeId": "s08",
     "productId": "p002",
-    "qty": 11
+    "qty": 0
   },
   {
     "storeId": "s08",
@@ -3998,5 +5328,195 @@
     "storeId": "s08",
     "productId": "p100",
     "qty": 9
+  },
+  {
+    "storeId": "s08",
+    "productId": "p101",
+    "qty": 2
+  },
+  {
+    "storeId": "s08",
+    "productId": "p102",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p103",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p104",
+    "qty": 1
+  },
+  {
+    "storeId": "s08",
+    "productId": "p105",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p106",
+    "qty": 8
+  },
+  {
+    "storeId": "s08",
+    "productId": "p107",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p108",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p109",
+    "qty": 3
+  },
+  {
+    "storeId": "s08",
+    "productId": "p110",
+    "qty": 1
+  },
+  {
+    "storeId": "s08",
+    "productId": "p111",
+    "qty": 11
+  },
+  {
+    "storeId": "s08",
+    "productId": "p112",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p113",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p114",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p115",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p116",
+    "qty": 5
+  },
+  {
+    "storeId": "s08",
+    "productId": "p117",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p118",
+    "qty": 6
+  },
+  {
+    "storeId": "s08",
+    "productId": "p119",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p120",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p121",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p122",
+    "qty": 1
+  },
+  {
+    "storeId": "s08",
+    "productId": "p123",
+    "qty": 12
+  },
+  {
+    "storeId": "s08",
+    "productId": "p124",
+    "qty": 5
+  },
+  {
+    "storeId": "s08",
+    "productId": "p125",
+    "qty": 4
+  },
+  {
+    "storeId": "s08",
+    "productId": "p126",
+    "qty": 12
+  },
+  {
+    "storeId": "s08",
+    "productId": "p127",
+    "qty": 3
+  },
+  {
+    "storeId": "s08",
+    "productId": "p128",
+    "qty": 5
+  },
+  {
+    "storeId": "s08",
+    "productId": "p129",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p130",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p131",
+    "qty": 7
+  },
+  {
+    "storeId": "s08",
+    "productId": "p132",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p133",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p134",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p135",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p136",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p137",
+    "qty": 0
+  },
+  {
+    "storeId": "s08",
+    "productId": "p138",
+    "qty": 0
   }
 ]

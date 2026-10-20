@@ -1,9 +1,11 @@
+import { PersonaAvatar } from "../components/Avatar";
 import { TitleBar } from "../components/Bars";
 import { Icon, type IconName } from "../components/Icon";
 import { ProductImage } from "../components/ProductImage";
 import type { ProductImage as Img } from "../contracts/types";
 import { BRAND } from "../brand";
 import { SIMULATED_LOCATION } from "../location";
+import { PERSONA } from "../persona";
 import { useNav, useServices, type View } from "../nav";
 import { money } from "../services/format";
 import { useApp } from "../state/app";
@@ -15,8 +17,9 @@ const ROWS: Array<{ label: string; icon: IconName; to?: View; off?: string }> = 
   { label: "Carteira e cashback", icon: "wallet", to: { name: "wallet" } },
   { label: "Lojas e retirada", icon: "store", to: { name: "stores" } },
   { label: "Falar com um farmacêutico", icon: "cross", to: { name: "pharmacist" } },
-  { label: "Receitas", icon: "receipt", off: "fora do protótipo" },
-  { label: "Alertas de medicamentos", icon: "bell", off: "fora do protótipo" },
+  { label: "Meus medicamentos", icon: "pill", to: { name: "refill" } },
+  { label: "Conversar com o assistente", icon: "chat", to: { name: "chat" } },
+  { label: "Privacidade e dados", icon: "lock", to: { name: "privacy" } },
   { label: "Convênios e PBM", icon: "shield", off: "fora do protótipo" },
   { label: "Créditos das fotos", icon: "image", to: { name: "credits" } },
 ];
@@ -29,11 +32,11 @@ export function More() {
       <div className="scroll">
         <div className="pad">
           <div className="panel row">
-            <span style={{ color: "var(--brand)" }}><Icon name="user" size={36} /></span>
+            <PersonaAvatar size={56} />
             <span className="grow">
-              <b style={{ fontWeight: 500 }}>Visitante</b>
+              <b style={{ fontWeight: 500 }}>{PERSONA.name}</b>
               <br />
-              <small style={{ color: "var(--text-2)" }}>Sessão de demonstração, sem login</small>
+              <small style={{ color: "var(--text-2)" }}>{PERSONA.address.neighborhood}, {PERSONA.address.city} - {PERSONA.address.uf} · persona fictícia</small>
             </span>
           </div>
           <div className="menulist">
@@ -45,7 +48,7 @@ export function More() {
               </button>
             ))}
           </div>
-          <p className="footnote">{BRAND.protoNote} Medicamentos, receitas e convênios ficam fora do escopo.</p>
+          <p className="footnote">{BRAND.protoNote} Medicamentos só em reposição (sem recomendação); convênios ficam fora do escopo.</p>
         </div>
       </div>
     </div>

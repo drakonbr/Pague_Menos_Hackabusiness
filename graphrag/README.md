@@ -1,33 +1,51 @@
-# graphrag/ — sistema GraphRAG
+# graphrag/ — sistema GraphRAG do zero
 
-> **Status: NÃO INICIADO.** Esta pasta contém só este README de propósito. Nenhum grafo, índice, embedding ou código de treino existe ainda. A construção começa quando for liberada ("pode continuar, sem treinamento do RAG ainda" foi a instrução para a fase atual).
+> **Status (20/10): implementado e treinado.** Sem Ollama, sem API externa, sem modelo de linguagem: só Python, networkx e numpy. Dados sintéticos; repositório privado.
 
-## O que vai morar aqui
+Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, seguindo `../contracts/README.md`. Pensado para a persona Renata Almeida (doc 14), mas serve a qualquer pedido dentro do catálogo.
 
-O motor que recebe uma frase e devolve kits, seguindo o contrato em `../contracts/README.md`:
+## Peças
 
-1. Segurança (regras antes de qualquer modelo)
-2. Extração de intenção
-3. Recuperação em grafo + busca vetorial
-4. Junção com preço e estoque vivos
-5. Compositor de kits (regras K1 a K12)
-6. Justificativas fundamentadas
-7. Validação das invariantes
+| Arquivo | Papel |
+| --- | --- |
+| `text.py`, `lexicon.py` | normalização e vocabulário (preocupações, ingredientes, etapas, preferências) |
+| `data.py` | leitura do catálogo (lista permitida de arquivos; `persona.json` fora) |
+| `graph.py` | grafo de conhecimento (networkx) e ativação espalhada |
+| `embed.py` | vetores de palavras PPMI + SVD |
+| `retrieval.py` | BM25 + vetores + grafo, com pesos calibrados |
+| `nlu.py`, `nlu_corpus.py` | ato de fala (Naive Bayes) e extração de entidades |
+| `safety.py` | regras de segurança antes de tudo |
+| `composer.py` | compositor de kits K1 a K12, troca de item, adaptação à loja |
+| `dialogue.py` | motor de conversa (sem estado), similares, cotação de entrega |
+| `ontology.py` | ontologia estrita (nós, arestas, esquema de entrada) em Pydantic |
+| `ingest.py` | ingestão incremental com resolução de entidades (delta em `artifacts/`) |
+| `rewrite.py`, `chat_stream.py` | reescrita pelo histórico e eventos SSE de `/v1/search-chat` |
+| `service/server.py` | HTTP local (`/v1/search`, `/v1/search-chat`, `/v1/similars`, …) |
+| `train.py` | gera `artifacts/` |
+| `eval/` | calibração dos pesos, conjunto de ranking, invariantes independentes |
+| `tests/` | 77 testes (motor, NLU, privacidade, ontologia, ingestão, streaming) |
 
-Desenho completo: `../docs/06-graphrag-design.md`. Segurança: `../docs/07-seguranca-saude.md`. Como será avaliado: `../docs/08-validacao-e-qualidade.md`.
+## Comandos (a partir da raiz do repositório)
+
+```bash
+pip install -r graphrag/requirements.txt
+python3 -m graphrag.train                    # grafo, vetores, classificador
+python3 graphrag/eval/calibrate.py           # pesos do ranking
+python3 graphrag/eval/rerank_eval.py         # mede o rerank por diversidade
+python3 graphrag/eval/latency.py             # latência em processo (--url para o SSE)
+python3 -m graphrag.ingest novos.json        # ingestão incremental (--dry-run para só ver)
+python3 -m unittest discover -s graphrag/tests -t .   # inclui as invariantes (eval/invariants.py)
+python3 -m graphrag.service.server --port 8787
+```
 
 ## Regras de separação
 
-- Só **lê** `../catalog/data/` (ingestão) e um inventário; nunca escreve lá.
-- Não importa nada de `../app/`.
-- Expõe o contrato `search`, `swapOptions`, `swap`.
+- Só **lê** `../catalog/data/` (lista permitida); nunca escreve lá; não importa nada de `../app/`.
+- Nunca lê `persona.json`, nunca devolve termo de saúde nem nome de medicamento em texto.
+- Medicamentos não entram em busca livre nem em kits; só em `similars` (dado estruturado).
 
-## Estrutura prevista
+`python3 ../tools/check_separation.py` confere as regras de importação e escrita.
 
-```
-ingest/  retrieval/  composer/  safety/  llm/  service/  eval/
-```
+## Limites
 
-## Verificação desta fase
-
-`python3 ../tools/check_separation.py` falha se aparecer aqui qualquer coisa além deste README durante a fase "pré-RAG".
+Conjunto de ranking pequeno (14 frases); entidades por regras; vetores treinados só no catálogo; premissas de reposição fictícias. Ver doc 14, seção 7.

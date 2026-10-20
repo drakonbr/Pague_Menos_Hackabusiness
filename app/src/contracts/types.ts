@@ -8,7 +8,16 @@ export type StepId =
   | "hidratacao"
   | "protecao_solar"
   | "protecao_corporal"
-  | "complemento";
+  | "complemento"
+  | "omega3"
+  | "colageno"
+  | "magnesio"
+  | "vitaminas"
+  | "higiene_corpo"
+  | "higiene_cabelo"
+  | "higiene_oral"
+  | "desodorante"
+  | "reposicao";
 
 export type GoalId =
   | "acne"
@@ -17,7 +26,9 @@ export type GoalId =
   | "protecao_solar"
   | "anti_idade"
   | "pele_sensivel"
-  | "oleosidade";
+  | "oleosidade"
+  | "suplementos"
+  | "higiene_premium";
 
 export type SkinType = "oleosa" | "mista" | "seca" | "normal" | "sensível";
 export type KitTier = "economico" | "essencial" | "alternativo";
@@ -29,7 +40,10 @@ export type WarningCode =
   | "consultar_se_gestante"
   | "evitar_contato_olhos"
   | "nao_usar_pele_irritada"
-  | "teste_de_sensibilidade";
+  | "teste_de_sensibilidade"
+  | "consultar_se_medicacao"
+  | "receita_obrigatoria"
+  | "confirmar_troca_com_farmaceutico";
 
 export type AlertCode = WarningCode | "interacao_separar_periodos" | "sem_protetor_no_kit";
 
@@ -42,7 +56,21 @@ export type ProductForm =
   | "stick"
   | "patch"
   | "spray"
-  | "bar";
+  | "bar"
+  | "caps"
+  | "powder"
+  | "box";
+
+export type ProductDomain = "dermo" | "suplemento" | "higiene" | "medicamento";
+export type PresentationKind = "referencia" | "generico" | "similar";
+
+/** Só medicamentos: mesmo princípio ativo e dose, apresentações diferentes. A troca depende do farmacêutico. */
+export interface Equivalence {
+  group: string;
+  presentation: PresentationKind;
+  active: string;
+  dose: string;
+}
 
 export interface Product {
   id: string;
@@ -75,6 +103,10 @@ export interface Product {
   categoryIds: string[];
   /** Fotos reais sem marca; vazio enquanto o banco de imagens não foi revisado. */
   images: ProductImage[];
+  domain: ProductDomain;
+  /** null = venda livre; "receita_simples" = medicamento (receita SIMULADA no protótipo). */
+  rx: null | "receita_simples";
+  equivalence: Equivalence | null;
 }
 
 export interface ProductImage {
@@ -105,6 +137,23 @@ export interface SearchRequest {
   preferences?: string[];
   /** Loja escolhida: os kits só usam itens com estoque nela. Ausente/null = estoque central. */
   storeId?: string | null;
+  /** Conversa: o `context` da resposta anterior (o motor não guarda estado). */
+  context?: ChatContext | null;
+  /** Produto em foco (só o id; nunca dados da pessoa). */
+  focusProductId?: string | null;
+}
+
+/** Estado da conversa devolvido pelo motor e reenviado pelo app. Só ids e preferências de cosmético. */
+export interface ChatContext {
+  intent: Intent;
+  requested: string[];
+  excluded: string[];
+  /** Kits em forma compacta (ids). O motor reconstrói preço e estoque a partir do catálogo. */
+  kits: Array<{ id: string; tier: KitTier; totalCents: number; items: Array<{ step: StepId; productId: string }> } & Record<string, unknown>>;
+  lastAct: string;
+  turn: number;
+  focusTier?: KitTier;
+  focusProductId?: string;
 }
 
 export type SafetyDecision = "allow" | "caution" | "blocked";
@@ -158,9 +207,59 @@ export interface Kit {
 
 export type KitsStatus = "ok" | "partial" | "none_in_budget" | "not_applicable";
 
+export type ChatAction =
+  | { type: "none" }
+  | { type: "show_kits"; tier?: KitTier }
+  | { type: "show_products" }
+  | { type: "open_refill" }
+  | { type: "add_kit_to_cart"; tier: KitTier; kitId: string }
+  | { type: "delivery_info" }
+  | { type: "delivery_quote"; tier: KitTier; kitTotalCents: number; options: DeliveryQuoteOption[] }
+  | { type: "swap_options"; tier: KitTier; kitId: string; step: StepId; options: Array<{ productId: string; deltaCents: number }> }
+  | { type: "show_similars"; productId: string; options: SimilarOption[] };
+
+export interface DeliveryQuoteOption {
+  id: FulfillmentMode;
+  label: string;
+  eta: string;
+  feeCents: number;
+  totalCents: number;
+  stockSource: "loja" | "centro_distribuicao";
+}
+
+export interface SimilarOption {
+  productId: string;
+  kind: "equivalente" | "parecido";
+  presentation?: PresentationKind;
+  sameActive?: boolean;
+  sameDose?: boolean;
+  score?: number;
+  deltaCents: number;
+  inStock: boolean;
+  storeIdsWithStock: string[];
+  needsPharmacistConfirmation: boolean;
+}
+
+export interface SimilarsResponse {
+  productId: string;
+  domain: ProductDomain;
+  storeId: string | null;
+  inStockHere: boolean;
+  options: Array<Omit<SimilarOption, "productId"> & { product: Product }>;
+}
+
 export interface SearchResponse {
   requestId: string;
   query: string;
+  /** Ato de fala entendido (busca, refinar, trocar_item, entrega_frete, repor_medicamento...). */
+  act?: string;
+  /** Texto da resposta na conversa. */
+  reply?: string;
+  suggestions?: string[];
+  /** Pedido de agora + o que a conversa já sabia, numa frase autônoma (chip "Buscando: …"). Nunca contém dado de saúde. */
+  rewrittenQuery?: string | null;
+  action?: ChatAction;
+  context?: ChatContext;
   safety: Safety;
   intent: Intent;
   clarification?: Clarification;
@@ -189,6 +288,10 @@ export interface SearchService {
   swap(kit: Kit, step: StepId, productId: string, intent: Intent): Promise<Kit>;
   /** Troca só os itens sem estoque na loja. null = o kit não fecha nessa loja. */
   adaptToStore(kit: Kit, storeId: string, intent: Intent): Promise<KitAdaptation | null>;
+  /** Equivalentes (medicamento: mesmo ativo e dose) ou parecidos (demais). */
+  similars(productId: string, storeId: string | null): Promise<SimilarsResponse>;
+  /** Qual motor responde: "graphrag" (servidor Python) ou "simulado" (fallback local). */
+  readonly engine: "graphrag" | "simulado";
 }
 
 export const STEP_ORDER: StepId[] = [
@@ -199,6 +302,15 @@ export const STEP_ORDER: StepId[] = [
   "protecao_solar",
   "protecao_corporal",
   "complemento",
+  "omega3",
+  "colageno",
+  "magnesio",
+  "vitaminas",
+  "higiene_corpo",
+  "higiene_cabelo",
+  "higiene_oral",
+  "desodorante",
+  "reposicao",
 ];
 
 export const STEP_LABEL: Record<StepId, string> = {
@@ -209,6 +321,15 @@ export const STEP_LABEL: Record<StepId, string> = {
   protecao_solar: "Proteção solar",
   protecao_corporal: "Proteção corporal",
   complemento: "Complemento",
+  omega3: "Ômega 3",
+  colageno: "Colágeno",
+  magnesio: "Magnésio",
+  vitaminas: "Vitaminas",
+  higiene_corpo: "Banho e corpo",
+  higiene_cabelo: "Cabelo",
+  higiene_oral: "Higiene bucal",
+  desodorante: "Desodorante",
+  reposicao: "Reposição",
 };
 
 export const TIER_LABEL: Record<KitTier, string> = {
@@ -225,6 +346,8 @@ export const GOAL_LABEL: Record<GoalId, string> = {
   anti_idade: "Cuidado antissinais",
   pele_sensivel: "Pele sensível",
   oleosidade: "Controle de oleosidade",
+  suplementos: "Suplementos e vitaminas",
+  higiene_premium: "Higiene premium",
 };
 
 // ---------------------------------------------------------------------------

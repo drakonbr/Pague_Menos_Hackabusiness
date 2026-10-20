@@ -1,6 +1,6 @@
 # 05 — Catálogo sintético
 
-Módulo: `catalog/`. Status: **gerado e validado** (100 produtos, 31 de 31 checagens).
+Módulo: `catalog/`. Status: **gerado e validado** (138 produtos, 69 de 69 checagens). Os 100 primeiros são os de skin care; **p101 a p138** (20/10) atendem a persona Renata: 12 suplementos e 12 itens de higiene premium (3 por tipo), 6 dermocosméticos anti-idade e 8 itens de reposição (genéricos fictícios, `rx`, `equivalence`, estoque por loja forçado a zero em alguns casos para exercitar equivalentes). Geração em `catalog/persona_products.py` e `generate_persona.py`; a persona vive em `data/persona.json` e nunca é lida pelo motor.
 
 ## Objetivo
 

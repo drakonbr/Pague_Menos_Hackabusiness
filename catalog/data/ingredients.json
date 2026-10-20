@@ -201,5 +201,103 @@
     "family": "emoliente",
     "function": "nutrição",
     "photosensitizing": false
+  },
+  {
+    "id": "omega3_epa_dha",
+    "name": "Ômega 3 (EPA e DHA)",
+    "family": "ácido graxo",
+    "function": "suplemento alimentar de ômega 3",
+    "photosensitizing": false
+  },
+  {
+    "id": "omega3_algas",
+    "name": "Ômega 3 de algas (DHA)",
+    "family": "ácido graxo vegetal",
+    "function": "suplemento alimentar de ômega 3 vegetal",
+    "photosensitizing": false
+  },
+  {
+    "id": "colageno_hidrolisado",
+    "name": "Colágeno hidrolisado",
+    "family": "proteína",
+    "function": "suplemento alimentar de colágeno",
+    "photosensitizing": false
+  },
+  {
+    "id": "magnesio_dimalato",
+    "name": "Magnésio dimalato",
+    "family": "mineral",
+    "function": "suplemento alimentar de magnésio",
+    "photosensitizing": false
+  },
+  {
+    "id": "magnesio_bisglicinato",
+    "name": "Magnésio bisglicinato",
+    "family": "mineral",
+    "function": "suplemento alimentar de magnésio",
+    "photosensitizing": false
+  },
+  {
+    "id": "magnesio_citrato",
+    "name": "Magnésio citrato",
+    "family": "mineral",
+    "function": "suplemento alimentar de magnésio",
+    "photosensitizing": false
+  },
+  {
+    "id": "vitamina_d3",
+    "name": "Vitamina D3",
+    "family": "vitamina",
+    "function": "suplemento alimentar de vitamina D",
+    "photosensitizing": false
+  },
+  {
+    "id": "vitamina_k2",
+    "name": "Vitamina K2",
+    "family": "vitamina",
+    "function": "suplemento alimentar de vitamina K",
+    "photosensitizing": false
+  },
+  {
+    "id": "multivitaminico",
+    "name": "Complexo multivitamínico",
+    "family": "vitaminas e minerais",
+    "function": "suplemento alimentar multivitamínico",
+    "photosensitizing": false
+  },
+  {
+    "id": "oleo_argan",
+    "name": "Óleo de argan",
+    "family": "óleo vegetal",
+    "function": "nutrição de cabelo e pele",
+    "photosensitizing": false
+  },
+  {
+    "id": "queratina",
+    "name": "Queratina",
+    "family": "proteína",
+    "function": "reposição de massa do fio",
+    "photosensitizing": false
+  },
+  {
+    "id": "fluoreto",
+    "name": "Fluoreto",
+    "family": "mineral",
+    "function": "higiene bucal",
+    "photosensitizing": false
+  },
+  {
+    "id": "tensivalol_potassico",
+    "name": "Tensivalol potássico (fictício)",
+    "family": "substância fictícia",
+    "function": "princípio ativo inventado para a demonstração",
+    "photosensitizing": false
+  },
+  {
+    "id": "lipostanol_calcico",
+    "name": "Lipostanol cálcico (fictício)",
+    "family": "substância fictícia",
+    "function": "princípio ativo inventado para a demonstração",
+    "photosensitizing": false
   }
 ]

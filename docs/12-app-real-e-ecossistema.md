@@ -100,3 +100,8 @@ Em qualquer opção, o banco de imagens fica em `catalog/images/` com um manifes
 | Assinatura do kit | escolha na página do kit e na cesta; lista em Mais → Assinaturas |
 | Banco de imagens | script de download e de atribuição prontos e testados com fotos falsas; **fotos reais pendentes** |
 | Proposta "kit usa o motor Combine N" | só proposta; não implementado |
+
+
+## Atualização de 20/10
+
+A área de medicamentos, antes visível e desativada, agora existe só como **reposição** para a persona Renata (receita simulada, equivalentes, alerta de 7 dias). Ver [doc 14](14-persona-e-privacidade.md) e as decisões D-21 a D-26.

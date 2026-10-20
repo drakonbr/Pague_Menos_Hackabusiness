@@ -1,0 +1,117 @@
+{
+  "id": "renata",
+  "note": "Persona fictícia criada pelo grupo (Renata Almeida). Dados sintéticos para demonstração.",
+  "name": "Renata Almeida",
+  "firstName": "Renata",
+  "age": 49,
+  "occupation": "Coordenadora de Logística (híbrido)",
+  "quote": "Quero cuidar da minha saúde sem que isso consuma o meu tempo.",
+  "address": {
+    "label": "Principal",
+    "street": "Rua das Hortênsias, 410, apto 802",
+    "neighborhood": "Madalena",
+    "city": "Recife",
+    "uf": "PE",
+    "cep": "50610-000",
+    "lat": -8.0589,
+    "lng": -34.9066,
+    "note": "Endereço e CEP fictícios."
+  },
+  "interests": [
+    "anti_idade",
+    "suplementos",
+    "higiene_premium"
+  ],
+  "preferences": {
+    "deliveryPriority": [
+      "retirada",
+      "expressa",
+      "agendada"
+    ],
+    "priceView": "total_com_frete",
+    "wantsSimilarOptions": true,
+    "fewTaps": true
+  },
+  "privacy": {
+    "consent": {
+      "refillReminders": true,
+      "personalizeWithPurchaseHistory": true,
+      "useHealthDataForRecommendations": false,
+      "shareHealthDataWithPartners": false
+    },
+    "healthDataStays": "no_aparelho"
+  },
+  "continuousMedications": [
+    {
+      "productId": "p132",
+      "unitsPerDay": 1,
+      "unitsLeft": 5,
+      "packUnits": 30,
+      "label": "Pressão (uso contínuo)"
+    },
+    {
+      "productId": "p136",
+      "unitsPerDay": 1,
+      "unitsLeft": 2,
+      "packUnits": 30,
+      "label": "Colesterol (uso contínuo)"
+    }
+  ],
+  "orderHistory": [
+    {
+      "id": "o-0814",
+      "date": "2026-08-14",
+      "deliveryId": "expressa",
+      "health": false,
+      "items": [
+        {
+          "productId": "p107",
+          "qty": 1
+        },
+        {
+          "productId": "p110",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "o-0902",
+      "date": "2026-09-02",
+      "deliveryId": "retirada",
+      "health": false,
+      "items": [
+        {
+          "productId": "p102",
+          "qty": 1
+        },
+        {
+          "productId": "p105",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "o-0925",
+      "date": "2026-09-25",
+      "deliveryId": "retirada",
+      "health": true,
+      "items": [
+        {
+          "productId": "p132",
+          "qty": 1
+        },
+        {
+          "productId": "p136",
+          "qty": 1
+        }
+      ]
+    }
+  ],
+  "assistantProfile": {
+    "style": "direto, poucos toques, sem expor saúde",
+    "neverMention": [
+      "medicamentos",
+      "condições de saúde"
+    ]
+  }
+}

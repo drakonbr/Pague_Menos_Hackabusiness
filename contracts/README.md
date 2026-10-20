@@ -8,8 +8,8 @@ Convenções: JSON em `camelCase`, valores em **centavos inteiros** (`priceCents
 
 | Nome | Valores |
 | --- | --- |
-| `StepId` | `limpeza`, `preparo`, `tratamento`, `hidratacao`, `protecao_solar`, `protecao_corporal`, `complemento` |
-| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade` |
+| `StepId` | `limpeza`, `preparo`, `tratamento`, `hidratacao`, `protecao_solar`, `protecao_corporal`, `complemento`, além das etapas de suplementos e higiene premium (ver `catalog/data/steps.json`) |
+| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` |
 | `SkinType` | `oleosa`, `mista`, `seca`, `normal`, `sensível` |
 | `KitTier` | `economico`, `essencial`, `alternativo` |
 | `AlertCode` | `fotossensibilizante`, `consultar_se_gestante`, `evitar_contato_olhos`, `nao_usar_pele_irritada`, `teste_de_sensibilidade`, `interacao_separar_periodos`, `sem_protetor_no_kit` |
@@ -138,6 +138,27 @@ Invariantes novas:
 16. `kit.storeId` = `intent.storeId` do pedido que gerou o kit.
 (A invariante 3, estoque, passa a usar o estoque da loja quando há loja.)
 
+## Conversa, ações e privacidade (20/10)
+
+`SearchRequest` ganha `context` (o `context` da resposta anterior; o motor não guarda estado) e `focusProductId` (só um id). `SearchResponse` ganha:
+
+| Campo | Regra |
+| --- | --- |
+| `act` | Ato de fala entendido: `busca`, `refinar`, `trocar_item`, `pergunta_produto`, `repor_medicamento`, `similar`, `entrega_frete`, `saudacao`, `agradecimento`, `afirmacao`… (13 no total) |
+| `reply` | Texto da resposta na conversa |
+| `suggestions` | Frases curtas para tocar |
+| `action` | `none`, `show_kits`, `show_products`, `open_refill`, `add_kit_to_cart`, `delivery_info`, `delivery_quote`, `swap_options`, `show_similars` (formas em `app/src/contracts/types.ts`) |
+| `context` | `{ intent, requested, excluded, kits (ids compactos), lastAct, turn, focusTier?, focusProductId? }` |
+| `rewrittenQuery` | Pedido de agora + o que a conversa já sabia, numa frase (`null` se bloqueado, reposição ou sem entendimento). Só rótulos do catálogo |
+
+`Product` ganha `domain` (`dermo`, `suplemento`, `higiene`, `medicamento`), `rx` (`null` ou `receita_simples`) e `equivalence` (`{ group, presentation: referencia|generico|similar, active, dose }`).
+
+Regras de privacidade do contrato:
+
+1. Nada de saúde da pessoa viaja: nem condição, nem medicamento em uso. Só a frase, o `context` e ids.
+2. `reply`, `suggestions`, `notes`, `safety` e `context` nunca contêm termos de saúde nem nomes de medicamento.
+3. Produtos com `domain = medicamento` nunca aparecem em `kits`, `products` nem em busca livre; só em `similars` e na reposição, como dado estruturado.
+
 ## Operações do serviço de busca
 
 | Operação | Entrada | Saída |
@@ -146,10 +167,16 @@ Invariantes novas:
 | `swapOptions` | `Kit`, `StepId`, `Intent` | Lista de `SwapOption`: `{ product, deltaCents, compatible, reason? }`, em ordem de relevância |
 | `adaptToStore` | `Kit`, `storeId`, `Intent` | `{ kit, replaced[] }` trocando só os itens sem estoque na loja, ou `null` se o kit não fecha nela |
 | `swap` | `Kit`, `StepId`, `productId`, `Intent` | `Kit` revalidado (total, alertas e invariantes recalculados) |
+| `similars` | `productId`, `storeId` | `{ productId, domain, storeId, inStockHere, options[] }`; cada opção traz `kind` (`equivalente` ou `parecido`), `deltaCents`, `inStock`, `storeIdsWithStock`, `needsPharmacistConfirmation` |
+| `delivery-quote` | `totalCents` | opções de entrega com taxa e total (item + frete) |
 
 O serviço é **sem estado**: o kit e a intenção (`Intent`, vinda da última resposta de `search`) viajam inteiros entre app e serviço, então nada precisa ser guardado no servidor para a demonstração.
 
-Em HTTP (proposta para o GraphRAG): `POST /v1/search`, `POST /v1/kits/swap-options`, `POST /v1/kits/swap`, `POST /v1/kits/adapt-to-store`.
+Em HTTP (proposta para o GraphRAG): `POST /v1/search`, `POST /v1/kits/swap-options`, `POST /v1/kits/swap`, `POST /v1/kits/adapt-to-store`, `POST /v1/similars`, `POST /v1/delivery-quote`, `GET /v1/health` e `POST /v1/search-chat` (SSE). Implementado em `graphrag/service/server.py` (porta 8787). `POST /v1/admin/ingest` existe só com `--allow-ingest`.
+
+### `POST /v1/search-chat` (fluxo SSE)
+
+Corpo = `SearchRequest` + `history?: string[]` (até 3 falas anteriores; usado só se não houver `context`). Resposta `text/event-stream` com os eventos `rewrite` → `sources` → `token`* → `done`; o `done` traz o mesmo corpo de `/v1/search` mais `latencyMs`. Entrada inválida: `400` JSON antes do fluxo. Detalhes e limites no [doc 15](../docs/15-graphrag-conversacional.md).
 
 ## Serviço de comércio (`CommerceService`)
 

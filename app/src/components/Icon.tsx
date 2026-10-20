@@ -5,7 +5,7 @@ export type IconName =
   | "home" | "grid" | "tag" | "heart" | "heartFill" | "more" | "pin" | "chevron" | "chevronDown" | "chevronUp"
   | "close" | "filter" | "clock" | "share" | "trash" | "plus" | "minus" | "check" | "checkCircle" | "info"
   | "alert" | "shield" | "swap" | "store" | "truck" | "locker" | "map" | "cross" | "wallet" | "repeat"
-  | "box" | "sparkle" | "pill" | "lipstick" | "stroller" | "dumbbell" | "bottle" | "bag" | "paw" | "image" | "user";
+  | "box" | "sparkle" | "pill" | "lipstick" | "stroller" | "dumbbell" | "bottle" | "bag" | "paw" | "image" | "user" | "send" | "chat" | "lock";
 
 const P: Record<IconName, ReactNode> = {
   search: (<><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></>),
@@ -58,6 +58,9 @@ const P: Record<IconName, ReactNode> = {
   paw: (<><circle cx="8" cy="8" r="1.8" /><circle cx="16" cy="8" r="1.8" /><circle cx="5" cy="12.5" r="1.6" /><circle cx="19" cy="12.5" r="1.6" /><path d="M12 12c-3 0-5 3.5-4 5.5s6 2 8 0-1-5.5-4-5.5z" /></>),
   image: (<><rect x="3.5" y="5" width="17" height="14" rx="2" /><circle cx="9" cy="10" r="1.8" /><path d="M20.5 16l-5-5-8.5 8" /></>),
   user: (<><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20a7.5 7.5 0 0 1 15 0" /></>),
+  send: (<><path d="M4 12L20 4l-4.5 16-3.5-6.5z" /><path d="M12 13.5L20 4" /></>),
+  chat: (<><path d="M4 5.5h16v10H10l-4.5 3.5v-3.5H4z" /><path d="M8 9.5h8M8 12.5h5" /></>),
+  lock: (<><rect x="5" y="10.5" width="14" height="9.5" rx="2" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14v2.5" /></>),
 };
 
 export function Icon({ name, size = 22, className, strokeWidth = 1.7 }: { name: IconName; size?: number; className?: string; strokeWidth?: number }) {

@@ -3,5 +3,8 @@
   "consultar_se_gestante": "Em gestação ou amamentação, converse com um profissional de saúde antes de usar.",
   "evitar_contato_olhos": "Evite o contato com os olhos.",
   "nao_usar_pele_irritada": "Não aplicar sobre pele machucada ou irritada.",
-  "teste_de_sensibilidade": "Faça um teste em área pequena antes do primeiro uso."
+  "teste_de_sensibilidade": "Faça um teste em área pequena antes do primeiro uso.",
+  "consultar_se_medicacao": "Se você usa medicamento contínuo ou tem alguma condição de saúde, converse com seu médico ou farmacêutico antes de começar a usar.",
+  "receita_obrigatoria": "Venda sob receita. Neste protótipo a receita é simulada.",
+  "confirmar_troca_com_farmaceutico": "Troca por outra apresentação só com orientação do farmacêutico e conforme a sua receita."
 }

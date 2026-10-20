@@ -1,0 +1,60 @@
+{
+ "treino": 198,
+ "teste": 60,
+ "acertos": 59,
+ "acuracia": 0.9833,
+ "porAto": {
+  "busca": {
+   "acertos": 6,
+   "total": 6
+  },
+  "refinar": {
+   "acertos": 6,
+   "total": 6
+  },
+  "trocar_item": {
+   "acertos": 5,
+   "total": 5
+  },
+  "pergunta_produto": {
+   "acertos": 5,
+   "total": 5
+  },
+  "repor_medicamento": {
+   "acertos": 5,
+   "total": 5
+  },
+  "similar": {
+   "acertos": 5,
+   "total": 5
+  },
+  "entrega_frete": {
+   "acertos": 5,
+   "total": 5
+  },
+  "saudacao": {
+   "acertos": 4,
+   "total": 4
+  },
+  "agradecimento": {
+   "acertos": 4,
+   "total": 4
+  },
+  "afirmacao": {
+   "acertos": 3,
+   "total": 4
+  },
+  "negacao": {
+   "acertos": 4,
+   "total": 4
+  },
+  "reiniciar": {
+   "acertos": 4,
+   "total": 4
+  },
+  "ajuda": {
+   "acertos": 3,
+   "total": 3
+  }
+ }
+}

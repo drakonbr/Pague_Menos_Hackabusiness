@@ -148,7 +148,7 @@ export function Delivery() {
                     <Icon name="chevron" size={20} />
                   </span>
                   <span><span className="open">Aberta</span> · <span style={{ color: "var(--text-2)" }}>{s.store.hours}</span></span>
-                  <span className="addr">{s.store.address}, Fortaleza - CE (endereço fictício)</span>
+                  <span className="addr">{s.store.address}, Recife - PE (endereço fictício)</span>
                   <span className="chips">
                     {i === 0 && !onlyStock ? <span className="mini blue">+ Próxima</span> : null}
                     <span className="mini">{s.distanceKm.toLocaleString("pt-BR")} km</span>

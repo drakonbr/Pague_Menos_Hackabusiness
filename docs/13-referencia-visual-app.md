@@ -57,3 +57,8 @@ Página de produto, página do kit, pagamento, confirmação, Meus pedidos, Assi
 | Fotos | fotos dos produtos | fotos reais sem marca (após a revisão); antes disso, desenho provisório com "foto pendente" |
 | Ofertas | por marca/linha, com validade | por produto |
 | Locker, receita, áudio, código de barras, alertas de medicamento | ativos | visíveis e desativados |
+
+
+## Atualização de 20/10
+
+Telas novas sem referência nos prints (criadas para a persona): conversa de busca, Meus medicamentos, Privacidade e o perfil da Renata em Mais. O desenho da persona está em `docs/assets/persona-renata.svg`.

@@ -37,6 +37,9 @@
     "description": "Gel de Limpeza Purificante: produto do tipo gel de limpeza, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne, oleosidade e poros. Principais ativos: Ácido salicílico e Zinco PCA. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -75,6 +78,9 @@
     "description": "Sabonete Líquido Facial Oil Control: produto do tipo sabonete líquido facial, da marca Clara Pele, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Zinco PCA e Extrato de chá verde. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -111,6 +117,9 @@
     "description": "Gel de Limpeza Facial Diário: produto do tipo gel de limpeza, da marca Pura Base, indicado para todos os tipos de pele. Foco em limpeza diária. Principais ativos: Tensoativo suave e Glicerina. Sem fragrância.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -147,6 +156,9 @@
     "description": "Água Micelar 5 em 1: produto do tipo água micelar, da marca Pura Base, indicado para todos os tipos de pele. Foco em remoção de make e protetor e limpeza diária. Principais ativos: Glicerina. Sem fragrância.",
     "how_to_use": "Aplique com algodão sobre o rosto e remova sem enxaguar.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -182,6 +194,9 @@
     "description": "Espuma de Limpeza Facial: produto do tipo espuma de limpeza, da marca Bem Simples, indicado para pele normal e mista. Foco em limpeza diária. Principais ativos: Tensoativo suave e Pantenol.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -220,6 +235,9 @@
     "description": "Gel de Limpeza Suave Pele Sensível: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele sensível. Foco em sensibilidade e limpeza diária. Principais ativos: Centella asiática e Alantoína. Sem fragrância e não comedogênico.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -258,6 +276,9 @@
     "description": "Gel de Limpeza Anti-Acne: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico e Niacinamida. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -296,6 +317,9 @@
     "description": "Sabonete Facial Chá Verde: produto do tipo sabonete líquido facial, da marca Vita Verde, indicado para pele oleosa e mista. Foco em oleosidade e limpeza diária. Principais ativos: Extrato de chá verde e Glicerina. Vegano.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -335,6 +359,9 @@
     "description": "Óleo de Limpeza Demaquilante: produto do tipo óleo de limpeza, da marca Vita Verde, indicado para pele seca e normal. Foco em remoção de make e protetor e ressecamento. Principais ativos: Vitamina E. Vegano.",
     "how_to_use": "Massageie na pele seca, adicione água para emulsionar e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -373,6 +400,9 @@
     "description": "Gel de Limpeza Niacinamida: produto do tipo gel de limpeza, da marca Lume Lab, indicado para pele oleosa e mista. Foco em oleosidade e poros. Principais ativos: Niacinamida. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -411,6 +441,9 @@
     "description": "Leite de Limpeza Hidratante: produto do tipo leite de limpeza, da marca Lume Lab, indicado para pele seca e sensível. Foco em ressecamento e sensibilidade. Principais ativos: Ceramidas e Glicerina. Sem fragrância.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -448,6 +481,9 @@
     "description": "Gel de Limpeza Pós-Sol: produto do tipo gel de limpeza, da marca Solare, indicado para todos os tipos de pele. Foco em remoção de make e protetor e limpeza diária. Principais ativos: Aloe vera e Tensoativo suave. Sem álcool.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -482,6 +518,9 @@
     "description": "Sabonete Facial Antiacne em Barra: produto do tipo sabonete facial em barra, da marca Pura Base, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Enxofre.",
     "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -519,6 +558,9 @@
     "description": "Água Micelar Pele Oleosa: produto do tipo água micelar, da marca Bem Simples, indicado para pele oleosa. Foco em oleosidade e remoção de make e protetor. Principais ativos: Zinco PCA e Glicerina. Oil free.",
     "how_to_use": "Aplique com algodão sobre o rosto e remova sem enxaguar.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -557,6 +599,9 @@
     "description": "Tônico Renovador Mandélico: produto do tipo tônico esfoliante, da marca Lume Lab, indicado para pele mista e normal. Foco em manchas e textura irregular. Principais ativos: Ácido mandélico.",
     "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -595,6 +640,9 @@
     "description": "Tônico Adstringente Sem Álcool: produto do tipo tônico facial, da marca Clara Pele, indicado para pele oleosa. Foco em poros e oleosidade. Principais ativos: Extrato de chá verde e Zinco PCA. Sem álcool e oil free.",
     "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -633,6 +681,9 @@
     "description": "Tônico Facial Calmante: produto do tipo tônico facial, da marca Pura Base, indicado para pele todas e sensível. Foco em sensibilidade. Principais ativos: Centella asiática e Glicerina. Sem álcool e sem fragrância.",
     "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -673,6 +724,9 @@
     "description": "Solução Esfoliante Salicílica: produto do tipo esfoliante químico, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne, textura irregular e poros. Principais ativos: Ácido salicílico. Oil free.",
     "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -712,6 +766,9 @@
     "description": "Tônico Glicólico Noturno: produto do tipo tônico esfoliante, da marca Aurora Dermo, indicado para pele mista e normal. Foco em textura irregular e manchas. Principais ativos: Ácido glicólico.",
     "how_to_use": "Use à noite, 2 a 3 vezes por semana, e use protetor solar durante o dia.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -750,6 +807,9 @@
     "description": "Tônico de Rosas Hidratante: produto do tipo tônico facial, da marca Vita Verde, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Glicerina e Ácido hialurônico. Vegano e sem álcool.",
     "how_to_use": "Aplique com algodão ou com as mãos após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -786,6 +846,9 @@
     "description": "Esfoliante Facial Suave: produto do tipo esfoliante físico, da marca Bem Simples, indicado para pele oleosa e mista. Foco em textura irregular. Principais ativos: Argila.",
     "how_to_use": "Massageie suavemente com a pele úmida e enxágue. Use 1 a 2 vezes por semana.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -823,6 +886,9 @@
     "description": "Máscara de Argila Purificante: produto do tipo máscara de argila, da marca Lume Lab, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Argila e Zinco PCA. Oil free.",
     "how_to_use": "Aplique uma camada fina, aguarde 10 minutos e enxágue. Use 1 a 2 vezes por semana.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -861,6 +927,9 @@
     "description": "Gel Secativo Antiacne: produto do tipo gel secativo, da marca Clara Pele, indicado para pele oleosa. Foco em acne. Principais ativos: Ácido salicílico e Enxofre. Oil free.",
     "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -901,6 +970,9 @@
     "description": "Sérum Niacinamida + Zinco: produto do tipo sérum, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne, oleosidade e poros. Principais ativos: Niacinamida e Zinco PCA. Oil free e não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -936,6 +1008,9 @@
     "description": "Adesivos Hidrocoloide Anti-Espinha (24 un): produto do tipo adesivo hidrocoloide, da marca Clara Pele, indicado para todos os tipos de pele. Foco em acne. Principais ativos: Hidrocoloide. Sem fragrância.",
     "how_to_use": "Aplique sobre a espinha com a pele limpa e seca e deixe agir por 6 a 8 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -972,6 +1047,9 @@
     "description": "Loção Secativa Pontual: produto do tipo loção secativa, da marca Pura Base, indicado para pele oleosa. Foco em acne. Principais ativos: Enxofre e Ácido salicílico.",
     "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1010,6 +1088,9 @@
     "description": "Sérum Niacinamida 5%: produto do tipo sérum, da marca Pura Base, indicado para pele oleosa e mista. Foco em oleosidade, poros e manchas. Principais ativos: Niacinamida. Oil free.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1048,6 +1129,9 @@
     "description": "Gel Antiacne Diário: produto do tipo gel secativo, da marca Bem Simples, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico. Oil free.",
     "how_to_use": "Aplique pontualmente sobre a região, após a limpeza.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1089,6 +1173,9 @@
     "description": "Sérum Ácido Azelaico Controle de Acne: produto do tipo sérum, da marca Aurora Dermo, indicado para pele oleosa, mista e sensível. Foco em acne e manchas. Principais ativos: Ácido azelaico e Niacinamida. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1130,6 +1217,9 @@
     "description": "Gel-Creme Regulador Anti-Acne: produto do tipo gel-creme de tratamento, da marca Aurora Dermo, indicado para pele oleosa. Foco em acne e oleosidade. Principais ativos: Ácido salicílico, Niacinamida e Zinco PCA. Oil free e não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1170,6 +1260,9 @@
     "description": "Sérum Salicílico + Niacinamida: produto do tipo sérum, da marca Lume Lab, indicado para pele oleosa. Foco em acne e poros. Principais ativos: Ácido salicílico e Niacinamida. Oil free.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1210,6 +1303,9 @@
     "description": "Sérum Pós-Acne Uniformizador: produto do tipo sérum, da marca Lume Lab, indicado para pele oleosa e mista. Foco em acne e manchas. Principais ativos: Ácido azelaico e Ácido tranexâmico. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1250,6 +1346,9 @@
     "description": "Sérum Chá Verde Calmante Anti-Acne: produto do tipo sérum, da marca Vita Verde, indicado para pele oleosa e sensível. Foco em acne e sensibilidade. Principais ativos: Extrato de chá verde, Centella asiática e Zinco PCA. Vegano e não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1288,6 +1387,9 @@
     "description": "Gel de Centella Pós-Espinha: produto do tipo gel calmante, da marca Vita Verde, indicado para pele sensível. Foco em acne e sensibilidade. Principais ativos: Centella asiática e Pantenol. Vegano e sem fragrância.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1326,6 +1428,9 @@
     "description": "Sérum Oil Control Matificante: produto do tipo sérum, da marca Solare, indicado para pele oleosa. Foco em oleosidade e poros. Principais ativos: Niacinamida e Zinco PCA. Oil free e não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1365,6 +1470,9 @@
     "description": "Sérum Anti-Cravos Salicílico: produto do tipo sérum, da marca Aurora Dermo, indicado para pele oleosa. Foco em poros e acne. Principais ativos: Ácido salicílico. Oil free.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1400,6 +1508,9 @@
     "description": "Sérum Vitamina C 10%: produto do tipo sérum, da marca Pura Base, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1435,6 +1546,9 @@
     "description": "Sérum Clareador Ácido Tranexâmico: produto do tipo sérum, da marca Pura Base, indicado para pele normal e mista. Foco em manchas. Principais ativos: Ácido tranexâmico e Niacinamida.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1470,6 +1584,9 @@
     "description": "Gel Uniformizador Niacinamida: produto do tipo gel de tratamento, da marca Bem Simples, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Niacinamida. Oil free.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1508,6 +1625,9 @@
     "description": "Sérum Vitamina C 15% Antioxidante: produto do tipo sérum, da marca Lume Lab, indicado para pele normal e mista. Foco em manchas e sinais de idade. Principais ativos: Vitamina C e Vitamina E.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1544,7 +1664,10 @@
     "description": "Sérum Tranexâmico + Niacinamida: produto do tipo sérum, da marca Lume Lab, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Ácido tranexâmico e Niacinamida. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
-    "price_tier": "premium"
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
   },
   {
     "id": "p042",
@@ -1582,6 +1705,9 @@
     "description": "Sérum Despigmentante Noturno: produto do tipo sérum, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Ácido azelaico e Ácido tranexâmico. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1620,6 +1746,9 @@
     "description": "Sérum Vitamina C Estabilizada 20%: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal e seca. Foco em manchas e sinais de idade. Principais ativos: Vitamina C e Vitamina E.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1658,6 +1787,9 @@
     "description": "Sérum Iluminador Vitamina C Natural: produto do tipo sérum, da marca Vita Verde, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C e Vitamina E. Vegano.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1695,6 +1827,9 @@
     "description": "Creme Uniformizador Noturno: produto do tipo creme de tratamento, da marca Vita Verde, indicado para pele normal e seca. Foco em manchas. Principais ativos: Niacinamida e Ácido tranexâmico. Vegano.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1731,6 +1866,9 @@
     "description": "Sérum Antimanchas Dia: produto do tipo sérum, da marca Solare, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Vitamina C e Niacinamida. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -1766,6 +1904,9 @@
     "description": "Creme Antissinais com Peptídeos: produto do tipo creme antissinais, da marca Pura Base, indicado para pele normal e seca. Foco em sinais de idade. Principais ativos: Peptídeos e Glicerina.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1805,6 +1946,9 @@
     "description": "Sérum Retinol 0,2% Iniciante: produto do tipo sérum de retinol, da marca Bem Simples, indicado para pele normal e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -1845,6 +1989,9 @@
     "description": "Sérum Retinol 0,5%: produto do tipo sérum de retinol, da marca Lume Lab, indicado para pele normal e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol e Vitamina E.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1883,6 +2030,9 @@
     "description": "Sérum Bakuchiol Alternativo ao Retinol: produto do tipo sérum, da marca Lume Lab, indicado para pele todas e sensível. Foco em sinais de idade. Principais ativos: Bakuchiol e Vitamina E. Vegano e não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1923,6 +2073,9 @@
     "description": "Creme Retinol + Ceramidas Noturno: produto do tipo creme de retinol, da marca Aurora Dermo, indicado para pele normal e seca. Foco em sinais de idade e ressecamento. Principais ativos: Retinol e Ceramidas.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1961,6 +2114,9 @@
     "description": "Sérum Peptídeos Firmador: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade. Principais ativos: Peptídeos e Ácido hialurônico. Não comedogênico.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -1998,6 +2154,9 @@
     "description": "Óleo Facial Antissinais: produto do tipo óleo facial, da marca Vita Verde, indicado para pele seca. Foco em sinais de idade e ressecamento. Principais ativos: Vitamina E e Bakuchiol. Vegano.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2036,6 +2195,9 @@
     "description": "Creme Noturno Regenerador: produto do tipo creme noturno, da marca Vita Verde, indicado para pele seca e normal. Foco em sinais de idade e ressecamento. Principais ativos: Ceramidas e Peptídeos. Vegano.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2078,6 +2240,9 @@
     "description": "Sérum Retinol Oil-Free: produto do tipo sérum de retinol, da marca Clara Pele, indicado para pele oleosa e mista. Foco em sinais de idade e textura irregular. Principais ativos: Retinol e Niacinamida. Oil free.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2115,6 +2280,9 @@
     "description": "Sérum Antioxidante Dia: produto do tipo sérum, da marca Solare, indicado para todos os tipos de pele. Foco em sinais de idade e manchas. Principais ativos: Vitamina C e Vitamina E.",
     "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -2154,6 +2322,9 @@
     "description": "Gel Hidratante Oil-Free: produto do tipo gel hidratante, da marca Pura Base, indicado para pele oleosa e mista. Foco em oleosidade e poros. Principais ativos: Glicerina e Ácido hialurônico. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2189,6 +2360,9 @@
     "description": "Creme Hidratante Facial Nutritivo: produto do tipo creme hidratante, da marca Pura Base, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Glicerina e Pantenol.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2222,6 +2396,9 @@
     "description": "Hidratante Facial Dia e Noite: produto do tipo creme hidratante, da marca Bem Simples, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Glicerina.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2258,6 +2435,9 @@
     "description": "Gel Hidratante Pele Oleosa: produto do tipo gel hidratante, da marca Bem Simples, indicado para pele oleosa. Foco em oleosidade. Principais ativos: Glicerina e Aloe vera. Oil free.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2297,6 +2477,9 @@
     "description": "Gel-Creme Oil-Free Anti-Brilho: produto do tipo gel-creme hidratante, da marca Clara Pele, indicado para pele oleosa. Foco em oleosidade e acne. Principais ativos: Niacinamida, Zinco PCA e Ácido hialurônico. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2336,6 +2519,9 @@
     "description": "Hidratante Matificante Pós-Tratamento: produto do tipo hidratante matificante, da marca Clara Pele, indicado para pele oleosa e mista. Foco em acne e oleosidade. Principais ativos: Niacinamida e Pantenol. Oil free e não comedogênico.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2372,6 +2558,9 @@
     "description": "Gel Hidratante Ácido Hialurônico: produto do tipo gel hidratante, da marca Lume Lab, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Ácido hialurônico e Pantenol. Sem fragrância.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2411,6 +2600,9 @@
     "description": "Creme Barreira Ceramidas: produto do tipo creme hidratante, da marca Lume Lab, indicado para pele seca e sensível. Foco em ressecamento e sensibilidade. Principais ativos: Ceramidas e Pantenol. Sem fragrância e não comedogênico.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2450,6 +2642,9 @@
     "description": "Hidratante Facial Calmante Pele Sensível: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele sensível. Foco em sensibilidade e ressecamento. Principais ativos: Centella asiática, Ceramidas e Alantoína. Sem fragrância e não comedogênico.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -2491,6 +2686,9 @@
     "description": "Gel-Creme Oil-Free Dermatológico: produto do tipo gel-creme hidratante, da marca Aurora Dermo, indicado para pele oleosa e mista. Foco em oleosidade e acne. Principais ativos: Niacinamida, Ácido hialurônico e Ceramidas. Oil free, não comedogênico e sem fragrância.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -2528,6 +2726,9 @@
     "description": "Creme Hidratante Rico Pele Seca: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele seca. Foco em ressecamento. Principais ativos: Ceramidas, Manteiga de karité e Glicerina. Sem fragrância.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -2569,6 +2770,9 @@
     "description": "Gel Hidratante Aloe e Chá Verde: produto do tipo gel hidratante, da marca Vita Verde, indicado para pele oleosa, mista e normal. Foco em oleosidade e ressecamento. Principais ativos: Aloe vera, Extrato de chá verde e Glicerina. Vegano e oil free.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2606,6 +2810,9 @@
     "description": "Creme Hidratante Vegano Karité: produto do tipo creme hidratante, da marca Vita Verde, indicado para pele seca e normal. Foco em ressecamento. Principais ativos: Manteiga de karité e Glicerina. Vegano.",
     "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2646,7 +2853,10 @@
     "description": "Hidratante Facial FPS 30 Toque Seco: produto do tipo hidratante com FPS, da marca Solare, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 30. Oil free e toque seco.",
     "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
     "image": null,
-    "price_tier": "premium"
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
   },
   {
     "id": "p071",
@@ -2684,6 +2894,9 @@
     "description": "Creme Hidratante Antissinais FPS 50: produto do tipo hidratante com FPS, da marca Solare, indicado para pele normal e seca. Foco em proteção solar e sinais de idade. Principais ativos: Filtros UVA/UVB, Peptídeos e Vitamina E. FPS 50.",
     "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -2720,6 +2933,9 @@
     "description": "Hidratante Facial FPS 30: produto do tipo hidratante com FPS, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB e Glicerina. FPS 30.",
     "how_to_use": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2758,6 +2974,9 @@
     "description": "Protetor Solar Facial FPS 50 Toque Seco: produto do tipo protetor solar facial, da marca Pura Base, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 50. Oil free e toque seco.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2791,6 +3010,9 @@
     "description": "Protetor Solar Facial FPS 30: produto do tipo protetor solar facial, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2828,6 +3050,9 @@
     "description": "Protetor Solar Facial FPS 60 Oil-Free: produto do tipo protetor solar facial, da marca Bem Simples, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 60. Oil free e não comedogênico.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2865,6 +3090,9 @@
     "description": "Protetor Solar Facial FPS 50 Gel: produto do tipo protetor solar facial, da marca Bem Simples, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Aloe vera. FPS 50. Oil free.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2905,6 +3133,9 @@
     "description": "Protetor Solar Facial Anti-Acne FPS 50: produto do tipo protetor solar facial, da marca Clara Pele, indicado para pele oleosa. Foco em proteção solar, acne e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 50. Oil free, não comedogênico e toque seco.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -2943,6 +3174,9 @@
     "description": "Protetor Solar FPS 70 Oil Control com Cor: produto do tipo protetor solar facial, da marca Clara Pele, indicado para pele oleosa. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Zinco PCA. FPS 70. Oil free e com cor.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -2978,6 +3212,9 @@
     "description": "Protetor Solar Facial FPS 60 Fluido Ultraleve: produto do tipo protetor solar facial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 60. Não comedogênico.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -3015,6 +3252,9 @@
     "description": "Protetor Solar Facial FPS 50 Toque Seco: produto do tipo protetor solar facial, da marca Solare, indicado para pele normal e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB. FPS 50. Toque seco.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3053,7 +3293,10 @@
     "description": "Protetor Solar Facial FPS 70 Sensitive: produto do tipo protetor solar facial, da marca Solare, indicado para pele sensível. Foco em proteção solar e sensibilidade. Principais ativos: Óxido de zinco e Dióxido de titânio. FPS 70. Filtro mineral e sem fragrância.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
-    "price_tier": "premium"
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
   },
   {
     "id": "p082",
@@ -3088,6 +3331,9 @@
     "description": "Protetor Solar Facial FPS 50 com Cor: produto do tipo protetor solar facial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Com cor.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3124,6 +3370,9 @@
     "description": "Protetor Solar FPS 50 Antioxidante: produto do tipo protetor solar facial, da marca Lume Lab, indicado para todos os tipos de pele. Foco em proteção solar e manchas. Principais ativos: Filtros UVA/UVB, Vitamina E e Niacinamida. FPS 50.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3164,6 +3413,9 @@
     "description": "Protetor Solar Facial FPS 60 Dermatológico Toque Seco: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 60. Oil free, não comedogênico e toque seco.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3202,6 +3454,9 @@
     "description": "Protetor Solar Mineral FPS 50 Pele Sensível: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para pele sensível. Foco em proteção solar e sensibilidade. Principais ativos: Óxido de zinco e Dióxido de titânio. FPS 50. Filtro mineral e sem fragrância.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3239,6 +3494,9 @@
     "description": "Protetor Solar Antimanchas FPS 70 com Cor: produto do tipo protetor solar facial, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em proteção solar e manchas. Principais ativos: Filtros UVA/UVB e Ácido tranexâmico. FPS 70. Com cor.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3276,6 +3534,9 @@
     "description": "Protetor Solar Facial FPS 50 Vegano: produto do tipo protetor solar facial, da marca Vita Verde, indicado para pele normal e seca. Foco em proteção solar. Principais ativos: Filtros UVA/UVB e Vitamina E. FPS 50. Vegano.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3315,6 +3576,9 @@
     "description": "Protetor Solar Mineral Hidratante FPS 30: produto do tipo protetor solar facial, da marca Vita Verde, indicado para pele seca e sensível. Foco em proteção solar e ressecamento. Principais ativos: Óxido de zinco e Glicerina. FPS 30. Vegano e filtro mineral.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3348,6 +3612,9 @@
     "description": "Protetor Solar Corporal FPS 30: produto do tipo protetor solar corporal, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -3383,6 +3650,9 @@
     "description": "Protetor Solar Corporal FPS 50 Resistente à Água: produto do tipo protetor solar corporal, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Resistente à água.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3416,6 +3686,9 @@
     "description": "Protetor Solar Corporal FPS 30 Econômico: produto do tipo protetor solar corporal, da marca Bem Simples, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 30.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -3451,6 +3724,9 @@
     "description": "Protetor Solar Corporal FPS 50 Spray: produto do tipo protetor solar corporal, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 50. Resistente à água.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3487,6 +3763,9 @@
     "description": "Protetor Solar Corporal FPS 70 Toque Seco: produto do tipo protetor solar corporal, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB. FPS 70. Toque seco e resistente à água.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
   },
   {
@@ -3523,6 +3802,9 @@
     "description": "Protetor Solar Corporal FPS 50 Vegano: produto do tipo protetor solar corporal, da marca Vita Verde, indicado para todos os tipos de pele. Foco em proteção solar. Principais ativos: Filtros UVA/UVB e Aloe vera. FPS 50. Vegano.",
     "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3557,6 +3839,9 @@
     "description": "Protetor Labial FPS 30: produto do tipo protetor labial, da marca Pura Base, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB. FPS 30.",
     "how_to_use": "Aplique nos lábios quantas vezes for necessário, principalmente antes de sair.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -3592,7 +3877,10 @@
     "description": "Protetor Labial FPS 50: produto do tipo protetor labial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB e Vitamina E. FPS 50.",
     "how_to_use": "Aplique nos lábios quantas vezes for necessário, principalmente antes de sair.",
     "image": null,
-    "price_tier": "intermediario"
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
   },
   {
     "id": "p097",
@@ -3628,7 +3916,10 @@
     "description": "Sérum Contorno dos Olhos Cafeína: produto do tipo contorno dos olhos, da marca Lume Lab, indicado para todos os tipos de pele. Foco em olheiras. Principais ativos: Cafeína e Ácido hialurônico.",
     "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
     "image": null,
-    "price_tier": "premium"
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
   },
   {
     "id": "p098",
@@ -3664,6 +3955,9 @@
     "description": "Gel para Olhos Anti-Olheiras: produto do tipo contorno dos olhos, da marca Pura Base, indicado para todos os tipos de pele. Foco em olheiras. Principais ativos: Cafeína e Glicerina.",
     "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "intermediario"
   },
   {
@@ -3700,6 +3994,9 @@
     "description": "Bálsamo Labial Hidratante: produto do tipo bálsamo labial, da marca Vita Verde, indicado para todos os tipos de pele. Foco em ressecamento. Principais ativos: Manteiga de karité e Vitamina E. Vegano.",
     "how_to_use": "Aplique nos lábios quantas vezes for necessário.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "economico"
   },
   {
@@ -3737,6 +4034,1571 @@
     "description": "Creme para Área dos Olhos Antissinais: produto do tipo contorno dos olhos, da marca Aurora Dermo, indicado para todos os tipos de pele. Foco em sinais de idade e olheiras. Principais ativos: Peptídeos e Cafeína.",
     "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
     "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
     "price_tier": "premium"
+  },
+  {
+    "id": "p101",
+    "name": "Gel de Limpeza Antissinais Suave",
+    "brand": "Aurora Dermo",
+    "line": "limpeza",
+    "step": "limpeza",
+    "covers_steps": [
+      "limpeza"
+    ],
+    "product_type": "gel de limpeza",
+    "form": "tube",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "seca",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "limpeza_diaria"
+    ],
+    "ingredients": [
+      "ceramidas",
+      "glicerina",
+      "tensoativo_suave"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância",
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Gel de Limpeza Antissinais Suave: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e limpeza diária. Principais ativos: Ceramidas, Glicerina e Tensoativo suave. Sem fragrância e não comedogênico.",
+    "how_to_use": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p102",
+    "name": "Sérum Vitamina C + Peptídeos Antissinais",
+    "brand": "Aurora Dermo",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "sérum",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "normal",
+      "seca",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "manchas"
+    ],
+    "ingredients": [
+      "vitamina_c",
+      "peptideos",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [
+      "teste_de_sensibilidade"
+    ],
+    "description": "Sérum Vitamina C + Peptídeos Antissinais: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e manchas. Principais ativos: Vitamina C, Peptídeos e Vitamina E. Não comedogênico.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p103",
+    "name": "Creme Noturno Retinol + Peptídeos Premium",
+    "brand": "Lume Lab",
+    "line": "anti_idade",
+    "step": "tratamento",
+    "covers_steps": [
+      "tratamento"
+    ],
+    "product_type": "creme de retinol",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "textura"
+    ],
+    "ingredients": [
+      "retinol",
+      "peptideos",
+      "ceramidas"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [],
+    "warnings": [
+      "fotossensibilizante",
+      "consultar_se_gestante",
+      "teste_de_sensibilidade"
+    ],
+    "description": "Creme Noturno Retinol + Peptídeos Premium: produto do tipo creme de retinol, da marca Lume Lab, indicado para pele normal e seca. Foco em sinais de idade e textura irregular. Principais ativos: Retinol, Peptídeos e Ceramidas.",
+    "how_to_use": "Aplique no rosto limpo, antes do hidratante.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p104",
+    "name": "Hidratante Antissinais Ácido Hialurônico + Ceramidas",
+    "brand": "Aurora Dermo",
+    "line": "hidratacao",
+    "step": "hidratacao",
+    "covers_steps": [
+      "hidratacao"
+    ],
+    "product_type": "creme hidratante",
+    "form": "jar",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca",
+      "mista"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "ressecamento"
+    ],
+    "ingredients": [
+      "acido_hialuronico",
+      "ceramidas",
+      "peptideos"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Hidratante Antissinais Ácido Hialurônico + Ceramidas: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e ressecamento. Principais ativos: Ácido hialurônico, Ceramidas e Peptídeos. Sem fragrância.",
+    "how_to_use": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p105",
+    "name": "Protetor Solar Facial FPS 60 Antissinais",
+    "brand": "Solare",
+    "line": "protetor_solar",
+    "step": "protecao_solar",
+    "covers_steps": [
+      "protecao_solar"
+    ],
+    "product_type": "protetor solar facial",
+    "form": "tube",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "normal",
+      "seca",
+      "mista"
+    ],
+    "concerns": [
+      "fotoprotecao",
+      "sinais_idade"
+    ],
+    "ingredients": [
+      "filtro_uv",
+      "vitamina_e",
+      "peptideos"
+    ],
+    "fps": 60,
+    "usage_period": "dia",
+    "claims": [
+      "não comedogênico"
+    ],
+    "warnings": [],
+    "description": "Protetor Solar Facial FPS 60 Antissinais: produto do tipo protetor solar facial, da marca Solare, indicado para pele normal, seca e mista. Foco em proteção solar e sinais de idade. Principais ativos: Filtros UVA/UVB, Vitamina E e Peptídeos. FPS 60. Não comedogênico.",
+    "how_to_use": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p106",
+    "name": "Creme Área dos Olhos Antissinais Peptídeos",
+    "brand": "Lume Lab",
+    "line": "olhos_labios",
+    "step": "complemento",
+    "covers_steps": [
+      "complemento"
+    ],
+    "product_type": "contorno dos olhos",
+    "form": "jar",
+    "size": {
+      "value": 15,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "sinais_idade",
+      "olheiras"
+    ],
+    "ingredients": [
+      "peptideos",
+      "cafeina",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [
+      "evitar_contato_olhos"
+    ],
+    "description": "Creme Área dos Olhos Antissinais Peptídeos: produto do tipo contorno dos olhos, da marca Lume Lab, indicado para todos os tipos de pele. Foco em sinais de idade e olheiras. Principais ativos: Peptídeos, Cafeína e Ácido hialurônico.",
+    "how_to_use": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
+    "image": null,
+    "domain": "dermo",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p107",
+    "name": "Ômega 3 1000 mg EPA/DHA",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "omega3",
+    "covers_steps": [
+      "omega3"
+    ],
+    "product_type": "suplemento de ômega 3 em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "omega3_epa_dha"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Ômega 3 1000 mg EPA/DHA: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA). Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p108",
+    "name": "Ômega 3 Alta Concentração",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "omega3",
+    "covers_steps": [
+      "omega3"
+    ],
+    "product_type": "suplemento de ômega 3 em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 120,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "omega3_epa_dha",
+      "vitamina_e"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Ômega 3 Alta Concentração: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA) e Vitamina E. Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p109",
+    "name": "Ômega 3 Vegano de Algas",
+    "brand": "Vita Verde",
+    "line": "suplementos",
+    "step": "omega3",
+    "covers_steps": [
+      "omega3"
+    ],
+    "product_type": "suplemento de ômega 3 em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "omega3_algas"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "vegano",
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Ômega 3 Vegano de Algas: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Ômega 3 de algas (DHA). Vegano e sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p110",
+    "name": "Colágeno Hidrolisado em Pó Neutro",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "colageno",
+    "covers_steps": [
+      "colageno"
+    ],
+    "product_type": "suplemento de colágeno em pó",
+    "form": "powder",
+    "size": {
+      "value": 300,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "beleza_interna"
+    ],
+    "ingredients": [
+      "colageno_hidrolisado"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem açúcar"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Colágeno Hidrolisado em Pó Neutro: suplemento alimentar (suplemento de colágeno em pó) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p111",
+    "name": "Colágeno Hidrolisado em Cápsulas",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "colageno",
+    "covers_steps": [
+      "colageno"
+    ],
+    "product_type": "suplemento de colágeno em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 120,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "beleza_interna"
+    ],
+    "ingredients": [
+      "colageno_hidrolisado"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem açúcar"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Colágeno Hidrolisado em Cápsulas: suplemento alimentar (suplemento de colágeno em cápsulas) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p112",
+    "name": "Colágeno com Vitamina C e Ácido Hialurônico em Pó",
+    "brand": "Lume Lab",
+    "line": "suplementos",
+    "step": "colageno",
+    "covers_steps": [
+      "colageno"
+    ],
+    "product_type": "suplemento de colágeno em pó",
+    "form": "powder",
+    "size": {
+      "value": 250,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "beleza_interna"
+    ],
+    "ingredients": [
+      "colageno_hidrolisado",
+      "vitamina_c",
+      "acido_hialuronico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem açúcar"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Colágeno com Vitamina C e Ácido Hialurônico em Pó: suplemento alimentar (suplemento de colágeno em pó) da marca Lume Lab. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado, Vitamina C e Ácido hialurônico. Sem açúcar.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p113",
+    "name": "Magnésio Dimalato",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "magnesio",
+    "covers_steps": [
+      "magnesio"
+    ],
+    "product_type": "suplemento de magnésio em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "magnesio_dimalato"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Magnésio Dimalato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio dimalato. Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p114",
+    "name": "Magnésio Bisglicinato",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "magnesio",
+    "covers_steps": [
+      "magnesio"
+    ],
+    "product_type": "suplemento de magnésio em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "magnesio_bisglicinato"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Magnésio Bisglicinato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio bisglicinato. Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p115",
+    "name": "Citrato de Magnésio em Pó",
+    "brand": "Vita Verde",
+    "line": "suplementos",
+    "step": "magnesio",
+    "covers_steps": [
+      "magnesio"
+    ],
+    "product_type": "suplemento de magnésio em pó",
+    "form": "powder",
+    "size": {
+      "value": 200,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "magnesio_citrato"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano",
+      "sem açúcar"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Citrato de Magnésio em Pó: suplemento alimentar (suplemento de magnésio em pó) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Magnésio citrato. Vegano e sem açúcar.",
+    "how_to_use": "Use a quantidade indicada na embalagem.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p116",
+    "name": "Vitamina D3 2000 UI",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "vitaminas",
+    "covers_steps": [
+      "vitaminas"
+    ],
+    "product_type": "suplemento de vitamina D em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "vitamina_d3"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Vitamina D3 2000 UI: suplemento alimentar (suplemento de vitamina D em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3. Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p117",
+    "name": "Vitamina D3 + K2",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "vitaminas",
+    "covers_steps": [
+      "vitaminas"
+    ],
+    "product_type": "suplemento de vitaminas D e K em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "vitamina_d3",
+      "vitamina_k2"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem glúten"
+    ],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Vitamina D3 + K2: suplemento alimentar (suplemento de vitaminas D e K em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3 e Vitamina K2. Sem glúten.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p118",
+    "name": "Multivitamínico Mulher 45+",
+    "brand": "Essência Nutri",
+    "line": "suplementos",
+    "step": "vitaminas",
+    "covers_steps": [
+      "vitaminas"
+    ],
+    "product_type": "suplemento multivitamínico em comprimidos",
+    "form": "caps",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "nutricao"
+    ],
+    "ingredients": [
+      "multivitaminico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "consultar_se_medicacao"
+    ],
+    "description": "Multivitamínico Mulher 45+: suplemento alimentar (suplemento multivitamínico em comprimidos) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Complexo multivitamínico.",
+    "how_to_use": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "image": null,
+    "domain": "suplemento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p119",
+    "name": "Sabonete Líquido Corporal Óleos Naturais",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "sabonete líquido corporal",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "sem parabenos"
+    ],
+    "warnings": [],
+    "description": "Sabonete Líquido Corporal Óleos Naturais: produto de higiene (sabonete líquido corporal) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Óleo de argan. Vegano e sem parabenos.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p120",
+    "name": "Gel de Banho Hidratante Karité",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "gel de banho",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "manteiga_karite",
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem parabenos"
+    ],
+    "warnings": [],
+    "description": "Gel de Banho Hidratante Karité: produto de higiene (gel de banho) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Manteiga de karité e Glicerina. Sem parabenos.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p121",
+    "name": "Esfoliante Corporal Açúcar e Karité",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "esfoliante corporal",
+    "form": "jar",
+    "size": {
+      "value": 200,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Esfoliante Corporal Açúcar e Karité: produto de higiene (esfoliante corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Manteiga de karité. Vegano.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p122",
+    "name": "Shampoo Reparador Premium",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "shampoo",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem sulfato"
+    ],
+    "warnings": [],
+    "description": "Shampoo Reparador Premium: produto de higiene (shampoo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p123",
+    "name": "Condicionador Reparador Premium",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "condicionador",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem sulfato"
+    ],
+    "warnings": [],
+    "description": "Condicionador Reparador Premium: produto de higiene (condicionador) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p124",
+    "name": "Máscara Capilar Nutrição Intensa",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "máscara capilar",
+    "form": "jar",
+    "size": {
+      "value": 250,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "manteiga_karite",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Máscara Capilar Nutrição Intensa: produto de higiene (máscara capilar) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Manteiga de karité e Óleo de argan. Vegano.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p125",
+    "name": "Creme Dental Branqueador Premium",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "creme dental",
+    "form": "tube",
+    "size": {
+      "value": 90,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "com flúor"
+    ],
+    "warnings": [],
+    "description": "Creme Dental Branqueador Premium: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p126",
+    "name": "Creme Dental para Dentes Sensíveis",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "creme dental",
+    "form": "tube",
+    "size": {
+      "value": 90,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "com flúor"
+    ],
+    "warnings": [],
+    "description": "Creme Dental para Dentes Sensíveis: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p127",
+    "name": "Enxaguante Bucal Sem Álcool",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "enxaguante bucal",
+    "form": "bottle",
+    "size": {
+      "value": 500,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem álcool"
+    ],
+    "warnings": [],
+    "description": "Enxaguante Bucal Sem Álcool: produto de higiene (enxaguante bucal) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Sem álcool.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p128",
+    "name": "Desodorante Roll-on Sem Alumínio",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante roll-on",
+    "form": "bottle",
+    "size": {
+      "value": 55,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio"
+    ],
+    "warnings": [],
+    "description": "Desodorante Roll-on Sem Alumínio: produto de higiene (desodorante roll-on) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p129",
+    "name": "Desodorante Creme Hidratante",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante em creme",
+    "form": "jar",
+    "size": {
+      "value": 55,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio",
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Desodorante Creme Hidratante: produto de higiene (desodorante em creme) da marca Noble Banho. Foco em desodorização. Componentes: Manteiga de karité. Sem alumínio e vegano.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p130",
+    "name": "Desodorante Aerossol Pele Sensível",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante aerossol",
+    "form": "spray",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Desodorante Aerossol Pele Sensível: produto de higiene (desodorante aerossol) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio e sem fragrância.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p131",
+    "name": "Tensiv 50 mg (referência)",
+    "brand": "Lab Aurora",
+    "line": "reposicao_tensivalol_50",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "tensivalol_potassico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Tensiv 50 mg (referência): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Aurora. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: referencia. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "tensivalol_50",
+      "presentation": "referencia",
+      "active": "Tensivalol potássico",
+      "dose": "50 mg"
+    },
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p132",
+    "name": "Tensivalol potássico 50 mg (genérico) — 30 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "reposicao_tensivalol_50",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "tensivalol_potassico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Tensivalol potássico 50 mg (genérico) — 30 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: generico. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "tensivalol_50",
+      "presentation": "generico",
+      "active": "Tensivalol potássico",
+      "dose": "50 mg"
+    },
+    "price_tier": "economico"
+  },
+  {
+    "id": "p133",
+    "name": "Tensivalol potássico 50 mg (genérico) — 60 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "reposicao_tensivalol_50",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "tensivalol_potassico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Tensivalol potássico 50 mg (genérico) — 60 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: generico. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "tensivalol_50",
+      "presentation": "generico",
+      "active": "Tensivalol potássico",
+      "dose": "50 mg"
+    },
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p134",
+    "name": "Pressolan 50 mg (similar)",
+    "brand": "Lab Nova Via",
+    "line": "reposicao_tensivalol_50",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "tensivalol_potassico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Pressolan 50 mg (similar): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Nova Via. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: similar. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "tensivalol_50",
+      "presentation": "similar",
+      "active": "Tensivalol potássico",
+      "dose": "50 mg"
+    },
+    "price_tier": "economico"
+  },
+  {
+    "id": "p135",
+    "name": "Lipostan 20 mg (referência)",
+    "brand": "Lab Aurora",
+    "line": "reposicao_lipostanol_20",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "lipostanol_calcico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Lipostan 20 mg (referência): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Aurora. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: referencia. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "lipostanol_20",
+      "presentation": "referencia",
+      "active": "Lipostanol cálcico",
+      "dose": "20 mg"
+    },
+    "price_tier": "premium"
+  },
+  {
+    "id": "p136",
+    "name": "Lipostanol cálcico 20 mg (genérico) — 30 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "reposicao_lipostanol_20",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "lipostanol_calcico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Lipostanol cálcico 20 mg (genérico) — 30 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: generico. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "lipostanol_20",
+      "presentation": "generico",
+      "active": "Lipostanol cálcico",
+      "dose": "20 mg"
+    },
+    "price_tier": "economico"
+  },
+  {
+    "id": "p137",
+    "name": "Lipostanol cálcico 20 mg (genérico) — 60 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "reposicao_lipostanol_20",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 60,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "lipostanol_calcico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Lipostanol cálcico 20 mg (genérico) — 60 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: generico. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "lipostanol_20",
+      "presentation": "generico",
+      "active": "Lipostanol cálcico",
+      "dose": "20 mg"
+    },
+    "price_tier": "premium"
+  },
+  {
+    "id": "p138",
+    "name": "Colemax 20 mg (similar)",
+    "brand": "Lab Nova Via",
+    "line": "reposicao_lipostanol_20",
+    "step": "reposicao",
+    "covers_steps": [
+      "reposicao"
+    ],
+    "product_type": "comprimido de uso contínuo",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "reposicao"
+    ],
+    "ingredients": [
+      "lipostanol_calcico"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [],
+    "warnings": [
+      "receita_obrigatoria",
+      "confirmar_troca_com_farmaceutico"
+    ],
+    "description": "Colemax 20 mg (similar): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Nova Via. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: similar. Reposição de uso contínuo.",
+    "how_to_use": "Use somente conforme a sua receita.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": {
+      "group": "lipostanol_20",
+      "presentation": "similar",
+      "active": "Lipostanol cálcico",
+      "dose": "20 mg"
+    },
+    "price_tier": "intermediario"
   }
 ]

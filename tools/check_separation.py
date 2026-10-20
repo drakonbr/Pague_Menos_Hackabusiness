@@ -4,10 +4,11 @@ Confere as regras de separação entre módulos (docs/04-arquitetura.md).
 
   1. catalog/ não referencia app/ nem graphrag/
   2. app/src não referencia catalog/ nem graphrag/  (JSON simulado entra por tools/export_app_mock.py)
-  3. graphrag/ não escreve em catalog/ (checado por ausência de código nesta fase)
-  4. Fase "pré-RAG": graphrag/ só pode conter README.md
+  3. graphrag/ não importa app/ nem catalog/ (como módulo) e não escreve em catalog/;
+     só LÊ os arquivos do catálogo permitidos (persona.json fica de fora, ver graphrag/tests/test_privacy.py)
+  4. Fase "pré-RAG" (opcional): graphrag/ só pode conter README.md
 
-Uso:  python3 tools/check_separation.py [--phase pre-rag|any]
+Uso:  python3 tools/check_separation.py [--phase rag|pre-rag]
 Sai com código 1 se alguma regra for violada.
 """
 from __future__ import annotations
@@ -49,7 +50,7 @@ def refs(base: Path, forbidden: list[str], skip_json_in: str | None = None):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--phase", default="pre-rag", choices=["pre-rag", "any"])
+    ap.add_argument("--phase", default="rag", choices=["rag", "pre-rag"])
     args = ap.parse_args()
 
     problems: list[str] = []
@@ -61,6 +62,19 @@ def main() -> int:
     # Regra 2: no app, só o código-fonte conta (os JSON simulados em mocks/ são dados, não referências)
     for line in refs(ROOT / "app" / "src", ["catalog", "graphrag"], skip_json_in="mocks"):
         problems.append(f"[R2 app->catalog/graphrag] {line}")
+
+    # Regra 3: graphrag não importa app nem catalog (como código) e nunca grava em catalog/
+    for line in refs(ROOT / "graphrag", ["app", "catalog"], skip_json_in="artifacts"):
+        if "data/" in line and "open(" not in line and "write" not in line:
+            continue
+        problems.append(f"[R3 graphrag->app/catalog] {line}")
+    pat_write = re.compile(r"(write_text|write_bytes|open\([^)]*[\"']w)")
+    for f in files(ROOT / "graphrag"):
+        if f.suffix != ".py" or "tests" in f.parts:
+            continue
+        for n, line in enumerate(f.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+            if pat_write.search(line) and re.search(r"catalog", line):
+                problems.append(f"[R3 graphrag escreve em catalog/] {f.relative_to(ROOT)}:{n}: {line.strip()[:100]}")
 
     # Regra 4
     if args.phase == "pre-rag":
@@ -80,7 +94,7 @@ def main() -> int:
             print("  -", p)
         return 1
     print(f"OK: separação respeitada (fase {args.phase}).")
-    print("  catalog/ sem referência a app/graphrag;  app/src sem referência a catalog/graphrag;  graphrag/ só README.")
+    print("  catalog/ sem referência a app/graphrag;  app/src sem referência a catalog/graphrag;  graphrag/ sem import de app/catalog e sem escrita em catalog/.")
     return 0
 
 

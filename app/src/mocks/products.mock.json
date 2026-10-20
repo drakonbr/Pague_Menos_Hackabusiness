@@ -41,7 +41,7 @@
   "listPriceCents": 2490,
   "stockQty": 5,
   "cashbackPct": 0,
-  "salesRank": 28,
+  "salesRank": 29,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -50,7 +50,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p002",
@@ -92,7 +95,7 @@
   "listPriceCents": 1990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 4,
+  "salesRank": 2,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -100,7 +103,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p003",
@@ -140,7 +146,7 @@
   "listPriceCents": 1490,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 6,
+  "salesRank": 4,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -148,7 +154,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p004",
@@ -188,7 +197,7 @@
   "listPriceCents": 2150,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 8,
+  "salesRank": 7,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -196,7 +205,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p005",
@@ -235,7 +247,7 @@
   "listPriceCents": 1690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 22,
+  "salesRank": 5,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -243,7 +255,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p006",
@@ -285,7 +300,7 @@
   "listPriceCents": 5490,
   "stockQty": 6,
   "cashbackPct": 10,
-  "salesRank": 86,
+  "salesRank": 80,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -293,7 +308,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p007",
@@ -335,7 +353,7 @@
   "listPriceCents": 7550,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 68,
+  "salesRank": 82,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -344,7 +362,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p008",
@@ -386,7 +407,7 @@
   "listPriceCents": 2990,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 18,
+  "salesRank": 38,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -396,7 +417,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p009",
@@ -439,7 +463,7 @@
   "listPriceCents": 5390,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 76,
+  "salesRank": 63,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -449,7 +473,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p010",
@@ -491,7 +518,7 @@
   "listPriceCents": 3990,
   "stockQty": 48,
   "cashbackPct": 2,
-  "salesRank": 34,
+  "salesRank": 28,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -501,7 +528,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p011",
@@ -543,7 +573,7 @@
   "listPriceCents": 4290,
   "stockQty": 18,
   "cashbackPct": 10,
-  "salesRank": 49,
+  "salesRank": 79,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -551,7 +581,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p012",
@@ -592,7 +625,7 @@
   "listPriceCents": 3190,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 99,
+  "salesRank": 130,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -600,7 +633,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p013",
@@ -638,7 +674,7 @@
   "listPriceCents": 1390,
   "stockQty": 59,
   "cashbackPct": 10,
-  "salesRank": 27,
+  "salesRank": 9,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -646,7 +682,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p014",
@@ -687,7 +726,7 @@
   "listPriceCents": 2630,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 7,
+  "salesRank": 22,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -695,7 +734,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p015",
@@ -737,7 +779,7 @@
   "listPriceCents": 5990,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 58,
+  "salesRank": 77,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -746,7 +788,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p016",
@@ -788,13 +833,16 @@
   "listPriceCents": 2290,
   "stockQty": 13,
   "cashbackPct": 0,
-  "salesRank": 48,
+  "salesRank": 42,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p017",
@@ -836,14 +884,17 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 5,
-  "salesRank": 10,
+  "salesRank": 70,
   "categoryIds": [
    "dermo",
    "normal-mista",
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p018",
@@ -887,7 +938,7 @@
   "listPriceCents": 7990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 71,
+  "salesRank": 108,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -895,7 +946,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p019",
@@ -938,7 +992,7 @@
   "listPriceCents": 8990,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 96,
+  "salesRank": 122,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -947,7 +1001,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p020",
@@ -989,7 +1046,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 67,
+  "salesRank": 54,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -999,7 +1056,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p021",
@@ -1039,7 +1099,7 @@
   "listPriceCents": 1890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 24,
+  "salesRank": 31,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -1048,7 +1108,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p022",
@@ -1089,7 +1152,7 @@
   "listPriceCents": 3690,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 70,
+  "salesRank": 95,
   "categoryIds": [
    "dermo",
    "mascara",
@@ -1097,7 +1160,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p023",
@@ -1139,13 +1205,16 @@
   "listPriceCents": 2630,
   "stockQty": 28,
   "cashbackPct": 0,
-  "salesRank": 16,
+  "salesRank": 13,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p024",
@@ -1189,7 +1258,7 @@
   "listPriceCents": 4790,
   "stockQty": 22,
   "cashbackPct": 5,
-  "salesRank": 33,
+  "salesRank": 16,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1199,7 +1268,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p025",
@@ -1245,7 +1317,10 @@
    "oleosa-acneica",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p026",
@@ -1285,13 +1360,16 @@
   "listPriceCents": 1490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 25,
+  "salesRank": 12,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p027",
@@ -1333,7 +1411,7 @@
   "listPriceCents": 2990,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 46,
+  "salesRank": 49,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1344,7 +1422,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p028",
@@ -1386,13 +1467,16 @@
   "listPriceCents": 2270,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 29,
+  "salesRank": 21,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p029",
@@ -1437,7 +1521,7 @@
   "listPriceCents": 9490,
   "stockQty": 22,
   "cashbackPct": 0,
-  "salesRank": 80,
+  "salesRank": 134,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1449,7 +1533,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p030",
@@ -1494,7 +1581,7 @@
   "listPriceCents": 7990,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 78,
+  "salesRank": 121,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1502,7 +1589,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p031",
@@ -1546,7 +1636,7 @@
   "listPriceCents": 5990,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 50,
+  "salesRank": 92,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1555,7 +1645,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p032",
@@ -1599,7 +1692,7 @@
   "listPriceCents": 8490,
   "stockQty": 33,
   "cashbackPct": 2,
-  "salesRank": 84,
+  "salesRank": 97,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1609,7 +1702,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p033",
@@ -1653,7 +1749,7 @@
   "listPriceCents": 4490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 52,
+  "salesRank": 48,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1663,7 +1759,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p034",
@@ -1705,7 +1804,7 @@
   "listPriceCents": 3890,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 19,
+  "salesRank": 47,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1713,7 +1812,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p035",
@@ -1755,7 +1857,7 @@
   "listPriceCents": 4990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 56,
+  "salesRank": 35,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1764,7 +1866,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p036",
@@ -1807,7 +1912,7 @@
   "listPriceCents": 6990,
   "stockQty": 47,
   "cashbackPct": 3,
-  "salesRank": 37,
+  "salesRank": 51,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1815,7 +1920,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p037",
@@ -1854,7 +1962,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 9,
+  "salesRank": 10,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1864,7 +1972,10 @@
    "tipo",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p038",
@@ -1903,7 +2014,7 @@
   "listPriceCents": 3990,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 40,
+  "salesRank": 75,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1913,7 +2024,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p039",
@@ -1952,7 +2066,7 @@
   "listPriceCents": 2490,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 12,
+  "salesRank": 27,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1961,7 +2075,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p040",
@@ -2003,7 +2120,7 @@
   "listPriceCents": 6990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 38,
+  "salesRank": 88,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2013,7 +2130,10 @@
    "tipo",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p041",
@@ -2048,12 +2168,12 @@
   "warnings": [],
   "description": "Sérum Tranexâmico + Niacinamida: produto do tipo sérum, da marca Lume Lab, indicado para todos os tipos de pele. Foco em manchas. Principais ativos: Ácido tranexâmico e Niacinamida. Não comedogênico.",
   "howToUse": "Aplique no rosto limpo, antes do hidratante.",
-  "priceTier": "premium",
+  "priceTier": "intermediario",
   "priceCents": 7490,
   "listPriceCents": 7490,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 82,
+  "salesRank": 87,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2063,7 +2183,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p042",
@@ -2105,7 +2228,7 @@
   "listPriceCents": 10990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 88,
+  "salesRank": 135,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2114,7 +2237,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p043",
@@ -2156,7 +2282,7 @@
   "listPriceCents": 12990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 79,
+  "salesRank": 119,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2167,7 +2293,10 @@
    "tipo",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p044",
@@ -2209,7 +2338,7 @@
   "listPriceCents": 5290,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 39,
+  "salesRank": 96,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2220,7 +2349,10 @@
    "veganos",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p045",
@@ -2261,7 +2393,7 @@
   "listPriceCents": 5890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 69,
+  "salesRank": 81,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2272,7 +2404,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p046",
@@ -2312,7 +2447,7 @@
   "listPriceCents": 5990,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 62,
+  "salesRank": 50,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2323,7 +2458,10 @@
    "tipo",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p047",
@@ -2362,14 +2500,17 @@
   "listPriceCents": 3290,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 97,
+  "salesRank": 112,
   "categoryIds": [
    "dermo",
    "normal-mista",
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p048",
@@ -2412,7 +2553,7 @@
   "listPriceCents": 3990,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 15,
+  "salesRank": 20,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2421,7 +2562,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p049",
@@ -2465,7 +2609,7 @@
   "listPriceCents": 7990,
   "stockQty": 24,
   "cashbackPct": 0,
-  "salesRank": 72,
+  "salesRank": 136,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2474,7 +2618,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p050",
@@ -2516,7 +2663,7 @@
   "listPriceCents": 8990,
   "stockQty": 35,
   "cashbackPct": 2,
-  "salesRank": 87,
+  "salesRank": 128,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2527,7 +2674,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p051",
@@ -2571,7 +2721,7 @@
   "listPriceCents": 13990,
   "stockQty": 45,
   "cashbackPct": 5,
-  "salesRank": 90,
+  "salesRank": 133,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2580,7 +2730,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p052",
@@ -2622,7 +2775,7 @@
   "listPriceCents": 11990,
   "stockQty": 20,
   "cashbackPct": 3,
-  "salesRank": 91,
+  "salesRank": 107,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -2632,7 +2785,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p053",
@@ -2673,7 +2829,7 @@
   "listPriceCents": 7790,
   "stockQty": 51,
   "cashbackPct": 10,
-  "salesRank": 30,
+  "salesRank": 57,
   "categoryIds": [
    "dermo",
    "retinol",
@@ -2683,7 +2839,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p054",
@@ -2725,7 +2884,7 @@
   "listPriceCents": 5990,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 32,
+  "salesRank": 56,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2733,7 +2892,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p055",
@@ -2779,7 +2941,7 @@
   "listPriceCents": 5490,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 42,
+  "salesRank": 104,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -2790,7 +2952,10 @@
    "serum",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p056",
@@ -2831,7 +2996,7 @@
   "listPriceCents": 7490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 81,
+  "salesRank": 115,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2841,7 +3006,10 @@
    "tipo",
    "vitamina-c"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p057",
@@ -2884,7 +3052,7 @@
   "listPriceCents": 1790,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 20,
+  "salesRank": 18,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -2894,7 +3062,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p058",
@@ -2933,7 +3104,7 @@
   "listPriceCents": 1990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 23,
+  "salesRank": 25,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -2942,7 +3113,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p059",
@@ -2979,7 +3153,7 @@
   "listPriceCents": 1590,
   "stockQty": 59,
   "cashbackPct": 2,
-  "salesRank": 35,
+  "salesRank": 66,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -2987,7 +3161,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p060",
@@ -3027,7 +3204,7 @@
   "listPriceCents": 2030,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 11,
+  "salesRank": 19,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3035,7 +3212,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p061",
@@ -3078,7 +3258,7 @@
   "listPriceCents": 3290,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 61,
+  "salesRank": 90,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3088,7 +3268,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p062",
@@ -3131,7 +3314,7 @@
   "listPriceCents": 3890,
   "stockQty": 8,
   "cashbackPct": 10,
-  "salesRank": 44,
+  "salesRank": 46,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3141,7 +3324,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p063",
@@ -3181,7 +3367,7 @@
   "listPriceCents": 4490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 77,
+  "salesRank": 94,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3190,7 +3376,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p064",
@@ -3233,7 +3422,7 @@
   "listPriceCents": 5690,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 65,
+  "salesRank": 89,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3241,7 +3430,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p065",
@@ -3284,7 +3476,7 @@
   "listPriceCents": 7490,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 89,
+  "salesRank": 123,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3292,7 +3484,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p066",
@@ -3337,7 +3532,7 @@
   "listPriceCents": 6990,
   "stockQty": 4,
   "cashbackPct": 2,
-  "salesRank": 92,
+  "salesRank": 120,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3348,7 +3543,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p067",
@@ -3389,7 +3587,7 @@
   "listPriceCents": 8490,
   "stockQty": 11,
   "cashbackPct": 5,
-  "salesRank": 93,
+  "salesRank": 131,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3397,7 +3595,10 @@
    "seca-sensivel",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p068",
@@ -3442,7 +3643,7 @@
   "listPriceCents": 2790,
   "stockQty": 38,
   "cashbackPct": 2,
-  "salesRank": 55,
+  "salesRank": 78,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3452,7 +3653,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p069",
@@ -3493,7 +3697,7 @@
   "listPriceCents": 3690,
   "stockQty": 53,
   "cashbackPct": 3,
-  "salesRank": 43,
+  "salesRank": 69,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3503,7 +3707,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p070",
@@ -3542,12 +3749,12 @@
   "warnings": [],
   "description": "Hidratante Facial FPS 30 Toque Seco: produto do tipo hidratante com FPS, da marca Solare, indicado para pele oleosa e mista. Foco em proteção solar e oleosidade. Principais ativos: Filtros UVA/UVB e Niacinamida. FPS 30. Oil free e toque seco.",
   "howToUse": "Aplique pela manhã sobre o rosto limpo e reaplique a cada 2 horas se houver exposição ao sol.",
-  "priceTier": "premium",
+  "priceTier": "intermediario",
   "priceCents": 5990,
   "listPriceCents": 5990,
   "stockQty": 11,
   "cashbackPct": 2,
-  "salesRank": 94,
+  "salesRank": 73,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3559,7 +3766,10 @@
    "solar-toque-seco",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p071",
@@ -3601,7 +3811,7 @@
   "listPriceCents": 7990,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 85,
+  "salesRank": 117,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3611,7 +3821,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p072",
@@ -3651,7 +3864,7 @@
   "listPriceCents": 2990,
   "stockQty": 50,
   "cashbackPct": 0,
-  "salesRank": 26,
+  "salesRank": 30,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3660,7 +3873,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p073",
@@ -3702,7 +3918,7 @@
   "listPriceCents": 2490,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 21,
+  "salesRank": 6,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -3711,7 +3927,10 @@
    "solar-toque-seco",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p074",
@@ -3748,14 +3967,17 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 2,
+  "salesRank": 3,
   "categoryIds": [
    "dermo",
    "normal-mista",
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p075",
@@ -3796,14 +4018,17 @@
   "listPriceCents": 2790,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 3,
+  "salesRank": 1,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p076",
@@ -3844,14 +4069,17 @@
   "listPriceCents": 2290,
   "stockQty": 0,
   "cashbackPct": 10,
-  "salesRank": 63,
+  "salesRank": 98,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p077",
@@ -3895,7 +4123,7 @@
   "listPriceCents": 3690,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 1,
+  "salesRank": 26,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -3905,7 +4133,10 @@
    "solar-toque-seco",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p078",
@@ -3947,7 +4178,7 @@
   "listPriceCents": 4290,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 31,
+  "salesRank": 58,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -3955,7 +4186,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p079",
@@ -3994,14 +4228,17 @@
   "listPriceCents": 3990,
   "stockQty": 52,
   "cashbackPct": 0,
-  "salesRank": 5,
+  "salesRank": 8,
   "categoryIds": [
    "dermo",
    "normal-mista",
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p080",
@@ -4042,7 +4279,7 @@
   "listPriceCents": 4490,
   "stockQty": 53,
   "cashbackPct": 0,
-  "salesRank": 59,
+  "salesRank": 34,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4050,7 +4287,10 @@
    "solar-toque-seco",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p081",
@@ -4087,12 +4327,12 @@
   "warnings": [],
   "description": "Protetor Solar Facial FPS 70 Sensitive: produto do tipo protetor solar facial, da marca Solare, indicado para pele sensível. Foco em proteção solar e sensibilidade. Principais ativos: Óxido de zinco e Dióxido de titânio. FPS 70. Filtro mineral e sem fragrância.",
   "howToUse": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
-  "priceTier": "premium",
+  "priceTier": "intermediario",
   "priceCents": 5990,
   "listPriceCents": 5990,
   "stockQty": 4,
   "cashbackPct": 10,
-  "salesRank": 74,
+  "salesRank": 60,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4100,7 +4340,10 @@
    "solar-mineral",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p082",
@@ -4139,7 +4382,7 @@
   "listPriceCents": 5490,
   "stockQty": 35,
   "cashbackPct": 10,
-  "salesRank": 41,
+  "salesRank": 52,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4147,7 +4390,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p083",
@@ -4187,7 +4433,7 @@
   "listPriceCents": 8390,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 51,
+  "salesRank": 101,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4197,7 +4443,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p084",
@@ -4241,7 +4490,7 @@
   "listPriceCents": 8990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 60,
+  "salesRank": 102,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -4252,7 +4501,10 @@
    "solar-toque-seco",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p085",
@@ -4294,7 +4546,7 @@
   "listPriceCents": 9490,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 75,
+  "salesRank": 113,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4302,7 +4554,10 @@
    "solar-mineral",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p086",
@@ -4343,7 +4598,7 @@
   "listPriceCents": 14390,
   "stockQty": 60,
   "cashbackPct": 3,
-  "salesRank": 47,
+  "salesRank": 68,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4352,7 +4607,10 @@
    "solar-facial",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p087",
@@ -4393,7 +4651,7 @@
   "listPriceCents": 4690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 13,
+  "salesRank": 76,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4402,7 +4660,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p088",
@@ -4445,7 +4706,7 @@
   "listPriceCents": 5990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 73,
+  "salesRank": 124,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4454,7 +4715,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p089",
@@ -4491,7 +4755,7 @@
   "listPriceCents": 3490,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 57,
+  "salesRank": 11,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4499,7 +4763,10 @@
    "solar-creme",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p090",
@@ -4538,7 +4805,7 @@
   "listPriceCents": 4490,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 53,
+  "salesRank": 85,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4546,7 +4813,10 @@
    "solar-creme",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p091",
@@ -4583,7 +4853,7 @@
   "listPriceCents": 2990,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 36,
+  "salesRank": 37,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4591,7 +4861,10 @@
    "solar-creme",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p092",
@@ -4630,7 +4903,7 @@
   "listPriceCents": 5990,
   "stockQty": 39,
   "cashbackPct": 2,
-  "salesRank": 95,
+  "salesRank": 105,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4638,7 +4911,10 @@
    "solar-spray",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p093",
@@ -4678,7 +4954,7 @@
   "listPriceCents": 6990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 100,
+  "salesRank": 137,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4686,7 +4962,10 @@
    "solar-creme",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p094",
@@ -4726,7 +5005,7 @@
   "listPriceCents": 5290,
   "stockQty": 42,
   "cashbackPct": 2,
-  "salesRank": 64,
+  "salesRank": 40,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4735,7 +5014,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p095",
@@ -4773,7 +5055,7 @@
   "listPriceCents": 1290,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 54,
+  "salesRank": 32,
   "categoryIds": [
    "dermo",
    "labial",
@@ -4781,7 +5063,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p096",
@@ -4815,12 +5100,12 @@
   "warnings": [],
   "description": "Protetor Labial FPS 50: produto do tipo protetor labial, da marca Solare, indicado para todos os tipos de pele. Foco em proteção solar e ressecamento. Principais ativos: Filtros UVA/UVB e Vitamina E. FPS 50.",
   "howToUse": "Aplique nos lábios quantas vezes for necessário, principalmente antes de sair.",
-  "priceTier": "intermediario",
+  "priceTier": "economico",
   "priceCents": 1990,
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 66,
+  "salesRank": 39,
   "categoryIds": [
    "dermo",
    "labial",
@@ -4828,7 +5113,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p097",
@@ -4863,7 +5151,7 @@
   ],
   "description": "Sérum Contorno dos Olhos Cafeína: produto do tipo contorno dos olhos, da marca Lume Lab, indicado para todos os tipos de pele. Foco em olheiras. Principais ativos: Cafeína e Ácido hialurônico.",
   "howToUse": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
-  "priceTier": "premium",
+  "priceTier": "intermediario",
   "priceCents": 4990,
   "listPriceCents": 4990,
   "stockQty": 16,
@@ -4877,7 +5165,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p098",
@@ -4917,7 +5208,7 @@
   "listPriceCents": 2490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 45,
+  "salesRank": 43,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4925,7 +5216,10 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p099",
@@ -4965,7 +5259,7 @@
   "listPriceCents": 1490,
   "stockQty": 45,
   "cashbackPct": 0,
-  "salesRank": 17,
+  "salesRank": 53,
   "categoryIds": [
    "dermo",
    "labial",
@@ -4974,7 +5268,10 @@
    "tipo",
    "veganos"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
  },
  {
   "id": "p100",
@@ -5015,7 +5312,7 @@
   "listPriceCents": 9990,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 98,
+  "salesRank": 129,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5023,6 +5320,1939 @@
    "rosto",
    "tipo"
   ],
-  "images": []
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p101",
+  "name": "Gel de Limpeza Antissinais Suave",
+  "brand": "Aurora Dermo",
+  "line": "limpeza",
+  "step": "limpeza",
+  "coversSteps": [
+   "limpeza"
+  ],
+  "productType": "gel de limpeza",
+  "form": "tube",
+  "size": {
+   "value": 150,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "normal",
+   "seca",
+   "mista"
+  ],
+  "concerns": [
+   "sinais_idade",
+   "limpeza_diaria"
+  ],
+  "ingredients": [
+   "ceramidas",
+   "glicerina",
+   "tensoativo_suave"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância",
+   "não comedogênico"
+  ],
+  "warnings": [],
+  "description": "Gel de Limpeza Antissinais Suave: produto do tipo gel de limpeza, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e limpeza diária. Principais ativos: Ceramidas, Glicerina e Tensoativo suave. Sem fragrância e não comedogênico.",
+  "howToUse": "Aplique sobre a pele úmida, massageie suavemente e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 5990,
+  "listPriceCents": 5990,
+  "stockQty": 19,
+  "cashbackPct": 0,
+  "salesRank": 62,
+  "categoryIds": [
+   "dermo",
+   "limpeza",
+   "normal-mista",
+   "rosto",
+   "seca-sensivel",
+   "tipo"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p102",
+  "name": "Sérum Vitamina C + Peptídeos Antissinais",
+  "brand": "Aurora Dermo",
+  "line": "anti_idade",
+  "step": "tratamento",
+  "coversSteps": [
+   "tratamento"
+  ],
+  "productType": "sérum",
+  "form": "dropper",
+  "size": {
+   "value": 30,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "normal",
+   "seca",
+   "mista"
+  ],
+  "concerns": [
+   "sinais_idade",
+   "manchas"
+  ],
+  "ingredients": [
+   "vitamina_c",
+   "peptideos",
+   "vitamina_e"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "não comedogênico"
+  ],
+  "warnings": [
+   "teste_de_sensibilidade"
+  ],
+  "description": "Sérum Vitamina C + Peptídeos Antissinais: produto do tipo sérum, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e manchas. Principais ativos: Vitamina C, Peptídeos e Vitamina E. Não comedogênico.",
+  "howToUse": "Aplique no rosto limpo, antes do hidratante.",
+  "priceTier": "premium",
+  "priceCents": 14990,
+  "listPriceCents": 14990,
+  "stockQty": 25,
+  "cashbackPct": 5,
+  "salesRank": 126,
+  "categoryIds": [
+   "dermo",
+   "manchas",
+   "normal-mista",
+   "rosto",
+   "seca-sensivel",
+   "serum",
+   "tipo",
+   "vitamina-c"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p103",
+  "name": "Creme Noturno Retinol + Peptídeos Premium",
+  "brand": "Lume Lab",
+  "line": "anti_idade",
+  "step": "tratamento",
+  "coversSteps": [
+   "tratamento"
+  ],
+  "productType": "creme de retinol",
+  "form": "jar",
+  "size": {
+   "value": 50,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "normal",
+   "seca"
+  ],
+  "concerns": [
+   "sinais_idade",
+   "textura"
+  ],
+  "ingredients": [
+   "retinol",
+   "peptideos",
+   "ceramidas"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [],
+  "warnings": [
+   "fotossensibilizante",
+   "consultar_se_gestante",
+   "teste_de_sensibilidade"
+  ],
+  "description": "Creme Noturno Retinol + Peptídeos Premium: produto do tipo creme de retinol, da marca Lume Lab, indicado para pele normal e seca. Foco em sinais de idade e textura irregular. Principais ativos: Retinol, Peptídeos e Ceramidas.",
+  "howToUse": "Aplique no rosto limpo, antes do hidratante.",
+  "priceTier": "premium",
+  "priceCents": 16990,
+  "listPriceCents": 20390,
+  "stockQty": 39,
+  "cashbackPct": 5,
+  "salesRank": 118,
+  "categoryIds": [
+   "dermo",
+   "normal-mista",
+   "retinol",
+   "rosto",
+   "seca-sensivel",
+   "tipo"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p104",
+  "name": "Hidratante Antissinais Ácido Hialurônico + Ceramidas",
+  "brand": "Aurora Dermo",
+  "line": "hidratacao",
+  "step": "hidratacao",
+  "coversSteps": [
+   "hidratacao"
+  ],
+  "productType": "creme hidratante",
+  "form": "jar",
+  "size": {
+   "value": 50,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "normal",
+   "seca",
+   "mista"
+  ],
+  "concerns": [
+   "sinais_idade",
+   "ressecamento"
+  ],
+  "ingredients": [
+   "acido_hialuronico",
+   "ceramidas",
+   "peptideos"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Hidratante Antissinais Ácido Hialurônico + Ceramidas: produto do tipo creme hidratante, da marca Aurora Dermo, indicado para pele normal, seca e mista. Foco em sinais de idade e ressecamento. Principais ativos: Ácido hialurônico, Ceramidas e Peptídeos. Sem fragrância.",
+  "howToUse": "Aplique sobre o rosto limpo, pela manhã e/ou à noite.",
+  "priceTier": "premium",
+  "priceCents": 8990,
+  "listPriceCents": 8990,
+  "stockQty": 18,
+  "cashbackPct": 0,
+  "salesRank": 114,
+  "categoryIds": [
+   "dermo",
+   "hialuronico",
+   "hidratante",
+   "normal-mista",
+   "rosto",
+   "seca-sensivel",
+   "tipo"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p105",
+  "name": "Protetor Solar Facial FPS 60 Antissinais",
+  "brand": "Solare",
+  "line": "protetor_solar",
+  "step": "protecao_solar",
+  "coversSteps": [
+   "protecao_solar"
+  ],
+  "productType": "protetor solar facial",
+  "form": "tube",
+  "size": {
+   "value": 50,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "normal",
+   "seca",
+   "mista"
+  ],
+  "concerns": [
+   "fotoprotecao",
+   "sinais_idade"
+  ],
+  "ingredients": [
+   "filtro_uv",
+   "vitamina_e",
+   "peptideos"
+  ],
+  "fps": 60,
+  "usagePeriod": "dia",
+  "claims": [
+   "não comedogênico"
+  ],
+  "warnings": [],
+  "description": "Protetor Solar Facial FPS 60 Antissinais: produto do tipo protetor solar facial, da marca Solare, indicado para pele normal, seca e mista. Foco em proteção solar e sinais de idade. Principais ativos: Filtros UVA/UVB, Vitamina E e Peptídeos. FPS 60. Não comedogênico.",
+  "howToUse": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
+  "priceTier": "premium",
+  "priceCents": 9490,
+  "listPriceCents": 11390,
+  "stockQty": 49,
+  "cashbackPct": 0,
+  "salesRank": 110,
+  "categoryIds": [
+   "dermo",
+   "normal-mista",
+   "seca-sensivel",
+   "solar-facial",
+   "tipo"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p106",
+  "name": "Creme Área dos Olhos Antissinais Peptídeos",
+  "brand": "Lume Lab",
+  "line": "olhos_labios",
+  "step": "complemento",
+  "coversSteps": [
+   "complemento"
+  ],
+  "productType": "contorno dos olhos",
+  "form": "jar",
+  "size": {
+   "value": 15,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "sinais_idade",
+   "olheiras"
+  ],
+  "ingredients": [
+   "peptideos",
+   "cafeina",
+   "acido_hialuronico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [
+   "evitar_contato_olhos"
+  ],
+  "description": "Creme Área dos Olhos Antissinais Peptídeos: produto do tipo contorno dos olhos, da marca Lume Lab, indicado para todos os tipos de pele. Foco em sinais de idade e olheiras. Principais ativos: Peptídeos, Cafeína e Ácido hialurônico.",
+  "howToUse": "Aplique pequenas quantidades ao redor dos olhos com leves batidas.",
+  "priceTier": "premium",
+  "priceCents": 11990,
+  "listPriceCents": 11990,
+  "stockQty": 18,
+  "cashbackPct": 0,
+  "salesRank": 125,
+  "categoryIds": [
+   "dermo",
+   "hialuronico",
+   "normal-mista",
+   "olhos",
+   "rosto",
+   "tipo"
+  ],
+  "images": [],
+  "domain": "dermo",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p107",
+  "name": "Ômega 3 1000 mg EPA/DHA",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "omega3",
+  "coversSteps": [
+   "omega3"
+  ],
+  "productType": "suplemento de ômega 3 em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "omega3_epa_dha"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Ômega 3 1000 mg EPA/DHA: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA). Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "economico",
+  "priceCents": 3990,
+  "listPriceCents": 4790,
+  "stockQty": 6,
+  "cashbackPct": 0,
+  "salesRank": 23,
+  "categoryIds": [
+   "omega3",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p108",
+  "name": "Ômega 3 Alta Concentração",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "omega3",
+  "coversSteps": [
+   "omega3"
+  ],
+  "productType": "suplemento de ômega 3 em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 120,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "omega3_epa_dha",
+   "vitamina_e"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Ômega 3 Alta Concentração: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA) e Vitamina E. Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "intermediario",
+  "priceCents": 7990,
+  "listPriceCents": 7990,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 45,
+  "categoryIds": [
+   "omega3",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p109",
+  "name": "Ômega 3 Vegano de Algas",
+  "brand": "Vita Verde",
+  "line": "suplementos",
+  "step": "omega3",
+  "coversSteps": [
+   "omega3"
+  ],
+  "productType": "suplemento de ômega 3 em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "omega3_algas"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "vegano",
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Ômega 3 Vegano de Algas: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Ômega 3 de algas (DHA). Vegano e sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "premium",
+  "priceCents": 8990,
+  "listPriceCents": 8990,
+  "stockQty": 21,
+  "cashbackPct": 2,
+  "salesRank": 116,
+  "categoryIds": [
+   "omega3",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p110",
+  "name": "Colágeno Hidrolisado em Pó Neutro",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "colageno",
+  "coversSteps": [
+   "colageno"
+  ],
+  "productType": "suplemento de colágeno em pó",
+  "form": "powder",
+  "size": {
+   "value": 300,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "beleza_interna"
+  ],
+  "ingredients": [
+   "colageno_hidrolisado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem açúcar"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Colágeno Hidrolisado em Pó Neutro: suplemento alimentar (suplemento de colágeno em pó) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 6990,
+  "listPriceCents": 6990,
+  "stockQty": 17,
+  "cashbackPct": 0,
+  "salesRank": 41,
+  "categoryIds": [
+   "colageno",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p111",
+  "name": "Colágeno Hidrolisado em Cápsulas",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "colageno",
+  "coversSteps": [
+   "colageno"
+  ],
+  "productType": "suplemento de colágeno em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 120,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "beleza_interna"
+  ],
+  "ingredients": [
+   "colageno_hidrolisado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem açúcar"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Colágeno Hidrolisado em Cápsulas: suplemento alimentar (suplemento de colágeno em cápsulas) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "economico",
+  "priceCents": 5990,
+  "listPriceCents": 5990,
+  "stockQty": 50,
+  "cashbackPct": 10,
+  "salesRank": 17,
+  "categoryIds": [
+   "colageno",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p112",
+  "name": "Colágeno com Vitamina C e Ácido Hialurônico em Pó",
+  "brand": "Lume Lab",
+  "line": "suplementos",
+  "step": "colageno",
+  "coversSteps": [
+   "colageno"
+  ],
+  "productType": "suplemento de colágeno em pó",
+  "form": "powder",
+  "size": {
+   "value": 250,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "beleza_interna"
+  ],
+  "ingredients": [
+   "colageno_hidrolisado",
+   "vitamina_c",
+   "acido_hialuronico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem açúcar"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Colágeno com Vitamina C e Ácido Hialurônico em Pó: suplemento alimentar (suplemento de colágeno em pó) da marca Lume Lab. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado, Vitamina C e Ácido hialurônico. Sem açúcar.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "premium",
+  "priceCents": 9990,
+  "listPriceCents": 9990,
+  "stockQty": 40,
+  "cashbackPct": 0,
+  "salesRank": 109,
+  "categoryIds": [
+   "colageno",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p113",
+  "name": "Magnésio Dimalato",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "magnesio",
+  "coversSteps": [
+   "magnesio"
+  ],
+  "productType": "suplemento de magnésio em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "magnesio_dimalato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Magnésio Dimalato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio dimalato. Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "economico",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 19,
+  "cashbackPct": 0,
+  "salesRank": 55,
+  "categoryIds": [
+   "magnesio",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p114",
+  "name": "Magnésio Bisglicinato",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "magnesio",
+  "coversSteps": [
+   "magnesio"
+  ],
+  "productType": "suplemento de magnésio em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "magnesio_bisglicinato"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Magnésio Bisglicinato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio bisglicinato. Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "premium",
+  "priceCents": 5490,
+  "listPriceCents": 5490,
+  "stockQty": 0,
+  "cashbackPct": 3,
+  "salesRank": 138,
+  "categoryIds": [
+   "magnesio",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p115",
+  "name": "Citrato de Magnésio em Pó",
+  "brand": "Vita Verde",
+  "line": "suplementos",
+  "step": "magnesio",
+  "coversSteps": [
+   "magnesio"
+  ],
+  "productType": "suplemento de magnésio em pó",
+  "form": "powder",
+  "size": {
+   "value": 200,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "magnesio_citrato"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [
+   "vegano",
+   "sem açúcar"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Citrato de Magnésio em Pó: suplemento alimentar (suplemento de magnésio em pó) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Magnésio citrato. Vegano e sem açúcar.",
+  "howToUse": "Use a quantidade indicada na embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 4490,
+  "listPriceCents": 4490,
+  "stockQty": 16,
+  "cashbackPct": 5,
+  "salesRank": 93,
+  "categoryIds": [
+   "magnesio",
+   "vida-saudavel"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p116",
+  "name": "Vitamina D3 2000 UI",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "vitaminas",
+  "coversSteps": [
+   "vitaminas"
+  ],
+  "productType": "suplemento de vitamina D em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "vitamina_d3"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Vitamina D3 2000 UI: suplemento alimentar (suplemento de vitamina D em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3. Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "economico",
+  "priceCents": 2490,
+  "listPriceCents": 2990,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 24,
+  "categoryIds": [
+   "vida-saudavel",
+   "vitaminas"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p117",
+  "name": "Vitamina D3 + K2",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "vitaminas",
+  "coversSteps": [
+   "vitaminas"
+  ],
+  "productType": "suplemento de vitaminas D e K em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "vitamina_d3",
+   "vitamina_k2"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem glúten"
+  ],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Vitamina D3 + K2: suplemento alimentar (suplemento de vitaminas D e K em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3 e Vitamina K2. Sem glúten.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "intermediario",
+  "priceCents": 4990,
+  "listPriceCents": 4990,
+  "stockQty": 31,
+  "cashbackPct": 5,
+  "salesRank": 72,
+  "categoryIds": [
+   "vida-saudavel",
+   "vitaminas"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p118",
+  "name": "Multivitamínico Mulher 45+",
+  "brand": "Essência Nutri",
+  "line": "suplementos",
+  "step": "vitaminas",
+  "coversSteps": [
+   "vitaminas"
+  ],
+  "productType": "suplemento multivitamínico em comprimidos",
+  "form": "caps",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "nutricao"
+  ],
+  "ingredients": [
+   "multivitaminico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Multivitamínico Mulher 45+: suplemento alimentar (suplemento multivitamínico em comprimidos) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Complexo multivitamínico.",
+  "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+  "priceTier": "premium",
+  "priceCents": 6490,
+  "listPriceCents": 6490,
+  "stockQty": 59,
+  "cashbackPct": 0,
+  "salesRank": 106,
+  "categoryIds": [
+   "vida-saudavel",
+   "vitaminas"
+  ],
+  "images": [],
+  "domain": "suplemento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p119",
+  "name": "Sabonete Líquido Corporal Óleos Naturais",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "sabonete líquido corporal",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria",
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "glicerina",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano",
+   "sem parabenos"
+  ],
+  "warnings": [],
+  "description": "Sabonete Líquido Corporal Óleos Naturais: produto de higiene (sabonete líquido corporal) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Óleo de argan. Vegano e sem parabenos.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 47,
+  "cashbackPct": 0,
+  "salesRank": 15,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p120",
+  "name": "Gel de Banho Hidratante Karité",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "gel de banho",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria",
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "manteiga_karite",
+   "glicerina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem parabenos"
+  ],
+  "warnings": [],
+  "description": "Gel de Banho Hidratante Karité: produto de higiene (gel de banho) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Manteiga de karité e Glicerina. Sem parabenos.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 45,
+  "cashbackPct": 0,
+  "salesRank": 91,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p121",
+  "name": "Esfoliante Corporal Açúcar e Karité",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "esfoliante corporal",
+  "form": "jar",
+  "size": {
+   "value": 200,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Esfoliante Corporal Açúcar e Karité: produto de higiene (esfoliante corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Manteiga de karité. Vegano.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 4490,
+  "listPriceCents": 5390,
+  "stockQty": 29,
+  "cashbackPct": 0,
+  "salesRank": 127,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p122",
+  "name": "Shampoo Reparador Premium",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "shampoo",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem sulfato"
+  ],
+  "warnings": [],
+  "description": "Shampoo Reparador Premium: produto de higiene (shampoo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 4990,
+  "listPriceCents": 4990,
+  "stockQty": 55,
+  "cashbackPct": 0,
+  "salesRank": 61,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p123",
+  "name": "Condicionador Reparador Premium",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "condicionador",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem sulfato"
+  ],
+  "warnings": [],
+  "description": "Condicionador Reparador Premium: produto de higiene (condicionador) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 4990,
+  "listPriceCents": 4990,
+  "stockQty": 19,
+  "cashbackPct": 0,
+  "salesRank": 74,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p124",
+  "name": "Máscara Capilar Nutrição Intensa",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "máscara capilar",
+  "form": "jar",
+  "size": {
+   "value": 250,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "manteiga_karite",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Máscara Capilar Nutrição Intensa: produto de higiene (máscara capilar) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Manteiga de karité e Óleo de argan. Vegano.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 6990,
+  "listPriceCents": 6990,
+  "stockQty": 38,
+  "cashbackPct": 0,
+  "salesRank": 99,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p125",
+  "name": "Creme Dental Branqueador Premium",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "creme dental",
+  "form": "tube",
+  "size": {
+   "value": 90,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "com flúor"
+  ],
+  "warnings": [],
+  "description": "Creme Dental Branqueador Premium: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 31,
+  "cashbackPct": 0,
+  "salesRank": 71,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p126",
+  "name": "Creme Dental para Dentes Sensíveis",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "creme dental",
+  "form": "tube",
+  "size": {
+   "value": 90,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "com flúor"
+  ],
+  "warnings": [],
+  "description": "Creme Dental para Dentes Sensíveis: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 33,
+  "cashbackPct": 0,
+  "salesRank": 64,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p127",
+  "name": "Enxaguante Bucal Sem Álcool",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "enxaguante bucal",
+  "form": "bottle",
+  "size": {
+   "value": 500,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem álcool"
+  ],
+  "warnings": [],
+  "description": "Enxaguante Bucal Sem Álcool: produto de higiene (enxaguante bucal) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Sem álcool.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 8,
+  "cashbackPct": 10,
+  "salesRank": 111,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p128",
+  "name": "Desodorante Roll-on Sem Alumínio",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante roll-on",
+  "form": "bottle",
+  "size": {
+   "value": 55,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio"
+  ],
+  "warnings": [],
+  "description": "Desodorante Roll-on Sem Alumínio: produto de higiene (desodorante roll-on) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "economico",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 59,
+  "cashbackPct": 0,
+  "salesRank": 65,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p129",
+  "name": "Desodorante Creme Hidratante",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante em creme",
+  "form": "jar",
+  "size": {
+   "value": 55,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio",
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Desodorante Creme Hidratante: produto de higiene (desodorante em creme) da marca Noble Banho. Foco em desodorização. Componentes: Manteiga de karité. Sem alumínio e vegano.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 10,
+  "cashbackPct": 0,
+  "salesRank": 44,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p130",
+  "name": "Desodorante Aerossol Pele Sensível",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante aerossol",
+  "form": "spray",
+  "size": {
+   "value": 150,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio",
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Desodorante Aerossol Pele Sensível: produto de higiene (desodorante aerossol) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio e sem fragrância.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 3590,
+  "stockQty": 38,
+  "cashbackPct": 5,
+  "salesRank": 100,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p131",
+  "name": "Tensiv 50 mg (referência)",
+  "brand": "Lab Aurora",
+  "line": "reposicao_tensivalol_50",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "tensivalol_potassico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Tensiv 50 mg (referência): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Aurora. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: referencia. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "intermediario",
+  "priceCents": 6890,
+  "listPriceCents": 6890,
+  "stockQty": 9,
+  "cashbackPct": 0,
+  "salesRank": 59,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "tensivalol_50",
+   "presentation": "referencia",
+   "active": "Tensivalol potássico",
+   "dose": "50 mg"
+  }
+ },
+ {
+  "id": "p132",
+  "name": "Tensivalol potássico 50 mg (genérico) — 30 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "reposicao_tensivalol_50",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "tensivalol_potassico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Tensivalol potássico 50 mg (genérico) — 30 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: generico. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "economico",
+  "priceCents": 3190,
+  "listPriceCents": 3190,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 67,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "tensivalol_50",
+   "presentation": "generico",
+   "active": "Tensivalol potássico",
+   "dose": "50 mg"
+  }
+ },
+ {
+  "id": "p133",
+  "name": "Tensivalol potássico 50 mg (genérico) — 60 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "reposicao_tensivalol_50",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "tensivalol_potassico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Tensivalol potássico 50 mg (genérico) — 60 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: generico. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "intermediario",
+  "priceCents": 5890,
+  "listPriceCents": 5890,
+  "stockQty": 30,
+  "cashbackPct": 0,
+  "salesRank": 86,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "tensivalol_50",
+   "presentation": "generico",
+   "active": "Tensivalol potássico",
+   "dose": "50 mg"
+  }
+ },
+ {
+  "id": "p134",
+  "name": "Pressolan 50 mg (similar)",
+  "brand": "Lab Nova Via",
+  "line": "reposicao_tensivalol_50",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "tensivalol_potassico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Pressolan 50 mg (similar): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Nova Via. Princípio ativo inventado: Tensivalol potássico 50 mg. Apresentação: similar. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "economico",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 17,
+  "cashbackPct": 0,
+  "salesRank": 33,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "tensivalol_50",
+   "presentation": "similar",
+   "active": "Tensivalol potássico",
+   "dose": "50 mg"
+  }
+ },
+ {
+  "id": "p135",
+  "name": "Lipostan 20 mg (referência)",
+  "brand": "Lab Aurora",
+  "line": "reposicao_lipostanol_20",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "lipostanol_calcico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Lipostan 20 mg (referência): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Aurora. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: referencia. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "premium",
+  "priceCents": 9290,
+  "listPriceCents": 9290,
+  "stockQty": 7,
+  "cashbackPct": 0,
+  "salesRank": 132,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "lipostanol_20",
+   "presentation": "referencia",
+   "active": "Lipostanol cálcico",
+   "dose": "20 mg"
+  }
+ },
+ {
+  "id": "p136",
+  "name": "Lipostanol cálcico 20 mg (genérico) — 30 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "reposicao_lipostanol_20",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "lipostanol_calcico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Lipostanol cálcico 20 mg (genérico) — 30 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: generico. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "economico",
+  "priceCents": 4490,
+  "listPriceCents": 4490,
+  "stockQty": 4,
+  "cashbackPct": 0,
+  "salesRank": 36,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "lipostanol_20",
+   "presentation": "generico",
+   "active": "Lipostanol cálcico",
+   "dose": "20 mg"
+  }
+ },
+ {
+  "id": "p137",
+  "name": "Lipostanol cálcico 20 mg (genérico) — 60 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "reposicao_lipostanol_20",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 60,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "lipostanol_calcico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Lipostanol cálcico 20 mg (genérico) — 60 comprimidos: medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Genérico Sul. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: generico. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "premium",
+  "priceCents": 8290,
+  "listPriceCents": 8290,
+  "stockQty": 20,
+  "cashbackPct": 0,
+  "salesRank": 103,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "lipostanol_20",
+   "presentation": "generico",
+   "active": "Lipostanol cálcico",
+   "dose": "20 mg"
+  }
+ },
+ {
+  "id": "p138",
+  "name": "Colemax 20 mg (similar)",
+  "brand": "Lab Nova Via",
+  "line": "reposicao_lipostanol_20",
+  "step": "reposicao",
+  "coversSteps": [
+   "reposicao"
+  ],
+  "productType": "comprimido de uso contínuo",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "reposicao"
+  ],
+  "ingredients": [
+   "lipostanol_calcico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [],
+  "warnings": [
+   "receita_obrigatoria",
+   "confirmar_troca_com_farmaceutico"
+  ],
+  "description": "Colemax 20 mg (similar): medicamento FICTÍCIO para demonstração (comprimido de uso contínuo), laboratório Lab Nova Via. Princípio ativo inventado: Lipostanol cálcico 20 mg. Apresentação: similar. Reposição de uso contínuo.",
+  "howToUse": "Use somente conforme a sua receita.",
+  "priceTier": "intermediario",
+  "priceCents": 5290,
+  "listPriceCents": 5290,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 84,
+  "categoryIds": [
+   "reposicao",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": {
+   "group": "lipostanol_20",
+   "presentation": "similar",
+   "active": "Lipostanol cálcico",
+   "dose": "20 mg"
+  }
  }
 ]

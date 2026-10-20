@@ -8,6 +8,10 @@ A rede vende medicamentos. O enunciado diz que uma solução que recomenda produ
 
 **Escopo inicial: cosméticos e autocuidado** (skin care, proteção solar, tratamento cosmético). Medicamentos, sintomas e condições de saúde ficam fora das recomendações da IA. Mostrar como uma camada validada trataria esses casos é parte da proposta, mas não é implementado por inventar regras clínicas sem validação.
 
+## Reposição de medicamento (20/10)
+
+Para a persona Renata (uso contínuo), existe uma **área de reposição**, não de recomendação. O motor nunca nomeia, sugere nem doseia; a tela de reposição lê os dados que ficam **no aparelho** e mostra unidades restantes, onde há estoque e equivalentes (mesmo ativo e dose) com a nota de que a troca depende do farmacêutico e da receita. Receita simulada. Pedidos de recomendação, dose ou sintoma continuam bloqueados, inclusive dentro desse fluxo. Detalhes no [doc 14](14-persona-e-privacidade.md).
+
 ## Três zonas
 
 | Zona | Exemplos | Comportamento |

@@ -104,7 +104,13 @@
     "p097",
     "p098",
     "p099",
-    "p100"
+    "p100",
+    "p101",
+    "p102",
+    "p103",
+    "p104",
+    "p105",
+    "p106"
    ]
   },
   {
@@ -183,7 +189,12 @@
     "p097",
     "p098",
     "p099",
-    "p100"
+    "p100",
+    "p101",
+    "p102",
+    "p103",
+    "p104",
+    "p106"
    ]
   },
   {
@@ -202,7 +213,8 @@
     "p010",
     "p011",
     "p012",
-    "p013"
+    "p013",
+    "p101"
    ]
   },
   {
@@ -253,7 +265,8 @@
     "p069",
     "p070",
     "p071",
-    "p072"
+    "p072",
+    "p104"
    ]
   },
   {
@@ -283,7 +296,8 @@
     "p052",
     "p053",
     "p055",
-    "p056"
+    "p056",
+    "p102"
    ]
   },
   {
@@ -296,7 +310,8 @@
     "p043",
     "p044",
     "p046",
-    "p056"
+    "p056",
+    "p102"
    ]
   },
   {
@@ -309,7 +324,8 @@
     "p050",
     "p051",
     "p053",
-    "p055"
+    "p055",
+    "p103"
    ]
   },
   {
@@ -323,7 +339,9 @@
     "p061",
     "p063",
     "p066",
-    "p097"
+    "p097",
+    "p104",
+    "p106"
    ]
   },
   {
@@ -361,7 +379,8 @@
    "productIds": [
     "p097",
     "p098",
-    "p100"
+    "p100",
+    "p106"
    ]
   },
   {
@@ -478,7 +497,13 @@
     "p097",
     "p098",
     "p099",
-    "p100"
+    "p100",
+    "p101",
+    "p102",
+    "p103",
+    "p104",
+    "p105",
+    "p106"
    ]
   },
   {
@@ -554,7 +579,13 @@
     "p097",
     "p098",
     "p099",
-    "p100"
+    "p100",
+    "p101",
+    "p102",
+    "p103",
+    "p104",
+    "p105",
+    "p106"
    ]
   },
   {
@@ -633,7 +664,12 @@
     "p081",
     "p085",
     "p087",
-    "p088"
+    "p088",
+    "p101",
+    "p102",
+    "p103",
+    "p104",
+    "p105"
    ]
   },
   {
@@ -658,7 +694,8 @@
     "p046",
     "p056",
     "p083",
-    "p086"
+    "p086",
+    "p102"
    ]
   },
   {
@@ -684,7 +721,8 @@
     "p085",
     "p086",
     "p087",
-    "p088"
+    "p088",
+    "p105"
    ]
   },
   {
@@ -774,6 +812,154 @@
     "p094",
     "p099"
    ]
+  },
+  {
+   "id": "saude",
+   "name": "Medicamentos e saúde",
+   "parent": null,
+   "productIds": [
+    "p131",
+    "p132",
+    "p133",
+    "p134",
+    "p135",
+    "p136",
+    "p137",
+    "p138"
+   ]
+  },
+  {
+   "id": "reposicao",
+   "name": "Reposição de uso contínuo",
+   "parent": "saude",
+   "productIds": [
+    "p131",
+    "p132",
+    "p133",
+    "p134",
+    "p135",
+    "p136",
+    "p137",
+    "p138"
+   ]
+  },
+  {
+   "id": "vida-saudavel",
+   "name": "Vida Saudável",
+   "parent": null,
+   "productIds": [
+    "p107",
+    "p108",
+    "p109",
+    "p110",
+    "p111",
+    "p112",
+    "p113",
+    "p114",
+    "p115",
+    "p116",
+    "p117",
+    "p118"
+   ]
+  },
+  {
+   "id": "omega3",
+   "name": "Ômega 3",
+   "parent": "vida-saudavel",
+   "productIds": [
+    "p107",
+    "p108",
+    "p109"
+   ]
+  },
+  {
+   "id": "colageno",
+   "name": "Colágeno",
+   "parent": "vida-saudavel",
+   "productIds": [
+    "p110",
+    "p111",
+    "p112"
+   ]
+  },
+  {
+   "id": "magnesio",
+   "name": "Magnésio",
+   "parent": "vida-saudavel",
+   "productIds": [
+    "p113",
+    "p114",
+    "p115"
+   ]
+  },
+  {
+   "id": "vitaminas",
+   "name": "Vitaminas",
+   "parent": "vida-saudavel",
+   "productIds": [
+    "p116",
+    "p117",
+    "p118"
+   ]
+  },
+  {
+   "id": "higiene",
+   "name": "Higiene pessoal",
+   "parent": null,
+   "productIds": [
+    "p119",
+    "p120",
+    "p121",
+    "p122",
+    "p123",
+    "p124",
+    "p125",
+    "p126",
+    "p127",
+    "p128",
+    "p129",
+    "p130"
+   ]
+  },
+  {
+   "id": "banho",
+   "name": "Banho e corpo",
+   "parent": "higiene",
+   "productIds": [
+    "p119",
+    "p120",
+    "p121"
+   ]
+  },
+  {
+   "id": "cabelos",
+   "name": "Cabelos",
+   "parent": "higiene",
+   "productIds": [
+    "p122",
+    "p123",
+    "p124"
+   ]
+  },
+  {
+   "id": "bucal",
+   "name": "Higiene bucal",
+   "parent": "higiene",
+   "productIds": [
+    "p125",
+    "p126",
+    "p127"
+   ]
+  },
+  {
+   "id": "desodorantes",
+   "name": "Desodorantes",
+   "parent": "higiene",
+   "productIds": [
+    "p128",
+    "p129",
+    "p130"
+   ]
   }
  ],
  "emptyOmitted": [
@@ -781,10 +967,7 @@
  ],
  "outOfScope": [
   "Ofertas",
-  "Medicamentos e Saúde",
   "Mamães e bebês",
-  "Higiene pessoal",
-  "Vida Saudável",
   "Serviços de Saúde",
   "Pet shop",
   "Fitness e Nutrição"

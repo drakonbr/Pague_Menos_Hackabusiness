@@ -1,0 +1,10 @@
+{
+ "dim": 48,
+ "vocab": 488,
+ "sentences": 762,
+ "tokens": 10941,
+ "corpusSha": "40500c7302fcddee",
+ "window": 5,
+ "smooth": 0.75,
+ "method": "PPMI + SVD (do zero, sem modelo externo)"
+}

@@ -698,5 +698,271 @@
     "list_price_cents": 9990,
     "stock_qty": 37,
     "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p101",
+    "price_cents": 5990,
+    "list_price_cents": 5990,
+    "stock_qty": 19,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p102",
+    "price_cents": 14990,
+    "list_price_cents": 14990,
+    "stock_qty": 25,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p103",
+    "price_cents": 16990,
+    "list_price_cents": 20390,
+    "stock_qty": 39,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p104",
+    "price_cents": 8990,
+    "list_price_cents": 8990,
+    "stock_qty": 18,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p105",
+    "price_cents": 9490,
+    "list_price_cents": 11390,
+    "stock_qty": 49,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p106",
+    "price_cents": 11990,
+    "list_price_cents": 11990,
+    "stock_qty": 18,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p107",
+    "price_cents": 3990,
+    "list_price_cents": 4790,
+    "stock_qty": 6,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p108",
+    "price_cents": 7990,
+    "list_price_cents": 7990,
+    "stock_qty": 8,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p109",
+    "price_cents": 8990,
+    "list_price_cents": 8990,
+    "stock_qty": 21,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p110",
+    "price_cents": 6990,
+    "list_price_cents": 6990,
+    "stock_qty": 17,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p111",
+    "price_cents": 5990,
+    "list_price_cents": 5990,
+    "stock_qty": 50,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p112",
+    "price_cents": 9990,
+    "list_price_cents": 9990,
+    "stock_qty": 40,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p113",
+    "price_cents": 3490,
+    "list_price_cents": 3490,
+    "stock_qty": 19,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p114",
+    "price_cents": 5490,
+    "list_price_cents": 5490,
+    "stock_qty": 0,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p115",
+    "price_cents": 4490,
+    "list_price_cents": 4490,
+    "stock_qty": 16,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p116",
+    "price_cents": 2490,
+    "list_price_cents": 2990,
+    "stock_qty": 46,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p117",
+    "price_cents": 4990,
+    "list_price_cents": 4990,
+    "stock_qty": 31,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p118",
+    "price_cents": 6490,
+    "list_price_cents": 6490,
+    "stock_qty": 59,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p119",
+    "price_cents": 3490,
+    "list_price_cents": 3490,
+    "stock_qty": 47,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p120",
+    "price_cents": 3990,
+    "list_price_cents": 3990,
+    "stock_qty": 45,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p121",
+    "price_cents": 4490,
+    "list_price_cents": 5390,
+    "stock_qty": 29,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p122",
+    "price_cents": 4990,
+    "list_price_cents": 4990,
+    "stock_qty": 55,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p123",
+    "price_cents": 4990,
+    "list_price_cents": 4990,
+    "stock_qty": 19,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p124",
+    "price_cents": 6990,
+    "list_price_cents": 6990,
+    "stock_qty": 38,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p125",
+    "price_cents": 2490,
+    "list_price_cents": 2490,
+    "stock_qty": 31,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p126",
+    "price_cents": 2290,
+    "list_price_cents": 2290,
+    "stock_qty": 33,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p127",
+    "price_cents": 2990,
+    "list_price_cents": 2990,
+    "stock_qty": 8,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p128",
+    "price_cents": 1990,
+    "list_price_cents": 1990,
+    "stock_qty": 59,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p129",
+    "price_cents": 2490,
+    "list_price_cents": 2490,
+    "stock_qty": 10,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p130",
+    "price_cents": 2990,
+    "list_price_cents": 3590,
+    "stock_qty": 38,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p131",
+    "price_cents": 6890,
+    "list_price_cents": 6890,
+    "stock_qty": 9,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p132",
+    "price_cents": 3190,
+    "list_price_cents": 3190,
+    "stock_qty": 58,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p133",
+    "price_cents": 5890,
+    "list_price_cents": 5890,
+    "stock_qty": 30,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p134",
+    "price_cents": 3990,
+    "list_price_cents": 3990,
+    "stock_qty": 17,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p135",
+    "price_cents": 9290,
+    "list_price_cents": 9290,
+    "stock_qty": 7,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p136",
+    "price_cents": 4490,
+    "list_price_cents": 4490,
+    "stock_qty": 4,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p137",
+    "price_cents": 8290,
+    "list_price_cents": 8290,
+    "stock_qty": 20,
+    "updated_at": "2026-10-15T00:00:00-03:00"
+  },
+  {
+    "id": "p138",
+    "price_cents": 5290,
+    "list_price_cents": 5290,
+    "stock_qty": 54,
+    "updated_at": "2026-10-15T00:00:00-03:00"
   }
 ]

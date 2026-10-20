@@ -1,10 +1,14 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { TabBar } from "./components/TabBar";
 import { Toast } from "./components/Toast";
-import { FULLSCREEN, NavProvider, ServicesProvider, useNav } from "./nav";
+import { FULLSCREEN, NavProvider, ServicesProvider, useNav, useServices } from "./nav";
 import { createCommerceService } from "./services/commerceService";
 import { createSearchService } from "./services/searchService";
-import { AppProvider } from "./state/app";
+import { AppProvider, useApp } from "./state/app";
+import { DEFAULT_STORE_ID } from "./location";
+import { Chat } from "./screens/Chat";
+import { Privacy } from "./screens/Privacy";
+import { Refill } from "./screens/Refill";
 import { Cart } from "./screens/Cart";
 import { CategoriesRoot, CategoryView } from "./screens/Categories";
 import { Delivery } from "./screens/Delivery";
@@ -35,7 +39,28 @@ export function App() {
   );
 }
 
+/** Cliente logada: começa com a loja onde costuma retirar (a mais próxima do endereço fictício). */
+function useDefaultStore() {
+  const { commerce } = useServices();
+  const { store, dispatch } = useApp();
+  useEffect(() => {
+    if (store) return;
+    let alive = true;
+    commerce.storesFor([]).then((list) => {
+      const s = list.find((x) => x.store.id === DEFAULT_STORE_ID)?.store;
+      if (alive && s) {
+        dispatch({ type: "setStore", store: s });
+        dispatch({ type: "setMode", mode: "retirada" });
+      }
+    });
+    return () => { alive = false; };
+    // só na primeira montagem
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+}
+
 function Shell() {
+  useDefaultStore();
   const { view, tab } = useNav();
   const key = `${tab}:${view.name}:${"id" in view ? view.id : ""}`;
   return (
@@ -55,6 +80,9 @@ function Screen() {
     case "home": return <Home />;
     case "searchFocus": return <SearchFocus initial={view.initial} />;
     case "results": return <Results req={view.req} />;
+    case "chat": return <Chat initial={view.initial} />;
+    case "refill": return <Refill />;
+    case "privacy": return <Privacy />;
     case "categorias": return <CategoriesRoot />;
     case "category": return <CategoryView id={view.id} />;
     case "product": return <ProductPage id={view.id} />;

@@ -7,6 +7,9 @@ export type Tab = "home" | "categorias" | "ofertas" | "favoritos" | "mais";
 export type View =
   | { name: "home" }
   | { name: "searchFocus"; initial?: string }
+  | { name: "chat"; initial?: string }
+  | { name: "refill" }
+  | { name: "privacy" }
   | { name: "results"; req: SearchRequest }
   | { name: "categorias" }
   | { name: "category"; id: string }
@@ -27,7 +30,7 @@ export type View =
   | { name: "stores" };
 
 /** Telas que escondem a barra de abas (como a cesta e a entrega no app real). */
-export const FULLSCREEN = new Set<View["name"]>(["searchFocus", "cart", "delivery", "payment", "done"]);
+export const FULLSCREEN = new Set<View["name"]>(["searchFocus", "chat", "cart", "delivery", "payment", "done"]);
 
 const ROOT: Record<Tab, View> = {
   home: { name: "home" },

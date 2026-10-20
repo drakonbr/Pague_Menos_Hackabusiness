@@ -9,6 +9,12 @@ const BRAND: Record<string, [string, string]> = {
   "Vita Verde": ["#E8F3DF", "#3F7F22"],
   "Pura Base": ["#E4EEFA", "#0B4FA8"],
   "Bem Simples": ["#EEEBF8", "#5546A8"],
+  "Essência Nutri": ["#E6F4EE", "#1B7F5F"],
+  "Noble Banho": ["#F3EAF7", "#7A3C9E"],
+  "Sorriso Pleno": ["#E5F3FA", "#0E78A8"],
+  "Lab Genérico Sul": ["#EAF0F6", "#3A5D7C"],
+  "Lab Aurora": ["#E8EDF8", "#2F4C8F"],
+  "Lab Nova Via": ["#F1EEF8", "#5546A8"],
 };
 
 function shape(form: ProductForm, c: string) {
@@ -30,6 +36,12 @@ function shape(form: ProductForm, c: string) {
       return (<><circle cx="18" cy="19" r="7" fill={c} fillOpacity=".92" /><circle cx="30" cy="27" r="7" fill={c} fillOpacity=".7" /><circle cx="18" cy="33" r="5" fill={c} fillOpacity=".5" /></>);
     case "spray":
       return (<><path d="M21 6h8l3 3h-6v4h-5z" fill={c} /><rect x="16" y="13" width="16" height="28" rx="5" fill={c} fillOpacity=".92" />{label}</>);
+    case "caps":
+      return (<><rect x="14" y="12" width="20" height="29" rx="4.5" fill={c} fillOpacity=".92" /><rect x="16" y="8" width="16" height="6" rx="2.5" fill={c} /><rect x="19" y="21" width="10" height="9" rx="1.5" fill="#fff" fillOpacity=".85" /><rect x="21" y="23" width="6" height="2.5" rx="1.2" fill={c} /><circle cx="24" cy="28" r="1.4" fill={c} /></>);
+    case "powder":
+      return (<><rect x="11" y="13" width="26" height="6" rx="3" fill={c} /><path d="M13 19h22l-2 21a2 2 0 0 1-2 1.8H17a2 2 0 0 1-2-1.8z" fill={c} fillOpacity=".92" /><rect x="18" y="26" width="12" height="8" rx="1.5" fill="#fff" fillOpacity=".85" /></>);
+    case "box":
+      return (<><path d="M10 17l14-6 14 6v20l-14 6-14-6z" fill={c} fillOpacity=".92" /><path d="M10 17l14 6 14-6M24 23v20" stroke="#fff" strokeOpacity=".5" strokeWidth="1.4" fill="none" /><rect x="15" y="27" width="7" height="5" rx="1" fill="#fff" fillOpacity=".85" /></>);
     case "bar":
       return (<><rect x="11" y="17" width="26" height="17" rx="6" fill={c} fillOpacity=".92" /><rect x="18" y="22" width="12" height="7" rx="2" fill="#fff" fillOpacity=".85" /></>);
   }

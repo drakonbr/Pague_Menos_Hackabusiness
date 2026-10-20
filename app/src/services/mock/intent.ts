@@ -18,6 +18,8 @@ const GOAL_PRIORITY: GoalId[] = [
   "skincare_basico",
   "pele_sensivel",
   "oleosidade",
+  "suplementos",
+  "higiene_premium",
 ];
 
 // Sinônimos extras só da versão simulada (o catálogo traz os principais).
@@ -25,6 +27,8 @@ const EXTRA_SYNONYMS: Partial<Record<GoalId, string[]>> = {
   anti_idade: ["retinol", "firmeza"],
   manchas: ["vitamina c"],
   protecao_solar: ["bloqueador"],
+  suplementos: ["omega", "ômega", "colageno", "colágeno", "magnesio", "magnésio", "suplemento", "vitamina d"],
+  higiene_premium: ["higiene", "shampoo", "condicionador", "creme dental", "desodorante"],
 };
 
 const SKIN_PATTERNS: Array<[RegExp, SkinType]> = [
@@ -150,6 +154,14 @@ const BLOCK_RULES: Array<[SafetyCategory, RegExp, string]> = [
 ];
 
 export const SAFETY_REFERRAL = "Falar com um farmacêutico";
+
+/** Pedido de recomendação, dose ou sintoma: bloqueado mesmo no fluxo de reposição. */
+const RECOMMEND =
+  /\b(o que (eu )?(posso |devo )?tomar|qual (remedio|medicamento)|indica\w* (um |algum )?(remedio|medicamento)|dose|doses|posologia|sem receita|parar de tomar|dor|dores|febre|tontura|pressao alta|colesterol|diabetes)\b/;
+const REFILL = /\b(repor|reposicao|recompr\w+|comprar de novo|acabando|acabou|renovar|ficar sem|no fim)\b.*\b(remedio|remedios|medicamento|medicamentos|medicacao|medicacoes)\b|\b(meu|meus|minha|minhas)\b.*\b(remedio|remedios|medicamento|medicamentos|medicacao)\b.*\b(acabando|acabou|no fim|repor|reposicao)\b/;
+export function isRefillRequest(normalized: string): boolean {
+  return REFILL.test(normalized) && !RECOMMEND.test(normalized);
+}
 
 export function assessSafety(normalized: string, pregnancy: boolean, primaryGoal: GoalId | null): Safety {
   for (const [category, re, subject] of BLOCK_RULES) {

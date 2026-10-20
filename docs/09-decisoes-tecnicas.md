@@ -26,6 +26,16 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | D-18 | Nome da rede | Fora das telas; uma constante em `app/src/brand.ts` | Confidencialidade do desafio; pode ser trocado para apresentação interna |
 | D-19 | Prints do app real | Não versionados; só o layout descrito no doc 13 | Mostram nome, endereço e CEP de uma pessoa |
 | D-20 | Escopo do ecossistema | Caminho de compra completo (vitrines, categorias Dermo, produto, cesta com régua, entrega e retirada, pagamento simulado, pedidos, assinatura, cashback); medicamentos, receita, convênio e locker visíveis e desativados | Decisão da Julia em 15/10, a partir da avaliação do doc 12 |
+| D-21 | Persona | O app abre logado como Renata Almeida (persona do grupo); sem conta real | Pedido da Julia em 20/10; a persona guia catálogo, conversa e testes |
+| D-22 | Medicamentos | Só reposição; o motor nunca recomenda, doseia ou nomeia; equivalentes só como dado, com confirmação do farmacêutico | Decisão da Julia em 20/10; coerente com o doc 07 |
+| D-23 | Motor | GraphRAG do zero (networkx, PPMI+SVD, BM25, Naive Bayes), sem Ollama nem API externa | Decisão da Julia em 20/10; zero dependência de serviço pago e dados nunca saem da máquina |
+| D-24 | Conversa | Sem estado no servidor: o cliente reenvia `context` (ids e preferências cosméticas) | Simples de testar; nada de pessoa guardado |
+| D-25 | Privacidade | `persona.json` fora da leitura do motor, com teste que rastreia arquivos abertos | Dado de saúde fica no aparelho |
+| D-26 | Fallback | `AutoSearchService`: tenta o GraphRAG local e cai no simulado | Demonstração não trava sem servidor |
+| D-27 | Ontologia | Esquema estrito em Pydantic; grafo validado no treino e na ingestão; vocabulário fechado x aberto | Evita nó e aresta por acidente; doc 15 |
+| D-28 | Ingestão | Determinística, sem LLM; resolução de entidades por texto normalizado; delta em `graphrag/artifacts/`, nunca em `catalog/` | Catálogo já é estruturado; mantém a decisão D-23 |
+| D-29 | Streaming | `POST /v1/search-chat` (SSE) com texto por regras em pedaços; app ainda usa `/v1/search` | Contrato pronto para um gerador de texto futuro; sem espera artificial |
+| D-30 | Rerank | MMR com lambda 0,9 só na lista de produtos | Medido: sem perda de relevância, ganho pequeno de variedade |
 
 ## Premissas
 
@@ -40,8 +50,8 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 
 | ID | Tema | Opções | Quando decidir |
 | --- | --- | --- | --- |
-| P-01 | Armazenamento do grafo | Neo4j, Kùzu embarcado, NetworkX | Início da fase GraphRAG |
-| P-02 | Embeddings e índice vetorial | modelo local ou API; FAISS/Chroma | Início da fase GraphRAG |
-| P-03 | Modelo de linguagem para intenção e justificativa | API ou modelo local | Início da fase GraphRAG |
+| P-01 | Armazenamento do grafo | **decidido: NetworkX (D-23)**; Neo4j só em produção | — |
+| P-02 | Embeddings e índice vetorial | **decidido: PPMI+SVD do zero (D-23)** | — |
+| P-03 | Modelo de linguagem para intenção e justificativa | **decidido: sem modelo de linguagem; regras + Naive Bayes (D-23)**. Comparar com o documento prático de GraphRAG que a Julia vai enviar | Ao receber o documento |
 | P-04 | Hospedagem do protótipo para o avaliador | serviço estático gratuito ou servidor próprio | Antes de 26/10 |
 | P-05 | Imagens de produto | **decidido em D-15** | — |

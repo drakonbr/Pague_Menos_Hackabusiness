@@ -4,22 +4,23 @@ import { useNav } from "../nav";
 import { useApp } from "../state/app";
 
 const EXAMPLES = [
-  "preciso de produtos para tratamento de acne, pele oleosa, até R$ 100",
-  "quero começar a cuidar da pele até R$ 120",
+  "quero um kit de suplementos: ômega 3, colágeno e magnésio",
+  "rotina anti idade premium até R$ 400, sem retinol",
+  "higiene premium: shampoo, creme dental e desodorante",
+  "preciso repor meus medicamentos",
   "protetor solar e manchas, sem perfume",
-  "pele sensível, algo simples",
 ];
 
 export function SearchFocus({ initial = "" }: { initial?: string }) {
   const { pop, replace, view } = useNav();
-  const { recents, dispatch, storeId } = useApp();
+  const { recents, dispatch } = useApp();
   const [q, setQ] = useState(initial);
 
   const go = (query: string) => {
     const t = query.trim();
     if (!t) return;
     dispatch({ type: "recent", q: t });
-    replace({ name: "results", req: { query: t, storeId } });
+    replace({ name: "chat", initial: t });
   };
   const submit = (e: FormEvent) => {
     e.preventDefault();
@@ -47,8 +48,8 @@ export function SearchFocus({ initial = "" }: { initial?: string }) {
             <button className="shortcut" style={{ minHeight: 84, alignItems: "center", textAlign: "center", border: 0 }} disabled title="Fora do protótipo">
               <Icon name="mic" /> <b style={{ fontSize: 13 }}>Buscar por áudio</b>
             </button>
-            <button className="shortcut" style={{ minHeight: 84, alignItems: "center", textAlign: "center", border: 0 }} disabled title="Fora do protótipo (medicamentos)">
-              <Icon name="receipt" /> <b style={{ fontSize: 13 }}>Buscar com receita</b>
+            <button type="button" className="shortcut" style={{ minHeight: 84, alignItems: "center", textAlign: "center", border: 0 }} onClick={() => replace({ name: "refill" })}>
+              <Icon name="pill" /> <b style={{ fontSize: 13 }}>Meus medicamentos</b>
             </button>
             <button className="shortcut" style={{ minHeight: 84, alignItems: "center", textAlign: "center", border: 0 }} disabled title="Fora do protótipo">
               <Icon name="barcode" /> <b style={{ fontSize: 13 }}>Ler código de barras</b>
@@ -57,7 +58,7 @@ export function SearchFocus({ initial = "" }: { initial?: string }) {
           <div className="note">
             <Icon name="sparkle" size={20} />
             <p>
-              <b>Novo:</b> descreva o que você precisa e quanto quer gastar. A gente monta kits completos, sem produto repetido.
+              <b>Converse com o assistente:</b> escreva do seu jeito o que você precisa e quanto quer gastar. Ele monta kits, troca itens, mostra o total com entrega e ajuda a repor o que você já usa.
             </p>
           </div>
 

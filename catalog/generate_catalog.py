@@ -4,7 +4,9 @@ Gerador do catálogo SINTÉTICO (fictício) de produtos.
 
 - Determinístico: mesma saída a cada execução (seed fixa, data fixa).
 - Nada aqui vem de dados reais da empresa. Marcas, nomes, preços e estoque são inventados.
-- Nenhum produto é medicamento. Escopo: skin care, tratamento cosmético e proteção solar.
+- Escopo principal: skin care, tratamento cosmético e proteção solar (100 primeiros produtos).
+- Ampliação da persona (persona_products.py): suplementos, higiene premium e 8 apresentações de 2
+  medicamentos FICTÍCIOS (princípios ativos inventados), usados só para reposição, nunca em kits.
 - Saídas em catalog/data/: products.json, inventory.json, ingredients.json,
   interactions.json, goals.json, warnings.json, catalog.sqlite
 
@@ -18,6 +20,8 @@ import json
 import random
 import sqlite3
 from pathlib import Path
+
+import persona_products as PP
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -182,6 +186,13 @@ GOALS = [
     },
 ]
 
+# Ampliação para a persona (catalog/persona_products.py): vocabulários novos entram junto dos antigos.
+STEPS.update(PP.EXTRA_STEPS)
+CONCERNS.update(PP.EXTRA_CONCERNS)
+INGREDIENTS.extend(PP.EXTRA_INGREDIENTS)
+WARNINGS.update(PP.EXTRA_WARNINGS)
+GOALS.extend(PP.EXTRA_GOALS)
+
 # --------------------------------------------------------------------------
 # Produtos
 # (marca, nome, tipo, etapa, linha, forma, tamanho, peles, preocupações, ingredientes,
@@ -335,7 +346,7 @@ add("Vita Verde", "Bálsamo Labial Hidratante", "bálsamo labial", K, "olhos_lab
 add("Aurora Dermo", "Creme para Área dos Olhos Antissinais", "contorno dos olhos", K, "olhos_labios", "jar", "15 g", "T", ["sinais_idade", "olheiras"], ["peptideos", "cafeina"], None, "dia_noite", 99.90, [], [OLH], [])
 
 # SKUs sem estoque (para testar disponibilidade na recomendação)
-OUT_OF_STOCK = {"p012", "p047", "p076", "p088", "p093"}
+OUT_OF_STOCK = {"p012", "p047", "p076", "p088", "p093", "p114"}  # p114: magnésio bisglicinato (ruptura de suplemento)
 
 # --------------------------------------------------------------------------
 # Textos auxiliares
@@ -366,6 +377,15 @@ HOW_TO_STEP = {
     "protecao_solar": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "protecao_corporal": "Aplique generosamente 15 minutos antes da exposição e reaplique a cada 2 horas.",
     "complemento": "Aplique conforme a necessidade.",
+    "omega3": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "colageno": "Use a quantidade indicada na embalagem.",
+    "magnesio": "Use a quantidade indicada na embalagem.",
+    "vitaminas": "Use a quantidade indicada na embalagem, junto a uma refeição.",
+    "higiene_corpo": "Use no banho, massageie e enxágue.",
+    "higiene_cabelo": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "higiene_oral": "Use na higiene bucal diária, conforme a embalagem.",
+    "desodorante": "Aplique nas axilas limpas e secas.",
+    "reposicao": "Use somente conforme a sua receita.",
 }
 
 
@@ -388,9 +408,11 @@ def build_products() -> tuple[list[dict], list[dict]]:
     ing_names = {i[0]: i[1] for i in INGREDIENTS}
     products: list[dict] = []
     inventory: list[dict] = []
-    for n, row in enumerate(P, start=1):
+    for n, row in enumerate(P + PP.EXTRA_PRODUCTS, start=1):
         (brand, name, ptype, step, line, form, size, skins, concerns, ings, fps, period,
-         price, claims, warns, covers_extra) = row
+         price, claims, warns, covers_extra) = row[:16]
+        extras = row[16] if len(row) > 16 else {}
+        domain = extras.get("domain", "dermo")
         pid = f"p{n:03d}"
         skin_list = ["todas"] if skins == "T" else [SKIN[c] for c in skins]
         warn_list = list(warns)
@@ -403,7 +425,17 @@ def build_products() -> tuple[list[dict], list[dict]]:
         skins_txt = "todos os tipos de pele" if skin_list == ["todas"] else "pele " + join_pt(skin_list)
         conc_txt = join_pt([CONCERNS[c] for c in concerns])
         ing_txt = join_pt([ing_names[i] for i in ings])
-        desc = f"{name}: produto do tipo {ptype}, da marca {brand}, indicado para {skins_txt}. Foco em {conc_txt}. Principais ativos: {ing_txt}."
+        if domain == "dermo":
+            desc = f"{name}: produto do tipo {ptype}, da marca {brand}, indicado para {skins_txt}. Foco em {conc_txt}. Principais ativos: {ing_txt}."
+        elif domain == "suplemento":
+            desc = f"{name}: suplemento alimentar ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
+        elif domain == "higiene":
+            desc = f"{name}: produto de higiene ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
+        else:
+            eq = extras["equivalence"]
+            desc = (f"{name}: medicamento FICTÍCIO para demonstração ({ptype}), laboratório {brand}. "
+                    f"Princípio ativo inventado: {eq['active']} {eq['dose']}. Apresentação: {eq['presentation']}. "
+                    f"Reposição de uso contínuo.")
         if fps:
             desc += f" FPS {fps}."
         if claims:
@@ -428,6 +460,9 @@ def build_products() -> tuple[list[dict], list[dict]]:
             "description": desc,
             "how_to_use": HOW_TO.get(ptype, HOW_TO_STEP[step]),
             "image": None,  # imagens reais ficam em data/images.json (ver catalog/images/README.md)
+            "domain": domain,
+            "rx": extras.get("rx"),
+            "equivalence": extras.get("equivalence"),
         })
         cents = int(round(price * 100))
         promo = rng.random() < 0.15
@@ -462,7 +497,12 @@ CREATE TABLE products (
   step TEXT NOT NULL, product_type TEXT NOT NULL, form TEXT NOT NULL,
   size_value REAL NOT NULL, size_unit TEXT NOT NULL, fps INTEGER,
   usage_period TEXT NOT NULL, price_tier TEXT NOT NULL,
-  description TEXT NOT NULL, how_to_use TEXT NOT NULL
+  description TEXT NOT NULL, how_to_use TEXT NOT NULL,
+  domain TEXT NOT NULL, rx TEXT
+);
+CREATE TABLE product_equivalence (
+  product_id TEXT PRIMARY KEY, equivalence_group TEXT NOT NULL, presentation TEXT NOT NULL,
+  active TEXT NOT NULL, dose TEXT NOT NULL
 );
 CREATE TABLE product_covers_step (product_id TEXT, step TEXT, PRIMARY KEY (product_id, step));
 CREATE TABLE product_skin_types (product_id TEXT, skin_type TEXT, PRIMARY KEY (product_id, skin_type));
@@ -492,11 +532,15 @@ def write_sqlite(products, inventory) -> None:
     cur = con.cursor()
     for p in products:
         cur.execute(
-            "INSERT INTO products VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO products VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (p["id"], p["name"], p["brand"], p["line"], p["step"], p["product_type"], p["form"],
              p["size"]["value"], p["size"]["unit"], p["fps"], p["usage_period"], p["price_tier"],
-             p["description"], p["how_to_use"]),
+             p["description"], p["how_to_use"], p["domain"], p["rx"]),
         )
+        if p["equivalence"]:
+            e = p["equivalence"]
+            cur.execute("INSERT INTO product_equivalence VALUES (?,?,?,?,?)",
+                        (p["id"], e["group"], e["presentation"], e["active"], e["dose"]))
         for s in p["covers_steps"]:
             cur.execute("INSERT INTO product_covers_step VALUES (?,?)", (p["id"], s))
         for s in p["skin_types"]:
@@ -549,12 +593,16 @@ def main() -> None:
     dump("goals.json", GOALS)
     dump("warnings.json", WARNINGS)
     dump("steps.json", STEPS)
+    dump("concerns.json", CONCERNS)
     write_sqlite(products, inventory)
     print(f"OK: {len(products)} produtos, {len(INGREDIENTS)} ingredientes, "
           f"{len(INTERACTIONS)} interações, {len(GOALS)} objetivos -> {DATA}")
     # ecossistema (lojas, estoque por loja, cashback, categorias) por cima do catálogo
     import generate_commerce
     generate_commerce.main()
+    # persona sintética (Renata) por cima do catálogo e das lojas
+    import generate_persona
+    generate_persona.main()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 """Dados sintéticos do ECOSSISTEMA de compra, por cima dos 100 produtos fictícios.
 
 Gera (em catalog/data/):
-  stores.json        8 lojas fictícias (bairros reais de Fortaleza só para o mapa)
+  stores.json        8 lojas fictícias (bairros reais do Recife só para o mapa; ruas inventadas)
   store_stock.json   estoque por loja (Clique & Retire e Entrega Expressa saem da loja)
   commerce.json      cashback por produto, ranking de vendas simulado, modalidades de entrega,
                      régua de frete grátis, vitrines e atalhos de kits da tela inicial
@@ -23,14 +23,14 @@ SEED = 2026
 
 STORES = [
     # id, nome, bairro, porte, abre 24h, lat, lng, rua fictícia
-    ("s01", "Loja Aldeota", "Aldeota", "grande", True, -3.7365, -38.5050, "Rua das Acácias, 120"),
-    ("s02", "Loja Meireles", "Meireles", "grande", False, -3.7270, -38.4960, "Av. Beira-Sol, 455"),
-    ("s03", "Loja Benfica", "Benfica", "media", False, -3.7400, -38.5390, "Rua dos Ipês, 88"),
-    ("s04", "Loja Messejana", "Messejana", "media", True, -3.8320, -38.4920, "Av. Lagoa Azul, 1500"),
-    ("s05", "Loja Parangaba", "Parangaba", "media", False, -3.7760, -38.5620, "Rua da Estação, 310"),
-    ("s06", "Loja Centro", "Centro", "pequena", False, -3.7260, -38.5270, "Rua do Mercado, 42"),
-    ("s07", "Loja Cocó", "Cocó", "grande", False, -3.7470, -38.4780, "Av. das Dunas, 900"),
-    ("s08", "Loja Montese", "Montese", "pequena", False, -3.7620, -38.5420, "Rua das Palmeiras, 15"),
+    ("s01", "Loja Madalena", "Madalena", "grande", True, -8.0577, -34.9046, "Rua das Hortênsias, 220"),
+    ("s02", "Loja Boa Viagem", "Boa Viagem", "grande", False, -8.1180, -34.8970, "Av. Beira-Mar, 1450"),
+    ("s03", "Loja Espinheiro", "Espinheiro", "media", False, -8.0430, -34.8970, "Rua dos Jacarandás, 88"),
+    ("s04", "Loja Torre", "Torre", "media", True, -8.0510, -34.9180, "Av. das Mangueiras, 600"),
+    ("s05", "Loja Casa Forte", "Casa Forte", "media", False, -8.0310, -34.9180, "Rua das Palmeiras, 310"),
+    ("s06", "Loja Boa Vista", "Boa Vista", "pequena", False, -8.0580, -34.8840, "Rua do Comércio, 42"),
+    ("s07", "Loja Graças", "Graças", "grande", False, -8.0420, -34.9030, "Av. dos Ipês, 900"),
+    ("s08", "Loja Várzea", "Várzea", "pequena", False, -8.0480, -34.9580, "Rua da Estação, 15"),
 ]
 AVAIL = {"grande": 0.94, "media": 0.8, "pequena": 0.55}
 PREMIUM_FACTOR = 0.7
@@ -45,6 +45,14 @@ DELIVERY = [
      "feeCents": 690, "freeFromCents": FREE_SHIPPING_FROM, "stockSource": "centro_distribuicao"},
 ]
 
+# Ruptura por loja da persona (docs/14): o genérico que a Renata usa some da loja mais perto dela.
+# (loja, produto) -> quantidade. Apresentações equivalentes seguem disponíveis (referência e similar).
+FORCED_STORE_STOCK = {
+    ("s01", "p132"): 10, ("s01", "p136"): 0, ("s01", "p137"): 0, ("s01", "p138"): 8, ("s01", "p135"): 3,
+    ("s02", "p136"): 0, ("s02", "p137"): 2,
+    ("s07", "p136"): 6,
+}
+
 KIT_PRESETS = [
     {"id": "oleosa", "label": "Pele oleosa e acne", "query": "pele oleosa com acne"},
     {"id": "manchas", "label": "Manchas", "query": "uniformizar manchas"},
@@ -52,6 +60,8 @@ KIT_PRESETS = [
     {"id": "sol", "label": "Sol todo dia", "query": "proteção solar para o dia a dia"},
     {"id": "sensivel", "label": "Pele sensível", "query": "pele sensível"},
     {"id": "idade", "label": "Antissinais", "query": "cuidado antissinais"},
+    {"id": "suplementos", "label": "Ômega 3, colágeno e magnésio", "query": "kit de suplementos ômega 3 colágeno e magnésio"},
+    {"id": "higiene", "label": "Higiene premium", "query": "kit de higiene premium"},
 ]
 
 
@@ -66,6 +76,10 @@ def dump(name, obj):
 # ---------------------------------------------------------------- categorias
 def has_ing(p, *ids):
     return any(i in p["ingredients"] for i in ids)
+
+
+def domain_of(p):
+    return p.get("domain", "dermo")
 
 
 def facial_sun(p):
@@ -106,50 +120,91 @@ CATEGORY_RULES = [
     ("solar-spray", "Spray", "solar-corporal", lambda p: p["step"] == "protecao_corporal" and p["form"] == "spray"),
     ("solar-creme", "Creme", "solar-corporal", lambda p: p["step"] == "protecao_corporal" and p["form"] != "spray"),
     ("veganos", "Cosméticos Veganos", "dermo", lambda p: "vegano" in p["claims"]),
+    # ---- ampliação da persona: demais departamentos do app ----
+    ("saude", "Medicamentos e saúde", None, None),
+    ("reposicao", "Reposição de uso contínuo", "saude", lambda p: domain_of(p) == "medicamento"),
+    ("vida-saudavel", "Vida Saudável", None, None),
+    ("omega3", "Ômega 3", "vida-saudavel", lambda p: p["step"] == "omega3"),
+    ("colageno", "Colágeno", "vida-saudavel", lambda p: p["step"] == "colageno"),
+    ("magnesio", "Magnésio", "vida-saudavel", lambda p: p["step"] == "magnesio"),
+    ("vitaminas", "Vitaminas", "vida-saudavel", lambda p: p["step"] == "vitaminas"),
+    ("higiene", "Higiene pessoal", None, None),
+    ("banho", "Banho e corpo", "higiene", lambda p: p["step"] == "higiene_corpo"),
+    ("cabelos", "Cabelos", "higiene", lambda p: p["step"] == "higiene_cabelo"),
+    ("bucal", "Higiene bucal", "higiene", lambda p: p["step"] == "higiene_oral"),
+    ("desodorantes", "Desodorantes", "higiene", lambda p: p["step"] == "desodorante"),
 ]
 
 
 def build_categories(products):
+    by_id = {cid: (name, parent) for cid, name, parent, _ in CATEGORY_RULES}
+
+    def root_of(cid):
+        while by_id[cid][1] is not None:
+            cid = by_id[cid][1]
+        return cid
+
     nodes, empty = [], []
     for cid, name, parent, rule in CATEGORY_RULES:
-        ids = [p["id"] for p in products if rule(p)] if rule else None
+        ids = None
+        if rule:
+            # as regras do departamento Dermo só enxergam produtos de dermocosmético
+            ids = [p["id"] for p in products
+                   if rule(p) and (root_of(cid) != "dermo" or domain_of(p) == "dermo")]
         if ids is not None and not ids:
             empty.append(name)
             continue
         nodes.append({"id": cid, "name": name, "parent": parent, "productIds": ids})
-    # nós de agrupamento recebem a união dos filhos
-    for n in nodes:
+    # nós de agrupamento recebem a união dos filhos (de baixo para cima)
+    def fill(n):
         if n["productIds"] is None:
             kids = [c for c in nodes if c["parent"] == n["id"]]
-            union = sorted({pid for c in kids for pid in (c["productIds"] or [])})
-            n["productIds"] = union
-    # a raiz recebe tudo que está em qualquer categoria
-    root = next(n for n in nodes if n["id"] == "dermo")
-    root["productIds"] = sorted({pid for n in nodes if n["id"] != "dermo" for pid in n["productIds"]})
+            for k in kids:
+                fill(k)
+            n["productIds"] = sorted({pid for c in kids for pid in (c["productIds"] or [])})
+    for n in nodes:
+        fill(n)
+    # a raiz Dermo recebe tudo que está em qualquer categoria dela
     return {"nodes": nodes, "emptyOmitted": empty, "outOfScope": [
-        "Ofertas", "Medicamentos e Saúde", "Mamães e bebês", "Higiene pessoal", "Vida Saudável",
-        "Serviços de Saúde", "Pet shop", "Fitness e Nutrição"]}
+        "Ofertas", "Mamães e bebês", "Serviços de Saúde", "Pet shop", "Fitness e Nutrição"]}
 
 
 # ---------------------------------------------------------------- lojas e estoque
+def _qty(s, p, inv, rng):
+    if inv[p["id"]]["stock_qty"] <= 0:
+        qty = 0
+    else:
+        chance = AVAIL[s["size"]] * (PREMIUM_FACTOR if p["price_tier"] == "premium" else 1.0)
+        qty = rng.randint(1, 12) if rng.random() < chance else 0
+    return {"storeId": s["id"], "productId": p["id"], "qty": qty}
+
+
 def build_stores_and_stock(products, inventory, rng):
     inv = {i["id"]: i for i in inventory}
     stores = [
-        {"id": sid, "name": name, "neighborhood": hood, "city": "Fortaleza", "uf": "CE",
+        {"id": sid, "name": name, "neighborhood": hood, "city": "Recife", "uf": "PE",
          "address": f"{street} — {hood}", "size": size, "open24h": h24,
          "hours": "00:00 às 23:59" if h24 else "07:00 às 22:00",
          "lat": lat, "lng": lng, "pickup": True}
         for sid, name, hood, size, h24, lat, lng, street in STORES
     ]
     stock = []
+    is_base = lambda p: p["id"] <= "p100"
+    base = [p for p in products if is_base(p)]
+    extra = [p for p in products if not is_base(p)]
+    for s in stores:                       # mesma ordem e mesma semente de sempre: os 100 antigos não mudam
+        for p in base:
+            stock.append(_qty(s, p, inv, rng))
+    rng2 = random.Random(SEED + 7)
     for s in stores:
-        for p in products:
-            if inv[p["id"]]["stock_qty"] <= 0:
-                qty = 0
-            else:
-                chance = AVAIL[s["size"]] * (PREMIUM_FACTOR if p["price_tier"] == "premium" else 1.0)
-                qty = rng.randint(1, 12) if rng.random() < chance else 0
-            stock.append({"storeId": s["id"], "productId": p["id"], "qty": qty})
+        for p in extra:
+            stock.append(_qty(s, p, inv, rng2))
+    for row in stock:                      # ruptura combinada da persona
+        key = (row["storeId"], row["productId"])
+        if key in FORCED_STORE_STOCK and inv[row["productId"]]["stock_qty"] > 0:
+            row["qty"] = FORCED_STORE_STOCK[key]
+    order = {p["id"]: n for n, p in enumerate(products)}
+    stock.sort(key=lambda r: ([s["id"] for s in stores].index(r["storeId"]), order[r["productId"]]))
     return stores, stock
 
 
@@ -160,6 +215,8 @@ def build_commerce(products, inventory, rng):
     for p in products:
         r = rng.random()
         cashback[p["id"]] = 0 if r < 0.7 else rng.choice([2, 3, 5, 10])
+        if domain_of(p) == "medicamento":
+            cashback[p["id"]] = 0        # sem cashback em medicamento (premissa do protótipo)
     # ranking simulado: produtos econômicos e protetores vendem mais
     weight = {}
     for p in products:
@@ -170,10 +227,13 @@ def build_commerce(products, inventory, rng):
             w *= 0.3
         weight[p["id"]] = w * rng.uniform(0.6, 1.4)
     ranking = sorted(weight, key=lambda k: -weight[k])
+    dermo = {p["id"] for p in products if domain_of(p) == "dermo"}
+    shown_ok = {p["id"] for p in products if domain_of(p) != "medicamento"}   # medicamento fora de vitrines
     on_sale = [p["id"] for p in products
-               if inv[p["id"]]["list_price_cents"] > inv[p["id"]]["price_cents"] and inv[p["id"]]["stock_qty"] > 0]
+               if p["id"] in shown_ok
+               and inv[p["id"]]["list_price_cents"] > inv[p["id"]]["price_cents"] and inv[p["id"]]["stock_qty"] > 0]
     sun = [pid for pid in ranking if next(p for p in products if p["id"] == pid)["step"] == "protecao_solar"]
-    in_stock = [pid for pid in ranking if inv[pid]["stock_qty"] > 0]
+    in_stock = [pid for pid in ranking if inv[pid]["stock_qty"] > 0 and pid in dermo]
     return {
         "note": "Valores de cashback, frete e ranking são premissas fictícias do protótipo.",
         "cashbackPct": cashback,
@@ -188,6 +248,9 @@ def build_commerce(products, inventory, rng):
              "productIds": [pid for pid in sun if inv[pid]["stock_qty"] > 0][:10]},
         ],
         "kitPresets": KIT_PRESETS,
+        # reposição automática de medicamento de uso contínuo (premissas do protótipo)
+        "refill": {"freeShipping": True, "discountPct": 5, "alertDaysBefore": 7,
+                   "note": "Frete grátis e desconto na reposição automática são premissas fictícias."},
     }
 
 

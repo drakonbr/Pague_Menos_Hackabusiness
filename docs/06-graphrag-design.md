@@ -1,6 +1,6 @@
 # 06 — Desenho do GraphRAG e do compositor de kits
 
-> **Status: somente desenho.** Nenhum grafo foi construído, nenhum índice ou embedding foi criado, nenhum modelo foi chamado. A construção e a "preparação" (ingestão, índices, ajuste de prompts, avaliação) começam quando você liberar.
+> **Status (20/10): implementado do zero em `graphrag/`**, sem Ollama nem modelo externo: grafo em networkx, vetores PPMI+SVD, BM25, ativação espalhada, classificador Naive Bayes de ato de fala e compositor K1 a K12. Onde este desenho previa modelo de linguagem para intenção e justificativa, a versão atual usa regras + classificador treinado e textos por modelo de frase. Resultados e limites no [doc 14](14-persona-e-privacidade.md).
 
 ## Por que grafo e não só RAG
 

@@ -47,7 +47,13 @@
     "p053",
     "p060",
     "p083",
-    "p086"
+    "p086",
+    "p103",
+    "p105",
+    "p107",
+    "p116",
+    "p121",
+    "p130"
    ]
   },
   {
@@ -55,18 +61,18 @@
    "title": "Mais vendidos em Dermo",
    "type": "products",
    "productIds": [
-    "p077",
-    "p074",
     "p075",
     "p002",
-    "p079",
+    "p074",
     "p003",
-    "p014",
+    "p005",
+    "p073",
     "p004",
+    "p079",
+    "p013",
     "p037",
-    "p017",
-    "p060",
-    "p039"
+    "p089",
+    "p026"
    ]
   },
   {
@@ -74,16 +80,16 @@
    "title": "Protetor solar facial",
    "type": "products",
    "productIds": [
-    "p077",
-    "p074",
     "p075",
-    "p079",
-    "p087",
+    "p074",
     "p073",
-    "p078",
+    "p079",
+    "p077",
+    "p080",
     "p082",
-    "p086",
-    "p083"
+    "p078",
+    "p081",
+    "p086"
    ]
   }
  ],
@@ -117,8 +123,24 @@
    "id": "idade",
    "label": "Antissinais",
    "query": "cuidado antissinais"
+  },
+  {
+   "id": "suplementos",
+   "label": "Ômega 3, colágeno e magnésio",
+   "query": "kit de suplementos ômega 3 colágeno e magnésio"
+  },
+  {
+   "id": "higiene",
+   "label": "Higiene premium",
+   "query": "kit de higiene premium"
   }
  ],
  "banners": [],
- "note": "Valores de cashback, frete e ranking são premissas fictícias do protótipo."
+ "note": "Valores de cashback, frete e ranking são premissas fictícias do protótipo.",
+ "refill": {
+  "freeShipping": true,
+  "discountPct": 5,
+  "alertDaysBefore": 7,
+  "note": "Frete grátis e desconto na reposição automática são premissas fictícias."
+ }
 }

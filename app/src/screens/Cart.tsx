@@ -128,6 +128,8 @@ function Line({ line: l }: { line: CartLine }) {
         <div className="grow" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {l.type === "kit" ? (
             <span className="mini blue" style={{ alignSelf: "flex-start" }}><Icon name="sparkle" size={13} /> Kit inteligente · {TIER_LABEL[l.kit.tier]}</span>
+          ) : l.product.rx ? (
+            <span className="mini warn" style={{ alignSelf: "flex-start" }}><Icon name="receipt" size={13} /> Reposição · receita simulada</span>
           ) : off > 0 ? (
             <span className="mini red" style={{ alignSelf: "flex-start" }}>Super oferta</span>
           ) : null}

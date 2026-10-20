@@ -1,0 +1,22 @@
+{
+  "acne": "acne",
+  "oleosidade": "oleosidade",
+  "poros": "poros",
+  "manchas": "manchas",
+  "ressecamento": "ressecamento",
+  "sinais_idade": "sinais de idade",
+  "sensibilidade": "sensibilidade",
+  "fotoprotecao": "proteção solar",
+  "olheiras": "olheiras",
+  "textura": "textura irregular",
+  "limpeza_diaria": "limpeza diária",
+  "desmaquilagem": "remoção de make e protetor",
+  "nutricao": "nutrição e bem-estar",
+  "beleza_interna": "beleza de dentro para fora",
+  "higiene_diaria": "higiene diária",
+  "cuidado_cabelo": "cuidado com o cabelo",
+  "higiene_oral": "higiene bucal",
+  "cuidado_corporal": "cuidado com o corpo",
+  "desodorizacao": "desodorização",
+  "reposicao": "reposição de medicamento de uso contínuo"
+}

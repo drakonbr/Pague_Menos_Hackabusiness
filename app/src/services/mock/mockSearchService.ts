@@ -1,6 +1,8 @@
 // MOCK do serviço de busca. Obedece ao contrato (contracts/README.md) para que o app
 // não saiba se fala com isto ou com o GraphRAG real.
 import type {
+  ChatAction,
+  ChatContext,
   Clarification,
   Intent,
   Kit,
@@ -8,14 +10,15 @@ import type {
   SearchRequest,
   SearchResponse,
   SearchService,
+  SimilarsResponse,
   SkinType,
   StepId,
   SwapOption,
 } from "../../contracts/types";
-import { STEP_ORDER } from "../../contracts/types";
-import { PRODUCTS } from "./catalogData";
+import { GOAL_LABEL, STEP_ORDER, TIER_LABEL } from "../../contracts/types";
+import { PRODUCTS, PRODUCT_BY_ID, STORES, stockAt } from "./catalogData";
 import { adaptToStore, applySwap, buildCtx, compose, rankProducts, swapOptions } from "./composer";
-import { assessSafety, norm, parseIntent } from "./intent";
+import { assessSafety, isRefillRequest, norm, parseIntent } from "./intent";
 
 const SKIN_OPTIONS: Clarification["options"] = [
   { value: "oleosa", label: "Oleosa" },
@@ -55,6 +58,29 @@ function tokenSearch(query: string, limit = 24): Product[] {
     .map((x) => x.p);
 }
 
+const money = (c: number) => `R$ ${(c / 100).toFixed(2).replace(".", ",")}`;
+
+function emptyIntent(storeId: string | null): Intent {
+  return { goals: [], primaryGoal: null, budgetCents: null, skinType: null, preferences: [], pregnancy: false, storeId, missing: [] };
+}
+
+/** Texto, sugestões e ação do modo simulado (o motor real escreve os seus). */
+function chatFields(res: Omit<SearchResponse, "reply" | "suggestions" | "action" | "context" | "act">, act: string, turn: number) {
+  let reply: string;
+  let action: ChatAction = { type: "none" };
+  const goal = res.intent.primaryGoal ? GOAL_LABEL[res.intent.primaryGoal].toLowerCase() : "";
+  if (res.safety.decision === "blocked") reply = res.safety.message ?? "Esse pedido é uma questão de saúde.";
+  else if (res.kits.length) {
+    reply = `Montei ${res.kits.length} opções de ${goal}: ${res.kits.map((k) => `${TIER_LABEL[k.tier]} ${money(k.totalCents)}`).join(", ")}. (modo simulado)`;
+    action = { type: "show_kits" };
+  } else if (res.kitsStatus === "none_in_budget" && res.closestKit) {
+    reply = `Com esse orçamento não fechei um kit completo de ${goal}. O mais próximo custa ${money(res.closestKit.totalCents)}.`;
+  } else reply = res.notes[0] ?? "Não consegui entender bem o pedido. Tente “pele oleosa até R$ 100”.";
+  const context: ChatContext = { intent: res.intent, requested: [], excluded: [], kits: [], lastAct: act, turn: turn + 1 };
+  const suggestions = res.kits.length ? ["Mais barato", "Sem fragrância", "Total com entrega"] : ["Kit de suplementos", "Higiene premium"];
+  return { act, reply, suggestions, action, context };
+}
+
 export interface MockOptions {
   /** Atraso artificial, para mostrar o estado de carregamento. Use 0 nos testes. */
   latencyMs?: number;
@@ -64,11 +90,38 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
   const wait = () => (opts.latencyMs ? new Promise<void>((r) => setTimeout(r, opts.latencyMs)) : Promise.resolve());
 
   return {
+    engine: "simulado" as const,
     async search(req: SearchRequest): Promise<SearchResponse> {
       await wait();
-      const requestId = `r_${hash(JSON.stringify(req))}`;
+      const requestId = `r_${hash(JSON.stringify({ ...req, context: undefined }))}`;
       const parsed = parseIntent(req);
+      const turn = req.context?.turn ?? 0;
+      // conversa simplificada: sem objetivo novo, ajusta a busca anterior (preço, pele, preferência)
+      const prev = req.context?.intent;
+      if (prev?.primaryGoal && !parsed.intent.primaryGoal && (parsed.intent.budgetCents != null || parsed.intent.skinType || parsed.intent.preferences.length)) {
+        parsed.intent = {
+          ...prev,
+          budgetCents: parsed.intent.budgetCents ?? prev.budgetCents,
+          skinType: parsed.intent.skinType ?? prev.skinType,
+          preferences: [...new Set([...prev.preferences, ...parsed.intent.preferences])],
+          storeId: req.storeId ?? prev.storeId ?? null,
+          missing: [],
+        };
+        parsed.understood = true;
+      }
       const { intent } = parsed;
+      if (isRefillRequest(parsed.normalized)) {
+        const safety = { decision: "allow" } as const;
+        const base = { requestId, query: req.query, safety, intent: emptyIntent(req.storeId ?? null), closestKit: null, kitsStatus: "not_applicable" as const, kits: [], products: [], notes: [] };
+        return {
+          ...base,
+          act: "repor_medicamento",
+          reply: "Abri a sua reposição de uso contínuo. Confira as quantidades e a loja mais próxima com estoque. (modo simulado)",
+          suggestions: ["Tem equivalente disponível?", "Qual a entrega mais rápida?"],
+          action: { type: "open_refill" },
+          context: { intent: base.intent, requested: [], excluded: [], kits: [], lastAct: "repor_medicamento", turn: turn + 1 },
+        };
+      }
       const safety = assessSafety(parsed.normalized, !!intent.pregnancy, intent.primaryGoal);
 
       const base = {
@@ -80,14 +133,15 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
       } as const;
 
       if (safety.decision === "blocked") {
-        return { ...base, kitsStatus: "not_applicable", kits: [], products: [], notes: [] };
+        const r = { ...base, kitsStatus: "not_applicable" as const, kits: [], products: [], notes: [] };
+        return { ...r, ...chatFields(r, "bloqueado", turn) };
       }
 
       if (!parsed.understood) {
         const found = tokenSearch(req.query);
-        return {
+        const r = {
           ...base,
-          kitsStatus: "not_applicable",
+          kitsStatus: "not_applicable" as const,
           kits: [],
           products: found.length ? found : popularProducts(),
           notes: [
@@ -96,6 +150,7 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
               : "Não entendi o pedido. Mostrando alguns produtos; tente descrever um objetivo, como pele oleosa até R$ 100.",
           ],
         };
+        return { ...r, ...chatFields(r, "busca", turn) };
       }
 
       const ctx = buildCtx(intent, parsed.requestedIngredients)!;
@@ -104,15 +159,42 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
         ? undefined
         : { id: "skinType", question: "Como é a sua pele?", options: SKIN_OPTIONS };
 
-      return {
+      const r = {
         ...base,
-        clarification,
+        clarification: intent.primaryGoal && ["suplementos", "higiene_premium"].includes(intent.primaryGoal) ? undefined : clarification,
         kitsStatus: comp.status,
         kits: comp.kits,
         closestKit: comp.closestKit,
         products: rankProducts(ctx),
         notes: comp.notes,
       };
+      return { ...r, ...chatFields(r, "busca", turn) };
+    },
+
+    async similars(productId: string, storeId: string | null): Promise<SimilarsResponse> {
+      await wait();
+      const p = PRODUCT_BY_ID.get(productId);
+      if (!p) throw new Error("Produto inexistente.");
+      const withStock = (q: Product) => STORES.filter((s) => stockAt(q.id, s.id) > 0).map((s) => s.id);
+      const pool =
+        p.domain === "medicamento" && p.equivalence
+          ? PRODUCTS.filter((q) => q.id !== p.id && q.equivalence?.group === p.equivalence!.group)
+          : PRODUCTS.filter((q) => q.id !== p.id && q.domain !== "medicamento" && q.step === p.step && q.concerns.some((c) => p.concerns.includes(c)));
+      const options = pool
+        .map((q) => ({
+          product: q,
+          kind: p.domain === "medicamento" ? ("equivalente" as const) : ("parecido" as const),
+          presentation: q.equivalence?.presentation,
+          sameActive: p.domain === "medicamento" ? true : undefined,
+          sameDose: p.domain === "medicamento" ? q.equivalence?.dose === p.equivalence?.dose : undefined,
+          deltaCents: q.priceCents - p.priceCents,
+          inStock: stockAt(q.id, storeId) > 0,
+          storeIdsWithStock: withStock(q),
+          needsPharmacistConfirmation: p.domain === "medicamento",
+        }))
+        .sort((a, b) => Number(b.inStock) - Number(a.inStock) || a.deltaCents - b.deltaCents || a.product.id.localeCompare(b.product.id))
+        .slice(0, 6);
+      return { productId, domain: p.domain, storeId, inStockHere: stockAt(p.id, storeId) > 0, options };
     },
 
     async swapOptions(kit: Kit, step: StepId, intent: Intent): Promise<SwapOption[]> {

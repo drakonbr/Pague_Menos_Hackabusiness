@@ -1,0 +1,71 @@
+{
+ "weights": {
+  "bm25": 0.0,
+  "emb": 0.64,
+  "graph": 0.36,
+  "ret_in_kit": 6.0
+ },
+ "calibratedOn": "16 frases de treino",
+ "results": {
+  "somente BM25": {
+   "train": {
+    "ndcg10": 0.4499,
+    "p5": 0.35,
+    "n": 16
+   },
+   "test": {
+    "ndcg10": 0.6892,
+    "p5": 0.4857,
+    "n": 14
+   }
+  },
+  "somente vetores": {
+   "train": {
+    "ndcg10": 0.8277,
+    "p5": 0.625,
+    "n": 16
+   },
+   "test": {
+    "ndcg10": 0.9651,
+    "p5": 0.7714,
+    "n": 14
+   }
+  },
+  "somente grafo": {
+   "train": {
+    "ndcg10": 0.8419,
+    "p5": 0.6625,
+    "n": 16
+   },
+   "test": {
+    "ndcg10": 0.9542,
+    "p5": 0.7714,
+    "n": 14
+   }
+  },
+  "híbrido (pesos iniciais)": {
+   "train": {
+    "ndcg10": 0.801,
+    "p5": 0.6375,
+    "n": 16
+   },
+   "test": {
+    "ndcg10": 1.0,
+    "p5": 0.8143,
+    "n": 14
+   }
+  },
+  "híbrido calibrado no treino": {
+   "train": {
+    "ndcg10": 0.8636,
+    "p5": 0.6625,
+    "n": 16
+   },
+   "test": {
+    "ndcg10": 1.0,
+    "p5": 0.8143,
+    "n": 14
+   }
+  }
+ }
+}

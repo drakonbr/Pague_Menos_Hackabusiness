@@ -8,12 +8,16 @@ Como cada etapa é conferida, com o comando e o critério. O registro de execuç
 | --- | --- | --- |
 | Catálogo | `python3 catalog/validate_catalog.py` | 31 de 31 checagens, código de saída 0 |
 | Catálogo (determinismo) | gerar duas vezes e comparar hash dos arquivos | hashes iguais |
-| Ponte catálogo → app | `python3 tools/export_app_mock.py` | 100 produtos exportados; app compila com eles |
-| Separação de módulos | `python3 tools/check_separation.py` | nenhuma referência proibida; `graphrag/` só com README |
+| Ponte catálogo → app | `python3 tools/export_app_mock.py` | 138 produtos exportados; app compila com eles |
+| Separação de módulos | `python3 tools/check_separation.py` | nenhuma referência proibida; `graphrag/` sem import de `app/` ou `catalog/` e sem escrita em `catalog/` |
 | App: tipos e build | `cd app && npm run build` | zero erros de tipo, build de produção gerado |
 | App: regras de kit | `cd app && npm test` | todos os casos T1 a T12 passam e as invariantes do contrato valem em todas as respostas |
 | App: telas | roteiro manual abaixo | todas as telas e estados do doc 03 alcançáveis |
-| GraphRAG | (fase futura) `eval/` | metas do doc 06 |
+| Catálogo (20/10) | `python3 catalog/validate_catalog.py` | 69 de 69 |
+| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 77 testes (motor, NLU, privacidade, ontologia, ingestão, streaming) |
+| GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 59/60 fora do treino; pesos gravados |
+| GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1, M2, X1 sobre o JSON bruto |
+| App com o motor | servidor em `:8787` + `cd app && npm test` | 46 testes; percurso no Chromium sem erro de console |
 
 ## Invariantes do contrato (checadas por código)
 

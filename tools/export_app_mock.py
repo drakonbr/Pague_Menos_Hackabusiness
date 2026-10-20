@@ -89,6 +89,9 @@ def main() -> None:
             "salesRank": commerce["salesRank"][p["id"]],
             "categoryIds": sorted(cats_of.get(p["id"], [])),
             "images": [export_image(e) for e in images["byProduct"].get(p["id"], [])],
+            "domain": p["domain"],
+            "rx": p["rx"],
+            "equivalence": p["equivalence"],
         })
     dump("products.mock.json", out)
 
@@ -121,7 +124,10 @@ def main() -> None:
         "kitPresets": commerce["kitPresets"],
         "banners": [export_image(e) for e in images.get("banners", [])],
         "note": commerce["note"],
+        "refill": commerce["refill"],
     })
+    # persona fictícia (login simulado do protótipo)
+    dump("persona.mock.json", load("persona.json"))
     dump("categories.mock.json", categories)
     with_img = sum(1 for p in out if p["images"])
     print(f"OK: {len(out)} produtos ({with_img} com foto), {len(stock)} lojas, "

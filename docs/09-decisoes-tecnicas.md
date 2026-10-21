@@ -7,7 +7,7 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | ID | Decisão | Motivo | Alternativa descartada | Consequência |
 | --- | --- | --- | --- | --- |
 | D-01 | Entrada em linguagem natural, saída estruturada (sem thread de chat); ajustada pela D-31 | O cliente pediu explicitamente que não seja mais um chatbot; a equipe queria busca "como conversa" | Chat com histórico de mensagens | Interface mais simples e diferenciada; perguntas de refinamento limitadas a uma por vez |
-| D-02 | Escopo inicial só cosméticos e autocuidado | Rede vende medicamentos; regras clínicas sem validação não devem ser inventadas | Incluir medicamentos de venda livre | Menos abrangente, muito mais defensável; camada de medicamentos fica como proposta |
+| D-02 | Escopo inicial só cosméticos e autocuidado (revogada pela D-32) | Rede vende medicamentos; regras clínicas sem validação não devem ser inventadas | Incluir medicamentos de venda livre | Menos abrangente, muito mais defensável; camada de medicamentos fica como proposta |
 | D-03 | O modelo interpreta e explica; código escolhe e valida | Evitar preço, estoque e combinação inventados | Modelo compondo kits livremente | Resultado auditável; exige compositor determinístico |
 | D-04 | Preço e estoque fora do grafo, consultados ao vivo | Mudam o tempo todo; precisam ser verdadeiros | Gravar preço no grafo | Uma consulta extra por busca; dados nunca velhos |
 | D-05 | Quatro módulos separados (catálogo, app, GraphRAG, contratos) com ponte de mão única | Pedido explícito de não misturar | Monorepo com código compartilhado | Mais arquivos de documentação; troca de partes sem retrabalho |
@@ -27,7 +27,7 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | D-19 | Prints do app real | Não versionados; só o layout descrito no doc 13 | Mostram nome, endereço e CEP de uma pessoa |
 | D-20 | Escopo do ecossistema | Caminho de compra completo (vitrines, categorias Dermo, produto, cesta com régua, entrega e retirada, pagamento simulado, pedidos, assinatura, cashback); medicamentos, receita, convênio e locker visíveis e desativados | Decisão da Julia em 15/10, a partir da avaliação do doc 12 |
 | D-21 | Persona | O app abre logado como Renata Almeida (persona do grupo); sem conta real | Pedido da Julia em 20/10; a persona guia catálogo, conversa e testes |
-| D-22 | Medicamentos | Só reposição; o motor nunca recomenda, doseia ou nomeia; equivalentes só como dado, com confirmação do farmacêutico | Decisão da Julia em 20/10; coerente com o doc 07 |
+| D-22 | Medicamentos (revogada pela D-32; a reposição continua) | Só reposição; o motor nunca recomenda, doseia ou nomeia; equivalentes só como dado, com confirmação do farmacêutico | Decisão da Julia em 20/10; coerente com o doc 07 |
 | D-23 | Motor | GraphRAG do zero (networkx, PPMI+SVD, BM25, Naive Bayes), sem Ollama nem API externa | Decisão da Julia em 20/10; zero dependência de serviço pago e dados nunca saem da máquina |
 | D-24 | Conversa | Sem estado no servidor: o cliente reenvia `context` (ids e preferências cosméticas) | Simples de testar; nada de pessoa guardado |
 | D-25 | Privacidade | `persona.json` fora da leitura do motor, com teste que rastreia arquivos abertos | Dado de saúde fica no aparelho |
@@ -37,6 +37,11 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | D-29 | Streaming | `POST /v1/search-chat` (SSE) com texto por regras em pedaços; app ainda usa `/v1/search` | Contrato pronto para um gerador de texto futuro; sem espera artificial |
 | D-30 | Rerank | MMR com lambda 0,9 só na lista de produtos | Medido: sem perda de relevância, ganho pequeno de variedade |
 | D-31 | Busca e conversa | A barra de busca abre a tela de resultados (kits em cima, lista embaixo). Quando o ato de fala não é de busca (repor, entrega, trocar item, pergunta sobre produto), `Results.tsx` passa para a conversa (`Chat.tsx`) | Ajusta a D-01: com a persona (D-21) a conversa voltou, mas só onde a ação precisa de diálogo. Buscar continua devolvendo uma seleção de compra, não texto (doc 15) |
+| D-32 | Medicamentos na busca e nos kits | Busca de remédio e de sintoma funciona como numa farmácia, com e sem receita; sem bloqueio e sem texto de encaminhamento; sem remédio no catálogo, só "Não está no banco de dados ainda." | Pedido da Julia em 21/10 (doc 16, respostas 1 e 2); revoga D-02 e D-22 e a política do doc 07 |
+| D-33 | Modelo de medicamento | Princípio ativo = ingrediente; sintoma = preocupação; cada área de saúde = objetivo de kit com etapas que são papéis (dipirona, paracetamol, anti-inflamatório...) | Reaproveita grafo, vetores, escopo e compositor sem tipo novo na ontologia |
+| D-34 | Regras dos kits de remédio | Nunca o mesmo princípio ativo duas vezes (compositor); nunca dois anti-inflamatórios, nem expectorante com remédio para tosse seca (interações `evitar`) | Aceita pela Julia em 21/10 (doc 16, resposta 3) |
+| D-35 | Dados de medicamento | Princípios ativos e apresentações reais e comuns; marcas e laboratórios fictícios; nomes populares (Dorflex, Buscopan...) só como sinônimo de busca | Mantém o catálogo fictício (D-11) e aceita o jeito como as pessoas pedem |
+| D-36 | Prateleira de saúde gerada do catálogo | Um conceito por queixa e por objetivo, calculado dos produtos (`ScopeResolver.health_concepts`) | Produto novo de uma área entra na busca sem editar conceito à mão |
 
 ## Premissas
 

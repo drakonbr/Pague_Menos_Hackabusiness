@@ -61,18 +61,37 @@
    "title": "Mais vendidos em Dermo",
    "type": "products",
    "productIds": [
-    "p075",
-    "p002",
+    "p004",
+    "p005",
+    "p077",
     "p074",
     "p003",
-    "p005",
-    "p073",
-    "p004",
-    "p079",
     "p013",
-    "p037",
+    "p082",
     "p089",
-    "p026"
+    "p021",
+    "p091",
+    "p038",
+    "p017"
+   ]
+  },
+  {
+   "id": "farmacia",
+   "title": "Mais vendidos em Medicamentos",
+   "type": "products",
+   "productIds": [
+    "p170",
+    "p197",
+    "p146",
+    "p139",
+    "p183",
+    "p201",
+    "p184",
+    "p154",
+    "p192",
+    "p203",
+    "p182",
+    "p161"
    ]
   },
   {
@@ -80,16 +99,16 @@
    "title": "Protetor solar facial",
    "type": "products",
    "productIds": [
-    "p075",
-    "p074",
-    "p073",
-    "p079",
     "p077",
-    "p080",
+    "p074",
     "p082",
-    "p078",
+    "p079",
+    "p075",
+    "p073",
     "p081",
-    "p086"
+    "p080",
+    "p078",
+    "p105"
    ]
   }
  ],

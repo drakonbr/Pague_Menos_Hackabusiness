@@ -1,8 +1,8 @@
 """Motor de conversa: junta entendimento, segurança, recuperação, compositor e texto de resposta.
 
 Sem estado no servidor: o cliente devolve o `context` de cada resposta na próxima mensagem.
-Privacidade: o motor NÃO lê dados da pessoa (persona.json fica no aparelho). Nenhuma resposta repete nome de
-remédio, condição de saúde ou o texto original da pessoa; o contexto guarda só ids e preferências de cosmético.
+Privacidade: o motor NÃO lê dados da pessoa (persona.json fica no aparelho); o contexto guarda só ids e preferências.
+Medicamento é busca como outra qualquer (doc 16): sem bloqueio e sem mandar procurar médico ou farmacêutico.
 """
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ import re
 
 from . import embed
 from .composer import Composer, build_ctx, list_pt
+from .concepts import MED_MISSING, MED_SHELF
 from .data import Catalog, load_catalog
 from .graph import KnowledgeGraph, build_graph
 from .ingest import IngestReport, ingest_records, load_catalog_with_delta, write_delta
@@ -38,6 +39,9 @@ DELIVERY_CUE = re.compile(r"\b(frete|entreg\w*|prazo|retir\w*|chega\w*|receb\w*|
 POINTING_CUE = re.compile(r"\?|\b(troc\w*|mud\w*|substitu\w*|outr[oa]s?|ess[ea]s?|est[ea]s?|isso|isto|aquel\w+|"
                           r"parecid\w*|similar\w*|equival\w*)\b")
 TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "alternativo": "Alternativo"}
+# a frase fala de remédio ou sintoma: se nada no catálogo atende, a resposta é só MED_MISSING (doc 16)
+MED_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|"
+                     r"pomada|gotas|tomar|tomo|dor|dores|doendo|sintoma|sintomas|estou com|to com)\b")
 
 
 class Engine:
@@ -205,15 +209,8 @@ class Engine:
         # --- segurança primeiro
         # a segurança lê o texto ORIGINAL também: o corretor nunca pode transformar um termo de saúde em outra palavra
         safety = assess(orig_query or query, u.pregnancy, u.primary_goal, refill_flow=(act == "repor_medicamento"))
-        if safety["decision"] != "blocked" and orig_query and orig_query != query:
+        if safety["decision"] == "allow" and orig_query and orig_query != query:
             safety = assess(query, u.pregnancy, u.primary_goal, refill_flow=(act == "repor_medicamento"))
-        if safety["decision"] == "blocked":
-            sug = [safety["alternativeQuery"]] if safety.get("alternativeQuery") else []
-            sug += ["Montar kit de skin care", "Kit de suplementos"]
-            res = self._out(req, query, safety, carry, "bloqueado", safety["message"], suggestions=sug,
-                            ctx_out=cin or {"intent": carry, "kits": [], "lastAct": "bloqueado", "turn": turn + 1})
-            res["rewrittenQuery"] = None
-            return res
 
         handler = {
             "saudacao": self._greet, "agradecimento": self._thanks, "ajuda": self._help, "negacao": self._deny,
@@ -234,9 +231,9 @@ class Engine:
 
     def _greet(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "saudacao",
-                           "Oi! Eu monto kits de cuidados com a pele, suplementos e higiene, e ajudo a repor o que você já usa. "
-                           "Me conte o que você procura e, se quiser, quanto pretende gastar.",
-                           ["Kit de suplementos", "Higiene premium", "Pele com manchas até R$ 150", "Repor meus medicamentos"])
+                           "Oi! Eu encontro remédios e monto kits de medicamentos, cuidados com a pele, suplementos e higiene, "
+                           "e ajudo a repor o que você já usa. Me conte o que você procura e, se quiser, quanto pretende gastar.",
+                           ["Remédio para dor de cabeça", "Kit de suplementos", "Pele com manchas até R$ 150", "Repor meus medicamentos"])
 
     def _thanks(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "agradecimento",
@@ -245,11 +242,11 @@ class Engine:
 
     def _help(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "ajuda",
-                           "Posso: montar 3 opções de kit (Econômico, Essencial e Alternativo) a partir do que você escreve; "
-                           "ajustar por preço, tipo de pele ou preferência (ex.: sem fragrância, vegano); trocar um item; "
-                           "mostrar o total com frete e a retirada mais próxima; e ajudar a repor medicamentos de uso contínuo "
-                           "que você já usa. Não indico medicamentos nem faço diagnóstico.",
-                           ["Kit de suplementos", "Pele oleosa até R$ 100", "Repor meus medicamentos"])
+                           "Posso: achar remédios pelo sintoma ou pelo nome (ex.: dor de cabeça, dipirona); montar 3 opções de "
+                           "kit (Econômico, Essencial e Alternativo) a partir do que você escreve; ajustar por preço, tipo de pele "
+                           "ou preferência; trocar um item; mostrar o total com frete e a retirada mais próxima; e repor os "
+                           "medicamentos de uso contínuo que você já usa.",
+                           ["Remédio para gripe", "Kit de suplementos", "Pele oleosa até R$ 100", "Repor meus medicamentos"])
 
     def _deny(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "negacao",
@@ -282,7 +279,7 @@ class Engine:
         return self._out(req, query, safety, carry, "repor_medicamento",
                          "Abri a sua reposição de uso contínuo. Confira as quantidades que restam, escolha retirar na loja ou "
                          "entrega expressa e, se algum item estiver em falta na loja mais próxima, posso mostrar um equivalente "
-                         "disponível. A troca de apresentação só vale com a orientação do farmacêutico e a sua receita.",
+                         "disponível, com o mesmo princípio ativo e a mesma dose.",
                          suggestions=["Tem equivalente disponível?", "Qual a entrega mais rápida?", "Total com frete"],
                          action={"type": "open_refill"},
                          ctx_out={**cin, "lastAct": "repor_medicamento", "turn": turn + 1} if cin else
@@ -312,8 +309,10 @@ class Engine:
         reply = self._reply_kits(comp, intent, ctx, u)
         sug = self._suggest_after(comp, intent)
         notice = self._notice(scope)
-        if notice:
+        if notice and not notice.get("med"):
             reply = notice["message"] + " " + reply
+        if notice and notice.get("med"):
+            reply = MED_MISSING + " " + reply
         if not comp["kits"] and comp["status"] == "not_applicable":
             # nenhum kit fecha com essas preferências: em vez de uma lista solta (que misturava outras etapas), mostra só
             # os produtos das etapas desse objetivo que respeitam o pedido e diz com clareza o que aconteceu.
@@ -390,12 +389,18 @@ class Engine:
             return None
         labels = list_pt([c.label for c in scope.missing])
         shelf = list_pt(list(dict.fromkeys(c.shelf for c in scope.missing if c.shelf and c.near))[:2])   # só prateleira vizinha de verdade
+        if all(c.shelf == MED_SHELF for c in scope.missing):
+            return {"missing": [c.label for c in scope.missing], "shelf": None, "message": MED_MISSING, "med": True}
         return {"missing": [c.label for c in scope.missing], "shelf": shelf or None,
                 "message": f"Não temos {labels} no catálogo."}
 
     def _dept_suggestions(self, scope: Scope, intent: dict) -> list[str]:
         sug = ["Mais barato"]
         steps = scope.steps
+        meds = [p for p in self.cat.products if p["domain"] == "medicamento"]
+        med_steps, med_concerns = {p["step"] for p in meds}, {c for p in meds for c in p["concerns"]}
+        if (steps and steps <= med_steps) or (not steps and scope.concerns and scope.concerns <= med_concerns):
+            return ["Mais barato", "Remédio para gripe", "Remédio para dor de cabeça"]
         if steps & {"higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"}:
             sug.insert(0, "Higiene premium")
         elif steps & {"omega3", "colageno", "magnesio", "vitaminas"}:
@@ -428,6 +433,8 @@ class Engine:
 
     def _absent(self, req, query, u, safety, intent, scope, rel, turn):
         notice = self._notice(scope)
+        if notice.get("med"):
+            return self._med_missing(req, query, safety, intent, turn, notice)
         intent = {**intent, "goals": [], "primaryGoal": None,
                   "missing": [m for m in intent.get("missing", []) if m != "skinType"]}
         prods = self._scope_products(scope, intent, u, rel, limit=12) if scope.steps else []
@@ -447,7 +454,16 @@ class Engine:
                          ctx_out={"intent": intent, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
                                   "turn": turn + 1})
 
+    def _med_missing(self, req, query, safety, carry, turn, notice=None):
+        notice = notice or {"missing": ["medicamento pedido"], "shelf": None, "message": MED_MISSING, "med": True}
+        return self._out(req, query, safety, carry, "busca", MED_MISSING, catalog_notice=notice,
+                         scope_info={"kind": "absent", "label": notice["missing"][0], "items": 0},
+                         ctx_out={"intent": carry, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
+                                  "turn": turn + 1})
+
     def _not_found(self, req, query, safety, carry, cin, turn, label=None):
+        if MED_CUE.search(norm(query)):
+            return self._med_missing(req, query, safety, carry, turn)
         what = f"itens de {label}" if label else "esse item"
         reply = (f"Não encontrei {what} no catálogo. Tente por categoria, como “higiene bucal”, “pele oleosa até R$ 100” "
                  "ou “kit de suplementos”.")
@@ -626,13 +642,13 @@ class Engine:
         stock = lambda q: self.cat.stock_at(q["id"], store_id)
         stores_with = lambda q: [s["id"] for s in self.cat.stores if self.cat.stock_at(q["id"], s["id"]) > 0]
         opts = []
-        if p["domain"] == "medicamento":
+        if p["equivalence"]:                  # reposição: equivalentes (mesmo princípio ativo e dose)
             for eid in self.graph.equivalents(product_id):
                 e = self.cat.by_id[eid]
                 opts.append({"product": e, "kind": "equivalente", "presentation": e["equivalence"]["presentation"],
                              "sameActive": True, "sameDose": e["equivalence"]["dose"] == p["equivalence"]["dose"],
                              "deltaCents": e["priceCents"] - p["priceCents"], "inStock": stock(e) > 0,
-                             "storeIdsWithStock": stores_with(e), "needsPharmacistConfirmation": True})
+                             "storeIdsWithStock": stores_with(e), "needsPharmacistConfirmation": False})
             opts.sort(key=lambda o: (not o["inStock"], o["deltaCents"], o["product"]["id"]))
         else:
             for sid, w in self.graph.similar(product_id, k=12):
@@ -669,13 +685,12 @@ class Engine:
         sim = self.similars(focus, carry.get("storeId"))
         p = self.cat.by_id[focus]
         n_in = sum(1 for o in sim["options"] if o["inStock"])
-        if p["domain"] == "medicamento":      # nunca cita nomes de medicamento no texto
+        if p["equivalence"]:
             if sim["options"]:
                 reply = (f"Encontrei {len(sim['options'])} equivalentes com o mesmo princípio ativo e a mesma dose, "
-                         f"{n_in} com estoque agora. Eles aparecem abaixo com preço, apresentação e lojas com estoque. "
-                         "A troca só vale com a confirmação do farmacêutico e conforme a sua receita.")
+                         f"{n_in} com estoque agora. Eles aparecem abaixo com preço, apresentação e lojas com estoque.")
             else:
-                reply = "Não encontrei equivalente para esse item. Fale com o farmacêutico da loja mais próxima."
+                reply = "Não encontrei equivalente para esse item."
         else:
             reply = (f"Achei {len(sim['options'])} opções parecidas com {p['name']}"
                      + (f", {n_in} com estoque" if sim['options'] else "") + ". Toque numa para ver os detalhes.")
@@ -735,7 +750,7 @@ class Engine:
             return f"{name} é indicado para pele {list_pt(p['skinTypes'])}."
         if re.search(r"\b(gestante|gravida|amamentando)\b", q):
             return (cat.warnings["consultar_se_gestante"] if "consultar_se_gestante" in p["warnings"]
-                    else f"{name} não traz aviso específico para gestação, mas converse com seu médico antes de usar qualquer produto.")
+                    else f"{name} não traz aviso específico para gestação no cadastro.")
         if re.search(r"\b(ativo|ativos|tem de|composicao|ingrediente|retinol|vitamina c|niacinamida|acucar|sulfato)\b", q):
             req_ing = [cat.ingredients[i]["name"] for i in u.requested_ingredients if i in cat.ingredients]
             if req_ing:
@@ -772,9 +787,7 @@ class Engine:
             if names:
                 extra = f" Sem {list_pt(names)}."
         if ctx.pregnancy:
-            extra += " Retirei o que pede orientação profissional na gestação."
-        if intent["primaryGoal"] == "suplementos":
-            extra += " Se você usa medicação contínua, converse com seu médico ou farmacêutico antes de começar."
+            extra += " Retirei o que tem restrição na gestação."
         n = len(kits)
         return (f"{head} {n} opç{'ão' if n == 1 else 'ões'} de {goal}{budget}{store}: {list_pt(parts)}.{extra} "
                 "Quer trocar algum item, ajustar o preço ou ver o total com entrega?")
@@ -783,7 +796,7 @@ class Engine:
         sug = []
         if comp["kits"]:
             sug += ["Total com entrega", "Mais barato"]
-            if not intent.get("preferences") and intent.get("primaryGoal") not in ("suplementos",):
+            if not intent.get("preferences") and intent.get("primaryGoal") in DERMO_GOALS | {"higiene_premium"}:
                 sug.append("Sem fragrância" if intent.get("primaryGoal") != "higiene_premium" else "Sem sulfato")
             sug.append("Trocar um item")
         else:

@@ -9,7 +9,7 @@ Convenções: JSON em `camelCase`, valores em **centavos inteiros** (`priceCents
 | Nome | Valores |
 | --- | --- |
 | `StepId` | `limpeza`, `preparo`, `tratamento`, `hidratacao`, `protecao_solar`, `protecao_corporal`, `complemento`, além das etapas de suplementos e higiene premium (ver `catalog/data/steps.json`) |
-| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` |
+| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` e as áreas de saúde (doc 16): `dor_de_cabeca`, `dor_no_corpo`, `dor_muscular`, `dor_de_barriga`, `azia`, `gripe`, `tosse`, `tosse_seca`, `dor_de_garganta`, `alergia`, `diarreia`, `prisao_de_ventre`, `enjoo` |
 | `SkinType` | `oleosa`, `mista`, `seca`, `normal`, `sensível` |
 | `KitTier` | `economico`, `essencial`, `alternativo` |
 | `AlertCode` | `fotossensibilizante`, `consultar_se_gestante`, `evitar_contato_olhos`, `nao_usar_pele_irritada`, `teste_de_sensibilidade`, `interacao_separar_periodos`, `sem_protetor_no_kit` |
@@ -85,10 +85,9 @@ Regras: `priceCents` e `stockQty` vêm **sempre** do inventário; `fps` só exis
 
 | Campo | Regra |
 | --- | --- |
-| `safety.decision` | `allow`, `caution` (mostra aviso, mantém kits) ou `blocked` (sem kits; ver doc 07) |
-| `safety.category` | Quando não é `allow`: `medicamento`, `sintoma`, `condicao_de_saude`, `gestacao_e_ativos` |
-| `safety.message`, `safety.referral` | Texto exibido e encaminhamento sugerido |
-| `safety.alternativeQuery` | Só em `blocked`: consulta cosmética oferecida como alternativa (ex.: pedido sobre espinhas inflamadas → "tratamento de acne"). O app a mostra como botão |
+| `safety.decision` | `allow` ou `caution` (gestação: mostra aviso, mantém kits). `blocked`, `referral` e `alternativeQuery` saíram em 21/10 (doc 16) |
+| `safety.category` | Só `gestacao_e_ativos` |
+| `safety.message` | Texto do aviso; nunca manda procurar médico ou farmacêutico (invariante M2) |
 | `intent.pregnancy` | Verdadeiro quando a frase menciona gestação ou amamentação; itens com `consultar_se_gestante` ficam de fora (I11) |
 | `intent.missing` | Informações que melhorariam o resultado (`skinType`, `budget`) |
 | `clarification` | No máximo uma pergunta por resposta; nunca bloqueia os kits |
@@ -156,8 +155,8 @@ Invariantes novas:
 Regras de privacidade do contrato:
 
 1. Nada de saúde da pessoa viaja: nem condição, nem medicamento em uso. Só a frase, o `context` e ids.
-2. `reply`, `suggestions`, `notes`, `safety` e `context` nunca contêm termos de saúde nem nomes de medicamento.
-3. Produtos com `domain = medicamento` nunca aparecem em `kits`, `products` nem em busca livre; só em `similars` e na reposição, como dado estruturado.
+2. Desde 21/10 (doc 16), produtos com `domain = medicamento` aparecem em `kits` e `products` como os outros; `rx` (`null` ou `receita_simples`) é só um dado do produto. Kit de remédio nunca repete princípio ativo (M1) e nenhum texto manda procurar profissional (M2).
+3. Remédio que o catálogo não tem: `reply` = "Não está no banco de dados ainda.", sem itens.
 
 ## Operações do serviço de busca
 
@@ -167,7 +166,7 @@ Regras de privacidade do contrato:
 | `swapOptions` | `Kit`, `StepId`, `Intent` | Lista de `SwapOption`: `{ product, deltaCents, compatible, reason? }`, em ordem de relevância |
 | `adaptToStore` | `Kit`, `storeId`, `Intent` | `{ kit, replaced[] }` trocando só os itens sem estoque na loja, ou `null` se o kit não fecha nela |
 | `swap` | `Kit`, `StepId`, `productId`, `Intent` | `Kit` revalidado (total, alertas e invariantes recalculados) |
-| `similars` | `productId`, `storeId` | `{ productId, domain, storeId, inStockHere, options[] }`; cada opção traz `kind` (`equivalente` ou `parecido`), `deltaCents`, `inStock`, `storeIdsWithStock`, `needsPharmacistConfirmation` |
+| `similars` | `productId`, `storeId` | `{ productId, domain, storeId, inStockHere, options[] }`; cada opção traz `kind` (`equivalente` ou `parecido`), `deltaCents`, `inStock`, `storeIdsWithStock`, `needsPharmacistConfirmation` (sempre `false` desde o doc 16; mantido por compatibilidade) |
 | `delivery-quote` | `totalCents` | opções de entrega com taxa e total (item + frete) |
 
 O serviço é **sem estado**: o kit e a intenção (`Intent`, vinda da última resposta de `search`) viajam inteiros entre app e serviço, então nada precisa ser guardado no servidor para a demonstração.

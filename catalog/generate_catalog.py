@@ -21,6 +21,7 @@ import random
 import sqlite3
 from pathlib import Path
 
+import medicines as MED
 import persona_products as PP
 
 ROOT = Path(__file__).resolve().parent
@@ -117,7 +118,7 @@ INTERACTIONS = [
 
 WARNINGS = {
     "fotossensibilizante": "Pode aumentar a sensibilidade ao sol. Use protetor solar durante o dia.",
-    "consultar_se_gestante": "Em gestação ou amamentação, converse com um profissional de saúde antes de usar.",
+    "consultar_se_gestante": "Contém ativo com restrição de uso na gestação e na amamentação.",
     "evitar_contato_olhos": "Evite o contato com os olhos.",
     "nao_usar_pele_irritada": "Não aplicar sobre pele machucada ou irritada.",
     "teste_de_sensibilidade": "Faça um teste em área pequena antes do primeiro uso.",
@@ -192,6 +193,14 @@ CONCERNS.update(PP.EXTRA_CONCERNS)
 INGREDIENTS.extend(PP.EXTRA_INGREDIENTS)
 WARNINGS.update(PP.EXTRA_WARNINGS)
 GOALS.extend(PP.EXTRA_GOALS)
+
+# Medicamentos para busca e kits (catalog/medicines.py, doc 16).
+STEPS.update(MED.MED_STEPS)
+CONCERNS.update(MED.MED_CONCERNS)
+INGREDIENTS.extend(MED.MED_INGREDIENTS)
+INTERACTIONS.extend(MED.MED_INTERACTIONS)
+WARNINGS.update(MED.MED_WARNINGS)
+GOALS.extend(MED.MED_GOALS)
 
 # --------------------------------------------------------------------------
 # Produtos
@@ -386,6 +395,7 @@ HOW_TO_STEP = {
     "higiene_oral": "Use na higiene bucal diária, conforme a embalagem.",
     "desodorante": "Aplique nas axilas limpas e secas.",
     "reposicao": "Use somente conforme a sua receita.",
+    **MED.MED_HOW_TO,
 }
 
 
@@ -408,7 +418,7 @@ def build_products() -> tuple[list[dict], list[dict]]:
     ing_names = {i[0]: i[1] for i in INGREDIENTS}
     products: list[dict] = []
     inventory: list[dict] = []
-    for n, row in enumerate(P + PP.EXTRA_PRODUCTS, start=1):
+    for n, row in enumerate(P + PP.EXTRA_PRODUCTS + MED.MED_PRODUCTS, start=1):
         (brand, name, ptype, step, line, form, size, skins, concerns, ings, fps, period,
          price, claims, warns, covers_extra) = row[:16]
         extras = row[16] if len(row) > 16 else {}
@@ -431,6 +441,10 @@ def build_products() -> tuple[list[dict], list[dict]]:
             desc = f"{name}: suplemento alimentar ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
         elif domain == "higiene":
             desc = f"{name}: produto de higiene ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
+        elif not extras.get("equivalence"):
+            desc = f"{name}: medicamento ({ptype}) do laboratório {brand}. Princípio ativo: {ing_txt}. Para {conc_txt}."
+            if extras.get("rx"):
+                desc += " Venda sob prescrição."
         else:
             eq = extras["equivalence"]
             desc = (f"{name}: medicamento FICTÍCIO para demonstração ({ptype}), laboratório {brand}. "

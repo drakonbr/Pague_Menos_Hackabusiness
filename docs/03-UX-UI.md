@@ -1,5 +1,7 @@
 # 03 — UX/UI
 
+> **Atualização de 21/10 (doc 16):** a tela de segurança, o botão "Falar com um farmacêutico" e todo texto de encaminhamento saíram. Busca de remédio abre a tela de resultados como qualquer outra; o orçamento passou a abrir numa folha a partir do chip.
+>
 > **Atualização de 15/10 (noite):** o visual passou a seguir o app real, a partir dos prints. A referência atual de telas, tokens e diferenças está no **doc 13**; este documento continua valendo para princípios, copy, estados e o bloco de kits.
 
 Módulo: `app/` (React + TypeScript, mobile-first). Status: **telas implementadas com dados simulados e vistas em navegador** (Chromium, 390×844 e 1280×900). Contraste AA medido e leitor de tela **não** foram testados; ver "Diferenças entre o desenho e o protótipo" no fim.

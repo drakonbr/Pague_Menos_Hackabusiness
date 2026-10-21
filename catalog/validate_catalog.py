@@ -15,11 +15,15 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from medicines import MED_GOALS, MED_STEPS
+
 DATA = Path(os.environ.get("CATALOG_DATA_DIR") or Path(__file__).resolve().parent / "data")
 
 STEPS = {"limpeza", "preparo", "tratamento", "hidratacao", "protecao_solar", "protecao_corporal", "complemento",
          "omega3", "colageno", "magnesio", "vitaminas", "higiene_corpo", "higiene_cabelo", "higiene_oral",
-         "desodorante", "reposicao"}
+         "desodorante", "reposicao"} | set(MED_STEPS)
+MIN_PER_AREA = 6          # doc 16: pelo menos 6 medicamentos por área de saúde
+REFERRAL_WORDS = ["médic", "farmacêutic", "profissional de saúde", "procure", "consulte"]
 DOMAINS = {"dermo", "suplemento", "higiene", "medicamento"}
 # alegações terapêuticas proibidas em tudo que NÃO é medicamento (a persona usa remédio para pressão e colesterol:
 # nenhum suplemento ou cosmético pode sugerir efeito sobre isso)
@@ -58,7 +62,7 @@ def main() -> int:
     by_id = {p["id"]: p for p in products}
 
     # 1. Tamanho e unicidade
-    check("tamanho do catálogo entre 130 e 145", 130 <= len(products) <= 145, f"{len(products)} produtos")
+    check("tamanho do catálogo entre 200 e 240", 200 <= len(products) <= 240, f"{len(products)} produtos")
     check("domínios válidos", all(p.get("domain") in DOMAINS for p in products))
     by_domain = Counter(p["domain"] for p in products)
     check("os 100 produtos de skin care originais continuam (p001–p100, domínio dermo)",
@@ -218,7 +222,7 @@ def main() -> int:
           f"fora: {sorted(set(ids) - in_leaf)}")
 
     # 14. Ampliação da persona Renata (docs/14-persona-renata.md)
-    meds = [p for p in products if p["domain"] == "medicamento"]
+    meds = [p for p in products if p["domain"] == "medicamento" and p["equivalence"]]   # reposição (fictícios)
     check("medicamentos fictícios: 8 apresentações, todas com receita e marcadas como fictícias",
           len(meds) == 8 and all(p["rx"] and "FICTÍCIO" in p["description"] and "receita_obrigatoria" in p["warnings"] for p in meds),
           f"{len(meds)} itens")
@@ -239,7 +243,7 @@ def main() -> int:
     check("medicamentos: só na categoria 'Reposição de uso contínuo' (e nos agrupadores dela)",
           all(set(n["id"] for n in cats["nodes"] if pid in n["productIds"]) <= {"reposicao", "saude"} for pid in meds_ids))
     sups = [p for p in products if p["domain"] == "suplemento"]
-    check("suplementos: 12 itens, todos com o aviso de consultar médico/farmacêutico se usa medicação",
+    check("suplementos: 12 itens, todos com o aviso sobre uso junto de medicação",
           len(sups) == 12 and all("consultar_se_medicacao" in p["warnings"] for p in sups))
     for step in ("omega3", "colageno", "magnesio", "vitaminas"):
         n = sum(1 for p in sups if p["step"] == step)
@@ -266,6 +270,25 @@ def main() -> int:
     check("persona: o medicamento dela está em ruptura na loja mais próxima, mas há equivalente em estoque nela",
           bool(out_here) and bool(sims) and all(inventory[u]["stock_qty"] > 0 for u in out_here),
           f"loja {near['name']}: sem estoque {out_here}; equivalentes {sims}")
+
+    # 15. Medicamentos para busca e kits (catalog/medicines.py, doc 16)
+    otc = [p for p in products if p["line"].startswith("med_")]
+    areas = Counter(p["line"][4:] for p in otc)
+    med_goal_ids = {g["id"] for g in MED_GOALS}
+    check(f"medicamentos: pelo menos {MIN_PER_AREA} por área",
+          bool(areas) and all(n >= MIN_PER_AREA for n in areas.values()), str(dict(areas)))
+    check("medicamentos: toda área é um objetivo de kit", set(areas) <= med_goal_ids, str(set(areas) - med_goal_ids))
+    check("medicamentos: domínio medicamento, tarja válida, sem equivalência de reposição",
+          all(p["domain"] == "medicamento" and p["rx"] in (None, "receita_simples") and p["equivalence"] is None for p in otc))
+    check("medicamentos: todo item tem princípio ativo cadastrado",
+          all(p["ingredients"] and all(ingredients[i]["family"] == "princípio ativo" for i in p["ingredients"]) for p in otc))
+    check("medicamentos: toda etapa dos objetivos de saúde tem pelo menos 2 opções com estoque",
+          all(sum(1 for p in otc if step in p["covers_steps"] and inventory[p["id"]]["stock_qty"] > 0) >= 2
+              for g in MED_GOALS for step in g["required_steps"]))
+    check("medicamentos: sem cashback", all(commerce["cashbackPct"][p["id"]] == 0 for p in otc))
+    texts = [w for w in warnings.values()] + [p["description"] + " " + p["how_to_use"] for p in products]
+    hits = sorted({w for t in texts for w in REFERRAL_WORDS if w in t.lower()})
+    check("nenhum texto manda procurar médico ou farmacêutico", not hits, str(hits))
 
     # 13. Banco de imagens (só existe depois da revisão; ver catalog/images/README.md)
     img_path = DATA / "images.json"

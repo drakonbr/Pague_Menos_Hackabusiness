@@ -182,8 +182,7 @@ def build_graph(cat: Catalog) -> KnowledgeGraph:
     # similaridade calculada (vizinhos mais próximos dentro da mesma etapa e domínio)
     by_step: dict[str, list[dict]] = defaultdict(list)
     for p in cat.products:
-        if p["domain"] != "medicamento":
-            by_step[p["step"]].append(p)
+        by_step[p["step"]].append(p)
     for step, items in by_step.items():
         for a in items:
             scored = []

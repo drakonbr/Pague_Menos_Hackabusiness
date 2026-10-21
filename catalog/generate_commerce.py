@@ -122,7 +122,19 @@ CATEGORY_RULES = [
     ("veganos", "Cosméticos Veganos", "dermo", lambda p: "vegano" in p["claims"]),
     # ---- ampliação da persona: demais departamentos do app ----
     ("saude", "Medicamentos e saúde", None, None),
-    ("reposicao", "Reposição de uso contínuo", "saude", lambda p: domain_of(p) == "medicamento"),
+    ("med-dor-febre", "Dor de Cabeça e Febre", "saude", lambda p: p["line"] == "med_dor_de_cabeca"),
+    ("med-dor-corpo", "Dor no Corpo e Anti-inflamatórios", "saude", lambda p: p["line"] == "med_dor_no_corpo"),
+    ("med-dor-muscular", "Dor Muscular", "saude", lambda p: p["line"] == "med_dor_muscular"),
+    ("med-colica", "Cólica e Gases", "saude", lambda p: p["line"] == "med_dor_de_barriga"),
+    ("med-azia", "Azia e Má Digestão", "saude", lambda p: p["line"] == "med_azia"),
+    ("med-gripe", "Gripe e Resfriado", "saude", lambda p: p["line"] == "med_gripe"),
+    ("med-tosse", "Tosse", "saude", lambda p: p["line"] == "med_tosse"),
+    ("med-garganta", "Garganta", "saude", lambda p: p["line"] == "med_dor_de_garganta"),
+    ("med-alergia", "Alergias", "saude", lambda p: p["line"] == "med_alergia"),
+    ("med-diarreia", "Diarreia", "saude", lambda p: p["line"] == "med_diarreia"),
+    ("med-intestino-preso", "Intestino Preso", "saude", lambda p: p["line"] == "med_prisao_de_ventre"),
+    ("med-enjoo", "Enjoo e Náusea", "saude", lambda p: p["line"] == "med_enjoo"),
+    ("reposicao", "Reposição de uso contínuo", "saude", lambda p: p["line"].startswith("reposicao_")),
     ("vida-saudavel", "Vida Saudável", None, None),
     ("omega3", "Ômega 3", "vida-saudavel", lambda p: p["step"] == "omega3"),
     ("colageno", "Colágeno", "vida-saudavel", lambda p: p["step"] == "colageno"),
@@ -190,8 +202,10 @@ def build_stores_and_stock(products, inventory, rng):
     ]
     stock = []
     is_base = lambda p: p["id"] <= "p100"
+    is_med = lambda p: p["line"].startswith("med_")
     base = [p for p in products if is_base(p)]
-    extra = [p for p in products if not is_base(p)]
+    extra = [p for p in products if not is_base(p) and not is_med(p)]
+    meds = [p for p in products if is_med(p)]
     for s in stores:                       # mesma ordem e mesma semente de sempre: os 100 antigos não mudam
         for p in base:
             stock.append(_qty(s, p, inv, rng))
@@ -199,6 +213,10 @@ def build_stores_and_stock(products, inventory, rng):
     for s in stores:
         for p in extra:
             stock.append(_qty(s, p, inv, rng2))
+    rng3 = random.Random(SEED + 11)        # medicamentos (doc 16) com semente própria: o estoque antigo não muda
+    for s in stores:
+        for p in meds:
+            stock.append(_qty(s, p, inv, rng3))
     for row in stock:                      # ruptura combinada da persona
         key = (row["storeId"], row["productId"])
         if key in FORCED_STORE_STOCK and inv[row["productId"]]["stock_qty"] > 0:
@@ -228,7 +246,8 @@ def build_commerce(products, inventory, rng):
         weight[p["id"]] = w * rng.uniform(0.6, 1.4)
     ranking = sorted(weight, key=lambda k: -weight[k])
     dermo = {p["id"] for p in products if domain_of(p) == "dermo"}
-    shown_ok = {p["id"] for p in products if domain_of(p) != "medicamento"}   # medicamento fora de vitrines
+    shown_ok = {p["id"] for p in products if domain_of(p) != "medicamento"}   # ofertas: sem medicamento
+    meds_ids = {p["id"] for p in products if p["line"].startswith("med_")}
     on_sale = [p["id"] for p in products
                if p["id"] in shown_ok
                and inv[p["id"]]["list_price_cents"] > inv[p["id"]]["price_cents"] and inv[p["id"]]["stock_qty"] > 0]
@@ -244,6 +263,8 @@ def build_commerce(products, inventory, rng):
             {"id": "kits", "title": "Kits inteligentes para você", "type": "kit_presets"},
             {"id": "ofertas", "title": "Ofertas da semana", "type": "products", "productIds": on_sale},
             {"id": "mais-vendidos", "title": "Mais vendidos em Dermo", "type": "products", "productIds": in_stock[:12]},
+            {"id": "farmacia", "title": "Mais vendidos em Medicamentos", "type": "products",
+             "productIds": [pid for pid in ranking if inv[pid]["stock_qty"] > 0 and pid in meds_ids][:12]},
             {"id": "protetor", "title": "Protetor solar facial", "type": "products",
              "productIds": [pid for pid in sun if inv[pid]["stock_qty"] > 0][:10]},
         ],

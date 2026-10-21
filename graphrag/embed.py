@@ -44,8 +44,6 @@ def build_corpus(cat: Catalog) -> list[list[str]]:
             types_of_concern[c][p["productType"]] += 1
 
     for p in cat.products:
-        if p["domain"] == "medicamento":
-            continue  # medicamento não participa da busca por texto livre (nem do vocabulário aprendido)
         concerns = " ".join(cat.concerns.get(c, c) for c in p["concerns"])
         ings = " ".join(f"{cat.ingredients[i]['name']} {cat.ingredients[i]['function']}" for i in p["ingredients"])
         goals = " ".join(g for c in p["concerns"] for g in goal_of_concern.get(c, []))

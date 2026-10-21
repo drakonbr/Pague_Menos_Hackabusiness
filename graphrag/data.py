@@ -25,6 +25,11 @@ STEP_ORDER = [
     "limpeza", "preparo", "tratamento", "hidratacao", "protecao_solar", "protecao_corporal", "complemento",
     "omega3", "colageno", "magnesio", "vitaminas",
     "higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante",
+    # medicamentos (doc 16): papéis dentro do kit de cada área de saúde
+    "analgesico_dipirona", "analgesico_paracetamol", "antiinflamatorio", "relaxante_muscular", "dor_topico",
+    "antiespasmodico", "antigases", "antiacido", "protetor_gastrico", "antigripal", "descongestionante_nasal",
+    "imunidade", "expectorante", "antitussigeno", "pastilha_garganta", "spray_garganta", "antialergico",
+    "antidiarreico", "probiotico", "reidratacao", "laxante", "fibra", "antiemetico",
     "reposicao",
 ]
 

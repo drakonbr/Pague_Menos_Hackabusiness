@@ -21,6 +21,11 @@
    "label": "Essência Nutri"
   },
   {
+   "id": "brand:Farmanorte",
+   "kind": "brand",
+   "label": "Farmanorte"
+  },
+  {
    "id": "brand:Lab Aurora",
    "kind": "brand",
    "label": "Lab Aurora"
@@ -64,6 +69,11 @@
    "id": "brand:Vita Verde",
    "kind": "brand",
    "label": "Vita Verde"
+  },
+  {
+   "id": "brand:Vitalis Farma",
+   "kind": "brand",
+   "label": "Vitalis Farma"
   },
   {
    "id": "claim:com cor",
@@ -146,9 +156,24 @@
    "label": "acne"
   },
   {
+   "id": "concern:alergia",
+   "kind": "concern",
+   "label": "alergia e rinite"
+  },
+  {
+   "id": "concern:azia",
+   "kind": "concern",
+   "label": "azia e má digestão"
+  },
+  {
    "id": "concern:beleza_interna",
    "kind": "concern",
    "label": "beleza de dentro para fora"
+  },
+  {
+   "id": "concern:colesterol",
+   "kind": "concern",
+   "label": "colesterol alto"
   },
   {
    "id": "concern:cuidado_cabelo",
@@ -171,9 +196,64 @@
    "label": "desodorização"
   },
   {
+   "id": "concern:diarreia",
+   "kind": "concern",
+   "label": "diarreia"
+  },
+  {
+   "id": "concern:dor_de_barriga",
+   "kind": "concern",
+   "label": "dor de barriga e cólica"
+  },
+  {
+   "id": "concern:dor_de_cabeca",
+   "kind": "concern",
+   "label": "dor de cabeça"
+  },
+  {
+   "id": "concern:dor_de_garganta",
+   "kind": "concern",
+   "label": "dor de garganta"
+  },
+  {
+   "id": "concern:dor_muscular",
+   "kind": "concern",
+   "label": "dor muscular"
+  },
+  {
+   "id": "concern:dor_no_corpo",
+   "kind": "concern",
+   "label": "dor no corpo"
+  },
+  {
+   "id": "concern:enjoo",
+   "kind": "concern",
+   "label": "enjoo e náusea"
+  },
+  {
+   "id": "concern:enxaqueca",
+   "kind": "concern",
+   "label": "enxaqueca"
+  },
+  {
+   "id": "concern:febre",
+   "kind": "concern",
+   "label": "febre"
+  },
+  {
    "id": "concern:fotoprotecao",
    "kind": "concern",
    "label": "proteção solar"
+  },
+  {
+   "id": "concern:gases",
+   "kind": "concern",
+   "label": "gases"
+  },
+  {
+   "id": "concern:gripe",
+   "kind": "concern",
+   "label": "gripe e resfriado"
   },
   {
    "id": "concern:higiene_diaria",
@@ -186,6 +266,11 @@
    "label": "higiene bucal"
   },
   {
+   "id": "concern:hipertensao",
+   "kind": "concern",
+   "label": "pressão alta"
+  },
+  {
    "id": "concern:limpeza_diaria",
    "kind": "concern",
    "label": "limpeza diária"
@@ -194,6 +279,11 @@
    "id": "concern:manchas",
    "kind": "concern",
    "label": "manchas"
+  },
+  {
+   "id": "concern:nariz_entupido",
+   "kind": "concern",
+   "label": "nariz entupido"
   },
   {
    "id": "concern:nutricao",
@@ -214,6 +304,11 @@
    "id": "concern:poros",
    "kind": "concern",
    "label": "poros"
+  },
+  {
+   "id": "concern:prisao_de_ventre",
+   "kind": "concern",
+   "label": "prisão de ventre"
   },
   {
    "id": "concern:reposicao",
@@ -239,6 +334,16 @@
    "id": "concern:textura",
    "kind": "concern",
    "label": "textura irregular"
+  },
+  {
+   "id": "concern:tosse",
+   "kind": "concern",
+   "label": "tosse com catarro"
+  },
+  {
+   "id": "concern:tosse_seca",
+   "kind": "concern",
+   "label": "tosse seca"
   },
   {
    "id": "domain:dermo",
@@ -284,6 +389,25 @@
    ]
   },
   {
+   "id": "goal:alergia",
+   "kind": "goal",
+   "label": "Alergia e rinite",
+   "synonyms": [
+    "alergia",
+    "alergias",
+    "rinite",
+    "rinite alérgica",
+    "rinite alergica",
+    "espirro",
+    "espirros",
+    "espirrando",
+    "antialérgico",
+    "antialergico",
+    "anti-histamínico",
+    "antihistaminico"
+   ]
+  },
+  {
    "id": "goal:anti_idade",
    "kind": "goal",
    "label": "Cuidado antissinais",
@@ -294,6 +418,186 @@
     "rugas",
     "linhas de expressão",
     "envelhecimento"
+   ]
+  },
+  {
+   "id": "goal:azia",
+   "kind": "goal",
+   "label": "Azia e má digestão",
+   "synonyms": [
+    "azia",
+    "queimação",
+    "queimacao",
+    "má digestão",
+    "ma digestao",
+    "indigestão",
+    "indigestao",
+    "refluxo",
+    "dor de estômago",
+    "dor de estomago",
+    "estômago",
+    "estomago",
+    "antiácido",
+    "antiacido"
+   ]
+  },
+  {
+   "id": "goal:diarreia",
+   "kind": "goal",
+   "label": "Diarreia",
+   "synonyms": [
+    "diarreia",
+    "diarréia",
+    "intestino solto",
+    "desarranjo",
+    "dor de barriga com diarreia",
+    "soro de reidratação",
+    "soro de reidratacao",
+    "probiótico",
+    "probiotico",
+    "antidiarreico"
+   ]
+  },
+  {
+   "id": "goal:dor_de_barriga",
+   "kind": "goal",
+   "label": "Dor de barriga e cólica",
+   "synonyms": [
+    "dor de barriga",
+    "dores de barriga",
+    "cólica",
+    "colica",
+    "cólicas",
+    "colicas",
+    "cólica menstrual",
+    "colica menstrual",
+    "barriga inchada",
+    "barriga estufada",
+    "gases",
+    "estufado",
+    "estufada",
+    "antiespasmódico",
+    "antiespasmodico"
+   ]
+  },
+  {
+   "id": "goal:dor_de_cabeca",
+   "kind": "goal",
+   "label": "Dor de cabeça e febre",
+   "synonyms": [
+    "dor de cabeça",
+    "dor de cabeca",
+    "dores de cabeça",
+    "dores de cabeca",
+    "cabeça doendo",
+    "cabeca doendo",
+    "cabeça latejando",
+    "cabeca latejando",
+    "enxaqueca",
+    "cefaleia",
+    "febre",
+    "febril",
+    "antitérmico",
+    "antitermico",
+    "analgésico",
+    "analgesico"
+   ]
+  },
+  {
+   "id": "goal:dor_de_garganta",
+   "kind": "goal",
+   "label": "Dor de garganta",
+   "synonyms": [
+    "dor de garganta",
+    "garganta inflamada",
+    "garganta irritada",
+    "garganta doendo",
+    "garganta",
+    "pastilha para garganta",
+    "spray para garganta"
+   ]
+  },
+  {
+   "id": "goal:dor_muscular",
+   "kind": "goal",
+   "label": "Dor muscular",
+   "synonyms": [
+    "dor muscular",
+    "dores musculares",
+    "dor nos músculos",
+    "dor nos musculos",
+    "músculo",
+    "musculo",
+    "torcicolo",
+    "dor nas costas",
+    "contratura",
+    "contusão",
+    "contusao",
+    "pancada",
+    "relaxante muscular",
+    "dor na lombar",
+    "lombar"
+   ]
+  },
+  {
+   "id": "goal:dor_no_corpo",
+   "kind": "goal",
+   "label": "Dor no corpo",
+   "synonyms": [
+    "dor no corpo",
+    "dores no corpo",
+    "dor de corpo",
+    "corpo doendo",
+    "corpo dolorido",
+    "mal estar",
+    "mal-estar",
+    "moído",
+    "moido",
+    "anti-inflamatório",
+    "anti inflamatório",
+    "antiinflamatório",
+    "anti inflamatorio",
+    "antiinflamatorio"
+   ]
+  },
+  {
+   "id": "goal:enjoo",
+   "kind": "goal",
+   "label": "Enjoo e náusea",
+   "synonyms": [
+    "enjoo",
+    "enjoado",
+    "enjoada",
+    "náusea",
+    "nausea",
+    "náuseas",
+    "nauseas",
+    "vômito",
+    "vomito",
+    "vomitando",
+    "ânsia",
+    "ansia",
+    "enjoo de viagem",
+    "enjoo no carro"
+   ]
+  },
+  {
+   "id": "goal:gripe",
+   "kind": "goal",
+   "label": "Gripe e resfriado",
+   "synonyms": [
+    "gripe",
+    "gripado",
+    "gripada",
+    "resfriado",
+    "resfriada",
+    "resfriado forte",
+    "nariz entupido",
+    "congestão nasal",
+    "congestao nasal",
+    "coriza",
+    "nariz escorrendo",
+    "antigripal"
    ]
   },
   {
@@ -350,6 +654,21 @@
    ]
   },
   {
+   "id": "goal:prisao_de_ventre",
+   "kind": "goal",
+   "label": "Prisão de ventre",
+   "synonyms": [
+    "prisão de ventre",
+    "prisao de ventre",
+    "intestino preso",
+    "constipação",
+    "constipacao",
+    "laxante",
+    "não consigo ir ao banheiro",
+    "nao consigo ir ao banheiro"
+   ]
+  },
+  {
    "id": "goal:protecao_solar",
    "kind": "goal",
    "label": "Proteção solar",
@@ -395,11 +714,67 @@
    ]
   },
   {
+   "id": "goal:tosse",
+   "kind": "goal",
+   "label": "Tosse com catarro",
+   "synonyms": [
+    "tosse",
+    "tosse com catarro",
+    "catarro",
+    "peito carregado",
+    "xarope",
+    "xarope para tosse",
+    "expectorante"
+   ]
+  },
+  {
+   "id": "goal:tosse_seca",
+   "kind": "goal",
+   "label": "Tosse seca",
+   "synonyms": [
+    "tosse seca",
+    "tosse irritativa",
+    "tosse sem catarro"
+   ]
+  },
+  {
+   "id": "ingredient:acetilcisteina",
+   "kind": "ingredient",
+   "label": "Acetilcisteína",
+   "family": "princípio ativo",
+   "function": "expectorante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:acido_acetilsalicilico",
+   "kind": "ingredient",
+   "label": "Ácido acetilsalicílico",
+   "family": "princípio ativo",
+   "function": "analgésico, antitérmico e anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:acido_ascorbico",
+   "kind": "ingredient",
+   "label": "Ácido ascórbico (vitamina C)",
+   "family": "princípio ativo",
+   "function": "vitamina C",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:acido_azelaico",
    "kind": "ingredient",
    "label": "Ácido azelaico",
    "family": "ácido dicarboxílico",
    "function": "uniformização e controle de acne",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:acido_citrico",
+   "kind": "ingredient",
+   "label": "Ácido cítrico",
+   "family": "princípio ativo",
+   "function": "efervescente",
    "photosensitizing": false
   },
   {
@@ -451,11 +826,35 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:alginato_sodio",
+   "kind": "ingredient",
+   "label": "Alginato de sódio",
+   "family": "princípio ativo",
+   "function": "forma barreira contra o refluxo",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:aloe_vera",
    "kind": "ingredient",
    "label": "Aloe vera",
    "family": "extrato vegetal",
    "function": "hidratação leve",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:ambroxol",
+   "kind": "ingredient",
+   "label": "Cloridrato de ambroxol",
+   "family": "princípio ativo",
+   "function": "expectorante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:amilmetacresol",
+   "kind": "ingredient",
+   "label": "Amilmetacresol + álcool diclorobenzílico",
+   "family": "princípio ativo",
+   "function": "antisséptico para a garganta",
    "photosensitizing": false
   },
   {
@@ -467,6 +866,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:bacillus_clausii",
+   "kind": "ingredient",
+   "label": "Bacillus clausii",
+   "family": "princípio ativo",
+   "function": "probiótico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:bakuchiol",
    "kind": "ingredient",
    "label": "Bakuchiol",
@@ -475,11 +882,83 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:benzidamina",
+   "kind": "ingredient",
+   "label": "Cloridrato de benzidamina",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório de uso na garganta",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:bicarbonato_sodio",
+   "kind": "ingredient",
+   "label": "Bicarbonato de sódio",
+   "family": "princípio ativo",
+   "function": "antiácido",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:bisacodil",
+   "kind": "ingredient",
+   "label": "Bisacodil",
+   "family": "princípio ativo",
+   "function": "laxante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:bromexina",
+   "kind": "ingredient",
+   "label": "Cloridrato de bromexina",
+   "family": "princípio ativo",
+   "function": "expectorante",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:cafeina",
    "kind": "ingredient",
    "label": "Cafeína",
    "family": "estimulante",
    "function": "olheiras e inchaço",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:cafeina_med",
+   "kind": "ingredient",
+   "label": "Cafeína anidra",
+   "family": "princípio ativo",
+   "function": "potencializa o analgésico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:canfora",
+   "kind": "ingredient",
+   "label": "Cânfora",
+   "family": "princípio ativo",
+   "function": "alívio local da dor",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:carbocisteina",
+   "kind": "ingredient",
+   "label": "Carbocisteína",
+   "family": "princípio ativo",
+   "function": "expectorante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:carbonato_sodio",
+   "kind": "ingredient",
+   "label": "Carbonato de sódio",
+   "family": "princípio ativo",
+   "function": "antiácido",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:carisoprodol",
+   "kind": "ingredient",
+   "label": "Carisoprodol",
+   "family": "princípio ativo",
+   "function": "relaxante muscular",
    "photosensitizing": false
   },
   {
@@ -499,11 +978,43 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:cetirizina",
+   "kind": "ingredient",
+   "label": "Dicloridrato de cetirizina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:cha_verde",
    "kind": "ingredient",
    "label": "Extrato de chá verde",
    "family": "extrato vegetal",
    "function": "calmante e antioxidante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:ciclobenzaprina",
+   "kind": "ingredient",
+   "label": "Cloridrato de ciclobenzaprina",
+   "family": "princípio ativo",
+   "function": "relaxante muscular",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:cloreto_sodio",
+   "kind": "ingredient",
+   "label": "Cloreto de sódio 0,9%",
+   "family": "princípio ativo",
+   "function": "lavagem nasal",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:clorfeniramina",
+   "kind": "ingredient",
+   "label": "Maleato de clorfeniramina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
    "photosensitizing": false
   },
   {
@@ -515,6 +1026,54 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:desloratadina",
+   "kind": "ingredient",
+   "label": "Desloratadina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:dexclorfeniramina",
+   "kind": "ingredient",
+   "label": "Maleato de dexclorfeniramina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:diclofenaco_dietilamonio",
+   "kind": "ingredient",
+   "label": "Diclofenaco dietilamônio",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório de uso local",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:diclofenaco_potassico",
+   "kind": "ingredient",
+   "label": "Diclofenaco potássico",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:diclofenaco_sodico",
+   "kind": "ingredient",
+   "label": "Diclofenaco sódico",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:dimenidrinato",
+   "kind": "ingredient",
+   "label": "Dimenidrinato",
+   "family": "princípio ativo",
+   "function": "contra enjoo",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:dioxido_titanio",
    "kind": "ingredient",
    "label": "Dióxido de titânio",
@@ -523,11 +1082,67 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:dipirona",
+   "kind": "ingredient",
+   "label": "Dipirona monoidratada",
+   "family": "princípio ativo",
+   "function": "analgésico e antitérmico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:domperidona",
+   "kind": "ingredient",
+   "label": "Domperidona",
+   "family": "princípio ativo",
+   "function": "contra enjoo",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:dropropizina",
+   "kind": "ingredient",
+   "label": "Dropropizina",
+   "family": "princípio ativo",
+   "function": "para tosse seca",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:enxofre",
    "kind": "ingredient",
    "label": "Enxofre",
    "family": "mineral",
    "function": "controle de oleosidade e acne",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:escopolamina",
+   "kind": "ingredient",
+   "label": "Butilbrometo de escopolamina",
+   "family": "princípio ativo",
+   "function": "antiespasmódico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:esomeprazol",
+   "kind": "ingredient",
+   "label": "Esomeprazol",
+   "family": "princípio ativo",
+   "function": "reduz a acidez do estômago",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:fenilefrina",
+   "kind": "ingredient",
+   "label": "Cloridrato de fenilefrina",
+   "family": "princípio ativo",
+   "function": "descongestionante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:fexofenadina",
+   "kind": "ingredient",
+   "label": "Cloridrato de fexofenadina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
    "photosensitizing": false
   },
   {
@@ -547,11 +1162,27 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:flurbiprofeno",
+   "kind": "ingredient",
+   "label": "Flurbiprofeno",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório de uso na garganta",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:glicerina",
    "kind": "ingredient",
    "label": "Glicerina",
    "family": "umectante",
    "function": "hidratação",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:guaco",
+   "kind": "ingredient",
+   "label": "Guaco (Mikania glomerata)",
+   "family": "princípio ativo",
+   "function": "expectorante fitoterápico",
    "photosensitizing": false
   },
   {
@@ -563,11 +1194,83 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:hidroxido_aluminio",
+   "kind": "ingredient",
+   "label": "Hidróxido de alumínio",
+   "family": "princípio ativo",
+   "function": "antiácido",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:hidroxido_magnesio",
+   "kind": "ingredient",
+   "label": "Hidróxido de magnésio",
+   "family": "princípio ativo",
+   "function": "antiácido e laxante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:ibuprofeno",
+   "kind": "ingredient",
+   "label": "Ibuprofeno",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:isometepteno",
+   "kind": "ingredient",
+   "label": "Mucato de isometepteno",
+   "family": "princípio ativo",
+   "function": "vasoconstritor para enxaqueca",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:lactulose",
+   "kind": "ingredient",
+   "label": "Lactulose",
+   "family": "princípio ativo",
+   "function": "laxante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:levodropropizina",
+   "kind": "ingredient",
+   "label": "Levodropropizina",
+   "family": "princípio ativo",
+   "function": "para tosse seca",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:lipostanol_calcico",
    "kind": "ingredient",
    "label": "Lipostanol cálcico (fictício)",
    "family": "substância fictícia",
    "function": "princípio ativo inventado para a demonstração",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:loperamida",
+   "kind": "ingredient",
+   "label": "Cloridrato de loperamida",
+   "family": "princípio ativo",
+   "function": "antidiarreico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:loratadina",
+   "kind": "ingredient",
+   "label": "Loratadina",
+   "family": "princípio ativo",
+   "function": "antialérgico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:macrogol",
+   "kind": "ingredient",
+   "label": "Macrogol 3350",
+   "family": "princípio ativo",
+   "function": "laxante",
    "photosensitizing": false
   },
   {
@@ -603,6 +1306,22 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:mentol",
+   "kind": "ingredient",
+   "label": "Mentol",
+   "family": "princípio ativo",
+   "function": "sensação refrescante no local",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:metoclopramida",
+   "kind": "ingredient",
+   "label": "Cloridrato de metoclopramida",
+   "family": "princípio ativo",
+   "function": "contra enjoo",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:multivitaminico",
    "kind": "ingredient",
    "label": "Complexo multivitamínico",
@@ -611,11 +1330,43 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:nafazolina",
+   "kind": "ingredient",
+   "label": "Cloridrato de nafazolina",
+   "family": "princípio ativo",
+   "function": "descongestionante nasal",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:naproxeno",
+   "kind": "ingredient",
+   "label": "Naproxeno sódico",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:niacinamida",
    "kind": "ingredient",
    "label": "Niacinamida",
    "family": "vitamina",
    "function": "controle de oleosidade, uniformização",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:nimesulida",
+   "kind": "ingredient",
+   "label": "Nimesulida",
+   "family": "princípio ativo",
+   "function": "anti-inflamatório",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:nitazoxanida",
+   "kind": "ingredient",
+   "label": "Nitazoxanida",
+   "family": "princípio ativo",
+   "function": "antiparasitário",
    "photosensitizing": false
   },
   {
@@ -643,11 +1394,43 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:omeprazol",
+   "kind": "ingredient",
+   "label": "Omeprazol",
+   "family": "princípio ativo",
+   "function": "reduz a acidez do estômago",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:ondansetrona",
+   "kind": "ingredient",
+   "label": "Ondansetrona",
+   "family": "princípio ativo",
+   "function": "contra enjoo",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:orfenadrina",
+   "kind": "ingredient",
+   "label": "Citrato de orfenadrina",
+   "family": "princípio ativo",
+   "function": "relaxante muscular",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:oxido_de_zinco",
    "kind": "ingredient",
    "label": "Óxido de zinco",
    "family": "filtro mineral",
    "function": "proteção solar mineral",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:oximetazolina",
+   "kind": "ingredient",
+   "label": "Cloridrato de oximetazolina",
+   "family": "princípio ativo",
+   "function": "descongestionante nasal",
    "photosensitizing": false
   },
   {
@@ -659,11 +1442,51 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:pantoprazol",
+   "kind": "ingredient",
+   "label": "Pantoprazol",
+   "family": "princípio ativo",
+   "function": "reduz a acidez do estômago",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:paracetamol",
+   "kind": "ingredient",
+   "label": "Paracetamol",
+   "family": "princípio ativo",
+   "function": "analgésico e antitérmico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:peptideos",
    "kind": "ingredient",
    "label": "Peptídeos",
    "family": "peptídeo",
    "function": "firmeza e sinais de idade",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:picossulfato",
+   "kind": "ingredient",
+   "label": "Picossulfato de sódio",
+   "family": "princípio ativo",
+   "function": "laxante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:piridoxina",
+   "kind": "ingredient",
+   "label": "Piridoxina (vitamina B6)",
+   "family": "princípio ativo",
+   "function": "vitamina B6",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:psyllium",
+   "kind": "ingredient",
+   "label": "Psyllium (Plantago ovata)",
+   "family": "princípio ativo",
+   "function": "fibra",
    "photosensitizing": false
   },
   {
@@ -675,12 +1498,52 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:racecadotrila",
+   "kind": "ingredient",
+   "label": "Racecadotrila",
+   "family": "princípio ativo",
+   "function": "antidiarreico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:retinol",
    "kind": "ingredient",
    "label": "Retinol",
    "family": "retinoide cosmético",
    "function": "renovação e sinais de idade",
    "photosensitizing": true
+  },
+  {
+   "id": "ingredient:saccharomyces_boulardii",
+   "kind": "ingredient",
+   "label": "Saccharomyces boulardii",
+   "family": "princípio ativo",
+   "function": "probiótico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:sais_reidratacao",
+   "kind": "ingredient",
+   "label": "Sais para reidratação oral",
+   "family": "princípio ativo",
+   "function": "reidratação",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:salicilato_metila",
+   "kind": "ingredient",
+   "label": "Salicilato de metila",
+   "family": "princípio ativo",
+   "function": "alívio local da dor",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:simeticona",
+   "kind": "ingredient",
+   "label": "Simeticona",
+   "family": "princípio ativo",
+   "function": "antigases",
+   "photosensitizing": false
   },
   {
    "id": "ingredient:tensivalol_potassico",
@@ -1843,14 +2706,686 @@
    "domain": "medicamento"
   },
   {
+   "id": "product:p139",
+   "kind": "product",
+   "label": "Dipirona 500 mg — 10 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "analgesico_dipirona",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p140",
+   "kind": "product",
+   "label": "Dipirona 1 g (genérico) — 10 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "analgesico_dipirona",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p141",
+   "kind": "product",
+   "label": "Dipirona Gotas 500 mg/mL — 20 mL",
+   "brand": "Farmanorte",
+   "step": "analgesico_dipirona",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p142",
+   "kind": "product",
+   "label": "Paracetamol 750 mg — 20 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "analgesico_paracetamol",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p143",
+   "kind": "product",
+   "label": "Paracetamol 500 mg + Cafeína 65 mg — 20 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "analgesico_paracetamol",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p144",
+   "kind": "product",
+   "label": "Paracetamol Gotas 200 mg/mL — 15 mL",
+   "brand": "Farmanorte",
+   "step": "analgesico_paracetamol",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p145",
+   "kind": "product",
+   "label": "Dipirona 300 mg + Isometepteno 30 mg + Cafeína 30 mg — 20 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "analgesico_dipirona",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p146",
+   "kind": "product",
+   "label": "Ácido Acetilsalicílico 500 mg (genérico) — 20 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p147",
+   "kind": "product",
+   "label": "Ibuprofeno 400 mg — 10 cápsulas",
+   "brand": "Vitalis Farma",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p148",
+   "kind": "product",
+   "label": "Ibuprofeno 600 mg (genérico) — 20 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p149",
+   "kind": "product",
+   "label": "Ibuprofeno Gotas 50 mg/mL — 30 mL",
+   "brand": "Farmanorte",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p150",
+   "kind": "product",
+   "label": "Naproxeno Sódico 275 mg — 10 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p151",
+   "kind": "product",
+   "label": "Naproxeno Sódico 550 mg (genérico) — 10 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p152",
+   "kind": "product",
+   "label": "Diclofenaco Potássico 50 mg — 20 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p153",
+   "kind": "product",
+   "label": "Nimesulida 100 mg — 12 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antiinflamatorio",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p154",
+   "kind": "product",
+   "label": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 10 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "relaxante_muscular",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p155",
+   "kind": "product",
+   "label": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 36 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "relaxante_muscular",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p156",
+   "kind": "product",
+   "label": "Ciclobenzaprina 5 mg (genérico) — 30 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "relaxante_muscular",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p157",
+   "kind": "product",
+   "label": "Ciclobenzaprina 10 mg — 30 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "relaxante_muscular",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p158",
+   "kind": "product",
+   "label": "Diclofenaco Sódico 50 mg + Carisoprodol 125 mg + Paracetamol 300 mg + Cafeína 30 mg — 15 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "relaxante_muscular",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p159",
+   "kind": "product",
+   "label": "Diclofenaco Dietilamônio Gel 11,6 mg/g — 60 g",
+   "brand": "Farmanorte",
+   "step": "dor_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p160",
+   "kind": "product",
+   "label": "Pomada de Salicilato de Metila, Mentol e Cânfora — 30 g",
+   "brand": "Lab Nova Via",
+   "step": "dor_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p161",
+   "kind": "product",
+   "label": "Butilbrometo de Escopolamina 10 mg — 20 drágeas",
+   "brand": "Vitalis Farma",
+   "step": "antiespasmodico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p162",
+   "kind": "product",
+   "label": "Butilbrometo de Escopolamina Gotas 10 mg/mL — 20 mL",
+   "brand": "Farmanorte",
+   "step": "antiespasmodico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p163",
+   "kind": "product",
+   "label": "Escopolamina 10 mg + Dipirona 250 mg — 20 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "antiespasmodico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p164",
+   "kind": "product",
+   "label": "Simeticona 40 mg (genérico) — 20 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antigases",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p165",
+   "kind": "product",
+   "label": "Simeticona Gotas 75 mg/mL — 15 mL",
+   "brand": "Farmanorte",
+   "step": "antigases",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p166",
+   "kind": "product",
+   "label": "Simeticona 125 mg — 10 cápsulas",
+   "brand": "Lab Nova Via",
+   "step": "antigases",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p167",
+   "kind": "product",
+   "label": "Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona — suspensão 240 mL",
+   "brand": "Vitalis Farma",
+   "step": "antiacido",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p168",
+   "kind": "product",
+   "label": "Sal de Frutas (Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico) — 2 envelopes de 5 g",
+   "brand": "Farmanorte",
+   "step": "antiacido",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p169",
+   "kind": "product",
+   "label": "Alginato de Sódio + Bicarbonato de Sódio — 12 sachês de suspensão",
+   "brand": "Lab Nova Via",
+   "step": "antiacido",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p170",
+   "kind": "product",
+   "label": "Omeprazol 20 mg (genérico) — 28 cápsulas",
+   "brand": "Lab Genérico Sul",
+   "step": "protetor_gastrico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p171",
+   "kind": "product",
+   "label": "Pantoprazol 40 mg — 28 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "protetor_gastrico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p172",
+   "kind": "product",
+   "label": "Esomeprazol 40 mg — 28 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "protetor_gastrico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p173",
+   "kind": "product",
+   "label": "Antigripal Paracetamol 400 mg + Fenilefrina 4 mg + Clorfeniramina 4 mg — 20 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antigripal",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p174",
+   "kind": "product",
+   "label": "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína 30 mg — 20 cápsulas",
+   "brand": "Lab Nova Via",
+   "step": "antigripal",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p175",
+   "kind": "product",
+   "label": "Vitamina C 1 g Efervescente — 10 comprimidos",
+   "brand": "Farmanorte",
+   "step": "imunidade",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p176",
+   "kind": "product",
+   "label": "Soro Fisiológico Nasal 0,9% — 30 mL",
+   "brand": "Lab Genérico Sul",
+   "step": "descongestionante_nasal",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p177",
+   "kind": "product",
+   "label": "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL",
+   "brand": "Vitalis Farma",
+   "step": "descongestionante_nasal",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p178",
+   "kind": "product",
+   "label": "Oximetazolina 0,5 mg/mL Spray Nasal — 20 mL",
+   "brand": "Lab Aurora",
+   "step": "descongestionante_nasal",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p179",
+   "kind": "product",
+   "label": "Ambroxol Xarope Adulto 30 mg/5 mL — 120 mL",
+   "brand": "Vitalis Farma",
+   "step": "expectorante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p180",
+   "kind": "product",
+   "label": "Acetilcisteína 600 mg — 16 envelopes",
+   "brand": "Lab Aurora",
+   "step": "expectorante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p181",
+   "kind": "product",
+   "label": "Bromexina Xarope Adulto 8 mg/5 mL — 120 mL",
+   "brand": "Farmanorte",
+   "step": "expectorante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p182",
+   "kind": "product",
+   "label": "Carbocisteína Xarope Adulto 50 mg/mL (genérico) — 100 mL",
+   "brand": "Lab Genérico Sul",
+   "step": "expectorante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p183",
+   "kind": "product",
+   "label": "Xarope de Guaco — 120 mL",
+   "brand": "Lab Nova Via",
+   "step": "expectorante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p184",
+   "kind": "product",
+   "label": "Dropropizina Xarope Adulto 3 mg/mL — 120 mL",
+   "brand": "Vitalis Farma",
+   "step": "antitussigeno",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p185",
+   "kind": "product",
+   "label": "Levodropropizina Xarope 6 mg/mL — 120 mL",
+   "brand": "Lab Aurora",
+   "step": "antitussigeno",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p186",
+   "kind": "product",
+   "label": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Mel e Limão — 8 pastilhas",
+   "brand": "Vitalis Farma",
+   "step": "pastilha_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p187",
+   "kind": "product",
+   "label": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Menta — 8 pastilhas",
+   "brand": "Farmanorte",
+   "step": "pastilha_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p188",
+   "kind": "product",
+   "label": "Flurbiprofeno 8,75 mg — 16 pastilhas",
+   "brand": "Lab Aurora",
+   "step": "pastilha_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p189",
+   "kind": "product",
+   "label": "Benzidamina 3 mg — 12 pastilhas",
+   "brand": "Lab Nova Via",
+   "step": "pastilha_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p190",
+   "kind": "product",
+   "label": "Benzidamina Spray 1,5 mg/mL — 30 mL",
+   "brand": "Vitalis Farma",
+   "step": "spray_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p191",
+   "kind": "product",
+   "label": "Benzidamina Colutório 1,5 mg/mL (genérico) — 250 mL",
+   "brand": "Lab Genérico Sul",
+   "step": "spray_garganta",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p192",
+   "kind": "product",
+   "label": "Loratadina 10 mg — 12 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p193",
+   "kind": "product",
+   "label": "Loratadina Xarope 1 mg/mL — 100 mL",
+   "brand": "Farmanorte",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p194",
+   "kind": "product",
+   "label": "Desloratadina 5 mg — 10 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p195",
+   "kind": "product",
+   "label": "Cetirizina 10 mg (genérico) — 10 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p196",
+   "kind": "product",
+   "label": "Fexofenadina 180 mg — 10 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p197",
+   "kind": "product",
+   "label": "Dexclorfeniramina 2 mg — 20 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antialergico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p198",
+   "kind": "product",
+   "label": "Loperamida 2 mg — 12 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antidiarreico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p199",
+   "kind": "product",
+   "label": "Racecadotrila 100 mg — 9 cápsulas",
+   "brand": "Lab Aurora",
+   "step": "antidiarreico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p200",
+   "kind": "product",
+   "label": "Nitazoxanida 500 mg — 6 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antidiarreico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p201",
+   "kind": "product",
+   "label": "Saccharomyces boulardii 200 mg — 12 cápsulas",
+   "brand": "Farmanorte",
+   "step": "probiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p202",
+   "kind": "product",
+   "label": "Bacillus clausii 2 bilhões — 5 flaconetes de 5 mL",
+   "brand": "Vitalis Farma",
+   "step": "probiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p203",
+   "kind": "product",
+   "label": "Sais para Reidratação Oral — envelope 27,9 g",
+   "brand": "Lab Genérico Sul",
+   "step": "reidratacao",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p204",
+   "kind": "product",
+   "label": "Soro de Reidratação Oral Pronto Sabor Coco — 500 mL",
+   "brand": "Farmanorte",
+   "step": "reidratacao",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p205",
+   "kind": "product",
+   "label": "Bisacodil 5 mg — 20 drágeas",
+   "brand": "Vitalis Farma",
+   "step": "laxante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p206",
+   "kind": "product",
+   "label": "Picossulfato de Sódio Gotas 7,5 mg/mL — 20 mL",
+   "brand": "Lab Aurora",
+   "step": "laxante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p207",
+   "kind": "product",
+   "label": "Lactulose Xarope 667 mg/mL (genérico) — 120 mL",
+   "brand": "Lab Genérico Sul",
+   "step": "laxante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p208",
+   "kind": "product",
+   "label": "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 120 mL",
+   "brand": "Farmanorte",
+   "step": "laxante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p209",
+   "kind": "product",
+   "label": "Macrogol 3350 Pó para Solução Oral — 10 sachês",
+   "brand": "Lab Nova Via",
+   "step": "laxante",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p210",
+   "kind": "product",
+   "label": "Psyllium (Plantago ovata) Pó — 10 sachês",
+   "brand": "Vitalis Farma",
+   "step": "fibra",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p211",
+   "kind": "product",
+   "label": "Psyllium (Plantago ovata) Pó — 30 sachês",
+   "brand": "Farmanorte",
+   "step": "fibra",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p212",
+   "kind": "product",
+   "label": "Dimenidrinato 100 mg — 10 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p213",
+   "kind": "product",
+   "label": "Dimenidrinato 50 mg + Piridoxina 10 mg — 10 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p214",
+   "kind": "product",
+   "label": "Dimenidrinato Gotas 25 mg/mL — 20 mL",
+   "brand": "Farmanorte",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p215",
+   "kind": "product",
+   "label": "Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis",
+   "brand": "Lab Genérico Sul",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p216",
+   "kind": "product",
+   "label": "Metoclopramida 10 mg — 20 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p217",
+   "kind": "product",
+   "label": "Domperidona 10 mg — 30 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antiemetico",
+   "domain": "medicamento"
+  },
+  {
    "id": "ptype:adesivo hidrocoloide",
    "kind": "ptype",
    "label": "adesivo hidrocoloide"
   },
   {
+   "id": "ptype:analgésico para enxaqueca",
+   "kind": "ptype",
+   "label": "analgésico para enxaqueca"
+  },
+  {
+   "id": "ptype:antigripal em comprimidos",
+   "kind": "ptype",
+   "label": "antigripal em comprimidos"
+  },
+  {
+   "id": "ptype:antigripal em cápsulas",
+   "kind": "ptype",
+   "label": "antigripal em cápsulas"
+  },
+  {
+   "id": "ptype:antiácido efervescente",
+   "kind": "ptype",
+   "label": "antiácido efervescente"
+  },
+  {
+   "id": "ptype:antiácido em suspensão",
+   "kind": "ptype",
+   "label": "antiácido em suspensão"
+  },
+  {
+   "id": "ptype:antiácido para refluxo",
+   "kind": "ptype",
+   "label": "antiácido para refluxo"
+  },
+  {
    "id": "ptype:bálsamo labial",
    "kind": "ptype",
    "label": "bálsamo labial"
+  },
+  {
+   "id": "ptype:cetirizina em comprimidos",
+   "kind": "ptype",
+   "label": "cetirizina em comprimidos"
+  },
+  {
+   "id": "ptype:ciclobenzaprina em comprimidos",
+   "kind": "ptype",
+   "label": "ciclobenzaprina em comprimidos"
   },
   {
    "id": "ptype:comprimido de uso contínuo",
@@ -1898,6 +3433,21 @@
    "label": "creme noturno"
   },
   {
+   "id": "ptype:descongestionante nasal em gotas",
+   "kind": "ptype",
+   "label": "descongestionante nasal em gotas"
+  },
+  {
+   "id": "ptype:descongestionante nasal em spray",
+   "kind": "ptype",
+   "label": "descongestionante nasal em spray"
+  },
+  {
+   "id": "ptype:desloratadina em comprimidos",
+   "kind": "ptype",
+   "label": "desloratadina em comprimidos"
+  },
+  {
    "id": "ptype:desodorante aerossol",
    "kind": "ptype",
    "label": "desodorante aerossol"
@@ -1913,9 +3463,64 @@
    "label": "desodorante roll-on"
   },
   {
+   "id": "ptype:dexclorfeniramina em comprimidos",
+   "kind": "ptype",
+   "label": "dexclorfeniramina em comprimidos"
+  },
+  {
+   "id": "ptype:diclofenaco em comprimidos",
+   "kind": "ptype",
+   "label": "diclofenaco em comprimidos"
+  },
+  {
+   "id": "ptype:dimenidrinato com vitamina B6",
+   "kind": "ptype",
+   "label": "dimenidrinato com vitamina B6"
+  },
+  {
+   "id": "ptype:dimenidrinato em comprimidos",
+   "kind": "ptype",
+   "label": "dimenidrinato em comprimidos"
+  },
+  {
+   "id": "ptype:dimenidrinato em gotas",
+   "kind": "ptype",
+   "label": "dimenidrinato em gotas"
+  },
+  {
+   "id": "ptype:dipirona em comprimidos",
+   "kind": "ptype",
+   "label": "dipirona em comprimidos"
+  },
+  {
+   "id": "ptype:dipirona em gotas",
+   "kind": "ptype",
+   "label": "dipirona em gotas"
+  },
+  {
+   "id": "ptype:domperidona em comprimidos",
+   "kind": "ptype",
+   "label": "domperidona em comprimidos"
+  },
+  {
    "id": "ptype:enxaguante bucal",
    "kind": "ptype",
    "label": "enxaguante bucal"
+  },
+  {
+   "id": "ptype:escopolamina com dipirona",
+   "kind": "ptype",
+   "label": "escopolamina com dipirona"
+  },
+  {
+   "id": "ptype:escopolamina em drágeas",
+   "kind": "ptype",
+   "label": "escopolamina em drágeas"
+  },
+  {
+   "id": "ptype:escopolamina em gotas",
+   "kind": "ptype",
+   "label": "escopolamina em gotas"
   },
   {
    "id": "ptype:esfoliante corporal",
@@ -1933,9 +3538,39 @@
    "label": "esfoliante químico"
   },
   {
+   "id": "ptype:esomeprazol em comprimidos",
+   "kind": "ptype",
+   "label": "esomeprazol em comprimidos"
+  },
+  {
    "id": "ptype:espuma de limpeza",
    "kind": "ptype",
    "label": "espuma de limpeza"
+  },
+  {
+   "id": "ptype:expectorante em envelopes",
+   "kind": "ptype",
+   "label": "expectorante em envelopes"
+  },
+  {
+   "id": "ptype:fexofenadina em comprimidos",
+   "kind": "ptype",
+   "label": "fexofenadina em comprimidos"
+  },
+  {
+   "id": "ptype:fibra em pó",
+   "kind": "ptype",
+   "label": "fibra em pó"
+  },
+  {
+   "id": "ptype:gargarejo para garganta",
+   "kind": "ptype",
+   "label": "gargarejo para garganta"
+  },
+  {
+   "id": "ptype:gel anti-inflamatório",
+   "kind": "ptype",
+   "label": "gel anti-inflamatório"
   },
   {
    "id": "ptype:gel calmante",
@@ -1988,14 +3623,74 @@
    "label": "hidratante matificante"
   },
   {
+   "id": "ptype:ibuprofeno em comprimidos",
+   "kind": "ptype",
+   "label": "ibuprofeno em comprimidos"
+  },
+  {
+   "id": "ptype:ibuprofeno em cápsulas",
+   "kind": "ptype",
+   "label": "ibuprofeno em cápsulas"
+  },
+  {
+   "id": "ptype:ibuprofeno em gotas",
+   "kind": "ptype",
+   "label": "ibuprofeno em gotas"
+  },
+  {
+   "id": "ptype:laxante em drágeas",
+   "kind": "ptype",
+   "label": "laxante em drágeas"
+  },
+  {
+   "id": "ptype:laxante em gotas",
+   "kind": "ptype",
+   "label": "laxante em gotas"
+  },
+  {
+   "id": "ptype:laxante em pó",
+   "kind": "ptype",
+   "label": "laxante em pó"
+  },
+  {
+   "id": "ptype:laxante em suspensão",
+   "kind": "ptype",
+   "label": "laxante em suspensão"
+  },
+  {
+   "id": "ptype:laxante em xarope",
+   "kind": "ptype",
+   "label": "laxante em xarope"
+  },
+  {
    "id": "ptype:leite de limpeza",
    "kind": "ptype",
    "label": "leite de limpeza"
   },
   {
+   "id": "ptype:loperamida em comprimidos",
+   "kind": "ptype",
+   "label": "loperamida em comprimidos"
+  },
+  {
+   "id": "ptype:loratadina em comprimidos",
+   "kind": "ptype",
+   "label": "loratadina em comprimidos"
+  },
+  {
+   "id": "ptype:loratadina em xarope",
+   "kind": "ptype",
+   "label": "loratadina em xarope"
+  },
+  {
    "id": "ptype:loção secativa",
    "kind": "ptype",
    "label": "loção secativa"
+  },
+  {
+   "id": "ptype:metoclopramida em comprimidos",
+   "kind": "ptype",
+   "label": "metoclopramida em comprimidos"
   },
   {
    "id": "ptype:máscara capilar",
@@ -2006,6 +3701,76 @@
    "id": "ptype:máscara de argila",
    "kind": "ptype",
    "label": "máscara de argila"
+  },
+  {
+   "id": "ptype:naproxeno em comprimidos",
+   "kind": "ptype",
+   "label": "naproxeno em comprimidos"
+  },
+  {
+   "id": "ptype:nimesulida em comprimidos",
+   "kind": "ptype",
+   "label": "nimesulida em comprimidos"
+  },
+  {
+   "id": "ptype:nitazoxanida em comprimidos",
+   "kind": "ptype",
+   "label": "nitazoxanida em comprimidos"
+  },
+  {
+   "id": "ptype:omeprazol em cápsulas",
+   "kind": "ptype",
+   "label": "omeprazol em cápsulas"
+  },
+  {
+   "id": "ptype:ondansetrona em comprimidos",
+   "kind": "ptype",
+   "label": "ondansetrona em comprimidos"
+  },
+  {
+   "id": "ptype:pantoprazol em comprimidos",
+   "kind": "ptype",
+   "label": "pantoprazol em comprimidos"
+  },
+  {
+   "id": "ptype:paracetamol com cafeína",
+   "kind": "ptype",
+   "label": "paracetamol com cafeína"
+  },
+  {
+   "id": "ptype:paracetamol em comprimidos",
+   "kind": "ptype",
+   "label": "paracetamol em comprimidos"
+  },
+  {
+   "id": "ptype:paracetamol em gotas",
+   "kind": "ptype",
+   "label": "paracetamol em gotas"
+  },
+  {
+   "id": "ptype:pastilha anti-inflamatória",
+   "kind": "ptype",
+   "label": "pastilha anti-inflamatória"
+  },
+  {
+   "id": "ptype:pastilha antisséptica",
+   "kind": "ptype",
+   "label": "pastilha antisséptica"
+  },
+  {
+   "id": "ptype:pomada para dor muscular",
+   "kind": "ptype",
+   "label": "pomada para dor muscular"
+  },
+  {
+   "id": "ptype:probiótico em cápsulas",
+   "kind": "ptype",
+   "label": "probiótico em cápsulas"
+  },
+  {
+   "id": "ptype:probiótico em flaconetes",
+   "kind": "ptype",
+   "label": "probiótico em flaconetes"
   },
   {
    "id": "ptype:protetor labial",
@@ -2021,6 +3786,21 @@
    "id": "ptype:protetor solar facial",
    "kind": "ptype",
    "label": "protetor solar facial"
+  },
+  {
+   "id": "ptype:racecadotrila em cápsulas",
+   "kind": "ptype",
+   "label": "racecadotrila em cápsulas"
+  },
+  {
+   "id": "ptype:relaxante muscular com analgésico",
+   "kind": "ptype",
+   "label": "relaxante muscular com analgésico"
+  },
+  {
+   "id": "ptype:relaxante muscular combinado",
+   "kind": "ptype",
+   "label": "relaxante muscular combinado"
   },
   {
    "id": "ptype:sabonete facial em barra",
@@ -2041,6 +3821,41 @@
    "id": "ptype:shampoo",
    "kind": "ptype",
    "label": "shampoo"
+  },
+  {
+   "id": "ptype:simeticona em comprimidos",
+   "kind": "ptype",
+   "label": "simeticona em comprimidos"
+  },
+  {
+   "id": "ptype:simeticona em cápsulas",
+   "kind": "ptype",
+   "label": "simeticona em cápsulas"
+  },
+  {
+   "id": "ptype:simeticona em gotas",
+   "kind": "ptype",
+   "label": "simeticona em gotas"
+  },
+  {
+   "id": "ptype:solução nasal de cloreto de sódio",
+   "kind": "ptype",
+   "label": "solução nasal de cloreto de sódio"
+  },
+  {
+   "id": "ptype:soro de reidratação oral",
+   "kind": "ptype",
+   "label": "soro de reidratação oral"
+  },
+  {
+   "id": "ptype:soro de reidratação pronto",
+   "kind": "ptype",
+   "label": "soro de reidratação pronto"
+  },
+  {
+   "id": "ptype:spray para garganta",
+   "kind": "ptype",
+   "label": "spray para garganta"
   },
   {
    "id": "ptype:suplemento de colágeno em cápsulas",
@@ -2103,6 +3918,31 @@
    "label": "tônico facial"
   },
   {
+   "id": "ptype:vitamina C efervescente",
+   "kind": "ptype",
+   "label": "vitamina C efervescente"
+  },
+  {
+   "id": "ptype:xarope expectorante",
+   "kind": "ptype",
+   "label": "xarope expectorante"
+  },
+  {
+   "id": "ptype:xarope fitoterápico",
+   "kind": "ptype",
+   "label": "xarope fitoterápico"
+  },
+  {
+   "id": "ptype:xarope para tosse seca",
+   "kind": "ptype",
+   "label": "xarope para tosse seca"
+  },
+  {
+   "id": "ptype:ácido acetilsalicílico em comprimidos",
+   "kind": "ptype",
+   "label": "ácido acetilsalicílico em comprimidos"
+  },
+  {
    "id": "ptype:água micelar",
    "kind": "ptype",
    "label": "água micelar"
@@ -2148,6 +3988,61 @@
    "label": "todas"
   },
   {
+   "id": "step:analgesico_dipirona",
+   "kind": "step",
+   "label": "Dipirona"
+  },
+  {
+   "id": "step:analgesico_paracetamol",
+   "kind": "step",
+   "label": "Paracetamol"
+  },
+  {
+   "id": "step:antiacido",
+   "kind": "step",
+   "label": "Antiácido"
+  },
+  {
+   "id": "step:antialergico",
+   "kind": "step",
+   "label": "Antialérgico"
+  },
+  {
+   "id": "step:antidiarreico",
+   "kind": "step",
+   "label": "Antidiarreico"
+  },
+  {
+   "id": "step:antiemetico",
+   "kind": "step",
+   "label": "Contra enjoo"
+  },
+  {
+   "id": "step:antiespasmodico",
+   "kind": "step",
+   "label": "Para cólica"
+  },
+  {
+   "id": "step:antigases",
+   "kind": "step",
+   "label": "Antigases"
+  },
+  {
+   "id": "step:antigripal",
+   "kind": "step",
+   "label": "Antigripal"
+  },
+  {
+   "id": "step:antiinflamatorio",
+   "kind": "step",
+   "label": "Anti-inflamatório"
+  },
+  {
+   "id": "step:antitussigeno",
+   "kind": "step",
+   "label": "Para tosse seca"
+  },
+  {
    "id": "step:colageno",
    "kind": "step",
    "label": "Colágeno"
@@ -2158,9 +4053,29 @@
    "label": "Complemento (olhos e lábios)"
   },
   {
+   "id": "step:descongestionante_nasal",
+   "kind": "step",
+   "label": "Nariz (soro e descongestionante)"
+  },
+  {
    "id": "step:desodorante",
    "kind": "step",
    "label": "Desodorante"
+  },
+  {
+   "id": "step:dor_topico",
+   "kind": "step",
+   "label": "Gel ou pomada para dor"
+  },
+  {
+   "id": "step:expectorante",
+   "kind": "step",
+   "label": "Expectorante"
+  },
+  {
+   "id": "step:fibra",
+   "kind": "step",
+   "label": "Fibra"
   },
   {
    "id": "step:hidratacao",
@@ -2183,6 +4098,16 @@
    "label": "Higiene bucal"
   },
   {
+   "id": "step:imunidade",
+   "kind": "step",
+   "label": "Vitamina C"
+  },
+  {
+   "id": "step:laxante",
+   "kind": "step",
+   "label": "Laxante"
+  },
+  {
    "id": "step:limpeza",
    "kind": "step",
    "label": "Limpeza"
@@ -2198,9 +4123,19 @@
    "label": "Ômega 3"
   },
   {
+   "id": "step:pastilha_garganta",
+   "kind": "step",
+   "label": "Pastilha para garganta"
+  },
+  {
    "id": "step:preparo",
    "kind": "step",
    "label": "Tônico, esfoliante ou máscara"
+  },
+  {
+   "id": "step:probiotico",
+   "kind": "step",
+   "label": "Probiótico"
   },
   {
    "id": "step:protecao_corporal",
@@ -2213,9 +4148,29 @@
    "label": "Proteção solar facial"
   },
   {
+   "id": "step:protetor_gastrico",
+   "kind": "step",
+   "label": "Protetor gástrico"
+  },
+  {
+   "id": "step:reidratacao",
+   "kind": "step",
+   "label": "Reidratação oral"
+  },
+  {
+   "id": "step:relaxante_muscular",
+   "kind": "step",
+   "label": "Relaxante muscular"
+  },
+  {
    "id": "step:reposicao",
    "kind": "step",
    "label": "Reposição de medicamento contínuo"
+  },
+  {
+   "id": "step:spray_garganta",
+   "kind": "step",
+   "label": "Spray ou gargarejo para garganta"
   },
   {
    "id": "step:tratamento",
@@ -2230,17 +4185,17 @@
   {
    "id": "warning:confirmar_troca_com_farmaceutico",
    "kind": "warning",
-   "label": "Troca por outra apresentação só com orientação do farmacêutico e conforme a sua receita."
+   "label": "Troca por outra apresentação conforme a sua receita."
   },
   {
    "id": "warning:consultar_se_gestante",
    "kind": "warning",
-   "label": "Em gestação ou amamentação, converse com um profissional de saúde antes de usar."
+   "label": "Contém ativo com restrição de uso na gestação e na amamentação."
   },
   {
    "id": "warning:consultar_se_medicacao",
    "kind": "warning",
-   "label": "Se você usa medicamento contínuo ou tem alguma condição de saúde, converse com seu médico ou farmacêutico antes de começar a usar."
+   "label": "Suplemento alimentar: se você usa medicamento contínuo, confira na embalagem as interações informadas."
   },
   {
    "id": "warning:evitar_contato_olhos",
@@ -2315,6 +4270,23 @@
    "required": true
   },
   {
+   "from": "goal:alergia",
+   "to": "concern:alergia",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:alergia",
+   "to": "step:antialergico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:alergia",
+   "to": "step:descongestionante_nasal",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
    "from": "goal:anti_idade",
    "to": "concern:olheiras",
    "type": "TARGETS"
@@ -2353,6 +4325,207 @@
    "to": "step:tratamento",
    "type": "REQUIRES",
    "required": true
+  },
+  {
+   "from": "goal:azia",
+   "to": "concern:azia",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:azia",
+   "to": "step:antiacido",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:azia",
+   "to": "step:protetor_gastrico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:diarreia",
+   "to": "concern:diarreia",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:diarreia",
+   "to": "step:antidiarreico",
+   "type": "REQUIRES",
+   "required": false
+  },
+  {
+   "from": "goal:diarreia",
+   "to": "step:probiotico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:diarreia",
+   "to": "step:reidratacao",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_barriga",
+   "to": "concern:dor_de_barriga",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_barriga",
+   "to": "concern:gases",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_barriga",
+   "to": "step:antiespasmodico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_barriga",
+   "to": "step:antigases",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_cabeca",
+   "to": "concern:dor_de_cabeca",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_cabeca",
+   "to": "concern:enxaqueca",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_cabeca",
+   "to": "concern:febre",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_cabeca",
+   "to": "step:analgesico_dipirona",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_cabeca",
+   "to": "step:analgesico_paracetamol",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_garganta",
+   "to": "concern:dor_de_garganta",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_de_garganta",
+   "to": "step:pastilha_garganta",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_de_garganta",
+   "to": "step:spray_garganta",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_muscular",
+   "to": "concern:dor_muscular",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_muscular",
+   "to": "step:antiinflamatorio",
+   "type": "REQUIRES",
+   "required": false
+  },
+  {
+   "from": "goal:dor_muscular",
+   "to": "step:dor_topico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_muscular",
+   "to": "step:relaxante_muscular",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_no_corpo",
+   "to": "concern:dor_no_corpo",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_no_corpo",
+   "to": "concern:febre",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:dor_no_corpo",
+   "to": "step:analgesico_paracetamol",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:dor_no_corpo",
+   "to": "step:antiinflamatorio",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:enjoo",
+   "to": "concern:enjoo",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:enjoo",
+   "to": "step:antiemetico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:enjoo",
+   "to": "step:reidratacao",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:gripe",
+   "to": "concern:febre",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:gripe",
+   "to": "concern:gripe",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:gripe",
+   "to": "concern:nariz_entupido",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:gripe",
+   "to": "step:antigripal",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:gripe",
+   "to": "step:descongestionante_nasal",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:gripe",
+   "to": "step:imunidade",
+   "type": "REQUIRES",
+   "required": false
   },
   {
    "from": "goal:higiene_premium",
@@ -2502,6 +4675,23 @@
    "required": false
   },
   {
+   "from": "goal:prisao_de_ventre",
+   "to": "concern:prisao_de_ventre",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:prisao_de_ventre",
+   "to": "step:fibra",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:prisao_de_ventre",
+   "to": "step:laxante",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
    "from": "goal:protecao_solar",
    "to": "concern:fotoprotecao",
    "type": "TARGETS"
@@ -2593,6 +4783,110 @@
    "required": false
   },
   {
+   "from": "goal:tosse",
+   "to": "concern:tosse",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:tosse",
+   "to": "step:expectorante",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:tosse",
+   "to": "step:pastilha_garganta",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:tosse_seca",
+   "to": "concern:tosse_seca",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:tosse_seca",
+   "to": "step:antitussigeno",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:tosse_seca",
+   "to": "step:pastilha_garganta",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "ingredient:acetilcisteina",
+   "to": "ingredient:dropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:acetilcisteina",
+   "to": "ingredient:levodropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:acido_acetilsalicilico",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
    "from": "ingredient:acido_azelaico",
    "to": "ingredient:retinol",
    "type": "CONFLICTS_WITH",
@@ -2668,6 +4962,580 @@
    "type": "CONFLICTS_WITH",
    "severity": "evitar",
    "reason": "Ácido esfoliante junto com retinol aumenta o risco de irritação."
+  },
+  {
+   "from": "ingredient:ambroxol",
+   "to": "ingredient:dropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:ambroxol",
+   "to": "ingredient:levodropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:benzidamina",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:bromexina",
+   "to": "ingredient:dropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:bromexina",
+   "to": "ingredient:levodropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:carbocisteina",
+   "to": "ingredient:dropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:carbocisteina",
+   "to": "ingredient:levodropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_dietilamonio",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_potassico",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:diclofenaco_sodico",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:dropropizina",
+   "to": "ingredient:acetilcisteina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:dropropizina",
+   "to": "ingredient:ambroxol",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:dropropizina",
+   "to": "ingredient:bromexina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:dropropizina",
+   "to": "ingredient:carbocisteina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:dropropizina",
+   "to": "ingredient:guaco",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:flurbiprofeno",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:guaco",
+   "to": "ingredient:dropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:guaco",
+   "to": "ingredient:levodropropizina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:ibuprofeno",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:levodropropizina",
+   "to": "ingredient:acetilcisteina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:levodropropizina",
+   "to": "ingredient:ambroxol",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:levodropropizina",
+   "to": "ingredient:bromexina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:levodropropizina",
+   "to": "ingredient:carbocisteina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:levodropropizina",
+   "to": "ingredient:guaco",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:naproxeno",
+   "to": "ingredient:nimesulida",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:benzidamina",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+  },
+  {
+   "from": "ingredient:nimesulida",
+   "to": "ingredient:naproxeno",
+   "type": "CONFLICTS_WITH",
+   "severity": "evitar",
+   "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
   },
   {
    "from": "ingredient:retinol",
@@ -13626,6 +16494,11 @@
   },
   {
    "from": "product:p131",
+   "to": "concern:hipertensao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p131",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13653,15 +16526,51 @@
   },
   {
    "from": "product:p131",
+   "to": "product:p132",
+   "type": "SIMILAR_TO",
+   "weight": 0.8463
+  },
+  {
+   "from": "product:p131",
    "to": "product:p133",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
   },
   {
    "from": "product:p131",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.8855
+  },
+  {
+   "from": "product:p131",
    "to": "product:p134",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p131",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.8579
+  },
+  {
+   "from": "product:p131",
+   "to": "product:p135",
+   "type": "SIMILAR_TO",
+   "weight": 0.4075
+  },
+  {
+   "from": "product:p131",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.3164
+  },
+  {
+   "from": "product:p131",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.3101
   },
   {
    "from": "product:p131",
@@ -13696,6 +16605,11 @@
   },
   {
    "from": "product:p132",
+   "to": "concern:hipertensao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p132",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13723,15 +16637,51 @@
   },
   {
    "from": "product:p132",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.8463
+  },
+  {
+   "from": "product:p132",
    "to": "product:p133",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
   },
   {
    "from": "product:p132",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.9542
+  },
+  {
+   "from": "product:p132",
    "to": "product:p134",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p132",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.8799
+  },
+  {
+   "from": "product:p132",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.4044
+  },
+  {
+   "from": "product:p132",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.3718
+  },
+  {
+   "from": "product:p132",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.2936
   },
   {
    "from": "product:p132",
@@ -13766,6 +16716,11 @@
   },
   {
    "from": "product:p133",
+   "to": "concern:hipertensao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p133",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13793,15 +16748,51 @@
   },
   {
    "from": "product:p133",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.8855
+  },
+  {
+   "from": "product:p133",
    "to": "product:p132",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
   },
   {
    "from": "product:p133",
+   "to": "product:p132",
+   "type": "SIMILAR_TO",
+   "weight": 0.9542
+  },
+  {
+   "from": "product:p133",
    "to": "product:p134",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p133",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.8677
+  },
+  {
+   "from": "product:p133",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.4096
+  },
+  {
+   "from": "product:p133",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.4044
+  },
+  {
+   "from": "product:p133",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.3231
   },
   {
    "from": "product:p133",
@@ -13836,6 +16827,11 @@
   },
   {
    "from": "product:p134",
+   "to": "concern:hipertensao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p134",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13863,15 +16859,51 @@
   },
   {
    "from": "product:p134",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.8579
+  },
+  {
+   "from": "product:p134",
    "to": "product:p132",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
   },
   {
    "from": "product:p134",
+   "to": "product:p132",
+   "type": "SIMILAR_TO",
+   "weight": 0.8799
+  },
+  {
+   "from": "product:p134",
    "to": "product:p133",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
+  },
+  {
+   "from": "product:p134",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.8677
+  },
+  {
+   "from": "product:p134",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.3222
+  },
+  {
+   "from": "product:p134",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.2815
+  },
+  {
+   "from": "product:p134",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.4088
   },
   {
    "from": "product:p134",
@@ -13906,6 +16938,11 @@
   },
   {
    "from": "product:p135",
+   "to": "concern:colesterol",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p135",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13927,9 +16964,33 @@
   },
   {
    "from": "product:p135",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.4075
+  },
+  {
+   "from": "product:p135",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.2967
+  },
+  {
+   "from": "product:p135",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.2763
+  },
+  {
+   "from": "product:p135",
    "to": "product:p136",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
+  },
+  {
+   "from": "product:p135",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.8483
   },
   {
    "from": "product:p135",
@@ -13939,9 +17000,21 @@
   },
   {
    "from": "product:p135",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.8892
+  },
+  {
+   "from": "product:p135",
    "to": "product:p138",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p135",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.8569
   },
   {
    "from": "product:p135",
@@ -13976,6 +17049,11 @@
   },
   {
    "from": "product:p136",
+   "to": "concern:colesterol",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p136",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -13997,9 +17075,33 @@
   },
   {
    "from": "product:p136",
+   "to": "product:p132",
+   "type": "SIMILAR_TO",
+   "weight": 0.4044
+  },
+  {
+   "from": "product:p136",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.4096
+  },
+  {
+   "from": "product:p136",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.3222
+  },
+  {
+   "from": "product:p136",
    "to": "product:p135",
    "type": "EQUIVALENT_TO",
    "presentation": "referencia"
+  },
+  {
+   "from": "product:p136",
+   "to": "product:p135",
+   "type": "SIMILAR_TO",
+   "weight": 0.8483
   },
   {
    "from": "product:p136",
@@ -14009,9 +17111,21 @@
   },
   {
    "from": "product:p136",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.9542
+  },
+  {
+   "from": "product:p136",
    "to": "product:p138",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p136",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.8849
   },
   {
    "from": "product:p136",
@@ -14046,6 +17160,11 @@
   },
   {
    "from": "product:p137",
+   "to": "concern:colesterol",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p137",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -14067,9 +17186,33 @@
   },
   {
    "from": "product:p137",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.3164
+  },
+  {
+   "from": "product:p137",
+   "to": "product:p132",
+   "type": "SIMILAR_TO",
+   "weight": 0.3718
+  },
+  {
+   "from": "product:p137",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.4044
+  },
+  {
+   "from": "product:p137",
    "to": "product:p135",
    "type": "EQUIVALENT_TO",
    "presentation": "referencia"
+  },
+  {
+   "from": "product:p137",
+   "to": "product:p135",
+   "type": "SIMILAR_TO",
+   "weight": 0.8892
   },
   {
    "from": "product:p137",
@@ -14079,9 +17222,21 @@
   },
   {
    "from": "product:p137",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.9542
+  },
+  {
+   "from": "product:p137",
    "to": "product:p138",
    "type": "EQUIVALENT_TO",
    "presentation": "similar"
+  },
+  {
+   "from": "product:p137",
+   "to": "product:p138",
+   "type": "SIMILAR_TO",
+   "weight": 0.8638
   },
   {
    "from": "product:p137",
@@ -14116,6 +17271,11 @@
   },
   {
    "from": "product:p138",
+   "to": "concern:colesterol",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p138",
    "to": "concern:reposicao",
    "type": "ADDRESSES"
   },
@@ -14137,9 +17297,33 @@
   },
   {
    "from": "product:p138",
+   "to": "product:p131",
+   "type": "SIMILAR_TO",
+   "weight": 0.3101
+  },
+  {
+   "from": "product:p138",
+   "to": "product:p133",
+   "type": "SIMILAR_TO",
+   "weight": 0.3231
+  },
+  {
+   "from": "product:p138",
+   "to": "product:p134",
+   "type": "SIMILAR_TO",
+   "weight": 0.4088
+  },
+  {
+   "from": "product:p138",
    "to": "product:p135",
    "type": "EQUIVALENT_TO",
    "presentation": "referencia"
+  },
+  {
+   "from": "product:p138",
+   "to": "product:p135",
+   "type": "SIMILAR_TO",
+   "weight": 0.8569
   },
   {
    "from": "product:p138",
@@ -14149,9 +17333,21 @@
   },
   {
    "from": "product:p138",
+   "to": "product:p136",
+   "type": "SIMILAR_TO",
+   "weight": 0.8849
+  },
+  {
+   "from": "product:p138",
    "to": "product:p137",
    "type": "EQUIVALENT_TO",
    "presentation": "generico"
+  },
+  {
+   "from": "product:p138",
+   "to": "product:p137",
+   "type": "SIMILAR_TO",
+   "weight": 0.8638
   },
   {
    "from": "product:p138",
@@ -14178,41 +17374,4708 @@
    "from": "product:p138",
    "to": "warning:receita_obrigatoria",
    "type": "HAS_WARNING"
+  },
+  {
+   "from": "product:p139",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p139",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p139",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p139",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p139",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p139",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p139",
+   "to": "product:p140",
+   "type": "SIMILAR_TO",
+   "weight": 0.8664
+  },
+  {
+   "from": "product:p139",
+   "to": "product:p141",
+   "type": "SIMILAR_TO",
+   "weight": 0.7465
+  },
+  {
+   "from": "product:p139",
+   "to": "product:p145",
+   "type": "SIMILAR_TO",
+   "weight": 0.3317
+  },
+  {
+   "from": "product:p139",
+   "to": "ptype:dipirona em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p139",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p139",
+   "to": "step:analgesico_dipirona",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p140",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p140",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p140",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p140",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p140",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p140",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p140",
+   "to": "product:p139",
+   "type": "SIMILAR_TO",
+   "weight": 0.8664
+  },
+  {
+   "from": "product:p140",
+   "to": "product:p141",
+   "type": "SIMILAR_TO",
+   "weight": 0.7499
+  },
+  {
+   "from": "product:p140",
+   "to": "product:p145",
+   "type": "SIMILAR_TO",
+   "weight": 0.3478
+  },
+  {
+   "from": "product:p140",
+   "to": "ptype:dipirona em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p140",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p140",
+   "to": "step:analgesico_dipirona",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p141",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p141",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p141",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p141",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p141",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p141",
+   "to": "product:p139",
+   "type": "SIMILAR_TO",
+   "weight": 0.7465
+  },
+  {
+   "from": "product:p141",
+   "to": "product:p140",
+   "type": "SIMILAR_TO",
+   "weight": 0.7499
+  },
+  {
+   "from": "product:p141",
+   "to": "product:p145",
+   "type": "SIMILAR_TO",
+   "weight": 0.3731
+  },
+  {
+   "from": "product:p141",
+   "to": "ptype:dipirona em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p141",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p141",
+   "to": "step:analgesico_dipirona",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p142",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p142",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p142",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p142",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p142",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p142",
+   "to": "ingredient:paracetamol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p142",
+   "to": "product:p143",
+   "type": "SIMILAR_TO",
+   "weight": 0.4148
+  },
+  {
+   "from": "product:p142",
+   "to": "product:p144",
+   "type": "SIMILAR_TO",
+   "weight": 0.7512
+  },
+  {
+   "from": "product:p142",
+   "to": "ptype:paracetamol em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p142",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p142",
+   "to": "step:analgesico_paracetamol",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p143",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p143",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p143",
+   "to": "concern:enxaqueca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p143",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p143",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p143",
+   "to": "ingredient:paracetamol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p143",
+   "to": "product:p142",
+   "type": "SIMILAR_TO",
+   "weight": 0.4148
+  },
+  {
+   "from": "product:p143",
+   "to": "product:p144",
+   "type": "SIMILAR_TO",
+   "weight": 0.4381
+  },
+  {
+   "from": "product:p143",
+   "to": "ptype:paracetamol com cafeína",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p143",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p143",
+   "to": "step:analgesico_paracetamol",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p144",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p144",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p144",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p144",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p144",
+   "to": "ingredient:paracetamol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p144",
+   "to": "product:p142",
+   "type": "SIMILAR_TO",
+   "weight": 0.7512
+  },
+  {
+   "from": "product:p144",
+   "to": "product:p143",
+   "type": "SIMILAR_TO",
+   "weight": 0.4381
+  },
+  {
+   "from": "product:p144",
+   "to": "ptype:paracetamol em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p144",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p144",
+   "to": "step:analgesico_paracetamol",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p145",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p145",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p145",
+   "to": "concern:enxaqueca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p145",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p145",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p145",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p145",
+   "to": "ingredient:isometepteno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p145",
+   "to": "product:p139",
+   "type": "SIMILAR_TO",
+   "weight": 0.3317
+  },
+  {
+   "from": "product:p145",
+   "to": "product:p140",
+   "type": "SIMILAR_TO",
+   "weight": 0.3478
+  },
+  {
+   "from": "product:p145",
+   "to": "product:p141",
+   "type": "SIMILAR_TO",
+   "weight": 0.3731
+  },
+  {
+   "from": "product:p145",
+   "to": "ptype:analgésico para enxaqueca",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p145",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p145",
+   "to": "step:analgesico_dipirona",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p146",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p146",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p146",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p146",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p146",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p146",
+   "to": "ingredient:acido_acetilsalicilico",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.4597
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.3471
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.4193
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.3497
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.3389
+  },
+  {
+   "from": "product:p146",
+   "to": "product:p153",
+   "type": "SIMILAR_TO",
+   "weight": 0.269
+  },
+  {
+   "from": "product:p146",
+   "to": "ptype:ácido acetilsalicílico em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p146",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p146",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p147",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p147",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p147",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p147",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p147",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p147",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p147",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p146",
+   "type": "SIMILAR_TO",
+   "weight": 0.4597
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.6788
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.4832
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.368
+  },
+  {
+   "from": "product:p147",
+   "to": "product:p153",
+   "type": "SIMILAR_TO",
+   "weight": 0.3666
+  },
+  {
+   "from": "product:p147",
+   "to": "ptype:ibuprofeno em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p147",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p147",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p148",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p148",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p148",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p148",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p148",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p146",
+   "type": "SIMILAR_TO",
+   "weight": 0.3471
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.6788
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.6228
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.4614
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.6825
+  },
+  {
+   "from": "product:p148",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.5863
+  },
+  {
+   "from": "product:p148",
+   "to": "ptype:ibuprofeno em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p148",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p148",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p149",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p149",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p149",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p149",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p149",
+   "to": "ingredient:ibuprofeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p146",
+   "type": "SIMILAR_TO",
+   "weight": 0.4193
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.6228
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.3071
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.3105
+  },
+  {
+   "from": "product:p149",
+   "to": "product:p153",
+   "type": "SIMILAR_TO",
+   "weight": 0.3097
+  },
+  {
+   "from": "product:p149",
+   "to": "ptype:ibuprofeno em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p149",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p149",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p150",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p150",
+   "to": "concern:dor_de_cabeca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p150",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p150",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p150",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p150",
+   "to": "ingredient:naproxeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p146",
+   "type": "SIMILAR_TO",
+   "weight": 0.3497
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.4832
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.4614
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.2944
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.7448
+  },
+  {
+   "from": "product:p150",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.4484
+  },
+  {
+   "from": "product:p150",
+   "to": "ptype:naproxeno em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p150",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p150",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p151",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p151",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p151",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p151",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p151",
+   "to": "ingredient:naproxeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p146",
+   "type": "SIMILAR_TO",
+   "weight": 0.3389
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.3651
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.6825
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.3071
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.7448
+  },
+  {
+   "from": "product:p151",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.5956
+  },
+  {
+   "from": "product:p151",
+   "to": "ptype:naproxeno em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p151",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p151",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p152",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p152",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p152",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p152",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p152",
+   "to": "ingredient:diclofenaco_potassico",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.368
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.5863
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.3105
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.4484
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.5956
+  },
+  {
+   "from": "product:p152",
+   "to": "product:p153",
+   "type": "SIMILAR_TO",
+   "weight": 0.2922
+  },
+  {
+   "from": "product:p152",
+   "to": "ptype:diclofenaco em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p152",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p152",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p153",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p153",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p153",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p153",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p153",
+   "to": "ingredient:nimesulida",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p147",
+   "type": "SIMILAR_TO",
+   "weight": 0.3666
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p148",
+   "type": "SIMILAR_TO",
+   "weight": 0.3016
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p149",
+   "type": "SIMILAR_TO",
+   "weight": 0.3097
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p150",
+   "type": "SIMILAR_TO",
+   "weight": 0.2721
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p151",
+   "type": "SIMILAR_TO",
+   "weight": 0.2897
+  },
+  {
+   "from": "product:p153",
+   "to": "product:p152",
+   "type": "SIMILAR_TO",
+   "weight": 0.2922
+  },
+  {
+   "from": "product:p153",
+   "to": "ptype:nimesulida em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p153",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p153",
+   "to": "step:antiinflamatorio",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p154",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p154",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p154",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p154",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p154",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p154",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p154",
+   "to": "ingredient:orfenadrina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p154",
+   "to": "product:p155",
+   "type": "SIMILAR_TO",
+   "weight": 0.9355
+  },
+  {
+   "from": "product:p154",
+   "to": "product:p156",
+   "type": "SIMILAR_TO",
+   "weight": 0.3398
+  },
+  {
+   "from": "product:p154",
+   "to": "product:p157",
+   "type": "SIMILAR_TO",
+   "weight": 0.3301
+  },
+  {
+   "from": "product:p154",
+   "to": "product:p158",
+   "type": "SIMILAR_TO",
+   "weight": 0.5831
+  },
+  {
+   "from": "product:p154",
+   "to": "ptype:relaxante muscular com analgésico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p154",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p154",
+   "to": "step:relaxante_muscular",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p155",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p155",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p155",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p155",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p155",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p155",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p155",
+   "to": "ingredient:orfenadrina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p155",
+   "to": "product:p154",
+   "type": "SIMILAR_TO",
+   "weight": 0.9355
+  },
+  {
+   "from": "product:p155",
+   "to": "product:p156",
+   "type": "SIMILAR_TO",
+   "weight": 0.3892
+  },
+  {
+   "from": "product:p155",
+   "to": "product:p157",
+   "type": "SIMILAR_TO",
+   "weight": 0.3848
+  },
+  {
+   "from": "product:p155",
+   "to": "product:p158",
+   "type": "SIMILAR_TO",
+   "weight": 0.6433
+  },
+  {
+   "from": "product:p155",
+   "to": "ptype:relaxante muscular com analgésico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p155",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p155",
+   "to": "step:relaxante_muscular",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p156",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p156",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p156",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p156",
+   "to": "ingredient:ciclobenzaprina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p156",
+   "to": "product:p154",
+   "type": "SIMILAR_TO",
+   "weight": 0.3398
+  },
+  {
+   "from": "product:p156",
+   "to": "product:p155",
+   "type": "SIMILAR_TO",
+   "weight": 0.3892
+  },
+  {
+   "from": "product:p156",
+   "to": "product:p157",
+   "type": "SIMILAR_TO",
+   "weight": 0.8757
+  },
+  {
+   "from": "product:p156",
+   "to": "product:p158",
+   "type": "SIMILAR_TO",
+   "weight": 0.3833
+  },
+  {
+   "from": "product:p156",
+   "to": "ptype:ciclobenzaprina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p156",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p156",
+   "to": "step:relaxante_muscular",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p157",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p157",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p157",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p157",
+   "to": "ingredient:ciclobenzaprina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p157",
+   "to": "product:p154",
+   "type": "SIMILAR_TO",
+   "weight": 0.3301
+  },
+  {
+   "from": "product:p157",
+   "to": "product:p155",
+   "type": "SIMILAR_TO",
+   "weight": 0.3848
+  },
+  {
+   "from": "product:p157",
+   "to": "product:p156",
+   "type": "SIMILAR_TO",
+   "weight": 0.8757
+  },
+  {
+   "from": "product:p157",
+   "to": "product:p158",
+   "type": "SIMILAR_TO",
+   "weight": 0.3909
+  },
+  {
+   "from": "product:p157",
+   "to": "ptype:ciclobenzaprina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p157",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p157",
+   "to": "step:relaxante_muscular",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p158",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p158",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p158",
+   "to": "concern:dor_no_corpo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p158",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p158",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p158",
+   "to": "ingredient:carisoprodol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p158",
+   "to": "ingredient:diclofenaco_sodico",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p158",
+   "to": "ingredient:paracetamol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p158",
+   "to": "product:p154",
+   "type": "SIMILAR_TO",
+   "weight": 0.5831
+  },
+  {
+   "from": "product:p158",
+   "to": "product:p155",
+   "type": "SIMILAR_TO",
+   "weight": 0.6433
+  },
+  {
+   "from": "product:p158",
+   "to": "product:p156",
+   "type": "SIMILAR_TO",
+   "weight": 0.3833
+  },
+  {
+   "from": "product:p158",
+   "to": "product:p157",
+   "type": "SIMILAR_TO",
+   "weight": 0.3909
+  },
+  {
+   "from": "product:p158",
+   "to": "ptype:relaxante muscular combinado",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p158",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p158",
+   "to": "step:relaxante_muscular",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p159",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p159",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p159",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p159",
+   "to": "ingredient:diclofenaco_dietilamonio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p159",
+   "to": "product:p160",
+   "type": "SIMILAR_TO",
+   "weight": 0.5554
+  },
+  {
+   "from": "product:p159",
+   "to": "ptype:gel anti-inflamatório",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p159",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p159",
+   "to": "step:dor_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p160",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p160",
+   "to": "concern:dor_muscular",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p160",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p160",
+   "to": "ingredient:canfora",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p160",
+   "to": "ingredient:mentol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p160",
+   "to": "ingredient:salicilato_metila",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p160",
+   "to": "product:p159",
+   "type": "SIMILAR_TO",
+   "weight": 0.5554
+  },
+  {
+   "from": "product:p160",
+   "to": "ptype:pomada para dor muscular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p160",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p160",
+   "to": "step:dor_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p161",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p161",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p161",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p161",
+   "to": "ingredient:escopolamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p161",
+   "to": "product:p162",
+   "type": "SIMILAR_TO",
+   "weight": 0.8894
+  },
+  {
+   "from": "product:p161",
+   "to": "product:p163",
+   "type": "SIMILAR_TO",
+   "weight": 0.7238
+  },
+  {
+   "from": "product:p161",
+   "to": "ptype:escopolamina em drágeas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p161",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p161",
+   "to": "step:antiespasmodico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p162",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p162",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p162",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p162",
+   "to": "ingredient:escopolamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p162",
+   "to": "product:p161",
+   "type": "SIMILAR_TO",
+   "weight": 0.8894
+  },
+  {
+   "from": "product:p162",
+   "to": "product:p163",
+   "type": "SIMILAR_TO",
+   "weight": 0.7325
+  },
+  {
+   "from": "product:p162",
+   "to": "ptype:escopolamina em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p162",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p162",
+   "to": "step:antiespasmodico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p163",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p163",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p163",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p163",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p163",
+   "to": "ingredient:escopolamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p163",
+   "to": "product:p161",
+   "type": "SIMILAR_TO",
+   "weight": 0.7238
+  },
+  {
+   "from": "product:p163",
+   "to": "product:p162",
+   "type": "SIMILAR_TO",
+   "weight": 0.7325
+  },
+  {
+   "from": "product:p163",
+   "to": "ptype:escopolamina com dipirona",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p163",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p163",
+   "to": "step:antiespasmodico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p164",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p164",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p164",
+   "to": "concern:gases",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p164",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p164",
+   "to": "ingredient:simeticona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p164",
+   "to": "product:p165",
+   "type": "SIMILAR_TO",
+   "weight": 0.869
+  },
+  {
+   "from": "product:p164",
+   "to": "product:p166",
+   "type": "SIMILAR_TO",
+   "weight": 0.8597
+  },
+  {
+   "from": "product:p164",
+   "to": "ptype:simeticona em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p164",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p164",
+   "to": "step:antigases",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p165",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p165",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p165",
+   "to": "concern:gases",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p165",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p165",
+   "to": "ingredient:simeticona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p165",
+   "to": "product:p164",
+   "type": "SIMILAR_TO",
+   "weight": 0.869
+  },
+  {
+   "from": "product:p165",
+   "to": "product:p166",
+   "type": "SIMILAR_TO",
+   "weight": 0.8866
+  },
+  {
+   "from": "product:p165",
+   "to": "ptype:simeticona em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p165",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p165",
+   "to": "step:antigases",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p166",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p166",
+   "to": "concern:dor_de_barriga",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p166",
+   "to": "concern:gases",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p166",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p166",
+   "to": "ingredient:simeticona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p166",
+   "to": "product:p164",
+   "type": "SIMILAR_TO",
+   "weight": 0.8597
+  },
+  {
+   "from": "product:p166",
+   "to": "product:p165",
+   "type": "SIMILAR_TO",
+   "weight": 0.8866
+  },
+  {
+   "from": "product:p166",
+   "to": "ptype:simeticona em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p166",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p166",
+   "to": "step:antigases",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p167",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p167",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p167",
+   "to": "concern:gases",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p167",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p167",
+   "to": "ingredient:hidroxido_aluminio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p167",
+   "to": "ingredient:hidroxido_magnesio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p167",
+   "to": "ingredient:simeticona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p167",
+   "to": "product:p168",
+   "type": "SIMILAR_TO",
+   "weight": 0.3197
+  },
+  {
+   "from": "product:p167",
+   "to": "product:p169",
+   "type": "SIMILAR_TO",
+   "weight": 0.3833
+  },
+  {
+   "from": "product:p167",
+   "to": "ptype:antiácido em suspensão",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p167",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p167",
+   "to": "step:antiacido",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p168",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p168",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p168",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p168",
+   "to": "ingredient:acido_citrico",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p168",
+   "to": "ingredient:bicarbonato_sodio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p168",
+   "to": "ingredient:carbonato_sodio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p168",
+   "to": "product:p167",
+   "type": "SIMILAR_TO",
+   "weight": 0.3197
+  },
+  {
+   "from": "product:p168",
+   "to": "product:p169",
+   "type": "SIMILAR_TO",
+   "weight": 0.5914
+  },
+  {
+   "from": "product:p168",
+   "to": "ptype:antiácido efervescente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p168",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p168",
+   "to": "step:antiacido",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p169",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p169",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p169",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p169",
+   "to": "ingredient:alginato_sodio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p169",
+   "to": "ingredient:bicarbonato_sodio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p169",
+   "to": "product:p167",
+   "type": "SIMILAR_TO",
+   "weight": 0.3833
+  },
+  {
+   "from": "product:p169",
+   "to": "product:p168",
+   "type": "SIMILAR_TO",
+   "weight": 0.5914
+  },
+  {
+   "from": "product:p169",
+   "to": "ptype:antiácido para refluxo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p169",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p169",
+   "to": "step:antiacido",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p170",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p170",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p170",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p170",
+   "to": "ingredient:omeprazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p170",
+   "to": "product:p171",
+   "type": "SIMILAR_TO",
+   "weight": 0.5398
+  },
+  {
+   "from": "product:p170",
+   "to": "product:p172",
+   "type": "SIMILAR_TO",
+   "weight": 0.529
+  },
+  {
+   "from": "product:p170",
+   "to": "ptype:omeprazol em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p170",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p170",
+   "to": "step:protetor_gastrico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p171",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p171",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p171",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p171",
+   "to": "ingredient:pantoprazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p171",
+   "to": "product:p170",
+   "type": "SIMILAR_TO",
+   "weight": 0.5398
+  },
+  {
+   "from": "product:p171",
+   "to": "product:p172",
+   "type": "SIMILAR_TO",
+   "weight": 0.5727
+  },
+  {
+   "from": "product:p171",
+   "to": "ptype:pantoprazol em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p171",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p171",
+   "to": "step:protetor_gastrico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p172",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p172",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p172",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p172",
+   "to": "ingredient:esomeprazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p172",
+   "to": "product:p170",
+   "type": "SIMILAR_TO",
+   "weight": 0.529
+  },
+  {
+   "from": "product:p172",
+   "to": "product:p171",
+   "type": "SIMILAR_TO",
+   "weight": 0.5727
+  },
+  {
+   "from": "product:p172",
+   "to": "ptype:esomeprazol em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p172",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p172",
+   "to": "step:protetor_gastrico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p173",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p173",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p173",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p173",
+   "to": "concern:nariz_entupido",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p173",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p173",
+   "to": "ingredient:clorfeniramina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p173",
+   "to": "ingredient:fenilefrina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p173",
+   "to": "ingredient:paracetamol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p173",
+   "to": "product:p174",
+   "type": "SIMILAR_TO",
+   "weight": 0.5155
+  },
+  {
+   "from": "product:p173",
+   "to": "ptype:antigripal em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p173",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p173",
+   "to": "step:antigripal",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p174",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p174",
+   "to": "concern:febre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p174",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p174",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p174",
+   "to": "ingredient:cafeina_med",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p174",
+   "to": "ingredient:clorfeniramina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p174",
+   "to": "ingredient:dipirona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p174",
+   "to": "product:p173",
+   "type": "SIMILAR_TO",
+   "weight": 0.5155
+  },
+  {
+   "from": "product:p174",
+   "to": "ptype:antigripal em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p174",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p174",
+   "to": "step:antigripal",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p175",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p175",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p175",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p175",
+   "to": "ingredient:acido_ascorbico",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p175",
+   "to": "ptype:vitamina C efervescente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p175",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p175",
+   "to": "step:imunidade",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p176",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p176",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p176",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p176",
+   "to": "concern:nariz_entupido",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p176",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p176",
+   "to": "ingredient:cloreto_sodio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p176",
+   "to": "product:p177",
+   "type": "SIMILAR_TO",
+   "weight": 0.454
+  },
+  {
+   "from": "product:p176",
+   "to": "product:p178",
+   "type": "SIMILAR_TO",
+   "weight": 0.3944
+  },
+  {
+   "from": "product:p176",
+   "to": "ptype:solução nasal de cloreto de sódio",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p176",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p176",
+   "to": "step:descongestionante_nasal",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p177",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p177",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p177",
+   "to": "concern:nariz_entupido",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p177",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p177",
+   "to": "ingredient:nafazolina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p177",
+   "to": "product:p176",
+   "type": "SIMILAR_TO",
+   "weight": 0.454
+  },
+  {
+   "from": "product:p177",
+   "to": "product:p178",
+   "type": "SIMILAR_TO",
+   "weight": 0.5317
+  },
+  {
+   "from": "product:p177",
+   "to": "ptype:descongestionante nasal em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p177",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p177",
+   "to": "step:descongestionante_nasal",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p178",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p178",
+   "to": "concern:gripe",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p178",
+   "to": "concern:nariz_entupido",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p178",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p178",
+   "to": "ingredient:oximetazolina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p178",
+   "to": "product:p176",
+   "type": "SIMILAR_TO",
+   "weight": 0.3944
+  },
+  {
+   "from": "product:p178",
+   "to": "product:p177",
+   "type": "SIMILAR_TO",
+   "weight": 0.5317
+  },
+  {
+   "from": "product:p178",
+   "to": "ptype:descongestionante nasal em spray",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p178",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p178",
+   "to": "step:descongestionante_nasal",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p179",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p179",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p179",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p179",
+   "to": "ingredient:ambroxol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p179",
+   "to": "product:p180",
+   "type": "SIMILAR_TO",
+   "weight": 0.5376
+  },
+  {
+   "from": "product:p179",
+   "to": "product:p181",
+   "type": "SIMILAR_TO",
+   "weight": 0.5894
+  },
+  {
+   "from": "product:p179",
+   "to": "product:p182",
+   "type": "SIMILAR_TO",
+   "weight": 0.5882
+  },
+  {
+   "from": "product:p179",
+   "to": "product:p183",
+   "type": "SIMILAR_TO",
+   "weight": 0.5763
+  },
+  {
+   "from": "product:p179",
+   "to": "ptype:xarope expectorante",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p179",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p179",
+   "to": "step:expectorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p180",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p180",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p180",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p180",
+   "to": "ingredient:acetilcisteina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p180",
+   "to": "product:p179",
+   "type": "SIMILAR_TO",
+   "weight": 0.5376
+  },
+  {
+   "from": "product:p180",
+   "to": "product:p181",
+   "type": "SIMILAR_TO",
+   "weight": 0.5421
+  },
+  {
+   "from": "product:p180",
+   "to": "product:p182",
+   "type": "SIMILAR_TO",
+   "weight": 0.5332
+  },
+  {
+   "from": "product:p180",
+   "to": "product:p183",
+   "type": "SIMILAR_TO",
+   "weight": 0.5287
+  },
+  {
+   "from": "product:p180",
+   "to": "ptype:expectorante em envelopes",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p180",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p180",
+   "to": "step:expectorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p181",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p181",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p181",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p181",
+   "to": "ingredient:bromexina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p181",
+   "to": "product:p179",
+   "type": "SIMILAR_TO",
+   "weight": 0.5894
+  },
+  {
+   "from": "product:p181",
+   "to": "product:p180",
+   "type": "SIMILAR_TO",
+   "weight": 0.5421
+  },
+  {
+   "from": "product:p181",
+   "to": "product:p182",
+   "type": "SIMILAR_TO",
+   "weight": 0.5788
+  },
+  {
+   "from": "product:p181",
+   "to": "product:p183",
+   "type": "SIMILAR_TO",
+   "weight": 0.5683
+  },
+  {
+   "from": "product:p181",
+   "to": "ptype:xarope expectorante",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p181",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p181",
+   "to": "step:expectorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p182",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p182",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p182",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p182",
+   "to": "ingredient:carbocisteina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p182",
+   "to": "product:p179",
+   "type": "SIMILAR_TO",
+   "weight": 0.5882
+  },
+  {
+   "from": "product:p182",
+   "to": "product:p180",
+   "type": "SIMILAR_TO",
+   "weight": 0.5332
+  },
+  {
+   "from": "product:p182",
+   "to": "product:p181",
+   "type": "SIMILAR_TO",
+   "weight": 0.5788
+  },
+  {
+   "from": "product:p182",
+   "to": "product:p183",
+   "type": "SIMILAR_TO",
+   "weight": 0.5866
+  },
+  {
+   "from": "product:p182",
+   "to": "ptype:xarope expectorante",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p182",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p182",
+   "to": "step:expectorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p183",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p183",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p183",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p183",
+   "to": "ingredient:guaco",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p183",
+   "to": "product:p179",
+   "type": "SIMILAR_TO",
+   "weight": 0.5763
+  },
+  {
+   "from": "product:p183",
+   "to": "product:p180",
+   "type": "SIMILAR_TO",
+   "weight": 0.5287
+  },
+  {
+   "from": "product:p183",
+   "to": "product:p181",
+   "type": "SIMILAR_TO",
+   "weight": 0.5683
+  },
+  {
+   "from": "product:p183",
+   "to": "product:p182",
+   "type": "SIMILAR_TO",
+   "weight": 0.5866
+  },
+  {
+   "from": "product:p183",
+   "to": "ptype:xarope fitoterápico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p183",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p183",
+   "to": "step:expectorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p184",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p184",
+   "to": "concern:tosse_seca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p184",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p184",
+   "to": "ingredient:dropropizina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p184",
+   "to": "product:p185",
+   "type": "SIMILAR_TO",
+   "weight": 0.546
+  },
+  {
+   "from": "product:p184",
+   "to": "ptype:xarope para tosse seca",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p184",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p184",
+   "to": "step:antitussigeno",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p185",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p185",
+   "to": "concern:tosse_seca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p185",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p185",
+   "to": "ingredient:levodropropizina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p185",
+   "to": "product:p184",
+   "type": "SIMILAR_TO",
+   "weight": 0.546
+  },
+  {
+   "from": "product:p185",
+   "to": "ptype:xarope para tosse seca",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p185",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p185",
+   "to": "step:antitussigeno",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p186",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p186",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p186",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p186",
+   "to": "concern:tosse_seca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p186",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p186",
+   "to": "ingredient:amilmetacresol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p186",
+   "to": "product:p187",
+   "type": "SIMILAR_TO",
+   "weight": 0.8928
+  },
+  {
+   "from": "product:p186",
+   "to": "product:p188",
+   "type": "SIMILAR_TO",
+   "weight": 0.2798
+  },
+  {
+   "from": "product:p186",
+   "to": "product:p189",
+   "type": "SIMILAR_TO",
+   "weight": 0.3032
+  },
+  {
+   "from": "product:p186",
+   "to": "ptype:pastilha antisséptica",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p186",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p186",
+   "to": "step:pastilha_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p187",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p187",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p187",
+   "to": "concern:tosse",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p187",
+   "to": "concern:tosse_seca",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p187",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p187",
+   "to": "ingredient:amilmetacresol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p187",
+   "to": "product:p186",
+   "type": "SIMILAR_TO",
+   "weight": 0.8928
+  },
+  {
+   "from": "product:p187",
+   "to": "product:p188",
+   "type": "SIMILAR_TO",
+   "weight": 0.2765
+  },
+  {
+   "from": "product:p187",
+   "to": "product:p189",
+   "type": "SIMILAR_TO",
+   "weight": 0.2982
+  },
+  {
+   "from": "product:p187",
+   "to": "ptype:pastilha antisséptica",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p187",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p187",
+   "to": "step:pastilha_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p188",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p188",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p188",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p188",
+   "to": "ingredient:flurbiprofeno",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p188",
+   "to": "product:p186",
+   "type": "SIMILAR_TO",
+   "weight": 0.2798
+  },
+  {
+   "from": "product:p188",
+   "to": "product:p187",
+   "type": "SIMILAR_TO",
+   "weight": 0.2765
+  },
+  {
+   "from": "product:p188",
+   "to": "product:p189",
+   "type": "SIMILAR_TO",
+   "weight": 0.5666
+  },
+  {
+   "from": "product:p188",
+   "to": "ptype:pastilha anti-inflamatória",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p188",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p188",
+   "to": "step:pastilha_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p189",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p189",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p189",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p189",
+   "to": "ingredient:benzidamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p189",
+   "to": "product:p186",
+   "type": "SIMILAR_TO",
+   "weight": 0.3032
+  },
+  {
+   "from": "product:p189",
+   "to": "product:p187",
+   "type": "SIMILAR_TO",
+   "weight": 0.2982
+  },
+  {
+   "from": "product:p189",
+   "to": "product:p188",
+   "type": "SIMILAR_TO",
+   "weight": 0.5666
+  },
+  {
+   "from": "product:p189",
+   "to": "ptype:pastilha anti-inflamatória",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p189",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p189",
+   "to": "step:pastilha_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p190",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p190",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p190",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p190",
+   "to": "ingredient:benzidamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p190",
+   "to": "product:p191",
+   "type": "SIMILAR_TO",
+   "weight": 0.888
+  },
+  {
+   "from": "product:p190",
+   "to": "ptype:spray para garganta",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p190",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p190",
+   "to": "step:spray_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p191",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p191",
+   "to": "concern:dor_de_garganta",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p191",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p191",
+   "to": "ingredient:benzidamina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p191",
+   "to": "product:p190",
+   "type": "SIMILAR_TO",
+   "weight": 0.888
+  },
+  {
+   "from": "product:p191",
+   "to": "ptype:gargarejo para garganta",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p191",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p191",
+   "to": "step:spray_garganta",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p192",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p192",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p192",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p192",
+   "to": "ingredient:loratadina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p192",
+   "to": "product:p193",
+   "type": "SIMILAR_TO",
+   "weight": 0.8664
+  },
+  {
+   "from": "product:p192",
+   "to": "product:p194",
+   "type": "SIMILAR_TO",
+   "weight": 0.5355
+  },
+  {
+   "from": "product:p192",
+   "to": "product:p195",
+   "type": "SIMILAR_TO",
+   "weight": 0.5767
+  },
+  {
+   "from": "product:p192",
+   "to": "product:p196",
+   "type": "SIMILAR_TO",
+   "weight": 0.5284
+  },
+  {
+   "from": "product:p192",
+   "to": "product:p197",
+   "type": "SIMILAR_TO",
+   "weight": 0.6832
+  },
+  {
+   "from": "product:p192",
+   "to": "ptype:loratadina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p192",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p192",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p193",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p193",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p193",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p193",
+   "to": "ingredient:loratadina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p193",
+   "to": "product:p192",
+   "type": "SIMILAR_TO",
+   "weight": 0.8664
+  },
+  {
+   "from": "product:p193",
+   "to": "product:p194",
+   "type": "SIMILAR_TO",
+   "weight": 0.5534
+  },
+  {
+   "from": "product:p193",
+   "to": "product:p195",
+   "type": "SIMILAR_TO",
+   "weight": 0.5866
+  },
+  {
+   "from": "product:p193",
+   "to": "product:p196",
+   "type": "SIMILAR_TO",
+   "weight": 0.5427
+  },
+  {
+   "from": "product:p193",
+   "to": "product:p197",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p193",
+   "to": "ptype:loratadina em xarope",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p193",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p193",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p194",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p194",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p194",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p194",
+   "to": "ingredient:desloratadina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p194",
+   "to": "product:p192",
+   "type": "SIMILAR_TO",
+   "weight": 0.5355
+  },
+  {
+   "from": "product:p194",
+   "to": "product:p193",
+   "type": "SIMILAR_TO",
+   "weight": 0.5534
+  },
+  {
+   "from": "product:p194",
+   "to": "product:p195",
+   "type": "SIMILAR_TO",
+   "weight": 0.5462
+  },
+  {
+   "from": "product:p194",
+   "to": "product:p196",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p194",
+   "to": "product:p197",
+   "type": "SIMILAR_TO",
+   "weight": 0.5427
+  },
+  {
+   "from": "product:p194",
+   "to": "ptype:desloratadina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p194",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p194",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p195",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p195",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p195",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p195",
+   "to": "ingredient:cetirizina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p195",
+   "to": "product:p192",
+   "type": "SIMILAR_TO",
+   "weight": 0.5767
+  },
+  {
+   "from": "product:p195",
+   "to": "product:p193",
+   "type": "SIMILAR_TO",
+   "weight": 0.5866
+  },
+  {
+   "from": "product:p195",
+   "to": "product:p194",
+   "type": "SIMILAR_TO",
+   "weight": 0.5462
+  },
+  {
+   "from": "product:p195",
+   "to": "product:p196",
+   "type": "SIMILAR_TO",
+   "weight": 0.537
+  },
+  {
+   "from": "product:p195",
+   "to": "product:p197",
+   "type": "SIMILAR_TO",
+   "weight": 0.5922
+  },
+  {
+   "from": "product:p195",
+   "to": "ptype:cetirizina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p195",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p195",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p196",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p196",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p196",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p196",
+   "to": "ingredient:fexofenadina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p196",
+   "to": "product:p192",
+   "type": "SIMILAR_TO",
+   "weight": 0.5284
+  },
+  {
+   "from": "product:p196",
+   "to": "product:p193",
+   "type": "SIMILAR_TO",
+   "weight": 0.5427
+  },
+  {
+   "from": "product:p196",
+   "to": "product:p194",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p196",
+   "to": "product:p195",
+   "type": "SIMILAR_TO",
+   "weight": 0.537
+  },
+  {
+   "from": "product:p196",
+   "to": "product:p197",
+   "type": "SIMILAR_TO",
+   "weight": 0.5341
+  },
+  {
+   "from": "product:p196",
+   "to": "ptype:fexofenadina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p196",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p196",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p197",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p197",
+   "to": "concern:alergia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p197",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p197",
+   "to": "ingredient:dexclorfeniramina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p197",
+   "to": "product:p192",
+   "type": "SIMILAR_TO",
+   "weight": 0.6832
+  },
+  {
+   "from": "product:p197",
+   "to": "product:p193",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p197",
+   "to": "product:p194",
+   "type": "SIMILAR_TO",
+   "weight": 0.5427
+  },
+  {
+   "from": "product:p197",
+   "to": "product:p195",
+   "type": "SIMILAR_TO",
+   "weight": 0.5922
+  },
+  {
+   "from": "product:p197",
+   "to": "product:p196",
+   "type": "SIMILAR_TO",
+   "weight": 0.5341
+  },
+  {
+   "from": "product:p197",
+   "to": "ptype:dexclorfeniramina em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p197",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p197",
+   "to": "step:antialergico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p198",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p198",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p198",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p198",
+   "to": "ingredient:loperamida",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p198",
+   "to": "product:p199",
+   "type": "SIMILAR_TO",
+   "weight": 0.5298
+  },
+  {
+   "from": "product:p198",
+   "to": "product:p200",
+   "type": "SIMILAR_TO",
+   "weight": 0.5277
+  },
+  {
+   "from": "product:p198",
+   "to": "ptype:loperamida em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p198",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p198",
+   "to": "step:antidiarreico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p199",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p199",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p199",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p199",
+   "to": "ingredient:racecadotrila",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p199",
+   "to": "product:p198",
+   "type": "SIMILAR_TO",
+   "weight": 0.5298
+  },
+  {
+   "from": "product:p199",
+   "to": "product:p200",
+   "type": "SIMILAR_TO",
+   "weight": 0.593
+  },
+  {
+   "from": "product:p199",
+   "to": "ptype:racecadotrila em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p199",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p199",
+   "to": "step:antidiarreico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p200",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p200",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p200",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p200",
+   "to": "ingredient:nitazoxanida",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p200",
+   "to": "product:p198",
+   "type": "SIMILAR_TO",
+   "weight": 0.5277
+  },
+  {
+   "from": "product:p200",
+   "to": "product:p199",
+   "type": "SIMILAR_TO",
+   "weight": 0.593
+  },
+  {
+   "from": "product:p200",
+   "to": "ptype:nitazoxanida em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p200",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p200",
+   "to": "step:antidiarreico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p201",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p201",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p201",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p201",
+   "to": "ingredient:saccharomyces_boulardii",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p201",
+   "to": "product:p202",
+   "type": "SIMILAR_TO",
+   "weight": 0.5875
+  },
+  {
+   "from": "product:p201",
+   "to": "ptype:probiótico em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p201",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p201",
+   "to": "step:probiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p202",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p202",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p202",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p202",
+   "to": "ingredient:bacillus_clausii",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p202",
+   "to": "product:p201",
+   "type": "SIMILAR_TO",
+   "weight": 0.5875
+  },
+  {
+   "from": "product:p202",
+   "to": "ptype:probiótico em flaconetes",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p202",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p202",
+   "to": "step:probiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p203",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p203",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p203",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p203",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p203",
+   "to": "ingredient:sais_reidratacao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p203",
+   "to": "product:p204",
+   "type": "SIMILAR_TO",
+   "weight": 0.8394
+  },
+  {
+   "from": "product:p203",
+   "to": "ptype:soro de reidratação oral",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p203",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p203",
+   "to": "step:reidratacao",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p204",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p204",
+   "to": "concern:diarreia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p204",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p204",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p204",
+   "to": "ingredient:sais_reidratacao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p204",
+   "to": "product:p203",
+   "type": "SIMILAR_TO",
+   "weight": 0.8394
+  },
+  {
+   "from": "product:p204",
+   "to": "ptype:soro de reidratação pronto",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p204",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p204",
+   "to": "step:reidratacao",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p205",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p205",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p205",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p205",
+   "to": "ingredient:bisacodil",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p205",
+   "to": "product:p206",
+   "type": "SIMILAR_TO",
+   "weight": 0.5648
+  },
+  {
+   "from": "product:p205",
+   "to": "product:p207",
+   "type": "SIMILAR_TO",
+   "weight": 0.5589
+  },
+  {
+   "from": "product:p205",
+   "to": "product:p208",
+   "type": "SIMILAR_TO",
+   "weight": 0.3928
+  },
+  {
+   "from": "product:p205",
+   "to": "product:p209",
+   "type": "SIMILAR_TO",
+   "weight": 0.537
+  },
+  {
+   "from": "product:p205",
+   "to": "ptype:laxante em drágeas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p205",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p205",
+   "to": "step:laxante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p206",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p206",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p206",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p206",
+   "to": "ingredient:picossulfato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p206",
+   "to": "product:p205",
+   "type": "SIMILAR_TO",
+   "weight": 0.5648
+  },
+  {
+   "from": "product:p206",
+   "to": "product:p207",
+   "type": "SIMILAR_TO",
+   "weight": 0.5909
+  },
+  {
+   "from": "product:p206",
+   "to": "product:p208",
+   "type": "SIMILAR_TO",
+   "weight": 0.3698
+  },
+  {
+   "from": "product:p206",
+   "to": "product:p209",
+   "type": "SIMILAR_TO",
+   "weight": 0.557
+  },
+  {
+   "from": "product:p206",
+   "to": "ptype:laxante em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p206",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p206",
+   "to": "step:laxante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p207",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p207",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p207",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p207",
+   "to": "ingredient:lactulose",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p207",
+   "to": "product:p205",
+   "type": "SIMILAR_TO",
+   "weight": 0.5589
+  },
+  {
+   "from": "product:p207",
+   "to": "product:p206",
+   "type": "SIMILAR_TO",
+   "weight": 0.5909
+  },
+  {
+   "from": "product:p207",
+   "to": "product:p208",
+   "type": "SIMILAR_TO",
+   "weight": 0.3635
+  },
+  {
+   "from": "product:p207",
+   "to": "product:p209",
+   "type": "SIMILAR_TO",
+   "weight": 0.5628
+  },
+  {
+   "from": "product:p207",
+   "to": "ptype:laxante em xarope",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p207",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p207",
+   "to": "step:laxante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p208",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p208",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p208",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p208",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p208",
+   "to": "ingredient:hidroxido_magnesio",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p208",
+   "to": "product:p205",
+   "type": "SIMILAR_TO",
+   "weight": 0.3928
+  },
+  {
+   "from": "product:p208",
+   "to": "product:p206",
+   "type": "SIMILAR_TO",
+   "weight": 0.3698
+  },
+  {
+   "from": "product:p208",
+   "to": "product:p207",
+   "type": "SIMILAR_TO",
+   "weight": 0.3635
+  },
+  {
+   "from": "product:p208",
+   "to": "product:p209",
+   "type": "SIMILAR_TO",
+   "weight": 0.3398
+  },
+  {
+   "from": "product:p208",
+   "to": "ptype:laxante em suspensão",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p208",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p208",
+   "to": "step:laxante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p209",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p209",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p209",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p209",
+   "to": "ingredient:macrogol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p209",
+   "to": "product:p205",
+   "type": "SIMILAR_TO",
+   "weight": 0.537
+  },
+  {
+   "from": "product:p209",
+   "to": "product:p206",
+   "type": "SIMILAR_TO",
+   "weight": 0.557
+  },
+  {
+   "from": "product:p209",
+   "to": "product:p207",
+   "type": "SIMILAR_TO",
+   "weight": 0.5628
+  },
+  {
+   "from": "product:p209",
+   "to": "product:p208",
+   "type": "SIMILAR_TO",
+   "weight": 0.3398
+  },
+  {
+   "from": "product:p209",
+   "to": "ptype:laxante em pó",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p209",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p209",
+   "to": "step:laxante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p210",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p210",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p210",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p210",
+   "to": "ingredient:psyllium",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p210",
+   "to": "product:p211",
+   "type": "SIMILAR_TO",
+   "weight": 0.8428
+  },
+  {
+   "from": "product:p210",
+   "to": "ptype:fibra em pó",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p210",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p210",
+   "to": "step:fibra",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p211",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p211",
+   "to": "concern:prisao_de_ventre",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p211",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p211",
+   "to": "ingredient:psyllium",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p211",
+   "to": "product:p210",
+   "type": "SIMILAR_TO",
+   "weight": 0.8428
+  },
+  {
+   "from": "product:p211",
+   "to": "ptype:fibra em pó",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p211",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p211",
+   "to": "step:fibra",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p212",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p212",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p212",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p212",
+   "to": "ingredient:dimenidrinato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p212",
+   "to": "product:p213",
+   "type": "SIMILAR_TO",
+   "weight": 0.7382
+  },
+  {
+   "from": "product:p212",
+   "to": "product:p214",
+   "type": "SIMILAR_TO",
+   "weight": 0.8937
+  },
+  {
+   "from": "product:p212",
+   "to": "product:p215",
+   "type": "SIMILAR_TO",
+   "weight": 0.5598
+  },
+  {
+   "from": "product:p212",
+   "to": "product:p216",
+   "type": "SIMILAR_TO",
+   "weight": 0.5597
+  },
+  {
+   "from": "product:p212",
+   "to": "product:p217",
+   "type": "SIMILAR_TO",
+   "weight": 0.4749
+  },
+  {
+   "from": "product:p212",
+   "to": "ptype:dimenidrinato em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p212",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p212",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p213",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p213",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p213",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p213",
+   "to": "ingredient:dimenidrinato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p213",
+   "to": "ingredient:piridoxina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p213",
+   "to": "product:p212",
+   "type": "SIMILAR_TO",
+   "weight": 0.7382
+  },
+  {
+   "from": "product:p213",
+   "to": "product:p214",
+   "type": "SIMILAR_TO",
+   "weight": 0.7441
+  },
+  {
+   "from": "product:p213",
+   "to": "product:p215",
+   "type": "SIMILAR_TO",
+   "weight": 0.5679
+  },
+  {
+   "from": "product:p213",
+   "to": "product:p216",
+   "type": "SIMILAR_TO",
+   "weight": 0.5527
+  },
+  {
+   "from": "product:p213",
+   "to": "product:p217",
+   "type": "SIMILAR_TO",
+   "weight": 0.3849
+  },
+  {
+   "from": "product:p213",
+   "to": "ptype:dimenidrinato com vitamina B6",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p213",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p213",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p214",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p214",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p214",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p214",
+   "to": "ingredient:dimenidrinato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p214",
+   "to": "product:p212",
+   "type": "SIMILAR_TO",
+   "weight": 0.8937
+  },
+  {
+   "from": "product:p214",
+   "to": "product:p213",
+   "type": "SIMILAR_TO",
+   "weight": 0.7441
+  },
+  {
+   "from": "product:p214",
+   "to": "product:p215",
+   "type": "SIMILAR_TO",
+   "weight": 0.5639
+  },
+  {
+   "from": "product:p214",
+   "to": "product:p216",
+   "type": "SIMILAR_TO",
+   "weight": 0.556
+  },
+  {
+   "from": "product:p214",
+   "to": "product:p217",
+   "type": "SIMILAR_TO",
+   "weight": 0.3799
+  },
+  {
+   "from": "product:p214",
+   "to": "ptype:dimenidrinato em gotas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p214",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p214",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p215",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p215",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p215",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p215",
+   "to": "ingredient:ondansetrona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p215",
+   "to": "product:p212",
+   "type": "SIMILAR_TO",
+   "weight": 0.5598
+  },
+  {
+   "from": "product:p215",
+   "to": "product:p213",
+   "type": "SIMILAR_TO",
+   "weight": 0.5679
+  },
+  {
+   "from": "product:p215",
+   "to": "product:p214",
+   "type": "SIMILAR_TO",
+   "weight": 0.5639
+  },
+  {
+   "from": "product:p215",
+   "to": "product:p216",
+   "type": "SIMILAR_TO",
+   "weight": 0.5357
+  },
+  {
+   "from": "product:p215",
+   "to": "product:p217",
+   "type": "SIMILAR_TO",
+   "weight": 0.3799
+  },
+  {
+   "from": "product:p215",
+   "to": "ptype:ondansetrona em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p215",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p215",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p216",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p216",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p216",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p216",
+   "to": "ingredient:metoclopramida",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p216",
+   "to": "product:p212",
+   "type": "SIMILAR_TO",
+   "weight": 0.5597
+  },
+  {
+   "from": "product:p216",
+   "to": "product:p213",
+   "type": "SIMILAR_TO",
+   "weight": 0.5527
+  },
+  {
+   "from": "product:p216",
+   "to": "product:p214",
+   "type": "SIMILAR_TO",
+   "weight": 0.556
+  },
+  {
+   "from": "product:p216",
+   "to": "product:p215",
+   "type": "SIMILAR_TO",
+   "weight": 0.5357
+  },
+  {
+   "from": "product:p216",
+   "to": "product:p217",
+   "type": "SIMILAR_TO",
+   "weight": 0.3447
+  },
+  {
+   "from": "product:p216",
+   "to": "ptype:metoclopramida em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p216",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p216",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p217",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p217",
+   "to": "concern:azia",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p217",
+   "to": "concern:enjoo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p217",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p217",
+   "to": "ingredient:domperidona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p217",
+   "to": "product:p212",
+   "type": "SIMILAR_TO",
+   "weight": 0.4749
+  },
+  {
+   "from": "product:p217",
+   "to": "product:p213",
+   "type": "SIMILAR_TO",
+   "weight": 0.3849
+  },
+  {
+   "from": "product:p217",
+   "to": "product:p214",
+   "type": "SIMILAR_TO",
+   "weight": 0.3799
+  },
+  {
+   "from": "product:p217",
+   "to": "product:p215",
+   "type": "SIMILAR_TO",
+   "weight": 0.3799
+  },
+  {
+   "from": "product:p217",
+   "to": "product:p216",
+   "type": "SIMILAR_TO",
+   "weight": 0.3447
+  },
+  {
+   "from": "product:p217",
+   "to": "ptype:domperidona em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p217",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p217",
+   "to": "step:antiemetico",
+   "type": "COVERS",
+   "primary": true
   }
  ],
  "stats": {
   "nodes": {
-   "brand": 13,
+   "brand": 15,
    "claim": 15,
-   "concern": 20,
+   "concern": 39,
    "domain": 4,
    "equiv": 2,
-   "goal": 9,
-   "ingredient": 43,
-   "product": 138,
-   "ptype": 55,
+   "goal": 22,
+   "ingredient": 108,
+   "product": 217,
+   "ptype": 124,
    "skin": 6,
-   "step": 16,
+   "step": 39,
    "warning": 8
   },
   "edges": {
-   "ADDRESSES": 213,
-   "CONFLICTS_WITH": 18,
-   "CONTAINS": 240,
-   "COVERS": 141,
+   "ADDRESSES": 344,
+   "CONFLICTS_WITH": 110,
+   "CONTAINS": 342,
+   "COVERS": 220,
    "EQUIVALENT_TO": 24,
    "HAS_CLAIM": 139,
    "HAS_WARNING": 73,
-   "IN_DOMAIN": 138,
+   "IN_DOMAIN": 217,
    "IN_EQUIV_GROUP": 8,
-   "OF_BRAND": 138,
-   "OF_TYPE": 138,
-   "REQUIRES": 38,
-   "SIMILAR_TO": 678,
-   "SUITS": 192,
-   "TARGETS": 19
+   "OF_BRAND": 217,
+   "OF_TYPE": 217,
+   "REQUIRES": 67,
+   "SIMILAR_TO": 974,
+   "SUITS": 271,
+   "TARGETS": 38
   },
-  "totalNodes": 329,
-  "totalEdges": 2197
+  "totalNodes": 599,
+  "totalEdges": 3261
  }
 }

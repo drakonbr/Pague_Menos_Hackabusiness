@@ -52,7 +52,7 @@ export function Home() {
         <div className="home-search">
           <button className="searchpill" onClick={() => push({ name: "searchFocus" })}>
             <Icon name="search" />
-            <span className="ph">Converse: o que você precisa hoje?</span>
+            <span className="ph">Busque remédio, sintoma ou produto</span>
             <span className="soft"><Icon name="camera" /></span>
             <span className="soft"><Icon name="mic" /></span>
           </button>

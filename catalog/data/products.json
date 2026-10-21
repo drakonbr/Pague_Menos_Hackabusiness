@@ -5268,7 +5268,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "hipertensao"
     ],
     "ingredients": [
       "tensivalol_potassico"
@@ -5312,7 +5313,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "hipertensao"
     ],
     "ingredients": [
       "tensivalol_potassico"
@@ -5356,7 +5358,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "hipertensao"
     ],
     "ingredients": [
       "tensivalol_potassico"
@@ -5400,7 +5403,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "hipertensao"
     ],
     "ingredients": [
       "tensivalol_potassico"
@@ -5444,7 +5448,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "colesterol"
     ],
     "ingredients": [
       "lipostanol_calcico"
@@ -5488,7 +5493,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "colesterol"
     ],
     "ingredients": [
       "lipostanol_calcico"
@@ -5532,7 +5538,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "colesterol"
     ],
     "ingredients": [
       "lipostanol_calcico"
@@ -5576,7 +5583,8 @@
       "todas"
     ],
     "concerns": [
-      "reposicao"
+      "reposicao",
+      "colesterol"
     ],
     "ingredients": [
       "lipostanol_calcico"
@@ -5600,5 +5608,2916 @@
       "dose": "20 mg"
     },
     "price_tier": "intermediario"
+  },
+  {
+    "id": "p139",
+    "name": "Dipirona 500 mg — 10 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_dipirona",
+    "covers_steps": [
+      "analgesico_dipirona"
+    ],
+    "product_type": "dipirona em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "dipirona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona 500 mg — 10 comprimidos: medicamento (dipirona em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada. Para dor de cabeça, febre e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p140",
+    "name": "Dipirona 1 g (genérico) — 10 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_dipirona",
+    "covers_steps": [
+      "analgesico_dipirona"
+    ],
+    "product_type": "dipirona em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "dipirona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona 1 g (genérico) — 10 comprimidos: medicamento (dipirona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Dipirona monoidratada. Para dor de cabeça, febre e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p141",
+    "name": "Dipirona Gotas 500 mg/mL — 20 mL",
+    "brand": "Farmanorte",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_dipirona",
+    "covers_steps": [
+      "analgesico_dipirona"
+    ],
+    "product_type": "dipirona em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre"
+    ],
+    "ingredients": [
+      "dipirona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona Gotas 500 mg/mL — 20 mL: medicamento (dipirona em gotas) do laboratório Farmanorte. Princípio ativo: Dipirona monoidratada. Para dor de cabeça e febre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p142",
+    "name": "Paracetamol 750 mg — 20 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_paracetamol",
+    "covers_steps": [
+      "analgesico_paracetamol"
+    ],
+    "product_type": "paracetamol em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "paracetamol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Paracetamol 750 mg — 20 comprimidos: medicamento (paracetamol em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Paracetamol. Para dor de cabeça, febre e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p143",
+    "name": "Paracetamol 500 mg + Cafeína 65 mg — 20 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_paracetamol",
+    "covers_steps": [
+      "analgesico_paracetamol"
+    ],
+    "product_type": "paracetamol com cafeína",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "enxaqueca"
+    ],
+    "ingredients": [
+      "paracetamol",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Paracetamol 500 mg + Cafeína 65 mg — 20 comprimidos: medicamento (paracetamol com cafeína) do laboratório Lab Nova Via. Princípio ativo: Paracetamol e Cafeína anidra. Para dor de cabeça e enxaqueca.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p144",
+    "name": "Paracetamol Gotas 200 mg/mL — 15 mL",
+    "brand": "Farmanorte",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_paracetamol",
+    "covers_steps": [
+      "analgesico_paracetamol"
+    ],
+    "product_type": "paracetamol em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 15,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre"
+    ],
+    "ingredients": [
+      "paracetamol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Paracetamol Gotas 200 mg/mL — 15 mL: medicamento (paracetamol em gotas) do laboratório Farmanorte. Princípio ativo: Paracetamol. Para dor de cabeça e febre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p145",
+    "name": "Dipirona 300 mg + Isometepteno 30 mg + Cafeína 30 mg — 20 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_dor_de_cabeca",
+    "step": "analgesico_dipirona",
+    "covers_steps": [
+      "analgesico_dipirona"
+    ],
+    "product_type": "analgésico para enxaqueca",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "enxaqueca"
+    ],
+    "ingredients": [
+      "dipirona",
+      "isometepteno",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona 300 mg + Isometepteno 30 mg + Cafeína 30 mg — 20 comprimidos: medicamento (analgésico para enxaqueca) do laboratório Lab Aurora. Princípio ativo: Dipirona monoidratada, Mucato de isometepteno e Cafeína anidra. Para dor de cabeça e enxaqueca.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p146",
+    "name": "Ácido Acetilsalicílico 500 mg (genérico) — 20 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_de_cabeca",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "ácido acetilsalicílico em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_cabeca",
+      "febre",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "acido_acetilsalicilico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ácido Acetilsalicílico 500 mg (genérico) — 20 comprimidos: medicamento (ácido acetilsalicílico em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ácido acetilsalicílico. Para dor de cabeça, febre e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p147",
+    "name": "Ibuprofeno 400 mg — 10 cápsulas",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "ibuprofeno em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_de_cabeca",
+      "febre",
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "ibuprofeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ibuprofeno 400 mg — 10 cápsulas: medicamento (ibuprofeno em cápsulas) do laboratório Vitalis Farma. Princípio ativo: Ibuprofeno. Para dor no corpo, dor de cabeça, febre e dor muscular.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p148",
+    "name": "Ibuprofeno 600 mg (genérico) — 20 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "ibuprofeno em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "ibuprofeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ibuprofeno 600 mg (genérico) — 20 comprimidos: medicamento (ibuprofeno em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ibuprofeno. Para dor no corpo e dor muscular. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p149",
+    "name": "Ibuprofeno Gotas 50 mg/mL — 30 mL",
+    "brand": "Farmanorte",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "ibuprofeno em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "febre"
+    ],
+    "ingredients": [
+      "ibuprofeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ibuprofeno Gotas 50 mg/mL — 30 mL: medicamento (ibuprofeno em gotas) do laboratório Farmanorte. Princípio ativo: Ibuprofeno. Para dor no corpo e febre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p150",
+    "name": "Naproxeno Sódico 275 mg — 10 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "naproxeno em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_muscular",
+      "dor_de_cabeca"
+    ],
+    "ingredients": [
+      "naproxeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Naproxeno Sódico 275 mg — 10 comprimidos: medicamento (naproxeno em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Naproxeno sódico. Para dor no corpo, dor muscular e dor de cabeça.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p151",
+    "name": "Naproxeno Sódico 550 mg (genérico) — 10 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "naproxeno em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "naproxeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Naproxeno Sódico 550 mg (genérico) — 10 comprimidos: medicamento (naproxeno em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Naproxeno sódico. Para dor no corpo e dor muscular. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p152",
+    "name": "Diclofenaco Potássico 50 mg — 20 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "diclofenaco em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "diclofenaco_potassico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Diclofenaco Potássico 50 mg — 20 comprimidos: medicamento (diclofenaco em comprimidos) do laboratório Lab Aurora. Princípio ativo: Diclofenaco potássico. Para dor no corpo e dor muscular. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p153",
+    "name": "Nimesulida 100 mg — 12 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_no_corpo",
+    "step": "antiinflamatorio",
+    "covers_steps": [
+      "antiinflamatorio"
+    ],
+    "product_type": "nimesulida em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_no_corpo",
+      "dor_de_garganta"
+    ],
+    "ingredients": [
+      "nimesulida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Nimesulida 100 mg — 12 comprimidos: medicamento (nimesulida em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Nimesulida. Para dor no corpo e dor de garganta. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p154",
+    "name": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 10 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_muscular",
+    "step": "relaxante_muscular",
+    "covers_steps": [
+      "relaxante_muscular"
+    ],
+    "product_type": "relaxante muscular com analgésico",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "dipirona",
+      "orfenadrina",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 10 comprimidos: medicamento (relaxante muscular com analgésico) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada, Citrato de orfenadrina e Cafeína anidra. Para dor muscular e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p155",
+    "name": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 36 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_muscular",
+    "step": "relaxante_muscular",
+    "covers_steps": [
+      "relaxante_muscular"
+    ],
+    "product_type": "relaxante muscular com analgésico",
+    "form": "box",
+    "size": {
+      "value": 36,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "dipirona",
+      "orfenadrina",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 36 comprimidos: medicamento (relaxante muscular com analgésico) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada, Citrato de orfenadrina e Cafeína anidra. Para dor muscular e dor no corpo.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p156",
+    "name": "Ciclobenzaprina 5 mg (genérico) — 30 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_muscular",
+    "step": "relaxante_muscular",
+    "covers_steps": [
+      "relaxante_muscular"
+    ],
+    "product_type": "ciclobenzaprina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "ciclobenzaprina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ciclobenzaprina 5 mg (genérico) — 30 comprimidos: medicamento (ciclobenzaprina em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de ciclobenzaprina. Para dor muscular. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p157",
+    "name": "Ciclobenzaprina 10 mg — 30 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_muscular",
+    "step": "relaxante_muscular",
+    "covers_steps": [
+      "relaxante_muscular"
+    ],
+    "product_type": "ciclobenzaprina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "ciclobenzaprina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ciclobenzaprina 10 mg — 30 comprimidos: medicamento (ciclobenzaprina em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de ciclobenzaprina. Para dor muscular. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p158",
+    "name": "Diclofenaco Sódico 50 mg + Carisoprodol 125 mg + Paracetamol 300 mg + Cafeína 30 mg — 15 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_dor_muscular",
+    "step": "relaxante_muscular",
+    "covers_steps": [
+      "relaxante_muscular"
+    ],
+    "product_type": "relaxante muscular combinado",
+    "form": "box",
+    "size": {
+      "value": 15,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular",
+      "dor_no_corpo"
+    ],
+    "ingredients": [
+      "diclofenaco_sodico",
+      "carisoprodol",
+      "paracetamol",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Diclofenaco Sódico 50 mg + Carisoprodol 125 mg + Paracetamol 300 mg + Cafeína 30 mg — 15 comprimidos: medicamento (relaxante muscular combinado) do laboratório Lab Aurora. Princípio ativo: Diclofenaco sódico, Carisoprodol, Paracetamol e Cafeína anidra. Para dor muscular e dor no corpo. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p159",
+    "name": "Diclofenaco Dietilamônio Gel 11,6 mg/g — 60 g",
+    "brand": "Farmanorte",
+    "line": "med_dor_muscular",
+    "step": "dor_topico",
+    "covers_steps": [
+      "dor_topico"
+    ],
+    "product_type": "gel anti-inflamatório",
+    "form": "tube",
+    "size": {
+      "value": 60,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "diclofenaco_dietilamonio"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Diclofenaco Dietilamônio Gel 11,6 mg/g — 60 g: medicamento (gel anti-inflamatório) do laboratório Farmanorte. Princípio ativo: Diclofenaco dietilamônio. Para dor muscular.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p160",
+    "name": "Pomada de Salicilato de Metila, Mentol e Cânfora — 30 g",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_muscular",
+    "step": "dor_topico",
+    "covers_steps": [
+      "dor_topico"
+    ],
+    "product_type": "pomada para dor muscular",
+    "form": "tube",
+    "size": {
+      "value": 30,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_muscular"
+    ],
+    "ingredients": [
+      "salicilato_metila",
+      "mentol",
+      "canfora"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pomada de Salicilato de Metila, Mentol e Cânfora — 30 g: medicamento (pomada para dor muscular) do laboratório Lab Nova Via. Princípio ativo: Salicilato de metila, Mentol e Cânfora. Para dor muscular.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p161",
+    "name": "Butilbrometo de Escopolamina 10 mg — 20 drágeas",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_de_barriga",
+    "step": "antiespasmodico",
+    "covers_steps": [
+      "antiespasmodico"
+    ],
+    "product_type": "escopolamina em drágeas",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "escopolamina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Butilbrometo de Escopolamina 10 mg — 20 drágeas: medicamento (escopolamina em drágeas) do laboratório Vitalis Farma. Princípio ativo: Butilbrometo de escopolamina. Para dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p162",
+    "name": "Butilbrometo de Escopolamina Gotas 10 mg/mL — 20 mL",
+    "brand": "Farmanorte",
+    "line": "med_dor_de_barriga",
+    "step": "antiespasmodico",
+    "covers_steps": [
+      "antiespasmodico"
+    ],
+    "product_type": "escopolamina em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "escopolamina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Butilbrometo de Escopolamina Gotas 10 mg/mL — 20 mL: medicamento (escopolamina em gotas) do laboratório Farmanorte. Princípio ativo: Butilbrometo de escopolamina. Para dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p163",
+    "name": "Escopolamina 10 mg + Dipirona 250 mg — 20 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_dor_de_barriga",
+    "step": "antiespasmodico",
+    "covers_steps": [
+      "antiespasmodico"
+    ],
+    "product_type": "escopolamina com dipirona",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "escopolamina",
+      "dipirona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escopolamina 10 mg + Dipirona 250 mg — 20 comprimidos: medicamento (escopolamina com dipirona) do laboratório Lab Aurora. Princípio ativo: Butilbrometo de escopolamina e Dipirona monoidratada. Para dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p164",
+    "name": "Simeticona 40 mg (genérico) — 20 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_de_barriga",
+    "step": "antigases",
+    "covers_steps": [
+      "antigases"
+    ],
+    "product_type": "simeticona em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gases",
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "simeticona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Simeticona 40 mg (genérico) — 20 comprimidos: medicamento (simeticona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p165",
+    "name": "Simeticona Gotas 75 mg/mL — 15 mL",
+    "brand": "Farmanorte",
+    "line": "med_dor_de_barriga",
+    "step": "antigases",
+    "covers_steps": [
+      "antigases"
+    ],
+    "product_type": "simeticona em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 15,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gases",
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "simeticona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Simeticona Gotas 75 mg/mL — 15 mL: medicamento (simeticona em gotas) do laboratório Farmanorte. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p166",
+    "name": "Simeticona 125 mg — 10 cápsulas",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_de_barriga",
+    "step": "antigases",
+    "covers_steps": [
+      "antigases"
+    ],
+    "product_type": "simeticona em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gases",
+      "dor_de_barriga"
+    ],
+    "ingredients": [
+      "simeticona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Simeticona 125 mg — 10 cápsulas: medicamento (simeticona em cápsulas) do laboratório Lab Nova Via. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p167",
+    "name": "Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona — suspensão 240 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_azia",
+    "step": "antiacido",
+    "covers_steps": [
+      "antiacido"
+    ],
+    "product_type": "antiácido em suspensão",
+    "form": "bottle",
+    "size": {
+      "value": 240,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia",
+      "gases"
+    ],
+    "ingredients": [
+      "hidroxido_aluminio",
+      "hidroxido_magnesio",
+      "simeticona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona — suspensão 240 mL: medicamento (antiácido em suspensão) do laboratório Vitalis Farma. Princípio ativo: Hidróxido de alumínio, Hidróxido de magnésio e Simeticona. Para azia e má digestão e gases.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p168",
+    "name": "Sal de Frutas (Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico) — 2 envelopes de 5 g",
+    "brand": "Farmanorte",
+    "line": "med_azia",
+    "step": "antiacido",
+    "covers_steps": [
+      "antiacido"
+    ],
+    "product_type": "antiácido efervescente",
+    "form": "powder",
+    "size": {
+      "value": 10,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia"
+    ],
+    "ingredients": [
+      "bicarbonato_sodio",
+      "carbonato_sodio",
+      "acido_citrico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Sal de Frutas (Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico) — 2 envelopes de 5 g: medicamento (antiácido efervescente) do laboratório Farmanorte. Princípio ativo: Bicarbonato de sódio, Carbonato de sódio e Ácido cítrico. Para azia e má digestão.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p169",
+    "name": "Alginato de Sódio + Bicarbonato de Sódio — 12 sachês de suspensão",
+    "brand": "Lab Nova Via",
+    "line": "med_azia",
+    "step": "antiacido",
+    "covers_steps": [
+      "antiacido"
+    ],
+    "product_type": "antiácido para refluxo",
+    "form": "powder",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia"
+    ],
+    "ingredients": [
+      "alginato_sodio",
+      "bicarbonato_sodio"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Alginato de Sódio + Bicarbonato de Sódio — 12 sachês de suspensão: medicamento (antiácido para refluxo) do laboratório Lab Nova Via. Princípio ativo: Alginato de sódio e Bicarbonato de sódio. Para azia e má digestão.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p170",
+    "name": "Omeprazol 20 mg (genérico) — 28 cápsulas",
+    "brand": "Lab Genérico Sul",
+    "line": "med_azia",
+    "step": "protetor_gastrico",
+    "covers_steps": [
+      "protetor_gastrico"
+    ],
+    "product_type": "omeprazol em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 28,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia"
+    ],
+    "ingredients": [
+      "omeprazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Omeprazol 20 mg (genérico) — 28 cápsulas: medicamento (omeprazol em cápsulas) do laboratório Lab Genérico Sul. Princípio ativo: Omeprazol. Para azia e má digestão. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p171",
+    "name": "Pantoprazol 40 mg — 28 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_azia",
+    "step": "protetor_gastrico",
+    "covers_steps": [
+      "protetor_gastrico"
+    ],
+    "product_type": "pantoprazol em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 28,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia"
+    ],
+    "ingredients": [
+      "pantoprazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pantoprazol 40 mg — 28 comprimidos: medicamento (pantoprazol em comprimidos) do laboratório Lab Aurora. Princípio ativo: Pantoprazol. Para azia e má digestão. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p172",
+    "name": "Esomeprazol 40 mg — 28 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_azia",
+    "step": "protetor_gastrico",
+    "covers_steps": [
+      "protetor_gastrico"
+    ],
+    "product_type": "esomeprazol em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 28,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "azia"
+    ],
+    "ingredients": [
+      "esomeprazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Esomeprazol 40 mg — 28 comprimidos: medicamento (esomeprazol em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Esomeprazol. Para azia e má digestão. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p173",
+    "name": "Antigripal Paracetamol 400 mg + Fenilefrina 4 mg + Clorfeniramina 4 mg — 20 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_gripe",
+    "step": "antigripal",
+    "covers_steps": [
+      "antigripal"
+    ],
+    "product_type": "antigripal em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe",
+      "nariz_entupido",
+      "febre"
+    ],
+    "ingredients": [
+      "paracetamol",
+      "fenilefrina",
+      "clorfeniramina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Antigripal Paracetamol 400 mg + Fenilefrina 4 mg + Clorfeniramina 4 mg — 20 comprimidos: medicamento (antigripal em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Paracetamol, Cloridrato de fenilefrina e Maleato de clorfeniramina. Para gripe e resfriado, nariz entupido e febre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p174",
+    "name": "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína 30 mg — 20 cápsulas",
+    "brand": "Lab Nova Via",
+    "line": "med_gripe",
+    "step": "antigripal",
+    "covers_steps": [
+      "antigripal"
+    ],
+    "product_type": "antigripal em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe",
+      "febre"
+    ],
+    "ingredients": [
+      "dipirona",
+      "clorfeniramina",
+      "cafeina_med"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína 30 mg — 20 cápsulas: medicamento (antigripal em cápsulas) do laboratório Lab Nova Via. Princípio ativo: Dipirona monoidratada, Maleato de clorfeniramina e Cafeína anidra. Para gripe e resfriado e febre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p175",
+    "name": "Vitamina C 1 g Efervescente — 10 comprimidos",
+    "brand": "Farmanorte",
+    "line": "med_gripe",
+    "step": "imunidade",
+    "covers_steps": [
+      "imunidade"
+    ],
+    "product_type": "vitamina C efervescente",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe"
+    ],
+    "ingredients": [
+      "acido_ascorbico"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Vitamina C 1 g Efervescente — 10 comprimidos: medicamento (vitamina C efervescente) do laboratório Farmanorte. Princípio ativo: Ácido ascórbico (vitamina C). Para gripe e resfriado.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p176",
+    "name": "Soro Fisiológico Nasal 0,9% — 30 mL",
+    "brand": "Lab Genérico Sul",
+    "line": "med_gripe",
+    "step": "descongestionante_nasal",
+    "covers_steps": [
+      "descongestionante_nasal"
+    ],
+    "product_type": "solução nasal de cloreto de sódio",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe",
+      "nariz_entupido",
+      "alergia"
+    ],
+    "ingredients": [
+      "cloreto_sodio"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Soro Fisiológico Nasal 0,9% — 30 mL: medicamento (solução nasal de cloreto de sódio) do laboratório Lab Genérico Sul. Princípio ativo: Cloreto de sódio 0,9%. Para gripe e resfriado, nariz entupido e alergia e rinite.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p177",
+    "name": "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_gripe",
+    "step": "descongestionante_nasal",
+    "covers_steps": [
+      "descongestionante_nasal"
+    ],
+    "product_type": "descongestionante nasal em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe",
+      "nariz_entupido"
+    ],
+    "ingredients": [
+      "nafazolina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL: medicamento (descongestionante nasal em gotas) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de nafazolina. Para gripe e resfriado e nariz entupido.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p178",
+    "name": "Oximetazolina 0,5 mg/mL Spray Nasal — 20 mL",
+    "brand": "Lab Aurora",
+    "line": "med_gripe",
+    "step": "descongestionante_nasal",
+    "covers_steps": [
+      "descongestionante_nasal"
+    ],
+    "product_type": "descongestionante nasal em spray",
+    "form": "spray",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "gripe",
+      "nariz_entupido"
+    ],
+    "ingredients": [
+      "oximetazolina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Oximetazolina 0,5 mg/mL Spray Nasal — 20 mL: medicamento (descongestionante nasal em spray) do laboratório Lab Aurora. Princípio ativo: Cloridrato de oximetazolina. Para gripe e resfriado e nariz entupido.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p179",
+    "name": "Ambroxol Xarope Adulto 30 mg/5 mL — 120 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_tosse",
+    "step": "expectorante",
+    "covers_steps": [
+      "expectorante"
+    ],
+    "product_type": "xarope expectorante",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse"
+    ],
+    "ingredients": [
+      "ambroxol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ambroxol Xarope Adulto 30 mg/5 mL — 120 mL: medicamento (xarope expectorante) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de ambroxol. Para tosse com catarro.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p180",
+    "name": "Acetilcisteína 600 mg — 16 envelopes",
+    "brand": "Lab Aurora",
+    "line": "med_tosse",
+    "step": "expectorante",
+    "covers_steps": [
+      "expectorante"
+    ],
+    "product_type": "expectorante em envelopes",
+    "form": "powder",
+    "size": {
+      "value": 16,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse"
+    ],
+    "ingredients": [
+      "acetilcisteina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Acetilcisteína 600 mg — 16 envelopes: medicamento (expectorante em envelopes) do laboratório Lab Aurora. Princípio ativo: Acetilcisteína. Para tosse com catarro.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p181",
+    "name": "Bromexina Xarope Adulto 8 mg/5 mL — 120 mL",
+    "brand": "Farmanorte",
+    "line": "med_tosse",
+    "step": "expectorante",
+    "covers_steps": [
+      "expectorante"
+    ],
+    "product_type": "xarope expectorante",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse"
+    ],
+    "ingredients": [
+      "bromexina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Bromexina Xarope Adulto 8 mg/5 mL — 120 mL: medicamento (xarope expectorante) do laboratório Farmanorte. Princípio ativo: Cloridrato de bromexina. Para tosse com catarro.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p182",
+    "name": "Carbocisteína Xarope Adulto 50 mg/mL (genérico) — 100 mL",
+    "brand": "Lab Genérico Sul",
+    "line": "med_tosse",
+    "step": "expectorante",
+    "covers_steps": [
+      "expectorante"
+    ],
+    "product_type": "xarope expectorante",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse"
+    ],
+    "ingredients": [
+      "carbocisteina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Carbocisteína Xarope Adulto 50 mg/mL (genérico) — 100 mL: medicamento (xarope expectorante) do laboratório Lab Genérico Sul. Princípio ativo: Carbocisteína. Para tosse com catarro.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p183",
+    "name": "Xarope de Guaco — 120 mL",
+    "brand": "Lab Nova Via",
+    "line": "med_tosse",
+    "step": "expectorante",
+    "covers_steps": [
+      "expectorante"
+    ],
+    "product_type": "xarope fitoterápico",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse"
+    ],
+    "ingredients": [
+      "guaco"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Xarope de Guaco — 120 mL: medicamento (xarope fitoterápico) do laboratório Lab Nova Via. Princípio ativo: Guaco (Mikania glomerata). Para tosse com catarro.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p184",
+    "name": "Dropropizina Xarope Adulto 3 mg/mL — 120 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_tosse",
+    "step": "antitussigeno",
+    "covers_steps": [
+      "antitussigeno"
+    ],
+    "product_type": "xarope para tosse seca",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse_seca"
+    ],
+    "ingredients": [
+      "dropropizina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dropropizina Xarope Adulto 3 mg/mL — 120 mL: medicamento (xarope para tosse seca) do laboratório Vitalis Farma. Princípio ativo: Dropropizina. Para tosse seca.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p185",
+    "name": "Levodropropizina Xarope 6 mg/mL — 120 mL",
+    "brand": "Lab Aurora",
+    "line": "med_tosse",
+    "step": "antitussigeno",
+    "covers_steps": [
+      "antitussigeno"
+    ],
+    "product_type": "xarope para tosse seca",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "tosse_seca"
+    ],
+    "ingredients": [
+      "levodropropizina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Levodropropizina Xarope 6 mg/mL — 120 mL: medicamento (xarope para tosse seca) do laboratório Lab Aurora. Princípio ativo: Levodropropizina. Para tosse seca. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p186",
+    "name": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Mel e Limão — 8 pastilhas",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_de_garganta",
+    "step": "pastilha_garganta",
+    "covers_steps": [
+      "pastilha_garganta"
+    ],
+    "product_type": "pastilha antisséptica",
+    "form": "box",
+    "size": {
+      "value": 8,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta",
+      "tosse",
+      "tosse_seca"
+    ],
+    "ingredients": [
+      "amilmetacresol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Mel e Limão — 8 pastilhas: medicamento (pastilha antisséptica) do laboratório Vitalis Farma. Princípio ativo: Amilmetacresol + álcool diclorobenzílico. Para dor de garganta, tosse com catarro e tosse seca.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p187",
+    "name": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Menta — 8 pastilhas",
+    "brand": "Farmanorte",
+    "line": "med_dor_de_garganta",
+    "step": "pastilha_garganta",
+    "covers_steps": [
+      "pastilha_garganta"
+    ],
+    "product_type": "pastilha antisséptica",
+    "form": "box",
+    "size": {
+      "value": 8,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta",
+      "tosse",
+      "tosse_seca"
+    ],
+    "ingredients": [
+      "amilmetacresol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Menta — 8 pastilhas: medicamento (pastilha antisséptica) do laboratório Farmanorte. Princípio ativo: Amilmetacresol + álcool diclorobenzílico. Para dor de garganta, tosse com catarro e tosse seca.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p188",
+    "name": "Flurbiprofeno 8,75 mg — 16 pastilhas",
+    "brand": "Lab Aurora",
+    "line": "med_dor_de_garganta",
+    "step": "pastilha_garganta",
+    "covers_steps": [
+      "pastilha_garganta"
+    ],
+    "product_type": "pastilha anti-inflamatória",
+    "form": "box",
+    "size": {
+      "value": 16,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta"
+    ],
+    "ingredients": [
+      "flurbiprofeno"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Flurbiprofeno 8,75 mg — 16 pastilhas: medicamento (pastilha anti-inflamatória) do laboratório Lab Aurora. Princípio ativo: Flurbiprofeno. Para dor de garganta.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p189",
+    "name": "Benzidamina 3 mg — 12 pastilhas",
+    "brand": "Lab Nova Via",
+    "line": "med_dor_de_garganta",
+    "step": "pastilha_garganta",
+    "covers_steps": [
+      "pastilha_garganta"
+    ],
+    "product_type": "pastilha anti-inflamatória",
+    "form": "box",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta"
+    ],
+    "ingredients": [
+      "benzidamina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Benzidamina 3 mg — 12 pastilhas: medicamento (pastilha anti-inflamatória) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p190",
+    "name": "Benzidamina Spray 1,5 mg/mL — 30 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_dor_de_garganta",
+    "step": "spray_garganta",
+    "covers_steps": [
+      "spray_garganta"
+    ],
+    "product_type": "spray para garganta",
+    "form": "spray",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta"
+    ],
+    "ingredients": [
+      "benzidamina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Benzidamina Spray 1,5 mg/mL — 30 mL: medicamento (spray para garganta) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p191",
+    "name": "Benzidamina Colutório 1,5 mg/mL (genérico) — 250 mL",
+    "brand": "Lab Genérico Sul",
+    "line": "med_dor_de_garganta",
+    "step": "spray_garganta",
+    "covers_steps": [
+      "spray_garganta"
+    ],
+    "product_type": "gargarejo para garganta",
+    "form": "bottle",
+    "size": {
+      "value": 250,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "dor_de_garganta"
+    ],
+    "ingredients": [
+      "benzidamina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Benzidamina Colutório 1,5 mg/mL (genérico) — 250 mL: medicamento (gargarejo para garganta) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p192",
+    "name": "Loratadina 10 mg — 12 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "loratadina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "loratadina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Loratadina 10 mg — 12 comprimidos: medicamento (loratadina em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Loratadina. Para alergia e rinite.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p193",
+    "name": "Loratadina Xarope 1 mg/mL — 100 mL",
+    "brand": "Farmanorte",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "loratadina em xarope",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "loratadina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Loratadina Xarope 1 mg/mL — 100 mL: medicamento (loratadina em xarope) do laboratório Farmanorte. Princípio ativo: Loratadina. Para alergia e rinite.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p194",
+    "name": "Desloratadina 5 mg — 10 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "desloratadina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "desloratadina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Desloratadina 5 mg — 10 comprimidos: medicamento (desloratadina em comprimidos) do laboratório Lab Aurora. Princípio ativo: Desloratadina. Para alergia e rinite. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p195",
+    "name": "Cetirizina 10 mg (genérico) — 10 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "cetirizina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "cetirizina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Cetirizina 10 mg (genérico) — 10 comprimidos: medicamento (cetirizina em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Dicloridrato de cetirizina. Para alergia e rinite. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p196",
+    "name": "Fexofenadina 180 mg — 10 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "fexofenadina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "fexofenadina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fexofenadina 180 mg — 10 comprimidos: medicamento (fexofenadina em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de fexofenadina. Para alergia e rinite. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p197",
+    "name": "Dexclorfeniramina 2 mg — 20 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_alergia",
+    "step": "antialergico",
+    "covers_steps": [
+      "antialergico"
+    ],
+    "product_type": "dexclorfeniramina em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "alergia"
+    ],
+    "ingredients": [
+      "dexclorfeniramina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dexclorfeniramina 2 mg — 20 comprimidos: medicamento (dexclorfeniramina em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Maleato de dexclorfeniramina. Para alergia e rinite. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p198",
+    "name": "Loperamida 2 mg — 12 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_diarreia",
+    "step": "antidiarreico",
+    "covers_steps": [
+      "antidiarreico"
+    ],
+    "product_type": "loperamida em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia"
+    ],
+    "ingredients": [
+      "loperamida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Loperamida 2 mg — 12 comprimidos: medicamento (loperamida em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de loperamida. Para diarreia.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p199",
+    "name": "Racecadotrila 100 mg — 9 cápsulas",
+    "brand": "Lab Aurora",
+    "line": "med_diarreia",
+    "step": "antidiarreico",
+    "covers_steps": [
+      "antidiarreico"
+    ],
+    "product_type": "racecadotrila em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 9,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia"
+    ],
+    "ingredients": [
+      "racecadotrila"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Racecadotrila 100 mg — 9 cápsulas: medicamento (racecadotrila em cápsulas) do laboratório Lab Aurora. Princípio ativo: Racecadotrila. Para diarreia. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p200",
+    "name": "Nitazoxanida 500 mg — 6 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_diarreia",
+    "step": "antidiarreico",
+    "covers_steps": [
+      "antidiarreico"
+    ],
+    "product_type": "nitazoxanida em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 6,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia"
+    ],
+    "ingredients": [
+      "nitazoxanida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Nitazoxanida 500 mg — 6 comprimidos: medicamento (nitazoxanida em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Nitazoxanida. Para diarreia. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p201",
+    "name": "Saccharomyces boulardii 200 mg — 12 cápsulas",
+    "brand": "Farmanorte",
+    "line": "med_diarreia",
+    "step": "probiotico",
+    "covers_steps": [
+      "probiotico"
+    ],
+    "product_type": "probiótico em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 12,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia"
+    ],
+    "ingredients": [
+      "saccharomyces_boulardii"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Saccharomyces boulardii 200 mg — 12 cápsulas: medicamento (probiótico em cápsulas) do laboratório Farmanorte. Princípio ativo: Saccharomyces boulardii. Para diarreia.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p202",
+    "name": "Bacillus clausii 2 bilhões — 5 flaconetes de 5 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_diarreia",
+    "step": "probiotico",
+    "covers_steps": [
+      "probiotico"
+    ],
+    "product_type": "probiótico em flaconetes",
+    "form": "bottle",
+    "size": {
+      "value": 25,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia"
+    ],
+    "ingredients": [
+      "bacillus_clausii"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Bacillus clausii 2 bilhões — 5 flaconetes de 5 mL: medicamento (probiótico em flaconetes) do laboratório Vitalis Farma. Princípio ativo: Bacillus clausii. Para diarreia.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p203",
+    "name": "Sais para Reidratação Oral — envelope 27,9 g",
+    "brand": "Lab Genérico Sul",
+    "line": "med_diarreia",
+    "step": "reidratacao",
+    "covers_steps": [
+      "reidratacao"
+    ],
+    "product_type": "soro de reidratação oral",
+    "form": "powder",
+    "size": {
+      "value": 27.9,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia",
+      "enjoo"
+    ],
+    "ingredients": [
+      "sais_reidratacao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Sais para Reidratação Oral — envelope 27,9 g: medicamento (soro de reidratação oral) do laboratório Lab Genérico Sul. Princípio ativo: Sais para reidratação oral. Para diarreia e enjoo e náusea.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p204",
+    "name": "Soro de Reidratação Oral Pronto Sabor Coco — 500 mL",
+    "brand": "Farmanorte",
+    "line": "med_diarreia",
+    "step": "reidratacao",
+    "covers_steps": [
+      "reidratacao"
+    ],
+    "product_type": "soro de reidratação pronto",
+    "form": "bottle",
+    "size": {
+      "value": 500,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "diarreia",
+      "enjoo"
+    ],
+    "ingredients": [
+      "sais_reidratacao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Soro de Reidratação Oral Pronto Sabor Coco — 500 mL: medicamento (soro de reidratação pronto) do laboratório Farmanorte. Princípio ativo: Sais para reidratação oral. Para diarreia e enjoo e náusea.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p205",
+    "name": "Bisacodil 5 mg — 20 drágeas",
+    "brand": "Vitalis Farma",
+    "line": "med_prisao_de_ventre",
+    "step": "laxante",
+    "covers_steps": [
+      "laxante"
+    ],
+    "product_type": "laxante em drágeas",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "bisacodil"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Bisacodil 5 mg — 20 drágeas: medicamento (laxante em drágeas) do laboratório Vitalis Farma. Princípio ativo: Bisacodil. Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p206",
+    "name": "Picossulfato de Sódio Gotas 7,5 mg/mL — 20 mL",
+    "brand": "Lab Aurora",
+    "line": "med_prisao_de_ventre",
+    "step": "laxante",
+    "covers_steps": [
+      "laxante"
+    ],
+    "product_type": "laxante em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "picossulfato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Picossulfato de Sódio Gotas 7,5 mg/mL — 20 mL: medicamento (laxante em gotas) do laboratório Lab Aurora. Princípio ativo: Picossulfato de sódio. Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p207",
+    "name": "Lactulose Xarope 667 mg/mL (genérico) — 120 mL",
+    "brand": "Lab Genérico Sul",
+    "line": "med_prisao_de_ventre",
+    "step": "laxante",
+    "covers_steps": [
+      "laxante"
+    ],
+    "product_type": "laxante em xarope",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "lactulose"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Lactulose Xarope 667 mg/mL (genérico) — 120 mL: medicamento (laxante em xarope) do laboratório Lab Genérico Sul. Princípio ativo: Lactulose. Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p208",
+    "name": "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 120 mL",
+    "brand": "Farmanorte",
+    "line": "med_prisao_de_ventre",
+    "step": "laxante",
+    "covers_steps": [
+      "laxante"
+    ],
+    "product_type": "laxante em suspensão",
+    "form": "bottle",
+    "size": {
+      "value": 120,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre",
+      "azia"
+    ],
+    "ingredients": [
+      "hidroxido_magnesio"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 120 mL: medicamento (laxante em suspensão) do laboratório Farmanorte. Princípio ativo: Hidróxido de magnésio. Para prisão de ventre e azia e má digestão.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p209",
+    "name": "Macrogol 3350 Pó para Solução Oral — 10 sachês",
+    "brand": "Lab Nova Via",
+    "line": "med_prisao_de_ventre",
+    "step": "laxante",
+    "covers_steps": [
+      "laxante"
+    ],
+    "product_type": "laxante em pó",
+    "form": "powder",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "macrogol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Macrogol 3350 Pó para Solução Oral — 10 sachês: medicamento (laxante em pó) do laboratório Lab Nova Via. Princípio ativo: Macrogol 3350. Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p210",
+    "name": "Psyllium (Plantago ovata) Pó — 10 sachês",
+    "brand": "Vitalis Farma",
+    "line": "med_prisao_de_ventre",
+    "step": "fibra",
+    "covers_steps": [
+      "fibra"
+    ],
+    "product_type": "fibra em pó",
+    "form": "powder",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "psyllium"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Psyllium (Plantago ovata) Pó — 10 sachês: medicamento (fibra em pó) do laboratório Vitalis Farma. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p211",
+    "name": "Psyllium (Plantago ovata) Pó — 30 sachês",
+    "brand": "Farmanorte",
+    "line": "med_prisao_de_ventre",
+    "step": "fibra",
+    "covers_steps": [
+      "fibra"
+    ],
+    "product_type": "fibra em pó",
+    "form": "powder",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "ingredients": [
+      "psyllium"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Psyllium (Plantago ovata) Pó — 30 sachês: medicamento (fibra em pó) do laboratório Farmanorte. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p212",
+    "name": "Dimenidrinato 100 mg — 10 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "dimenidrinato em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo"
+    ],
+    "ingredients": [
+      "dimenidrinato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dimenidrinato 100 mg — 10 comprimidos: medicamento (dimenidrinato em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Dimenidrinato. Para enjoo e náusea.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p213",
+    "name": "Dimenidrinato 50 mg + Piridoxina 10 mg — 10 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "dimenidrinato com vitamina B6",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo"
+    ],
+    "ingredients": [
+      "dimenidrinato",
+      "piridoxina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dimenidrinato 50 mg + Piridoxina 10 mg — 10 comprimidos: medicamento (dimenidrinato com vitamina B6) do laboratório Lab Aurora. Princípio ativo: Dimenidrinato e Piridoxina (vitamina B6). Para enjoo e náusea.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p214",
+    "name": "Dimenidrinato Gotas 25 mg/mL — 20 mL",
+    "brand": "Farmanorte",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "dimenidrinato em gotas",
+    "form": "dropper",
+    "size": {
+      "value": 20,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo"
+    ],
+    "ingredients": [
+      "dimenidrinato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dimenidrinato Gotas 25 mg/mL — 20 mL: medicamento (dimenidrinato em gotas) do laboratório Farmanorte. Princípio ativo: Dimenidrinato. Para enjoo e náusea.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p215",
+    "name": "Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis",
+    "brand": "Lab Genérico Sul",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "ondansetrona em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo"
+    ],
+    "ingredients": [
+      "ondansetrona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis: medicamento (ondansetrona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ondansetrona. Para enjoo e náusea. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p216",
+    "name": "Metoclopramida 10 mg — 20 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "metoclopramida em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo"
+    ],
+    "ingredients": [
+      "metoclopramida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Metoclopramida 10 mg — 20 comprimidos: medicamento (metoclopramida em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de metoclopramida. Para enjoo e náusea. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p217",
+    "name": "Domperidona 10 mg — 30 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_enjoo",
+    "step": "antiemetico",
+    "covers_steps": [
+      "antiemetico"
+    ],
+    "product_type": "domperidona em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "enjoo",
+      "azia"
+    ],
+    "ingredients": [
+      "domperidona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Domperidona 10 mg — 30 comprimidos: medicamento (domperidona em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Domperidona. Para enjoo e náusea e azia e má digestão. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
   }
 ]

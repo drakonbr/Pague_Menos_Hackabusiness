@@ -1,6 +1,7 @@
 // MOCK da interpretação de intenção e da camada de segurança.
 // No sistema real isto vira: regras de segurança + extração por modelo (docs 06 e 07).
-import type { GoalId, Intent, Safety, SafetyCategory, SearchRequest, SkinType } from "../../contracts/types";
+import type { GoalId, Intent, Safety, SearchRequest, SkinType } from "../../contracts/types";
+import { DERMO_GOALS } from "../../contracts/types";
 import { GOALS } from "./catalogData";
 
 export function norm(s: string): string {
@@ -20,6 +21,20 @@ const GOAL_PRIORITY: GoalId[] = [
   "oleosidade",
   "suplementos",
   "higiene_premium",
+  // saúde (doc 16): do mais específico para o mais amplo
+  "tosse_seca",
+  "enjoo",
+  "diarreia",
+  "prisao_de_ventre",
+  "dor_de_garganta",
+  "alergia",
+  "azia",
+  "dor_de_barriga",
+  "dor_muscular",
+  "dor_de_cabeca",
+  "dor_no_corpo",
+  "tosse",
+  "gripe",
 ];
 
 // Sinônimos extras só da versão simulada (o catálogo traz os principais).
@@ -116,7 +131,7 @@ export function parseIntent(req: SearchRequest): ParsedIntent {
   if (req.skinType !== undefined) skinType = req.skinType;
 
   const missing: Intent["missing"] = [];
-  if (!skinType) missing.push("skinType");
+  if (!skinType && primaryGoal && DERMO_GOALS.includes(primaryGoal)) missing.push("skinType");
   if (budgetCents == null) missing.push("budget");
 
   return {
@@ -137,57 +152,20 @@ export function parseIntent(req: SearchRequest): ParsedIntent {
 }
 
 // ---------------------------------------------------------------------------
-// Segurança (doc 07). Regras determinísticas, rodam antes de qualquer outra coisa.
+// Segurança (doc 16): sem bloqueio por medicamento ou sintoma e sem encaminhamento; só a gestação tira dos kits o
+// que tem restrição nesse período.
 // ---------------------------------------------------------------------------
-const BLOCK_RULES: Array<[SafetyCategory, RegExp, string]> = [
-  [
-    "medicamento",
-    /\b(remedio|remedios|medicamento|medicamentos|antibiotico\w*|anti-?inflamatorio\w*|corticoide\w*|isotretinoina|roacutan|analgesico\w*|dipirona|paracetamol|ibuprofeno|receita|posologia|comprimido\w*|dose|o que (eu )?(posso )?tomar)\b/,
-    "medicamentos",
-  ],
-  ["sintoma", /\b(dor|dores|febre|coceira|sangramento|sangrando|inchaco|tontura|nausea|enjoo|tosse|vomito)\b/, "sintomas de saúde"],
-  [
-    "condicao_de_saude",
-    /\b(dermatite|psoriase|rosacea|micose|infeccao|infeccionad\w*|ferida|herpes|eczema|candidiase|alergia)\b/,
-    "uma condição de saúde",
-  ],
-];
-
-export const SAFETY_REFERRAL = "Falar com um farmacêutico";
-
-/** Pedido de recomendação, dose ou sintoma: bloqueado mesmo no fluxo de reposição. */
-const RECOMMEND =
-  /\b(o que (eu )?(posso |devo )?tomar|qual (remedio|medicamento)|indica\w* (um |algum )?(remedio|medicamento)|dose|doses|posologia|sem receita|parar de tomar|dor|dores|febre|tontura|pressao alta|colesterol|diabetes)\b/;
 const REFILL = /\b(repor|reposicao|recompr\w+|comprar de novo|acabando|acabou|renovar|ficar sem|no fim)\b.*\b(remedio|remedios|medicamento|medicamentos|medicacao|medicacoes)\b|\b(meu|meus|minha|minhas)\b.*\b(remedio|remedios|medicamento|medicamentos|medicacao)\b.*\b(acabando|acabou|no fim|repor|reposicao)\b/;
 export function isRefillRequest(normalized: string): boolean {
-  return REFILL.test(normalized) && !RECOMMEND.test(normalized);
+  return REFILL.test(normalized);
 }
 
-export function assessSafety(normalized: string, pregnancy: boolean, primaryGoal: GoalId | null): Safety {
-  for (const [category, re, subject] of BLOCK_RULES) {
-    if (re.test(normalized)) {
-      const alt =
-        primaryGoal === "acne"
-          ? "Quero cuidados cosméticos para acne"
-          : primaryGoal === "manchas"
-            ? "Quero cuidados cosméticos para manchas"
-            : undefined;
-      return {
-        decision: "blocked",
-        category,
-        message: `Esse tipo de pedido envolve ${subject}. Aqui eu só monto kits de cuidados com a pele. Para medicamentos, sintomas e condições de saúde, converse com um farmacêutico ou médico.`,
-        referral: SAFETY_REFERRAL,
-        alternativeQuery: alt,
-      };
-    }
-  }
+export function assessSafety(_normalized: string, pregnancy: boolean, _primaryGoal: GoalId | null): Safety {
   if (pregnancy) {
     return {
       decision: "caution",
       category: "gestacao_e_ativos",
-      message:
-        "Você mencionou gestação ou amamentação. Retiramos dos kits os produtos que pedem orientação profissional nesse período. Converse com seu médico ou dermatologista antes de usar qualquer ativo.",
-      referral: SAFETY_REFERRAL,
+      message: "Você mencionou gestação ou amamentação. Retiramos dos kits os produtos com restrição nesse período.",
     };
   }
   return { decision: "allow" };

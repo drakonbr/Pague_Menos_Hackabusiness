@@ -69,8 +69,7 @@ function chatFields(res: Omit<SearchResponse, "reply" | "suggestions" | "action"
   let reply: string;
   let action: ChatAction = { type: "none" };
   const goal = res.intent.primaryGoal ? GOAL_LABEL[res.intent.primaryGoal].toLowerCase() : "";
-  if (res.safety.decision === "blocked") reply = res.safety.message ?? "Esse pedido é uma questão de saúde.";
-  else if (res.kits.length) {
+  if (res.kits.length) {
     reply = `Montei ${res.kits.length} opções de ${goal}: ${res.kits.map((k) => `${TIER_LABEL[k.tier]} ${money(k.totalCents)}`).join(", ")}. (modo simulado)`;
     action = { type: "show_kits" };
   } else if (res.kitsStatus === "none_in_budget" && res.closestKit) {
@@ -132,11 +131,6 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
         closestKit: null,
       } as const;
 
-      if (safety.decision === "blocked") {
-        const r = { ...base, kitsStatus: "not_applicable" as const, kits: [], products: [], notes: [] };
-        return { ...r, ...chatFields(r, "bloqueado", turn) };
-      }
-
       if (!parsed.understood) {
         const found = tokenSearch(req.query);
         const r = {
@@ -155,13 +149,13 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
 
       const ctx = buildCtx(intent, parsed.requestedIngredients)!;
       const comp = compose(ctx, requestId);
-      const clarification: Clarification | undefined = intent.skinType
-        ? undefined
-        : { id: "skinType", question: "Como é a sua pele?", options: SKIN_OPTIONS };
+      const clarification: Clarification | undefined = intent.missing.includes("skinType")
+        ? { id: "skinType", question: "Como é a sua pele?", options: SKIN_OPTIONS }
+        : undefined;
 
       const r = {
         ...base,
-        clarification: intent.primaryGoal && ["suplementos", "higiene_premium"].includes(intent.primaryGoal) ? undefined : clarification,
+        clarification,
         kitsStatus: comp.status,
         kits: comp.kits,
         closestKit: comp.closestKit,
@@ -177,20 +171,20 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
       if (!p) throw new Error("Produto inexistente.");
       const withStock = (q: Product) => STORES.filter((s) => stockAt(q.id, s.id) > 0).map((s) => s.id);
       const pool =
-        p.domain === "medicamento" && p.equivalence
+        p.equivalence
           ? PRODUCTS.filter((q) => q.id !== p.id && q.equivalence?.group === p.equivalence!.group)
-          : PRODUCTS.filter((q) => q.id !== p.id && q.domain !== "medicamento" && q.step === p.step && q.concerns.some((c) => p.concerns.includes(c)));
+          : PRODUCTS.filter((q) => q.id !== p.id && q.step === p.step && q.concerns.some((c) => p.concerns.includes(c)));
       const options = pool
         .map((q) => ({
           product: q,
-          kind: p.domain === "medicamento" ? ("equivalente" as const) : ("parecido" as const),
+          kind: p.equivalence ? ("equivalente" as const) : ("parecido" as const),
           presentation: q.equivalence?.presentation,
-          sameActive: p.domain === "medicamento" ? true : undefined,
-          sameDose: p.domain === "medicamento" ? q.equivalence?.dose === p.equivalence?.dose : undefined,
+          sameActive: p.equivalence ? true : undefined,
+          sameDose: p.equivalence ? q.equivalence?.dose === p.equivalence?.dose : undefined,
           deltaCents: q.priceCents - p.priceCents,
           inStock: stockAt(q.id, storeId) > 0,
           storeIdsWithStock: withStock(q),
-          needsPharmacistConfirmation: p.domain === "medicamento",
+          needsPharmacistConfirmation: false,
         }))
         .sort((a, b) => Number(b.inStock) - Number(a.inStock) || a.deltaCents - b.deltaCents || a.product.id.localeCompare(b.product.id))
         .slice(0, 6);

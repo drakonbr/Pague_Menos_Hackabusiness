@@ -15,7 +15,7 @@ import { delta, money } from "../services/format";
 import { useApp, type ChatMsg } from "../state/app";
 import { useAsync } from "../useAsync";
 
-const WELCOME_SUGGESTIONS = ["Repor meus medicamentos", "Kit de suplementos ômega 3, colágeno e magnésio", "Rotina anti idade premium até R$ 400", "Higiene premium"];
+const WELCOME_SUGGESTIONS = ["Remédio para dor de cabeça", "Repor meus medicamentos", "Kit de suplementos ômega 3, colágeno e magnésio", "Rotina anti idade premium até R$ 400"];
 let seq = 0;
 const nextId = () => `m${Date.now().toString(36)}${(seq++).toString(36)}`;
 
@@ -148,22 +148,14 @@ function Message({ m, isLast, onSend, storeName, push }: { m: ChatMsg; isLast: b
 
 function BotBody({ res, isLast, onSend, storeName, push }: { res: SearchResponse; isLast: boolean; onSend: (q: string) => void; storeName: string | null; push: ReturnType<typeof useNav>["push"] }) {
   const a = res.action as ChatAction | undefined;
-  const blocked = res.safety.decision === "blocked";
   return (
     <>
-      {blocked ? (
-        <section className="panel" role="alert" aria-label="Orientação de saúde">
-          <div className="row" style={{ color: "var(--warn)" }}><Icon name="shield" size={22} /><b>Isso é uma questão de saúde</b></div>
-          <button className="btn primary block" onClick={() => push({ name: "pharmacist" })}><Icon name="cross" size={20} /> {res.safety.referral ?? "Falar com um farmacêutico"}</button>
-          {res.safety.alternativeQuery ? <button className="btn outline blue block" onClick={() => onSend(res.safety.alternativeQuery!)}>{res.safety.alternativeQuery}</button> : null}
-        </section>
-      ) : null}
       {res.safety.decision === "caution" && res.safety.message ? <div className="note warn"><Icon name="alert" size={18} /><p>{res.safety.message}</p></div> : null}
 
-      {!blocked && res.closestKit && res.kitsStatus === "none_in_budget" ? (
+      {res.closestKit && res.kitsStatus === "none_in_budget" ? (
         <div className="kit-strip"><KitCard kit={res.closestKit} onOpen={() => push({ name: "kit", kit: res.closestKit!, intent: res.intent })} overBudgetBy={res.intent.budgetCents != null ? res.closestKit.totalCents - res.intent.budgetCents : undefined} /></div>
       ) : null}
-      {!blocked && res.kits.length && a?.type !== "delivery_quote" && a?.type !== "swap_options" && a?.type !== "show_similars" ? (
+      {res.kits.length && a?.type !== "delivery_quote" && a?.type !== "swap_options" && a?.type !== "show_similars" ? (
         <>
           {res.intent.storeId && storeName ? <p className="chat-meta"><Icon name="store" size={16} /> Só com o estoque da {storeName}</p> : null}
           <div className="kit-strip" tabIndex={0} aria-label="Deslize para ver os kits">
@@ -176,7 +168,7 @@ function BotBody({ res, isLast, onSend, storeName, push }: { res: SearchResponse
       {a?.type === "show_products" && res.products.length ? (
         <div className="hscroll chat-products">{res.products.slice(0, 8).map((p) => <ProductCard key={p.id} product={p} />)}</div>
       ) : null}
-      {!blocked && res.kitsStatus === "not_applicable" && !a?.type?.match(/show_products|show_similars|open_refill|delivery/) && res.products.length ? (
+      {res.kitsStatus === "not_applicable" && !a?.type?.match(/show_products|show_similars|open_refill|delivery/) && res.products.length ? (
         <div className="hscroll chat-products">{res.products.slice(0, 8).map((p) => <ProductCard key={p.id} product={p} />)}</div>
       ) : null}
 
@@ -300,7 +292,7 @@ function SimilarsBlock({ res, action, push }: { res: SearchResponse; action: Ext
       })}
       {isMed ? (
         <>
-          <div className="note warn"><Icon name="info" size={18} /><p>A troca de apresentação só vale com a confirmação do farmacêutico e conforme a sua receita.</p></div>
+          <div className="note"><Icon name="info" size={18} /><p>Mesmo princípio ativo e mesma dose, conforme a sua receita.</p></div>
           <button className="btn primary block" onClick={() => push({ name: "refill" })}><Icon name="pill" size={20} /> Abrir Meus medicamentos</button>
         </>
       ) : null}

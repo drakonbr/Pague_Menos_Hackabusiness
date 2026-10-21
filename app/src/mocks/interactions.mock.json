@@ -52,5 +52,281 @@
   "b": "acido_azelaico",
   "severity": "separar",
   "reason": "Usar em períodos diferentes para reduzir irritação."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "naproxeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "diclofenaco_potassico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "diclofenaco_sodico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "diclofenaco_dietilamonio",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "nimesulida",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "ibuprofeno",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "diclofenaco_potassico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "diclofenaco_sodico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "diclofenaco_dietilamonio",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "nimesulida",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "naproxeno",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "diclofenaco_sodico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "diclofenaco_dietilamonio",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "nimesulida",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_potassico",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_sodico",
+  "b": "diclofenaco_dietilamonio",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_sodico",
+  "b": "nimesulida",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_sodico",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_sodico",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_sodico",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_dietilamonio",
+  "b": "nimesulida",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_dietilamonio",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_dietilamonio",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "diclofenaco_dietilamonio",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "nimesulida",
+  "b": "acido_acetilsalicilico",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "nimesulida",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "nimesulida",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "acido_acetilsalicilico",
+  "b": "flurbiprofeno",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "acido_acetilsalicilico",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "flurbiprofeno",
+  "b": "benzidamina",
+  "severity": "evitar",
+  "reason": "Dois anti-inflamatórios no mesmo kit somam efeitos sem somar alívio."
+ },
+ {
+  "a": "dropropizina",
+  "b": "ambroxol",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "dropropizina",
+  "b": "acetilcisteina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "dropropizina",
+  "b": "bromexina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "dropropizina",
+  "b": "carbocisteina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "dropropizina",
+  "b": "guaco",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "levodropropizina",
+  "b": "ambroxol",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "levodropropizina",
+  "b": "acetilcisteina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "levodropropizina",
+  "b": "bromexina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "levodropropizina",
+  "b": "carbocisteina",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
+ },
+ {
+  "a": "levodropropizina",
+  "b": "guaco",
+  "severity": "evitar",
+  "reason": "Remédio que segura a tosse junto com expectorante prende o catarro."
  }
 ]

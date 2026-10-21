@@ -1,6 +1,6 @@
 # catalog/ — banco de dados FICTÍCIO
 
-Catálogo sintético de 138 produtos: 100 de skin care, tratamento cosmético e proteção solar, mais 38 criados para a persona Renata (suplementos, higiene premium, anti-idade e **itens de reposição fictícios com nome genérico**, `rx` simulado). **Todos os dados são inventados.** Itens de reposição só servem à tela de reposição; o motor nunca os recomenda.
+Catálogo sintético de 217 produtos (inclui 79 medicamentos em 12 áreas de saúde, em `medicines.py`): 100 de skin care, tratamento cosmético e proteção solar, mais 38 criados para a persona Renata (suplementos, higiene premium, anti-idade e **itens de reposição fictícios com nome genérico**, `rx` simulado). **Todos os dados são inventados.** Itens de reposição só servem à tela de reposição; o motor nunca os recomenda.
 
 Este módulo é independente: não importa nada de `app/` nem de `graphrag/`. Ele só gera arquivos de dados.
 
@@ -9,7 +9,7 @@ Este módulo é independente: não importa nada de `app/` nem de `graphrag/`. El
 | Arquivo | O que é |
 | --- | --- |
 | `generate_catalog.py` | Gerador determinístico (seed fixa) |
-| `validate_catalog.py` | 69 checagens automáticas; sai com código 1 se algo falhar |
+| `validate_catalog.py` | 76 checagens automáticas; sai com código 1 se algo falhar |
 | `persona_products.py`, `generate_persona.py` | produtos p101–p138 e `data/persona.json` (dados da persona; ficam no aparelho e o motor não os lê) |
 | `data/products.json` | Cadastro dos produtos (equivale ao PIM/catálogo real) |
 | `data/inventory.json` | Preço e estoque por produto (equivale ao ERP/estoque real) |

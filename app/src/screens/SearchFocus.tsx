@@ -4,6 +4,8 @@ import { useNav } from "../nav";
 import { useApp } from "../state/app";
 
 const EXAMPLES = [
+  "remédio para dor de cabeça",
+  "estou gripado, com nariz entupido",
   "quero um kit de suplementos: ômega 3, colágeno e magnésio",
   "rotina anti idade premium até R$ 400, sem retinol",
   "higiene premium: shampoo, creme dental e desodorante",
@@ -33,7 +35,7 @@ export function SearchFocus({ initial = "" }: { initial?: string }) {
         <div className="searchfield" style={{ borderColor: "var(--brand)" }}>
           <Icon name="search" />
           <label className="sr-only" htmlFor="q">O que você procura?</label>
-          <input id="q" autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="O que você procura?" autoComplete="off" enterKeyHint="search" />
+          <input id="q" autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Remédio, sintoma ou produto" autoComplete="off" enterKeyHint="search" />
           {q ? (
             <button type="button" className="icon-btn" style={{ width: 36, height: 36 }} onClick={() => setQ("")} aria-label="Apagar">
               <Icon name="close" size={18} />

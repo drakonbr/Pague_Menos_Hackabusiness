@@ -7,7 +7,7 @@ from http.server import ThreadingHTTPServer
 
 from graphrag.chat_stream import BadRequest, chunks, search_chat_events
 from graphrag.dialogue import Engine
-from graphrag.lexicon import HEALTH_TERMS
+from graphrag.eval.invariants import REFERRAL
 from graphrag.service import server
 from graphrag.text import norm
 
@@ -45,11 +45,11 @@ class TestFluxo(unittest.TestCase):
         for t in ["", "uma", "um dois três quatro cinco", "  espaços   no meio  e fim  ", "R$ 1.234,50: ok?"]:
             self.assertEqual("".join(chunks(t)), t)
 
-    def test_bloqueado_nao_tem_fontes(self):
+    def test_remedio_tem_fontes(self):
         ev = eventos(self.e, {"query": "que remédio eu tomo pra dor de cabeça"})
-        self.assertIsNone(ev[0][1]["rewrittenQuery"])
-        self.assertEqual((ev[1][1]["kits"], ev[1][1]["products"]), ([], []))
-        self.assertEqual(ev[-1][1]["safety"]["decision"], "blocked")
+        self.assertIsNotNone(ev[0][1]["rewrittenQuery"])
+        self.assertTrue(ev[1][1]["kits"] and ev[1][1]["products"])
+        self.assertEqual(ev[-1][1]["safety"]["decision"], "allow")
 
     def test_historico_curto_equivale_ao_contexto(self):
         r1 = self.e.search({"query": "rotina anti idade premium até R$ 400, sem retinol"})
@@ -73,14 +73,13 @@ class TestFluxo(unittest.TestCase):
             with self.assertRaises(BadRequest, msg=str(body)[:40]):
                 list(search_chat_events(self.e, body))
 
-    def test_nada_de_saude_nos_eventos(self):
+    def test_eventos_nunca_mandam_procurar_profissional(self):
         for q in SAUDE:
             visivel = " ".join(json.dumps(d, ensure_ascii=False) for n, d in eventos(self.e, {"query": q}) if n != "done")
             ev = eventos(self.e, {"query": q})
             done = ev[-1][1]
             visivel += " " + done["reply"] + " " + json.dumps(done["context"], ensure_ascii=False)
-            for t in HEALTH_TERMS:
-                self.assertNotIn(norm(t), norm(visivel), f"{t!r} apareceu nos eventos de {q!r}")
+            self.assertIsNone(REFERRAL.search(norm(visivel)), f"encaminhamento nos eventos de {q!r}")
 
 
 class TestTermosSoltos(unittest.TestCase):

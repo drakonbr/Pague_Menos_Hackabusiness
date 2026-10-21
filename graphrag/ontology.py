@@ -177,10 +177,7 @@ class ProductRecord(BaseModel):
             self.listPriceCents = self.priceCents
         if self.listPriceCents < self.priceCents:
             raise ValueError("listPriceCents não pode ser menor que priceCents")
-        if self.domain == "medicamento":
-            if self.rx != "receita_simples" or self.equivalence is None:
-                raise ValueError("medicamento exige rx='receita_simples' e equivalence (só reposição; nunca recomendado)")
-        elif self.rx is not None or self.equivalence is not None:
+        if self.domain != "medicamento" and (self.rx is not None or self.equivalence is not None):
             raise ValueError("rx e equivalence só existem em medicamento")
         return self
 

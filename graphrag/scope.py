@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 
 from .concepts import ARTICLES, CONCEPTS, GENERIC, NEGATORS, Concept
 from .data import Catalog
-from .lexicon import INGREDIENT_ALIASES
+from .lexicon import CONCERN_ALIASES, INGREDIENT_ALIASES
 from .spell import COMMON
 from .text import STOPWORDS, norm, raw_tokens, stem, stemmed_all
 
@@ -26,6 +26,8 @@ POS_ACNE = re.compile(r"marca|mancha|clare|uniform|pos acne|cicatriz|escur")
 VOTE_MIN = 0.28          # nota mínima (0..1, relativa ao melhor possível) do melhor produto para a votação valer
 VOTE_REL = 0.55          # entra na lista da votação quem tem ao menos esta fração da nota do melhor
 MAX_LIST = 24
+MED_WORDS = ("remedio", "remedios", "medicamento", "medicamentos", "medicacao", "medicacoes", "farmacia",
+             "comprimido", "comprimidos", "capsula", "capsulas", "remedio pra", "remedio para")
 
 
 @dataclass
@@ -73,13 +75,45 @@ class ScopeResolver:
         """Um conceito por tipo de produto (nome do tipo = frase). Mantém a busca viva para tipos que ninguém cadastrou à mão."""
         seen: dict[str, set[str]] = {}
         for p in cat.products:
-            if p["domain"] == "medicamento":
-                continue
             seen.setdefault(norm(p["productType"]), set()).add(p["step"])
         out = []
         for t, steps in sorted(seen.items()):
             out.append(Concept(id=f"tipo:{t}", label=t, phrases=(t,), steps=tuple(sorted(steps)), types=(t,),
                                shelf=t))
+        return out + ScopeResolver.health_concepts(cat)
+
+    @staticmethod
+    def health_concepts(cat: Catalog) -> list[Concept]:
+        """Um conceito por objetivo de saúde (doc 16), tirado do catálogo: frases = sinônimos do objetivo; prateleira =
+        etapas dos medicamentos que atendem aquelas preocupações. "Dor de cabeça" traz dipirona e paracetamol e também
+        o anti-inflamatório que serve para dor de cabeça. Mais dois conceitos gerais ("remédio" e "dor")."""
+        meds = [p for p in cat.products if p["domain"] == "medicamento"]
+        med_steps = {p["step"] for p in meds}
+        out = []
+
+        def steps_for(concerns):
+            return tuple(sorted({p["step"] for p in meds if set(p["concerns"]) & set(concerns)}))
+
+        # um conceito por QUEIXA ("dor de cabeça" não traz o antigripal que só serve para febre) ...
+        taken: set[str] = set()
+        for c in sorted({c for p in meds for c in p["concerns"]} - {"reposicao"}):
+            phrases = tuple(sorted({norm(x) for x in CONCERN_ALIASES.get(c, []) + [cat.concerns.get(c, c)]}))
+            taken |= set(phrases)
+            out.append(Concept(id=f"queixa:{c}", label=cat.concerns.get(c, c), phrases=phrases, steps=steps_for([c]),
+                               concerns=(c,), shelf=cat.concerns.get(c, c)))
+        # ... e um por objetivo, com os sinônimos que não são de uma queixa só ("antitérmico", "antigripal", "xarope")
+        for g in cat.goals:
+            if not set(g["required_steps"]) <= med_steps:
+                continue
+            phrases = tuple(sorted({norm(x) for x in g["synonyms"] + [g["label"]]} - taken))
+            if phrases:
+                out.append(Concept(id=f"saude:{g['id']}", label=g["label"].lower(), phrases=phrases,
+                                   steps=steps_for(g["concerns"]), concerns=tuple(g["concerns"]), shelf=g["label"].lower()))
+        all_steps = tuple(sorted(med_steps))
+        out.append(Concept(id="remedio", label="medicamentos", phrases=MED_WORDS, steps=all_steps, shelf="medicamentos"))
+        pain = ("dor_de_cabeca", "dor_no_corpo", "dor_muscular", "dor_de_barriga", "dor_de_garganta")
+        out.append(Concept(id="dor", label="dor", phrases=("dor", "dores", "doendo", "dolorido", "dolorida"),
+                           steps=steps_for(pain), concerns=pain, shelf="dor"))
         return out
 
     # ------------------------------------------------------------ casamento de frases
@@ -136,6 +170,8 @@ class ScopeResolver:
         present = [c for c, _ in found if not c.absent]
         missing = [c for c, _ in found if c.absent]
         present = self._refine_concepts(present)
+        if any(c.shelf == "medicamentos" for c in missing):
+            present = [c for c in present if c.id not in ("remedio", "dor")]   # "remédio para diabetes": só o aviso
         phrases = [ph for _, ph in found]
         shelves = list(dict.fromkeys(c.shelf for c in present if c.shelf))
         if present and all(not c.steps and not c.types for c in present) and any(c.concerns for c in present):
@@ -205,8 +241,6 @@ class ScopeResolver:
         return any(" " + norm(a) + " " in text for i in ings for a in INGREDIENT_ALIASES.get(i, ()))
 
     def in_scope(self, scope: Scope, p: dict) -> bool:
-        if p["domain"] == "medicamento":
-            return False
         if scope.kind == "shelf":
             return any(_concept_matches(c, p, self.type_norm[p["id"]]) for c in scope.concept_filters)
         if scope.kind == "absent":

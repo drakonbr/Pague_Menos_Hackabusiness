@@ -1,9 +1,9 @@
 {
  "dim": 48,
- "vocab": 1012,
- "sentences": 1269,
- "tokens": 16231,
- "corpusSha": "15450e61d1db0acd",
+ "vocab": 1362,
+ "sentences": 1804,
+ "tokens": 23307,
+ "corpusSha": "da161e8f74130dea",
  "window": 5,
  "smooth": 0.75,
  "method": "PPMI + SVD (do zero, sem modelo externo)"

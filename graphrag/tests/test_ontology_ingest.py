@@ -7,7 +7,7 @@ import unittest
 
 from pydantic import ValidationError
 
-from graphrag.data import DATA_DIR
+from graphrag.data import DATA_DIR, load_catalog
 from graphrag.dialogue import Engine
 from graphrag.graph import nid
 from graphrag.ontology import ProductRecord, validate_graph
@@ -21,6 +21,10 @@ NOVO = {
     "howToUse": "Use a quantidade indicada na embalagem.", "priceTier": "premium", "priceCents": 8990, "stockQty": 40,
     "domain": "suplemento",
 }
+
+
+_N = max(int(p["id"][1:]) for p in load_catalog().products)
+ID1, ID2 = f"p{_N + 1:03d}", f"p{_N + 2:03d}"          # ids que a ingestão vai dar aos dois primeiros produtos novos
 
 
 def fresh() -> Engine:
@@ -57,7 +61,7 @@ class TestOntologia(unittest.TestCase):
             {**NOVO, "listPriceCents": 10},                             # preço de lista menor que o preço
             {**NOVO, "campoInventado": 1},                              # campo fora do esquema
             {**NOVO, "fps": 3},                                         # fps fora da faixa
-            {**NOVO, "domain": "medicamento"},                          # medicamento sem rx nem equivalência
+            {**NOVO, "domain": "medicamento", "rx": "tarja_preta"},     # tarja fora do vocabulário
             {**NOVO, "rx": "receita_simples"},                          # rx fora de medicamento
             {**NOVO, "form": "bola"},
         ]
@@ -72,7 +76,7 @@ class TestIngestao(unittest.TestCase):
         marcas, claims, prods, nos = count(e, "brand"), count(e, "claim"), len(e.cat.products), e.graph.g.number_of_nodes()
         rep = e.ingest([NOVO], persist=False)
         r = rep.results[0]
-        self.assertEqual((r.status, r.id), ("created", "p139"), r.reasons)
+        self.assertEqual((r.status, r.id), ("created", ID1), r.reasons)
         self.assertEqual(count(e, "brand"), marcas, "'ESSÊNCIA NUTRI' deveria resolver para a marca que já existe")
         self.assertTrue(any("marca" in x and "Essência Nutri" in x for x in r.resolved), r.resolved)
         self.assertEqual(count(e, "claim"), claims + 1)                 # só 'sem corantes' é novo; 'Vegano' e 'sem glúten' resolvem
@@ -84,12 +88,12 @@ class TestIngestao(unittest.TestCase):
         e = fresh()
         e.ingest([NOVO], persist=False)
         nos, arestas, prods = e.graph.g.number_of_nodes(), e.graph.g.number_of_edges(), len(e.cat.products)
-        rep = e.ingest([NOVO, {**NOVO, "id": "p139"}], persist=False)
+        rep = e.ingest([NOVO, {**NOVO, "id": ID1}], persist=False)
         self.assertEqual([r.status for r in rep.results], ["unchanged", "unchanged"])
         self.assertEqual((e.graph.g.number_of_nodes(), e.graph.g.number_of_edges(), len(e.cat.products)), (nos, arestas, prods))
         rep = e.ingest([{**NOVO, "priceCents": 7990}], persist=False)
         self.assertEqual(rep.results[0].status, "updated")
-        self.assertEqual(e.cat.by_id["p139"]["priceCents"], 7990)
+        self.assertEqual(e.cat.by_id[ID1]["priceCents"], 7990)
         self.assertEqual(len(e.cat.products), prods)
 
     def test_duplicata_com_outro_id_e_recusada(self):
@@ -97,7 +101,7 @@ class TestIngestao(unittest.TestCase):
         e.ingest([NOVO], persist=False)
         rep = e.ingest([{**NOVO, "id": "p500"}], persist=False)
         self.assertEqual(rep.results[0].status, "rejected")
-        self.assertIn("duplicata de p139", rep.results[0].reasons[0])
+        self.assertIn(f"duplicata de {ID1}", rep.results[0].reasons[0])
 
     def test_vocabulario_fechado_recusa_sem_tocar_no_grafo(self):
         e = fresh()
@@ -118,7 +122,7 @@ class TestIngestao(unittest.TestCase):
         e = fresh()
         e.ingest([NOVO], persist=False)
         r = e.search({"query": "ômega 3 de algas 1000 mg"})
-        self.assertIn("p139", [p["id"] for p in r["products"]])
+        self.assertIn(ID1, [p["id"] for p in r["products"]])
 
     def test_incremental_em_memoria_igual_a_reconstruir_do_zero(self):
         delta = pathlib.Path(tempfile.mkdtemp()) / "delta.json"
@@ -133,10 +137,10 @@ class TestIngestao(unittest.TestCase):
         key = lambda g: sorted((u, v, d["type"], round(d.get("weight", 0), 6)) for u, v, d in g.edges(data=True))   # noqa: E731
         self.assertEqual(key(a.graph.g), key(b.graph.g))
         self.assertEqual(a.cat.by_id, b.cat.by_id)
-        self.assertEqual(b.cat.store_stock["s01"]["p140"], 7)
+        self.assertEqual(b.cat.store_stock["s01"][ID2], 7)
         # o delta é determinístico e só tem os registros resolvidos
         txt = delta.read_text(encoding="utf-8")
-        self.assertEqual([p["id"] for p in json.loads(txt)["products"]], ["p139", "p140"])
+        self.assertEqual([p["id"] for p in json.loads(txt)["products"]], [ID1, ID2])
 
     def test_nao_escreve_em_catalog(self):
         antes = {p.name: (p.stat().st_mtime_ns, p.stat().st_size) for p in DATA_DIR.iterdir() if p.is_file()}
@@ -145,11 +149,11 @@ class TestIngestao(unittest.TestCase):
         depois = {p.name: (p.stat().st_mtime_ns, p.stat().st_size) for p in DATA_DIR.iterdir() if p.is_file()}
         self.assertEqual(antes, depois)
 
-    def test_medicamento_ingerido_nunca_aparece_em_busca_nem_kit(self):
+    def test_medicamento_ingerido_e_achado_pela_busca(self):
         e = fresh()
         med = {**NOVO, "name": "Cardivex 10 mg (genérico) 30 comprimidos", "brand": "Lab Nova Via", "line": "reposicao_cardivex_10",
                "step": "reposicao", "coversSteps": ["reposicao"], "productType": "comprimido de uso contínuo", "form": "box",
-               "concerns": ["reposicao"], "claims": [], "warnings": ["receita_obrigatoria", "confirmar_troca_com_farmaceutico"],
+               "concerns": ["reposicao", "hipertensao"], "claims": [], "warnings": ["receita_obrigatoria", "confirmar_troca_com_farmaceutico"],
                "description": "Medicamento FICTÍCIO de demonstração para a tela de reposição; princípio ativo inventado.",
                "howToUse": "Use somente conforme a sua receita.", "domain": "medicamento", "rx": "receita_simples",
                "equivalence": {"group": "cardivex_10", "presentation": "generico", "active": "Cardivex", "dose": "10 mg"},
@@ -158,10 +162,12 @@ class TestIngestao(unittest.TestCase):
         rep = e.ingest([med], persist=False)
         self.assertEqual(rep.results[0].status, "created", rep.results[0].reasons)
         self.assertEqual(validate_graph(e.graph.g), [])
-        for q in ["cardivex", "comprimido de uso contínuo", "kit de suplementos", "reposição", "rotina anti idade"]:
+        r = e.search({"query": "remédio para pressão alta"})      # doc 16: medicamento é busca como outra qualquer
+        self.assertIn(ID1, [p["id"] for p in r["products"]])
+        for q in ["kit de suplementos", "rotina anti idade"]:
             r = e.search({"query": q})
             vistos = [p["id"] for p in r["products"]] + [i["product"]["id"] for k in r["kits"] for i in k["items"]]
-            self.assertNotIn("p139", vistos, q)
+            self.assertNotIn(ID1, vistos, q)
 
 
 if __name__ == "__main__":

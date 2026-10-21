@@ -41,7 +41,7 @@
   "listPriceCents": 2490,
   "stockQty": 5,
   "cashbackPct": 0,
-  "salesRank": 29,
+  "salesRank": 45,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -95,7 +95,7 @@
   "listPriceCents": 1990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 2,
+  "salesRank": 43,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -146,7 +146,7 @@
   "listPriceCents": 1490,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 4,
+  "salesRank": 5,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -197,7 +197,7 @@
   "listPriceCents": 2150,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 7,
+  "salesRank": 1,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -247,7 +247,7 @@
   "listPriceCents": 1690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 5,
+  "salesRank": 2,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -300,7 +300,7 @@
   "listPriceCents": 5490,
   "stockQty": 6,
   "cashbackPct": 10,
-  "salesRank": 80,
+  "salesRank": 109,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -353,7 +353,7 @@
   "listPriceCents": 7550,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 82,
+  "salesRank": 143,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -407,7 +407,7 @@
   "listPriceCents": 2990,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 38,
+  "salesRank": 120,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -463,7 +463,7 @@
   "listPriceCents": 5390,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 63,
+  "salesRank": 150,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -518,7 +518,7 @@
   "listPriceCents": 3990,
   "stockQty": 48,
   "cashbackPct": 2,
-  "salesRank": 28,
+  "salesRank": 39,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -573,7 +573,7 @@
   "listPriceCents": 4290,
   "stockQty": 18,
   "cashbackPct": 10,
-  "salesRank": 79,
+  "salesRank": 127,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -625,7 +625,7 @@
   "listPriceCents": 3190,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 130,
+  "salesRank": 186,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -674,7 +674,7 @@
   "listPriceCents": 1390,
   "stockQty": 59,
   "cashbackPct": 10,
-  "salesRank": 9,
+  "salesRank": 6,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -726,7 +726,7 @@
   "listPriceCents": 2630,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 22,
+  "salesRank": 84,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -779,7 +779,7 @@
   "listPriceCents": 5990,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 77,
+  "salesRank": 72,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -833,7 +833,7 @@
   "listPriceCents": 2290,
   "stockQty": 13,
   "cashbackPct": 0,
-  "salesRank": 42,
+  "salesRank": 122,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -884,7 +884,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 5,
-  "salesRank": 70,
+  "salesRank": 16,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -938,7 +938,7 @@
   "listPriceCents": 7990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 108,
+  "salesRank": 206,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -992,7 +992,7 @@
   "listPriceCents": 8990,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 122,
+  "salesRank": 189,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -1046,7 +1046,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 54,
+  "salesRank": 74,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -1099,7 +1099,7 @@
   "listPriceCents": 1890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 31,
+  "salesRank": 9,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -1205,7 +1205,7 @@
   "listPriceCents": 2630,
   "stockQty": 28,
   "cashbackPct": 0,
-  "salesRank": 13,
+  "salesRank": 112,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1258,7 +1258,7 @@
   "listPriceCents": 4790,
   "stockQty": 22,
   "cashbackPct": 5,
-  "salesRank": 16,
+  "salesRank": 49,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1310,7 +1310,7 @@
   "listPriceCents": 2290,
   "stockQty": 43,
   "cashbackPct": 0,
-  "salesRank": 14,
+  "salesRank": 59,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -1360,7 +1360,7 @@
   "listPriceCents": 1490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 12,
+  "salesRank": 17,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1411,7 +1411,7 @@
   "listPriceCents": 2990,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 49,
+  "salesRank": 101,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1467,7 +1467,7 @@
   "listPriceCents": 2270,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 21,
+  "salesRank": 38,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1521,7 +1521,7 @@
   "listPriceCents": 9490,
   "stockQty": 22,
   "cashbackPct": 0,
-  "salesRank": 134,
+  "salesRank": 162,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1581,7 +1581,7 @@
   "listPriceCents": 7990,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 121,
+  "salesRank": 179,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1636,7 +1636,7 @@
   "listPriceCents": 5990,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 92,
+  "salesRank": 62,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1692,7 +1692,7 @@
   "listPriceCents": 8490,
   "stockQty": 33,
   "cashbackPct": 2,
-  "salesRank": 97,
+  "salesRank": 152,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1749,7 +1749,7 @@
   "listPriceCents": 4490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 48,
+  "salesRank": 61,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1804,7 +1804,7 @@
   "listPriceCents": 3890,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 47,
+  "salesRank": 32,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1857,7 +1857,7 @@
   "listPriceCents": 4990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 35,
+  "salesRank": 123,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1912,7 +1912,7 @@
   "listPriceCents": 6990,
   "stockQty": 47,
   "cashbackPct": 3,
-  "salesRank": 51,
+  "salesRank": 136,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1962,7 +1962,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 10,
+  "salesRank": 88,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2014,7 +2014,7 @@
   "listPriceCents": 3990,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 75,
+  "salesRank": 14,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2066,7 +2066,7 @@
   "listPriceCents": 2490,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 27,
+  "salesRank": 124,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2120,7 +2120,7 @@
   "listPriceCents": 6990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 88,
+  "salesRank": 131,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2173,7 +2173,7 @@
   "listPriceCents": 7490,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 87,
+  "salesRank": 55,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2228,7 +2228,7 @@
   "listPriceCents": 10990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 135,
+  "salesRank": 166,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2282,7 +2282,7 @@
   "listPriceCents": 12990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 119,
+  "salesRank": 210,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2338,7 +2338,7 @@
   "listPriceCents": 5290,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 96,
+  "salesRank": 119,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2393,7 +2393,7 @@
   "listPriceCents": 5890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 81,
+  "salesRank": 83,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2447,7 +2447,7 @@
   "listPriceCents": 5990,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 50,
+  "salesRank": 116,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2500,7 +2500,7 @@
   "listPriceCents": 3290,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 112,
+  "salesRank": 167,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2553,7 +2553,7 @@
   "listPriceCents": 3990,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 20,
+  "salesRank": 21,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2609,7 +2609,7 @@
   "listPriceCents": 7990,
   "stockQty": 24,
   "cashbackPct": 0,
-  "salesRank": 136,
+  "salesRank": 182,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2663,7 +2663,7 @@
   "listPriceCents": 8990,
   "stockQty": 35,
   "cashbackPct": 2,
-  "salesRank": 128,
+  "salesRank": 204,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2721,7 +2721,7 @@
   "listPriceCents": 13990,
   "stockQty": 45,
   "cashbackPct": 5,
-  "salesRank": 133,
+  "salesRank": 184,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2775,7 +2775,7 @@
   "listPriceCents": 11990,
   "stockQty": 20,
   "cashbackPct": 3,
-  "salesRank": 107,
+  "salesRank": 211,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -2829,7 +2829,7 @@
   "listPriceCents": 7790,
   "stockQty": 51,
   "cashbackPct": 10,
-  "salesRank": 57,
+  "salesRank": 140,
   "categoryIds": [
    "dermo",
    "retinol",
@@ -2884,7 +2884,7 @@
   "listPriceCents": 5990,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 56,
+  "salesRank": 125,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2941,7 +2941,7 @@
   "listPriceCents": 5490,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 104,
+  "salesRank": 52,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -2996,7 +2996,7 @@
   "listPriceCents": 7490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 115,
+  "salesRank": 174,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -3052,7 +3052,7 @@
   "listPriceCents": 1790,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 18,
+  "salesRank": 31,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3104,7 +3104,7 @@
   "listPriceCents": 1990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 25,
+  "salesRank": 97,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3153,7 +3153,7 @@
   "listPriceCents": 1590,
   "stockQty": 59,
   "cashbackPct": 2,
-  "salesRank": 66,
+  "salesRank": 85,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3204,7 +3204,7 @@
   "listPriceCents": 2030,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 19,
+  "salesRank": 20,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3258,7 +3258,7 @@
   "listPriceCents": 3290,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 90,
+  "salesRank": 89,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3314,7 +3314,7 @@
   "listPriceCents": 3890,
   "stockQty": 8,
   "cashbackPct": 10,
-  "salesRank": 46,
+  "salesRank": 129,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3367,7 +3367,7 @@
   "listPriceCents": 4490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 94,
+  "salesRank": 80,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3422,7 +3422,7 @@
   "listPriceCents": 5690,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 89,
+  "salesRank": 117,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3476,7 +3476,7 @@
   "listPriceCents": 7490,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 123,
+  "salesRank": 208,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3532,7 +3532,7 @@
   "listPriceCents": 6990,
   "stockQty": 4,
   "cashbackPct": 2,
-  "salesRank": 120,
+  "salesRank": 215,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3587,7 +3587,7 @@
   "listPriceCents": 8490,
   "stockQty": 11,
   "cashbackPct": 5,
-  "salesRank": 131,
+  "salesRank": 176,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3643,7 +3643,7 @@
   "listPriceCents": 2790,
   "stockQty": 38,
   "cashbackPct": 2,
-  "salesRank": 78,
+  "salesRank": 36,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3697,7 +3697,7 @@
   "listPriceCents": 3690,
   "stockQty": 53,
   "cashbackPct": 3,
-  "salesRank": 69,
+  "salesRank": 53,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3754,7 +3754,7 @@
   "listPriceCents": 5990,
   "stockQty": 11,
   "cashbackPct": 2,
-  "salesRank": 73,
+  "salesRank": 168,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3811,7 +3811,7 @@
   "listPriceCents": 7990,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 117,
+  "salesRank": 172,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3864,7 +3864,7 @@
   "listPriceCents": 2990,
   "stockQty": 50,
   "cashbackPct": 0,
-  "salesRank": 30,
+  "salesRank": 28,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3918,7 +3918,7 @@
   "listPriceCents": 2490,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 6,
+  "salesRank": 34,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -3967,7 +3967,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 3,
+  "salesRank": 4,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4018,7 +4018,7 @@
   "listPriceCents": 2790,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 1,
+  "salesRank": 30,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4069,7 +4069,7 @@
   "listPriceCents": 2290,
   "stockQty": 0,
   "cashbackPct": 10,
-  "salesRank": 98,
+  "salesRank": 183,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4123,7 +4123,7 @@
   "listPriceCents": 3690,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 26,
+  "salesRank": 3,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -4178,7 +4178,7 @@
   "listPriceCents": 4290,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 58,
+  "salesRank": 96,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4228,7 +4228,7 @@
   "listPriceCents": 3990,
   "stockQty": 52,
   "cashbackPct": 0,
-  "salesRank": 8,
+  "salesRank": 29,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4279,7 +4279,7 @@
   "listPriceCents": 4490,
   "stockQty": 53,
   "cashbackPct": 0,
-  "salesRank": 34,
+  "salesRank": 79,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4332,7 +4332,7 @@
   "listPriceCents": 5990,
   "stockQty": 4,
   "cashbackPct": 10,
-  "salesRank": 60,
+  "salesRank": 41,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4382,7 +4382,7 @@
   "listPriceCents": 5490,
   "stockQty": 35,
   "cashbackPct": 10,
-  "salesRank": 52,
+  "salesRank": 7,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4433,7 +4433,7 @@
   "listPriceCents": 8390,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 101,
+  "salesRank": 121,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4490,7 +4490,7 @@
   "listPriceCents": 8990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 102,
+  "salesRank": 130,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -4546,7 +4546,7 @@
   "listPriceCents": 9490,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 113,
+  "salesRank": 139,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4598,7 +4598,7 @@
   "listPriceCents": 14390,
   "stockQty": 60,
   "cashbackPct": 3,
-  "salesRank": 68,
+  "salesRank": 128,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4651,7 +4651,7 @@
   "listPriceCents": 4690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 76,
+  "salesRank": 114,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4706,7 +4706,7 @@
   "listPriceCents": 5990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 124,
+  "salesRank": 214,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4755,7 +4755,7 @@
   "listPriceCents": 3490,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 11,
+  "salesRank": 8,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4805,7 +4805,7 @@
   "listPriceCents": 4490,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 85,
+  "salesRank": 151,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4853,7 +4853,7 @@
   "listPriceCents": 2990,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 37,
+  "salesRank": 10,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4903,7 +4903,7 @@
   "listPriceCents": 5990,
   "stockQty": 39,
   "cashbackPct": 2,
-  "salesRank": 105,
+  "salesRank": 181,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4954,7 +4954,7 @@
   "listPriceCents": 6990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 137,
+  "salesRank": 216,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5005,7 +5005,7 @@
   "listPriceCents": 5290,
   "stockQty": 42,
   "cashbackPct": 2,
-  "salesRank": 40,
+  "salesRank": 170,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5055,7 +5055,7 @@
   "listPriceCents": 1290,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 32,
+  "salesRank": 105,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5105,7 +5105,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 39,
+  "salesRank": 107,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5156,7 +5156,7 @@
   "listPriceCents": 4990,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 83,
+  "salesRank": 63,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5208,7 +5208,7 @@
   "listPriceCents": 2490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 43,
+  "salesRank": 165,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5259,7 +5259,7 @@
   "listPriceCents": 1490,
   "stockQty": 45,
   "cashbackPct": 0,
-  "salesRank": 53,
+  "salesRank": 111,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5312,7 +5312,7 @@
   "listPriceCents": 9990,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 129,
+  "salesRank": 201,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5368,7 +5368,7 @@
   "listPriceCents": 5990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 62,
+  "salesRank": 135,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -5426,7 +5426,7 @@
   "listPriceCents": 14990,
   "stockQty": 25,
   "cashbackPct": 5,
-  "salesRank": 126,
+  "salesRank": 198,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -5485,7 +5485,7 @@
   "listPriceCents": 20390,
   "stockQty": 39,
   "cashbackPct": 5,
-  "salesRank": 118,
+  "salesRank": 207,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5541,7 +5541,7 @@
   "listPriceCents": 8990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 114,
+  "salesRank": 180,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5598,7 +5598,7 @@
   "listPriceCents": 11390,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 110,
+  "salesRank": 103,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5651,7 +5651,7 @@
   "listPriceCents": 11990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 125,
+  "salesRank": 192,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5704,7 +5704,7 @@
   "listPriceCents": 4790,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 23,
+  "salesRank": 11,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5754,7 +5754,7 @@
   "listPriceCents": 7990,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 45,
+  "salesRank": 50,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5804,7 +5804,7 @@
   "listPriceCents": 8990,
   "stockQty": 21,
   "cashbackPct": 2,
-  "salesRank": 116,
+  "salesRank": 191,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5853,7 +5853,7 @@
   "listPriceCents": 6990,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 41,
+  "salesRank": 57,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -5902,7 +5902,7 @@
   "listPriceCents": 5990,
   "stockQty": 50,
   "cashbackPct": 10,
-  "salesRank": 17,
+  "salesRank": 24,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -5953,7 +5953,7 @@
   "listPriceCents": 9990,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 109,
+  "salesRank": 157,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -6002,7 +6002,7 @@
   "listPriceCents": 3490,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 55,
+  "salesRank": 54,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6051,7 +6051,7 @@
   "listPriceCents": 5490,
   "stockQty": 0,
   "cashbackPct": 3,
-  "salesRank": 138,
+  "salesRank": 217,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6101,7 +6101,7 @@
   "listPriceCents": 4490,
   "stockQty": 16,
   "cashbackPct": 5,
-  "salesRank": 93,
+  "salesRank": 118,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6150,7 +6150,7 @@
   "listPriceCents": 2990,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 24,
+  "salesRank": 115,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6200,7 +6200,7 @@
   "listPriceCents": 4990,
   "stockQty": 31,
   "cashbackPct": 5,
-  "salesRank": 72,
+  "salesRank": 70,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6247,7 +6247,7 @@
   "listPriceCents": 6490,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 106,
+  "salesRank": 195,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6297,7 +6297,7 @@
   "listPriceCents": 3490,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 15,
+  "salesRank": 110,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6346,7 +6346,7 @@
   "listPriceCents": 3990,
   "stockQty": 45,
   "cashbackPct": 0,
-  "salesRank": 91,
+  "salesRank": 155,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6393,7 +6393,7 @@
   "listPriceCents": 5390,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 127,
+  "salesRank": 187,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6441,7 +6441,7 @@
   "listPriceCents": 4990,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 61,
+  "salesRank": 66,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6489,7 +6489,7 @@
   "listPriceCents": 4990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 74,
+  "salesRank": 163,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6537,7 +6537,7 @@
   "listPriceCents": 6990,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 99,
+  "salesRank": 212,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6584,7 +6584,7 @@
   "listPriceCents": 2490,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 71,
+  "salesRank": 146,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6631,7 +6631,7 @@
   "listPriceCents": 2290,
   "stockQty": 33,
   "cashbackPct": 0,
-  "salesRank": 64,
+  "salesRank": 94,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6678,7 +6678,7 @@
   "listPriceCents": 2990,
   "stockQty": 8,
   "cashbackPct": 10,
-  "salesRank": 111,
+  "salesRank": 194,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6725,7 +6725,7 @@
   "listPriceCents": 1990,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 65,
+  "salesRank": 26,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6773,7 +6773,7 @@
   "listPriceCents": 2490,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 44,
+  "salesRank": 100,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6821,7 +6821,7 @@
   "listPriceCents": 3590,
   "stockQty": 38,
   "cashbackPct": 5,
-  "salesRank": 100,
+  "salesRank": 178,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6850,7 +6850,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "hipertensao"
   ],
   "ingredients": [
    "tensivalol_potassico"
@@ -6869,7 +6870,7 @@
   "listPriceCents": 6890,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 59,
+  "salesRank": 138,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -6903,7 +6904,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "hipertensao"
   ],
   "ingredients": [
    "tensivalol_potassico"
@@ -6922,7 +6924,7 @@
   "listPriceCents": 3190,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 67,
+  "salesRank": 87,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -6956,7 +6958,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "hipertensao"
   ],
   "ingredients": [
    "tensivalol_potassico"
@@ -6975,7 +6978,7 @@
   "listPriceCents": 5890,
   "stockQty": 30,
   "cashbackPct": 0,
-  "salesRank": 86,
+  "salesRank": 149,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7009,7 +7012,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "hipertensao"
   ],
   "ingredients": [
    "tensivalol_potassico"
@@ -7028,7 +7032,7 @@
   "listPriceCents": 3990,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 33,
+  "salesRank": 76,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7062,7 +7066,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "colesterol"
   ],
   "ingredients": [
    "lipostanol_calcico"
@@ -7081,7 +7086,7 @@
   "listPriceCents": 9290,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 132,
+  "salesRank": 197,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7115,7 +7120,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "colesterol"
   ],
   "ingredients": [
    "lipostanol_calcico"
@@ -7134,7 +7140,7 @@
   "listPriceCents": 4490,
   "stockQty": 4,
   "cashbackPct": 0,
-  "salesRank": 36,
+  "salesRank": 71,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7168,7 +7174,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "colesterol"
   ],
   "ingredients": [
    "lipostanol_calcico"
@@ -7187,7 +7194,7 @@
   "listPriceCents": 8290,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 103,
+  "salesRank": 200,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7221,7 +7228,8 @@
    "todas"
   ],
   "concerns": [
-   "reposicao"
+   "reposicao",
+   "colesterol"
   ],
   "ingredients": [
    "lipostanol_calcico"
@@ -7240,7 +7248,7 @@
   "listPriceCents": 5290,
   "stockQty": 54,
   "cashbackPct": 0,
-  "salesRank": 84,
+  "salesRank": 161,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7254,5 +7262,3627 @@
    "active": "Lipostanol cálcico",
    "dose": "20 mg"
   }
+ },
+ {
+  "id": "p139",
+  "name": "Dipirona 500 mg — 10 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_dipirona",
+  "coversSteps": [
+   "analgesico_dipirona"
+  ],
+  "productType": "dipirona em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "dipirona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona 500 mg — 10 comprimidos: medicamento (dipirona em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada. Para dor de cabeça, febre e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 790,
+  "listPriceCents": 790,
+  "stockQty": 31,
+  "cashbackPct": 0,
+  "salesRank": 18,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p140",
+  "name": "Dipirona 1 g (genérico) — 10 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_dipirona",
+  "coversSteps": [
+   "analgesico_dipirona"
+  ],
+  "productType": "dipirona em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "dipirona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona 1 g (genérico) — 10 comprimidos: medicamento (dipirona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Dipirona monoidratada. Para dor de cabeça, febre e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1190,
+  "listPriceCents": 1190,
+  "stockQty": 50,
+  "cashbackPct": 0,
+  "salesRank": 90,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p141",
+  "name": "Dipirona Gotas 500 mg/mL — 20 mL",
+  "brand": "Farmanorte",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_dipirona",
+  "coversSteps": [
+   "analgesico_dipirona"
+  ],
+  "productType": "dipirona em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 20,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre"
+  ],
+  "ingredients": [
+   "dipirona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona Gotas 500 mg/mL — 20 mL: medicamento (dipirona em gotas) do laboratório Farmanorte. Princípio ativo: Dipirona monoidratada. Para dor de cabeça e febre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 108,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p142",
+  "name": "Paracetamol 750 mg — 20 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_paracetamol",
+  "coversSteps": [
+   "analgesico_paracetamol"
+  ],
+  "productType": "paracetamol em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "paracetamol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Paracetamol 750 mg — 20 comprimidos: medicamento (paracetamol em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Paracetamol. Para dor de cabeça, febre e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 35,
+  "cashbackPct": 0,
+  "salesRank": 91,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p143",
+  "name": "Paracetamol 500 mg + Cafeína 65 mg — 20 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_paracetamol",
+  "coversSteps": [
+   "analgesico_paracetamol"
+  ],
+  "productType": "paracetamol com cafeína",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "enxaqueca"
+  ],
+  "ingredients": [
+   "paracetamol",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Paracetamol 500 mg + Cafeína 65 mg — 20 comprimidos: medicamento (paracetamol com cafeína) do laboratório Lab Nova Via. Princípio ativo: Paracetamol e Cafeína anidra. Para dor de cabeça e enxaqueca.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 22,
+  "cashbackPct": 0,
+  "salesRank": 153,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p144",
+  "name": "Paracetamol Gotas 200 mg/mL — 15 mL",
+  "brand": "Farmanorte",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_paracetamol",
+  "coversSteps": [
+   "analgesico_paracetamol"
+  ],
+  "productType": "paracetamol em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 15,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre"
+  ],
+  "ingredients": [
+   "paracetamol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Paracetamol Gotas 200 mg/mL — 15 mL: medicamento (paracetamol em gotas) do laboratório Farmanorte. Princípio ativo: Paracetamol. Para dor de cabeça e febre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1090,
+  "listPriceCents": 1090,
+  "stockQty": 7,
+  "cashbackPct": 0,
+  "salesRank": 126,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p145",
+  "name": "Dipirona 300 mg + Isometepteno 30 mg + Cafeína 30 mg — 20 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_dor_de_cabeca",
+  "step": "analgesico_dipirona",
+  "coversSteps": [
+   "analgesico_dipirona"
+  ],
+  "productType": "analgésico para enxaqueca",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "enxaqueca"
+  ],
+  "ingredients": [
+   "dipirona",
+   "isometepteno",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona 300 mg + Isometepteno 30 mg + Cafeína 30 mg — 20 comprimidos: medicamento (analgésico para enxaqueca) do laboratório Lab Aurora. Princípio ativo: Dipirona monoidratada, Mucato de isometepteno e Cafeína anidra. Para dor de cabeça e enxaqueca.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 38,
+  "cashbackPct": 0,
+  "salesRank": 205,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p146",
+  "name": "Ácido Acetilsalicílico 500 mg (genérico) — 20 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_de_cabeca",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "ácido acetilsalicílico em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_cabeca",
+   "febre",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "acido_acetilsalicilico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ácido Acetilsalicílico 500 mg (genérico) — 20 comprimidos: medicamento (ácido acetilsalicílico em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ácido acetilsalicílico. Para dor de cabeça, febre e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 890,
+  "listPriceCents": 1070,
+  "stockQty": 24,
+  "cashbackPct": 0,
+  "salesRank": 15,
+  "categoryIds": [
+   "med-dor-febre",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p147",
+  "name": "Ibuprofeno 400 mg — 10 cápsulas",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "ibuprofeno em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_de_cabeca",
+   "febre",
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "ibuprofeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ibuprofeno 400 mg — 10 cápsulas: medicamento (ibuprofeno em cápsulas) do laboratório Vitalis Farma. Princípio ativo: Ibuprofeno. Para dor no corpo, dor de cabeça, febre e dor muscular.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1790,
+  "stockQty": 41,
+  "cashbackPct": 0,
+  "salesRank": 47,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p148",
+  "name": "Ibuprofeno 600 mg (genérico) — 20 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "ibuprofeno em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "ibuprofeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ibuprofeno 600 mg (genérico) — 20 comprimidos: medicamento (ibuprofeno em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ibuprofeno. Para dor no corpo e dor muscular. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 159,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p149",
+  "name": "Ibuprofeno Gotas 50 mg/mL — 30 mL",
+  "brand": "Farmanorte",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "ibuprofeno em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 30,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "febre"
+  ],
+  "ingredients": [
+   "ibuprofeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ibuprofeno Gotas 50 mg/mL — 30 mL: medicamento (ibuprofeno em gotas) do laboratório Farmanorte. Princípio ativo: Ibuprofeno. Para dor no corpo e febre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 7,
+  "cashbackPct": 0,
+  "salesRank": 92,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p150",
+  "name": "Naproxeno Sódico 275 mg — 10 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "naproxeno em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_muscular",
+   "dor_de_cabeca"
+  ],
+  "ingredients": [
+   "naproxeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Naproxeno Sódico 275 mg — 10 comprimidos: medicamento (naproxeno em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Naproxeno sódico. Para dor no corpo, dor muscular e dor de cabeça.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1790,
+  "listPriceCents": 1790,
+  "stockQty": 9,
+  "cashbackPct": 0,
+  "salesRank": 67,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p151",
+  "name": "Naproxeno Sódico 550 mg (genérico) — 10 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "naproxeno em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "naproxeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Naproxeno Sódico 550 mg (genérico) — 10 comprimidos: medicamento (naproxeno em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Naproxeno sódico. Para dor no corpo e dor muscular. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 190,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p152",
+  "name": "Diclofenaco Potássico 50 mg — 20 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "diclofenaco em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "diclofenaco_potassico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Diclofenaco Potássico 50 mg — 20 comprimidos: medicamento (diclofenaco em comprimidos) do laboratório Lab Aurora. Princípio ativo: Diclofenaco potássico. Para dor no corpo e dor muscular. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2190,
+  "listPriceCents": 2190,
+  "stockQty": 47,
+  "cashbackPct": 0,
+  "salesRank": 154,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p153",
+  "name": "Nimesulida 100 mg — 12 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_no_corpo",
+  "step": "antiinflamatorio",
+  "coversSteps": [
+   "antiinflamatorio"
+  ],
+  "productType": "nimesulida em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_no_corpo",
+   "dor_de_garganta"
+  ],
+  "ingredients": [
+   "nimesulida"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Nimesulida 100 mg — 12 comprimidos: medicamento (nimesulida em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Nimesulida. Para dor no corpo e dor de garganta. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 29,
+  "cashbackPct": 0,
+  "salesRank": 104,
+  "categoryIds": [
+   "med-dor-corpo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p154",
+  "name": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 10 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_muscular",
+  "step": "relaxante_muscular",
+  "coversSteps": [
+   "relaxante_muscular"
+  ],
+  "productType": "relaxante muscular com analgésico",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "dipirona",
+   "orfenadrina",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 10 comprimidos: medicamento (relaxante muscular com analgésico) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada, Citrato de orfenadrina e Cafeína anidra. Para dor muscular e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 1190,
+  "stockQty": 60,
+  "cashbackPct": 0,
+  "salesRank": 25,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p155",
+  "name": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 36 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_muscular",
+  "step": "relaxante_muscular",
+  "coversSteps": [
+   "relaxante_muscular"
+  ],
+  "productType": "relaxante muscular com analgésico",
+  "form": "box",
+  "size": {
+   "value": 36,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "dipirona",
+   "orfenadrina",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dipirona 300 mg + Orfenadrina 35 mg + Cafeína 50 mg — 36 comprimidos: medicamento (relaxante muscular com analgésico) do laboratório Vitalis Farma. Princípio ativo: Dipirona monoidratada, Citrato de orfenadrina e Cafeína anidra. Para dor muscular e dor no corpo.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2790,
+  "listPriceCents": 2790,
+  "stockQty": 41,
+  "cashbackPct": 0,
+  "salesRank": 69,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p156",
+  "name": "Ciclobenzaprina 5 mg (genérico) — 30 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_muscular",
+  "step": "relaxante_muscular",
+  "coversSteps": [
+   "relaxante_muscular"
+  ],
+  "productType": "ciclobenzaprina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "ciclobenzaprina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ciclobenzaprina 5 mg (genérico) — 30 comprimidos: medicamento (ciclobenzaprina em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de ciclobenzaprina. Para dor muscular. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 43,
+  "cashbackPct": 0,
+  "salesRank": 93,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p157",
+  "name": "Ciclobenzaprina 10 mg — 30 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_muscular",
+  "step": "relaxante_muscular",
+  "coversSteps": [
+   "relaxante_muscular"
+  ],
+  "productType": "ciclobenzaprina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "ciclobenzaprina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ciclobenzaprina 10 mg — 30 comprimidos: medicamento (ciclobenzaprina em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de ciclobenzaprina. Para dor muscular. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3290,
+  "listPriceCents": 3950,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 177,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p158",
+  "name": "Diclofenaco Sódico 50 mg + Carisoprodol 125 mg + Paracetamol 300 mg + Cafeína 30 mg — 15 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_dor_muscular",
+  "step": "relaxante_muscular",
+  "coversSteps": [
+   "relaxante_muscular"
+  ],
+  "productType": "relaxante muscular combinado",
+  "form": "box",
+  "size": {
+   "value": 15,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular",
+   "dor_no_corpo"
+  ],
+  "ingredients": [
+   "diclofenaco_sodico",
+   "carisoprodol",
+   "paracetamol",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Diclofenaco Sódico 50 mg + Carisoprodol 125 mg + Paracetamol 300 mg + Cafeína 30 mg — 15 comprimidos: medicamento (relaxante muscular combinado) do laboratório Lab Aurora. Princípio ativo: Diclofenaco sódico, Carisoprodol, Paracetamol e Cafeína anidra. Para dor muscular e dor no corpo. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 37,
+  "cashbackPct": 0,
+  "salesRank": 158,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p159",
+  "name": "Diclofenaco Dietilamônio Gel 11,6 mg/g — 60 g",
+  "brand": "Farmanorte",
+  "line": "med_dor_muscular",
+  "step": "dor_topico",
+  "coversSteps": [
+   "dor_topico"
+  ],
+  "productType": "gel anti-inflamatório",
+  "form": "tube",
+  "size": {
+   "value": 60,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "diclofenaco_dietilamonio"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Diclofenaco Dietilamônio Gel 11,6 mg/g — 60 g: medicamento (gel anti-inflamatório) do laboratório Farmanorte. Princípio ativo: Diclofenaco dietilamônio. Para dor muscular.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2690,
+  "listPriceCents": 2690,
+  "stockQty": 20,
+  "cashbackPct": 0,
+  "salesRank": 137,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p160",
+  "name": "Pomada de Salicilato de Metila, Mentol e Cânfora — 30 g",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_muscular",
+  "step": "dor_topico",
+  "coversSteps": [
+   "dor_topico"
+  ],
+  "productType": "pomada para dor muscular",
+  "form": "tube",
+  "size": {
+   "value": 30,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_muscular"
+  ],
+  "ingredients": [
+   "salicilato_metila",
+   "mentol",
+   "canfora"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pomada de Salicilato de Metila, Mentol e Cânfora — 30 g: medicamento (pomada para dor muscular) do laboratório Lab Nova Via. Princípio ativo: Salicilato de metila, Mentol e Cânfora. Para dor muscular.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 49,
+  "cashbackPct": 0,
+  "salesRank": 60,
+  "categoryIds": [
+   "med-dor-muscular",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p161",
+  "name": "Butilbrometo de Escopolamina 10 mg — 20 drágeas",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_de_barriga",
+  "step": "antiespasmodico",
+  "coversSteps": [
+   "antiespasmodico"
+  ],
+  "productType": "escopolamina em drágeas",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "escopolamina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Butilbrometo de Escopolamina 10 mg — 20 drágeas: medicamento (escopolamina em drágeas) do laboratório Vitalis Farma. Princípio ativo: Butilbrometo de escopolamina. Para dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 20,
+  "cashbackPct": 0,
+  "salesRank": 37,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p162",
+  "name": "Butilbrometo de Escopolamina Gotas 10 mg/mL — 20 mL",
+  "brand": "Farmanorte",
+  "line": "med_dor_de_barriga",
+  "step": "antiespasmodico",
+  "coversSteps": [
+   "antiespasmodico"
+  ],
+  "productType": "escopolamina em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 20,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "escopolamina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Butilbrometo de Escopolamina Gotas 10 mg/mL — 20 mL: medicamento (escopolamina em gotas) do laboratório Farmanorte. Princípio ativo: Butilbrometo de escopolamina. Para dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 106,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p163",
+  "name": "Escopolamina 10 mg + Dipirona 250 mg — 20 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_dor_de_barriga",
+  "step": "antiespasmodico",
+  "coversSteps": [
+   "antiespasmodico"
+  ],
+  "productType": "escopolamina com dipirona",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "escopolamina",
+   "dipirona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escopolamina 10 mg + Dipirona 250 mg — 20 comprimidos: medicamento (escopolamina com dipirona) do laboratório Lab Aurora. Princípio ativo: Butilbrometo de escopolamina e Dipirona monoidratada. Para dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 33,
+  "cashbackPct": 0,
+  "salesRank": 193,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p164",
+  "name": "Simeticona 40 mg (genérico) — 20 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_de_barriga",
+  "step": "antigases",
+  "coversSteps": [
+   "antigases"
+  ],
+  "productType": "simeticona em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gases",
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "simeticona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Simeticona 40 mg (genérico) — 20 comprimidos: medicamento (simeticona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 890,
+  "listPriceCents": 890,
+  "stockQty": 52,
+  "cashbackPct": 0,
+  "salesRank": 42,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p165",
+  "name": "Simeticona Gotas 75 mg/mL — 15 mL",
+  "brand": "Farmanorte",
+  "line": "med_dor_de_barriga",
+  "step": "antigases",
+  "coversSteps": [
+   "antigases"
+  ],
+  "productType": "simeticona em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 15,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gases",
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "simeticona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Simeticona Gotas 75 mg/mL — 15 mL: medicamento (simeticona em gotas) do laboratório Farmanorte. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 4,
+  "cashbackPct": 0,
+  "salesRank": 86,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p166",
+  "name": "Simeticona 125 mg — 10 cápsulas",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_de_barriga",
+  "step": "antigases",
+  "coversSteps": [
+   "antigases"
+  ],
+  "productType": "simeticona em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gases",
+   "dor_de_barriga"
+  ],
+  "ingredients": [
+   "simeticona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Simeticona 125 mg — 10 cápsulas: medicamento (simeticona em cápsulas) do laboratório Lab Nova Via. Princípio ativo: Simeticona. Para gases e dor de barriga e cólica.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 40,
+  "cashbackPct": 0,
+  "salesRank": 199,
+  "categoryIds": [
+   "med-colica",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p167",
+  "name": "Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona — suspensão 240 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_azia",
+  "step": "antiacido",
+  "coversSteps": [
+   "antiacido"
+  ],
+  "productType": "antiácido em suspensão",
+  "form": "bottle",
+  "size": {
+   "value": 240,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia",
+   "gases"
+  ],
+  "ingredients": [
+   "hidroxido_aluminio",
+   "hidroxido_magnesio",
+   "simeticona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona — suspensão 240 mL: medicamento (antiácido em suspensão) do laboratório Vitalis Farma. Princípio ativo: Hidróxido de alumínio, Hidróxido de magnésio e Simeticona. Para azia e má digestão e gases.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 141,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p168",
+  "name": "Sal de Frutas (Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico) — 2 envelopes de 5 g",
+  "brand": "Farmanorte",
+  "line": "med_azia",
+  "step": "antiacido",
+  "coversSteps": [
+   "antiacido"
+  ],
+  "productType": "antiácido efervescente",
+  "form": "powder",
+  "size": {
+   "value": 10,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia"
+  ],
+  "ingredients": [
+   "bicarbonato_sodio",
+   "carbonato_sodio",
+   "acido_citrico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Sal de Frutas (Bicarbonato de Sódio + Carbonato de Sódio + Ácido Cítrico) — 2 envelopes de 5 g: medicamento (antiácido efervescente) do laboratório Farmanorte. Princípio ativo: Bicarbonato de sódio, Carbonato de sódio e Ácido cítrico. Para azia e má digestão.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 490,
+  "listPriceCents": 490,
+  "stockQty": 36,
+  "cashbackPct": 0,
+  "salesRank": 56,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p169",
+  "name": "Alginato de Sódio + Bicarbonato de Sódio — 12 sachês de suspensão",
+  "brand": "Lab Nova Via",
+  "line": "med_azia",
+  "step": "antiacido",
+  "coversSteps": [
+   "antiacido"
+  ],
+  "productType": "antiácido para refluxo",
+  "form": "powder",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia"
+  ],
+  "ingredients": [
+   "alginato_sodio",
+   "bicarbonato_sodio"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Alginato de Sódio + Bicarbonato de Sódio — 12 sachês de suspensão: medicamento (antiácido para refluxo) do laboratório Lab Nova Via. Princípio ativo: Alginato de sódio e Bicarbonato de sódio. Para azia e má digestão.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 26,
+  "cashbackPct": 0,
+  "salesRank": 213,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p170",
+  "name": "Omeprazol 20 mg (genérico) — 28 cápsulas",
+  "brand": "Lab Genérico Sul",
+  "line": "med_azia",
+  "step": "protetor_gastrico",
+  "coversSteps": [
+   "protetor_gastrico"
+  ],
+  "productType": "omeprazol em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 28,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia"
+  ],
+  "ingredients": [
+   "omeprazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Omeprazol 20 mg (genérico) — 28 cápsulas: medicamento (omeprazol em cápsulas) do laboratório Lab Genérico Sul. Princípio ativo: Omeprazol. Para azia e má digestão. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1590,
+  "listPriceCents": 1590,
+  "stockQty": 60,
+  "cashbackPct": 0,
+  "salesRank": 12,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p171",
+  "name": "Pantoprazol 40 mg — 28 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_azia",
+  "step": "protetor_gastrico",
+  "coversSteps": [
+   "protetor_gastrico"
+  ],
+  "productType": "pantoprazol em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 28,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia"
+  ],
+  "ingredients": [
+   "pantoprazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pantoprazol 40 mg — 28 comprimidos: medicamento (pantoprazol em comprimidos) do laboratório Lab Aurora. Princípio ativo: Pantoprazol. Para azia e má digestão. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 22,
+  "cashbackPct": 0,
+  "salesRank": 58,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p172",
+  "name": "Esomeprazol 40 mg — 28 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_azia",
+  "step": "protetor_gastrico",
+  "coversSteps": [
+   "protetor_gastrico"
+  ],
+  "productType": "esomeprazol em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 28,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "azia"
+  ],
+  "ingredients": [
+   "esomeprazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Esomeprazol 40 mg — 28 comprimidos: medicamento (esomeprazol em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Esomeprazol. Para azia e má digestão. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 5490,
+  "listPriceCents": 5490,
+  "stockQty": 57,
+  "cashbackPct": 0,
+  "salesRank": 209,
+  "categoryIds": [
+   "med-azia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p173",
+  "name": "Antigripal Paracetamol 400 mg + Fenilefrina 4 mg + Clorfeniramina 4 mg — 20 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_gripe",
+  "step": "antigripal",
+  "coversSteps": [
+   "antigripal"
+  ],
+  "productType": "antigripal em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe",
+   "nariz_entupido",
+   "febre"
+  ],
+  "ingredients": [
+   "paracetamol",
+   "fenilefrina",
+   "clorfeniramina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Antigripal Paracetamol 400 mg + Fenilefrina 4 mg + Clorfeniramina 4 mg — 20 comprimidos: medicamento (antigripal em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Paracetamol, Cloridrato de fenilefrina e Maleato de clorfeniramina. Para gripe e resfriado, nariz entupido e febre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1790,
+  "listPriceCents": 1790,
+  "stockQty": 23,
+  "cashbackPct": 0,
+  "salesRank": 134,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p174",
+  "name": "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína 30 mg — 20 cápsulas",
+  "brand": "Lab Nova Via",
+  "line": "med_gripe",
+  "step": "antigripal",
+  "coversSteps": [
+   "antigripal"
+  ],
+  "productType": "antigripal em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe",
+   "febre"
+  ],
+  "ingredients": [
+   "dipirona",
+   "clorfeniramina",
+   "cafeina_med"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína 30 mg — 20 cápsulas: medicamento (antigripal em cápsulas) do laboratório Lab Nova Via. Princípio ativo: Dipirona monoidratada, Maleato de clorfeniramina e Cafeína anidra. Para gripe e resfriado e febre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1590,
+  "listPriceCents": 1590,
+  "stockQty": 55,
+  "cashbackPct": 0,
+  "salesRank": 99,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p175",
+  "name": "Vitamina C 1 g Efervescente — 10 comprimidos",
+  "brand": "Farmanorte",
+  "line": "med_gripe",
+  "step": "imunidade",
+  "coversSteps": [
+   "imunidade"
+  ],
+  "productType": "vitamina C efervescente",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe"
+  ],
+  "ingredients": [
+   "acido_ascorbico"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Vitamina C 1 g Efervescente — 10 comprimidos: medicamento (vitamina C efervescente) do laboratório Farmanorte. Princípio ativo: Ácido ascórbico (vitamina C). Para gripe e resfriado.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1390,
+  "listPriceCents": 1390,
+  "stockQty": 4,
+  "cashbackPct": 0,
+  "salesRank": 64,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p176",
+  "name": "Soro Fisiológico Nasal 0,9% — 30 mL",
+  "brand": "Lab Genérico Sul",
+  "line": "med_gripe",
+  "step": "descongestionante_nasal",
+  "coversSteps": [
+   "descongestionante_nasal"
+  ],
+  "productType": "solução nasal de cloreto de sódio",
+  "form": "dropper",
+  "size": {
+   "value": 30,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe",
+   "nariz_entupido",
+   "alergia"
+  ],
+  "ingredients": [
+   "cloreto_sodio"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Soro Fisiológico Nasal 0,9% — 30 mL: medicamento (solução nasal de cloreto de sódio) do laboratório Lab Genérico Sul. Princípio ativo: Cloreto de sódio 0,9%. Para gripe e resfriado, nariz entupido e alergia e rinite.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 690,
+  "listPriceCents": 690,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 98,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p177",
+  "name": "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_gripe",
+  "step": "descongestionante_nasal",
+  "coversSteps": [
+   "descongestionante_nasal"
+  ],
+  "productType": "descongestionante nasal em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 30,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe",
+   "nariz_entupido"
+  ],
+  "ingredients": [
+   "nafazolina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL: medicamento (descongestionante nasal em gotas) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de nafazolina. Para gripe e resfriado e nariz entupido.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 790,
+  "listPriceCents": 790,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 133,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p178",
+  "name": "Oximetazolina 0,5 mg/mL Spray Nasal — 20 mL",
+  "brand": "Lab Aurora",
+  "line": "med_gripe",
+  "step": "descongestionante_nasal",
+  "coversSteps": [
+   "descongestionante_nasal"
+  ],
+  "productType": "descongestionante nasal em spray",
+  "form": "spray",
+  "size": {
+   "value": 20,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "gripe",
+   "nariz_entupido"
+  ],
+  "ingredients": [
+   "oximetazolina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Oximetazolina 0,5 mg/mL Spray Nasal — 20 mL: medicamento (descongestionante nasal em spray) do laboratório Lab Aurora. Princípio ativo: Cloridrato de oximetazolina. Para gripe e resfriado e nariz entupido.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2490,
+  "listPriceCents": 2990,
+  "stockQty": 60,
+  "cashbackPct": 0,
+  "salesRank": 173,
+  "categoryIds": [
+   "med-gripe",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p179",
+  "name": "Ambroxol Xarope Adulto 30 mg/5 mL — 120 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_tosse",
+  "step": "expectorante",
+  "coversSteps": [
+   "expectorante"
+  ],
+  "productType": "xarope expectorante",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse"
+  ],
+  "ingredients": [
+   "ambroxol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ambroxol Xarope Adulto 30 mg/5 mL — 120 mL: medicamento (xarope expectorante) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de ambroxol. Para tosse com catarro.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1690,
+  "listPriceCents": 2030,
+  "stockQty": 11,
+  "cashbackPct": 0,
+  "salesRank": 156,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p180",
+  "name": "Acetilcisteína 600 mg — 16 envelopes",
+  "brand": "Lab Aurora",
+  "line": "med_tosse",
+  "step": "expectorante",
+  "coversSteps": [
+   "expectorante"
+  ],
+  "productType": "expectorante em envelopes",
+  "form": "powder",
+  "size": {
+   "value": 16,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse"
+  ],
+  "ingredients": [
+   "acetilcisteina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Acetilcisteína 600 mg — 16 envelopes: medicamento (expectorante em envelopes) do laboratório Lab Aurora. Princípio ativo: Acetilcisteína. Para tosse com catarro.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 4490,
+  "listPriceCents": 4490,
+  "stockQty": 51,
+  "cashbackPct": 0,
+  "salesRank": 185,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p181",
+  "name": "Bromexina Xarope Adulto 8 mg/5 mL — 120 mL",
+  "brand": "Farmanorte",
+  "line": "med_tosse",
+  "step": "expectorante",
+  "coversSteps": [
+   "expectorante"
+  ],
+  "productType": "xarope expectorante",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse"
+  ],
+  "ingredients": [
+   "bromexina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Bromexina Xarope Adulto 8 mg/5 mL — 120 mL: medicamento (xarope expectorante) do laboratório Farmanorte. Princípio ativo: Cloridrato de bromexina. Para tosse com catarro.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 21,
+  "cashbackPct": 0,
+  "salesRank": 147,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p182",
+  "name": "Carbocisteína Xarope Adulto 50 mg/mL (genérico) — 100 mL",
+  "brand": "Lab Genérico Sul",
+  "line": "med_tosse",
+  "step": "expectorante",
+  "coversSteps": [
+   "expectorante"
+  ],
+  "productType": "xarope expectorante",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse"
+  ],
+  "ingredients": [
+   "carbocisteina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Carbocisteína Xarope Adulto 50 mg/mL (genérico) — 100 mL: medicamento (xarope expectorante) do laboratório Lab Genérico Sul. Princípio ativo: Carbocisteína. Para tosse com catarro.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 17,
+  "cashbackPct": 0,
+  "salesRank": 35,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p183",
+  "name": "Xarope de Guaco — 120 mL",
+  "brand": "Lab Nova Via",
+  "line": "med_tosse",
+  "step": "expectorante",
+  "coversSteps": [
+   "expectorante"
+  ],
+  "productType": "xarope fitoterápico",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse"
+  ],
+  "ingredients": [
+   "guaco"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Xarope de Guaco — 120 mL: medicamento (xarope fitoterápico) do laboratório Lab Nova Via. Princípio ativo: Guaco (Mikania glomerata). Para tosse com catarro.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 17,
+  "cashbackPct": 0,
+  "salesRank": 19,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p184",
+  "name": "Dropropizina Xarope Adulto 3 mg/mL — 120 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_tosse",
+  "step": "antitussigeno",
+  "coversSteps": [
+   "antitussigeno"
+  ],
+  "productType": "xarope para tosse seca",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse_seca"
+  ],
+  "ingredients": [
+   "dropropizina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dropropizina Xarope Adulto 3 mg/mL — 120 mL: medicamento (xarope para tosse seca) do laboratório Vitalis Farma. Princípio ativo: Dropropizina. Para tosse seca.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1790,
+  "listPriceCents": 1790,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 23,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p185",
+  "name": "Levodropropizina Xarope 6 mg/mL — 120 mL",
+  "brand": "Lab Aurora",
+  "line": "med_tosse",
+  "step": "antitussigeno",
+  "coversSteps": [
+   "antitussigeno"
+  ],
+  "productType": "xarope para tosse seca",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "tosse_seca"
+  ],
+  "ingredients": [
+   "levodropropizina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Levodropropizina Xarope 6 mg/mL — 120 mL: medicamento (xarope para tosse seca) do laboratório Lab Aurora. Princípio ativo: Levodropropizina. Para tosse seca. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 3890,
+  "listPriceCents": 3890,
+  "stockQty": 35,
+  "cashbackPct": 0,
+  "salesRank": 51,
+  "categoryIds": [
+   "med-tosse",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p186",
+  "name": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Mel e Limão — 8 pastilhas",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_de_garganta",
+  "step": "pastilha_garganta",
+  "coversSteps": [
+   "pastilha_garganta"
+  ],
+  "productType": "pastilha antisséptica",
+  "form": "box",
+  "size": {
+   "value": 8,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta",
+   "tosse",
+   "tosse_seca"
+  ],
+  "ingredients": [
+   "amilmetacresol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Mel e Limão — 8 pastilhas: medicamento (pastilha antisséptica) do laboratório Vitalis Farma. Princípio ativo: Amilmetacresol + álcool diclorobenzílico. Para dor de garganta, tosse com catarro e tosse seca.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1390,
+  "listPriceCents": 1390,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 78,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p187",
+  "name": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Menta — 8 pastilhas",
+  "brand": "Farmanorte",
+  "line": "med_dor_de_garganta",
+  "step": "pastilha_garganta",
+  "coversSteps": [
+   "pastilha_garganta"
+  ],
+  "productType": "pastilha antisséptica",
+  "form": "box",
+  "size": {
+   "value": 8,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta",
+   "tosse",
+   "tosse_seca"
+  ],
+  "ingredients": [
+   "amilmetacresol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pastilhas Amilmetacresol + Álcool Diclorobenzílico Menta — 8 pastilhas: medicamento (pastilha antisséptica) do laboratório Farmanorte. Princípio ativo: Amilmetacresol + álcool diclorobenzílico. Para dor de garganta, tosse com catarro e tosse seca.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1550,
+  "stockQty": 44,
+  "cashbackPct": 0,
+  "salesRank": 40,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p188",
+  "name": "Flurbiprofeno 8,75 mg — 16 pastilhas",
+  "brand": "Lab Aurora",
+  "line": "med_dor_de_garganta",
+  "step": "pastilha_garganta",
+  "coversSteps": [
+   "pastilha_garganta"
+  ],
+  "productType": "pastilha anti-inflamatória",
+  "form": "box",
+  "size": {
+   "value": 16,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta"
+  ],
+  "ingredients": [
+   "flurbiprofeno"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Flurbiprofeno 8,75 mg — 16 pastilhas: medicamento (pastilha anti-inflamatória) do laboratório Lab Aurora. Princípio ativo: Flurbiprofeno. Para dor de garganta.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 21,
+  "cashbackPct": 0,
+  "salesRank": 164,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p189",
+  "name": "Benzidamina 3 mg — 12 pastilhas",
+  "brand": "Lab Nova Via",
+  "line": "med_dor_de_garganta",
+  "step": "pastilha_garganta",
+  "coversSteps": [
+   "pastilha_garganta"
+  ],
+  "productType": "pastilha anti-inflamatória",
+  "form": "box",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta"
+  ],
+  "ingredients": [
+   "benzidamina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Benzidamina 3 mg — 12 pastilhas: medicamento (pastilha anti-inflamatória) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 2390,
+  "stockQty": 25,
+  "cashbackPct": 0,
+  "salesRank": 148,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p190",
+  "name": "Benzidamina Spray 1,5 mg/mL — 30 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_dor_de_garganta",
+  "step": "spray_garganta",
+  "coversSteps": [
+   "spray_garganta"
+  ],
+  "productType": "spray para garganta",
+  "form": "spray",
+  "size": {
+   "value": 30,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta"
+  ],
+  "ingredients": [
+   "benzidamina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Benzidamina Spray 1,5 mg/mL — 30 mL: medicamento (spray para garganta) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 44,
+  "cashbackPct": 0,
+  "salesRank": 142,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p191",
+  "name": "Benzidamina Colutório 1,5 mg/mL (genérico) — 250 mL",
+  "brand": "Lab Genérico Sul",
+  "line": "med_dor_de_garganta",
+  "step": "spray_garganta",
+  "coversSteps": [
+   "spray_garganta"
+  ],
+  "productType": "gargarejo para garganta",
+  "form": "bottle",
+  "size": {
+   "value": 250,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "dor_de_garganta"
+  ],
+  "ingredients": [
+   "benzidamina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Benzidamina Colutório 1,5 mg/mL (genérico) — 250 mL: medicamento (gargarejo para garganta) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de benzidamina. Para dor de garganta.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2190,
+  "listPriceCents": 2190,
+  "stockQty": 14,
+  "cashbackPct": 0,
+  "salesRank": 44,
+  "categoryIds": [
+   "med-garganta",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p192",
+  "name": "Loratadina 10 mg — 12 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "loratadina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "loratadina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Loratadina 10 mg — 12 comprimidos: medicamento (loratadina em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Loratadina. Para alergia e rinite.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 27,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p193",
+  "name": "Loratadina Xarope 1 mg/mL — 100 mL",
+  "brand": "Farmanorte",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "loratadina em xarope",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "loratadina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Loratadina Xarope 1 mg/mL — 100 mL: medicamento (loratadina em xarope) do laboratório Farmanorte. Princípio ativo: Loratadina. Para alergia e rinite.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 160,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p194",
+  "name": "Desloratadina 5 mg — 10 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "desloratadina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "desloratadina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Desloratadina 5 mg — 10 comprimidos: medicamento (desloratadina em comprimidos) do laboratório Lab Aurora. Princípio ativo: Desloratadina. Para alergia e rinite. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2790,
+  "listPriceCents": 3350,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 202,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p195",
+  "name": "Cetirizina 10 mg (genérico) — 10 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "cetirizina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "cetirizina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Cetirizina 10 mg (genérico) — 10 comprimidos: medicamento (cetirizina em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Dicloridrato de cetirizina. Para alergia e rinite. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 48,
+  "cashbackPct": 0,
+  "salesRank": 81,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p196",
+  "name": "Fexofenadina 180 mg — 10 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "fexofenadina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "fexofenadina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fexofenadina 180 mg — 10 comprimidos: medicamento (fexofenadina em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de fexofenadina. Para alergia e rinite. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 38,
+  "cashbackPct": 0,
+  "salesRank": 171,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p197",
+  "name": "Dexclorfeniramina 2 mg — 20 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_alergia",
+  "step": "antialergico",
+  "coversSteps": [
+   "antialergico"
+  ],
+  "productType": "dexclorfeniramina em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "alergia"
+  ],
+  "ingredients": [
+   "dexclorfeniramina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dexclorfeniramina 2 mg — 20 comprimidos: medicamento (dexclorfeniramina em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Maleato de dexclorfeniramina. Para alergia e rinite. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1190,
+  "listPriceCents": 1430,
+  "stockQty": 27,
+  "cashbackPct": 0,
+  "salesRank": 13,
+  "categoryIds": [
+   "med-alergia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p198",
+  "name": "Loperamida 2 mg — 12 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_diarreia",
+  "step": "antidiarreico",
+  "coversSteps": [
+   "antidiarreico"
+  ],
+  "productType": "loperamida em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia"
+  ],
+  "ingredients": [
+   "loperamida"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Loperamida 2 mg — 12 comprimidos: medicamento (loperamida em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de loperamida. Para diarreia.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1190,
+  "listPriceCents": 1190,
+  "stockQty": 13,
+  "cashbackPct": 0,
+  "salesRank": 102,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p199",
+  "name": "Racecadotrila 100 mg — 9 cápsulas",
+  "brand": "Lab Aurora",
+  "line": "med_diarreia",
+  "step": "antidiarreico",
+  "coversSteps": [
+   "antidiarreico"
+  ],
+  "productType": "racecadotrila em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 9,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia"
+  ],
+  "ingredients": [
+   "racecadotrila"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Racecadotrila 100 mg — 9 cápsulas: medicamento (racecadotrila em cápsulas) do laboratório Lab Aurora. Princípio ativo: Racecadotrila. Para diarreia. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 6,
+  "cashbackPct": 0,
+  "salesRank": 144,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p200",
+  "name": "Nitazoxanida 500 mg — 6 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_diarreia",
+  "step": "antidiarreico",
+  "coversSteps": [
+   "antidiarreico"
+  ],
+  "productType": "nitazoxanida em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 6,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia"
+  ],
+  "ingredients": [
+   "nitazoxanida"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Nitazoxanida 500 mg — 6 comprimidos: medicamento (nitazoxanida em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Nitazoxanida. Para diarreia. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 4290,
+  "listPriceCents": 4290,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 203,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p201",
+  "name": "Saccharomyces boulardii 200 mg — 12 cápsulas",
+  "brand": "Farmanorte",
+  "line": "med_diarreia",
+  "step": "probiotico",
+  "coversSteps": [
+   "probiotico"
+  ],
+  "productType": "probiótico em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 12,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia"
+  ],
+  "ingredients": [
+   "saccharomyces_boulardii"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Saccharomyces boulardii 200 mg — 12 cápsulas: medicamento (probiótico em cápsulas) do laboratório Farmanorte. Princípio ativo: Saccharomyces boulardii. Para diarreia.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 6,
+  "cashbackPct": 0,
+  "salesRank": 22,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p202",
+  "name": "Bacillus clausii 2 bilhões — 5 flaconetes de 5 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_diarreia",
+  "step": "probiotico",
+  "coversSteps": [
+   "probiotico"
+  ],
+  "productType": "probiótico em flaconetes",
+  "form": "bottle",
+  "size": {
+   "value": 25,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia"
+  ],
+  "ingredients": [
+   "bacillus_clausii"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Bacillus clausii 2 bilhões — 5 flaconetes de 5 mL: medicamento (probiótico em flaconetes) do laboratório Vitalis Farma. Princípio ativo: Bacillus clausii. Para diarreia.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 17,
+  "cashbackPct": 0,
+  "salesRank": 113,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p203",
+  "name": "Sais para Reidratação Oral — envelope 27,9 g",
+  "brand": "Lab Genérico Sul",
+  "line": "med_diarreia",
+  "step": "reidratacao",
+  "coversSteps": [
+   "reidratacao"
+  ],
+  "productType": "soro de reidratação oral",
+  "form": "powder",
+  "size": {
+   "value": 27.9,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia",
+   "enjoo"
+  ],
+  "ingredients": [
+   "sais_reidratacao"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Sais para Reidratação Oral — envelope 27,9 g: medicamento (soro de reidratação oral) do laboratório Lab Genérico Sul. Princípio ativo: Sais para reidratação oral. Para diarreia e enjoo e náusea.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 390,
+  "listPriceCents": 390,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 33,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p204",
+  "name": "Soro de Reidratação Oral Pronto Sabor Coco — 500 mL",
+  "brand": "Farmanorte",
+  "line": "med_diarreia",
+  "step": "reidratacao",
+  "coversSteps": [
+   "reidratacao"
+  ],
+  "productType": "soro de reidratação pronto",
+  "form": "bottle",
+  "size": {
+   "value": 500,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "diarreia",
+   "enjoo"
+  ],
+  "ingredients": [
+   "sais_reidratacao"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Soro de Reidratação Oral Pronto Sabor Coco — 500 mL: medicamento (soro de reidratação pronto) do laboratório Farmanorte. Princípio ativo: Sais para reidratação oral. Para diarreia e enjoo e náusea.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 990,
+  "listPriceCents": 1190,
+  "stockQty": 53,
+  "cashbackPct": 0,
+  "salesRank": 132,
+  "categoryIds": [
+   "med-diarreia",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p205",
+  "name": "Bisacodil 5 mg — 20 drágeas",
+  "brand": "Vitalis Farma",
+  "line": "med_prisao_de_ventre",
+  "step": "laxante",
+  "coversSteps": [
+   "laxante"
+  ],
+  "productType": "laxante em drágeas",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "bisacodil"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Bisacodil 5 mg — 20 drágeas: medicamento (laxante em drágeas) do laboratório Vitalis Farma. Princípio ativo: Bisacodil. Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 59,
+  "cashbackPct": 0,
+  "salesRank": 46,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p206",
+  "name": "Picossulfato de Sódio Gotas 7,5 mg/mL — 20 mL",
+  "brand": "Lab Aurora",
+  "line": "med_prisao_de_ventre",
+  "step": "laxante",
+  "coversSteps": [
+   "laxante"
+  ],
+  "productType": "laxante em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 20,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "picossulfato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Picossulfato de Sódio Gotas 7,5 mg/mL — 20 mL: medicamento (laxante em gotas) do laboratório Lab Aurora. Princípio ativo: Picossulfato de sódio. Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 43,
+  "cashbackPct": 0,
+  "salesRank": 65,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p207",
+  "name": "Lactulose Xarope 667 mg/mL (genérico) — 120 mL",
+  "brand": "Lab Genérico Sul",
+  "line": "med_prisao_de_ventre",
+  "step": "laxante",
+  "coversSteps": [
+   "laxante"
+  ],
+  "productType": "laxante em xarope",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "lactulose"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Lactulose Xarope 667 mg/mL (genérico) — 120 mL: medicamento (laxante em xarope) do laboratório Lab Genérico Sul. Princípio ativo: Lactulose. Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2190,
+  "listPriceCents": 2190,
+  "stockQty": 19,
+  "cashbackPct": 0,
+  "salesRank": 82,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p208",
+  "name": "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 120 mL",
+  "brand": "Farmanorte",
+  "line": "med_prisao_de_ventre",
+  "step": "laxante",
+  "coversSteps": [
+   "laxante"
+  ],
+  "productType": "laxante em suspensão",
+  "form": "bottle",
+  "size": {
+   "value": 120,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre",
+   "azia"
+  ],
+  "ingredients": [
+   "hidroxido_magnesio"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 120 mL: medicamento (laxante em suspensão) do laboratório Farmanorte. Princípio ativo: Hidróxido de magnésio. Para prisão de ventre e azia e má digestão.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1390,
+  "listPriceCents": 1390,
+  "stockQty": 55,
+  "cashbackPct": 0,
+  "salesRank": 48,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p209",
+  "name": "Macrogol 3350 Pó para Solução Oral — 10 sachês",
+  "brand": "Lab Nova Via",
+  "line": "med_prisao_de_ventre",
+  "step": "laxante",
+  "coversSteps": [
+   "laxante"
+  ],
+  "productType": "laxante em pó",
+  "form": "powder",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "macrogol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Macrogol 3350 Pó para Solução Oral — 10 sachês: medicamento (laxante em pó) do laboratório Lab Nova Via. Princípio ativo: Macrogol 3350. Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 60,
+  "cashbackPct": 0,
+  "salesRank": 196,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p210",
+  "name": "Psyllium (Plantago ovata) Pó — 10 sachês",
+  "brand": "Vitalis Farma",
+  "line": "med_prisao_de_ventre",
+  "step": "fibra",
+  "coversSteps": [
+   "fibra"
+  ],
+  "productType": "fibra em pó",
+  "form": "powder",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "psyllium"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Psyllium (Plantago ovata) Pó — 10 sachês: medicamento (fibra em pó) do laboratório Vitalis Farma. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 15,
+  "cashbackPct": 0,
+  "salesRank": 77,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p211",
+  "name": "Psyllium (Plantago ovata) Pó — 30 sachês",
+  "brand": "Farmanorte",
+  "line": "med_prisao_de_ventre",
+  "step": "fibra",
+  "coversSteps": [
+   "fibra"
+  ],
+  "productType": "fibra em pó",
+  "form": "powder",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "prisao_de_ventre"
+  ],
+  "ingredients": [
+   "psyllium"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Psyllium (Plantago ovata) Pó — 30 sachês: medicamento (fibra em pó) do laboratório Farmanorte. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 6990,
+  "listPriceCents": 6990,
+  "stockQty": 25,
+  "cashbackPct": 0,
+  "salesRank": 169,
+  "categoryIds": [
+   "med-intestino-preso",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p212",
+  "name": "Dimenidrinato 100 mg — 10 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "dimenidrinato em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo"
+  ],
+  "ingredients": [
+   "dimenidrinato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dimenidrinato 100 mg — 10 comprimidos: medicamento (dimenidrinato em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Dimenidrinato. Para enjoo e náusea.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 30,
+  "cashbackPct": 0,
+  "salesRank": 75,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p213",
+  "name": "Dimenidrinato 50 mg + Piridoxina 10 mg — 10 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "dimenidrinato com vitamina B6",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo"
+  ],
+  "ingredients": [
+   "dimenidrinato",
+   "piridoxina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dimenidrinato 50 mg + Piridoxina 10 mg — 10 comprimidos: medicamento (dimenidrinato com vitamina B6) do laboratório Lab Aurora. Princípio ativo: Dimenidrinato e Piridoxina (vitamina B6). Para enjoo e náusea.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 59,
+  "cashbackPct": 0,
+  "salesRank": 145,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p214",
+  "name": "Dimenidrinato Gotas 25 mg/mL — 20 mL",
+  "brand": "Farmanorte",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "dimenidrinato em gotas",
+  "form": "dropper",
+  "size": {
+   "value": 20,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo"
+  ],
+  "ingredients": [
+   "dimenidrinato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dimenidrinato Gotas 25 mg/mL — 20 mL: medicamento (dimenidrinato em gotas) do laboratório Farmanorte. Princípio ativo: Dimenidrinato. Para enjoo e náusea.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1590,
+  "listPriceCents": 1590,
+  "stockQty": 19,
+  "cashbackPct": 0,
+  "salesRank": 73,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p215",
+  "name": "Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis",
+  "brand": "Lab Genérico Sul",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "ondansetrona em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo"
+  ],
+  "ingredients": [
+   "ondansetrona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis: medicamento (ondansetrona em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Ondansetrona. Para enjoo e náusea. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 188,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p216",
+  "name": "Metoclopramida 10 mg — 20 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "metoclopramida em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo"
+  ],
+  "ingredients": [
+   "metoclopramida"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Metoclopramida 10 mg — 20 comprimidos: medicamento (metoclopramida em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de metoclopramida. Para enjoo e náusea. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 890,
+  "listPriceCents": 890,
+  "stockQty": 28,
+  "cashbackPct": 0,
+  "salesRank": 68,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p217",
+  "name": "Domperidona 10 mg — 30 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_enjoo",
+  "step": "antiemetico",
+  "coversSteps": [
+   "antiemetico"
+  ],
+  "productType": "domperidona em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "enjoo",
+   "azia"
+  ],
+  "ingredients": [
+   "domperidona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Domperidona 10 mg — 30 comprimidos: medicamento (domperidona em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Domperidona. Para enjoo e náusea e azia e má digestão. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 175,
+  "categoryIds": [
+   "med-enjoo",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
  }
 ]

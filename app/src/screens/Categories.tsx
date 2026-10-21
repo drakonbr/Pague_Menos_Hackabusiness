@@ -5,11 +5,11 @@ import { useAsync } from "../useAsync";
 import { ProductList } from "./Results";
 
 const TOP: Array<{ label: string; icon: IconName; id?: string }> = [
-  { label: "Medicamentos e saúde", icon: "pill" },
+  { label: "Medicamentos e saúde", icon: "pill", id: "saude" },
   { label: "Dermo e beleza", icon: "lipstick", id: "dermo" },
   { label: "Mamães e bebês", icon: "stroller" },
-  { label: "Vida saudável", icon: "dumbbell" },
-  { label: "Higiene pessoal", icon: "bottle" },
+  { label: "Vida saudável", icon: "dumbbell", id: "vida-saudavel" },
+  { label: "Higiene pessoal", icon: "bottle", id: "higiene" },
   { label: "Conveniência", icon: "bag" },
   { label: "Marcas exclusivas", icon: "cross" },
   { label: "Pet shop", icon: "paw" },
@@ -31,7 +31,6 @@ export function CategoriesRoot() {
               </button>
             ))}
           </div>
-          <p className="footnote">O protótipo cobre só Dermo e beleza (cosméticos). Medicamentos ficam fora do escopo.</p>
         </div>
       </div>
     </div>
@@ -65,7 +64,12 @@ export function CategoryView({ id }: { id: string }) {
               ))}
             </div>
           ) : null}
-          {id === "dermo" || d?.parent?.id === "tipo" || id === "tipo" ? (
+          {id === "saude" || d?.parent?.id === "saude" ? (
+            <button className="note" style={{ textAlign: "left", width: "100%" }} onClick={() => push({ name: "searchFocus" })}>
+              <Icon name="sparkle" size={20} />
+              <span><b>Kits inteligentes:</b> diga o que está sentindo, como “dor de cabeça” ou “gripe”, e veja os kits prontos.</span>
+            </button>
+          ) : id === "dermo" || d?.parent?.id === "tipo" || id === "tipo" ? (
             <button className="note" style={{ textAlign: "left", width: "100%" }} onClick={() => push({ name: "searchFocus" })}>
               <Icon name="sparkle" size={20} />
               <span><b>Kits inteligentes:</b> descreva a sua pele e o que quer resolver. Montamos a rotina completa.</span>

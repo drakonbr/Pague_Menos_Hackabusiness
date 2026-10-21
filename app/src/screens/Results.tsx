@@ -19,7 +19,7 @@ const SKINS: Array<{ value: SkinType; label: string }> = [
   { value: "sensível", label: "Sensível" },
 ];
 
-const SEARCH_ACTS = new Set(["busca", "refinar", "bloqueado", "negacao"]);
+const SEARCH_ACTS = new Set(["busca", "refinar", "negacao"]);
 
 export function sortList(list: Product[], sort: SortKey): Product[] {
   const stock = (a: Product, b: Product) => Number(b.stockQty > 0) - Number(a.stockQty > 0);
@@ -88,12 +88,8 @@ export function Results({ req }: { req: SearchRequest }) {
         ) : null}
         {state.status === "done" ? (
           <div aria-busy={state.refreshing || undefined} style={{ opacity: state.refreshing ? 0.55 : 1, transition: "opacity .15s" }}>
-            {state.res.safety.decision === "blocked" ? (
-              <Safety res={state.res} onSearch={(q) => push({ name: "results", req: { query: q, storeId } })} onPharmacist={() => push({ name: "pharmacist" })} />
-            ) : (
-              <ResultBody res={state.res} storeName={store?.name ?? null} onPatch={patch} onRefine={refine}
-                onOpen={(kit) => push({ name: "kit", kit, intent: state.res.intent })} onStores={() => push({ name: "stores" })} />
-            )}
+            <ResultBody res={state.res} storeName={store?.name ?? null} onPatch={patch} onRefine={refine}
+              onOpen={(kit) => push({ name: "kit", kit, intent: state.res.intent })} onStores={() => push({ name: "stores" })} />
           </div>
         ) : null}
       </div>
@@ -163,7 +159,7 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
   onStores: () => void;
 }) {
   const [sheet, setSheet] = useState(false);
-  const [budgetOpen, setBudgetOpen] = useState(res.intent.budgetCents == null);
+  const [budgetOpen, setBudgetOpen] = useState(false);
   const { intent } = res;
   const budget = intent.budgetCents;
 
@@ -172,7 +168,7 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
       <div className="title">
         <Icon name="sparkle" size={20} /> Kits inteligentes para o seu pedido
       </div>
-      <IntentChips intent={intent} onEditSkin={() => setSheet(true)} onEditBudget={() => setBudgetOpen((o) => !o)} />
+      <IntentChips intent={intent} onEditSkin={() => setSheet(true)} onEditBudget={() => setBudgetOpen(true)} />
       <button className="row" style={{ fontSize: 13.5, color: "var(--text-2)", textAlign: "left", minHeight: 36 }} onClick={onStores}>
         <Icon name="store" size={18} />
         <span className="grow">{storeName ? `Só com o estoque da ${storeName}` : "Estoque para entrega em casa"}</span>
@@ -183,7 +179,6 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
         <div className="note warn" role="note"><Icon name="alert" size={18} /><p>{res.safety.message}</p></div>
       ) : null}
 
-      {budgetOpen ? <BudgetPanel value={budget} onChange={(c) => onPatch({ budgetCents: c })} /> : null}
 
       {res.notes.map((n) => (
         <div key={n} className="note" role="note"><Icon name="info" size={18} /><p>{n}</p></div>
@@ -224,6 +219,12 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
         </div>
       ) : null}
 
+      {budgetOpen ? (
+        <BottomSheet title="Quanto quer gastar?" onClose={() => setBudgetOpen(false)}>
+          <BudgetPanel value={budget} onChange={(c) => { setBudgetOpen(false); onPatch({ budgetCents: c }); }} />
+        </BottomSheet>
+      ) : null}
+
       {sheet ? (
         <BottomSheet title="Como é a sua pele?" onClose={() => setSheet(false)}>
           {SKINS.map((s) => (
@@ -238,21 +239,27 @@ function KitZone({ res, storeName, onPatch, onOpen, onStores }: {
   );
 }
 
+type Filters = { inStock: boolean; noRx: boolean; skin: SkinType | null; claims: string[] };
+const NO_FILTERS: Filters = { inStock: false, noRx: false, skin: null, claims: [] };
+
 export function ProductList({ products, emptyText, title }: { products: Product[]; emptyText?: string; title?: string }) {
   const [sort, setSort] = useState<SortKey>("relevancia");
-  const [filters, setFilters] = useState<{ inStock: boolean; skin: SkinType | null; claims: string[] }>({ inStock: false, skin: null, claims: [] });
+  const [filters, setFilters] = useState<Filters>(NO_FILTERS);
   const [open, setOpen] = useState(false);
   const claimsAvailable = useMemo(() => [...new Set(products.flatMap((p) => p.claims))].sort(), [products]);
+  const hasDermo = products.some((p) => p.domain === "dermo");
+  const hasRx = products.some((p) => p.rx) && products.some((p) => p.domain === "medicamento" && !p.rx);
   const shown = useMemo(() => {
     const f = products.filter(
       (p) =>
         (!filters.inStock || p.stockQty > 0) &&
+        (!filters.noRx || !p.rx) &&
         (!filters.skin || p.skinTypes.includes("todas") || p.skinTypes.includes(filters.skin)) &&
         filters.claims.every((c) => p.claims.includes(c)),
     );
     return sortList(f, sort);
   }, [products, filters, sort]);
-  const active = Number(filters.inStock) + Number(!!filters.skin) + filters.claims.length;
+  const active = Number(filters.inStock) + Number(filters.noRx) + Number(!!filters.skin) + filters.claims.length;
 
   if (!products.length) return emptyText ? <p className="count">{emptyText}</p> : null;
   return (
@@ -282,50 +289,40 @@ export function ProductList({ products, emptyText, title }: { products: Product[
             <input type="checkbox" checked={filters.inStock} onChange={(e) => setFilters({ ...filters, inStock: e.target.checked })} />
             Só produtos disponíveis
           </label>
-          <span className="section-title">Tipo de pele</span>
-          <div className="chips">
-            {SKINS.map((s) => (
-              <button key={s.value} className={`chip ${filters.skin === s.value ? "on" : ""}`}
-                onClick={() => setFilters({ ...filters, skin: filters.skin === s.value ? null : s.value })}>{s.label}</button>
-            ))}
-          </div>
-          <span className="section-title">Características</span>
-          <div className="chips">
-            {claimsAvailable.map((c) => (
-              <button key={c} className={`chip ${filters.claims.includes(c) ? "on" : ""}`}
-                onClick={() => setFilters({ ...filters, claims: filters.claims.includes(c) ? filters.claims.filter((x) => x !== c) : [...filters.claims, c] })}>{c}</button>
-            ))}
-          </div>
+          {hasRx ? (
+            <label className="switch">
+              <input type="checkbox" checked={filters.noRx} onChange={(e) => setFilters({ ...filters, noRx: e.target.checked })} />
+              Só sem receita
+            </label>
+          ) : null}
+          {hasDermo ? (
+            <>
+              <span className="section-title">Tipo de pele</span>
+              <div className="chips">
+                {SKINS.map((s) => (
+                  <button key={s.value} className={`chip ${filters.skin === s.value ? "on" : ""}`}
+                    onClick={() => setFilters({ ...filters, skin: filters.skin === s.value ? null : s.value })}>{s.label}</button>
+                ))}
+              </div>
+            </>
+          ) : null}
+          {claimsAvailable.length ? (
+            <>
+              <span className="section-title">Características</span>
+              <div className="chips">
+                {claimsAvailable.map((c) => (
+                  <button key={c} className={`chip ${filters.claims.includes(c) ? "on" : ""}`}
+                    onClick={() => setFilters({ ...filters, claims: filters.claims.includes(c) ? filters.claims.filter((x) => x !== c) : [...filters.claims, c] })}>{c}</button>
+                ))}
+              </div>
+            </>
+          ) : null}
           <div className="row" style={{ marginTop: 8 }}>
-            <button className="btn outline grow" onClick={() => setFilters({ inStock: false, skin: null, claims: [] })}>Limpar</button>
+            <button className="btn outline grow" onClick={() => setFilters(NO_FILTERS)}>Limpar</button>
             <button className="btn primary grow" onClick={() => setOpen(false)}>Ver {shown.length} produtos</button>
           </div>
         </BottomSheet>
       ) : null}
     </section>
-  );
-}
-
-function Safety({ res, onSearch, onPharmacist }: { res: SearchResponse; onSearch: (q: string) => void; onPharmacist: () => void }) {
-  const s = res.safety;
-  return (
-    <div className="pad">
-      <section className="panel" role="alert" aria-label="Orientação de saúde">
-        <div className="row" style={{ color: "var(--warn)" }}>
-          <Icon name="shield" size={24} />
-          <b>Isso é uma questão de saúde</b>
-        </div>
-        <p style={{ fontSize: 15, lineHeight: 1.45 }}>{s.message ?? "Não fazemos recomendações de saúde."}</p>
-        <button className="btn primary block" onClick={onPharmacist}>
-          <Icon name="cross" size={20} /> {s.referral ?? "Falar com um farmacêutico"}
-        </button>
-        {s.alternativeQuery ? (
-          <button className="btn outline blue block" onClick={() => onSearch(s.alternativeQuery!)}>
-            Ver cuidados cosméticos: {s.alternativeQuery}
-          </button>
-        ) : null}
-        <p className="footnote">Nenhum produto é sugerido para este pedido.</p>
-      </section>
-    </div>
   );
 }

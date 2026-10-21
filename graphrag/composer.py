@@ -4,8 +4,8 @@ O que a recuperação (retrieval.py) faz é ORDENAR candidatos; quem decide o qu
   K1 sem repetir produto, tipo ou etapa coberta · K3 orçamento · K4 interações · K5 fotossensibilizante pede protetor
   K8 três faixas (Econômico, Essencial, Alternativo) · K9 no máximo 5 itens · K10 nada no orçamento mostra o mais
   próximo · K12 combinação proibida pedida explicitamente vira aviso.
-Mais as regras da fase da persona: medicamento nunca entra em kit; ingrediente que a pessoa quer evitar nunca entra;
-estoque pode ser da loja escolhida.
+Mais: ingrediente que a pessoa quer evitar nunca entra; estoque pode ser da loja escolhida. Medicamento entra em kit
+(doc 16) com duas regras a mais: nunca o mesmo princípio ativo duas vezes; nunca dois anti-inflamatórios (interações).
 """
 from __future__ import annotations
 
@@ -84,15 +84,13 @@ def build_ctx(cat: Catalog, intent: dict, requested=(), excluded=(), rel=None, w
 class Composer:
     def __init__(self, cat: Catalog):
         self.cat = cat
-        self.pool = [p for p in cat.products if p["domain"] != "medicamento"]
+        self.pool = list(cat.products)
 
     # ------------------------------------------------------------ elegibilidade e nota
     def stock(self, p: dict, ctx: Ctx) -> int:
         return self.cat.stock_at(p["id"], ctx.store_id)
 
     def base_eligible(self, p: dict, ctx: Ctx, relax_skin: bool = False) -> bool:
-        if p["domain"] == "medicamento":
-            return False
         if self.stock(p, ctx) <= 0:
             return False
         if ctx.pregnancy and "consultar_se_gestante" in p["warnings"]:
@@ -166,6 +164,11 @@ class Composer:
 
     # ------------------------------------------------------------ interações (K4)
     def conflict_between(self, p: dict, q: dict) -> dict | None:
+        if p["domain"] == q["domain"] == "medicamento":
+            same = set(p["ingredients"]) & set(q["ingredients"])
+            if same:
+                name = self.cat.ingredients[sorted(same)[0]]["name"].lower()
+                return {"severity": "evitar", "reason": f"Os dois têm {name}; o kit não repete princípio ativo."}
         if p["step"] == "limpeza" or q["step"] == "limpeza":
             return None
         for a in p["ingredients"]:
@@ -246,6 +249,8 @@ class Composer:
             parts.append(f"Indicado para pele {skin}.")
         if len(p["coversSteps"]) > 1 and "protecao_solar" in p["coversSteps"]:
             parts.append("Cobre também a proteção solar, sem item extra.")
+        if p.get("rx"):
+            parts.append("Venda sob prescrição.")
         return " ".join(parts) if parts else DEFAULT_REASON.get(step, "Item da rotina.")
 
     def build_alerts(self, prods: list[dict]) -> list[dict]:

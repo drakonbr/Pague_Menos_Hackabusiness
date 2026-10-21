@@ -22,6 +22,7 @@ export function ProductPage({ id }: { id: string }) {
 
   const d = data.data;
   const p = d?.p;
+  const med = p?.domain === "medicamento";
   return (
     <div className="screen">
       <header className="bar">
@@ -46,6 +47,12 @@ export function ProductPage({ id }: { id: string }) {
               <span className="brandname">{p.brand}</span>
               <h1>{p.name}</h1>
               <span className="code">cód.: {p.id.toUpperCase()} · {p.size.value} {p.size.unit}{p.fps ? ` · FPS ${p.fps}` : ""}</span>
+              {med ? (
+                <span className="code">
+                  Princípio ativo: <b>{joinPt(p.ingredients.map((i) => d.labels.ingredients[i] ?? i))}</b>
+                  {p.rx ? <> · <span className="mini warn">Venda sob prescrição</span></> : <> · <span className="mini green">Sem receita</span></>}
+                </span>
+              ) : null}
               <div className="chips" style={{ gap: 6 }}>
                 {p.claims.map((c) => <span key={c} className="mini">{c}</span>)}
               </div>
@@ -73,9 +80,9 @@ export function ProductPage({ id }: { id: string }) {
                 </>
               )}
               <button className="note" style={{ textAlign: "left", width: "100%" }}
-                onClick={() => push({ name: "results", req: { query: `cuidados para ${d.labels.concerns[p.concerns[0]] ?? "a pele"}`, storeId } })}>
+                onClick={() => push({ name: "results", req: { query: `${med ? "remédio para" : "cuidados para"} ${d.labels.concerns[p.concerns[0]] ?? "a pele"}`, storeId } })}>
                 <Icon name="sparkle" size={20} />
-                <span>Monte um kit para <b>{d.labels.concerns[p.concerns[0]] ?? "a sua pele"}</b>: rotina completa, sem repetir produto.</span>
+                <span>Monte um kit para <b>{d.labels.concerns[p.concerns[0]] ?? "a sua pele"}</b>: {med ? "opções que se completam, sem repetir princípio ativo." : "rotina completa, sem repetir produto."}</span>
               </button>
             </div>
             <details className="acc" open>
@@ -85,15 +92,21 @@ export function ProductPage({ id }: { id: string }) {
             <details className="acc">
               <summary>BENEFÍCIOS <Icon name="chevronDown" size={20} /></summary>
               <p className="txt">
-                Atua em {joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. Ativos: {joinPt(p.ingredients.map((i) => d.labels.ingredients[i] ?? i))}.
+                {med ? "Para" : "Atua em"} {joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. {med ? "Princípio ativo" : "Ativos"}: {joinPt(p.ingredients.map((i) => d.labels.ingredients[i] ?? i))}.
                 {p.claims.length ? ` ${joinPt(p.claims)}.` : ""}
               </p>
             </details>
             <details className="acc">
               <summary>PARA QUE SERVE <Icon name="chevronDown" size={20} /></summary>
               <p className="txt">
-                Etapa da rotina: {STEP_LABEL[p.step]}. Indicado para {p.skinTypes.includes("todas") ? "todos os tipos de pele" : `pele ${joinPt(p.skinTypes)}`}.
-                Uso: {p.usagePeriod === "dia" ? "de dia" : p.usagePeriod === "noite" ? "à noite" : "de dia e à noite"}.
+                {med ? (
+                  <>Indicado para {joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. Classe: {STEP_LABEL[p.step]}.</>
+                ) : (
+                  <>
+                    Etapa da rotina: {STEP_LABEL[p.step]}. Indicado para {p.skinTypes.includes("todas") ? "todos os tipos de pele" : `pele ${joinPt(p.skinTypes)}`}.
+                    Uso: {p.usagePeriod === "dia" ? "de dia" : p.usagePeriod === "noite" ? "à noite" : "de dia e à noite"}.
+                  </>
+                )}
               </p>
             </details>
             <details className="acc">
@@ -108,11 +121,11 @@ export function ProductPage({ id }: { id: string }) {
                     {p.warnings.map((w) => <li key={w}>{d.labels.warnings[w] ?? w}</li>)}
                   </ul>
                 ) : (
-                  <p>Uso externo. Em caso de irritação, suspenda o uso.</p>
+                  <p>{med ? "Leia a bula antes de usar." : "Uso externo. Em caso de irritação, suspenda o uso."}</p>
                 )}
               </div>
             </details>
-            <p className="footnote" style={{ padding: 16 }}>Produto fictício. Informação cosmética, não substitui orientação profissional.</p>
+            <p className="footnote" style={{ padding: 16 }}>Produto fictício: marca, preço e estoque inventados.</p>
           </>
         ) : null}
       </div>

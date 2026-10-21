@@ -32,9 +32,11 @@ class TestShelf(unittest.TestCase):
         self.assertEqual(len(r["kits"]), 3)
         self.assertGreater(len(r["products"]), 3)      # kits em cima, lista completa embaixo
 
-    def test_medicamento_nunca_na_lista(self):
-        for q in ["quero tudo para a dor", "higiene bucal", "suplementos"]:
+    def test_remedio_so_na_prateleira_de_remedio(self):
+        for q in ["higiene bucal", "suplementos"]:
             self.assertTrue(all(p["domain"] != "medicamento" for p in S(q)["products"]), q)
+        r = S("quero tudo para a dor")
+        self.assertTrue(r["products"] and all(p["domain"] == "medicamento" for p in r["products"]))
 
 
 class TestAbsent(unittest.TestCase):
@@ -60,10 +62,10 @@ class TestTypos(unittest.TestCase):
         self.assertNotIn("correctedQuery", r)
         self.assertEqual(r["act"], "repor_medicamento")
 
-    def test_seguranca_olha_o_texto_original(self):
-        r = S("dor de cabeca, o que tomo")
-        self.assertEqual(r["safety"]["decision"], "blocked")
-        self.assertEqual(r["products"], [])
+    def test_remedio_com_erro_de_digitacao(self):
+        r = S("dipirna para dor de cabeca")
+        self.assertEqual(r["safety"]["decision"], "allow")
+        self.assertTrue(any("dipirona" in p["ingredients"] for p in r["products"]))
 
 
 class TestAjusteDeLista(unittest.TestCase):

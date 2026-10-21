@@ -19,6 +19,10 @@ export function checkKit(kit: Kit, intent: Intent): string[] {
   if (new Set(prods.map((p) => p.productType)).size !== prods.length) v.push(`${tag} I2: tipo de produto repetido`);
   // I9
   if (kit.items.length > 5 || kit.items.length === 0) v.push(`${tag} I9: ${kit.items.length} itens`);
+  // M1 (doc 16): medicamento nunca repete princípio ativo dentro do kit
+  const meds = prods.filter((p) => p.domain === "medicamento");
+  const actives = meds.flatMap((p) => p.ingredients);
+  if (new Set(actives).size !== actives.length) v.push(`${tag} M1: princípio ativo repetido`);
 
   for (const it of kit.items) {
     const truth = PRODUCT_BY_ID.get(it.product.id);
@@ -93,11 +97,6 @@ export function checkKit(kit: Kit, intent: Intent): string[] {
 
 export function checkResponse(res: SearchResponse): string[] {
   const v: string[] = [];
-  // I10
-  if (res.safety.decision === "blocked") {
-    if (res.kits.length || res.closestKit || res.products.length) v.push(`${res.requestId} I10: bloqueado mas com kits ou produtos`);
-    return v;
-  }
   for (const k of res.kits) v.push(...checkKit(k, res.intent));
   if (res.closestKit) {
     v.push(...checkKit(res.closestKit, res.intent).filter((m) => !m.includes("I5")));

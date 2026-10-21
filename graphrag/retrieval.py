@@ -51,7 +51,7 @@ class Retriever:
     def __init__(self, cat: Catalog, graph: KnowledgeGraph, wv: WordVectors | None, weights: dict | None = None):
         self.cat, self.graph, self.wv = cat, graph, wv
         self.weights = weights or load_weights()
-        self.pids = [p["id"] for p in cat.products if p["domain"] != "medicamento"]
+        self.pids = [p["id"] for p in cat.products]
         self.docs = {pid: tokens(product_text(cat, cat.by_id[pid])) for pid in self.pids}
         self.dl = {pid: len(t) for pid, t in self.docs.items()}
         self.avgdl = sum(self.dl.values()) / max(1, len(self.dl))
@@ -104,8 +104,7 @@ class Retriever:
         for pref in u.preferences:
             add(nid("claim", pref), 0.5)
         for pid in u.product_ids:
-            if self.cat.by_id[pid]["domain"] != "medicamento":
-                add(nid("product", pid), 1.0)
+            add(nid("product", pid), 1.0)
         return {k: v for k, v in s.items() if k in self.graph.g}
 
     def graph_scores(self, u: Understanding) -> dict[str, float]:

@@ -17,7 +17,31 @@ export type StepId =
   | "higiene_cabelo"
   | "higiene_oral"
   | "desodorante"
-  | "reposicao";
+  | "reposicao"
+  // medicamentos (doc 16): papéis dentro do kit de cada área de saúde
+  | "analgesico_dipirona"
+  | "analgesico_paracetamol"
+  | "antiinflamatorio"
+  | "relaxante_muscular"
+  | "dor_topico"
+  | "antiespasmodico"
+  | "antigases"
+  | "antiacido"
+  | "protetor_gastrico"
+  | "antigripal"
+  | "descongestionante_nasal"
+  | "imunidade"
+  | "expectorante"
+  | "antitussigeno"
+  | "pastilha_garganta"
+  | "spray_garganta"
+  | "antialergico"
+  | "antidiarreico"
+  | "probiotico"
+  | "reidratacao"
+  | "laxante"
+  | "fibra"
+  | "antiemetico";
 
 export type GoalId =
   | "acne"
@@ -28,7 +52,24 @@ export type GoalId =
   | "pele_sensivel"
   | "oleosidade"
   | "suplementos"
-  | "higiene_premium";
+  | "higiene_premium"
+  // áreas de saúde (doc 16)
+  | "dor_de_cabeca"
+  | "dor_no_corpo"
+  | "dor_muscular"
+  | "dor_de_barriga"
+  | "azia"
+  | "gripe"
+  | "tosse"
+  | "tosse_seca"
+  | "dor_de_garganta"
+  | "alergia"
+  | "diarreia"
+  | "prisao_de_ventre"
+  | "enjoo";
+
+/** Objetivos de pele: só neles o tipo de pele importa (chip, pergunta e filtro). */
+export const DERMO_GOALS: GoalId[] = ["acne", "manchas", "skincare_basico", "protecao_solar", "anti_idade", "pele_sensivel", "oleosidade"];
 
 export type SkinType = "oleosa" | "mista" | "seca" | "normal" | "sensível";
 export type KitTier = "economico" | "essencial" | "alternativo";
@@ -64,7 +105,7 @@ export type ProductForm =
 export type ProductDomain = "dermo" | "suplemento" | "higiene" | "medicamento";
 export type PresentationKind = "referencia" | "generico" | "similar";
 
-/** Só medicamentos: mesmo princípio ativo e dose, apresentações diferentes. A troca depende do farmacêutico. */
+/** Só medicamentos de reposição: mesmo princípio ativo e dose, apresentações diferentes. */
 export interface Equivalence {
   group: string;
   presentation: PresentationKind;
@@ -158,16 +199,14 @@ export interface ChatContext {
   focusProductId?: string;
 }
 
-export type SafetyDecision = "allow" | "caution" | "blocked";
-export type SafetyCategory = "medicamento" | "sintoma" | "condicao_de_saude" | "gestacao_e_ativos";
+// Desde o doc 16 não existe bloqueio nem encaminhamento: medicamento é busca como outra qualquer.
+export type SafetyDecision = "allow" | "caution";
+export type SafetyCategory = "gestacao_e_ativos";
 
 export interface Safety {
   decision: SafetyDecision;
   category?: SafetyCategory;
   message?: string;
-  referral?: string;
-  /** Consulta cosmética oferecida como alternativa a um pedido bloqueado. */
-  alternativeQuery?: string;
 }
 
 export interface Clarification {
@@ -331,6 +370,29 @@ export const STEP_ORDER: StepId[] = [
   "higiene_cabelo",
   "higiene_oral",
   "desodorante",
+  "analgesico_dipirona",
+  "analgesico_paracetamol",
+  "antiinflamatorio",
+  "relaxante_muscular",
+  "dor_topico",
+  "antiespasmodico",
+  "antigases",
+  "antiacido",
+  "protetor_gastrico",
+  "antigripal",
+  "descongestionante_nasal",
+  "imunidade",
+  "expectorante",
+  "antitussigeno",
+  "pastilha_garganta",
+  "spray_garganta",
+  "antialergico",
+  "antidiarreico",
+  "probiotico",
+  "reidratacao",
+  "laxante",
+  "fibra",
+  "antiemetico",
   "reposicao",
 ];
 
@@ -351,6 +413,29 @@ export const STEP_LABEL: Record<StepId, string> = {
   higiene_oral: "Higiene bucal",
   desodorante: "Desodorante",
   reposicao: "Reposição",
+  analgesico_dipirona: "Dipirona",
+  analgesico_paracetamol: "Paracetamol",
+  antiinflamatorio: "Anti-inflamatório",
+  relaxante_muscular: "Relaxante muscular",
+  dor_topico: "Gel ou pomada para dor",
+  antiespasmodico: "Para cólica",
+  antigases: "Antigases",
+  antiacido: "Antiácido",
+  protetor_gastrico: "Protetor gástrico",
+  antigripal: "Antigripal",
+  descongestionante_nasal: "Nariz (soro e descongestionante)",
+  imunidade: "Vitamina C",
+  expectorante: "Expectorante",
+  antitussigeno: "Para tosse seca",
+  pastilha_garganta: "Pastilha para garganta",
+  spray_garganta: "Spray ou gargarejo para garganta",
+  antialergico: "Antialérgico",
+  antidiarreico: "Antidiarreico",
+  probiotico: "Probiótico",
+  reidratacao: "Reidratação oral",
+  laxante: "Laxante",
+  fibra: "Fibra",
+  antiemetico: "Contra enjoo",
 };
 
 export const TIER_LABEL: Record<KitTier, string> = {
@@ -369,6 +454,19 @@ export const GOAL_LABEL: Record<GoalId, string> = {
   oleosidade: "Controle de oleosidade",
   suplementos: "Suplementos e vitaminas",
   higiene_premium: "Higiene premium",
+  dor_de_cabeca: "Dor de cabeça e febre",
+  dor_no_corpo: "Dor no corpo",
+  dor_muscular: "Dor muscular",
+  dor_de_barriga: "Dor de barriga e cólica",
+  azia: "Azia e má digestão",
+  gripe: "Gripe e resfriado",
+  tosse: "Tosse com catarro",
+  tosse_seca: "Tosse seca",
+  dor_de_garganta: "Dor de garganta",
+  alergia: "Alergia e rinite",
+  diarreia: "Diarreia",
+  prisao_de_ventre: "Prisão de ventre",
+  enjoo: "Enjoo e náusea",
 };
 
 // ---------------------------------------------------------------------------

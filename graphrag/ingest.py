@@ -234,7 +234,7 @@ def ingest_records(cat: Catalog, raw_records: list[dict], word_vocab: set[str] |
         taken.add(pid)
         report.applied.append({**{f: product[f] for f in COMPARE_FIELDS}, "id": pid, "cashbackPct": product["cashbackPct"],
                                **({"storeStock": stock} if stock else {})})
-        if word_vocab is not None and product["domain"] != "medicamento":
+        if word_vocab is not None:
             from graphrag.retrieval import product_text
             oov |= {t for t in tokens(product_text(cat, product)) if t not in word_vocab}
     report.oovTokens = sorted(oov)

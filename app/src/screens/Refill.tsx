@@ -1,4 +1,4 @@
-// Meus medicamentos: REPOSIÇÃO do que a pessoa já usa. Nada aqui recomenda medicamento, dose ou troca de tratamento.
+// Meus medicamentos: REPOSIÇÃO do que a pessoa já usa (lista que fica no aparelho).
 // Os dados (itens, quantidades, receita) ficam no aparelho; o motor só devolve equivalentes a partir de um id de produto.
 import { useMemo, useState } from "react";
 import { TitleBar } from "../components/Bars";
@@ -57,7 +57,7 @@ export function Refill() {
         <div className="pad">
           <div className="note ok" role="note">
             <Icon name="lock" size={18} />
-            <p><b>Fica só neste aparelho.</b> A lista dos seus medicamentos nunca vai para o assistente de compras. Aqui você só repõe o que já usa, sem recomendação.</p>
+            <p><b>Fica só neste aparelho.</b> A lista dos seus medicamentos nunca vai para o assistente de compras. Aqui você repõe o que já usa em poucos toques.</p>
           </div>
 
           <button className="row loc-row" onClick={() => push({ name: "stores" })}>
@@ -116,8 +116,7 @@ export function Refill() {
             <Icon name="basketPlus" size={22} /> Repor {lineItems.length || ""} {lineItems.length === 1 ? "item" : "itens"} na cesta
           </button>
           {!rxAttached && lineItems.length ? <small className="foot center">Anexe a receita simulada para repor.</small> : null}
-          {swapsUnconfirmed ? <small className="foot center">Confirme a troca com o farmacêutico para continuar.</small> : null}
-          <p className="footnote">Protótipo: medicamentos, preços, receita e lojas são fictícios. Não é orientação médica.</p>
+          <p className="footnote">Protótipo: medicamentos, preços, receita e lojas são fictícios.</p>
         </div>
       </div>
     </div>
@@ -130,7 +129,6 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
   onChoice: (c: { product: Product; confirmed: boolean }) => void; onReset: () => void;
 }) {
   const { search } = useServices();
-  const { push } = useNav();
   const left = daysLeft(m);
   const urgent = needsRefill(m);
   const pct = Math.max(4, Math.min(100, Math.round((m.unitsLeft / m.packUnits) * 100)));
@@ -163,7 +161,7 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
       {!inStockHere ? (
         <div className="equiv" aria-label="Equivalentes disponíveis">
           <b>Equivalentes com estoque</b>
-          <small className="foot">Mesmo princípio ativo e mesma dose. A troca só vale com a confirmação do farmacêutico e conforme a sua receita.</small>
+          <small className="foot">Mesmo princípio ativo e mesma dose, conforme a sua receita.</small>
           {sims.loading ? <div className="skeleton" style={{ height: 60 }} /> : null}
           {(sims.data?.options ?? []).filter((o) => o.inStock).map((o) => {
             const on = choice?.product.id === o.product.id;
@@ -174,18 +172,11 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
                   <b>{o.product.name}</b>
                   <small>{PRES[o.presentation ?? "similar"]} · {money(o.product.priceCents)} ({delta(o.deltaCents)})</small>
                 </span>
-                <button className="btn outline blue" aria-pressed={on} onClick={() => (on ? onReset() : onChoice({ product: o.product, confirmed: false }))}>{on ? "Escolhido" : "Escolher"}</button>
+                <button className="btn outline blue" aria-pressed={on} onClick={() => (on ? onReset() : onChoice({ product: o.product, confirmed: true }))}>{on ? "Escolhido" : "Escolher"}</button>
               </div>
             );
           })}
-          {sims.data && !sims.data.options.some((o) => o.inStock) ? <p className="off">Nenhum equivalente em estoque nesta loja. Fale com o farmacêutico.</p> : null}
-          {choice ? (
-            <label className="confirm">
-              <input type="checkbox" checked={choice.confirmed} onChange={(e) => onChoice({ ...choice, confirmed: e.target.checked })} />
-              Entendi que a troca depende da confirmação do farmacêutico e da minha receita.
-            </label>
-          ) : null}
-          <button className="link plain" onClick={() => push({ name: "pharmacist" })}>Falar com um farmacêutico</button>
+          {sims.data && !sims.data.options.some((o) => o.inStock) ? <p className="off">Nenhum equivalente em estoque nesta loja.</p> : null}
         </div>
       ) : (
         <div className="row"><span className="price blue">{money(refillPrice(cur.priceCents, auto))}</span>{auto ? <span className="old">{money(cur.priceCents)}</span> : null}</div>

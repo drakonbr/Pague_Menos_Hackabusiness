@@ -2,6 +2,7 @@
 // a partir do catálogo fictício. Em produção este arquivo deixa de existir: o app
 // passa a chamar o serviço real (ver ../searchService.ts).
 import productsJson from "../../mocks/products.mock.json";
+import concernsJson from "../../mocks/concerns.mock.json";
 import goalsJson from "../../mocks/goals.mock.json";
 import interactionsJson from "../../mocks/interactions.mock.json";
 import ingredientsJson from "../../mocks/ingredients.mock.json";
@@ -81,17 +82,4 @@ export function cashbackOf(p: Product): number {
 }
 export const INGREDIENT_NAME = new Map(INGREDIENTS.map((i) => [i.id, i.name]));
 
-export const CONCERN_LABEL: Record<string, string> = {
-  acne: "acne",
-  oleosidade: "oleosidade",
-  poros: "poros",
-  manchas: "manchas",
-  ressecamento: "ressecamento",
-  sinais_idade: "sinais de idade",
-  sensibilidade: "sensibilidade",
-  fotoprotecao: "proteção solar",
-  olheiras: "olheiras",
-  textura: "textura irregular",
-  limpeza_diaria: "limpeza diária",
-  desmaquilagem: "remoção de make e protetor",
-};
+export const CONCERN_LABEL: Record<string, string> = concernsJson;

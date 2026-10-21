@@ -59,11 +59,44 @@ class TestScenariosDoc08(unittest.TestCase):
         self.assertEqual(r["kitsStatus"], "none_in_budget"); self.assertEqual(r["kits"], []); self.assertIsNotNone(r["closestKit"])
         self.assertGreater(r["closestKit"]["totalCents"], 4000)
 
-    def test_T7_T8_bloqueios(self):
-        for q in ["Estou com dor de cabeça, o que posso tomar?", "Qual remédio para acne forte?"]:
-            r = S(q); self.ok(r); self.assertEqual(r["safety"]["decision"], "blocked")
-            self.assertEqual((r["kits"], r["products"]), ([], []))
-        self.assertEqual(S("Qual remédio para acne forte?")["safety"]["alternativeQuery"], "Quero cuidados cosméticos para acne")
+    def test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol(self):
+        # doc 16, A3: antes era bloqueio; agora é busca de farmácia
+        for q in ["remédio de dor de cabeça", "Estou com dor de cabeça, o que posso tomar?", "dores de cabeça"]:
+            r = S(q); self.ok(r)
+            self.assertEqual(r["safety"]["decision"], "allow"); self.assertEqual(r["intent"]["primaryGoal"], "dor_de_cabeca")
+            self.assertGreaterEqual(len(r["kits"]), 2, q)
+            for k in r["kits"]:
+                ings = {i for it in k["items"] for i in it["product"]["ingredients"]}
+                self.assertTrue({"dipirona", "paracetamol"} <= ings, (q, k["tier"]))
+            self.assertTrue(r["products"] and all(p["domain"] == "medicamento" for p in r["products"]))
+
+    def test_T8_areas_de_saude_montam_kit_da_area(self):
+        # doc 16, A4: cada área devolve medicamentos e kits que atendem aquela queixa
+        casos = {"dor no corpo": "dor_no_corpo", "dor muscular": "dor_muscular", "dor de barriga": "dor_de_barriga",
+                 "estou gripado": "gripe", "tosse com catarro": "tosse", "dor de garganta": "dor_de_garganta",
+                 "remédio para alergia": "alergia", "diarreia": "diarreia", "intestino preso": "prisao_de_ventre",
+                 "enjoo de viagem": "enjoo", "azia": "azia", "tosse seca": "tosse_seca"}
+        for q, goal in casos.items():
+            r = S(q); self.ok(r)
+            self.assertEqual(r["intent"]["primaryGoal"], goal, q); self.assertTrue(r["kits"], q)
+            alvo = set(E.cat.goal_by_id[goal]["concerns"])
+            for k in r["kits"]:
+                self.assertTrue(all(it["product"]["domain"] == "medicamento" for it in k["items"]), q)
+                self.assertTrue(any(set(it["product"]["concerns"]) & alvo for it in k["items"]), q)
+
+    def test_sem_remedio_no_catalogo_diz_so_que_nao_esta(self):
+        # doc 16, A6
+        for q in ["remédio para diabetes", "remédio pra dormir", "antibiótico", "dor de dente"]:
+            r = S(q)
+            self.assertEqual(r["reply"], "Não está no banco de dados ainda.", q)
+            self.assertEqual((r["kits"], r["products"]), ([], []), q)
+
+    def test_nenhuma_resposta_manda_procurar_profissional(self):
+        # doc 16, A5 (a invariante M2 varre resposta, sugestões, notas e segurança)
+        for q in ["Qual remédio para acne forte?", "tenho rosácea e minha pele vive vermelha", "qual a dose do dorflex",
+                  "posso tomar ômega 3 com remédio de pressão", "estou grávida, quero remédio para enjoo",
+                  "o que tomar para colesterol", "tem similar", "kit de suplementos", "ajuda", "oi"]:
+            r = S(q); self.assertEqual([m for m in check_response(r) if "M2" in m], [], q)
 
     def test_T9(self):
         r = S("Estou grávida, quero um kit anti-idade"); self.ok(r)
@@ -108,7 +141,7 @@ class TestPersona(unittest.TestCase):
         r = S("quero uma rotina anti idade premium até 400 reais"); self.assertEqual(check_response(r), [])
         self.assertEqual(r["intent"]["primaryGoal"], "anti_idade")
 
-    def test_remedio_nunca_em_kit_nem_busca(self):
+    def test_busca_que_nao_e_de_remedio_nao_traz_remedio(self):
         for q in ["kit de suplementos", "rotina anti idade", "me mostra colágeno em pó", "higiene premium", "quero meu remédio"]:
             r = S(q)
             for p in r["products"]:
@@ -121,10 +154,12 @@ class TestPersona(unittest.TestCase):
         for q in ["preciso repor meu remédio de pressão", "meus medicamentos estão no fim", "reposição dos meus remédios"]:
             r = S(q); self.assertEqual(r["action"]["type"], "open_refill", q); self.assertEqual(r["safety"]["decision"], "allow")
 
-    def test_recomendar_dose_sintoma_continua_bloqueado(self):
+    def test_dose_e_sintoma_nao_bloqueiam_nem_encaminham(self):
         for q in ["qual remédio devo tomar para pressão alta", "qual a dose do meu remédio, posso dobrar", "preciso repor remédio, estou com tontura",
                   "o que tomar para colesterol", "estou com dor no peito, repor meu remédio"]:
-            r = S(q); self.assertEqual(r["safety"]["decision"], "blocked", q); self.assertEqual(r["action"]["type"], "none")
+            r = S(q); self.assertNotEqual(r["safety"]["decision"], "blocked", q); self.assertEqual(check_response(r), [], q)
+        r = S("remédio para pressão alta")                 # o medicamento de pressão do catálogo é achado pela busca
+        self.assertTrue(any("hipertensao" in p["concerns"] for p in r["products"]))
 
     def test_equivalentes_med(self):
         r = E.similars("p136", "s01")           # p136 sem estoque na Loja Madalena (premissa da demonstração)
@@ -132,8 +167,29 @@ class TestPersona(unittest.TestCase):
         ids = {o["product"]["id"]: o for o in r["options"]}
         self.assertTrue({"p137", "p138"} <= set(ids))
         self.assertTrue(ids["p138"]["inStock"]); self.assertTrue(all(o["sameActive"] for o in r["options"]))
-        self.assertTrue(all(o["needsPharmacistConfirmation"] for o in r["options"]))
+        self.assertFalse(any(o["needsPharmacistConfirmation"] for o in r["options"]))   # doc 16: sem encaminhamento
         self.assertTrue(all(r["options"][i]["inStock"] >= r["options"][i + 1]["inStock"] for i in range(len(r["options"]) - 1)))
+
+    def test_kit_de_remedio_nunca_repete_ativo_nem_junta_dois_antiinflamatorios(self):
+        aines = {"ibuprofeno", "naproxeno", "diclofenaco_potassico", "diclofenaco_sodico", "diclofenaco_dietilamonio",
+                 "nimesulida", "acido_acetilsalicilico", "flurbiprofeno", "benzidamina"}
+        for q in ["dor muscular", "dor no corpo", "dor de cabeça", "dor de garganta", "gripe", "remédio para cólica"]:
+            for b in (None, 3000, 8000):
+                r = S(q + (f" até {b // 100} reais" if b else ""))
+                self.assertEqual(check_response(r), [], q)
+                for k in r["kits"]:
+                    ings = [i for it in k["items"] for i in it["product"]["ingredients"]]
+                    self.assertEqual(len(ings), len(set(ings)), (q, b, k["tier"]))
+                    self.assertLessEqual(len(aines & set(ings)), 1, (q, b, k["tier"]))
+
+    def test_checador_pega_ativo_repetido(self):
+        r = S("remédio de dor de cabeça")
+        k = copy.deepcopy(r["kits"][0])
+        dip = next(p for p in E.cat.products if p["id"] != k["items"][0]["product"]["id"] and "dipirona" in p["ingredients"]
+                   and p["step"] != k["items"][0]["step"])
+        k["items"].append({"step": dip["step"], "product": dip, "reason": ""})
+        k["totalCents"] += dip["priceCents"]
+        self.assertTrue(any("M1" in m for m in check_kit(k, r["intent"])))
 
     def test_similar_nao_med(self):
         r = E.similars("p001", None)
@@ -236,9 +292,9 @@ class TestChecadorNegativo(unittest.TestCase):
     def test_loja_diferente(self):
         self.assertTrue(any("I16" in m for m in check_kit(self.k, {**self.i, "storeId": "s02"})))
 
-    def test_medicamento_no_kit(self):
-        k = copy.deepcopy(self.k); k["items"].append({"step": "reposicao", "product": E.cat.by_id["p132"], "reason": ""})
-        self.assertTrue(any("M1" in m for m in check_kit(k, self.i)))
+    def test_resposta_com_encaminhamento(self):
+        r = copy.deepcopy(S("remédio de dor de cabeça")); r["reply"] += " Procure um farmacêutico."
+        self.assertTrue(any("M2" in m for m in check_response(r)))
 
     def test_preferencia_violada(self):
         self.assertTrue(any("I13" in m for m in check_kit(self.k, {**self.i, "preferences": ["vegano", "oil free", "sem sulfato"]})))

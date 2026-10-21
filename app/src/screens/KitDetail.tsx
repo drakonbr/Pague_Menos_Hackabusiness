@@ -124,6 +124,8 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
             </section>
           ))}
 
+          {/* assinatura é para rotina; kit de remédio para um sintoma é compra avulsa */}
+          {kit.items.every((i) => i.product.domain === "medicamento") ? null : (
           <fieldset className="panel" style={{ margin: 0 }}>
             <legend className="section-title" style={{ padding: "0 4px" }}>Como você quer comprar</legend>
             {([0, 30, 60] as SubscriptionDays[]).map((d) => (
@@ -137,7 +139,8 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
               </label>
             ))}
           </fieldset>
-          <p className="footnote">Preços e estoque simulados. Informações cosméticas, não substituem orientação profissional.</p>
+          )}
+          <p className="footnote">Preços e estoque simulados.</p>
         </div>
       </div>
 

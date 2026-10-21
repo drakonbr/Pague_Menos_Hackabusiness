@@ -22,7 +22,9 @@ Imagem da persona: `docs/assets/persona-renata.svg` (desenho original, não é f
 | Recomendação sem expor saúde | Similares de cosméticos por grafo; os de medicamento saem só como dado estruturado | `dialogue.similars` |
 | Privacidade | Tela Privacidade explica o que fica no aparelho; o motor nunca recebe dado de saúde | doc 07, `test_privacy.py` |
 
-## 3. Medicamentos: só reposição
+## 3. Medicamentos: só reposição (revisto em 21/10)
+
+> Desde o doc 16 (D-32), remédio é busca e kit como qualquer produto, sem bloqueio nem texto de farmacêutico. A reposição abaixo continua igual, só sem a confirmação "com o farmacêutico". A privacidade do item 4 continua valendo: o motor não lê a lista de remédios da pessoa; ele só recebe o que ela digita.
 
 Decisão da Julia: **reposição, sem recomendar**.
 
@@ -35,7 +37,7 @@ Decisão da Julia: **reposição, sem recomendar**.
 
 1. Os dados de saúde da persona (`catalog/data/persona.json`) **ficam no aparelho**. O motor não os lê; um teste rastreia os arquivos abertos e falha se `persona.json` aparecer.
 2. O app envia só a frase, o `context` (intenção cosmética, ids de kit) e ids de produto. Nunca condição, medicamento ou histórico.
-3. Respostas, sugestões, notas, avisos e contexto não contêm termos de saúde nem nomes de medicamentos (`HEALTH_TERMS`, testado).
+3. ~~Respostas não contêm termos de saúde nem nomes de medicamentos~~: substituída em 21/10 (doc 16) por "nenhuma resposta manda procurar médico ou farmacêutico" (invariante M2, testada). A busca de remédio nomeia o remédio e a queixa que a pessoa digitou.
 4. Repositório privado, empresa não identificada em lugar público, dados só sintéticos, sem criar contas, sem pagamento real.
 
 ## 5. Como o GraphRAG foi feito (do zero, sem Ollama nem modelo externo)

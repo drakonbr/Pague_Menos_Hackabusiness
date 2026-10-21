@@ -22,7 +22,7 @@ export function KitCard({ kit, onOpen, overBudgetBy }: { kit: Kit; onOpen: () =>
       <ul className="kit-items">
         {kit.items.map((i) => (
           <li key={i.product.id}>
-            {STEP_LABEL[i.step]}: <b>{i.product.productType}</b>
+            {STEP_LABEL[i.step]}: <b>{i.product.domain === "medicamento" ? i.product.name : i.product.productType}</b>
           </li>
         ))}
       </ul>

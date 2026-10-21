@@ -259,7 +259,7 @@ CONCEPTS: list[Concept] = [
       absent=True, shelf="linha infantil"),
     C("higiene_intima", "higiene íntima", ["absorvente", "absorventes", "coletor menstrual", "protetor diario", "tampao", "sabonete intimo",
                                             "higiene intima", "preservativo", "preservativos", "camisinha", "camisinhas", "lubrificante",
-                                            "gel lubrificante", "teste de gravidez", "anticoncepcional", "pilula"],
+                                            "gel lubrificante", "teste de gravidez"],
       absent=True, shelf="higiene íntima"),
     C("fraldas", "fraldas e bebê", ["pomada de assadura", "pomada para assadura", "pomada assadura", "fralda", "fraldas", "lenco umedecido", "lencos umedecidos", "pomada para assadura", "assadura",
                                      "mamadeira", "chupeta", "leite em po", "formula infantil", "papinha"],
@@ -275,11 +275,26 @@ CONCEPTS: list[Concept] = [
                                                           "curativo", "curativos", "band aid", "bandaid", "gaze", "esparadrapo",
                                                           "agua oxigenada", "alcool 70", "alcool em gel", "alcool gel", "mascara cirurgica",
                                                           "luva", "luvas", "seringa", "teste de covid", "teste rapido", "inalador",
-                                                          "nebulizador", "bolsa termica", "soro fisiologico", "colirio", "gotas para os olhos"],
+                                                          "nebulizador", "bolsa termica"],
       absent=True, shelf="primeiros socorros"),
+    # ------------------------------------------------------------------ medicamentos que o catálogo ainda não tem (doc 16)
+    # resposta fixa: "Não está no banco de dados ainda." (shelf = MED_SHELF)
+    C("med_ausente", "esse medicamento", ["diabetes", "insulina", "glicose alta", "ansiedade", "depressao", "antidepressivo",
+                                          "calmante", "remedio para dormir", "remedio pra dormir", "remedio de dormir",
+                                          "tarja preta", "antibiotico", "antibioticos", "amoxicilina", "azitromicina",
+                                          "cefalexina", "anticoncepcional", "pilula anticoncepcional", "pilula do dia seguinte",
+                                          "pilula", "sildenafila", "tadalafila", "impotencia", "tireoide", "levotiroxina",
+                                          "asma", "bombinha", "colirio", "gotas para os olhos", "conjuntivite", "herpes",
+                                          "aciclovir", "micose", "antifungico", "frieira", "candidiase", "vermifugo", "verme",
+                                          "vermes", "albendazol", "piolho", "corticoide", "prednisona", "dexametasona",
+                                          "infeccao urinaria", "cistite", "otite", "dor de ouvido", "dor de dente",
+                                          "labirintite", "tontura", "gota", "acido urico", "osteoporose", "anemia"],
+      absent=True, shelf="medicamentos"),
 ]
 
 CONCEPT_BY_ID = {c.id: c for c in CONCEPTS}
-GENERIC = {"suplemento", "higiene", "oral", "cabelo", "corpo", "solar", "energia"}   # perdem para um conceito mais específico da mesma família
+GENERIC = {"suplemento", "higiene", "oral", "cabelo", "corpo", "solar", "energia", "remedio", "dor"}
+MED_SHELF = "medicamentos"
+MED_MISSING = "Não está no banco de dados ainda."   # perdem para um conceito mais específico da mesma família
 NEGATORS = {"sem", "nao", "nada", "livre", "evitar", "evita", "tire", "tira"}
 ARTICLES = {"o", "a", "os", "as", "um", "uma", "de", "do", "da"}

@@ -6,14 +6,14 @@ Como cada etapa é conferida, com o comando e o critério. O registro de execuç
 
 | Módulo | Comando | Critério de aprovação |
 | --- | --- | --- |
-| Catálogo | `python3 catalog/validate_catalog.py` | 69 de 69 checagens (31 em 15/10), código de saída 0 |
+| Catálogo | `python3 catalog/validate_catalog.py` | 76 de 76 checagens (31 em 15/10, 69 em 20/10), código de saída 0 |
 | Catálogo (determinismo) | gerar duas vezes e comparar hash dos arquivos | hashes iguais |
 | Ponte catálogo → app | `python3 tools/export_app_mock.py` | 138 produtos exportados; app compila com eles |
 | Separação de módulos | `python3 tools/check_separation.py` | nenhuma referência proibida; `graphrag/` sem import de `app/` ou `catalog/` e sem escrita em `catalog/` |
 | App: tipos e build | `cd app && npm run build` | zero erros de tipo, build de produção gerado |
 | App: regras de kit | `cd app && npm test` | todos os casos T1 a T12 passam e as invariantes do contrato valem em todas as respostas |
 | App: telas | roteiro manual abaixo | todas as telas e estados do doc 03 alcançáveis |
-| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 90 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca); precisa de `pip install -r graphrag/requirements.txt` |
+| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 95 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos); precisa de `pip install -r graphrag/requirements.txt` |
 | GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 59/60 fora do treino; pesos gravados |
 | GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1, M2, X1 sobre o JSON bruto |
 | App com o motor | servidor em `:8787` + `cd app && npm test` | 46 testes; percurso no Chromium sem erro de console |
@@ -151,3 +151,20 @@ Achados que mudaram desde 15/10:
 
 - "`HttpSearchService` nunca foi exercitado" deixou de valer em 20/10: o app usa o GraphRAG por padrão (`AutoSearchService`) e cai no simulado se ele não responder.
 - Continua não medido: contraste AA, leitor de tela, celular real, navegadores além do Chromium.
+
+## Rodada de medicamentos (21/10, doc 16)
+
+| Data | O que rodou | Resultado |
+| --- | --- | --- |
+| 21/10/2026 | testes do GraphRAG no commit 012129c, num ambiente virtual isolado | 90 de 90 (a pendência da linha anterior foi resolvida) |
+| 21/10/2026 | `validate_catalog.py` com 79 medicamentos | 76 de 76 |
+| 21/10/2026 | `python3 -m graphrag.train` + `graphrag/eval/calibrate.py` | grafo 599 nós e 3261 arestas; vocabulário 1361; ato de fala 63/65; nDCG@10 no teste 1,0 |
+| 21/10/2026 | testes do GraphRAG | 95 de 95 |
+| 21/10/2026 | `graphrag/eval/search_quality.py` | conjuntos antigos sem perda; medicamentos 12/12 no ajuste e 17/20 no cego; "não está no banco" 8/8 |
+| 21/10/2026 | `graphrag/eval/latency.py` | busca nova p95 187 ms (era 118 ms) |
+| 21/10/2026 | `npm test`, `tsc --noEmit` e `npm run build` em `app/` | 46 de 46; tipos limpos; build concluído |
+| 21/10/2026 | `check_separation.py` | OK |
+| 21/10/2026 | percurso no Chromium (375 px) com o motor em :8787 | remédio de dor de cabeça → kits → kit → troca; Categorias → Medicamentos e saúde → produto com receita; "remédio para diabetes"; sem erros de console depois de recarregar |
+
+Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2** (nenhum texto manda procurar médico ou farmacêutico). As antigas M1/M2 ("medicamento nunca em kit/lista") e I10 (bloqueio) saíram com a D-32.
+

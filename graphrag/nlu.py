@@ -29,6 +29,10 @@ ARTIFACTS = Path(__file__).resolve().parent / "artifacts"
 
 GOAL_PRIORITY = ["acne", "manchas", "anti_idade", "protecao_solar", "skincare_basico", "pele_sensivel",
                  "oleosidade", "suplementos", "higiene_premium"]
+# objetivos de saúde (doc 16): do mais específico para o mais amplo
+HEALTH_GOALS = ["tosse_seca", "enjoo", "diarreia", "prisao_de_ventre", "dor_de_garganta", "alergia", "azia",
+                "dor_de_barriga", "dor_muscular", "dor_de_cabeca", "dor_no_corpo", "tosse", "gripe"]
+GOAL_PRIORITY += HEALTH_GOALS
 
 
 # ====================================================================== 1. ato de fala
@@ -139,6 +143,7 @@ _TIER = [(re.compile(r"\b(economico|primeiro|mais barato de todos)\b"), "economi
          (re.compile(r"\b(alternativo|terceiro)\b"), "alternativo")]
 _REPOR = re.compile(r"\b(repor|reposicao|repoe|recompr\w+|comprar de novo|acabando|acabou|acabar|renovar|ficar sem|falta pouco|no fim)\b")
 _MED = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|medicacoes|uso continuo)\b")
+_MY_MEDS = re.compile(r"\b(meus|minhas|meu|minha) (remedio|remedios|medicamento|medicamentos|medicacao|medicacoes)\b|\buso continuo\b")
 
 
 class Understander:
@@ -305,10 +310,10 @@ class Understander:
         if not u.goals and u.requested_ingredients:
             tally: Counter = Counter()
             for p in self.cat.products:
-                if p["domain"] == "dermo" and set(p["ingredients"]) & set(u.requested_ingredients):
+                if p["domain"] in ("dermo", "medicamento") and set(p["ingredients"]) & set(u.requested_ingredients):
                     for c in p["concerns"]:
                         for g in self.cat.goals:
-                            if c in g["concerns"] and g["id"] in GOAL_PRIORITY[:7]:
+                            if c in g["concerns"] and (g["id"] in GOAL_PRIORITY[:7] or g["id"] in HEALTH_GOALS):
                                 tally[g["id"]] += 1 / len(g["concerns"])
             if tally:
                 top = max(tally.values())
@@ -316,7 +321,8 @@ class Understander:
                                 key=lambda g: GOAL_PRIORITY.index(g))
                 u.goals, u.primary_goal = chosen, chosen[0]
         # vetores: nenhuma pista léxica, tenta o objetivo mais parecido
-        if not u.goals and self.wv is not None and self._goal_vecs and re.search(r"\b(pele|kit|rotina|cuidar|produto)", q):
+        if not u.goals and self.wv is not None and self._goal_vecs and re.search(
+                r"\b(pele|kit|rotina|cuidar|produto|remedio|medicamento|sintoma|estou com|to com|sinto)", q):
             v = self.wv.vector(tokens(text))
             if np.linalg.norm(v) > 0:
                 sims = {g: float(v @ gv) for g, gv in self._goal_vecs.items()}
@@ -337,8 +343,8 @@ class Understander:
         act, conf = self.clf.predict(text)
         if _REPOR.search(q) and _MED.search(q):
             act, conf = "repor_medicamento", max(conf, 0.9)
-        elif act == "repor_medicamento" and not _MED.search(q) and not _REPOR.search(q):
-            act = "busca"
+        elif act == "repor_medicamento" and not (_REPOR.search(q) or _MY_MEDS.search(q)):
+            act = "busca"                  # "remédio pra dor de cabeça" é busca; reposição precisa de repor/acabar/meus remédios
         if act in ("busca", "refinar") and has_context:
             only_modifiers = not (u.goals or u.steps or u.product_ids) or (
                 u.goals == ["oleosidade"] and u.skin == "oleosa" and len(u.concerns) <= 1 and len(toks) <= 4)

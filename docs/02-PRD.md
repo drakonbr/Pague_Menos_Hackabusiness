@@ -2,6 +2,8 @@
 
 Versão 0.1 · 15/10/2026 · Status: rascunho para avaliação
 
+> **Revisto pelo doc 16 (21/10):** medicamentos entram na busca e nos kits. R12 ("pedidos de saúde não geram kit") e o item "Fora: recomendação de medicamentos" foram revogados pela D-32; o critério de aceite passa a ser o checklist da seção 7 do doc 16.
+
 ## 1. Problema
 
 Observado em testes exploratórios no app atual (poucos testes, não é auditoria):

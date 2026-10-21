@@ -16,7 +16,6 @@ const ROWS: Array<{ label: string; icon: IconName; to?: View; off?: string }> = 
   { label: "Assinaturas", icon: "repeat", to: { name: "subscriptions" } },
   { label: "Carteira e cashback", icon: "wallet", to: { name: "wallet" } },
   { label: "Lojas e retirada", icon: "store", to: { name: "stores" } },
-  { label: "Falar com um farmacêutico", icon: "cross", to: { name: "pharmacist" } },
   { label: "Meus medicamentos", icon: "pill", to: { name: "refill" } },
   { label: "Conversar com o assistente", icon: "chat", to: { name: "chat" } },
   { label: "Privacidade e dados", icon: "lock", to: { name: "privacy" } },
@@ -136,27 +135,6 @@ export function Wallet() {
           </div>
           {cashbackCents > 0 ? <div className="note ok"><Icon name="wallet" size={18} /><p>A cesta atual rende {money(cashbackCents)} de cashback.</p></div> : null}
           <div className="note"><Icon name="info" size={18} /><p>Percentuais de cashback são premissas do protótipo. As regras reais do programa podem ser diferentes.</p></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function Pharmacist() {
-  return (
-    <div className="screen">
-      <TitleBar title="Falar com um farmacêutico" />
-      <div className="scroll">
-        <div className="pad">
-          <div className="panel" style={{ gap: 10 }}>
-            <span style={{ color: "var(--logo)" }}><Icon name="cross" size={40} /></span>
-            <b style={{ fontSize: 18, fontWeight: 500 }}>Orientação profissional</b>
-            <p style={{ color: "var(--text-2)", lineHeight: 1.5 }}>
-              Para medicamentos, sintomas e condições de saúde, o caminho é um farmacêutico ou médico: na loja, ou pelo serviço de teleconsulta da rede.
-              Os kits do app cuidam só de cosméticos.
-            </p>
-          </div>
-          <div className="note warn"><Icon name="info" size={18} /><p>Tela informativa do protótipo: não agenda nem conecta a nenhum serviço.</p></div>
         </div>
       </div>
     </div>

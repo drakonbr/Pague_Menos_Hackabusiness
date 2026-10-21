@@ -8,7 +8,8 @@ Cada caso: (frase, regra). Regras:
   ("concern", id, ...)     o item trata uma dessas preocupações
   ("absent", id, ...)      NÃO existe esse produto no catálogo: a resposta tem de avisar; o que for listado só pode
                            ser da(s) etapa(s) vizinha(s) indicadas (ou nada)
-  ("blocked",)             pedido de saúde: o motor tem de recusar
+  ("missing",)             remédio que o catálogo não tem: a resposta é só "Não está no banco de dados ainda." e
+                           nenhum item (doc 16; até 21/10 era ("blocked",), recusa de pedido de saúde)
 O que conta como relevante é definido aqui, só pelo cadastro (etapa, tipo, preocupação), independente do código do
 motor. TRAIN serve para ajustar o léxico e os pesos; TEST só mede (nunca é consultado ao ajustar).
 """
@@ -84,7 +85,7 @@ TRAIN: list[tuple[str, tuple]] = [
     ("preservativo", ("absent",)),
     ("esmalte", ("absent",)),
     # --- saúde (recusa)
-    ("que remédio eu tomo pra dor de cabeça", ("blocked",)),
+    ("que remédio eu tomo pra dor de cabeça", ("concern", "dor_de_cabeca", "enxaqueca")),
 ]
 
 TEST: list[tuple[str, tuple]] = [
@@ -126,7 +127,7 @@ TEST: list[tuple[str, tuple]] = [
     ("camisinha", ("absent",)),
     ("protetor solar infantil", ("absent", "protecao_solar", "protecao_corporal")),
     ("perfume masculino", ("absent",)),
-    ("preciso de um remédio para febre", ("blocked",)),
+    ("preciso de um remédio para febre", ("concern", "febre")),
 ]
 
 
@@ -173,7 +174,7 @@ BLIND: list[tuple[str, tuple]] = [
     ("tem protetor solar infantil?", ("absent", "protecao_solar", "protecao_corporal")),
     ("quero comprar uma escova de dentes", ("absent", "higiene_oral")),
     ("tem lâmina de barbear?", ("absent",)),
-    ("tem remédio para dormir", ("blocked",)),
+    ("tem remédio para dormir", ("missing",)),
 ]
 
 
@@ -190,7 +191,7 @@ BLIND2: list[tuple[str, tuple]] = [
     ("quero clarear as marquinhas que ficaram depois que espremi cravo", ("concern", "manchas")),
     ("tenho 50 anos e quero diminuir as linhas do rosto", ("concern", "sinais_idade")),
     ("minha pele descama toda de seca", ("concern", "ressecamento")),
-    ("tenho rosácea e minha pele vive vermelha", ("blocked",)),   # condição de saúde: o motor recusa por política
+    ("tenho rosácea e minha pele vive vermelha", ("concern", "sensibilidade")),
     ("preciso de algo pra limpar o rosto de manhã", ("step", "limpeza")),
     ("o que passo na pele depois de lavar o rosto", ("step", "hidratacao", "tratamento", "preparo")),
     ("quero tirar o brilho do nariz", ("concern", "oleosidade", "poros")),
@@ -205,7 +206,7 @@ BLIND2: list[tuple[str, tuple]] = [
     ("gel de limpeza para pele oleosa até 50 reais", ("step", "limpeza")),
     ("tem algum suplemento para os ossos", ("step", "vitaminas")),
     ("quero melhorar meu sono", ("step", "magnesio")),
-    ("estou sempre cansada, o que posso tomar de vitamina", ("blocked",)),   # "o que posso tomar" é pedido de indicação
+    ("estou sempre cansada, o que posso tomar de vitamina", ("step", "vitaminas", "magnesio", "omega3")),
     ("preciso de maquiagem para festa", ("absent",)),
     ("onde acho absorvente", ("absent",)),
     ("cadê o bloqueador solar infantil", ("absent", "protecao_solar", "protecao_corporal")),
@@ -216,7 +217,7 @@ BLIND2: list[tuple[str, tuple]] = [
     ("quero shampoo anticaspa", ("absent", "higiene_cabelo")),
     ("meu cabelo está caindo muito", ("step", "higiene_cabelo")),
     ("tem algo para a unha", ("absent",)),
-    ("qual remédio tomo para ansiedade", ("blocked",)),
+    ("qual remédio tomo para ansiedade", ("missing",)),
 ]
 
 
@@ -289,8 +290,8 @@ BLIND4: list[tuple[str, tuple]] = [
     ("onde fica a seção de brinquedos", ("absent",)),
     ("tem fralda geriátrica", ("absent",)),
     ("shampoo para cachorro", ("absent",)),
-    ("qual o melhor remédio para gripe", ("blocked",)),
-    ("posso tomar ômega 3 com remédio de pressão", ("blocked",)),
+    ("qual o melhor remédio para gripe", ("concern", "gripe", "nariz_entupido")),
+    ("posso tomar ômega 3 com remédio de pressão", ("step", "omega3", "reposicao")),
 ]
 
 
@@ -299,8 +300,6 @@ def relevant_ids(cat, rule) -> set[str]:
     kind, *vals = rule
     out = set()
     for p in cat.products:
-        if p["domain"] == "medicamento":
-            continue
         if kind == "step" and (p["step"] in vals or any(s in vals for s in p["coversSteps"])):
             out.add(p["id"])
         elif kind == "concern" and any(c in vals for c in p["concerns"]):
@@ -318,3 +317,53 @@ def relevant_ids(cat, rule) -> set[str]:
         elif kind == "typeing" and vals[0] in norm(p["productType"]) and vals[1] in p["ingredients"]:
             out.add(p["id"])
     return out
+
+
+# ---------------------------------------------------------------------------- medicamentos (doc 16)
+# MED: frases usadas para ajustar léxico e conceitos. MED_BLIND: escritas em 21/10 ANTES da primeira medição e nunca
+# usadas para ajustar nada (se algo for corrigido por causa delas, a frase sai daqui e vai para MED).
+MED: list[tuple[str, tuple]] = [
+    ("remédio de dor de cabeça", ("concern", "dor_de_cabeca", "enxaqueca")),
+    ("dores de cabeça", ("concern", "dor_de_cabeca", "enxaqueca")),
+    ("o que tomar pra febre", ("concern", "febre")),
+    ("dor no corpo", ("concern", "dor_no_corpo")),
+    ("dor muscular", ("concern", "dor_muscular")),
+    ("dor de barriga", ("concern", "dor_de_barriga", "gases")),
+    ("estou com gripe", ("concern", "gripe", "nariz_entupido")),
+    ("tosse seca", ("concern", "tosse_seca", "dor_de_garganta")),
+    ("dipirona", ("ing", "dipirona")),
+    ("dorflex", ("ing", "orfenadrina")),
+    ("quero tudo para a dor", ("concern", "dor_de_cabeca", "dor_no_corpo", "dor_muscular", "dor_de_barriga", "dor_de_garganta")),
+    ("remédio para pressão alta", ("concern", "hipertensao")),
+    ("remédio para diabetes", ("missing",)),
+    ("remédio pra dormir", ("missing",)),
+    ("dor de dente", ("missing",)),
+    ("antibiótico", ("missing",)),
+]
+
+MED_BLIND: list[tuple[str, tuple]] = [
+    ("minha cabeça está latejando", ("concern", "dor_de_cabeca", "enxaqueca")),
+    ("tô com enxaqueca", ("concern", "dor_de_cabeca", "enxaqueca")),
+    ("meu filho está com febre", ("concern", "febre")),
+    ("acordei com o corpo todo dolorido", ("concern", "dor_no_corpo")),
+    ("travei as costas", ("concern", "dor_muscular")),
+    ("dei um mau jeito no pescoço, torcicolo", ("concern", "dor_muscular")),
+    ("estou com cólica", ("concern", "dor_de_barriga", "gases")),
+    ("barriga estufada de gases", ("concern", "gases", "dor_de_barriga")),
+    ("queimação no estômago depois de comer", ("concern", "azia")),
+    ("nariz entupido e espirrando", ("concern", "nariz_entupido", "alergia", "gripe")),
+    ("catarro no peito", ("concern", "tosse")),
+    ("garganta inflamada", ("concern", "dor_de_garganta")),
+    ("rinite atacada", ("concern", "alergia")),
+    ("intestino solto desde ontem", ("concern", "diarreia")),
+    ("não consigo ir ao banheiro faz três dias", ("concern", "prisao_de_ventre")),
+    ("enjoo no ônibus", ("concern", "enjoo")),
+    ("ibuprofeno", ("ing", "ibuprofeno")),
+    ("buscopan", ("ing", "escopolamina")),
+    ("loratadina", ("ing", "loratadina")),
+    ("xarope para tosse", ("concern", "tosse", "tosse_seca")),
+    ("remédio para tireoide", ("missing",)),
+    ("pílula anticoncepcional", ("missing",)),
+    ("colírio para olho vermelho", ("missing",)),
+    ("remédio para herpes", ("missing",)),
+]

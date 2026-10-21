@@ -111,6 +111,7 @@ def main() -> None:
     } for i in load("ingredients.json")])
     dump("warnings.mock.json", load("warnings.json"))
     dump("steps.mock.json", load("steps.json"))
+    dump("concerns.mock.json", load("concerns.json"))
 
     # ecossistema
     stock: dict[str, dict[str, int]] = {}

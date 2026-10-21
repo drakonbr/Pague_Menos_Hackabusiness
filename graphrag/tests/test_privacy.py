@@ -1,4 +1,5 @@
-"""Privacidade por construção (doc 14): o motor não lê dados da pessoa e não devolve termos de saúde."""
+"""Privacidade por construção (doc 14): o motor não lê dados da pessoa. Desde o doc 16 a busca de medicamento nomeia
+remédio e sintoma (é o pedido da pessoa), mas nenhuma resposta manda procurar médico ou farmacêutico."""
 import builtins
 import json
 import pathlib
@@ -10,7 +11,7 @@ import numpy as np
 
 from graphrag import data as gdata
 from graphrag.dialogue import Engine
-from graphrag.lexicon import HEALTH_TERMS
+from graphrag.eval.invariants import REFERRAL
 from graphrag.text import norm
 
 ENTRADAS_DE_SAUDE = [
@@ -55,7 +56,7 @@ class TestPrivacidade(unittest.TestCase):
         self.assertTrue(opened)
         self.assertFalse([p for p in opened if "persona" in p.lower()], "o motor abriu um arquivo de persona")
 
-    def test_respostas_nao_repetem_termos_de_saude(self):
+    def test_respostas_nunca_mandam_procurar_profissional(self):
         e = Engine.build()
         for q in ENTRADAS_DE_SAUDE:
             ctx = None
@@ -63,8 +64,7 @@ class TestPrivacidade(unittest.TestCase):
                 r = e.search({"query": turno, **({"context": ctx} if ctx else {})})
                 ctx = r["context"]
                 txt = texto_visivel(r)
-                for t in HEALTH_TERMS:
-                    self.assertNotIn(norm(t), txt, f"'{t}' voltou na resposta a: {turno!r} (entrada {q!r})")
+                self.assertIsNone(REFERRAL.search(txt), f"encaminhamento na resposta a: {turno!r} (entrada {q!r})")
 
     def test_contexto_so_tem_ids_e_preferencias(self):
         e = Engine.build()

@@ -61,11 +61,9 @@ EXTRA_INGREDIENTS = [
 
 EXTRA_WARNINGS = {
     "consultar_se_medicacao": (
-        "Se você usa medicamento contínuo ou tem alguma condição de saúde, converse com seu médico "
-        "ou farmacêutico antes de começar a usar."),
+        "Suplemento alimentar: se você usa medicamento contínuo, confira na embalagem as interações informadas."),
     "receita_obrigatoria": "Venda sob receita. Neste protótipo a receita é simulada.",
-    "confirmar_troca_com_farmaceutico": (
-        "Troca por outra apresentação só com orientação do farmacêutico e conforme a sua receita."),
+    "confirmar_troca_com_farmaceutico": "Troca por outra apresentação conforme a sua receita.",
 }
 
 EXTRA_GOALS = [
@@ -197,7 +195,8 @@ add("Noble Banho", "Desodorante Aerossol Pele Sensível", "desodorante aerossol"
 # Princípios ativos e marcas inventados. Não são medicamentos reais. A IA nunca recomenda estes itens:
 # eles só aparecem na reposição de quem já os usa (lista do próprio cliente, guardada no aparelho).
 def med(brand, name, ptype, size, price, presentation, group, active, dose, ing, *, stock_note=None):
-    add(brand, name, ptype, "reposicao", "reposicao_" + group, "box", size, "T", ["reposicao"], [ing], None, "dia",
+    concern = {"tensivalol_50": "hipertensao", "lipostanol_20": "colesterol"}[group]
+    add(brand, name, ptype, "reposicao", "reposicao_" + group, "box", size, "T", ["reposicao", concern], [ing], None, "dia",
         price, [], ["receita_obrigatoria", "confirmar_troca_com_farmaceutico"], [],
         domain="medicamento", rx="receita_simples",
         equivalence={"group": group, "presentation": presentation, "active": active, "dose": dose})

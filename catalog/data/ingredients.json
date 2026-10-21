@@ -299,5 +299,460 @@
     "family": "substância fictícia",
     "function": "princípio ativo inventado para a demonstração",
     "photosensitizing": false
+  },
+  {
+    "id": "dipirona",
+    "name": "Dipirona monoidratada",
+    "family": "princípio ativo",
+    "function": "analgésico e antitérmico",
+    "photosensitizing": false
+  },
+  {
+    "id": "paracetamol",
+    "name": "Paracetamol",
+    "family": "princípio ativo",
+    "function": "analgésico e antitérmico",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_acetilsalicilico",
+    "name": "Ácido acetilsalicílico",
+    "family": "princípio ativo",
+    "function": "analgésico, antitérmico e anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "cafeina_med",
+    "name": "Cafeína anidra",
+    "family": "princípio ativo",
+    "function": "potencializa o analgésico",
+    "photosensitizing": false
+  },
+  {
+    "id": "isometepteno",
+    "name": "Mucato de isometepteno",
+    "family": "princípio ativo",
+    "function": "vasoconstritor para enxaqueca",
+    "photosensitizing": false
+  },
+  {
+    "id": "ibuprofeno",
+    "name": "Ibuprofeno",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "naproxeno",
+    "name": "Naproxeno sódico",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "diclofenaco_potassico",
+    "name": "Diclofenaco potássico",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "diclofenaco_sodico",
+    "name": "Diclofenaco sódico",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "diclofenaco_dietilamonio",
+    "name": "Diclofenaco dietilamônio",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório de uso local",
+    "photosensitizing": false
+  },
+  {
+    "id": "nimesulida",
+    "name": "Nimesulida",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório",
+    "photosensitizing": false
+  },
+  {
+    "id": "orfenadrina",
+    "name": "Citrato de orfenadrina",
+    "family": "princípio ativo",
+    "function": "relaxante muscular",
+    "photosensitizing": false
+  },
+  {
+    "id": "ciclobenzaprina",
+    "name": "Cloridrato de ciclobenzaprina",
+    "family": "princípio ativo",
+    "function": "relaxante muscular",
+    "photosensitizing": false
+  },
+  {
+    "id": "carisoprodol",
+    "name": "Carisoprodol",
+    "family": "princípio ativo",
+    "function": "relaxante muscular",
+    "photosensitizing": false
+  },
+  {
+    "id": "salicilato_metila",
+    "name": "Salicilato de metila",
+    "family": "princípio ativo",
+    "function": "alívio local da dor",
+    "photosensitizing": false
+  },
+  {
+    "id": "mentol",
+    "name": "Mentol",
+    "family": "princípio ativo",
+    "function": "sensação refrescante no local",
+    "photosensitizing": false
+  },
+  {
+    "id": "canfora",
+    "name": "Cânfora",
+    "family": "princípio ativo",
+    "function": "alívio local da dor",
+    "photosensitizing": false
+  },
+  {
+    "id": "escopolamina",
+    "name": "Butilbrometo de escopolamina",
+    "family": "princípio ativo",
+    "function": "antiespasmódico",
+    "photosensitizing": false
+  },
+  {
+    "id": "simeticona",
+    "name": "Simeticona",
+    "family": "princípio ativo",
+    "function": "antigases",
+    "photosensitizing": false
+  },
+  {
+    "id": "hidroxido_aluminio",
+    "name": "Hidróxido de alumínio",
+    "family": "princípio ativo",
+    "function": "antiácido",
+    "photosensitizing": false
+  },
+  {
+    "id": "hidroxido_magnesio",
+    "name": "Hidróxido de magnésio",
+    "family": "princípio ativo",
+    "function": "antiácido e laxante",
+    "photosensitizing": false
+  },
+  {
+    "id": "bicarbonato_sodio",
+    "name": "Bicarbonato de sódio",
+    "family": "princípio ativo",
+    "function": "antiácido",
+    "photosensitizing": false
+  },
+  {
+    "id": "carbonato_sodio",
+    "name": "Carbonato de sódio",
+    "family": "princípio ativo",
+    "function": "antiácido",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_citrico",
+    "name": "Ácido cítrico",
+    "family": "princípio ativo",
+    "function": "efervescente",
+    "photosensitizing": false
+  },
+  {
+    "id": "alginato_sodio",
+    "name": "Alginato de sódio",
+    "family": "princípio ativo",
+    "function": "forma barreira contra o refluxo",
+    "photosensitizing": false
+  },
+  {
+    "id": "omeprazol",
+    "name": "Omeprazol",
+    "family": "princípio ativo",
+    "function": "reduz a acidez do estômago",
+    "photosensitizing": false
+  },
+  {
+    "id": "pantoprazol",
+    "name": "Pantoprazol",
+    "family": "princípio ativo",
+    "function": "reduz a acidez do estômago",
+    "photosensitizing": false
+  },
+  {
+    "id": "esomeprazol",
+    "name": "Esomeprazol",
+    "family": "princípio ativo",
+    "function": "reduz a acidez do estômago",
+    "photosensitizing": false
+  },
+  {
+    "id": "fenilefrina",
+    "name": "Cloridrato de fenilefrina",
+    "family": "princípio ativo",
+    "function": "descongestionante",
+    "photosensitizing": false
+  },
+  {
+    "id": "clorfeniramina",
+    "name": "Maleato de clorfeniramina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "acido_ascorbico",
+    "name": "Ácido ascórbico (vitamina C)",
+    "family": "princípio ativo",
+    "function": "vitamina C",
+    "photosensitizing": false
+  },
+  {
+    "id": "cloreto_sodio",
+    "name": "Cloreto de sódio 0,9%",
+    "family": "princípio ativo",
+    "function": "lavagem nasal",
+    "photosensitizing": false
+  },
+  {
+    "id": "nafazolina",
+    "name": "Cloridrato de nafazolina",
+    "family": "princípio ativo",
+    "function": "descongestionante nasal",
+    "photosensitizing": false
+  },
+  {
+    "id": "oximetazolina",
+    "name": "Cloridrato de oximetazolina",
+    "family": "princípio ativo",
+    "function": "descongestionante nasal",
+    "photosensitizing": false
+  },
+  {
+    "id": "ambroxol",
+    "name": "Cloridrato de ambroxol",
+    "family": "princípio ativo",
+    "function": "expectorante",
+    "photosensitizing": false
+  },
+  {
+    "id": "acetilcisteina",
+    "name": "Acetilcisteína",
+    "family": "princípio ativo",
+    "function": "expectorante",
+    "photosensitizing": false
+  },
+  {
+    "id": "bromexina",
+    "name": "Cloridrato de bromexina",
+    "family": "princípio ativo",
+    "function": "expectorante",
+    "photosensitizing": false
+  },
+  {
+    "id": "carbocisteina",
+    "name": "Carbocisteína",
+    "family": "princípio ativo",
+    "function": "expectorante",
+    "photosensitizing": false
+  },
+  {
+    "id": "guaco",
+    "name": "Guaco (Mikania glomerata)",
+    "family": "princípio ativo",
+    "function": "expectorante fitoterápico",
+    "photosensitizing": false
+  },
+  {
+    "id": "dropropizina",
+    "name": "Dropropizina",
+    "family": "princípio ativo",
+    "function": "para tosse seca",
+    "photosensitizing": false
+  },
+  {
+    "id": "levodropropizina",
+    "name": "Levodropropizina",
+    "family": "princípio ativo",
+    "function": "para tosse seca",
+    "photosensitizing": false
+  },
+  {
+    "id": "amilmetacresol",
+    "name": "Amilmetacresol + álcool diclorobenzílico",
+    "family": "princípio ativo",
+    "function": "antisséptico para a garganta",
+    "photosensitizing": false
+  },
+  {
+    "id": "flurbiprofeno",
+    "name": "Flurbiprofeno",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório de uso na garganta",
+    "photosensitizing": false
+  },
+  {
+    "id": "benzidamina",
+    "name": "Cloridrato de benzidamina",
+    "family": "princípio ativo",
+    "function": "anti-inflamatório de uso na garganta",
+    "photosensitizing": false
+  },
+  {
+    "id": "loratadina",
+    "name": "Loratadina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "desloratadina",
+    "name": "Desloratadina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "cetirizina",
+    "name": "Dicloridrato de cetirizina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "fexofenadina",
+    "name": "Cloridrato de fexofenadina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "dexclorfeniramina",
+    "name": "Maleato de dexclorfeniramina",
+    "family": "princípio ativo",
+    "function": "antialérgico",
+    "photosensitizing": false
+  },
+  {
+    "id": "loperamida",
+    "name": "Cloridrato de loperamida",
+    "family": "princípio ativo",
+    "function": "antidiarreico",
+    "photosensitizing": false
+  },
+  {
+    "id": "racecadotrila",
+    "name": "Racecadotrila",
+    "family": "princípio ativo",
+    "function": "antidiarreico",
+    "photosensitizing": false
+  },
+  {
+    "id": "nitazoxanida",
+    "name": "Nitazoxanida",
+    "family": "princípio ativo",
+    "function": "antiparasitário",
+    "photosensitizing": false
+  },
+  {
+    "id": "saccharomyces_boulardii",
+    "name": "Saccharomyces boulardii",
+    "family": "princípio ativo",
+    "function": "probiótico",
+    "photosensitizing": false
+  },
+  {
+    "id": "bacillus_clausii",
+    "name": "Bacillus clausii",
+    "family": "princípio ativo",
+    "function": "probiótico",
+    "photosensitizing": false
+  },
+  {
+    "id": "sais_reidratacao",
+    "name": "Sais para reidratação oral",
+    "family": "princípio ativo",
+    "function": "reidratação",
+    "photosensitizing": false
+  },
+  {
+    "id": "bisacodil",
+    "name": "Bisacodil",
+    "family": "princípio ativo",
+    "function": "laxante",
+    "photosensitizing": false
+  },
+  {
+    "id": "picossulfato",
+    "name": "Picossulfato de sódio",
+    "family": "princípio ativo",
+    "function": "laxante",
+    "photosensitizing": false
+  },
+  {
+    "id": "lactulose",
+    "name": "Lactulose",
+    "family": "princípio ativo",
+    "function": "laxante",
+    "photosensitizing": false
+  },
+  {
+    "id": "macrogol",
+    "name": "Macrogol 3350",
+    "family": "princípio ativo",
+    "function": "laxante",
+    "photosensitizing": false
+  },
+  {
+    "id": "psyllium",
+    "name": "Psyllium (Plantago ovata)",
+    "family": "princípio ativo",
+    "function": "fibra",
+    "photosensitizing": false
+  },
+  {
+    "id": "dimenidrinato",
+    "name": "Dimenidrinato",
+    "family": "princípio ativo",
+    "function": "contra enjoo",
+    "photosensitizing": false
+  },
+  {
+    "id": "piridoxina",
+    "name": "Piridoxina (vitamina B6)",
+    "family": "princípio ativo",
+    "function": "vitamina B6",
+    "photosensitizing": false
+  },
+  {
+    "id": "ondansetrona",
+    "name": "Ondansetrona",
+    "family": "princípio ativo",
+    "function": "contra enjoo",
+    "photosensitizing": false
+  },
+  {
+    "id": "metoclopramida",
+    "name": "Cloridrato de metoclopramida",
+    "family": "princípio ativo",
+    "function": "contra enjoo",
+    "photosensitizing": false
+  },
+  {
+    "id": "domperidona",
+    "name": "Domperidona",
+    "family": "princípio ativo",
+    "function": "contra enjoo",
+    "photosensitizing": false
   }
 ]

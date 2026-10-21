@@ -60,7 +60,7 @@ tests/mockSearch.test.ts, tests/persona.test.ts
 
 ## Limites conhecidos
 
-- Escopo cosmético: pedidos sobre medicamento, sintoma ou condição de saúde são bloqueados com encaminhamento.
+- Medicamentos (doc 16): busca por remédio ou sintoma monta kits; sem bloqueio e sem encaminhamento. Remédio fora do catálogo: "Não está no banco de dados ainda.".
 - Checkout simulado: sem pagamento, sem envio, sem armazenamento.
 - Sem medição de contraste AA nem teste com leitor de tela; visto apenas em Chromium.
 - Sem persistência: recarregar a página esvazia o carrinho.

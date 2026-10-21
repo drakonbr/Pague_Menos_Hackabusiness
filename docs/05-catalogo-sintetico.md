@@ -1,6 +1,6 @@
 # 05 — Catálogo sintético
 
-Módulo: `catalog/`. Status: **gerado e validado** (138 produtos, 69 de 69 checagens). Os 100 primeiros são os de skin care; **p101 a p138** (20/10) atendem a persona Renata: 12 suplementos e 12 itens de higiene premium (3 por tipo), 6 dermocosméticos anti-idade e 8 itens de reposição (genéricos fictícios, `rx`, `equivalence`, estoque por loja forçado a zero em alguns casos para exercitar equivalentes). Geração em `catalog/persona_products.py` e `generate_persona.py`; a persona vive em `data/persona.json` e nunca é lida pelo motor.
+Módulo: `catalog/`. Status: **gerado e validado** (217 produtos, 76 de 76 checagens). **p139 a p217** (21/10, doc 16) são 79 medicamentos em 12 áreas de saúde, de 6 a 8 por área, com princípios ativos reais e marcas fictícias (`catalog/medicines.py`). Os 100 primeiros são os de skin care; **p101 a p138** (20/10) atendem a persona Renata: 12 suplementos e 12 itens de higiene premium (3 por tipo), 6 dermocosméticos anti-idade e 8 itens de reposição (genéricos fictícios, `rx`, `equivalence`, estoque por loja forçado a zero em alguns casos para exercitar equivalentes). Geração em `catalog/persona_products.py` e `generate_persona.py`; a persona vive em `data/persona.json` e nunca é lida pelo motor.
 
 ## Objetivo
 

@@ -14,7 +14,7 @@ export function ProductCard({ product: p, tag }: { product: Product; tag?: strin
   const { dispatch, isFav } = useApp();
   const fav = isFav(p.id);
   const off = discountPct(p);
-  const label = tag ?? (off > 0 ? "Super oferta" : p.cashbackPct > 0 ? `${p.cashbackPct}% de cashback` : undefined);
+  const label = tag ?? (p.rx ? "Exige receita" : off > 0 ? "Super oferta" : p.cashbackPct > 0 ? `${p.cashbackPct}% de cashback` : undefined);
   const out = p.stockQty <= 0;
   return (
     <article className="pcard">

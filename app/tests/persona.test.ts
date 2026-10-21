@@ -40,7 +40,7 @@ describe("persona (Renata) e reposição", () => {
   });
 });
 
-describe("medicamento fica fora de kits e da busca livre", () => {
+describe("pedido que não é de remédio não traz remédio", () => {
   const queries = ["kit de suplementos", "rotina anti idade", "higiene premium", "Quero cuidar da pele", "tratamento de acne", "quero meu remédio"];
   it.each(queries)("%s", async (q) => {
     const r = await svc.search({ query: q });
@@ -58,16 +58,16 @@ describe("reposição sem recomendar (modo simulado)", () => {
     expect(r.reply?.toLowerCase()).not.toMatch(/press[aã]o|colesterol|tensivalol|lipostan/);
     expect(JSON.stringify(r.context)).not.toMatch(/press[aã]o|rem[eé]dio/i);
   });
-  it.each(["qual remédio devo tomar para pressão alta", "qual a dose do meu remédio", "preciso repor remédio, estou com tontura"])("bloqueia: %s", async (q) => {
+  it.each(["qual remédio devo tomar para pressão alta", "qual a dose do meu remédio", "preciso repor remédio, estou com tontura"])("não bloqueia (doc 16): %s", async (q) => {
     const r = await svc.search({ query: q });
-    expect(r.safety.decision).toBe("blocked");
-    expect(r.kits).toEqual([]);
+    expect(r.safety.decision).toBe("allow");
+    expect(checkResponse(r)).toEqual([]);
   });
   it("equivalentes do item da persona que está sem estoque na Loja Madalena", async () => {
     expect(stockAt("p136", "s01")).toBe(0);
     const r = await svc.similars("p136", "s01");
     expect(r.inStockHere).toBe(false);
-    expect(r.options.every((o) => o.sameActive && o.needsPharmacistConfirmation)).toBe(true);
+    expect(r.options.every((o) => o.sameActive && !o.needsPharmacistConfirmation)).toBe(true);
     expect(r.options[0].inStock).toBe(true);
   });
 });

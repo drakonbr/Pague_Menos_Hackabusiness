@@ -26,7 +26,6 @@ export type View =
   | { name: "subscriptions" }
   | { name: "wallet" }
   | { name: "credits" }
-  | { name: "pharmacist" }
   | { name: "stores" };
 
 /** Telas que escondem a barra de abas (como a cesta e a entrega no app real). */

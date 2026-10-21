@@ -224,5 +224,346 @@
       "cabelo",
       "produtos de higiene"
     ]
+  },
+  {
+    "id": "dor_de_cabeca",
+    "label": "Dor de cabeça e febre",
+    "concerns": [
+      "dor_de_cabeca",
+      "enxaqueca",
+      "febre"
+    ],
+    "required_steps": [
+      "analgesico_dipirona",
+      "analgesico_paracetamol"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "dor de cabeça",
+      "dor de cabeca",
+      "dores de cabeça",
+      "dores de cabeca",
+      "cabeça doendo",
+      "cabeca doendo",
+      "cabeça latejando",
+      "cabeca latejando",
+      "enxaqueca",
+      "cefaleia",
+      "febre",
+      "febril",
+      "antitérmico",
+      "antitermico",
+      "analgésico",
+      "analgesico"
+    ]
+  },
+  {
+    "id": "dor_no_corpo",
+    "label": "Dor no corpo",
+    "concerns": [
+      "dor_no_corpo",
+      "febre"
+    ],
+    "required_steps": [
+      "antiinflamatorio",
+      "analgesico_paracetamol"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "dor no corpo",
+      "dores no corpo",
+      "dor de corpo",
+      "corpo doendo",
+      "corpo dolorido",
+      "mal estar",
+      "mal-estar",
+      "moído",
+      "moido",
+      "anti-inflamatório",
+      "anti inflamatório",
+      "antiinflamatório",
+      "anti inflamatorio",
+      "antiinflamatorio"
+    ]
+  },
+  {
+    "id": "dor_muscular",
+    "label": "Dor muscular",
+    "concerns": [
+      "dor_muscular"
+    ],
+    "required_steps": [
+      "relaxante_muscular",
+      "dor_topico"
+    ],
+    "optional_steps": [
+      "antiinflamatorio"
+    ],
+    "synonyms": [
+      "dor muscular",
+      "dores musculares",
+      "dor nos músculos",
+      "dor nos musculos",
+      "músculo",
+      "musculo",
+      "torcicolo",
+      "dor nas costas",
+      "contratura",
+      "contusão",
+      "contusao",
+      "pancada",
+      "relaxante muscular",
+      "dor na lombar",
+      "lombar"
+    ]
+  },
+  {
+    "id": "dor_de_barriga",
+    "label": "Dor de barriga e cólica",
+    "concerns": [
+      "dor_de_barriga",
+      "gases"
+    ],
+    "required_steps": [
+      "antiespasmodico",
+      "antigases"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "dor de barriga",
+      "dores de barriga",
+      "cólica",
+      "colica",
+      "cólicas",
+      "colicas",
+      "cólica menstrual",
+      "colica menstrual",
+      "barriga inchada",
+      "barriga estufada",
+      "gases",
+      "estufado",
+      "estufada",
+      "antiespasmódico",
+      "antiespasmodico"
+    ]
+  },
+  {
+    "id": "azia",
+    "label": "Azia e má digestão",
+    "concerns": [
+      "azia"
+    ],
+    "required_steps": [
+      "antiacido",
+      "protetor_gastrico"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "azia",
+      "queimação",
+      "queimacao",
+      "má digestão",
+      "ma digestao",
+      "indigestão",
+      "indigestao",
+      "refluxo",
+      "dor de estômago",
+      "dor de estomago",
+      "estômago",
+      "estomago",
+      "antiácido",
+      "antiacido"
+    ]
+  },
+  {
+    "id": "gripe",
+    "label": "Gripe e resfriado",
+    "concerns": [
+      "gripe",
+      "nariz_entupido",
+      "febre"
+    ],
+    "required_steps": [
+      "antigripal",
+      "descongestionante_nasal"
+    ],
+    "optional_steps": [
+      "imunidade"
+    ],
+    "synonyms": [
+      "gripe",
+      "gripado",
+      "gripada",
+      "resfriado",
+      "resfriada",
+      "resfriado forte",
+      "nariz entupido",
+      "congestão nasal",
+      "congestao nasal",
+      "coriza",
+      "nariz escorrendo",
+      "antigripal"
+    ]
+  },
+  {
+    "id": "tosse",
+    "label": "Tosse com catarro",
+    "concerns": [
+      "tosse"
+    ],
+    "required_steps": [
+      "expectorante",
+      "pastilha_garganta"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "tosse",
+      "tosse com catarro",
+      "catarro",
+      "peito carregado",
+      "xarope",
+      "xarope para tosse",
+      "expectorante"
+    ]
+  },
+  {
+    "id": "tosse_seca",
+    "label": "Tosse seca",
+    "concerns": [
+      "tosse_seca"
+    ],
+    "required_steps": [
+      "antitussigeno",
+      "pastilha_garganta"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "tosse seca",
+      "tosse irritativa",
+      "tosse sem catarro"
+    ]
+  },
+  {
+    "id": "dor_de_garganta",
+    "label": "Dor de garganta",
+    "concerns": [
+      "dor_de_garganta"
+    ],
+    "required_steps": [
+      "pastilha_garganta",
+      "spray_garganta"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "dor de garganta",
+      "garganta inflamada",
+      "garganta irritada",
+      "garganta doendo",
+      "garganta",
+      "pastilha para garganta",
+      "spray para garganta"
+    ]
+  },
+  {
+    "id": "alergia",
+    "label": "Alergia e rinite",
+    "concerns": [
+      "alergia"
+    ],
+    "required_steps": [
+      "antialergico",
+      "descongestionante_nasal"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "alergia",
+      "alergias",
+      "rinite",
+      "rinite alérgica",
+      "rinite alergica",
+      "espirro",
+      "espirros",
+      "espirrando",
+      "antialérgico",
+      "antialergico",
+      "anti-histamínico",
+      "antihistaminico"
+    ]
+  },
+  {
+    "id": "diarreia",
+    "label": "Diarreia",
+    "concerns": [
+      "diarreia"
+    ],
+    "required_steps": [
+      "reidratacao",
+      "probiotico"
+    ],
+    "optional_steps": [
+      "antidiarreico"
+    ],
+    "synonyms": [
+      "diarreia",
+      "diarréia",
+      "intestino solto",
+      "desarranjo",
+      "dor de barriga com diarreia",
+      "soro de reidratação",
+      "soro de reidratacao",
+      "probiótico",
+      "probiotico",
+      "antidiarreico"
+    ]
+  },
+  {
+    "id": "prisao_de_ventre",
+    "label": "Prisão de ventre",
+    "concerns": [
+      "prisao_de_ventre"
+    ],
+    "required_steps": [
+      "laxante",
+      "fibra"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "prisão de ventre",
+      "prisao de ventre",
+      "intestino preso",
+      "constipação",
+      "constipacao",
+      "laxante",
+      "não consigo ir ao banheiro",
+      "nao consigo ir ao banheiro"
+    ]
+  },
+  {
+    "id": "enjoo",
+    "label": "Enjoo e náusea",
+    "concerns": [
+      "enjoo"
+    ],
+    "required_steps": [
+      "antiemetico",
+      "reidratacao"
+    ],
+    "optional_steps": [],
+    "synonyms": [
+      "enjoo",
+      "enjoado",
+      "enjoada",
+      "náusea",
+      "nausea",
+      "náuseas",
+      "nauseas",
+      "vômito",
+      "vomito",
+      "vomitando",
+      "ânsia",
+      "ansia",
+      "enjoo de viagem",
+      "enjoo no carro"
+    ]
   }
 ]

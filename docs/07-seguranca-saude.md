@@ -2,7 +2,9 @@
 
 A rede vende medicamentos. O enunciado diz que uma solução que recomenda produtos de saúde sem tratar responsabilidade, contraindicações e limites da IA dificilmente será considerada viável. Este documento define o que a IA **faz**, **não faz** e **encaminha**.
 
-> Status: política e regras desenhadas; versão simulada implementada no app para demonstrar as telas. Regras clínicas reais precisam de validação por profissionais de saúde antes de qualquer uso real.
+> **Revisado em 21/10 (doc 16, decisões D-32 a D-36): o bloqueio por medicamento, sintoma e condição foi retirado.** A busca funciona como numa farmácia: "dor de cabeça" traz remédio para dor de cabeça, com ou sem receita, e monta kit. Nenhuma tela manda procurar médico ou farmacêutico; quando o catálogo não tem o remédio, a resposta é só "Não está no banco de dados ainda.". Ficaram: gestação (tira dos kits o que tem restrição), interações dos cosméticos e duas regras dos kits de remédio (nunca o mesmo princípio ativo duas vezes; nunca dois anti-inflamatórios). O resto deste documento é o histórico da política anterior.
+>
+> Status anterior: política e regras desenhadas; versão simulada implementada no app para demonstrar as telas.
 
 ## Princípio
 

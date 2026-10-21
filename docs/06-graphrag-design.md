@@ -1,5 +1,7 @@
 # 06 — Desenho do GraphRAG e do compositor de kits
 
+> **21/10 (doc 16):** medicamentos entram no grafo, nos vetores, na busca e nos kits; a camada de segurança não bloqueia mais. Ver D-32 a D-36.
+>
 > **Status (20/10): implementado do zero em `graphrag/`**, sem Ollama nem modelo externo: grafo em networkx, vetores PPMI+SVD, BM25, ativação espalhada, classificador Naive Bayes de ato de fala e compositor K1 a K12. Onde este desenho previa modelo de linguagem para intenção e justificativa, a versão atual usa regras + classificador treinado e textos por modelo de frase. Resultados e limites no [doc 14](14-persona-e-privacidade.md).
 
 ## Por que grafo e não só RAG

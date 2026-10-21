@@ -74,28 +74,32 @@ describe("casos de teste do doc 08", () => {
     expect(r.products.length).toBeGreaterThan(0);
   });
 
-  it("T7: sintoma é bloqueado, sem kits", async () => {
+  it("T7: dor de cabeça traz kit com dipirona e paracetamol (doc 16)", async () => {
     const r = await run("Estou com dor de cabeça, o que posso tomar?");
-    expect(r.safety.decision).toBe("blocked");
-    expect(r.kits).toHaveLength(0);
-    expect(r.products).toHaveLength(0);
-    expect(r.safety.referral).toBeTruthy();
+    expect(r.safety.decision).toBe("allow");
+    expect(r.intent.primaryGoal).toBe("dor_de_cabeca");
+    expect(r.kits.length).toBeGreaterThanOrEqual(1);
+    for (const k of r.kits) {
+      const ings = k.items.flatMap((i) => i.product.ingredients);
+      expect(ings).toContain("dipirona");
+      expect(ings).toContain("paracetamol");
+      expect(new Set(ings).size).toBe(ings.length); // M1: nada de princípio ativo repetido
+    }
   });
 
-  it("T7b: sintoma sem pedido de remédio também é bloqueado", async () => {
+  it("T7b: sintoma não bloqueia e não pergunta tipo de pele", async () => {
     const r = await run("Estou com febre e muita dor");
-    expect(r.safety.decision).toBe("blocked");
-    expect(r.safety.category).toBe("sintoma");
+    expect(r.safety.decision).toBe("allow");
+    expect(r.intent.missing).not.toContain("skinType");
+    expect(r.clarification ?? null).toBeNull();
   });
 
-  it("T8: remédio para acne é bloqueado e oferece alternativa cosmética", async () => {
-    const r = await run("Qual remédio para acne forte?");
-    expect(r.safety.decision).toBe("blocked");
-    expect(r.safety.category).toBe("medicamento");
-    expect(r.safety.alternativeQuery).toBeTruthy();
-    const alt = await run(r.safety.alternativeQuery!);
-    expect(alt.safety.decision).not.toBe("blocked");
-    expect(alt.kits.length).toBeGreaterThan(0);
+  it("T8: nenhuma resposta manda procurar médico ou farmacêutico", async () => {
+    for (const q of ["Qual remédio para acne forte?", "dor muscular", "tosse com catarro", "Estou grávida, quero remédio para enjoo"]) {
+      const r = await run(q);
+      const shown = [r.reply ?? "", ...(r.suggestions ?? []), ...r.notes, r.safety.message ?? ""].join(" ").toLowerCase();
+      expect(shown).not.toMatch(/médic|farmacêutic|profissional de saúde|procure|consulte/);
+    }
   });
 
   it("T9: gestação retira retinol e mostra cautela", async () => {

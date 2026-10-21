@@ -1,10 +1,17 @@
 """Checador das invariantes I1 a I16 do contrato (docs/08), escrito de forma INDEPENDENTE do compositor:
-lê os JSON brutos do catálogo (catalog/data) e não importa nada de graphrag.composer nem de graphrag.data."""
+lê os JSON brutos do catálogo (catalog/data) e não importa nada de graphrag.composer nem de graphrag.data.
+
+Medicamentos (doc 16): M1 = nenhum princípio ativo repetido no kit (os dois anti-inflamatórios caem em I6, pelas
+interações); M2 = nenhum texto da resposta manda procurar médico ou farmacêutico."""
 from __future__ import annotations
 
 import json
 import os
+import re
+import unicodedata
 from pathlib import Path
+
+REFERRAL = re.compile(r"medic[oa]s?\b|farmaceutic|profissional de saude|procure|consulte|converse com")
 
 DATA = Path(os.environ.get("CATALOG_DATA_DIR") or Path(__file__).resolve().parents[2] / "catalog" / "data")
 
@@ -51,8 +58,6 @@ def check_kit(kit: dict, intent: dict) -> list[str]:
     for pid, t in zip(ids, truth):
         if t is None:
             v.append(f"{tag}: {pid} não existe"); continue
-        if t["domain"] == "medicamento":
-            v.append(f"{tag} M1: medicamento {pid} dentro de kit")
         qty = T.store_stock.get(kit["storeId"], {}).get(pid, 0) if kit.get("storeId") else t["stock"]
         if qty <= 0:
             v.append(f"{tag} I3: {pid} sem estoque")
@@ -71,6 +76,8 @@ def check_kit(kit: dict, intent: dict) -> list[str]:
     for x in range(len(truth)):
         for y in range(x + 1, len(truth)):
             p, q = truth[x], truth[y]
+            if p and q and p["domain"] == q["domain"] == "medicamento" and set(p["ings"]) & set(q["ings"]):
+                v.append(f"{tag} M1: {ids[x]} x {ids[y]} repetem princípio ativo")
             if not p or not q or p["step"] == "limpeza" or q["step"] == "limpeza":
                 continue
             for r in T.rules:
@@ -126,6 +133,8 @@ def check_response(res: dict, excluded=()) -> list[str]:
         t = T.prod.get(p["id"])
         if not t or t["price"] != p["priceCents"]:
             v.append(f"{rid}: produto {p['id']} inválido na lista")
-        if t and t["domain"] == "medicamento" and res.get("act") not in ("similar",):
-            v.append(f"{rid} M2: medicamento {p['id']} na lista de busca")
+    shown = " ".join([res["reply"], *res["suggestions"], *res["notes"], res["safety"].get("message", "")])
+    shown = "".join(c for c in unicodedata.normalize("NFD", shown.lower()) if unicodedata.category(c) != "Mn")
+    if REFERRAL.search(shown):
+        v.append(f"{rid} M2: resposta manda procurar profissional: {REFERRAL.search(shown).group(0)!r}")
     return v

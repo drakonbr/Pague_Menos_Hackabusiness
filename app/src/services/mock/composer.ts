@@ -42,6 +42,12 @@ export interface Ctx {
   storeId: string | null;
 }
 
+const MED_STEPS = new Set(PRODUCTS.filter((p) => p.domain === "medicamento").map((p) => p.step));
+/** Objetivo de saúde (doc 16): todas as etapas obrigatórias são de medicamento. */
+export function isHealthGoal(goal: GoalId): boolean {
+  return GOALS.find((g) => g.id === goal)!.requiredSteps.every((s) => MED_STEPS.has(s));
+}
+
 export function buildCtx(intent: Intent, requestedIngredients: string[]): Ctx | null {
   if (!intent.primaryGoal) return null;
   const defs = GOALS.filter((g) => intent.goals.includes(g.id));
@@ -72,7 +78,6 @@ export function buildCtx(intent: Intent, requestedIngredients: string[]): Ctx | 
 // Elegibilidade e relevância
 // ---------------------------------------------------------------------------
 export function baseEligible(p: Product, ctx: Ctx, relaxSkin = false): boolean {
-  if (p.domain === "medicamento") return false; // medicamento nunca entra em kit nem na busca livre
   if (stockAt(p.id, ctx.storeId) <= 0) return false;
   if (ctx.pregnancy && p.warnings.includes("consultar_se_gestante")) return false;
   if (!ctx.prefs.every((pref) => p.claims.includes(pref))) return false;
@@ -164,6 +169,9 @@ export interface Conflict {
 
 /** Retorna conflito entre dois produtos que ficam na pele; null se compatíveis. */
 export function conflictBetween(p: Product, q: Product): Conflict | null {
+  // medicamento (doc 16): o kit nunca repete princípio ativo; dois anti-inflamatórios caem nas interações
+  if (p.domain === "medicamento" && q.domain === "medicamento" && p.ingredients.some((i) => q.ingredients.includes(i)))
+    return { severity: "evitar", reason: "O kit não repete princípio ativo." };
   if (p.step === "limpeza" || q.step === "limpeza") return null; // enxaguados
   for (const a of p.ingredients) {
     for (const b of q.ingredients) {
@@ -266,6 +274,29 @@ const DEFAULT_REASON: Record<StepId, string> = {
   higiene_oral: "Higiene bucal completa.",
   desodorante: "Desodorante de uso diário.",
   reposicao: "Reposição do que você já usa.",
+  analgesico_dipirona: "Dipirona.",
+  analgesico_paracetamol: "Paracetamol.",
+  antiinflamatorio: "Anti-inflamatório.",
+  relaxante_muscular: "Relaxante muscular.",
+  dor_topico: "Gel ou pomada para dor.",
+  antiespasmodico: "Para cólica.",
+  antigases: "Antigases.",
+  antiacido: "Antiácido.",
+  protetor_gastrico: "Protetor gástrico.",
+  antigripal: "Antigripal.",
+  descongestionante_nasal: "Nariz (soro e descongestionante).",
+  imunidade: "Vitamina C.",
+  expectorante: "Expectorante.",
+  antitussigeno: "Para tosse seca.",
+  pastilha_garganta: "Pastilha para garganta.",
+  spray_garganta: "Spray ou gargarejo para garganta.",
+  antialergico: "Antialérgico.",
+  antidiarreico: "Antidiarreico.",
+  probiotico: "Probiótico.",
+  reidratacao: "Reidratação oral.",
+  laxante: "Laxante.",
+  fibra: "Fibra.",
+  antiemetico: "Contra enjoo.",
 };
 
 function listPt(items: string[]): string {
@@ -495,8 +526,11 @@ export function compose(ctx: Ctx, requestId: string): Composition {
 // Lista de produtos individuais
 // ---------------------------------------------------------------------------
 export function rankProducts(ctx: Ctx, limit = 30): Product[] {
-  const strict = PRODUCTS.filter((p) => baseEligible(p, ctx, false));
-  const pool = strict.length >= 8 ? strict : PRODUCTS.filter((p) => baseEligible(p, ctx, true));
+  // pedido de remédio lista remédios; os demais pedidos não listam remédio (o motor real faz isso pela prateleira)
+  const med = isHealthGoal(ctx.primary);
+  const same = PRODUCTS.filter((p) => (p.domain === "medicamento") === med);
+  const strict = same.filter((p) => baseEligible(p, ctx, false));
+  const pool = strict.length >= 8 ? strict : same.filter((p) => baseEligible(p, ctx, true));
   return [...pool].sort(cmpProducts(ctx)).slice(0, limit);
 }
 

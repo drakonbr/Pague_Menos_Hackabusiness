@@ -15,7 +15,7 @@ import { Delivery } from "./screens/Delivery";
 import { Favorites } from "./screens/Favorites";
 import { Home } from "./screens/Home";
 import { KitDetail } from "./screens/KitDetail";
-import { Credits, More, Orders, Pharmacist, Stores, Subscriptions, Wallet } from "./screens/More";
+import { Credits, More, Orders, Stores, Subscriptions, Wallet } from "./screens/More";
 import { Offers } from "./screens/Offers";
 import { Confirmation, Payment } from "./screens/Payment";
 import { ProductPage } from "./screens/ProductPage";
@@ -98,7 +98,6 @@ function Screen() {
     case "subscriptions": return <Subscriptions />;
     case "wallet": return <Wallet />;
     case "credits": return <Credits />;
-    case "pharmacist": return <Pharmacist />;
     case "stores": return <Stores />;
   }
 }

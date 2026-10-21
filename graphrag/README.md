@@ -24,7 +24,7 @@ Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, s
 | `service/server.py` | HTTP local (`/v1/search`, `/v1/search-chat`, `/v1/similars`, …) |
 | `train.py` | gera `artifacts/` |
 | `eval/` | calibração dos pesos, conjuntos de ranking e de busca, invariantes independentes, latência |
-| `tests/` | 90 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca) |
+| `tests/` | 95 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos) |
 
 ## Comandos (a partir da raiz do repositório)
 
@@ -42,8 +42,8 @@ python3 -m graphrag.service.server --port 8787
 ## Regras de separação
 
 - Só **lê** `../catalog/data/` (lista permitida); nunca escreve lá; não importa nada de `../app/`.
-- Nunca lê `persona.json`, nunca devolve termo de saúde nem nome de medicamento em texto.
-- Medicamentos não entram em busca livre nem em kits; só em `similars` (dado estruturado).
+- Nunca lê `persona.json`.
+- Desde o doc 16, medicamento é busca e kit como qualquer produto; nenhuma resposta manda procurar médico ou farmacêutico (invariante M2).
 
 `python3 ../tools/check_separation.py` confere as regras de importação e escrita.
 

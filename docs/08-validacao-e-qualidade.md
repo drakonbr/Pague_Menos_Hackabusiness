@@ -6,22 +6,21 @@ Como cada etapa é conferida, com o comando e o critério. O registro de execuç
 
 | Módulo | Comando | Critério de aprovação |
 | --- | --- | --- |
-| Catálogo | `python3 catalog/validate_catalog.py` | 31 de 31 checagens, código de saída 0 |
+| Catálogo | `python3 catalog/validate_catalog.py` | 69 de 69 checagens (31 em 15/10), código de saída 0 |
 | Catálogo (determinismo) | gerar duas vezes e comparar hash dos arquivos | hashes iguais |
 | Ponte catálogo → app | `python3 tools/export_app_mock.py` | 138 produtos exportados; app compila com eles |
 | Separação de módulos | `python3 tools/check_separation.py` | nenhuma referência proibida; `graphrag/` sem import de `app/` ou `catalog/` e sem escrita em `catalog/` |
 | App: tipos e build | `cd app && npm run build` | zero erros de tipo, build de produção gerado |
 | App: regras de kit | `cd app && npm test` | todos os casos T1 a T12 passam e as invariantes do contrato valem em todas as respostas |
 | App: telas | roteiro manual abaixo | todas as telas e estados do doc 03 alcançáveis |
-| Catálogo (20/10) | `python3 catalog/validate_catalog.py` | 69 de 69 |
-| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 77 testes (motor, NLU, privacidade, ontologia, ingestão, streaming) |
+| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 90 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca); precisa de `pip install -r graphrag/requirements.txt` |
 | GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 59/60 fora do treino; pesos gravados |
 | GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1, M2, X1 sobre o JSON bruto |
 | App com o motor | servidor em `:8787` + `cd app && npm test` | 46 testes; percurso no Chromium sem erro de console |
 
 ## Invariantes do contrato (checadas por código)
 
-Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resposta de busca. A mesma lista será portada para a avaliação do GraphRAG.
+Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resposta de busca. A lista foi portada para o GraphRAG em `graphrag/eval/invariants.py` (I1–I16, M1, M2, X1), escrita de novo e lendo o JSON bruto.
 
 | # | Invariante |
 | --- | --- |
@@ -57,7 +56,7 @@ Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resp
 | T11 | "Kit vegano para pele seca até R$ 150" | todos os itens veganos e adequados a pele seca |
 | T12 | "asdfgh" | sem entendimento; mostra produtos e pede reformulação |
 
-Para o GraphRAG, cada caso ganha lista de produtos esperados e metas de recuperação (Recall@k), medidas na fase de avaliação.
+Para o ranking do GraphRAG há um conjunto à parte (30 frases, 16 de treino e 14 de teste, nDCG@10 e P@5) em `graphrag/eval/ranking_set.py`; resultado em `graphrag/eval/report_ranking.md`. A qualidade das listas de busca tem outro conjunto em `graphrag/eval/search_set.py` (doc 15).
 
 ## Roteiro manual do app
 
@@ -129,3 +128,26 @@ Achados e correções desta rodada:
 - Na lista de categorias, o ícone ocupava metade da linha. Corrigido.
 - Folha de troca agora avisa quando a opção passa do orçamento (achado da rodada anterior).
 - Não medido: contraste AA, leitor de tela, celular real, outros navegadores.
+
+## Rodadas de 20 e 21/10: GraphRAG, persona e qualidade da busca
+
+| Data | O que rodou | Resultado |
+| --- | --- | --- |
+| 20/10/2026 | `validate_catalog.py` com os 38 produtos da persona | 69 de 69 |
+| 20/10/2026 | `python3 -m graphrag.train` | grafo de 329 nós e 2197 arestas; ato de fala 59 de 60 fora do treino |
+| 20/10/2026 | `graphrag/eval/calibrate.py` | pesos bm25 0,00, emb 0,64, grafo 0,36; nDCG@10 1,0 no teste (14 frases) |
+| 20/10/2026 | testes do GraphRAG | 77 passam |
+| 20/10/2026 | `npm test` e `npm run build` em `app/` | 46 passam; build sem erros de tipo |
+| 20/10/2026 | percurso no Chromium (412 px) com o motor no ar | kits, troca, bloqueio, reposição com equivalente, cesta; zero erros de console (doc 14) |
+| 20/10/2026 | `graphrag/eval/latency.py` | busca nova p95 118 ms; turno com contexto p95 3,8 ms (doc 15) |
+| 20/10/2026 | `graphrag/eval/rerank_eval.py` | MMR com λ 0,9 sem perda de nDCG@10 (doc 15) |
+| commit 012129c | `graphrag/eval/search_quality.py` | 21 de 77 listas limpas antes; 100% nos conjuntos usados no ajuste; primeiro resultado certo em 86% no conjunto cego 4 (doc 15) |
+| 21/10/2026 | `validate_catalog.py` | 69 de 69 |
+| 21/10/2026 | `check_separation.py` | OK (fase rag) |
+| 21/10/2026 | `npm test` e `npm run build` em `app/` | 46 de 46; build concluído, com aviso do Vite de pacote JS acima de 500 kB |
+| 21/10/2026 | testes do GraphRAG | **não rodaram**: a máquina usada não tinha numpy, scipy, networkx nem pydantic (nem pip). São 90 testes definidos (77 + 13 de `test_scope.py`); a última passagem completa registrada é a de 20/10, antes do commit 012129c |
+
+Achados que mudaram desde 15/10:
+
+- "`HttpSearchService` nunca foi exercitado" deixou de valer em 20/10: o app usa o GraphRAG por padrão (`AutoSearchService`) e cai no simulado se ele não responder.
+- Continua não medido: contraste AA, leitor de tela, celular real, navegadores além do Chromium.

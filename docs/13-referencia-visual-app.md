@@ -53,7 +53,7 @@ Página de produto, página do kit, pagamento, confirmação, Meus pedidos, Assi
 | Ponto | App real | Protótipo |
 | --- | --- | --- |
 | Nome da rede nas telas | presente | ausente (constante em `app/src/brand.ts`) |
-| Endereço e CEP | do cliente | localização simulada em Fortaleza |
+| Endereço e CEP | do cliente | localização simulada no Recife (Madalena, bairro da persona) |
 | Fotos | fotos dos produtos | fotos reais sem marca (após a revisão); antes disso, desenho provisório com "foto pendente" |
 | Ofertas | por marca/linha, com validade | por produto |
 | Locker, receita, áudio, código de barras, alertas de medicamento | ativos | visíveis e desativados |

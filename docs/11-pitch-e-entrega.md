@@ -7,7 +7,7 @@ Prazo de submissão: **26/10/2026**, pela plataforma. Mentoria online: 21 a 23/1
 | Entregável | Especificação | Estado |
 | --- | --- | --- |
 | Vídeo de pitch | Até 5 minutos: problema, solução, resultado | a fazer |
-| Protótipo funcional | Acesso à solução em funcionamento | visual pronto; motor depende do GraphRAG |
+| Protótipo funcional | Acesso à solução em funcionamento | app e motor prontos (GraphRAG local, com o simulado de reserva); **falta hospedar** (P-04) |
 | Repositório de código | Link, **configuração privada** | estrutura pronta; manter privado |
 
 ## Checklist antes de enviar
@@ -15,8 +15,10 @@ Prazo de submissão: **26/10/2026**, pela plataforma. Mentoria online: 21 a 23/1
 - [ ] Repositório privado e sem dados do cliente
 - [ ] Nenhum material do desafio em local público, portfólio ou trabalho acadêmico
 - [ ] Protótipo abre sem instalação (link) e a jornada completa funciona
-- [ ] README explica como rodar
-- [ ] Documentação 01 a 11 atualizada com o que foi de fato construído
+- [x] README explica como rodar
+- [ ] Documentação 01 a 15 atualizada com o que foi de fato construído
+- [ ] Testes do GraphRAG rodados de novo depois do commit de qualidade da busca (`python3 -m unittest discover -s graphrag/tests -t .`)
+- [ ] Decidir se o protótipo hospedado leva o GraphRAG no ar ou só o simulado, e dizer isso no vídeo
 - [ ] Vídeo com até 5 minutos, áudio claro, mostra a jornada ponta a ponta
 - [ ] Segurança de saúde demonstrada no vídeo (T7 e T8)
 - [ ] Integração proposta mostrada (doc 10)
@@ -27,9 +29,9 @@ Prazo de submissão: **26/10/2026**, pela plataforma. Mentoria online: 21 a 23/1
 | --- | --- | --- |
 | 0:00 a 0:40 | O problema: busca com 1.450 resultados e busca com contexto sem resultado | As duas buscas observadas, com a ressalva de serem testes exploratórios |
 | 0:40 a 1:20 | A ideia: do prompt à compra em kits, não mais um chatbot | Slide de diferenciação (tabela do doc 03) |
-| 1:20 a 3:10 | Demonstração ponta a ponta | T1 → kits → ajustar orçamento → abrir kit → trocar item → carrinho → checkout simulado |
-| 3:10 a 3:50 | Segurança em saúde | T7, T8 e T9; "o que a IA faz, não faz e encaminha" |
-| 3:50 a 4:30 | Como funciona por dentro | Diagrama GraphRAG: intenção, grafo, dados vivos, compositor, validação |
+| 1:20 a 3:10 | Demonstração ponta a ponta, como a Renata (doc 14) | rotina anti-idade na barra → kits → ajustar orçamento → abrir kit → trocar item → cesta com total e frete → retirada em loja com estoque → pagamento simulado; depois Meus medicamentos (reposição com equivalente, sem recomendar) |
+| 3:10 a 3:50 | Segurança em saúde e privacidade | T7, T8 e T9; "o que a IA faz, não faz e encaminha"; dado de saúde fica no aparelho |
+| 3:50 a 4:30 | Como funciona por dentro | Diagrama GraphRAG: intenção, grafo, dados vivos, compositor, validação; feito do zero, sem LLM nem API externa |
 | 4:30 a 5:00 | Integração e validação | Pontos de troca (doc 10) e plano de teste com 5 a 8 pessoas; métricas como hipóteses |
 
 ## Critérios do cliente × onde a entrega responde

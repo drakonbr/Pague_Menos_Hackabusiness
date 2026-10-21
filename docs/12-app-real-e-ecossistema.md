@@ -92,7 +92,7 @@ Em qualquer opção, o banco de imagens fica em `catalog/images/` com um manifes
 
 | Item | Estado |
 | --- | --- |
-| Lojas fictícias (8, Fortaleza) e estoque por loja | gerados e validados (`catalog/generate_commerce.py`) |
+| Lojas fictícias (8, hoje no Recife; eram em Fortaleza em 15/10) e estoque por loja | gerados e validados (`catalog/generate_commerce.py`) |
 | Kits respeitando a loja e ajuste ao trocar de loja | implementado no simulador; testes T13 e T14 |
 | Cashback por produto e por kit | premissa fictícia; invariante I15 |
 | Categorias Dermo e Beleza com os nomes do menu real | 27 categorias, todo produto em pelo menos uma |

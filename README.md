@@ -6,15 +6,16 @@ Uma camada de **kits inteligentes** sobre a busca: a pessoa descreve a intençã
 
 Não é um chatbot. É busca por intenção + composição de kit + compra.
 
-## Status atual (20/10)
+## Status atual (21/10)
 
 | Fase | Estado |
 | --- | --- |
-| Documentação (docs 01–14) | escrita; o doc 14 cobre a persona, a conversa e a privacidade |
+| Documentação (docs 01–15) | escrita e revisada em 21/10; o doc 14 cobre a persona e a privacidade, o doc 15 a busca conversacional |
 | Catálogo sintético | 138 produtos (100 originais + 38 para a persona Renata), 8 lojas, estoque por loja; 69 de 69 checagens |
-| **GraphRAG do zero** | **implementado e treinado** (grafo de 329 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 59/60 fora do treino); 77 testes passam |
+| **GraphRAG do zero** | **implementado e treinado** (grafo de 329 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 59/60 fora do treino); 90 testes definidos, 77 passaram em 20/10 e não rodaram de novo depois do commit de qualidade da busca |
 | App | logado como a persona Renata; conversa na barra de busca; reposição de medicamento (só reposição); 46 testes; visto só em Chromium |
 | Fotos reais sem marca | **pendente**: emissão de chave da Pexels pausada; o app mostra desenhos de embalagem |
+| Hospedagem do protótipo | **pendente** (P-04, doc 09); a entrega pede acesso em funcionamento |
 
 Limites conhecidos: conjunto de ranking pequeno (14 frases), entidades por regras, premissas de reposição fictícias, nenhuma regra clínica validada, acessibilidade não medida. Detalhes no [doc 14](docs/14-persona-e-privacidade.md) e no [doc 08](docs/08-validacao-e-qualidade.md).
 

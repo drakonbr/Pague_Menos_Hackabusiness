@@ -85,21 +85,34 @@ Não há treinamento de pesos de modelo. A fase de preparação inclui:
 4. Implementar o compositor e rodar o conjunto de testes (doc 08).
 5. Calibrar pesos de relevância com os casos de teste.
 
-## Avaliação (plano)
+Como ficou: o passo 3 virou o treino do Naive Bayes de ato de fala (`artifacts/nlu_model.json`) e regras de entidade; não há prompts. Os pesos do passo 5 estão em `artifacts/weights.json`.
+
+## Avaliação
 
 Métricas e conjunto de consultas em `docs/08-validacao-e-qualidade.md`. Metas iniciais: **0** violações de K1 a K9 em qualquer resposta; 100% dos preços e estoques iguais ao inventário; consultas do PDF resolvidas como esperado; texto sem números fora dos dados.
 
-## Estrutura prevista de `graphrag/` (não criada ainda)
+Medido: ver o registro do doc 08, os resultados dos docs 14 e 15 e `graphrag/eval/report_ranking.md`.
+
+## Estrutura real de `graphrag/`
+
+O plano previa subpastas (`ingest/`, `retrieval/`, `composer/`, `safety/`, `llm/`). Ficou mais simples: um arquivo por peça e nenhuma pasta `llm/`, porque não há modelo de linguagem (D-23).
 
 ```
 graphrag/
-├── ingest/        leitura de catalog/data e construção do grafo
-├── retrieval/     caminhada no grafo + busca vetorial
-├── composer/      regras K1 a K10
-├── safety/        regras de intenção bloqueada
-├── llm/           extração de intenção e justificativas (esquemas e prompts)
-├── service/       API que implementa o contrato
-└── eval/          conjunto de testes e relatórios
+├── text.py, lexicon.py, spell.py              normalização, vocabulário, correção de digitação
+├── data.py                                    leitura do catálogo (lista permitida; persona.json fora)
+├── ontology.py, ingest.py                     ontologia Pydantic e ingestão incremental
+├── graph.py, embed.py                         grafo networkx e vetores PPMI+SVD
+├── retrieval.py                               BM25 + vetores + grafo, rerank MMR
+├── scope.py, concepts.py                      escolha da prateleira antes do ranking
+├── nlu.py, nlu_corpus.py, corpus_extra.py     ato de fala (Naive Bayes) e entidades
+├── safety.py                                  regras de segurança antes de tudo
+├── composer.py                                kits K1 a K12, troca, adaptação à loja
+├── dialogue.py, rewrite.py, chat_stream.py    conversa sem estado, reescrita, SSE
+├── train.py, artifacts/                       treino e saídas (grafo, vetores, pesos, modelo NLU)
+├── service/server.py                          HTTP local (porta 8787)
+├── eval/                                      calibração, conjuntos de ranking e busca, invariantes, latência
+└── tests/                                     testes unitários
 ```
 
 ## Limitações assumidas

@@ -6,7 +6,7 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 
 | ID | Decisão | Motivo | Alternativa descartada | Consequência |
 | --- | --- | --- | --- | --- |
-| D-01 | Entrada em linguagem natural, saída estruturada (sem thread de chat) | O cliente pediu explicitamente que não seja mais um chatbot; a equipe queria busca "como conversa" | Chat com histórico de mensagens | Interface mais simples e diferenciada; perguntas de refinamento limitadas a uma por vez |
+| D-01 | Entrada em linguagem natural, saída estruturada (sem thread de chat); ajustada pela D-31 | O cliente pediu explicitamente que não seja mais um chatbot; a equipe queria busca "como conversa" | Chat com histórico de mensagens | Interface mais simples e diferenciada; perguntas de refinamento limitadas a uma por vez |
 | D-02 | Escopo inicial só cosméticos e autocuidado | Rede vende medicamentos; regras clínicas sem validação não devem ser inventadas | Incluir medicamentos de venda livre | Menos abrangente, muito mais defensável; camada de medicamentos fica como proposta |
 | D-03 | O modelo interpreta e explica; código escolhe e valida | Evitar preço, estoque e combinação inventados | Modelo compondo kits livremente | Resultado auditável; exige compositor determinístico |
 | D-04 | Preço e estoque fora do grafo, consultados ao vivo | Mudam o tempo todo; precisam ser verdadeiros | Gravar preço no grafo | Uma consulta extra por busca; dados nunca velhos |
@@ -36,6 +36,7 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | D-28 | Ingestão | Determinística, sem LLM; resolução de entidades por texto normalizado; delta em `graphrag/artifacts/`, nunca em `catalog/` | Catálogo já é estruturado; mantém a decisão D-23 |
 | D-29 | Streaming | `POST /v1/search-chat` (SSE) com texto por regras em pedaços; app ainda usa `/v1/search` | Contrato pronto para um gerador de texto futuro; sem espera artificial |
 | D-30 | Rerank | MMR com lambda 0,9 só na lista de produtos | Medido: sem perda de relevância, ganho pequeno de variedade |
+| D-31 | Busca e conversa | A barra de busca abre a tela de resultados (kits em cima, lista embaixo). Quando o ato de fala não é de busca (repor, entrega, trocar item, pergunta sobre produto), `Results.tsx` passa para a conversa (`Chat.tsx`) | Ajusta a D-01: com a persona (D-21) a conversa voltou, mas só onde a ação precisa de diálogo. Buscar continua devolvendo uma seleção de compra, não texto (doc 15) |
 
 ## Premissas
 

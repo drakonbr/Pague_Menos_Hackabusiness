@@ -13,7 +13,8 @@ Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, s
 | `graph.py` | grafo de conhecimento (networkx) e ativação espalhada |
 | `embed.py` | vetores de palavras PPMI + SVD |
 | `retrieval.py` | BM25 + vetores + grafo, com pesos calibrados |
-| `nlu.py`, `nlu_corpus.py` | ato de fala (Naive Bayes) e extração de entidades |
+| `nlu.py`, `nlu_corpus.py`, `corpus_extra.py` | ato de fala (Naive Bayes) e extração de entidades |
+| `scope.py`, `concepts.py`, `spell.py` | escolha da prateleira antes do ranking e correção de digitação (doc 15) |
 | `safety.py` | regras de segurança antes de tudo |
 | `composer.py` | compositor de kits K1 a K12, troca de item, adaptação à loja |
 | `dialogue.py` | motor de conversa (sem estado), similares, cotação de entrega |
@@ -22,8 +23,8 @@ Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, s
 | `rewrite.py`, `chat_stream.py` | reescrita pelo histórico e eventos SSE de `/v1/search-chat` |
 | `service/server.py` | HTTP local (`/v1/search`, `/v1/search-chat`, `/v1/similars`, …) |
 | `train.py` | gera `artifacts/` |
-| `eval/` | calibração dos pesos, conjunto de ranking, invariantes independentes |
-| `tests/` | 77 testes (motor, NLU, privacidade, ontologia, ingestão, streaming) |
+| `eval/` | calibração dos pesos, conjuntos de ranking e de busca, invariantes independentes, latência |
+| `tests/` | 90 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca) |
 
 ## Comandos (a partir da raiz do repositório)
 

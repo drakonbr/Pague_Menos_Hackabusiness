@@ -19,7 +19,9 @@ Dar ao GraphRAG e ao app uma base realista, **sem usar nenhum dado do cliente**.
 | `complemento` | 6 | protetor labial, contorno dos olhos, bálsamo |
 | **Total** | **100** | |
 
-Preços de R$ 12,90 a R$ 139,90. Sete marcas fictícias com posicionamentos diferentes (premium, intermediária, vegana, linha própria, preço mais baixo). Cada etapa central (limpeza, tratamento, hidratação, proteção solar) tem produtos nas três faixas (`economico`, `intermediario`, `premium`, calculadas por tercil de preço dentro da etapa). É isso que permite montar kits de preços diferentes.
+A tabela cobre os 100 de skin care. Os 38 da persona (p101–p138) estão descritos no status acima.
+
+Preços de R$ 12,90 a R$ 139,90 nos 100 de skin care (até R$ 169,90 no catálogo todo). Sete marcas fictícias com posicionamentos diferentes (premium, intermediária, vegana, linha própria, preço mais baixo). Cada etapa central (limpeza, tratamento, hidratação, proteção solar) tem produtos nas três faixas (`economico`, `intermediario`, `premium`, calculadas por tercil de preço dentro da etapa). É isso que permite montar kits de preços diferentes.
 
 ## Modelo de dados
 
@@ -27,7 +29,7 @@ Preços de R$ 12,90 a R$ 139,90. Sete marcas fictícias com posicionamentos dife
 
 | Campo | Significado |
 | --- | --- |
-| `id` | `p001` a `p100` |
+| `id` | `p001` a `p138` (p101–p138 da persona) |
 | `step` | Etapa principal da rotina |
 | `covers_steps` | Etapas que o produto cobre. Hidratante com FPS cobre `hidratacao` e `protecao_solar` |
 | `product_type`, `form` | Tipo (gel, sérum...) e forma da embalagem (usada para o desenho do placeholder no app) |
@@ -43,7 +45,7 @@ Preços de R$ 12,90 a R$ 139,90. Sete marcas fictícias com posicionamentos dife
 
 ### Preço e estoque (`inventory.json`)
 
-`price_cents`, `list_price_cents` (preço de tabela, maior que o preço em ~15% dos produtos), `stock_qty`, `updated_at`. Cinco produtos têm estoque zero de propósito, para exercitar a regra "só recomendar o que há em estoque".
+`price_cents`, `list_price_cents` (preço de tabela, maior que o preço em ~15% dos produtos), `stock_qty`, `updated_at`. Seis produtos têm estoque central zero de propósito (p012, p047, p076, p088, p093 e p114), para exercitar a regra "só recomendar o que há em estoque".
 
 ### Conhecimento de domínio
 
@@ -60,13 +62,13 @@ Esses arquivos de domínio viram nós e arestas do grafo (doc 06).
 
 ## Como é conferido
 
-`python3 catalog/validate_catalog.py` roda 31 checagens e sai com código 1 se alguma falhar:
+`python3 catalog/validate_catalog.py` roda 69 checagens (eram 31 em 15/10; cresceram com lojas, imagens e a persona) e sai com código 1 se alguma falhar:
 
 | Grupo | O que confere |
 | --- | --- |
-| Estrutura | tamanho entre 95 e 110, ids únicos, par (marca, nome) único, inventário cobre todos os produtos |
+| Estrutura | tamanho entre 130 e 145, ids únicos, par (marca, nome) único, inventário cobre todos os produtos |
 | Campos | obrigatórios preenchidos; etapa, período, pele e faixa dentro dos vocabulários; ingredientes e avisos existem |
-| Preço e estoque | centavos inteiros e positivos; preço de tabela >= preço; há itens sem estoque; faixa de R$ 12,90 a R$ 139,90 |
+| Preço e estoque | centavos inteiros e positivos; preço de tabela >= preço; há itens sem estoque; faixa ampla (mais barato até R$ 15,00, mais caro de R$ 120,00 para cima) |
 | FPS | só em protetores, obrigatório neles, valor entre 15 e 100 |
 | Segurança do texto | sem "remédio", "medicamento", "antibiótico", "cura" etc.; ingrediente fotossensibilizante gera aviso; retinol gera aviso de gestação |
 | Interações | só citam ingredientes existentes; severidade válida |
@@ -81,13 +83,13 @@ O validador foi testado com defeitos injetados (FPS em produto sem filtro, texto
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `stores.json` | 8 lojas fictícias em Fortaleza (bairros reais só para o mapa; ruas inventadas), porte grande/média/pequena, horário |
-| `store_stock.json` | estoque de cada produto em cada loja (800 linhas). Lojas pequenas têm menos itens e menos premium; produto esgotado no centro é zero em todas |
+| `stores.json` | 8 lojas fictícias no Recife, perto da persona (bairros reais só para o mapa; ruas inventadas), porte grande/média/pequena, horário |
+| `store_stock.json` | estoque de cada produto em cada loja (1.104 linhas: 138 × 8). Lojas pequenas têm menos itens e menos premium; produto esgotado no centro é zero em todas |
 | `commerce.json` | cashback por produto (0, 2, 3, 5 ou 10%; 27 produtos com cashback), ranking de vendas simulado, modalidades de entrega com taxas (premissas), frete grátis a partir de R$ 150, vitrines e atalhos de kits |
 | `categories.json` | árvore "Dermo e Beleza" com os nomes do menu público (Rosto, Pele por tipo, Protetores Solares Faciais/Corporais, Cosméticos Veganos...), já resolvida em ids; "Bastão" ficou de fora por não ter produto |
 | `images.json` | só depois da revisão das fotos (ver `catalog/images/README.md`) |
 
-Disponibilidade hoje: as lojas têm de 44 a 91 dos 100 produtos; todos os objetivos fecham em todas as lojas pela regra do validador, mas um kit específico pode não estar completo numa loja (no teste de acne, 7 de 8 lojas tinham algum item faltando), e é isso que a tela de retirada mostra.
+Disponibilidade (21/10): as lojas têm de 64 a 122 dos 138 produtos com estoque; todos os objetivos fecham em todas as lojas pela regra do validador, mas um kit específico pode não estar completo numa loja (no teste de acne, 7 de 8 lojas tinham algum item faltando), e é isso que a tela de retirada mostra.
 
 ## Limites
 

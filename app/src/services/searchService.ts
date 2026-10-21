@@ -38,7 +38,7 @@ export class HttpSearchService implements SearchService {
     private readonly fetchImpl: typeof fetch = (...a) => fetch(...a),
   ) {}
 
-  async health(timeoutMs = 900): Promise<boolean> {
+  async health(timeoutMs = 4000): Promise<boolean> {
     const ctl = new AbortController();
     const t = setTimeout(() => ctl.abort(), timeoutMs);
     try {

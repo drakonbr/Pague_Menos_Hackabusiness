@@ -1,0 +1,4 @@
+# dependências da função api/engine.py na Vercel (o motor não usa scipy em tempo de execução)
+numpy>=1.26
+networkx>=3.2
+pydantic>=2.5

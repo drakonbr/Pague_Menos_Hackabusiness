@@ -1,0 +1,4 @@
+.claude
+app/node_modules
+app/dist
+catalog/images/raw

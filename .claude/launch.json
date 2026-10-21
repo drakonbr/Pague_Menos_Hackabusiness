@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "graphrag",
+      "runtimeExecutable": "/tmp/claude-1000/-home-drakon-Documentos-GitHub-Pague-Menos-Hackabusiness/bdded515-dc69-4d32-8ef0-de94c2909656/scratchpad/venv/bin/python",
+      "runtimeArgs": ["-m", "graphrag.service.server", "--port", "8787"],
+      "port": 8787
+    },
+    {
+      "name": "app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "app", "run", "dev", "--", "--port", "5173", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}

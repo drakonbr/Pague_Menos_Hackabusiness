@@ -13,14 +13,14 @@ Como cada etapa é conferida, com o comando e o critério. O registro de execuç
 | App: tipos e build | `cd app && npm run build` | zero erros de tipo, build de produção gerado |
 | App: regras de kit | `cd app && npm test` | todos os casos T1 a T12 passam e as invariantes do contrato valem em todas as respostas |
 | App: telas | roteiro manual abaixo | todas as telas e estados do doc 03 alcançáveis |
-| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 95 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos); precisa de `pip install -r graphrag/requirements.txt` |
-| GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 59/60 fora do treino; pesos gravados |
-| GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1, M2, X1 sobre o JSON bruto |
-| App com o motor | servidor em `:8787` + `cd app && npm test` | 46 testes; percurso no Chromium sem erro de console |
+| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 117 testes em 23/10 (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos, RAG com DeepSeek sem rede); **fonte da contagem atual** (as linhas datadas do registro e do doc 16 são histórico); precisa de `pip install -r graphrag/requirements.txt` |
+| GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 63/65 fora do treino (23/10); pesos gravados |
+| GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1 a M5, X1 sobre o JSON bruto |
+| App com o motor | servidor em `:8787` + `cd app && npm test` | 63 testes em 23/10; percurso no Chromium sem erro de console |
 
 ## Invariantes do contrato (checadas por código)
 
-Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resposta de busca. A lista foi portada para o GraphRAG em `graphrag/eval/invariants.py` (I1–I16, M1, M2, X1), escrita de novo e lendo o JSON bruto.
+Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resposta de busca. A lista foi portada para o GraphRAG em `graphrag/eval/invariants.py` (I1–I16, M1 a M5, X1), escrita de novo e lendo o JSON bruto.
 
 | # | Invariante |
 | --- | --- |
@@ -165,6 +165,12 @@ Achados que mudaram desde 15/10:
 | 21/10/2026 | `npm test`, `tsc --noEmit` e `npm run build` em `app/` | 46 de 46; tipos limpos; build concluído |
 | 21/10/2026 | `check_separation.py` | OK |
 | 21/10/2026 | percurso no Chromium (375 px) com o motor em :8787 | remédio de dor de cabeça → kits → kit → troca; Categorias → Medicamentos e saúde → produto com receita; "remédio para diabetes"; sem erros de console depois de recarregar |
+
+### Rodada de 23/10 (RAG com DeepSeek, remédio fora dos kits e limpeza: doc 16 §14 e §15 e documento de auditoria, itens #25, #33 a #38 e #40)
+
+| Data | O que rodou | Resultado |
+|---|---|---|
+| 23/10/2026 | suítes depois do RAG com DeepSeek (#33 a #38), remédio fora dos kits (#40) e limpeza (#25) | motor 117 de 117 (sem rede); app 63 de 63; tipos ok; catálogo 76 de 76; NLU 63/65 fora do treino |
 
 Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2** (nenhum texto manda procurar médico ou farmacêutico). As antigas M1/M2 ("medicamento nunca em kit/lista") e I10 (bloqueio) saíram com a D-32.
 

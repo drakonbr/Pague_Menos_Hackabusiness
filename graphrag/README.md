@@ -26,7 +26,7 @@ Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, s
 | `service/server.py` | HTTP local (`/v1/search`, `/v1/search-chat`, `/v1/similars`, …) |
 | `train.py` | gera `artifacts/` |
 | `eval/` | calibração dos pesos, conjuntos de ranking e de busca, invariantes independentes, latência |
-| `tests/` | 95 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos) |
+| `tests/` | motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos e RAG (contagem no doc 08) |
 
 ## Comandos (a partir da raiz do repositório)
 

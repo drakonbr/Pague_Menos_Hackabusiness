@@ -585,7 +585,7 @@ class Engine:
             return self._basic(req, query, safety, intent, cin, turn, "refinar",
                                "Entendi. Me diga primeiro o que você procura (por exemplo, pele oleosa, suplementos ou higiene) "
                                "e eu já aplico isso.", ["Kit de suplementos", "Higiene premium", "Pele oleosa"])
-        proxy = Understanding(text=query, goals=intent["goals"], primary_goal=intent["primary_goal"] if "primary_goal" in intent else intent["primaryGoal"],
+        proxy = Understanding(text=query, goals=intent["goals"], primary_goal=intent["primaryGoal"],
                               concerns=u.concerns, skin=intent.get("skinType"), preferences=intent["preferences"],
                               requested_ingredients=requested, excluded_ingredients=excluded, steps=[])
         rel = self.ret.score(proxy, query)

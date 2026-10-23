@@ -12,8 +12,8 @@ Não é um chatbot. É busca por intenção + composição de kit + compra.
 | --- | --- |
 | Documentação (docs 01–16) | escrita e revisada em 21/10; o doc 16 é o prompt e o registro da rodada de medicamentos |
 | Catálogo sintético | 217 produtos (100 originais + 38 da persona + 79 medicamentos em 12 áreas), 8 lojas, estoque por loja; 76 de 76 checagens |
-| **GraphRAG do zero** | **implementado e treinado**, com medicamentos (grafo de 599 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 63/65 fora do treino); 95 de 95 testes em 21/10 |
-| App | logado como a persona Renata; busca de remédio e sintoma com kits; reposição; 46 testes; visto só em Chromium |
+| **GraphRAG do zero** | **implementado e treinado**, com medicamentos (grafo de 599 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 63/65 fora do treino) e RAG com DeepSeek só quando o grafo não entende; testes passam (contagem no [doc 08](docs/08-validacao-e-qualidade.md)) |
+| App | logado como a persona Renata; busca de remédio e sintoma (remédio só avulso, sem kit); reposição; testes passam (contagem no doc 08); visto só em Chromium |
 | Fotos reais sem marca | **pendente**: emissão de chave da Pexels pausada; o app mostra desenhos de embalagem |
 | Hospedagem do protótipo | **pendente** (P-04, doc 09); a entrega pede acesso em funcionamento |
 

@@ -61,11 +61,11 @@ Treinar de novo: `python3 -m graphrag.train` e `python3 graphrag/eval/calibrate.
 
 | Medida | Resultado |
 | --- | --- |
-| Classificador de ato de fala, frases fora do treino | 59 de 60 (98,3%) |
-| Testes do motor, NLU, privacidade, ontologia, ingestão e streaming | 77 passam (os 26 novos são da rodada do [doc 15](15-graphrag-conversacional.md)) |
-| Testes do app | 46 passam; build de produção sem erros de tipo |
-| Validação do catálogo | 69 de 69 |
-| Invariantes independentes (I1 a I16, M1, M2, X1), lendo o JSON bruto | passam |
+| Classificador de ato de fala, frases fora do treino | 63 de 65 (23/10) |
+| Testes do motor, NLU, privacidade, ontologia, ingestão e streaming | passam; contagem atual no [doc 08](08-validacao-e-qualidade.md) (eram 77 na rodada do [doc 15](15-graphrag-conversacional.md)) |
+| Testes do app | passam (contagem no doc 08); build de produção sem erros de tipo |
+| Validação do catálogo | 76 de 76 (23/10) |
+| Invariantes independentes (I1 a I16, M1 a M5, X1), lendo o JSON bruto | passam |
 | Percurso no navegador (Chromium, 412 px): kits, troca, pergunta de produto, bloqueio, "pode adicionar", reposição com equivalente e receita simulada, cesta | funciona; zero erros de console |
 
 ## 7. Limites honestos

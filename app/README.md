@@ -9,7 +9,7 @@ Todos os dados são fictícios. O app **não conhece** `catalog/` nem `graphrag/
 cd app
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 46 testes: simulador de kits, lojas, comércio, persona e checador de invariantes
+npm test           # simulador de kits, lojas, comércio, persona e checador de invariantes (contagem no doc 08)
 npm run build      # tsc --noEmit + vite build
 ```
 

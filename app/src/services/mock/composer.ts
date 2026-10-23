@@ -372,13 +372,50 @@ export function buildAlerts(products: Product[]): Alert[] {
   return alerts.sort((a, b) => (a.severity === b.severity ? 0 : a.severity === "atencao" ? -1 : 1));
 }
 
+const TO_MG: Record<string, number> = { mcg: 0.001, mg: 1, g: 1000 };
+/** Primeira dose do nome: [valor, unidade], com mcg/mg/g em mg. Igual ao motor. */
+export function dose(name: string): [number, string] | null {
+  const m = /(\d+(?:[.,]\d+)?)\s*(mcg|mg|g|ui|%)(?![a-z])/i.exec(name);
+  if (!m) return null;
+  const v = Number(m[1].replace(",", "."));
+  const u = m[2].toLowerCase();
+  return u in TO_MG ? [v * TO_MG[u], "mg"] : [v, u];
+}
+
+/** b é versão superior de a: mesmo tipo, preço maior e FPS estritamente maior (protetor) ou, com os mesmos ativos, dose
+ * maior lida do nome (ex.: dipirona 500 mg -> 1 g). Sabor, embalagem maior ou marca de referência não contam. Igual ao motor. */
+function betterItem(a: Product, b: Product): boolean {
+  if (a.productType !== b.productType || b.priceCents <= a.priceCents) return false;
+  if (a.fps || b.fps) return (b.fps ?? 0) > (a.fps ?? 0);
+  const sameIngs = a.ingredients.length === b.ingredients.length && a.ingredients.every((i) => b.ingredients.includes(i));
+  const da = dose(a.name);
+  const db = dose(b.name);
+  return sameIngs && !!da && !!db && da[1] === db[1] && db[0] > da[0];
+}
+
+/** Mesma quantidade e mesmas etapas, cada item igual ou em versão superior, e pelo menos um superior. */
+function isUpgrade(base: Combo, c: Combo): boolean {
+  const a = new Map(base.slots.map((s) => [s.step, s.product]));
+  const b = new Map(c.slots.map((s) => [s.step, s.product]));
+  if (a.size !== b.size || [...a.keys()].some((k) => !b.has(k))) return false;
+  const ups = [...a.keys()].filter((k) => a.get(k)!.id !== b.get(k)!.id);
+  return ups.length > 0 && ups.every((k) => betterItem(a.get(k)!, b.get(k)!));
+}
+
+/** Diz o que o Completo tem a mais que a faixa anterior, sem prometer o que a regra não garante (#31). Igual ao motor. */
+function completeRationale(base: Combo, comp: Combo, baseName: string): string {
+  const extra = comp.slots.length - base.slots.length;
+  if (extra > 0) return `A opção mais completa: ${extra} ${extra === 1 ? "item" : "itens"} a mais que o ${baseName}.`;
+  if (isUpgrade(base, comp)) return `Os mesmos tipos de item do ${baseName}, em versões superiores (ex.: dose ou proteção maior).`;
+  return `Itens com maior relevância para o seu pedido que os do ${baseName}.`;
+}
+
 function rationaleFor(tier: KitTier, steps: StepId[], ctx: Ctx): string {
   const labels = listPt(steps.map((s) => STEP_LABEL[s].toLowerCase()));
   if (tier === "economico") return `Menor preço que cobre ${labels}.`;
   if (tier === "essencial")
     return `Seleção mais indicada para ${GOAL_LABEL[ctx.primary].toLowerCase()}${ctx.budgetCents != null ? ", dentro do orçamento" : ""}.`;
-  const extra = steps.length - GOALS.find((g) => g.id === ctx.primary)!.requiredSteps.length;
-  return `A opção mais completa: cobre ${labels}${extra > 0 ? ", com itens a mais" : ", com os itens mais indicados"}.`;
+  return `A opção mais completa: cobre ${labels}.`;
 }
 
 export function assembleKit(
@@ -491,16 +528,29 @@ export function compose(ctx: Ctx, requestId: string): Composition {
     }
   }
   const n = (c: Combo) => c.slots.length;
-  const comp = pool
-    .filter((c) => c.total > econ.total && c.total <= altBudget)
-    .sort((a, b) => n(b) - n(a) || b.rel - a.rel || a.total - b.total || ids(a).join().localeCompare(ids(b).join()))[0];
-  const ess = pool
+  const byComplete = (a: Combo, b: Combo) => n(b) - n(a) || b.rel - a.rel || a.total - b.total || ids(a).join().localeCompare(ids(b).join());
+  let comp: Combo | undefined = pool.filter((c) => c.total > econ.total && c.total <= altBudget).sort(byComplete)[0];
+  let ess: Combo | undefined = pool
     .filter((c) => c.total > econ.total && c.total <= effBudget && (!comp || (c.total < comp.total && (n(c) < n(comp) || c.rel < comp.rel))))
     .sort(cmpBest)[0];
+  if (comp && !ess) {
+    // sem meio-termo (ex.: só kits de 2 itens): Essencial = o mais relevante; Completo = mais itens ou a mesma cesta em
+    // versão superior (upgrade). Se não houver, fica o Completo do passo anterior, sem Essencial. Igual ao motor.
+    const e2 = pool.filter((c) => c.total > econ.total && c.total <= effBudget).sort(cmpBest)[0];
+    const up = e2 ? pool.filter((c) => c.total > e2.total && c.total <= altBudget && (n(c) > n(e2) || isUpgrade(e2, c))) : [];
+    if (up.length) {
+      ess = e2;
+      comp = up.sort(byComplete)[0];
+    }
+  }
+  if (comp && !ess && !(n(comp) > n(econ) || isUpgrade(econ, comp))) {
+    ess = comp; // 2º kit sem nada "a mais" que o Econômico: é um Essencial, não um Completo
+    comp = undefined;
+  }
 
   const kits: Kit[] = [assembleKit("economico", econ.slots, ctx, requestId, full)];
   if (ess) kits.push(assembleKit("essencial", ess.slots, ctx, requestId, full));
-  if (comp) kits.push(assembleKit("completo", comp.slots, ctx, requestId, full));
+  if (comp) kits.push({ ...assembleKit("completo", comp.slots, ctx, requestId, full), rationale: completeRationale(ess ?? econ, comp, ess ? "Essencial" : "Econômico") });
 
   // K12: pedido explícito de combinação que o catálogo proíbe
   for (const i of INTERACTIONS) {

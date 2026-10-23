@@ -3,7 +3,7 @@
  "vocab": 1362,
  "sentences": 1804,
  "tokens": 23307,
- "corpusSha": "da161e8f74130dea",
+ "corpusSha": "5ee7673a99a7df8d",
  "window": 5,
  "smooth": 0.75,
  "method": "PPMI + SVD (do zero, sem modelo externo)"

@@ -38,7 +38,7 @@ CTX_ACTS = {"trocar_item", "pergunta_produto", "similar", "entrega_frete"}
 DELIVERY_CUE = re.compile(r"\b(frete|entreg\w*|prazo|retir\w*|chega\w*|receb\w*|envio|enviar)\b")
 POINTING_CUE = re.compile(r"\?|\b(troc\w*|mud\w*|substitu\w*|outr[oa]s?|ess[ea]s?|est[ea]s?|isso|isto|aquel\w+|"
                           r"parecid\w*|similar\w*|equival\w*)\b")
-TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "alternativo": "Alternativo"}
+TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "completo": "Completo"}
 # a frase fala de remédio ou sintoma: se nada no catálogo atende, a resposta é só MED_MISSING (doc 16)
 MED_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|"
                      r"pomada|gotas|tomar|tomo|dor|dores|doendo|sintoma|sintomas|estou com|to com)\b")
@@ -243,7 +243,7 @@ class Engine:
     def _help(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "ajuda",
                            "Posso: achar remédios pelo sintoma ou pelo nome (ex.: dor de cabeça, dipirona); montar 3 opções de "
-                           "kit (Econômico, Essencial e Alternativo) a partir do que você escreve; ajustar por preço, tipo de pele "
+                           "kit (Econômico, Essencial e Completo) a partir do que você escreve; ajustar por preço, tipo de pele "
                            "ou preferência; trocar um item; mostrar o total com frete e a retirada mais próxima; e repor os "
                            "medicamentos de uso contínuo que você já usa.",
                            ["Remédio para gripe", "Kit de suplementos", "Pele oleosa até R$ 100", "Repor meus medicamentos"])

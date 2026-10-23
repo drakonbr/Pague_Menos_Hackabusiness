@@ -9,6 +9,7 @@ Mais: ingrediente que a pessoa quer evitar nunca entra; estoque pode ser da loja
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 
 from .data import STEP_ORDER, Catalog
@@ -50,6 +51,21 @@ def kit_price(items_cents: int, n_items: int) -> tuple[int, int, int]:
     pct = kit_discount_pct(n_items)
     off = (items_cents * pct + 50) // 100          # meio centavo para cima, igual ao app (Math.floor(x + 0.5))
     return pct, off, items_cents - off
+
+
+_DOSE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(mcg|mg|g|ui|%)(?![a-z])", re.I)
+_TO_MG = {"mcg": 0.001, "mg": 1, "g": 1000}
+
+
+def dose(name: str) -> tuple[float, str] | None:
+    """Primeira dose do nome: (valor, unidade), com mcg/mg/g em mg. "Dipirona 1 g — 10 comprimidos" -> (1000, "mg")."""
+    # ponytail: só a primeira dose conta; em combinações (ex.: "Dipirona 300 mg + Orfenadrina") vale o 1º ativo.
+    # Basta porque better_item exige os mesmos ativos; com doses por ativo no cadastro, comparar todas.
+    m = _DOSE.search(name)
+    if not m:
+        return None
+    v, u = float(m.group(1).replace(",", ".")), m.group(2).lower()
+    return (v * _TO_MG[u], "mg") if u in _TO_MG else (v, u)
 
 
 def kit_cashback(items_cashback: int, pct: int) -> int:
@@ -316,8 +332,36 @@ class Composer:
         if tier == "essencial":
             goal = self.cat.goal_by_id[ctx.primary]["label"].lower()
             return f"Seleção mais indicada para {goal}" + (", dentro do orçamento" if ctx.budget is not None else "") + "."
-        extra = len(steps) - len(self.cat.goal_by_id[ctx.primary]["required_steps"])
-        return f"A opção mais completa: cobre {labels}" + (", com itens a mais" if extra > 0 else ", com os itens mais indicados") + "."
+        return f"A opção mais completa: cobre {labels}."
+
+    @staticmethod
+    def better_item(a: dict, b: dict) -> bool:
+        """b é versão superior de a: mesmo tipo, preço maior e FPS estritamente maior (protetor) ou, com os mesmos ativos,
+        dose maior lida do nome (ex.: dipirona 500 mg -> 1 g). Sabor, embalagem maior ou marca de referência não contam."""
+        if a["productType"] != b["productType"] or b["priceCents"] <= a["priceCents"]:
+            return False
+        if a.get("fps") or b.get("fps"):
+            return (b.get("fps") or 0) > (a.get("fps") or 0)
+        da, db = dose(a["name"]), dose(b["name"])
+        return set(a["ingredients"]) == set(b["ingredients"]) and da is not None and db is not None \
+            and da[1] == db[1] and db[0] > da[0]
+
+    def upgrade(self, base: dict, c: dict) -> bool:
+        """Mesma quantidade e mesmas etapas, cada item igual ou em versão superior, e pelo menos um superior."""
+        a, b = dict(base["slots"]), dict(c["slots"])
+        if a.keys() != b.keys():
+            return False
+        ups = [s for s in a if a[s]["id"] != b[s]["id"]]
+        return bool(ups) and all(self.better_item(a[s], b[s]) for s in ups)
+
+    def complete_rationale(self, base: dict, comp: dict, base_name: str) -> str:
+        """Diz o que o Completo tem a mais que a faixa anterior, sem prometer o que a regra não garante (#31)."""
+        extra = len(comp["ids"]) - len(base["ids"])
+        if extra > 0:
+            return f"A opção mais completa: {extra} {'item' if extra == 1 else 'itens'} a mais que o {base_name}."
+        if self.upgrade(base, comp):
+            return f"Os mesmos tipos de item do {base_name}, em versões superiores (ex.: dose ou proteção maior)."
+        return f"Itens com maior relevância para o seu pedido que os do {base_name}."
 
     def assemble(self, tier: str, slots: list[tuple[str, dict]], ctx: Ctx, request_id: str,
                  full: dict[str, list[dict]]) -> dict:
@@ -393,16 +437,28 @@ class Composer:
                     ids_seen.add(tuple(sorted(c["ids"]))); pool.append(c)
         n = lambda c: len(c["ids"])
         comp_c = [c for c in pool if econ["total"] < c["total"] <= alt_b]
-        comp = sorted(comp_c, key=lambda c: (-n(c), -c["rel"], c["total"], ",".join(c["ids"])))[0] if comp_c else None
+        key_full = lambda c: (-n(c), -c["rel"], c["total"], ",".join(c["ids"]))
+        comp = sorted(comp_c, key=key_full)[0] if comp_c else None
         ess_c = [c for c in pool if econ["total"] < c["total"] <= eff
                  and (comp is None or (c["total"] < comp["total"] and (n(c) < n(comp) or c["rel"] < comp["rel"])))]
         ess = sorted(ess_c, key=key_best)[0] if ess_c else None
+        if comp and not ess:
+            # sem meio-termo (ex.: só kits de 2 itens): Essencial = o mais relevante; Completo = mais itens ou a mesma
+            # cesta em versão superior (upgrade). Se não houver, fica o Completo do passo anterior, sem Essencial.
+            ess_c = [c for c in pool if econ["total"] < c["total"] <= eff]
+            e2 = sorted(ess_c, key=key_best)[0] if ess_c else None
+            up = [c for c in pool if e2 and e2["total"] < c["total"] <= alt_b and (n(c) > n(e2) or self.upgrade(e2, c))]
+            if up:
+                ess, comp = e2, sorted(up, key=key_full)[0]
+        if comp and not ess and not (n(comp) > n(econ) or self.upgrade(econ, comp)):
+            ess, comp = comp, None            # 2º kit sem nada "a mais" que o Econômico: é um Essencial, não um Completo
 
         kits = [self.assemble("economico", econ["slots"], ctx, request_id, full)]
         if ess:
             kits.append(self.assemble("essencial", ess["slots"], ctx, request_id, full))
         if comp:
             kits.append(self.assemble("completo", comp["slots"], ctx, request_id, full))
+            kits[-1]["rationale"] = self.complete_rationale(ess or econ, comp, "Essencial" if ess else "Econômico")
         for i in self.cat.interactions:                                                      # K12
             if i["severity"] == "evitar" and i["a"] in ctx.requested and i["b"] in ctx.requested:
                 an, bn = self.cat.ingredients[i["a"]]["name"], self.cat.ingredients[i["b"]]["name"]

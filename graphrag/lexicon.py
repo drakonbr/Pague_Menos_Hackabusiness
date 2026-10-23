@@ -236,7 +236,7 @@ PARAPHRASE_CORPUS: list[str] = [
     "repor meu medicamento acabando pouco estoque similar disponivel na loja mais proxima",
     "entrega expressa retirar na loja em ate 60 minutos frete gratis acima de 150 reais",
     "frete caro anula o desconto preco total justo produto mais entrega",
-    "kit economico essencial alternativo orcamento ate 120 reais menor preco combinacao",
+    "kit economico essencial completo orcamento ate 120 reais menor preco combinacao",
     "trocar um item do kit por outro mais barato da mesma etapa hidratante protetor serum",
     "sem fragrancia sem alcool vegano oil free preferencias do produto",
     "gravida amamentando evitar retinol restricao na gestacao",

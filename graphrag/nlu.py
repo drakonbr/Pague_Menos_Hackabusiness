@@ -140,7 +140,7 @@ _RICHER = re.compile(r"\b(mais completo|mais completa|gastar mais|aumenta o orca
 _PREGNANT = re.compile(r"\b(gravida|gestante|gravidez|gestacao|amamentando|amamentacao|lactante|gravidinha)\b")
 _TIER = [(re.compile(r"\b(economico|primeiro|mais barato de todos)\b"), "economico"),
          (re.compile(r"\b(essencial|segundo)\b"), "essencial"),
-         (re.compile(r"\b(alternativo|terceiro)\b"), "alternativo")]
+         (re.compile(r"\b(?<!mais )(completo|alternativo|terceiro)\b"), "completo")]
 _REPOR = re.compile(r"\b(repor|reposicao|repoe|recompr\w+|comprar de novo|acabando|acabou|acabar|renovar|ficar sem|falta pouco|no fim)\b")
 _MED = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|medicacoes|uso continuo)\b")
 _MY_MEDS = re.compile(r"\b(meus|minhas|meu|minha) (remedio|remedios|medicamento|medicamentos|medicacao|medicacoes)\b|\buso continuo\b")

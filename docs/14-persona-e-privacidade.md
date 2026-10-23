@@ -15,7 +15,7 @@ Imagem da persona: `docs/assets/persona-renata.svg` (desenho original, não é f
 | Necessidade da Renata | O que o protótipo faz | Onde |
 | --- | --- | --- |
 | Conversar na barra de busca, do jeito dela | Barra de busca abre uma conversa; 13 atos de fala; o contexto viaja a cada turno | `graphrag/nlu.py`, `dialogue.py`, `app/src/screens/Chat.tsx` |
-| Rotina anti-idade, suplementos, higiene premium | Kits Econômico, Essencial e Alternativo para esses domínios, com troca de item e ajuste por orçamento | `graphrag/composer.py` |
+| Rotina anti-idade, suplementos, higiene premium | Kits Econômico, Essencial e Completo para esses domínios, com troca de item e ajuste por orçamento | `graphrag/composer.py` |
 | Preço total, não só o do item | "Total com entrega" mostra item + frete por modalidade; frete grátis sobre o limite | ação `delivery_quote` |
 | Nunca ficar sem o remédio | Tela **Meus medicamentos**: unidades restantes, alerta de 7 dias, reposição em poucos toques | `Refill.tsx` |
 | Estoque zerado na loja | A reposição mostra onde há estoque e **equivalentes** (mesmo princípio ativo e dose) | `/v1/similars` |

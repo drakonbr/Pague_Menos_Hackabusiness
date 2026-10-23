@@ -5,6 +5,7 @@ import { createMockCommerceService } from "../src/services/mock/mockCommerceServ
 import { checkResponse } from "../src/services/contractChecks";
 import { checkKit } from "../src/services/contractChecks";
 import { createMockSearchService } from "../src/services/mock/mockSearchService";
+import { dose } from "../src/services/mock/composer";
 
 const svc = createMockSearchService({ latencyMs: 0 });
 const run = (query: string, extra: Partial<SearchRequest> = {}) => svc.search({ query, ...extra });
@@ -385,7 +386,7 @@ describe("serviço de comércio (simulado)", () => {
 });
 
 describe("preço do kit (#30)", () => {
-  it("dá o mesmo desconto e cashback que o motor (tabela igual em graphrag/tests/test_engine.py)", () => {
+  it("dá o mesmo desconto e cashback que o motor (mesma tabela em graphrag/tests/test_engine.py)", () => {
     const casos: [number, number, number, [number, number, number, number]][] = [
       [17750, 4, 300, [15, 2663, 15087, 255]], [1850, 2, 37, [10, 185, 1665, 33]],
       [2050, 2, 0, [10, 205, 1845, 0]], [4625, 3, 92, [12, 555, 4070, 80]], [990, 1, 19, [0, 0, 990, 19]],
@@ -394,5 +395,31 @@ describe("preço do kit (#30)", () => {
       const k = kitPrice(items, n);
       expect([k.discountPct, k.discountCents, k.totalCents, kitCashback(cb, k.discountPct)]).toEqual(esperado);
     }
+  });
+});
+
+describe("faixas dos kits (#31)", () => {
+  it("Econômico < Essencial < Completo, e o Completo tem mais itens ou itens melhores (mesma regra do motor)", async () => {
+    for (const q of ["remédio para dor de cabeça", "estou gripado", "Preciso de produtos para tratamento de acne"]) {
+      const r = await run(q);
+      expect(r.kits.map((k) => k.tier), q).toEqual(["economico", "essencial", "completo"]);
+      const t = r.kits.map((k) => k.totalCents);
+      expect(t[0] < t[1] && t[1] < t[2], `${q}: ${t}`).toBe(true);
+      expect(checkResponse(r).filter((m) => m.includes("M4"))).toEqual([]);
+    }
+    const head = (await run("remédio para dor de cabeça")).kits;
+    expect(head[2].items.some((i) => i.product.name.includes("Dipirona 1 g"))).toBe(true);
+    expect(head[2].rationale).toContain("versões superiores");
+    const flu = await run("estou gripado");
+    expect(checkResponse({ ...flu, kits: [...flu.kits].reverse() }).some((m) => m.includes("M4"))).toBe(true);
+  });
+});
+
+describe("dose lida do nome (#31)", () => {
+  it("lê a mesma dose que o motor (mesmos casos de graphrag/tests/test_engine.py)", () => {
+    expect(dose("Dipirona 1 g (genérico) — 10 comprimidos")).toEqual([1000, "mg"]);
+    expect(dose("Dipirona 500 mg — 36 comprimidos")).toEqual([500, "mg"]);
+    expect(dose("Sérum Vitamina C 20%")).toEqual([20, "%"]);
+    expect(dose("Pastilha Mel e Limão — 12 un")).toBeNull();
   });
 });

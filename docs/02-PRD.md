@@ -21,7 +21,7 @@ Uma **camada de kits inteligentes** no topo dos resultados de busca. Quando a in
 
 Um kit é um conjunto **sem itens repetidos** (nenhuma etapa da rotina coberta duas vezes) que, junto, atende ao objetivo declarado dentro do orçamento, com preço total visível, e pode ser editado, trocado item a item ou adicionado ao carrinho de uma vez.
 
-Formatos: **Econômico** (menor preço total que cumpre os requisitos), **Essencial** (seleção equilibrada e mais relevante para o objetivo), **Alternativo** (outra combinação relevante, com marcas ou atributos diferentes). Não forçar 3 quando o catálogo não sustenta opções realmente relevantes.
+Formatos: **Econômico** (menor preço total que cumpre os requisitos), **Essencial** (seleção equilibrada e mais relevante para o objetivo), **Completo** (o mais caro dos três: mais itens, ou a mesma quantidade com itens melhores; desde 23/10, no lugar do Alternativo). Não forçar 3 quando o catálogo não sustenta opções realmente relevantes.
 
 Não é um chatbot: a entrada é uma frase, a saída é uma seleção de compra.
 
@@ -41,7 +41,7 @@ Não é um chatbot: a entrada é uma frase, a saída é uma seleção de compra.
 
 - Busca em linguagem natural para skin care, tratamento cosmético, proteção solar.
 - Interpretação de objetivo, orçamento, tipo de pele e preferências (ex.: vegano, sem fragrância).
-- Kits econômico, essencial e alternativo, sem itens repetidos.
+- Kits econômico, essencial e completo, sem itens repetidos dentro do kit, com preço crescente.
 - Seleção de orçamento pelo usuário (controle de valor máximo que recompõe os kits).
 - Detalhe do kit com troca de item, total e justificativa por item.
 - Catálogo individual abaixo dos kits.

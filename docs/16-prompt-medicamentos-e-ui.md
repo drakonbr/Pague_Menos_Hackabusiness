@@ -70,7 +70,7 @@ Continua valendo: `persona.json` (o que a Renata **usa**) fica no aparelho e o m
 | --- | --- | --- | --- |
 | A1 | Branch `feat/medicamentos-e-ui` com todo o trabalho | `git status` | feito (sem commit; aguarda aprovação) |
 | A2 | ≥ 6 medicamentos por área aprovada | `validate_catalog.py` ("pelo menos 6 por área") | feito: 79 medicamentos em 12 áreas, de 6 a 8 cada; 76/76 checagens |
-| A3 | "remédio de dor de cabeça" devolve kit com dipirona e paracetamol | `test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol` | feito: Econômico, Essencial e Alternativo, todos com os dois |
+| A3 | "remédio de dor de cabeça" devolve kit com dipirona e paracetamol | `test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol` | feito: Econômico, Essencial e Completo, todos com os dois |
 | A4 | "dor no corpo", "dor muscular", "dor de barriga" devolvem medicamentos e kits da área | `test_T8_areas_de_saude_montam_kit_da_area` (12 áreas) | feito |
 | A5 | Nenhuma resposta contém "farmacêutico" ou "médico" como encaminhamento | invariante M2 em toda resposta testada; checagem de texto no catálogo; teste do app (T8) | feito; tela "Falar com um farmacêutico" removida |
 | A6 | Pedido sem remédio no catálogo responde "Não está no banco de dados ainda." | `test_sem_remedio_no_catalogo_diz_so_que_nao_esta`; regra `missing` da avaliação (8/8) | feito; visto no app |
@@ -278,3 +278,12 @@ A tarja segue o que é usual no varejo, a partir de conhecimento geral, **sem co
 - Vale também para os kits de medicamento. Decisão da Julia: o exemplo pedido foi o kit de dor de cabeça. Ressalva registrada: em produção, promoção de medicamento segue a RDC 96/2008 da Anvisa e precisa de revisão jurídica antes de ir ao ar. No protótipo, o desconto aparece como preço do kit, sem frase de apelo ao consumo.
 - O cashback é calculado sobre o que a pessoa paga: o cashback dos itens reduzido na mesma proporção do desconto.
 - Arredondamento: meio centavo para cima, em aritmética inteira, igual no motor e no app.
+
+## 13. Faixas dos kits (#31, 23/10)
+
+- **Completo** substitui o Alternativo. A ordem de preço é sempre Econômico < Essencial < Completo (invariante M4, no motor e no app).
+- O Completo tem mais itens que o Essencial (nem que seja 1), ou a mesma quantidade com itens de maior relevância, ou a mesma cesta em versão superior (mesmo tipo, preço maior e dose maior lida do nome, ou FPS estritamente maior; sabor, embalagem maior ou marca de referência não contam). O texto do kit diz qual dos três casos é, comparando com o Essencial. Exemplo, dor de cabeça: Econômico R$ 16,92, Essencial R$ 18,72 (dipirona 500 mg + paracetamol 750 mg), Completo R$ 22,32 (dipirona 1 g + paracetamol 750 mg).
+- Varredura de 110 frases: as 30 respostas com kit têm os 3 kits; Completos: 6 com itens a mais, 3 em versão superior (todos dipirona 500 mg → 1 g), 21 com maior relevância. Com orçamento apertado (dor de cabeça até R$ 19 ou R$ 20) saem Econômico e Essencial.
+- Limite conhecido: o simulador do app (reserva quando o motor está fora) usa a mesma regra de faixas, mas não tem a mesma NLU e relevância do motor; em cerca de 7 de 24 frases ele escolhe kits diferentes (já acontecia antes do #31).
+- Limite conhecido: o catálogo não tem nota de cliente. "Mais bem avaliado" é a relevância do motor (preocupações, tipo de pele, recuperação BM25 + vetores + grafo). Com notas reais, elas entram nesse critério.
+- Na conversa, "o completo", "o kit completo" e "o terceiro" escolhem esta faixa; "mais completo" continua sendo pedir para gastar mais.

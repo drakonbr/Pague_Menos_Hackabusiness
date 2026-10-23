@@ -133,7 +133,7 @@ def main() -> int:
           all(i["a"] in ingredients and i["b"] in ingredients for i in interactions))
     check("severidade válida", all(i["severity"] in {"evitar", "separar"} for i in interactions))
 
-    # 7. Cobertura por etapa e faixa de preço (para kits econômico, essencial e alternativo)
+    # 7. Cobertura por etapa e faixa de preço (para kits econômico, essencial e completo)
     step_tiers: dict[str, set] = defaultdict(set)
     for p in products:
         if inventory[p["id"]]["stock_qty"] > 0:

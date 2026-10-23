@@ -47,7 +47,7 @@ Status (21/10): os três módulos existem. `graphrag/` foi implementado do zero 
 2. **Intenção**: extrai objetivo(s), orçamento, tipo de pele e preferências em um objeto estruturado; o que faltar vira `missing`.
 3. **Recuperação**: a partir dos objetivos, caminha no grafo (objetivo → preocupações → produtos; objetivo → etapas) e complementa com busca vetorial sobre a descrição para sinais em texto livre.
 4. **Dados vivos**: junta preço e estoque do inventário. Produto sem estoque sai.
-5. **Compositor de kits** (determinístico): escolhe um produto por etapa, respeitando regras K1 a K10 (doc 06) e gera econômico, essencial e alternativo.
+5. **Compositor de kits** (determinístico): escolhe um produto por etapa, respeitando regras K1 a K10 (doc 06) e gera econômico, essencial e completo.
 6. **Texto**: o modelo escreve só a justificativa de cada item a partir de fatos estruturados; números vêm dos dados.
 7. **Validação final**: confere as invariantes do contrato; kit que viola é descartado.
 

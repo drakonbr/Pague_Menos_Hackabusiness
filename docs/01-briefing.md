@@ -47,7 +47,7 @@ Submissão: **26/10/2026**. Mentoria online: 21 a 23/10.
 ## A ideia da equipe (do PDF)
 
 - **Problema observado** (testes exploratórios no app atual, poucos testes, sem auditoria completa): busca ampla ("quero fazer skin care") retornou 1.450 produtos, com itens fora da intenção principal; busca com contexto e orçamento ("quero começar a cuidar da pele até R$ 120") não retornou resultado.
-- **Solução:** camada de kits inteligentes no topo dos resultados, de 2 a 3 kits (econômico, essencial, alternativo), catálogo individual logo abaixo.
+- **Solução:** camada de kits inteligentes no topo dos resultados, de 2 a 3 kits (econômico, essencial, completo), catálogo individual logo abaixo.
 - **Como a IA funciona:** intenção → extração (objetivo, orçamento, preferências) → recuperação (catálogo, preço, estoque) → ranking → interface. RAG como base do MVP; GraphRAG opcional.
 - **Segurança:** não montar combinações terapêuticas; medicamentos exigem camada validada.
 - **Validação:** 5 a 8 participantes, comparação com a busca atual, depois experimento controlado. Ganhos de conversão e ticket médio são **hipóteses**.

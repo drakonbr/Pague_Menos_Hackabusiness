@@ -60,6 +60,68 @@ class TestScenariosDoc08(unittest.TestCase):
         self.assertEqual(r["kitsStatus"], "none_in_budget"); self.assertEqual(r["kits"], []); self.assertIsNotNone(r["closestKit"])
         self.assertGreater(r["closestKit"]["totalCents"], 3500)
 
+    def test_faixas_economico_essencial_completo(self):
+        # #31: Econômico < Essencial < Completo; Completo tem mais itens ou itens melhores (dipirona 500 mg -> 1 g)
+        for q in ("remédio para dor de cabeça", "estou gripado", "acne até R$ 80", "protetor solar", "pele oleosa"):
+            r = S(q)
+            self.assertEqual([k["tier"] for k in r["kits"]], ["economico", "essencial", "completo"], q)
+            tot = [k["totalCents"] for k in r["kits"]]
+            self.assertTrue(tot[0] < tot[1] < tot[2], (q, tot))
+            self.assertFalse([m for m in check_response(r) if "M4" in m], q)
+        k = S("remédio para dor de cabeça")["kits"]
+        self.assertTrue(any("Dipirona 1 g" in i["product"]["name"] for i in k[2]["items"]))
+        self.assertTrue(any("Dipirona 500 mg" in i["product"]["name"] for i in k[1]["items"]))
+        acne = S("acne até R$ 80")["kits"]
+        self.assertGreater(len(acne[2]["items"]), len(acne[1]["items"]))
+        self.assertIn("versões superiores", k[2]["rationale"])
+        # o texto do Completo só diz o que é verdade em relação ao Essencial
+        for q in ("enjoo", "skin care", "manchas até R$ 60", "protetor solar", "acne até R$ 80"):
+            ess, comp = S(q)["kits"][1:3]
+            extra = len(comp["items"]) - len(ess["items"])
+            self.assertEqual(extra > 0, "a mais" in comp["rationale"], q)
+            if "versões superiores" in comp["rationale"]:
+                a = {i["step"]: i["product"] for i in ess["items"]}; b = {i["step"]: i["product"] for i in comp["items"]}
+                self.assertTrue(all(a[s]["productType"] == b[s]["productType"] for s in a), q)
+        bad = copy.deepcopy(S("estou gripado")); bad["kits"].reverse()
+        self.assertTrue([m for m in check_response(bad) if "M4" in m])
+
+    def test_completo_nao_some_sem_meio_termo(self):
+        # todos os candidatos acima do Econômico custam entre 2,0x e 2,4x: sai Econômico + Completo, não 1 kit só
+        comp = E.comp
+        real = comp.enumerate
+        def fake(steps, cand, ctx, max_budget):
+            out = sorted(real(steps, cand, ctx, None), key=lambda c: c["total"])[:2]
+            out = [dict(c) for c in out]
+            out[0]["total"], out[1]["total"] = 1000, 2200
+            return [c for c in out if max_budget is None or c["total"] <= max_budget]
+        comp.enumerate = fake
+        try:
+            r = S("remédio para dor de cabeça")
+        finally:
+            del comp.enumerate
+        # o 2º kit não tem nada "a mais" que o Econômico, então sai como Essencial (e não some)
+        self.assertEqual([k["tier"] for k in r["kits"]], ["economico", "essencial"])
+
+    def test_versao_superior_de_item(self):
+        from graphrag.composer import Composer, dose
+        up = Composer.better_item
+        self.assertEqual(dose("Dipirona 1 g (genérico) — 10 comprimidos"), (1000.0, "mg"))     # mesmos casos no app
+        self.assertEqual(dose("Dipirona 500 mg — 36 comprimidos"), (500.0, "mg"))
+        self.assertEqual(dose("Sérum Vitamina C 20%"), (20.0, "%"))
+        self.assertIsNone(dose("Pastilha Mel e Limão — 12 un"))
+        p = {"name": "Dipirona 500 mg — 10 comprimidos", "productType": "dipirona em comprimidos", "ingredients": ["dipirona"],
+             "fps": None, "priceCents": 790}
+        self.assertTrue(up(p, {**p, "name": "Dipirona 1 g (genérico) — 10 comprimidos", "priceCents": 990}))   # dose maior
+        self.assertFalse(up(p, {**p, "name": "Dipirona 500 mg — 36 comprimidos", "priceCents": 1990}))       # só embalagem
+        self.assertFalse(up(p, {**p, "name": "Dipirona 1 g", "productType": "dipirona em gotas", "priceCents": 990}))
+        self.assertFalse(up(p, {**p, "name": "Dipirona 1 g", "priceCents": 690}))                             # mais barato
+        bala = {"name": "Pastilha Menta — 12 un", "productType": "pastilha", "ingredients": ["x"], "fps": None, "priceCents": 900}
+        self.assertFalse(up(bala, {**bala, "name": "Pastilha Mel e Limão — 12 un", "priceCents": 1100}))       # só sabor
+        sol = {"name": "Protetor FPS 50", "productType": "protetor facial", "ingredients": ["a"], "fps": 50, "priceCents": 2490}
+        self.assertTrue(up(sol, {**sol, "fps": 70, "priceCents": 4490}))
+        self.assertFalse(up(sol, {**sol, "priceCents": 4490}))                                               # mesmo FPS
+        self.assertFalse(up({**sol, "fps": 70}, {**sol, "fps": 50, "priceCents": 4490}))                     # FPS menor
+
     def test_preco_do_kit_igual_ao_app(self):
         # mesma tabela em app/tests/mockSearch.test.ts: meio centavo arredonda para cima nos dois lados
         from graphrag.composer import kit_cashback, kit_price

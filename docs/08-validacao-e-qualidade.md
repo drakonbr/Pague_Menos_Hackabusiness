@@ -44,7 +44,7 @@ Uma função de checagem (`app/src/services/contractChecks.ts`) valida toda resp
 | ID | Consulta | Resultado esperado |
 | --- | --- | --- |
 | T1 | "Quero cuidar da pele até R$ 120" (exemplo do PDF) | objetivo rotina básica, orçamento R$ 120, kits válidos até R$ 120, pergunta sobre tipo de pele |
-| T2 | "Quero fazer skin care" (exemplo do PDF) | kits sem orçamento (econômico, essencial, alternativo) em vez de lista longa de produtos |
+| T2 | "Quero fazer skin care" (exemplo do PDF) | kits sem orçamento (econômico, essencial, completo) em vez de lista longa de produtos |
 | T3 | "Preciso de produtos para tratamento de acne" | objetivo acne; kits com limpeza, tratamento de acne e hidratação |
 | T4 | "Protetor solar para pele oleosa" | objetivo proteção solar; kits com facial e corporal; só produtos que servem para pele oleosa |
 | T5 | "Quero uniformizar manchas até R$ 80" | objetivo manchas; kits com proteção solar; total até R$ 80 |

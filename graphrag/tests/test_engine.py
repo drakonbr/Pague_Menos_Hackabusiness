@@ -5,7 +5,9 @@ import itertools
 import json
 import unittest
 
+from graphrag.composer import build_ctx
 from graphrag.dialogue import Engine
+from graphrag.eval import search_set
 from graphrag.eval.invariants import check_kit, check_response
 
 E = Engine.build()
@@ -61,45 +63,45 @@ class TestScenariosDoc08(unittest.TestCase):
         self.assertGreater(r["closestKit"]["totalCents"], 3500)
 
     def test_faixas_economico_essencial_completo(self):
-        # #31: Econômico < Essencial < Completo; Completo tem mais itens ou itens melhores (dipirona 500 mg -> 1 g)
-        for q in ("remédio para dor de cabeça", "estou gripado", "acne até R$ 80", "protetor solar", "pele oleosa"):
+        # #31: Econômico < Essencial < Completo; Completo tem mais itens ou itens melhores
+        for q in ("kit de suplementos", "higiene premium", "acne até R$ 80", "protetor solar", "pele oleosa"):
             r = S(q)
             self.assertEqual([k["tier"] for k in r["kits"]], ["economico", "essencial", "completo"], q)
             tot = [k["totalCents"] for k in r["kits"]]
             self.assertTrue(tot[0] < tot[1] < tot[2], (q, tot))
             self.assertFalse([m for m in check_response(r) if "M4" in m], q)
-        k = S("remédio para dor de cabeça")["kits"]
-        self.assertTrue(any("Dipirona 1 g" in i["product"]["name"] for i in k[2]["items"]))
-        self.assertTrue(any("Dipirona 500 mg" in i["product"]["name"] for i in k[1]["items"]))
         acne = S("acne até R$ 80")["kits"]
         self.assertGreater(len(acne[2]["items"]), len(acne[1]["items"]))
-        self.assertIn("versões superiores", k[2]["rationale"])
         # o texto do Completo só diz o que é verdade em relação ao Essencial
-        for q in ("enjoo", "skin care", "manchas até R$ 60", "protetor solar", "acne até R$ 80"):
+        for q in ("kit de suplementos", "skin care", "manchas até R$ 60", "protetor solar", "acne até R$ 80"):
             ess, comp = S(q)["kits"][1:3]
             extra = len(comp["items"]) - len(ess["items"])
             self.assertEqual(extra > 0, "a mais" in comp["rationale"], q)
             if "versões superiores" in comp["rationale"]:
                 a = {i["step"]: i["product"] for i in ess["items"]}; b = {i["step"]: i["product"] for i in comp["items"]}
                 self.assertTrue(all(a[s]["productType"] == b[s]["productType"] for s in a), q)
-        bad = copy.deepcopy(S("estou gripado")); bad["kits"].reverse()
+        bad = copy.deepcopy(S("pele oleosa")); bad["kits"].reverse()
         self.assertTrue([m for m in check_response(bad) if "M4" in m])
 
     def test_completo_nao_some_sem_meio_termo(self):
         # todos os candidatos acima do Econômico custam entre 2,0x e 2,4x: sai Econômico + Completo, não 1 kit só
         comp = E.comp
         real = comp.enumerate
+        first = []
         def fake(steps, cand, ctx, max_budget):
-            out = sorted(real(steps, cand, ctx, None), key=lambda c: c["total"])[:2]
-            out = [dict(c) for c in out]
-            out[0]["total"], out[1]["total"] = 1000, 2200
-            return [c for c in out if max_budget is None or c["total"] <= max_budget]
+            if not first:                        # sempre os mesmos 2 kits, com a mesma quantidade e sem "versão superior"
+                allc = sorted(real(steps, cand, ctx, None), key=lambda c: c["total"])
+                c1 = next(c for c in allc[1:] if len(c["ids"]) == len(allc[0]["ids"]) and not comp.upgrade(allc[0], c))
+                a, b = dict(allc[0]), dict(c1)
+                a["total"], b["total"] = 1000, 2200
+                first.extend([a, b])
+            return [c for c in first if max_budget is None or c["total"] <= max_budget]
         comp.enumerate = fake
         try:
-            r = S("remédio para dor de cabeça")
+            r = S("kit de suplementos")
         finally:
             del comp.enumerate
-        # o 2º kit não tem nada "a mais" que o Econômico, então sai como Essencial (e não some)
+        # nenhum kit some; o 2º não tem nada "a mais" que o Econômico (mesma quantidade, sem versão superior): é Essencial
         self.assertEqual([k["tier"] for k in r["kits"]], ["economico", "essencial"])
 
     def test_versao_superior_de_item(self):
@@ -140,30 +142,41 @@ class TestScenariosDoc08(unittest.TestCase):
                 self.assertLess(k["totalCents"], k["itemsTotalCents"], q)
                 self.assertEqual(k["discountPct"], {2: 10, 3: 12}.get(len(k["items"]), 15), q)
 
-    def test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol(self):
-        # doc 16, A3: antes era bloqueio; agora é busca de farmácia
+    def test_T7_dor_de_cabeca_traz_remedios_avulsos_sem_kit(self):
+        # doc 16, A3 + #40 (Anvisa): remédio aparece na lista, nunca em kit; sem mandar procurar médico
         for q in ["remédio de dor de cabeça", "Estou com dor de cabeça, o que posso tomar?", "dores de cabeça"]:
             r = S(q); self.ok(r)
-            self.assertEqual(r["safety"]["decision"], "allow"); self.assertEqual(r["intent"]["primaryGoal"], "dor_de_cabeca")
-            self.assertGreaterEqual(len(r["kits"]), 2, q)
-            for k in r["kits"]:
-                ings = {i for it in k["items"] for i in it["product"]["ingredients"]}
-                self.assertTrue({"dipirona", "paracetamol"} <= ings, (q, k["tier"]))
-            self.assertTrue(r["products"] and all(p["domain"] == "medicamento" for p in r["products"]))
+            self.assertEqual(r["safety"]["decision"], "allow")
+            self.assertEqual(r["kits"], [], q)
+            ings = {i for p in r["products"] for i in p["ingredients"]}
+            self.assertTrue({"dipirona", "paracetamol"} <= ings, q)
+            self.assertTrue(all(p["domain"] == "medicamento" for p in r["products"]))
+            self.assertNotIn("kit", r["reply"].lower(), q)
 
-    def test_T8_areas_de_saude_montam_kit_da_area(self):
-        # doc 16, A4: cada área devolve medicamentos e kits que atendem aquela queixa
+    def test_T8_areas_de_saude_listam_sem_kit(self):
+        # doc 16, A4 + #40: cada área devolve os itens daquela queixa, sem kit; vitamina C e psyllium viraram
+        # suplemento (podem entrar em kit) e continuam na busca do sintoma
         casos = {"dor no corpo": "dor_no_corpo", "dor muscular": "dor_muscular", "dor de barriga": "dor_de_barriga",
                  "estou gripado": "gripe", "tosse com catarro": "tosse", "dor de garganta": "dor_de_garganta",
                  "remédio para alergia": "alergia", "diarreia": "diarreia", "intestino preso": "prisao_de_ventre",
                  "enjoo de viagem": "enjoo", "azia": "azia", "tosse seca": "tosse_seca"}
         for q, goal in casos.items():
             r = S(q); self.ok(r)
-            self.assertEqual(r["intent"]["primaryGoal"], goal, q); self.assertTrue(r["kits"], q)
+            self.assertEqual(r["kits"], [], q); self.assertTrue(r["products"], q)
             alvo = set(E.cat.goal_by_id[goal]["concerns"])
-            for k in r["kits"]:
-                self.assertTrue(all(it["product"]["domain"] == "medicamento" for it in k["items"]), q)
-                self.assertTrue(any(set(it["product"]["concerns"]) & alvo for it in k["items"]), q)
+            self.assertTrue(all(set(p["concerns"]) & alvo for p in r["products"]), q)
+        self.assertIn("Psyllium", " ".join(p["name"] for p in S("intestino preso")["products"]))
+        self.assertIn("Vitamina C 1 g", " ".join(p["name"] for p in S("estou gripado")["products"]))
+        kit_goals = {g for g in E.cat.goal_by_id if E.comp.kit_possible(g)}
+        self.assertEqual(kit_goals, {"acne", "manchas", "skincare_basico", "protecao_solar", "anti_idade", "pele_sensivel",
+                                     "oleosidade", "suplementos", "higiene_premium"})
+        for q, _ in search_set.TRAIN + search_set.TEST:                    # M5 em todas as respostas
+            r = S(q)
+            self.assertFalse([i for k in r["kits"] for i in k["items"] if i["product"]["domain"] == "medicamento"], q)
+        sup = S("kit de suplementos")
+        ctx = build_ctx(E.cat, sup["intent"], [], [])
+        for it in sup["kits"][1]["items"]:
+            self.assertFalse([o for o in E.comp.swap_options(sup["kits"][1], it["step"], ctx) if o["product"]["domain"] == "medicamento"])
 
     def test_sem_remedio_no_catalogo_diz_so_que_nao_esta(self):
         # doc 16, A6
@@ -263,14 +276,57 @@ class TestPersona(unittest.TestCase):
                     self.assertEqual(len(ings), len(set(ings)), (q, b, k["tier"]))
                     self.assertLessEqual(len(aines & set(ings)), 1, (q, b, k["tier"]))
 
-    def test_checador_pega_ativo_repetido(self):
-        r = S("remédio de dor de cabeça")
+    def test_suplementos_com_vitamina_c_e_psyllium(self):
+        # decisão da Julia (#40): imunidade e fibra são opcionais no kit de suplementos; Completo nunca é só embalagem maior
+        names = lambda k: " ".join(i["product"]["name"] for i in k["items"])
+        r = S("kit de suplementos"); self.assertEqual(check_response(r), [])
+        self.assertIn("Psyllium", " ".join(names(k) for k in r["kits"]))
+        self.assertIn("Vitamina C 1 g", names(S("suplementos até R$ 150")["kits"][2]))
+        # Completo com a mesma quantidade não ganha só trocando uma opcional por outra mais cara (bônus de faixa de preço)
+        opt = set(E.cat.goal_by_id["suplementos"]["optional_steps"])
+        for q in ("kit de suplementos", "suplementos com fibra"):
+            ess, comp = S(q)["kits"][1:3]
+            a = {i["step"]: i["product"]["id"] for i in ess["items"]}; b = {i["step"]: i["product"]["id"] for i in comp["items"]}
+            changed = {s for s in set(a) | set(b) if a.get(s) != b.get(s)}
+            self.assertTrue(len(b) > len(a) or not changed <= opt, (q, changed))
+        for q in ("kit de suplementos", "suplementos com fibra", "suplementos até R$ 150"):
+            ks = S(q)["kits"]
+            self.assertEqual([k["tier"] for k in ks], ["economico", "essencial", "completo"], q)
+            a = {i["step"]: i["product"] for i in ks[1]["items"]}; b = {i["step"]: i["product"] for i in ks[2]["items"]}
+            diff = [s for s in a if s in b and a[s]["id"] != b[s]["id"]]
+            only_pack = a.keys() == b.keys() and diff and all(a[s]["productType"] == b[s]["productType"]
+                                                              and set(a[s]["ingredients"]) == set(b[s]["ingredients"]) for s in diff)
+            self.assertFalse(only_pack and not E.comp.better_item(a[diff[0]], b[diff[0]]), q)
+
+    def test_saude_sugestoes_texto_e_guardas_do_servidor(self):
+        # #40: busca de saúde com sugestões de saúde; pedido de kit de remédio explica sem citar médico
+        for q in ("estou gripado", "intestino preso", "psyllium"):
+            r = S(q)
+            self.assertIn("Remédio para dor de cabeça", r["suggestions"], q)
+            self.assertNotIn("Montar uma rotina de skin care", r["suggestions"], q)
+            self.assertNotIn("montar um kit", r["reply"], q)
+        r = S("monta um kit pra gripe")
+        self.assertEqual(r["kits"], []); self.assertIn("Remédios não entram em kit", r["reply"])
+        # o servidor recusa troca por remédio e kit forjado com remédio, mesmo vindo do cliente
+        sup = S("kit de suplementos"); kit = sup["kits"][0]
+        med = next(p for p in E.cat.products if p["domain"] == "medicamento")
+        with self.assertRaises(ValueError):
+            E.comp.apply_swap(kit, kit["items"][0]["step"], med["id"], build_ctx(E.cat, sup["intent"], [], []))
+        forged = copy.deepcopy(kit); forged["items"][0]["product"] = med
+        from graphrag.dialogue import api_adapt, api_swap
+        with self.assertRaises(ValueError):
+            api_adapt(E, forged, E.cat.stores[0]["id"], sup["intent"])
+        with self.assertRaises(ValueError):
+            api_swap(E, forged, forged["items"][1]["step"], forged["items"][1]["product"]["id"], sup["intent"])
+
+    def test_checador_pega_ativo_repetido_e_remedio_no_kit(self):
+        r = S("kit de suplementos")
         k = copy.deepcopy(r["kits"][0])
-        dip = next(p for p in E.cat.products if p["id"] != k["items"][0]["product"]["id"] and "dipirona" in p["ingredients"]
-                   and p["step"] != k["items"][0]["step"])
-        k["items"].append({"step": dip["step"], "product": dip, "reason": ""})
-        k["totalCents"] += dip["priceCents"]
-        self.assertTrue(any("M1" in m for m in check_kit(k, r["intent"])))
+        for d in [p for p in E.cat.products if "dipirona" in p["ingredients"]][:2]:
+            k["items"].append({"step": d["step"], "product": d, "reason": ""})
+        v = check_kit(k, r["intent"])
+        self.assertTrue(any("M1" in m for m in v))
+        self.assertTrue(any("M5" in m for m in v))
 
     def test_similar_nao_med(self):
         r = E.similars("p001", None)

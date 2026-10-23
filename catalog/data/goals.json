@@ -176,7 +176,9 @@
       "magnesio"
     ],
     "optional_steps": [
-      "vitaminas"
+      "vitaminas",
+      "imunidade",
+      "fibra"
     ],
     "synonyms": [
       "suplemento",

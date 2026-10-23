@@ -52,7 +52,7 @@ def replay(engine, history: list[str], base: dict) -> dict | None:
         req = {**base, "query": text}
         if ctx:
             req["context"] = ctx
-        ctx = engine.search(req).get("context") or ctx
+        ctx = engine.search(req, rag=False).get("context") or ctx      # replay: só o grafo (uma chamada por busca)
     return ctx
 
 

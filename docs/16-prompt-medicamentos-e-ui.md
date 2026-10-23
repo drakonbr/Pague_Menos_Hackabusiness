@@ -9,7 +9,7 @@ Este documento é o prompt de trabalho da rodada. Ele serve para conferir, no fi
 1. Nova branch. Interface mais próxima e real do app da rede; fluxo de navegação consolidado, pensando em UX/UI.
 2. Tirar a mensagem "procure um farmacêutico/médico" quando se pesquisa medicação. Ela atrapalha a lógica de uma farmácia: buscar "dor de cabeça" tem que trazer remédio para dor de cabeça, e o mesmo vale para qualquer medicação.
 3. Se o banco não tem remédio para as áreas mais comuns, **adicionar**. Pelo menos **6 remédios por área**, entre os mais comprados. Áreas citadas: dor de cabeça, dor no corpo, dor muscular, dor de barriga; "todos os tipos principais".
-4. Busca de medicação **e kits**. Exemplo: "remédio de dor de cabeça" mostra um kit com dipirona + paracetamol.
+4. Busca de medicação **e kits**. Exemplo: "remédio de dor de cabeça" mostra um kit com dipirona + paracetamol. **Revogado em 23/10 (#40, seção 15): remédio nunca entra em kit.**
 5. **Nunca** mostrar "busque um farmacêutico/médico". No máximo, quando não houver remédio para o pedido: "Não está no banco de dados ainda."
 6. **Não pode ser mockup.** Precisa ser treinado e implementado no GraphRAG.
 7. Escrever este prompt antes de começar e mantê-lo na documentação. **Não inventar: na dúvida, perguntar.**
@@ -18,8 +18,8 @@ Este documento é o prompt de trabalho da rodada. Ele serve para conferir, no fi
 
 | Antes | Agora |
 | --- | --- |
-| D-02: escopo só cosméticos e autocuidado | Medicamentos entram na busca e nos kits |
-| D-22: medicamento só em reposição; o motor nunca nomeia nem sugere | O motor busca, nomeia e monta kits de medicamento |
+| D-02: escopo só cosméticos e autocuidado | Medicamentos entram na busca e nos kits *(Desde 23/10, #40: remédio só na busca, nunca em kit.)* |
+| D-22: medicamento só em reposição; o motor nunca nomeia nem sugere | O motor busca e nomeia medicamento; desde 23/10 (#40) não monta kit de remédio |
 | doc 07: zona "bloqueado" para medicamento e sintoma, com encaminhamento | Sem bloqueio por medicamento ou sintoma; sem texto de encaminhamento |
 | `safety.py`: `BLOCK_RULES` de medicamento e sintoma; `REFERRAL` | Removidos. O que sobrar de regra tem que ser decidido na seção 8 |
 | Contrato: `reply`, `suggestions`, `notes` sem termos de saúde nem nome de medicamento | Nome de medicamento e de sintoma passam a aparecer nas respostas de busca |
@@ -43,14 +43,14 @@ Continua valendo: `persona.json` (o que a Renata **usa**) fica no aparelho e o m
 - **Léxico e conceitos** (`lexicon.py`, `concepts.py`, `scope.py`): o jeito de falar ("dor de cabeça", "enxaqueca", "dor de barriga", "intestino preso") aponta para a queixa; princípio ativo e **nome popular** também ("dorflex" → orfenadrina, "buscopan" → escopolamina). Os nomes populares só servem para entender a busca: nenhuma marca real aparece em produto. A prateleira de cada queixa é gerada do catálogo (`ScopeResolver.health_concepts`): produto novo de uma área já entra sem editar conceito. Remédio que não existe (diabetes, antibiótico, anticoncepcional, colírio...) é um conceito `absent` com resposta fixa.
 - **Ato de fala** (`nlu_corpus.py`): frases de busca de medicamento entram no treino do Naive Bayes, com frases de teste separadas.
 - **Segurança** (`safety.py`): sai o bloqueio por medicamento e por sintoma. Se nada no catálogo atende ao pedido, a resposta é só "Não está no banco de dados ainda." Sem farmacêutico, sem médico.
-- **Compositor**: medicamento passa a entrar em kits. Regras de composição: ver pergunta 3 da seção 8.
+- **Compositor**: medicamento passa a entrar em kits. Regras de composição: ver pergunta 3 da seção 8. *(Desde 23/10, #40: remédio só na busca, nunca em kit.)*
 - **Vetores**: medicamentos entram no corpus do PPMI+SVD (hoje são pulados em `embed.py`).
 - **Treino**: `python3 -m graphrag.train` e `python3 graphrag/eval/calibrate.py` gerando artefatos novos; contagens de nós e arestas registradas no doc 08.
 - **Avaliação**: conjunto de busca de medicamentos em `graphrag/eval/search_set.py` (frases de ajuste e frases cegas, separadas); medir antes e depois.
 
 ## 5. App (`app/`)
 
-- Busca de medicamento abre a tela de resultados como qualquer busca: kits em cima, lista embaixo.
+- Busca de medicamento abre a tela de resultados como qualquer busca: kits em cima, lista embaixo. (Desde 23/10, #40: só a lista, sem kit.)
 - A categoria "Medicamentos e saúde" passa a abrir, com subcategorias por área.
 - A página do produto de medicamento mostra princípio ativo, concentração, quantidade, selo "exige receita" quando for o caso e as advertências da embalagem.
 - Nenhuma tela mostra "procure um farmacêutico/médico". A tela de bloqueio de saúde sai do fluxo de busca.
@@ -70,12 +70,12 @@ Continua valendo: `persona.json` (o que a Renata **usa**) fica no aparelho e o m
 | --- | --- | --- | --- |
 | A1 | Branch `feat/medicamentos-e-ui` com todo o trabalho | `git status` | feito (sem commit; aguarda aprovação) |
 | A2 | ≥ 6 medicamentos por área aprovada | `validate_catalog.py` ("pelo menos 6 por área") | feito: 79 medicamentos em 12 áreas, de 6 a 8 cada; 76/76 checagens |
-| A3 | "remédio de dor de cabeça" devolve kit com dipirona e paracetamol | `test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol` | feito: Econômico, Essencial e Completo, todos com os dois |
-| A4 | "dor no corpo", "dor muscular", "dor de barriga" devolvem medicamentos e kits da área | `test_T8_areas_de_saude_montam_kit_da_area` (12 áreas) | feito |
+| A3 | "remédio de dor de cabeça" devolve dipirona e paracetamol (desde 23/10, #40: avulsos, sem kit) | `test_T7_dor_de_cabeca_traz_remedios_avulsos_sem_kit` | feito |
+| A4 | "dor no corpo", "dor muscular", "dor de barriga" devolvem os itens da área (desde 23/10, #40: sem kit) | `test_T8_areas_de_saude_listam_sem_kit` (12 áreas) | feito |
 | A5 | Nenhuma resposta contém "farmacêutico" ou "médico" como encaminhamento | invariante M2 em toda resposta testada; checagem de texto no catálogo; teste do app (T8) | feito; tela "Falar com um farmacêutico" removida |
 | A6 | Pedido sem remédio no catálogo responde "Não está no banco de dados ainda." | `test_sem_remedio_no_catalogo_diz_so_que_nao_esta`; regra `missing` da avaliação (8/8) | feito; visto no app |
 | A7 | Medicamentos no grafo, nos vetores e no classificador; artefatos retreinados | seção 9 | feito: grafo 599 nós / 3261 arestas; vocabulário 1361; ato de fala 63/65 |
-| A8 | App mostra os kits e os produtos de medicamento vindos do motor real | percurso no Chromium (375 px) com o servidor em :8787 | feito: busca → kits → kit → troca; Categorias → Medicamentos; produto com receita; "remédio para diabetes" |
+| A8 | App mostra os kits e os produtos de medicamento vindos do motor real | percurso no Chromium (375 px) com o servidor em :8787 | feito: busca → kits → kit → troca; Categorias → Medicamentos; produto com receita; "remédio para diabetes" *(Desde 23/10, #40: remédio só na busca, nunca em kit.)* |
 | A9 | Interface e navegação revistas conforme a seção 8 | percurso no navegador | feito em parte; ver seção 10 |
 | A10 | Todos os testes passam (catálogo, GraphRAG, app) | comandos do doc 08 | feito: 76/76 · 95/95 · 46/46; build ok |
 | A11 | Docs 07, 09, 14 e o contrato atualizados com o que mudou | diff | feito (e 05, 06, 08, READMEs) |
@@ -86,16 +86,16 @@ Continua valendo: `persona.json` (o que a Renata **usa**) fica no aparelho e o m
 
 | # | Pergunta | Resposta | Como fica |
 | --- | --- | --- | --- |
-| 1 | Medicamentos com receita | **Todos, igual** | Com e sem receita entram na busca e nos kits do mesmo jeito. A tarja aparece só como dado do produto (selo "exige receita"), sem mensagem. Antibióticos e controlados (retenção de receita) não estão entre os "mais comprados" das áreas pedidas e não foram criados nesta rodada; se quiser, é só pedir |
+| 1 | Medicamentos com receita | **Todos, igual** | Com e sem receita entram na busca e nos kits do mesmo jeito. A tarja aparece só como dado do produto (selo "exige receita"), sem mensagem. Antibióticos e controlados (retenção de receita) não estão entre os "mais comprados" das áreas pedidas e não foram criados nesta rodada; se quiser, é só pedir *(Desde 23/10, #40: remédio só na busca, nunca em kit.)* |
 | 2 | Frase "Se persistirem os sintomas..." | **Some de vez** | Nenhuma tela mostra a frase |
 | 3 | Regra dos kits | **Aceita** | Nunca o mesmo princípio ativo duas vezes no kit; nunca dois anti-inflamatórios juntos. As duas regras entram como interações `evitar` (mesma regra K4 dos cosméticos) |
 | 4 | Referência visual | **Doc 13 + site público** | Sem prints novos |
 
 Perguntas feitas:
 
-1. **Medicamentos com receita** (tarja vermelha, antibiótico, controlados): entram na busca e nos kits como os isentos de prescrição, ou só os isentos?
+1. **Medicamentos com receita** (tarja vermelha, antibiótico, controlados): entram na busca e nos kits como os isentos de prescrição, ou só os isentos? *(Desde 23/10, #40: remédio só na busca, nunca em kit.)*
 2. **Frase legal**: a propaganda de medicamento isento de prescrição no Brasil (RDC 96/2008) costuma levar "SE PERSISTIREM OS SINTOMAS, O MÉDICO DEVERÁ SER CONSULTADO". Ela some de vez, ou fica só como letra pequena na página do produto (fora da busca e dos kits)?
-3. **Regra dos kits de medicamento**: no exemplo, dipirona + paracetamol no mesmo kit. Regra proposta: cada kit traz princípios ativos diferentes para o mesmo sintoma (nunca o mesmo ativo duas vezes) e nunca dois anti-inflamatórios do mesmo grupo juntos (ex.: ibuprofeno + naproxeno). Aceita?
+3. **Regra dos kits de medicamento** (revogada em 23/10 pelo #40: não há kit de remédio; as regras de princípio ativo seguem no checador M1): no exemplo, dipirona + paracetamol no mesmo kit. Regra proposta: cada kit traz princípios ativos diferentes para o mesmo sintoma (nunca o mesmo ativo duas vezes) e nunca dois anti-inflamatórios do mesmo grupo juntos (ex.: ibuprofeno + naproxeno). Aceita?
 4. **Referência visual**: os prints do app não estão no repositório (doc 13, D-19). Dá para mandar prints de novo (sem dados pessoais) das telas que devem ficar mais fiéis, ou sigo só com o doc 13 e o site público?
 
 ## 9. Medições (21/10)
@@ -120,10 +120,10 @@ As dependências do GraphRAG foram instaladas num ambiente virtual isolado (`pyt
 
 ## 10. Interface e navegação: o que mudou
 
-- **Busca**: a barra diz "Busque remédio, sintoma ou produto"; exemplos com remédio. Busca de remédio abre a mesma tela de resultados (kits em cima, lista embaixo).
+- **Busca**: a barra diz "Busque remédio, sintoma ou produto"; exemplos com remédio. Busca de remédio abre a mesma tela de resultados (kits em cima, lista embaixo; desde 23/10, #40, só a lista).
 - **Resultados**: o painel "Quanto quer gastar" deixou de abrir sozinho e empurrar os kits para baixo; agora é uma folha que abre pelo chip de valor. O chip e a pergunta de tipo de pele só aparecem em objetivo de pele. Os filtros ganharam "Só sem receita", e "Tipo de pele" só aparece quando a lista tem dermocosmético.
-- **Cartão do kit**: remédio mostra o nome com a dose ("Dipirona 500 mg — 10 comprimidos"), não o tipo.
-- **Kit de remédio**: sem a opção de assinatura (assinatura é para rotina, não para sintoma).
+- **Cartão do kit**: remédio mostra o nome com a dose ("Dipirona 500 mg — 10 comprimidos"), não o tipo. *(Desde 23/10, #40: remédio só na busca, nunca em kit.)*
+- **Kit de remédio**: sem a opção de assinatura (assinatura é para rotina, não para sintoma). *(Desde 23/10, #40: remédio só na busca, nunca em kit.)*
 - **Produto**: princípio ativo, selo "Venda sob prescrição" ou "Sem receita", seções do site adaptadas para remédio; selo "Exige receita" no cartão da lista.
 - **Categorias**: "Medicamentos e saúde", "Vida saudável" e "Higiene pessoal" abrem; Medicamentos tem as 12 áreas e a reposição.
 - **Removido**: tela de bloqueio de saúde, botão e tela "Falar com um farmacêutico", confirmação de troca "com o farmacêutico" na reposição, todo texto de encaminhamento.
@@ -275,7 +275,7 @@ A tarja segue o que é usual no varejo, a partir de conhecimento geral, **sem co
 ## 12. Desconto dos kits (#30, 23/10)
 
 - Todo kit com 2 itens ou mais tem desconto progressivo: 10% (2 itens), 12% (3), 15% (4 ou 5). O kit sempre sai mais barato que comprar os itens avulsos, sem exagero.
-- Vale também para os kits de medicamento. Decisão da Julia: o exemplo pedido foi o kit de dor de cabeça. Ressalva registrada: em produção, promoção de medicamento segue a RDC 96/2008 da Anvisa e precisa de revisão jurídica antes de ir ao ar. No protótipo, o desconto aparece como preço do kit, sem frase de apelo ao consumo.
+- Vale também para os kits de medicamento (**revogado em 23/10 pelo #40: não há mais kit de remédio**). Decisão da Julia na época: o exemplo pedido foi o kit de dor de cabeça. Ressalva registrada: em produção, promoção de medicamento segue a RDC 96/2008 da Anvisa e precisa de revisão jurídica antes de ir ao ar. No protótipo, o desconto aparece como preço do kit, sem frase de apelo ao consumo.
 - O cashback é calculado sobre o que a pessoa paga: o cashback dos itens reduzido na mesma proporção do desconto.
 - Arredondamento: meio centavo para cima, em aritmética inteira, igual no motor e no app.
 
@@ -287,3 +287,19 @@ A tarja segue o que é usual no varejo, a partir de conhecimento geral, **sem co
 - Limite conhecido: o simulador do app (reserva quando o motor está fora) usa a mesma regra de faixas, mas não tem a mesma NLU e relevância do motor; em cerca de 7 de 24 frases ele escolhe kits diferentes (já acontecia antes do #31).
 - Limite conhecido: o catálogo não tem nota de cliente. "Mais bem avaliado" é a relevância do motor (preocupações, tipo de pele, recuperação BM25 + vetores + grafo). Com notas reais, elas entram nesse critério.
 - Na conversa, "o completo", "o kit completo" e "o terceiro" escolhem esta faixa; "mais completo" continua sendo pedir para gastar mais.
+- **Nota de 23/10 (#40):** os exemplos de dor de cabeça e gripe desta seção são histórico; remédio não entra mais em kit (seção 15).
+
+## 14. RAG com DeepSeek (#33 a #38, 23/10)
+
+- **Quando entra:** só quando o grafo não entende. O grafo sempre roda primeiro; se achou, a resposta dele vale e a DeepSeek nem é chamada. Sinais: busca sem nada reconhecido ("Não encontrei esse item"), só a palavra "remédio" sem o quê (lista genérica de medicamentos) e, na conversa, ajuste que o grafo não leu (negação, pergunta sem produto ou refinamento que não mudou nada). Item que o grafo reconhece e o catálogo não tem continua com "Não está no banco de dados ainda." sem chamar a DeepSeek.
+- **O que ela faz:** traduz a frase para ids do catálogo (prompt em `graphrag/llm.py`, o mesmo do documento de auditoria). Id que não existe é descartado; com o que sobra montamos uma frase só com rótulos do catálogo e o grafo busca de novo. A tela não mostra "Entendi como": a pessoa vê direto o resultado; a frase entendida vai só para o registro do servidor.
+- **Medido** (`graphrag/eval/report_rag.md`): 28 frases que o grafo não entendia (buscas e ajustes); grafo sozinho acerta 1, grafo + DeepSeek acerta 27 (erra "nada que arda", em que a DeepSeek devolveu tudo vazio), cerca de 1,4 s por chamada. No conjunto de busca do motor (101 frases) a DeepSeek é chamada 0 vezes.
+- **Limites:** o grafo às vezes entende errado em vez de não entender (ex.: "quero ficar com a pele de bebê" vira "linha infantil"; "tô fanho e entupido" vira banho e corpo); nesses casos a DeepSeek não entra, pela regra de não invalidar o grafo. Conjunto de avaliação pequeno (28 frases).
+
+## 15. Remédio nunca entra em kit (#40, 23/10)
+
+- **Pedido da Julia:** sugerir combinação de medicamentos ("estou com dor de cabeça" → dipirona + paracetamol) é um problema com a Anvisa. Remédio aparece só avulso, na lista; kits continuam para pele, suplementos (vitamina C, colágeno...) e higiene. Revoga o item 4 da seção 1, a regra dos kits de medicamento (seção 8, resposta 3) e o desconto em kit de remédio (seção 12).
+- **Regra K13** (motor e simulador): nenhum produto do domínio `medicamento` entra em kit nem na troca de item. Objetivo em que alguma etapa obrigatória só tem remédio (os 13 objetivos de saúde) não monta kit: a resposta é a lista dos itens daquela queixa, sem texto de kit e sem mandar procurar médico ou farmacêutico. Invariante nova **M5** no motor e no app.
+- **O que conta como remédio (decisão da Julia):** Vitamina C 1 g efervescente e Psyllium passaram para `suplemento` (ganharam o aviso dos suplementos). Decisão da Julia: as etapas deles, "imunidade" e "fibra", são opcionais no kit de suplementos, ao lado de "vitaminas". Para caber no limite de 5 itens (K9), o compositor passou a testar toda combinação de opcionais que cabe, das maiores para as menores (antes: todas, só a primeira ou nenhuma). Ex.: "kit de suplementos" leva a vitamina C efervescente no Essencial e o psyllium no Completo. e continuam aparecendo na busca do sintoma (gripe, prisão de ventre). Soro fisiológico nasal, sais e soro de reidratação continuam remédio.
+- **RAG:** a DeepSeek não reativa kit de remédio; a regra fica no compositor, depois dela.
+- Limite: a regra de dose maior do #31 ("versão superior", ex.: dipirona 500 mg → 1 g) continua no código, mas hoje não tem exemplo vivo, porque só remédio tinha esse caso.

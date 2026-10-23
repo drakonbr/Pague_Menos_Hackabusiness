@@ -72,7 +72,7 @@ EXTRA_GOALS = [
         "label": "Suplementos e vitaminas",
         "concerns": ["nutricao", "beleza_interna"],
         "required_steps": ["omega3", "colageno", "magnesio"],
-        "optional_steps": ["vitaminas"],
+        "optional_steps": ["vitaminas", "imunidade", "fibra"],      # imunidade e fibra: vitamina C efervescente e psyllium (#40)
         "synonyms": ["suplemento", "suplementos", "vitamina", "vitaminas", "omega", "ômega", "omega 3", "ômega 3",
                      "colageno", "colágeno", "magnesio", "magnésio"],
     },

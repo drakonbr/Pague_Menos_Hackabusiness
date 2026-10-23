@@ -48,6 +48,9 @@ def check_kit(kit: dict, intent: dict) -> list[str]:
     truth = [T.prod.get(i) for i in ids]
     if len(set(ids)) != len(ids):
         v.append(f"{tag} I1: produto repetido")
+    for i, t in zip(ids, truth):                                            # M5 (#40): remédio nunca entra em kit
+        if t and t["domain"] == "medicamento":
+            v.append(f"{tag} M5: {i} é remédio e está no kit")
     covered = [s for t in truth if t for s in t["covers"]]
     if len(set(covered)) != len(covered):
         v.append(f"{tag} I2: etapa coberta duas vezes")

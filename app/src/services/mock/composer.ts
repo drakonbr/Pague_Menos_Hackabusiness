@@ -42,10 +42,11 @@ export interface Ctx {
   storeId: string | null;
 }
 
-const MED_STEPS = new Set(PRODUCTS.filter((p) => p.domain === "medicamento").map((p) => p.step));
-/** Objetivo de saúde (doc 16): todas as etapas obrigatórias são de medicamento. */
+/** K13 (#40, regra da Anvisa): remédio nunca entra em kit nem na troca de item; continua nas listas. Igual ao motor. */
+const KIT_POOL = PRODUCTS.filter((p) => p.domain !== "medicamento");
+/** Objetivo de saúde: alguma etapa obrigatória só tem remédio, então não há kit (dor de cabeça, gripe...). */
 export function isHealthGoal(goal: GoalId): boolean {
-  return GOALS.find((g) => g.id === goal)!.requiredSteps.every((s) => MED_STEPS.has(s));
+  return !GOALS.find((g) => g.id === goal)!.requiredSteps.every((s) => KIT_POOL.some((p) => p.coversSteps.includes(s)));
 }
 
 export function buildCtx(intent: Intent, requestedIngredients: string[]): Ctx | null {
@@ -111,7 +112,7 @@ export function score(p: Product, ctx: Ctx): number {
   if (p.claims.includes("não comedogênico")) s += 1;
   for (const ing of ctx.requestedIngredients) if (p.ingredients.includes(ing)) s += 12;
   // equilíbrio de faixa: com relevância igual, o Essencial prefere a faixa intermediária
-  s += p.priceTier === "intermediario" ? 2 : p.priceTier === "premium" ? 1 : 0;
+  s += TIER_BONUS[p.priceTier] ?? 0;
   return s;
 }
 
@@ -131,7 +132,7 @@ function specialtyMismatch(p: Product, ctx: Ctx): boolean {
 }
 
 export function candidatesFor(step: StepId, ctx: Ctx): { list: Product[]; relaxed: boolean } {
-  const pool = PRODUCTS.filter((p) => p.coversSteps.includes(step));
+  const pool = KIT_POOL.filter((p) => p.coversSteps.includes(step));
   const filt = (relax: boolean) => {
     const base = pool.filter(
       (p) => baseEligible(p, ctx, relax) && (!NEEDS_CONCERN_MATCH.includes(step) || concernMatch(p, ctx)),
@@ -201,7 +202,9 @@ interface Combo {
   total: number;
   list: number;
   rel: number;
+  relq: number; // rel sem o bônus de faixa de preço: é o que conta como "item melhor" no Completo
 }
+const TIER_BONUS: Record<string, number> = { intermediario: 2, premium: 1 };
 
 const ids = (c: Combo) => c.slots.map((s) => s.product.id);
 
@@ -226,7 +229,8 @@ function enumerate(steps: StepId[], cand: Map<StepId, Product[]>, ctx: Ctx, maxB
           if (chosen[x].product.brand === chosen[y].product.brand) rel += 2;
       const kitTotal = kitPrice(total, chosen.length).totalCents;
       if (maxBudget != null && kitTotal > maxBudget) return; // K3 (com o desconto do kit)
-      out.push({ slots: chosen.map((c) => ({ ...c })), total: kitTotal, list, rel });
+      const tier = chosen.reduce((t, c) => t + (TIER_BONUS[c.product.priceTier] ?? 0), 0);
+      out.push({ slots: chosen.map((c) => ({ ...c })), total: kitTotal, list, rel, relq: rel - tier });
       return;
     }
     const step = ordered[i];
@@ -402,6 +406,18 @@ function isUpgrade(base: Combo, c: Combo): boolean {
   return ups.length > 0 && ups.every((k) => betterItem(a.get(k)!, b.get(k)!));
 }
 
+/** c só troca itens de base por variações do mesmo item (mesmo tipo e ativos: embalagem, sabor), sem versão superior.
+ * Ex.: psyllium 10 -> 30 sachês. Não serve de Completo para esse Essencial. Igual ao motor. */
+function isVariant(base: Combo, c: Combo): boolean {
+  const a = new Map(base.slots.map((s) => [s.step, s.product]));
+  const b = new Map(c.slots.map((s) => [s.step, s.product]));
+  if (a.size !== b.size || [...a.keys()].some((k) => !b.has(k))) return false;
+  const ups = [...a.keys()].filter((k) => a.get(k)!.id !== b.get(k)!.id);
+  const same = (x: Product, y: Product) =>
+    x.productType === y.productType && x.ingredients.length === y.ingredients.length && x.ingredients.every((i) => y.ingredients.includes(i));
+  return ups.length > 0 && ups.every((k) => same(a.get(k)!, b.get(k)!) && !betterItem(a.get(k)!, b.get(k)!));
+}
+
 /** Diz o que o Completo tem a mais que a faixa anterior, sem prometer o que a regra não garante (#31). Igual ao motor. */
 function completeRationale(base: Combo, comp: Combo, baseName: string): string {
   const extra = comp.slots.length - base.slots.length;
@@ -512,9 +528,12 @@ export function compose(ctx: Ctx, requestId: string): Composition {
   const maxB = Math.max(effBudget, altBudget);
 
   const optional = goal.optionalSteps.filter((s) => short.has(s));
-  const optSets: StepId[][] = [optional, optional.slice(0, 1), []].filter(
-    (set, i, arr) => arr.findIndex((o) => o.join() === set.join()) === i,
-  );
+  // toda combinação de opcionais que cabe no limite de 5 itens (K9), das maiores para as menores. Igual ao motor.
+  const combos = (xs: StepId[], k: number): StepId[][] =>
+    k === 0 ? [[]] : xs.flatMap((x, i) => combos(xs.slice(i + 1), k - 1).map((c) => [x, ...c]));
+  const room = Math.max(0, 5 - required.length);
+  const optSets: StepId[][] = [];
+  for (let k = Math.min(room, optional.length); k >= 0; k--) optSets.push(...combos(optional, k));
 
   // #31: Econômico < Essencial < Completo no preço. Completo = mais itens (etapas opcionais) e, no empate, itens mais
   // relevantes; pode repetir itens do Essencial. Essencial = o mais relevante entre os dois em preço. Igual ao motor.
@@ -531,7 +550,8 @@ export function compose(ctx: Ctx, requestId: string): Composition {
   const byComplete = (a: Combo, b: Combo) => n(b) - n(a) || b.rel - a.rel || a.total - b.total || ids(a).join().localeCompare(ids(b).join());
   let comp: Combo | undefined = pool.filter((c) => c.total > econ.total && c.total <= altBudget).sort(byComplete)[0];
   let ess: Combo | undefined = pool
-    .filter((c) => c.total > econ.total && c.total <= effBudget && (!comp || (c.total < comp.total && (n(c) < n(comp) || c.rel < comp.rel))))
+    .filter((c) => c.total > econ.total && c.total <= effBudget
+      && (!comp || (c.total < comp.total && (n(c) < n(comp) || (c.relq < comp.relq && !isVariant(c, comp))))))
     .sort(cmpBest)[0];
   if (comp && !ess) {
     // sem meio-termo (ex.: só kits de 2 itens): Essencial = o mais relevante; Completo = mais itens ou a mesma cesta em
@@ -571,7 +591,10 @@ export function compose(ctx: Ctx, requestId: string): Composition {
 export function rankProducts(ctx: Ctx, limit = 30): Product[] {
   // pedido de remédio lista remédios; os demais pedidos não listam remédio (o motor real faz isso pela prateleira)
   const med = isHealthGoal(ctx.primary);
-  const same = PRODUCTS.filter((p) => (p.domain === "medicamento") === med);
+  const goal = GOALS.find((g) => g.id === ctx.primary)!;
+  const goalSteps = new Set([...goal.requiredSteps, ...goal.optionalSteps]);
+  // objetivo de saúde lista o que trata aquele objetivo (remédio ou não, ex.: psyllium); os demais não listam remédio
+  const same = med ? PRODUCTS.filter((p) => p.coversSteps.some((s) => goalSteps.has(s))) : PRODUCTS.filter((p) => p.domain !== "medicamento");
   const strict = same.filter((p) => baseEligible(p, ctx, false));
   const pool = strict.length >= 8 ? strict : same.filter((p) => baseEligible(p, ctx, true));
   return [...pool].sort(cmpProducts(ctx)).slice(0, limit);
@@ -612,7 +635,7 @@ export function swapOptions(kit: Kit, step: StepId, ctx: Ctx): SwapOption[] {
   if (idx < 0) return [];
   const cur = kit.items[idx].product;
   const out: Array<SwapOption & { s: number }> = [];
-  for (const p of PRODUCTS) {
+  for (const p of KIT_POOL) {
     if (p.id === cur.id || !p.coversSteps.includes(step)) continue;
     if (!baseEligible(p, ctx, false)) continue;
     const compat = swapCompat(kit, idx, p);
@@ -638,6 +661,7 @@ export function applySwap(kit: Kit, step: StepId, productId: string, ctx: Ctx): 
   const idx = kit.items.findIndex((i) => i.step === step);
   const cand = PRODUCTS.find((p) => p.id === productId);
   if (idx < 0 || !cand) throw new Error("Troca inválida.");
+  if (cand.domain === "medicamento") throw new Error("Remédio não entra em kit."); // K13
   const compat = swapCompat(kit, idx, cand);
   if (!compat || !compat.compatible) throw new Error(compat?.reason ?? "Produto incompatível com o kit.");
   if (!baseEligible(cand, ctx, false)) throw new Error("Produto indisponível para essas preferências.");

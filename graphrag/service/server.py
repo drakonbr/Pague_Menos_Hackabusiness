@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from graphrag.chat_stream import BadRequest, search_chat_events, sse        # noqa: E402
 from graphrag.dialogue import Engine, api_adapt, api_swap, api_swap_options  # noqa: E402
+from graphrag.llm import DeepSeek  # noqa: E402
 
 ENGINE: Engine | None = None
 ALLOW_INGEST = False
@@ -123,7 +124,7 @@ def main():
     ap.add_argument("--allow-ingest", action="store_true", help="liga POST /v1/admin/ingest (só para uso local)")
     a = ap.parse_args()
     ALLOW_INGEST = a.allow_ingest
-    ENGINE = Engine.build()
+    ENGINE = Engine.build(llm=DeepSeek.from_env())     # sem DEEPSEEK_API_KEY: só o grafo
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
     print(f"GraphRAG local em http://{a.host}:{a.port}  (GET /v1/health)")
     srv.serve_forever()

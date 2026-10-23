@@ -220,9 +220,10 @@ MED_PRODUCTS: list[tuple] = []
 RX = "receita_simples"   # tarja vermelha, venda sob prescrição
 
 
-def med(lab, name, ptype, step, area, form, size, concerns, ings, price, rx=None):
+def med(lab, name, ptype, step, area, form, size, concerns, ings, price, rx=None, domain="medicamento"):
+    warn = ["consultar_se_medicacao"] if domain == "suplemento" else []      # mesmo aviso dos outros suplementos
     MED_PRODUCTS.append((lab, name, ptype, step, "med_" + area, form, size, "T", concerns, ings, None, "dia_noite",
-                         price, [], [], [], {"domain": "medicamento", "rx": rx}))
+                         price, [], warn, [], {"domain": domain, "rx": rx}))
 
 
 # Laboratórios fictícios: Vitalis Farma, Farmanorte, Lab Genérico Sul, Lab Nova Via, Lab Aurora.
@@ -318,7 +319,7 @@ med("Lab Nova Via", "Antigripal Dipirona 500 mg + Clorfeniramina 2 mg + Cafeína
     "antigripal em cápsulas", "antigripal", "gripe", "caps", "20 un", GR + ["febre"],
     ["dipirona", "clorfeniramina", "cafeina_med"], 15.90)
 med("Farmanorte", "Vitamina C 1 g Efervescente — 10 comprimidos", "vitamina C efervescente", "imunidade", "gripe",
-    "box", "10 un", GR, ["acido_ascorbico"], 13.90)
+    "box", "10 un", GR, ["acido_ascorbico"], 13.90, domain="suplemento")      # suplemento (#40): etapa opcional do kit de suplementos
 med("Lab Genérico Sul", "Soro Fisiológico Nasal 0,9% — 30 mL", "solução nasal de cloreto de sódio", "descongestionante_nasal",
     "gripe", "dropper", "30 ml", GR + ["nariz_entupido", "alergia"], ["cloreto_sodio"], 6.90)
 med("Vitalis Farma", "Nafazolina 0,5 mg/mL Solução Nasal — 30 mL", "descongestionante nasal em gotas",
@@ -399,9 +400,9 @@ med("Farmanorte", "Leite de Magnésia (Hidróxido de Magnésio) — suspensão 1
 med("Lab Nova Via", "Macrogol 3350 Pó para Solução Oral — 10 sachês", "laxante em pó", "laxante", "prisao_de_ventre",
     "powder", "10 un", PV, ["macrogol"], 34.90)
 med("Vitalis Farma", "Psyllium (Plantago ovata) Pó — 10 sachês", "fibra em pó", "fibra", "prisao_de_ventre", "powder",
-    "10 un", PV, ["psyllium"], 29.90)
+    "10 un", PV, ["psyllium"], 29.90, domain="suplemento")
 med("Farmanorte", "Psyllium (Plantago ovata) Pó — 30 sachês", "fibra em pó", "fibra", "prisao_de_ventre", "powder",
-    "30 un", PV, ["psyllium"], 69.90)
+    "30 un", PV, ["psyllium"], 69.90, domain="suplemento")
 
 EN = ["enjoo"]
 med("Vitalis Farma", "Dimenidrinato 100 mg — 10 comprimidos", "dimenidrinato em comprimidos", "antiemetico", "enjoo",
@@ -418,3 +419,6 @@ med("Vitalis Farma", "Domperidona 10 mg — 30 comprimidos", "domperidona em com
     "30 un", EN + ["azia"], ["domperidona"], 19.90, RX)
 
 MED_HOW_TO = {s: "Siga as instruções da bula." for s in MED_STEPS}
+# vitamina C efervescente e psyllium viraram suplemento (#40): modo de uso de suplemento, não de bula
+MED_HOW_TO.update({"imunidade": "Dissolva 1 comprimido em um copo de água, conforme a embalagem.",
+                   "fibra": "Misture 1 sachê em um copo de água e beba em seguida, conforme a embalagem."})

@@ -2,19 +2,22 @@
 
 O que a recuperação (retrieval.py) faz é ORDENAR candidatos; quem decide o que pode entrar num kit são estas regras:
   K1 sem repetir produto, tipo ou etapa coberta · K3 orçamento · K4 interações · K5 fotossensibilizante pede protetor
-  K8 três faixas (Econômico < Essencial < Completo no preço) · K9 no máximo 5 itens · K10 nada no orçamento mostra o mais
+  K8 três faixas (Econômico < Essencial < Completo no preço) · K13 remédio nunca entra em kit (#40) · K9 no máximo 5 itens · K10 nada no orçamento mostra o mais
   próximo · K12 combinação proibida pedida explicitamente vira aviso.
-Mais: ingrediente que a pessoa quer evitar nunca entra; estoque pode ser da loja escolhida. Medicamento entra em kit
-(doc 16) com duas regras a mais: nunca o mesmo princípio ativo duas vezes; nunca dois anti-inflamatórios (interações).
+Mais: ingrediente que a pessoa quer evitar nunca entra; estoque pode ser da loja escolhida. Medicamento NÃO entra em
+kit desde 23/10 (K13, #40, regra da Anvisa); as regras de princípio ativo repetido e de anti-inflamatórios seguem no
+checador (M1) e nas listas.
 """
 from __future__ import annotations
 
+import itertools
 import re
 from dataclasses import dataclass, field
 
 from .data import STEP_ORDER, Catalog
 
 SPECIALTY = {"acne", "manchas", "sinais_idade", "olheiras", "textura"}
+TIER_BONUS = {"intermediario": 2, "premium": 1}   # desempate por faixa de preço; não conta como "item melhor" no Completo
 GENERIC_STEPS = ["limpeza", "hidratacao", "protecao_solar", "protecao_corporal"]
 NEEDS_CONCERN_MATCH = ["tratamento", "preparo", "complemento"]
 GENERIC_ING = {"glicerina", "tensoativo_suave", "filtro_uv", "aloe_vera"}
@@ -122,6 +125,8 @@ class Composer:
     def __init__(self, cat: Catalog):
         self.cat = cat
         self.pool = list(cat.products)
+        # K13 (#40, regra da Anvisa): remédio nunca entra em kit nem na troca de item; continua nas listas de produtos
+        self.kit_pool = [p for p in self.pool if p["domain"] != "medicamento"]
 
     # ------------------------------------------------------------ elegibilidade e nota
     def stock(self, p: dict, ctx: Ctx) -> int:
@@ -164,7 +169,7 @@ class Composer:
         for ing in ctx.requested:
             if ing in p["ingredients"]:
                 s += 12
-        s += 2 if p["priceTier"] == "intermediario" else 1 if p["priceTier"] == "premium" else 0
+        s += TIER_BONUS.get(p["priceTier"], 0)
         s += ctx.w_rel * ctx.rel.get(p["id"], 0.0)       # desempate pela recuperação (BM25 + vetores + grafo)
         return round(s, 3)
 
@@ -174,8 +179,13 @@ class Composer:
     def specialty_mismatch(self, p: dict, ctx: Ctx) -> bool:
         return any(c in SPECIALTY and c not in ctx.concerns for c in p["concerns"])
 
+    def kit_possible(self, goal_id: str) -> bool:
+        """K13: o objetivo só tem kit se toda etapa obrigatória tem algum produto que não é remédio (dor de cabeça: não)."""
+        steps = self.cat.goal_by_id[goal_id]["required_steps"]
+        return all(any(s in p["coversSteps"] for p in self.kit_pool) for s in steps)
+
     def candidates_for(self, step: str, ctx: Ctx) -> tuple[list[dict], bool]:
-        pool = [p for p in self.pool if step in p["coversSteps"]]
+        pool = [p for p in self.kit_pool if step in p["coversSteps"]]
 
         def filt(relax: bool):
             base = [p for p in pool if self.base_eligible(p, ctx, relax)
@@ -245,7 +255,8 @@ class Composer:
                     for y in range(x + 1, len(chosen)):
                         if chosen[x][1]["brand"] == chosen[y][1]["brand"]:
                             rel += 2
-                out.append({"slots": list(chosen), "total": kit_total, "rel": rel,
+                tier = sum(TIER_BONUS.get(p["priceTier"], 0) for _, p in chosen)
+                out.append({"slots": list(chosen), "total": kit_total, "rel": rel, "relq": rel - tier,
                             "ids": [p["id"] for _, p in chosen]})
                 return
             step = ordered[i]
@@ -354,6 +365,16 @@ class Composer:
         ups = [s for s in a if a[s]["id"] != b[s]["id"]]
         return bool(ups) and all(self.better_item(a[s], b[s]) for s in ups)
 
+    def variant(self, base: dict, c: dict) -> bool:
+        """c só troca itens de base por variações do mesmo item (mesmo tipo e ativos: embalagem, sabor), sem versão superior.
+        Ex.: psyllium 10 -> 30 sachês. Não serve de Completo para esse Essencial."""
+        a, b = dict(base["slots"]), dict(c["slots"])
+        if a.keys() != b.keys():
+            return False
+        ups = [s for s in a if a[s]["id"] != b[s]["id"]]
+        return bool(ups) and all(a[s]["productType"] == b[s]["productType"] and set(a[s]["ingredients"]) == set(b[s]["ingredients"])
+                                 and not self.better_item(a[s], b[s]) for s in ups)
+
     def complete_rationale(self, base: dict, comp: dict, base_name: str) -> str:
         """Diz o que o Completo tem a mais que a faixa anterior, sem prometer o que a regra não garante (#31)."""
         extra = len(comp["ids"]) - len(base["ids"])
@@ -423,10 +444,10 @@ class Composer:
         alt_b = ctx.budget if ctx.budget is not None else round(econ["total"] * 2.4)
         max_b = max(eff, alt_b)
         optional = [s for s in goal["optional_steps"] if s in short]
-        opt_sets, seen = [], set()
-        for st in (optional, optional[:1], []):
-            if tuple(st) not in seen:
-                seen.add(tuple(st)); opt_sets.append(st)
+        # toda combinação de opcionais que cabe no limite de 5 itens (K9), das maiores para as menores
+        # ponytail: refaz a enumeração por subconjunto; com muitas opcionais, enumerar uma vez com "pular opcional"
+        room = max(0, 5 - len(required))
+        opt_sets = [list(c) for k in range(min(room, len(optional)), -1, -1) for c in itertools.combinations(optional, k)]
 
         # #31: Econômico < Essencial < Completo no preço. Completo = mais itens (etapas opcionais) e, no empate, itens
         # mais relevantes; pode repetir itens do Essencial. Essencial = o mais relevante entre os dois em preço.
@@ -440,7 +461,8 @@ class Composer:
         key_full = lambda c: (-n(c), -c["rel"], c["total"], ",".join(c["ids"]))
         comp = sorted(comp_c, key=key_full)[0] if comp_c else None
         ess_c = [c for c in pool if econ["total"] < c["total"] <= eff
-                 and (comp is None or (c["total"] < comp["total"] and (n(c) < n(comp) or c["rel"] < comp["rel"])))]
+                 and (comp is None or (c["total"] < comp["total"]
+                                       and (n(c) < n(comp) or (c["relq"] < comp["relq"] and not self.variant(c, comp)))))]
         ess = sorted(ess_c, key=key_best)[0] if ess_c else None
         if comp and not ess:
             # sem meio-termo (ex.: só kits de 2 itens): Essencial = o mais relevante; Completo = mais itens ou a mesma
@@ -510,7 +532,7 @@ class Composer:
             return []
         cur = kit["items"][idx]["product"]
         out = []
-        for p in self.pool:
+        for p in self.kit_pool:
             if p["id"] == cur["id"] or step not in p["coversSteps"] or not self.base_eligible(p, ctx, False):
                 continue
             compat = self.swap_compat(kit, idx, p)
@@ -530,6 +552,8 @@ class Composer:
         cand = self.cat.by_id.get(product_id)
         if idx < 0 or cand is None:
             raise ValueError("Troca inválida.")
+        if cand["domain"] == "medicamento":
+            raise ValueError("Remédio não entra em kit.")       # K13
         compat = self.swap_compat(kit, idx, cand)
         if compat is None or not compat["compatible"]:
             raise ValueError((compat or {}).get("reason", "Produto incompatível com o kit."))

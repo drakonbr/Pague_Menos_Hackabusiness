@@ -13,6 +13,8 @@ export function checkKit(kit: Kit, intent: Intent): string[] {
 
   // I1
   if (new Set(prods.map((p) => p.id)).size !== prods.length) v.push(`${tag} I1: produto repetido`);
+  // M5 (#40): remédio nunca entra em kit
+  for (const p of prods) if (PRODUCT_BY_ID.get(p.id)?.domain === "medicamento") v.push(`${tag} M5: ${p.id} é remédio e está no kit`);
   // I2
   const covered = prods.flatMap((p) => p.coversSteps);
   if (new Set(covered).size !== covered.length) v.push(`${tag} I2: etapa coberta duas vezes`);

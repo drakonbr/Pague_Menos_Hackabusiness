@@ -243,8 +243,8 @@ def main() -> int:
     check("medicamentos: só na categoria 'Reposição de uso contínuo' (e nos agrupadores dela)",
           all(set(n["id"] for n in cats["nodes"] if pid in n["productIds"]) <= {"reposicao", "saude"} for pid in meds_ids))
     sups = [p for p in products if p["domain"] == "suplemento"]
-    check("suplementos: 12 itens, todos com o aviso sobre uso junto de medicação",
-          len(sups) == 12 and all("consultar_se_medicacao" in p["warnings"] for p in sups))
+    check("suplementos: pelo menos 12 itens, todos com o aviso sobre uso junto de medicação",
+          len(sups) >= 12 and all("consultar_se_medicacao" in p["warnings"] for p in sups), str(len(sups)))
     for step in ("omega3", "colageno", "magnesio", "vitaminas"):
         n = sum(1 for p in sups if p["step"] == step)
         check(f"suplementos: pelo menos 3 itens de {step}", n >= 3, str(n))
@@ -278,8 +278,10 @@ def main() -> int:
     check(f"medicamentos: pelo menos {MIN_PER_AREA} por área",
           bool(areas) and all(n >= MIN_PER_AREA for n in areas.values()), str(dict(areas)))
     check("medicamentos: toda área é um objetivo de kit", set(areas) <= med_goal_ids, str(set(areas) - med_goal_ids))
-    check("medicamentos: domínio medicamento, tarja válida, sem equivalência de reposição",
-          all(p["domain"] == "medicamento" and p["rx"] in (None, "receita_simples") and p["equivalence"] is None for p in otc))
+    # #40: vitamina C efervescente e psyllium ficam na área de remédio, mas são suplemento (não são remédio)
+    check("medicamentos: domínio medicamento (ou suplemento, só sem receita), tarja válida, sem equivalência de reposição",
+          all((p["domain"] == "medicamento" or (p["domain"] == "suplemento" and p["rx"] is None))
+              and p["rx"] in (None, "receita_simples") and p["equivalence"] is None for p in otc))
     check("medicamentos: todo item tem princípio ativo cadastrado",
           all(p["ingredients"] and all(ingredients[i]["family"] == "princípio ativo" for i in p["ingredients"]) for p in otc))
     check("medicamentos: toda etapa dos objetivos de saúde tem pelo menos 2 opções com estoque",

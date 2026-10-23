@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import re
 
 from . import embed
@@ -16,8 +17,9 @@ from .concepts import MED_MISSING, MED_SHELF
 from .data import Catalog, load_catalog
 from .graph import KnowledgeGraph, build_graph
 from .ingest import IngestReport, ingest_records, load_catalog_with_delta, write_delta
+from .llm import Reader, phrase
 from .ontology import validate_graph
-from .nlu import ActClassifier, Understander, Understanding, _MED
+from .nlu import ActClassifier, Understander, Understanding, _MED, _PREGNANT
 from .nlu_corpus import TRAIN
 from .retrieval import Retriever, load_weights
 from .rewrite import rewrite_query
@@ -42,11 +44,19 @@ TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "completo": "C
 # a frase fala de remédio ou sintoma: se nada no catálogo atende, a resposta é só MED_MISSING (doc 16)
 MED_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|"
                      r"pomada|gotas|tomar|tomo|dor|dores|doendo|sintoma|sintomas|estou com|to com)\b")
+log = logging.getLogger("graphrag.rag")
+GRAPH_KEYS = ("goals", "primaryGoal", "budgetCents", "skinType", "preferences", "pregnancy")
+# "não", "não, obrigado", "não gostei": o grafo entendeu (negação); só chama a DeepSeek se sobrar conteúdo
+COURTESY = {"nao", "obrigado", "obrigada", "valeu", "gostei", "curti", "quero", "nada", "isso", "esse", "essa", "por", "favor",
+            "agora", "ainda", "mais", "assim", "ok", "beleza", "tudo", "bem", "nem", "e", "o", "a", "de", "pra", "para",
+            "era", "so", "mesmo", "sim", "certo", "entendi"}
+ADJUST_CUE = re.compile(r"\b(tir\w*|sem|troc\w*|remov\w*|mud\w*|menos|nada de)\b")
 
 
 class Engine:
-    def __init__(self, cat: Catalog, graph: KnowledgeGraph, wv, clf: ActClassifier, weights: dict | None = None):
+    def __init__(self, cat: Catalog, graph: KnowledgeGraph, wv, clf: ActClassifier, weights: dict | None = None, llm=None):
         self.cat, self.graph, self.wv, self.clf = cat, graph, wv, clf
+        self.rag = Reader(cat, llm) if llm else None        # DeepSeek só quando o grafo não entende (#34)
         self.weights = weights or load_weights()
         self.nlu = Understander(cat, wv, clf)
         self.ret = Retriever(cat, graph, wv, self.weights)
@@ -57,7 +67,7 @@ class Engine:
 
     # ------------------------------------------------------------ construção
     @classmethod
-    def build(cls, use_artifacts: bool = True, delta_path=None) -> "Engine":
+    def build(cls, use_artifacts: bool = True, delta_path=None, llm=None) -> "Engine":
         """Catálogo-base + delta de produtos ingeridos (graphrag/artifacts/delta_products.json, se existir)."""
         cat, delta = load_catalog_with_delta(delta_path)
         sents = embed.build_corpus(cat)
@@ -67,7 +77,7 @@ class Engine:
         if wv is None or (delta is None and len(wv.vocab) != len({t for s in sents for t in s})):
             wv = embed.train(sents)
         clf = (ActClassifier.load() if use_artifacts else None) or ActClassifier().fit(TRAIN)
-        return cls(cat, build_graph(cat), wv, clf)
+        return cls(cat, build_graph(cat), wv, clf, llm=llm)
 
     def ingest(self, records: list[dict], persist: bool = True, delta_path=None) -> IngestReport:
         """Ingestão incremental em um motor em execução: valida, resolve entidades, atualiza catálogo e grafo e refaz os
@@ -171,14 +181,58 @@ class Engine:
         return c
 
     # ------------------------------------------------------------ entrada principal
-    def search(self, req: dict) -> dict:
+    def search(self, req: dict, rag: bool = True) -> dict:
+        """rag=False: nunca chama a DeepSeek (o replay do histórico do chat usa assim, para ser uma chamada por busca)."""
         orig_query = req.get("query", "")
         query, fixes = self.speller.fix(orig_query)
         res = self._search(req, query, orig_query)
+        miss = res.pop("_miss", None)
+        if miss and rag and self.rag:
+            res = self._rag(req, orig_query, res, miss)
         res["query"] = orig_query
         if fixes:
             res["correctedQuery"] = query
         return res
+
+    def _rag(self, req: dict, text: str, res: dict, miss: str) -> dict:
+        """O grafo não entendeu: a DeepSeek traduz o pedido para ids do catálogo, montamos uma frase só com rótulos do
+        catálogo e o grafo busca de novo (kits, regras e conversa continuam os do motor). Nada na tela diz que foi a
+        DeepSeek; a frase entendida só vai para o registro do servidor."""
+        cin = req.get("context") or {}
+        conv = self._conv_labels(cin) if (cin.get("kits") or cin.get("scope")) else ""
+        p = self.rag.read(text, conv)
+        if p is None:
+            return res                                   # sem resposta da API: fica a do grafo
+        q2 = phrase(self.cat, p, adjust=bool(conv))
+        if q2 and _PREGNANT.search(norm(text)):
+            q2 += ", estou grávida"                      # gestação vale na nova busca: aviso e filtros de sempre (K11)
+        if q2:
+            r2 = self._search({**req, "query": q2}, q2, q2)
+            g2 = r2["intent"].get("primaryGoal")              # None quando virou lista (objetivo de remédio, #40)
+            diverged = bool(p["objetivos"]) and not conv and g2 is not None and g2 not in p["objetivos"]
+            if not r2.pop("_miss", None) and not diverged:
+                log.info("rag entendeu: %s", q2)
+                r2["rag"] = True
+                return r2
+        if miss == "med_shelf":                          # só "remédio" genérico e nada no catálogo serve
+            return self._med_missing(req, text, res["safety"], res["intent"], int(cin.get("turn", 0)))
+        return res
+
+    def _conv_labels(self, cin: dict) -> str:
+        """O que a conversa já sabe, só em rótulos do catálogo (nada do que a pessoa digitou)."""
+        i, parts = cin.get("intent") or {}, []
+        if i.get("primaryGoal") in self.cat.goal_by_id:
+            parts.append("objetivo: " + self.cat.goal_by_id[i["primaryGoal"]]["label"])
+        if i.get("skinType"):
+            parts.append("pele: " + i["skinType"])
+        if i.get("budgetCents"):
+            parts.append(f"orçamento: até R$ {i['budgetCents'] // 100}")
+        if i.get("preferences"):
+            parts.append("preferências: " + ", ".join(i["preferences"]))
+        ex = [self.cat.ingredients[x]["name"] for x in cin.get("excluded", []) if x in self.cat.ingredients]
+        if ex:
+            parts.append("evitar: " + ", ".join(ex))
+        return "; ".join(parts) or "itens já mostrados"
 
     def _search(self, req: dict, query: str, orig_query: str = "") -> dict:
         cin = req.get("context") or {}
@@ -231,7 +285,7 @@ class Engine:
 
     def _greet(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "saudacao",
-                           "Oi! Eu encontro remédios e monto kits de medicamentos, cuidados com a pele, suplementos e higiene, "
+                           "Oi! Eu encontro remédios e monto kits de cuidados com a pele, suplementos e higiene, "
                            "e ajudo a repor o que você já usa. Me conte o que você procura e, se quiser, quanto pretende gastar.",
                            ["Remédio para dor de cabeça", "Kit de suplementos", "Pele com manchas até R$ 150", "Repor meus medicamentos"])
 
@@ -243,15 +297,19 @@ class Engine:
     def _help(self, req, query, u, safety, cin, carry, turn):
         return self._basic(req, query, safety, carry, cin, turn, "ajuda",
                            "Posso: achar remédios pelo sintoma ou pelo nome (ex.: dor de cabeça, dipirona); montar 3 opções de "
-                           "kit (Econômico, Essencial e Completo) a partir do que você escreve; ajustar por preço, tipo de pele "
+                           "kit (Econômico, Essencial e Completo) de pele, suplementos ou higiene a partir do que você escreve; ajustar por preço, tipo de pele "
                            "ou preferência; trocar um item; mostrar o total com frete e a retirada mais próxima; e repor os "
                            "medicamentos de uso contínuo que você já usa.",
                            ["Remédio para gripe", "Kit de suplementos", "Pele oleosa até R$ 100", "Repor meus medicamentos"])
 
     def _deny(self, req, query, u, safety, cin, carry, turn):
-        return self._basic(req, query, safety, carry, cin, turn, "negacao",
-                           "Tudo bem. Quer ver outra opção, mudar o orçamento ou começar uma busca nova?",
-                           ["Mais barato", "Outra opção", "Recomeçar"])
+        res = self._basic(req, query, safety, carry, cin, turn, "negacao",
+                          "Tudo bem. Quer ver outra opção, mudar o orçamento ou começar uma busca nova?",
+                          ["Mais barato", "Outra opção", "Recomeçar"])
+        rest = [t for t in raw_tokens(norm(query)) if t not in COURTESY]
+        if (cin.get("kits") or cin.get("scope")) and rest:
+            res["_miss"] = "ajuste"                      # "não quero ácido" depois dos kits é ajuste que o grafo não leu
+        return res
 
     def _restart(self, req, query, u, safety, cin, carry, turn):
         blank = {"goals": [], "primaryGoal": None, "budgetCents": None, "skinType": None, "preferences": [],
@@ -340,8 +398,8 @@ class Engine:
         """Kit só quando há objetivo e a busca cobre o objetivo inteiro (ou fala de preocupação/ingrediente).
         'Higiene bucal' é uma etapa de um objetivo de quatro: mostra os itens, sem kit forçado."""
         goal = intent.get("primaryGoal")
-        if not goal or goal not in self.cat.goal_by_id:
-            return False
+        if not goal or goal not in self.cat.goal_by_id or not self.comp.kit_possible(goal):
+            return False                                 # K13: objetivo de remédio mostra só a lista avulsa
         if scope.kind in ("concern", "goal", "ingredient"):
             return True
         if scope.kind == "shelf":
@@ -397,9 +455,11 @@ class Engine:
     def _dept_suggestions(self, scope: Scope, intent: dict) -> list[str]:
         sug = ["Mais barato"]
         steps = scope.steps
-        meds = [p for p in self.cat.products if p["domain"] == "medicamento"]
+        meds = [p for p in self.cat.products if _health(p)]
         med_steps, med_concerns = {p["step"] for p in meds}, {c for p in meds for c in p["concerns"]}
-        if (steps and steps <= med_steps) or (not steps and scope.concerns and scope.concerns <= med_concerns):
+        other_ings = {i for p in self.cat.products if not _health(p) for i in p["ingredients"]}
+        if ((steps and steps <= med_steps) or (not steps and scope.concerns and scope.concerns <= med_concerns)
+                or (not steps and scope.ingredients and not set(scope.ingredients) & other_ings)):   # "psyllium"
             return ["Mais barato", "Remédio para gripe", "Remédio para dor de cabeça"]
         if steps & {"higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"}:
             sug.insert(0, "Higiene premium")
@@ -421,15 +481,22 @@ class Engine:
         if not prods:
             return self._not_found(req, query, safety, intent, {}, turn, label=label)
         n = len(prods)
+        generic_med = scope.shelves == [MED_SHELF] and not scope.concerns     # só a palavra "remédio", sem o quê
         reply = f"Encontrei {n} {'item' if n == 1 else 'itens'} de {label}."
         if notice:
             reply = f"{notice['message']} {reply}"
-        reply += " Toque numa sugestão para montar um kit ou ajustar a lista."
-        return self._out(req, query, safety, intent, "busca", reply, products=prods,
-                         suggestions=self._dept_suggestions(scope, intent), action={"type": "show_products"},
-                         catalog_notice=notice, scope_info=self._scope_info(scope, n),
-                         ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, [], "busca", turn,
-                                               scope=scope))
+        meds = any(_health(p) for p in prods)
+        if meds and re.search(r"\bkits?\b", norm(query)):
+            reply = "Remédios não entram em kit, então mostro os itens avulsos. " + reply   # #40, sem mandar procurar ninguém
+        reply += " Toque numa sugestão para ajustar a lista." if meds else " Toque numa sugestão para montar um kit ou ajustar a lista."
+        res = self._out(req, query, safety, intent, "busca", reply, products=prods,
+                        suggestions=self._dept_suggestions(scope, intent), action={"type": "show_products"},
+                        catalog_notice=notice, scope_info=self._scope_info(scope, n),
+                        ctx_out=self._ctx_out(intent, req, u.excluded_ingredients, u.requested_ingredients, [], "busca", turn,
+                                              scope=scope))
+        if generic_med:
+            res["_miss"] = "med_shelf"
+        return res
 
     def _absent(self, req, query, u, safety, intent, scope, rel, turn):
         notice = self._notice(scope)
@@ -462,6 +529,11 @@ class Engine:
                                   "turn": turn + 1})
 
     def _not_found(self, req, query, safety, carry, cin, turn, label=None):
+        res = self._not_found_reply(req, query, safety, carry, cin, turn, label)
+        res["_miss"] = "busca"                           # o grafo não entendeu: a DeepSeek pode tentar (#34)
+        return res
+
+    def _not_found_reply(self, req, query, safety, carry, cin, turn, label=None):
         if MED_CUE.search(norm(query)):
             return self._med_missing(req, query, safety, carry, turn)
         what = f"itens de {label}" if label else "esse item"
@@ -503,6 +575,10 @@ class Engine:
         if "storeId" in req:
             intent["storeId"] = req["storeId"]
         intent["missing"] = self._missing(intent)
+        heard = (u.tier or u.skin or u.goals or u.preferences or u.budget_mentioned or u.cheaper or u.richer
+                 or u.excluded_ingredients or u.requested_ingredients or u.pregnancy)
+        noop = (not heard and excluded == sorted(cin.get("excluded", [])) and requested == sorted(cin.get("requested", []))
+                and all(_same(intent.get(k), carry.get(k)) for k in GRAPH_KEYS))   # nada mudou e nada foi reconhecido
         if not intent.get("primaryGoal") and cin.get("scope"):
             return self._refine_list(req, query, u, safety, cin, intent, requested, excluded, turn)
         if not intent.get("primaryGoal"):
@@ -518,12 +594,15 @@ class Engine:
         focus = u.tier if u.tier and any(k["tier"] == u.tier for k in comp["kits"]) else None
         reply = self._reply_kits(comp, intent, ctx, u, refined=True, excluded=excluded, only=focus)
         clar = {"id": "skinType", "question": "Como é a sua pele?", "options": SKIN_OPTIONS} if "skinType" in intent["missing"] else None
-        return self._out(req, query, safety, intent, "refinar", reply, kits_status=comp["status"], kits=comp["kits"],
-                         closest=comp["closestKit"], products=self.comp.rank_products(ctx, [], rel, limit=12),
-                         notes=comp["notes"], suggestions=self._suggest_after(comp, intent),
-                         action={"type": "show_kits", **({"tier": focus} if focus else {})} if comp["kits"] else None,
-                         clarification=clar,
-                         ctx_out=self._ctx_out(intent, req, excluded, requested, comp["kits"], "refinar", turn, focus_tier=focus))
+        res = self._out(req, query, safety, intent, "refinar", reply, kits_status=comp["status"], kits=comp["kits"],
+                        closest=comp["closestKit"], products=self.comp.rank_products(ctx, [], rel, limit=12),
+                        notes=comp["notes"], suggestions=self._suggest_after(comp, intent),
+                        action={"type": "show_kits", **({"tier": focus} if focus else {})} if comp["kits"] else None,
+                        clarification=clar,
+                        ctx_out=self._ctx_out(intent, req, excluded, requested, comp["kits"], "refinar", turn, focus_tier=focus))
+        if noop:
+            res["_miss"] = "ajuste"                      # "coisa mais top": lido como ajuste, mas nada mudou
+        return res
 
     def _refine_list(self, req, query, u, safety, cin, intent, requested, excluded, turn):
         """"mais barato", "sem álcool", "vegano" depois de uma LISTA de itens (sem kit): refaz a mesma prateleira com o ajuste."""
@@ -718,11 +797,14 @@ class Engine:
         elif cin.get("focusProductId"):
             p = self.cat.by_id.get(cin["focusProductId"])
         if p is None:
-            return self._out(req, query, safety, carry, "pergunta_produto",
-                             "Sobre qual produto é a dúvida? Toque nele no kit ou me diga o nome.",
-                             kits_status="ok" if kits else "not_applicable", kits=kits, suggestions=["Total com entrega", "Trocar um item"],
-                             ctx_out={**cin, "lastAct": "pergunta_produto", "turn": turn + 1} if cin else
-                             {"intent": carry, "kits": [], "lastAct": "pergunta_produto", "turn": turn + 1})
+            res = self._out(req, query, safety, carry, "pergunta_produto",
+                            "Sobre qual produto é a dúvida? Toque nele no kit ou me diga o nome.",
+                            kits_status="ok" if kits else "not_applicable", kits=kits, suggestions=["Total com entrega", "Trocar um item"],
+                            ctx_out={**cin, "lastAct": "pergunta_produto", "turn": turn + 1} if cin else
+                            {"intent": carry, "kits": [], "lastAct": "pergunta_produto", "turn": turn + 1})
+            if kits and ("?" not in query or ADJUST_CUE.search(norm(query))):
+                res["_miss"] = "ajuste"                  # "tira o que tem álcool" lido como pergunta sem produto
+            return res
         reply = self.answer_about(p, query, u)
         return self._out(req, query, safety, carry, "pergunta_produto", reply, kits_status="ok" if kits else "not_applicable",
                          kits=kits, suggestions=["Tem similar?", "Trocar esse item", "Total com entrega"],
@@ -804,6 +886,15 @@ class Engine:
         return sug
 
 
+def _health(p: dict) -> bool:
+    """Área de saúde: remédio ou item das linhas de remédio (vitamina C efervescente e psyllium, suplementos desde o #40)."""
+    return p["domain"] == "medicamento" or p["line"].startswith("med_")
+
+
+def _same(a, b) -> bool:
+    return sorted(a) == sorted(b) if isinstance(a, list) and isinstance(b, list) else a == b
+
+
 def build_probe(intent, u):
     from .composer import Ctx
     return Ctx(goals=[], primary="", concerns=set(), primary_concerns=set(), skin=intent.get("skinType"), assumed_skin=None,
@@ -819,8 +910,8 @@ def _kit_from_client(engine: "Engine", kit: dict, ctx) -> dict:
                 "items": [{"step": i["step"], "productId": i["product"]["id"], "reason": i.get("reason", "")}
                           for i in kit["items"]]}]
     out = engine._rehydrate(compact, ctx)
-    if not out:
-        raise ValueError("Kit inválido.")
+    if not out or any(i["product"]["domain"] == "medicamento" for i in out[0]["items"]):
+        raise ValueError("Kit inválido.")                # K13: kit com remédio não vem de resposta do motor
     return out[0]
 
 

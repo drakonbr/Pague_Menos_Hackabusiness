@@ -87,7 +87,9 @@ class ScopeResolver:
         """Um conceito por objetivo de saúde (doc 16), tirado do catálogo: frases = sinônimos do objetivo; prateleira =
         etapas dos medicamentos que atendem aquelas preocupações. "Dor de cabeça" traz dipirona e paracetamol e também
         o anti-inflamatório que serve para dor de cabeça. Mais dois conceitos gerais ("remédio" e "dor")."""
-        meds = [p for p in cat.products if p["domain"] == "medicamento"]
+        # área de saúde: remédio ou item das linhas de remédio (psyllium e vitamina C viraram suplemento no #40, mas
+        # continuam aparecendo na busca do sintoma)
+        meds = [p for p in cat.products if p["domain"] == "medicamento" or p["line"].startswith("med_")]
         med_steps = {p["step"] for p in meds}
         out = []
 

@@ -2,7 +2,7 @@
 
 Versão 0.1 · 15/10/2026 · Status: rascunho para avaliação
 
-> **Revisto pelo doc 16 (21/10):** medicamentos entram na busca e nos kits. R12 ("pedidos de saúde não geram kit") e o item "Fora: recomendação de medicamentos" foram revogados pela D-32; o critério de aceite passa a ser o checklist da seção 7 do doc 16.
+> **Revisto pelo doc 16 (21/10):** medicamentos entram na busca e nos kits. **Revisto de novo em 23/10 (#40):** remédio só na busca, nunca em kit (regra da Anvisa). R12 ("pedidos de saúde não geram kit") e o item "Fora: recomendação de medicamentos" foram revogados pela D-32; o critério de aceite passa a ser o checklist da seção 7 do doc 16.
 
 ## 1. Problema
 

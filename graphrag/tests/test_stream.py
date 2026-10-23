@@ -49,7 +49,7 @@ class TestFluxo(unittest.TestCase):
     def test_remedio_tem_fontes(self):
         ev = eventos(self.e, {"query": "que remédio eu tomo pra dor de cabeça"})
         self.assertIsNotNone(ev[0][1]["rewrittenQuery"])
-        self.assertTrue(ev[1][1]["kits"] and ev[1][1]["products"])
+        self.assertTrue(not ev[1][1]["kits"] and ev[1][1]["products"])      # #40: remédio só avulso, sem kit
         self.assertEqual(ev[-1][1]["safety"]["decision"], "allow")
 
     def test_historico_curto_equivale_ao_contexto(self):

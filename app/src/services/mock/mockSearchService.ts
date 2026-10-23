@@ -17,7 +17,7 @@ import type {
 } from "../../contracts/types";
 import { GOAL_LABEL, STEP_ORDER, TIER_LABEL } from "../../contracts/types";
 import { PRODUCTS, PRODUCT_BY_ID, STORES, stockAt } from "./catalogData";
-import { adaptToStore, applySwap, buildCtx, compose, rankProducts, swapOptions } from "./composer";
+import { adaptToStore, applySwap, buildCtx, compose, isHealthGoal, rankProducts, swapOptions } from "./composer";
 import { assessSafety, isRefillRequest, norm, parseIntent } from "./intent";
 
 const SKIN_OPTIONS: Clarification["options"] = [
@@ -76,7 +76,9 @@ function chatFields(res: Omit<SearchResponse, "reply" | "suggestions" | "action"
     reply = `Com esse orçamento não fechei um kit completo de ${goal}. O mais próximo custa ${money(res.closestKit.totalCents)}.`;
   } else reply = res.notes[0] ?? "Não consegui entender bem o pedido. Tente “pele oleosa até R$ 100”.";
   const context: ChatContext = { intent: res.intent, requested: [], excluded: [], kits: [], lastAct: act, turn: turn + 1 };
-  const suggestions = res.kits.length ? ["Mais barato", "Sem fragrância", "Total com entrega"] : ["Kit de suplementos", "Higiene premium"];
+  const health = res.intent.primaryGoal != null && isHealthGoal(res.intent.primaryGoal);
+  const suggestions = res.kits.length ? ["Mais barato", "Sem fragrância", "Total com entrega"]
+    : health ? ["Mais barato", "Remédio para gripe", "Remédio para dor de cabeça"] : ["Kit de suplementos", "Higiene premium"];
   return { act, reply, suggestions, action, context };
 }
 
@@ -148,7 +150,12 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
       }
 
       const ctx = buildCtx(intent, parsed.requestedIngredients)!;
-      const comp = compose(ctx, requestId);
+      // K13: objetivo de remédio não tem kit; mostra só a lista avulsa
+      const products = rankProducts(ctx);
+      const comp = isHealthGoal(ctx.primary)
+        ? { status: "not_applicable" as const, kits: [], closestKit: null,
+            notes: [`Encontrei ${products.length} itens de ${GOAL_LABEL[ctx.primary].toLowerCase()}. Toque numa sugestão para ajustar a lista.`] }
+        : compose(ctx, requestId);
       const clarification: Clarification | undefined = intent.missing.includes("skinType")
         ? { id: "skinType", question: "Como é a sua pele?", options: SKIN_OPTIONS }
         : undefined;
@@ -159,7 +166,7 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
         kitsStatus: comp.status,
         kits: comp.kits,
         closestKit: comp.closestKit,
-        products: rankProducts(ctx),
+        products,
         notes: comp.notes,
       };
       return { ...r, ...chatFields(r, "busca", turn) };

@@ -8964,9 +8964,11 @@
   "fps": null,
   "usagePeriod": "dia_noite",
   "claims": [],
-  "warnings": [],
-  "description": "Vitamina C 1 g Efervescente — 10 comprimidos: medicamento (vitamina C efervescente) do laboratório Farmanorte. Princípio ativo: Ácido ascórbico (vitamina C). Para gripe e resfriado.",
-  "howToUse": "Siga as instruções da bula.",
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Vitamina C 1 g Efervescente — 10 comprimidos: suplemento alimentar (vitamina C efervescente) da marca Farmanorte. Foco em gripe e resfriado. Componentes: Ácido ascórbico (vitamina C).",
+  "howToUse": "Dissolva 1 comprimido em um copo de água, conforme a embalagem.",
   "priceTier": "economico",
   "priceCents": 1390,
   "listPriceCents": 1390,
@@ -8978,7 +8980,7 @@
    "saude"
   ],
   "images": [],
-  "domain": "medicamento",
+  "domain": "suplemento",
   "rx": null,
   "equivalence": null
  },
@@ -10550,9 +10552,11 @@
   "fps": null,
   "usagePeriod": "dia_noite",
   "claims": [],
-  "warnings": [],
-  "description": "Psyllium (Plantago ovata) Pó — 10 sachês: medicamento (fibra em pó) do laboratório Vitalis Farma. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
-  "howToUse": "Siga as instruções da bula.",
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Psyllium (Plantago ovata) Pó — 10 sachês: suplemento alimentar (fibra em pó) da marca Vitalis Farma. Foco em prisão de ventre. Componentes: Psyllium (Plantago ovata).",
+  "howToUse": "Misture 1 sachê em um copo de água e beba em seguida, conforme a embalagem.",
   "priceTier": "economico",
   "priceCents": 2990,
   "listPriceCents": 2990,
@@ -10564,7 +10568,7 @@
    "saude"
   ],
   "images": [],
-  "domain": "medicamento",
+  "domain": "suplemento",
   "rx": null,
   "equivalence": null
  },
@@ -10595,9 +10599,11 @@
   "fps": null,
   "usagePeriod": "dia_noite",
   "claims": [],
-  "warnings": [],
-  "description": "Psyllium (Plantago ovata) Pó — 30 sachês: medicamento (fibra em pó) do laboratório Farmanorte. Princípio ativo: Psyllium (Plantago ovata). Para prisão de ventre.",
-  "howToUse": "Siga as instruções da bula.",
+  "warnings": [
+   "consultar_se_medicacao"
+  ],
+  "description": "Psyllium (Plantago ovata) Pó — 30 sachês: suplemento alimentar (fibra em pó) da marca Farmanorte. Foco em prisão de ventre. Componentes: Psyllium (Plantago ovata).",
+  "howToUse": "Misture 1 sachê em um copo de água e beba em seguida, conforme a embalagem.",
   "priceTier": "intermediario",
   "priceCents": 6990,
   "listPriceCents": 6990,
@@ -10609,7 +10615,7 @@
    "saude"
   ],
   "images": [],
-  "domain": "medicamento",
+  "domain": "suplemento",
   "rx": null,
   "equivalence": null
  },

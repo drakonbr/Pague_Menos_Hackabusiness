@@ -2999,7 +2999,7 @@
    "label": "Vitamina C 1 g Efervescente — 10 comprimidos",
    "brand": "Farmanorte",
    "step": "imunidade",
-   "domain": "medicamento"
+   "domain": "suplemento"
   },
   {
    "id": "product:p176",
@@ -3279,7 +3279,7 @@
    "label": "Psyllium (Plantago ovata) Pó — 10 sachês",
    "brand": "Vitalis Farma",
    "step": "fibra",
-   "domain": "medicamento"
+   "domain": "suplemento"
   },
   {
    "id": "product:p211",
@@ -3287,7 +3287,7 @@
    "label": "Psyllium (Plantago ovata) Pó — 30 sachês",
    "brand": "Farmanorte",
    "step": "fibra",
-   "domain": "medicamento"
+   "domain": "suplemento"
   },
   {
    "id": "product:p212",
@@ -4763,6 +4763,18 @@
    "to": "step:colageno",
    "type": "REQUIRES",
    "required": true
+  },
+  {
+   "from": "goal:suplementos",
+   "to": "step:fibra",
+   "type": "REQUIRES",
+   "required": false
+  },
+  {
+   "from": "goal:suplementos",
+   "to": "step:imunidade",
+   "type": "REQUIRES",
+   "required": false
   },
   {
    "from": "goal:suplementos",
@@ -19637,7 +19649,7 @@
   },
   {
    "from": "product:p175",
-   "to": "domain:medicamento",
+   "to": "domain:suplemento",
    "type": "IN_DOMAIN"
   },
   {
@@ -19660,6 +19672,11 @@
    "to": "step:imunidade",
    "type": "COVERS",
    "primary": true
+  },
+  {
+   "from": "product:p175",
+   "to": "warning:consultar_se_medicacao",
+   "type": "HAS_WARNING"
   },
   {
    "from": "product:p176",
@@ -21564,7 +21581,7 @@
   },
   {
    "from": "product:p210",
-   "to": "domain:medicamento",
+   "to": "domain:suplemento",
    "type": "IN_DOMAIN"
   },
   {
@@ -21595,6 +21612,11 @@
    "primary": true
   },
   {
+   "from": "product:p210",
+   "to": "warning:consultar_se_medicacao",
+   "type": "HAS_WARNING"
+  },
+  {
    "from": "product:p211",
    "to": "brand:Farmanorte",
    "type": "OF_BRAND"
@@ -21606,7 +21628,7 @@
   },
   {
    "from": "product:p211",
-   "to": "domain:medicamento",
+   "to": "domain:suplemento",
    "type": "IN_DOMAIN"
   },
   {
@@ -21635,6 +21657,11 @@
    "to": "step:fibra",
    "type": "COVERS",
    "primary": true
+  },
+  {
+   "from": "product:p211",
+   "to": "warning:consultar_se_medicacao",
+   "type": "HAS_WARNING"
   },
   {
    "from": "product:p212",
@@ -22065,17 +22092,17 @@
    "COVERS": 220,
    "EQUIVALENT_TO": 24,
    "HAS_CLAIM": 139,
-   "HAS_WARNING": 73,
+   "HAS_WARNING": 76,
    "IN_DOMAIN": 217,
    "IN_EQUIV_GROUP": 8,
    "OF_BRAND": 217,
    "OF_TYPE": 217,
-   "REQUIRES": 67,
+   "REQUIRES": 69,
    "SIMILAR_TO": 974,
    "SUITS": 271,
    "TARGETS": 38
   },
   "totalNodes": 599,
-  "totalEdges": 3261
+  "totalEdges": 3266
  }
 }

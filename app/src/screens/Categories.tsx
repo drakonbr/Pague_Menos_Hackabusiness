@@ -57,7 +57,7 @@ export function CategoryView({ id }: { id: string }) {
           {id === "saude" || d?.parent?.id === "saude" ? (
             <button className="note" style={{ textAlign: "left", width: "100%" }} onClick={() => push({ name: "searchFocus" })}>
               <Icon name="sparkle" size={20} />
-              <span><b>Kits inteligentes:</b> diga o que está sentindo, como “dor de cabeça” ou “gripe”, e veja os kits prontos.</span>
+              <span><b>Busca inteligente:</b> diga o que está sentindo, como “dor de cabeça” ou “gripe”, e veja os remédios para isso.</span>
             </button>
           ) : id === "dermo" || d?.parent?.id === "tipo" || id === "tipo" ? (
             <button className="note" style={{ textAlign: "left", width: "100%" }} onClick={() => push({ name: "searchFocus" })}>

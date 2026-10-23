@@ -10,9 +10,10 @@ from urllib.parse import parse_qs, urlsplit
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from graphrag.dialogue import Engine  # noqa: E402
+from graphrag.llm import DeepSeek  # noqa: E402
 from graphrag.service import server  # noqa: E402
 
-server.ENGINE = Engine.build()
+server.ENGINE = Engine.build(llm=DeepSeek.from_env())   # chave na variável DEEPSEEK_API_KEY da Vercel
 
 
 class handler(server.Handler):

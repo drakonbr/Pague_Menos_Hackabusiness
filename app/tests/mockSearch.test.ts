@@ -5,7 +5,7 @@ import { createMockCommerceService } from "../src/services/mock/mockCommerceServ
 import { checkResponse } from "../src/services/contractChecks";
 import { checkKit } from "../src/services/contractChecks";
 import { createMockSearchService } from "../src/services/mock/mockSearchService";
-import { dose } from "../src/services/mock/composer";
+import { applySwap, buildCtx, dose } from "../src/services/mock/composer";
 
 const svc = createMockSearchService({ latencyMs: 0 });
 const run = (query: string, extra: Partial<SearchRequest> = {}) => svc.search({ query, ...extra });
@@ -75,17 +75,26 @@ describe("casos de teste do doc 08", () => {
     expect(r.products.length).toBeGreaterThan(0);
   });
 
-  it("T7: dor de cabeça traz kit com dipirona e paracetamol (doc 16)", async () => {
+  it("T7: dor de cabeça traz dipirona e paracetamol avulsos, sem kit (doc 16 + #40, Anvisa)", async () => {
     const r = await run("Estou com dor de cabeça, o que posso tomar?");
     expect(r.safety.decision).toBe("allow");
     expect(r.intent.primaryGoal).toBe("dor_de_cabeca");
-    expect(r.kits.length).toBeGreaterThanOrEqual(1);
-    for (const k of r.kits) {
-      const ings = k.items.flatMap((i) => i.product.ingredients);
-      expect(ings).toContain("dipirona");
-      expect(ings).toContain("paracetamol");
-      expect(new Set(ings).size).toBe(ings.length); // M1: nada de princípio ativo repetido
+    expect(r.kits).toEqual([]);
+    expect(r.reply).toContain("Encontrei");                        // simulador: nada de "não consegui entender"
+    expect(r.suggestions).toContain("Remédio para gripe");
+    const ings = r.products.flatMap((p) => p.ingredients);
+    expect(ings).toContain("dipirona");
+    expect(ings).toContain("paracetamol");
+    // M5 em todas as buscas: remédio nunca entra em kit; psyllium (suplemento) continua na busca do sintoma
+    for (const q of ["estou gripado", "diarreia", "Preciso de produtos para tratamento de acne", "quero um kit de suplementos"]) {
+      const x = await run(q);
+      expect(x.kits.flatMap((k) => k.items).filter((i) => i.product.domain === "medicamento"), q).toEqual([]);
+      expect(checkResponse(x).filter((m) => m.includes("M5"))).toEqual([]);
     }
+    expect((await run("intestino preso")).products.some((p) => p.name.includes("Psyllium"))).toBe(true);
+    const sup = await run("quero um kit de suplementos");
+    const med = PRODUCTS.find((p) => p.domain === "medicamento")!;
+    expect(() => applySwap(sup.kits[0], sup.kits[0].items[0].step, med.id, buildCtx(sup.intent, [])!)).toThrow("Remédio");
   });
 
   it("T7b: sintoma não bloqueia e não pergunta tipo de pele", async () => {
@@ -400,18 +409,15 @@ describe("preço do kit (#30)", () => {
 
 describe("faixas dos kits (#31)", () => {
   it("Econômico < Essencial < Completo, e o Completo tem mais itens ou itens melhores (mesma regra do motor)", async () => {
-    for (const q of ["remédio para dor de cabeça", "estou gripado", "Preciso de produtos para tratamento de acne"]) {
+    for (const q of ["quero um kit de suplementos", "Preciso de produtos para tratamento de acne"]) {
       const r = await run(q);
       expect(r.kits.map((k) => k.tier), q).toEqual(["economico", "essencial", "completo"]);
       const t = r.kits.map((k) => k.totalCents);
       expect(t[0] < t[1] && t[1] < t[2], `${q}: ${t}`).toBe(true);
       expect(checkResponse(r).filter((m) => m.includes("M4"))).toEqual([]);
     }
-    const head = (await run("remédio para dor de cabeça")).kits;
-    expect(head[2].items.some((i) => i.product.name.includes("Dipirona 1 g"))).toBe(true);
-    expect(head[2].rationale).toContain("versões superiores");
-    const flu = await run("estou gripado");
-    expect(checkResponse({ ...flu, kits: [...flu.kits].reverse() }).some((m) => m.includes("M4"))).toBe(true);
+    const acne = await run("Preciso de produtos para tratamento de acne");
+    expect(checkResponse({ ...acne, kits: [...acne.kits].reverse() }).some((m) => m.includes("M4"))).toBe(true);
   });
 });
 

@@ -167,8 +167,13 @@ Invariante M3: com 2 itens ou mais, `totalCents < itemsTotalCents`, e o desconto
 Regras de privacidade do contrato:
 
 1. Nada de saúde da pessoa viaja: nem condição, nem medicamento em uso. Só a frase, o `context` e ids.
-2. Desde 21/10 (doc 16), produtos com `domain = medicamento` aparecem em `kits` e `products` como os outros; `rx` (`null` ou `receita_simples`) é só um dado do produto. Kit de remédio nunca repete princípio ativo (M1) e nenhum texto manda procurar profissional (M2).
+2. Desde 21/10 (doc 16), produtos com `domain = medicamento` aparecem em `products` como os outros; desde 23/10 (#40) **nunca em `kits`** (invariante M5); `rx` (`null` ou `receita_simples`) é só um dado do produto. Princípio ativo repetido segue no checador (M1, para kit forjado) e nenhum texto manda procurar profissional (M2).
 3. Remédio que o catálogo não tem: `reply` = "Não está no banco de dados ainda.", sem itens.
+
+## RAG com DeepSeek (23/10)
+
+- `SearchResponse.rag` (opcional, `true`): o grafo não entendeu e a resposta saiu do pedido traduzido pela DeepSeek. Só para depuração e avaliação: o app não mostra nada diferente. `query` continua sendo o texto que a pessoa digitou.
+- Todas as invariantes valem igual para essas respostas (kits continuam do compositor).
 
 ## Operações do serviço de busca
 

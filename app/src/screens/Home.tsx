@@ -1,32 +1,28 @@
 import { PersonaAvatar } from "../components/Avatar";
 import { BasketButton } from "../components/Bars";
-import { Icon, LogoMark, type IconName } from "../components/Icon";
+import { Icon, LogoMark } from "../components/Icon";
 import { ProductCard } from "../components/ProductCard";
+import { SEARCH_HINT } from "../components/SearchHint";
 import type { Product } from "../contracts/types";
 import { BRAND } from "../brand";
 import { useNav, useServices } from "../nav";
 import { SIMULATED_LOCATION } from "../location";
-import { PERSONA, needsRefill, REFILL_RULES } from "../persona";
+import { PERSONA, daysLeft, needsRefill, REFILL_RULES } from "../persona";
 import { useApp } from "../state/app";
 import { useAsync } from "../useAsync";
+import { TOP_CATEGORIES } from "../topCategories";
 
 function greeting(): string {
   const h = new Date().getHours();
   return h < 12 ? "Bom dia" : h < 18 ? "Boa tarde" : "Boa noite";
 }
 
-const TOP_CATEGORIES: Array<{ label: string; icon: IconName; id?: string }> = [
-  { label: "Medicamentos e saúde", icon: "pill", id: "__refill" },
-  { label: "Dermo e beleza", icon: "lipstick", id: "dermo" },
-  { label: "Mamães e bebês", icon: "stroller" },
-  { label: "Vida saudável", icon: "dumbbell" },
-];
-
 export function Home() {
   const { push, goTab } = useNav();
   const { commerce } = useServices();
   const { store, storeId, consent } = useApp();
   const due = PERSONA.continuousMedications.filter((m) => needsRefill(m)).length;
+  const soonest = Math.min(...PERSONA.continuousMedications.map(daysLeft));
   const home = useAsync(async () => {
     const h = await commerce.home();
     const rows = await Promise.all(
@@ -52,7 +48,7 @@ export function Home() {
         <div className="home-search">
           <button className="searchpill" onClick={() => push({ name: "searchFocus" })}>
             <Icon name="search" />
-            <span className="ph">Busque remédio, sintoma ou produto</span>
+            <span className="ph">{SEARCH_HINT}</span>
             <span className="soft"><Icon name="camera" /></span>
             <span className="soft"><Icon name="mic" /></span>
           </button>
@@ -64,23 +60,42 @@ export function Home() {
         </button>
 
         <div className="pad">
+          {/* #29: Meus medicamentos sempre no topo; vira "Hora de repor" quando algo está acabando */}
           {consent.refillReminders && due > 0 ? (
             <button className="refill-card" onClick={() => push({ name: "refill" })}>
               <Icon name="bell" size={26} />
               <span className="grow"><b>Hora de repor</b><small>{due} {due === 1 ? "item de uso contínuo acaba" : "itens de uso contínuo acabam"} em até {REFILL_RULES.alertDaysBefore} dias</small></span>
               <span className="cta">Repor agora</span>
             </button>
-          ) : null}
+          ) : (
+            <button className="refill-card calm" onClick={() => push({ name: "refill" })}>
+              <Icon name="pill" size={26} />
+              <span className="grow"><b>Meus medicamentos</b><small>{PERSONA.continuousMedications.length} de uso contínuo · {soonest === 0 ? "um deles acaba hoje" : `próximo acaba em ${soonest} ${soonest === 1 ? "dia" : "dias"}`}</small></span>
+              <span className="cta">Ver e repor</span>
+            </button>
+          )}
+          <section aria-labelledby="h-cat">
+            <div className="sec-head">
+              <h2 id="h-cat">Categorias</h2>
+              <button className="link plain" onClick={() => push({ name: "categorias" })}>Exibir tudo</button>
+            </div>
+            <div className="cat-tiles" style={{ marginTop: 12 }}>
+              {/* na Home as ativas vêm primeiro (o topo da tela é o lugar mais nobre); a tela Categorias segue a ordem do menu */}
+              {[...TOP_CATEGORIES].sort((a, b) => Number(!a.id) - Number(!b.id)).map((c) => (
+                <button key={c.label} className="cat-tile" disabled={!c.id} onClick={() => c.id && push({ name: "category", id: c.id })}
+                  aria-describedby={c.id ? undefined : "cat-off"}>
+                  <span className="ico"><Icon name={c.icon} size={30} /></span>
+                  {c.label}
+                </button>
+              ))}
+            </div>
+            <p id="cat-off" className="cat-off">Categorias em cinza ficam fora deste protótipo.</p>
+          </section>
           <div className="shortcuts">
             <button className="shortcut" onClick={() => push({ name: "searchFocus" })}>
               <Icon name="sparkle" size={30} />
               <span className="pill-new">Novo</span>
               <b>Monte um kit pelo que você precisa</b>
-            </button>
-            <button className="shortcut" onClick={() => push({ name: "refill" })}>
-              <Icon name="pill" size={30} />
-              <span className="pill-new">Reposição</span>
-              <b>Meus medicamentos: repor em poucos toques</b>
             </button>
           </div>
 
@@ -113,22 +128,6 @@ export function Home() {
               </span>
             </button>
           </div>
-
-          <section aria-labelledby="h-cat">
-            <div className="sec-head">
-              <h2 id="h-cat">Categorias</h2>
-              <button className="link plain" onClick={() => goTab("categorias")}>Exibir tudo</button>
-            </div>
-            <div className="cat-tiles" style={{ marginTop: 12 }}>
-              {TOP_CATEGORIES.map((c) => (
-                <button key={c.label} className="cat-tile" disabled={!c.id} onClick={() => c.id && push(c.id === "__refill" ? { name: "refill" } : { name: "category", id: c.id })}
-                  title={c.id ? undefined : "Fora do escopo do protótipo"}>
-                  <span className="ico"><Icon name={c.icon} size={30} /></span>
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          </section>
 
           <section aria-labelledby="h-kits">
             <div className="sec-head">

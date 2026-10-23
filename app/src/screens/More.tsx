@@ -17,7 +17,6 @@ const ROWS: Array<{ label: string; icon: IconName; to?: View; off?: string }> = 
   { label: "Carteira e cashback", icon: "wallet", to: { name: "wallet" } },
   { label: "Lojas e retirada", icon: "store", to: { name: "stores" } },
   { label: "Meus medicamentos", icon: "pill", to: { name: "refill" } },
-  { label: "Conversar com o assistente", icon: "chat", to: { name: "chat" } },
   { label: "Privacidade e dados", icon: "lock", to: { name: "privacy" } },
   { label: "Convênios e PBM", icon: "shield", off: "fora do protótipo" },
   { label: "Créditos das fotos", icon: "image", to: { name: "credits" } },

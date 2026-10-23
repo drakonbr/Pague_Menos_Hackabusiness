@@ -32,7 +32,7 @@ export function ProductCard({ product: p, tag }: { product: Product; tag?: strin
         </button>
         <div className="brandrow">
           <span className="brandname">{p.brand}</span>
-          <button className="addbtn" disabled={out} aria-label={out ? "Indisponível" : `Adicionar ${p.name} à cesta`}
+          <button className="addbtn" disabled={out} aria-label={out ? "Indisponível" : `Adicionar ${p.name} à cesta${p.rx ? " (exige receita)" : ""}`}
             onClick={() => dispatch({ type: "addProduct", product: p })}>
             <Icon name="basketPlus" size={26} />
           </button>

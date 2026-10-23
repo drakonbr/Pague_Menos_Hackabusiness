@@ -3,7 +3,7 @@ import { Icon, type IconName } from "./Icon";
 
 const TABS: Array<{ id: Tab; label: string; icon: IconName }> = [
   { id: "home", label: "Home", icon: "home" },
-  { id: "categorias", label: "Categorias", icon: "grid" },
+  { id: "chat", label: "Chat", icon: "chat" },
   { id: "ofertas", label: "Ofertas", icon: "tag" },
   { id: "favoritos", label: "Favoritos", icon: "heart" },
   { id: "mais", label: "Mais", icon: "more" },

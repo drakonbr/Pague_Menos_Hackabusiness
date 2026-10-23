@@ -9,7 +9,7 @@ import { ProductCard } from "../components/ProductCard";
 import { ProductImage } from "../components/ProductImage";
 import type { ChatAction, ChatContext, Kit, SearchResponse, SimilarOption, SkinType, StepId } from "../contracts/types";
 import { STEP_LABEL, TIER_LABEL } from "../contracts/types";
-import { useNav, useServices } from "../nav";
+import { showsTabBar, useNav, useServices } from "../nav";
 import { PERSONA } from "../persona";
 import { delta, money } from "../services/format";
 import { useApp, type ChatMsg } from "../state/app";
@@ -22,7 +22,8 @@ const nextId = () => `m${Date.now().toString(36)}${(seq++).toString(36)}`;
 export function Chat({ initial }: { initial?: string }) {
   const { search } = useServices();
   const { chat, dispatch, storeId, store } = useApp();
-  const { pop, push } = useNav();
+  const { pop, push, replace, depth, view, tab } = useNav();
+  const inTab = showsTabBar(view, tab, depth);
   const [text, setText] = useState("");
   const [, force] = useState(0);
   const bottom = useRef<HTMLDivElement>(null);
@@ -64,8 +65,11 @@ export function Chat({ initial }: { initial?: string }) {
       dispatch({ type: "chatPush", msg: { id: nextId(), role: "bot", local: true,
         text: `Oi, ${PERSONA.firstName}! Escreva do seu jeito o que você precisa e, se quiser, quanto pretende gastar. Eu monto 3 opções de kit, comparo o total com entrega e ajudo a repor o que você já usa.` } });
     }
-    if (initial) void send(initial);
-  }, [initial, chat.messages.length, dispatch, send]);
+    if (initial) {
+      void send(initial);
+      replace({ name: "chat" });   // a busca foi consumida: voltar a esta tela depois não a envia de novo
+    }
+  }, [initial, chat.messages.length, dispatch, send, replace]);
 
   useEffect(() => {
     bottom.current?.scrollIntoView?.({ block: "end" });
@@ -83,11 +87,11 @@ export function Chat({ initial }: { initial?: string }) {
   const engine = search.engine;
 
   return (
-    <div className="screen chat" style={{ background: "var(--bg)" }}>
+    <div className={`screen chat${inTab ? " in-tab" : ""}`} style={{ background: "var(--bg)" }}>
       <header className="bar blue chat-head">
-        <button className="icon-btn" onClick={pop} aria-label="Voltar"><Icon name="back" /></button>
+        {depth > 1 ? <button className="icon-btn" onClick={pop} aria-label="Voltar"><Icon name="back" /></button> : null}
         <div className="chat-title">
-          <b>Assistente de compras</b>
+          <h1>Assistente de compras</h1>
           <small title={engine === "graphrag" ? "Motor GraphRAG local (treinado do zero no catálogo)" : "Servidor do GraphRAG não encontrado: usando o motor simulado de reserva"}>
             {engine === "graphrag" ? "Motor: GraphRAG local" : "Motor simulado (reserva)"}
           </small>

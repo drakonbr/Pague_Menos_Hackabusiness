@@ -2,7 +2,7 @@
 
 O que a recuperação (retrieval.py) faz é ORDENAR candidatos; quem decide o que pode entrar num kit são estas regras:
   K1 sem repetir produto, tipo ou etapa coberta · K3 orçamento · K4 interações · K5 fotossensibilizante pede protetor
-  K8 três faixas (Econômico, Essencial, Alternativo) · K9 no máximo 5 itens · K10 nada no orçamento mostra o mais
+  K8 três faixas (Econômico < Essencial < Completo no preço) · K9 no máximo 5 itens · K10 nada no orçamento mostra o mais
   próximo · K12 combinação proibida pedida explicitamente vira aviso.
 Mais: ingrediente que a pessoa quer evitar nunca entra; estoque pode ser da loja escolhida. Medicamento entra em kit
 (doc 16) com duas regras a mais: nunca o mesmo princípio ativo duas vezes; nunca dois anti-inflamatórios (interações).
@@ -34,6 +34,27 @@ DEFAULT_REASON = {
     "higiene_oral": "Higiene bucal completa.",
     "desodorante": "Desodorante de uso diário.",
 }
+
+
+# Desconto do kit (#30): proporcional ao tamanho, sempre abaixo da soma avulsa, sem exagero.
+KIT_DISCOUNT_PCT = {2: 10, 3: 12}        # 4 ou mais itens: 15%; 1 item: sem desconto
+MAX_KIT_DISCOUNT_PCT = 15
+
+
+def kit_discount_pct(n_items: int) -> int:
+    return 0 if n_items < 2 else KIT_DISCOUNT_PCT.get(n_items, MAX_KIT_DISCOUNT_PCT)
+
+
+def kit_price(items_cents: int, n_items: int) -> tuple[int, int, int]:
+    """(desconto %, desconto em centavos, total) do kit a partir da soma avulsa."""
+    pct = kit_discount_pct(n_items)
+    off = (items_cents * pct + 50) // 100          # meio centavo para cima, igual ao app (Math.floor(x + 0.5))
+    return pct, off, items_cents - off
+
+
+def kit_cashback(items_cashback: int, pct: int) -> int:
+    """Cashback do kit: o dos itens, reduzido na proporção do desconto (cashback sobre o que a pessoa paga)."""
+    return items_cashback * (100 - pct) // 100
 
 
 def list_pt(items: list[str]) -> str:
@@ -200,12 +221,15 @@ class Composer:
                     return                                   # K5
                 if len(chosen) > 5:
                     return                                   # K9
+                kit_total = kit_price(total, len(chosen))[2]
+                if max_budget is not None and kit_total > max_budget:
+                    return                                   # K3 (com o desconto do kit)
                 rel = sum(self.score(p, ctx) for _, p in chosen)
                 for x in range(len(chosen)):
                     for y in range(x + 1, len(chosen)):
                         if chosen[x][1]["brand"] == chosen[y][1]["brand"]:
                             rel += 2
-                out.append({"slots": list(chosen), "total": total, "rel": rel,
+                out.append({"slots": list(chosen), "total": kit_total, "rel": rel,
                             "ids": [p["id"] for _, p in chosen]})
                 return
             step = ordered[i]
@@ -213,8 +237,8 @@ class Composer:
                 rec(i + 1, total)
                 return
             for p in cand.get(step, []):
-                if max_budget is not None and total + p["priceCents"] > max_budget:
-                    continue                                 # K3
+                if max_budget is not None and kit_price(total + p["priceCents"], 5)[2] > max_budget:
+                    continue                                 # K3: nem com o maior desconto cabe
                 if any(s in covered for s in p["coversSteps"]):
                     continue                                 # K1
                 if any(c["id"] == p["id"] or c["productType"] == p["productType"] for _, c in chosen):
@@ -292,7 +316,8 @@ class Composer:
         if tier == "essencial":
             goal = self.cat.goal_by_id[ctx.primary]["label"].lower()
             return f"Seleção mais indicada para {goal}" + (", dentro do orçamento" if ctx.budget is not None else "") + "."
-        return "Outra combinação relevante, com marcas e produtos diferentes do Essencial."
+        extra = len(steps) - len(self.cat.goal_by_id[ctx.primary]["required_steps"])
+        return f"A opção mais completa: cobre {labels}" + (", com itens a mais" if extra > 0 else ", com os itens mais indicados") + "."
 
     def assemble(self, tier: str, slots: list[tuple[str, dict]], ctx: Ctx, request_id: str,
                  full: dict[str, list[dict]]) -> dict:
@@ -306,10 +331,12 @@ class Composer:
 
     def _totals(self, kit: dict, ctx: Ctx) -> dict:
         prods = [i["product"] for i in kit["items"]]
-        kit["totalCents"] = sum(p["priceCents"] for p in prods)
+        items_cents = sum(p["priceCents"] for p in prods)
+        kit["itemsTotalCents"] = items_cents              # soma avulsa (preço de cada item hoje)
+        kit["discountPct"], kit["discountCents"], kit["totalCents"] = kit_price(items_cents, len(prods))
         kit["listTotalCents"] = sum(p["listPriceCents"] for p in prods)
         kit["withinBudget"] = True if ctx.budget is None else kit["totalCents"] <= ctx.budget
-        kit["cashbackCents"] = sum(self.cashback(p) for p in prods)
+        kit["cashbackCents"] = kit_cashback(sum(self.cashback(p) for p in prods), kit["discountPct"])
         kit["alerts"] = self.build_alerts(prods)
         return kit
 
@@ -342,7 +369,6 @@ class Composer:
                     "notes": ["Não foi possível montar um kit compatível."]}
         key_cheap = lambda c: (c["total"], -c["rel"], ",".join(c["ids"]))
         key_best = lambda c: (-c["rel"], c["total"], ",".join(c["ids"]))
-        same = lambda a, b: a is not None and b is not None and sorted(a["ids"]) == sorted(b["ids"])
         econ = sorted(all_req, key=key_cheap)[0]
 
         if ctx.budget is not None and econ["total"] > ctx.budget:
@@ -358,31 +384,25 @@ class Composer:
             if tuple(st) not in seen:
                 seen.add(tuple(st)); opt_sets.append(st)
 
-        ess, ess_pool = None, []
+        # #31: Econômico < Essencial < Completo no preço. Completo = mais itens (etapas opcionais) e, no empate, itens
+        # mais relevantes; pode repetir itens do Essencial. Essencial = o mais relevante entre os dois em preço.
+        pool, ids_seen = [], set()
         for st in opt_sets:
-            pool = [c for c in all_req if c["total"] <= max_b] if not st else self.enumerate(required + st, short, ctx, max_b)
-            within = [c for c in pool if c["total"] <= eff and not same(c, econ)]
-            if within:
-                ess, ess_pool = sorted(within, key=key_best)[0], pool
-                break
-        if ess is None:
-            ess_pool = [c for c in all_req if c["total"] <= max_b]
-
-        base = ess or econ
-        diff = lambda c, o: len([i for i in c["ids"] if i not in o["ids"]]) / len(c["ids"])
-        tbrand = lambda c: next((p["brand"] for s, p in c["slots"] if s == "tratamento"), None)
-        alt_pool = [c for c in ess_pool if c["total"] <= alt_b and not same(c, econ) and not same(c, ess)]
-        alt_c = next((lst for lst in ([c for c in alt_pool if diff(c, base) >= m] for m in (0.6, 0.4)) if lst), [])
-        alt = None
-        if alt_c:
-            bonus = lambda c: 3 if tbrand(c) and tbrand(c) != tbrand(base) else 0
-            alt = sorted(alt_c, key=lambda c: (-(c["rel"] + bonus(c)), c["total"], ",".join(c["ids"])))[0]
+            for c in ([c for c in all_req if c["total"] <= max_b] if not st else self.enumerate(required + st, short, ctx, max_b)):
+                if tuple(sorted(c["ids"])) not in ids_seen:
+                    ids_seen.add(tuple(sorted(c["ids"]))); pool.append(c)
+        n = lambda c: len(c["ids"])
+        comp_c = [c for c in pool if econ["total"] < c["total"] <= alt_b]
+        comp = sorted(comp_c, key=lambda c: (-n(c), -c["rel"], c["total"], ",".join(c["ids"])))[0] if comp_c else None
+        ess_c = [c for c in pool if econ["total"] < c["total"] <= eff
+                 and (comp is None or (c["total"] < comp["total"] and (n(c) < n(comp) or c["rel"] < comp["rel"])))]
+        ess = sorted(ess_c, key=key_best)[0] if ess_c else None
 
         kits = [self.assemble("economico", econ["slots"], ctx, request_id, full)]
         if ess:
             kits.append(self.assemble("essencial", ess["slots"], ctx, request_id, full))
-        if alt:
-            kits.append(self.assemble("alternativo", alt["slots"], ctx, request_id, full))
+        if comp:
+            kits.append(self.assemble("completo", comp["slots"], ctx, request_id, full))
         for i in self.cat.interactions:                                                      # K12
             if i["severity"] == "evitar" and i["a"] in ctx.requested and i["b"] in ctx.requested:
                 an, bn = self.cat.ingredients[i["a"]]["name"], self.cat.ingredients[i["b"]]["name"]

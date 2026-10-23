@@ -1,7 +1,7 @@
 // Checagem das invariantes do contrato (docs/08, I1 a I14).
 // Escrita de forma INDEPENDENTE do compositor, para não validar o código com ele mesmo.
 // A mesma lista será portada para a avaliação do GraphRAG.
-import type { Intent, Kit, SearchResponse } from "../contracts/types";
+import type { Intent, Kit, KitTier, SearchResponse } from "../contracts/types";
 import { INGREDIENTS, INTERACTIONS, PRODUCT_BY_ID, STORE_STOCK } from "./mock/catalogData";
 
 const PHOTO = new Set(INGREDIENTS.filter((i) => i.photosensitizing).map((i) => i.id));
@@ -36,9 +36,14 @@ export function checkKit(kit: Kit, intent: Intent): string[] {
     if (it.product.priceCents !== truth.priceCents) v.push(`${tag} I12: preço de ${truth.id} difere do inventário`);
   }
 
-  // I4
+  // I4 e M3 (#30): soma avulsa verdadeira, desconto na regra, kit sempre mais barato que os itens avulsos
   const sum = prods.reduce((t, p) => t + (PRODUCT_BY_ID.get(p.id)?.priceCents ?? 0), 0);
-  if (kit.totalCents !== sum) v.push(`${tag} I4: total ${kit.totalCents} != soma ${sum}`);
+  const pct = prods.length < 2 ? 0 : prods.length === 2 ? 10 : prods.length === 3 ? 12 : 15;
+  const off = Math.floor((sum * pct + 50) / 100);
+  if (kit.itemsTotalCents !== sum) v.push(`${tag} I4: soma avulsa ${kit.itemsTotalCents} != ${sum}`);
+  if (kit.discountPct !== pct || kit.discountCents !== off) v.push(`${tag} M3: desconto ${kit.discountPct}% / ${kit.discountCents} fora da regra`);
+  if (kit.totalCents !== sum - off) v.push(`${tag} I4: total ${kit.totalCents} != soma ${sum} menos desconto ${off}`);
+  if (prods.length >= 2 && !(kit.totalCents < sum)) v.push(`${tag} M3: kit não sai mais barato que os itens avulsos`);
   // I5
   if (intent.budgetCents != null) {
     if (kit.withinBudget && kit.totalCents > intent.budgetCents) v.push(`${tag} I5: acima do orçamento`);
@@ -73,11 +78,11 @@ export function checkKit(kit: Kit, intent: Intent): string[] {
   if (hasPhoto && !hasSun && !kit.alerts.some((a) => a.code === "sem_protetor_no_kit"))
     v.push(`${tag} I8: fotossensibilizante sem protetor e sem alerta`);
 
-  // I15 cashback = soma do cashback dos itens (arredondado para baixo por item)
-  const cb = prods.reduce((t, p) => {
+  // I15 cashback = soma do cashback dos itens (para baixo por item), reduzida pelo desconto do kit
+  const cb = Math.floor(prods.reduce((t, p) => {
     const tr = PRODUCT_BY_ID.get(p.id);
     return t + (tr ? Math.floor((tr.priceCents * tr.cashbackPct) / 100) : 0);
-  }, 0);
+  }, 0) * (100 - pct) / 100);
   if (kit.cashbackCents !== cb) v.push(`${tag} I15: cashback ${kit.cashbackCents} != ${cb}`);
   // I16 loja do kit = loja do pedido
   if ((intent.storeId ?? null) !== kit.storeId) v.push(`${tag} I16: kit na loja ${kit.storeId}, pedido na ${intent.storeId ?? null}`);
@@ -105,6 +110,11 @@ export function checkResponse(res: SearchResponse): string[] {
   // I14
   const sigs = res.kits.map((k) => k.items.map((i) => i.product.id).sort().join("|"));
   if (new Set(sigs).size !== sigs.length) v.push(`${res.requestId} I14: kits idênticos`);
+  // M4 (#31): Econômico < Essencial < Completo, nessa ordem e com preço crescente
+  const order: KitTier[] = ["economico", "essencial", "completo"];
+  const pos = res.kits.map((k) => order.indexOf(k.tier));
+  if (pos.some((p, i) => i > 0 && p <= pos[i - 1]) || res.kits.some((k, i) => i > 0 && k.totalCents <= res.kits[i - 1].totalCents))
+    v.push(`${res.requestId} M4: faixas fora de ordem ou preço não crescente`);
   // status coerente
   if (res.kitsStatus === "ok" && res.kits.length < 2) v.push(`${res.requestId}: status ok com menos de 2 kits`);
   if (res.kitsStatus === "none_in_budget" && (res.kits.length || !res.closestKit))

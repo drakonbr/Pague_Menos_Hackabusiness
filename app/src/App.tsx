@@ -1,7 +1,8 @@
 import { useEffect, useMemo } from "react";
+import { RxPrompt } from "./components/RxPrompt";
 import { TabBar } from "./components/TabBar";
 import { Toast } from "./components/Toast";
-import { FULLSCREEN, NavProvider, ServicesProvider, useNav, useServices } from "./nav";
+import { showsTabBar, NavProvider, ServicesProvider, useNav, useServices } from "./nav";
 import { createCommerceService } from "./services/commerceService";
 import { createSearchService } from "./services/searchService";
 import { AppProvider, useApp } from "./state/app";
@@ -10,7 +11,8 @@ import { Chat } from "./screens/Chat";
 import { Privacy } from "./screens/Privacy";
 import { Refill } from "./screens/Refill";
 import { Cart } from "./screens/Cart";
-import { CategoriesRoot, CategoryView } from "./screens/Categories";
+import { CategoriesList, CategoryView } from "./screens/Categories";
+import { Prescriptions } from "./screens/Prescriptions";
 import { Delivery } from "./screens/Delivery";
 import { Favorites } from "./screens/Favorites";
 import { Home } from "./screens/Home";
@@ -61,15 +63,16 @@ function useDefaultStore() {
 
 function Shell() {
   useDefaultStore();
-  const { view, tab } = useNav();
+  const { view, tab, depth } = useNav();
   const key = `${tab}:${view.name}:${"id" in view ? view.id : ""}`;
   return (
     <>
       <div className="screen" key={key}>
         <Screen />
       </div>
-      {FULLSCREEN.has(view.name) ? null : <TabBar />}
+      {showsTabBar(view, tab, depth) ? <TabBar /> : null}
       <Toast />
+      <RxPrompt />
     </>
   );
 }
@@ -83,7 +86,8 @@ function Screen() {
     case "chat": return <Chat initial={view.initial} />;
     case "refill": return <Refill />;
     case "privacy": return <Privacy />;
-    case "categorias": return <CategoriesRoot />;
+    case "categorias": return <CategoriesList />;
+    case "prescriptions": return <Prescriptions />;
     case "category": return <CategoryView id={view.id} />;
     case "product": return <ProductPage id={view.id} />;
     case "kit": return <KitDetail initialKit={view.kit} intent={view.intent} />;

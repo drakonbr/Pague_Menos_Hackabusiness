@@ -58,7 +58,7 @@ RAG simples recupera trechos parecidos com a pergunta. Um kit precisa de **rela�
 | --- | --- |
 | K1 | Nenhum produto repetido; nenhuma etapa coberta duas vezes; nenhum tipo de produto repetido |
 | K2 | Só produtos com estoque, com preço do inventário |
-| K3 | Total dentro do orçamento quando há orçamento |
+| K3 | Total dentro do orçamento quando há orçamento. O total já tem o desconto do kit (#30): 10% com 2 itens, 12% com 3, 15% com 4 ou mais; o kit sai sempre mais barato que os itens avulsos |
 | K4 | Pares `evitar` nunca no mesmo kit; pares `separar` só se os períodos de uso forem diferentes (vale para produtos que ficam na pele, não para limpeza) |
 | K5 | Produto fotossensibilizante exige proteção solar no kit; se não couber, alerta `sem_protetor_no_kit` |
 | K6 | Tipo de pele: produto serve se lista o tipo ou "todas"; com tipo desconhecido, preferir os de "todas" e perguntar |

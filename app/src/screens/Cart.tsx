@@ -7,7 +7,7 @@ import { BRAND } from "../brand";
 import { useNav, useServices } from "../nav";
 import { SIMULATED_LOCATION } from "../location";
 import { money } from "../services/format";
-import { lineListCents, lineTotalCents, useApp, type CartLine, type SubscriptionDays } from "../state/app";
+import { lineListCents, lineProducts, lineTotalCents, rxPending, useApp, type CartLine, type SubscriptionDays } from "../state/app";
 import { useAsync } from "../useAsync";
 
 export function FreeShippingRuler({ itemsCents, freeFrom }: { itemsCents: number; freeFrom: number }) {
@@ -27,7 +27,8 @@ export function FreeShippingRuler({ itemsCents, freeFrom }: { itemsCents: number
 }
 
 export function Cart() {
-  const { lines, count, itemsCents, listCents, cashbackCents, dispatch } = useApp();
+  const { lines, count, itemsCents, listCents, cashbackCents, dispatch, rxDocs } = useApp();
+  const rxNeeded = rxPending(lines, rxDocs).length > 0;   // #28: com receita faltando, a cesta leva antes às Receitas
   const { push, resetTo } = useNav();
   const { commerce } = useServices();
   const info = useAsync(async () => {
@@ -100,7 +101,9 @@ export function Cart() {
           <span>Resumo da compra</span>
         </div>
         <div className="tot"><span>Total ({count} itens)</span><b>{money(itemsCents)}</b></div>
-        <button className="btn primary block" onClick={() => push({ name: "delivery" })}>Seguir para entrega</button>
+        <button className="btn primary block" onClick={() => push(rxNeeded ? { name: "prescriptions" } : { name: "delivery" })}>
+          {rxNeeded ? "Confirmar cesta e anexar receitas" : "Seguir para entrega"}
+        </button>
         <button className="link" style={{ alignSelf: "center", minHeight: 40 }} onClick={() => resetTo("home")}>Continuar comprando</button>
       </div>
     </div>
@@ -108,7 +111,9 @@ export function Cart() {
 }
 
 function Line({ line: l }: { line: CartLine }) {
-  const { dispatch } = useApp();
+  const { dispatch, rxDocs } = useApp();
+  const rxHere = lineProducts(l).filter((p) => p.rx);
+  const rxMissingHere = rxHere.filter((p) => !rxDocs.includes(p.id)).length;
   const { push } = useNav();
   const unitList = lineListCents(l);
   const off = l.type === "kit" ? (unitList > l.kit.totalCents ? Math.round((1 - l.kit.totalCents / unitList) * 100) : 0) : discountPct(l.product);
@@ -128,8 +133,6 @@ function Line({ line: l }: { line: CartLine }) {
         <div className="grow" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {l.type === "kit" ? (
             <span className="mini blue" style={{ alignSelf: "flex-start" }}><Icon name="sparkle" size={13} /> Kit inteligente · {TIER_LABEL[l.kit.tier]}</span>
-          ) : l.product.rx ? (
-            <span className="mini warn" style={{ alignSelf: "flex-start" }}><Icon name="receipt" size={13} /> Reposição · receita simulada</span>
           ) : off > 0 ? (
             <span className="mini red" style={{ alignSelf: "flex-start" }}>Super oferta</span>
           ) : null}
@@ -141,6 +144,14 @@ function Line({ line: l }: { line: CartLine }) {
             <small style={{ color: "var(--text-2)", lineHeight: 1.4 }}>
               {l.kit.items.map((i) => `${STEP_LABEL[i.step]}: ${i.product.name}`).join(" · ")}
             </small>
+          ) : null}
+          {rxHere.length ? (   /* #28: quais itens desta linha pedem receita e se ela já foi anexada */
+            <span className={`mini ${rxMissingHere ? "warn" : "green"}`} style={{ alignSelf: "flex-start" }}>
+              <Icon name="receipt" size={13} />{" "}
+              {rxMissingHere
+                ? l.type === "kit" ? `${rxMissingHere} ${rxMissingHere === 1 ? "item precisa" : "itens precisam"} de receita` : "Precisa de receita"
+                : "Receita anexada (simulada)"}
+            </span>
           ) : null}
         </div>
         <button className="icon-btn" style={{ color: "var(--brand)" }} onClick={() => dispatch({ type: "remove", key: l.key })} aria-label="Remover da cesta">

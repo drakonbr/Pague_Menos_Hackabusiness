@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import type { CommerceService, Intent, Kit, SearchRequest, SearchService } from "./contracts/types";
 
-export type Tab = "home" | "categorias" | "ofertas" | "favoritos" | "mais";
+export type Tab = "home" | "chat" | "ofertas" | "favoritos" | "mais";
 
 export type View =
   | { name: "home" }
@@ -16,6 +16,7 @@ export type View =
   | { name: "product"; id: string }
   | { name: "kit"; kit: Kit; intent: Intent }
   | { name: "cart" }
+  | { name: "prescriptions" }
   | { name: "delivery" }
   | { name: "payment" }
   | { name: "done"; orderId: string }
@@ -29,11 +30,18 @@ export type View =
   | { name: "stores" };
 
 /** Telas que escondem a barra de abas (como a cesta e a entrega no app real). */
-export const FULLSCREEN = new Set<View["name"]>(["searchFocus", "chat", "cart", "delivery", "payment", "done"]);
+export const FULLSCREEN = new Set<View["name"]>(["searchFocus", "chat", "cart", "prescriptions", "delivery", "payment", "done"]);
+
+/** A barra de abas aparece fora das telas cheias; o chat é a exceção quando é a raiz da própria aba Chat
+ *  (aberto por uma busca de conversa, continua em tela cheia, com voltar). */
+export function showsTabBar(view: View, tab: Tab, depth: number): boolean {
+  if (view.name === "chat" && tab === "chat" && depth === 1) return true;
+  return !FULLSCREEN.has(view.name);
+}
 
 const ROOT: Record<Tab, View> = {
   home: { name: "home" },
-  categorias: { name: "categorias" },
+  chat: { name: "chat" },
   ofertas: { name: "ofertas" },
   favoritos: { name: "favoritos" },
   mais: { name: "mais" },
@@ -58,7 +66,7 @@ export function NavProvider({ children }: { children: ReactNode }) {
   const [tab, setTab] = useState<Tab>("home");
   const [stacks, setStacks] = useState<Record<Tab, View[]>>({
     home: [ROOT.home],
-    categorias: [ROOT.categorias],
+    chat: [ROOT.chat],
     ofertas: [ROOT.ofertas],
     favoritos: [ROOT.favoritos],
     mais: [ROOT.mais],
@@ -83,7 +91,7 @@ export function NavProvider({ children }: { children: ReactNode }) {
   const resetAll = useCallback((t: Tab, extra?: View) => {
     setStacks({
       home: [ROOT.home],
-      categorias: [ROOT.categorias],
+      chat: [ROOT.chat],
       ofertas: [ROOT.ofertas],
       favoritos: [ROOT.favoritos],
       mais: [ROOT.mais],

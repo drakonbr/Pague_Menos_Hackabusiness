@@ -55,9 +55,28 @@ class TestScenariosDoc08(unittest.TestCase):
             self.assertIn("protecao_solar", {s for i in k["items"] for s in i["product"]["coversSteps"]})
 
     def test_T6(self):
-        r = S("Acne, pele oleosa, até R$ 40"); self.ok(r)
+        # com o desconto do kit (#30), o kit de acne mais barato sai por ~R$ 39; até R$ 35 nada fecha
+        r = S("Acne, pele oleosa, até R$ 35"); self.ok(r)
         self.assertEqual(r["kitsStatus"], "none_in_budget"); self.assertEqual(r["kits"], []); self.assertIsNotNone(r["closestKit"])
-        self.assertGreater(r["closestKit"]["totalCents"], 4000)
+        self.assertGreater(r["closestKit"]["totalCents"], 3500)
+
+    def test_preco_do_kit_igual_ao_app(self):
+        # mesma tabela em app/tests/mockSearch.test.ts: meio centavo arredonda para cima nos dois lados
+        from graphrag.composer import kit_cashback, kit_price
+        casos = [((17750, 4, 300), (15, 2663, 15087, 255)), ((1850, 2, 37), (10, 185, 1665, 33)),
+                 ((2050, 2, 0), (10, 205, 1845, 0)), ((4625, 3, 92), (12, 555, 4070, 80)),
+                 ((990, 1, 19), (0, 0, 990, 19))]
+        for (items, n, cb), esperado in casos:
+            pct, off, total = kit_price(items, n)
+            self.assertEqual((pct, off, total, kit_cashback(cb, pct)), esperado, (items, n))
+
+    def test_kit_sempre_mais_barato_que_os_itens_avulsos(self):
+        # #30: desconto de 10% (2 itens), 12% (3) ou 15% (4+), conferido também pela invariante M3
+        for q in ["rotina anti idade", "remédio de dor de cabeça", "kit de suplementos", "higiene premium", "pele oleosa até R$ 100"]:
+            r = S(q); self.ok(r)
+            for k in r["kits"]:
+                self.assertLess(k["totalCents"], k["itemsTotalCents"], q)
+                self.assertEqual(k["discountPct"], {2: 10, 3: 12}.get(len(k["items"]), 15), q)
 
     def test_T7_dor_de_cabeca_traz_kit_de_dipirona_e_paracetamol(self):
         # doc 16, A3: antes era bloqueio; agora é busca de farmácia

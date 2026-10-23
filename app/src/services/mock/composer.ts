@@ -13,7 +13,7 @@ import type {
   StepId,
   SwapOption,
 } from "../../contracts/types";
-import { GOAL_LABEL, STEP_LABEL, STEP_ORDER } from "../../contracts/types";
+import { GOAL_LABEL, STEP_LABEL, STEP_ORDER, kitCashback, kitPrice } from "../../contracts/types";
 import {
   CONCERN_LABEL,
   GOALS,
@@ -204,8 +204,6 @@ interface Combo {
 }
 
 const ids = (c: Combo) => c.slots.map((s) => s.product.id);
-const sameIds = (a: Combo | undefined, b: Combo | undefined) =>
-  !!a && !!b && ids(a).length === ids(b).length && ids(a).every((i) => ids(b).includes(i));
 
 function enumerate(steps: StepId[], cand: Map<StepId, Product[]>, ctx: Ctx, maxBudget: number | null): Combo[] {
   const ordered = [...steps].sort((a, b) => STEP_ORDER.indexOf(a) - STEP_ORDER.indexOf(b));
@@ -226,7 +224,9 @@ function enumerate(steps: StepId[], cand: Map<StepId, Product[]>, ctx: Ctx, maxB
       for (let x = 0; x < chosen.length; x++)
         for (let y = x + 1; y < chosen.length; y++)
           if (chosen[x].product.brand === chosen[y].product.brand) rel += 2;
-      out.push({ slots: chosen.map((c) => ({ ...c })), total, list, rel });
+      const kitTotal = kitPrice(total, chosen.length).totalCents;
+      if (maxBudget != null && kitTotal > maxBudget) return; // K3 (com o desconto do kit)
+      out.push({ slots: chosen.map((c) => ({ ...c })), total: kitTotal, list, rel });
       return;
     }
     const step = ordered[i];
@@ -235,7 +235,7 @@ function enumerate(steps: StepId[], cand: Map<StepId, Product[]>, ctx: Ctx, maxB
       return;
     }
     for (const p of cand.get(step) ?? []) {
-      if (maxBudget != null && total + p.priceCents > maxBudget) continue; // K3
+      if (maxBudget != null && kitPrice(total + p.priceCents, 5).totalCents > maxBudget) continue; // K3: nem com o maior desconto
       if (p.coversSteps.some((s) => covered.has(s))) continue; // K1
       if (chosen.some((c) => c.product.id === p.id || c.product.productType === p.productType)) continue; // K1
       if (chosen.some((c) => conflictBetween(c.product, p))) continue; // K4
@@ -377,7 +377,8 @@ function rationaleFor(tier: KitTier, steps: StepId[], ctx: Ctx): string {
   if (tier === "economico") return `Menor preço que cobre ${labels}.`;
   if (tier === "essencial")
     return `Seleção mais indicada para ${GOAL_LABEL[ctx.primary].toLowerCase()}${ctx.budgetCents != null ? ", dentro do orçamento" : ""}.`;
-  return "Outra combinação relevante, com marcas e produtos diferentes do Essencial.";
+  const extra = steps.length - GOALS.find((g) => g.id === ctx.primary)!.requiredSteps.length;
+  return `A opção mais completa: cobre ${labels}${extra > 0 ? ", com itens a mais" : ", com os itens mais indicados"}.`;
 }
 
 export function assembleKit(
@@ -394,7 +395,8 @@ export function assembleKit(
     reason: explainItem(s.product, ctx, s.step),
     alternativesCount: Math.max(0, (full.get(s.step)?.length ?? 1) - 1),
   }));
-  const totalCents = items.reduce((t, i) => t + i.product.priceCents, 0);
+  const price = kitPrice(items.reduce((t, i) => t + i.product.priceCents, 0), items.length);
+  const { totalCents } = price;
   const listTotalCents = items.reduce((t, i) => t + i.product.listPriceCents, 0);
   return {
     id: `k_${requestId}_${tier}`,
@@ -402,10 +404,10 @@ export function assembleKit(
     title: GOAL_LABEL[ctx.primary],
     goal: ctx.primary,
     items,
-    totalCents,
+    ...price,
     listTotalCents,
     withinBudget: ctx.budgetCents == null ? true : totalCents <= ctx.budgetCents,
-    cashbackCents: items.reduce((t, i) => t + cashbackOf(i.product), 0),
+    cashbackCents: kitCashback(items.reduce((t, i) => t + cashbackOf(i.product), 0), price.discountPct),
     storeId: ctx.storeId,
     alerts: buildAlerts(items.map((i) => i.product)),
     rationale: rationaleFor(tier, items.map((i) => i.step), ctx),
@@ -477,37 +479,28 @@ export function compose(ctx: Ctx, requestId: string): Composition {
     (set, i, arr) => arr.findIndex((o) => o.join() === set.join()) === i,
   );
 
-  let ess: Combo | undefined;
-  let essPool: Combo[] = [];
+  // #31: Econômico < Essencial < Completo no preço. Completo = mais itens (etapas opcionais) e, no empate, itens mais
+  // relevantes; pode repetir itens do Essencial. Essencial = o mais relevante entre os dois em preço. Igual ao motor.
+  const pool: Combo[] = [];
+  const seen = new Set<string>();
   for (const set of optSets) {
-    const pool = set.length === 0 ? allRequired.filter((c) => c.total <= maxB) : enumerate([...required, ...set], short, ctx, maxB);
-    const within = pool.filter((c) => c.total <= effBudget && !sameIds(c, econ));
-    if (within.length > 0) {
-      ess = [...within].sort(cmpBest)[0];
-      essPool = pool;
-      break;
+    const part = set.length === 0 ? allRequired.filter((c) => c.total <= maxB) : enumerate([...required, ...set], short, ctx, maxB);
+    for (const c of part) {
+      const key = [...ids(c)].sort().join();
+      if (!seen.has(key)) { seen.add(key); pool.push(c); }
     }
   }
-  if (!ess) essPool = allRequired.filter((c) => c.total <= maxB);
-
-  let alt: Combo | undefined;
-  const base = ess ?? econ;
-  const diffRatio = (c: Combo, other: Combo) =>
-    ids(c).filter((i) => !ids(other).includes(i)).length / ids(c).length;
-  const treatmentBrand = (c: Combo) => c.slots.find((s) => s.step === "tratamento")?.product.brand;
-  const altPool = essPool.filter((c) => c.total <= altBudget && !sameIds(c, econ) && !sameIds(c, ess));
-  // prefere um Alternativo bem diferente do Essencial (60% dos itens); aceita 40% se não houver
-  const altCands = [0.6, 0.4]
-    .map((min) => altPool.filter((c) => diffRatio(c, base) >= min))
-    .find((list) => list.length > 0) ?? [];
-  if (altCands.length > 0) {
-    const bonus = (c: Combo) => (treatmentBrand(c) && treatmentBrand(c) !== treatmentBrand(base) ? 3 : 0);
-    alt = [...altCands].sort((a, b) => b.rel + bonus(b) - (a.rel + bonus(a)) || a.total - b.total || ids(a).join().localeCompare(ids(b).join()))[0];
-  }
+  const n = (c: Combo) => c.slots.length;
+  const comp = pool
+    .filter((c) => c.total > econ.total && c.total <= altBudget)
+    .sort((a, b) => n(b) - n(a) || b.rel - a.rel || a.total - b.total || ids(a).join().localeCompare(ids(b).join()))[0];
+  const ess = pool
+    .filter((c) => c.total > econ.total && c.total <= effBudget && (!comp || (c.total < comp.total && (n(c) < n(comp) || c.rel < comp.rel))))
+    .sort(cmpBest)[0];
 
   const kits: Kit[] = [assembleKit("economico", econ.slots, ctx, requestId, full)];
   if (ess) kits.push(assembleKit("essencial", ess.slots, ctx, requestId, full));
-  if (alt) kits.push(assembleKit("alternativo", alt.slots, ctx, requestId, full));
+  if (comp) kits.push(assembleKit("completo", comp.slots, ctx, requestId, full));
 
   // K12: pedido explícito de combinação que o catálogo proíbe
   for (const i of INTERACTIONS) {
@@ -601,15 +594,16 @@ export function applySwap(kit: Kit, step: StepId, productId: string, ctx: Ctx): 
   const items = kit.items.map((it, i) =>
     i === idx ? { ...it, product: cand, reason: `Escolhido por você. ${explainItem(cand, ctx, step)}` } : it,
   );
-  const totalCents = items.reduce((t, i) => t + i.product.priceCents, 0);
+  const price = kitPrice(items.reduce((t, i) => t + i.product.priceCents, 0), items.length);
+  const { totalCents } = price;
   const listTotalCents = items.reduce((t, i) => t + i.product.listPriceCents, 0);
   return {
     ...kit,
     items,
-    totalCents,
+    ...price,
     listTotalCents,
     withinBudget: ctx.budgetCents == null ? true : totalCents <= ctx.budgetCents,
-    cashbackCents: items.reduce((t, i) => t + cashbackOf(i.product), 0),
+    cashbackCents: kitCashback(items.reduce((t, i) => t + cashbackOf(i.product), 0), price.discountPct),
     storeId: ctx.storeId,
     alerts: buildAlerts(items.map((i) => i.product)),
     rationale: kit.rationale.endsWith("(editado)") ? kit.rationale : `${kit.rationale} (editado)`,

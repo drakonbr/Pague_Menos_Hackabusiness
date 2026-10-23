@@ -72,7 +72,7 @@ export type GoalId =
 export const DERMO_GOALS: GoalId[] = ["acne", "manchas", "skincare_basico", "protecao_solar", "anti_idade", "pele_sensivel", "oleosidade"];
 
 export type SkinType = "oleosa" | "mista" | "seca" | "normal" | "sensível";
-export type KitTier = "economico" | "essencial" | "alternativo";
+export type KitTier = "economico" | "essencial" | "completo";
 export type PriceTier = "economico" | "intermediario" | "premium";
 export type UsagePeriod = "dia" | "noite" | "dia_noite";
 
@@ -235,6 +235,12 @@ export interface Kit {
   title: string;
   goal: GoalId;
   items: KitItem[];
+  /** Soma dos itens avulsos (preço de cada um hoje). */
+  itemsTotalCents: number;
+  /** Desconto do kit (#30): 10% com 2 itens, 12% com 3, 15% com 4 ou mais. */
+  discountPct: number;
+  discountCents: number;
+  /** Preço do kit = soma avulsa menos o desconto. */
   totalCents: number;
   listTotalCents: number;
   withinBudget: boolean;
@@ -438,10 +444,24 @@ export const STEP_LABEL: Record<StepId, string> = {
   antiemetico: "Contra enjoo",
 };
 
+/** Desconto do kit pelo número de itens (#30). A mesma regra está no motor (graphrag/composer.py). */
+export function kitDiscountPct(nItems: number): number {
+  return nItems < 2 ? 0 : nItems === 2 ? 10 : nItems === 3 ? 12 : 15;
+}
+export const MAX_KIT_DISCOUNT_PCT = 15;
+export function kitPrice(itemsCents: number, nItems: number) {
+  const discountPct = kitDiscountPct(nItems);
+  const discountCents = Math.floor((itemsCents * discountPct + 50) / 100);   // meio centavo para cima, igual ao motor
+  return { itemsTotalCents: itemsCents, discountPct, discountCents, totalCents: itemsCents - discountCents };
+}
+
+/** Cashback do kit: o dos itens, reduzido na proporção do desconto (sobre o que a pessoa paga). Igual ao motor. */
+export const kitCashback = (itemsCashback: number, discountPct: number) => Math.floor((itemsCashback * (100 - discountPct)) / 100);
+
 export const TIER_LABEL: Record<KitTier, string> = {
   economico: "Econômico",
   essencial: "Essencial",
-  alternativo: "Alternativo",
+  completo: "Completo",
 };
 
 export const GOAL_LABEL: Record<GoalId, string> = {

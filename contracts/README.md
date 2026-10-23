@@ -11,7 +11,7 @@ Convenções: JSON em `camelCase`, valores em **centavos inteiros** (`priceCents
 | `StepId` | `limpeza`, `preparo`, `tratamento`, `hidratacao`, `protecao_solar`, `protecao_corporal`, `complemento`, além das etapas de suplementos e higiene premium (ver `catalog/data/steps.json`) |
 | `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` e as áreas de saúde (doc 16): `dor_de_cabeca`, `dor_no_corpo`, `dor_muscular`, `dor_de_barriga`, `azia`, `gripe`, `tosse`, `tosse_seca`, `dor_de_garganta`, `alergia`, `diarreia`, `prisao_de_ventre`, `enjoo` |
 | `SkinType` | `oleosa`, `mista`, `seca`, `normal`, `sensível` |
-| `KitTier` | `economico`, `essencial`, `alternativo` |
+| `KitTier` | `economico`, `essencial`, `completo` (era `alternativo` até 23/10) |
 | `AlertCode` | `fotossensibilizante`, `consultar_se_gestante`, `evitar_contato_olhos`, `nao_usar_pele_irritada`, `teste_de_sensibilidade`, `interacao_separar_periodos`, `sem_protetor_no_kit` |
 
 ## Product
@@ -106,8 +106,11 @@ Regras: `priceCents` e `stockQty` vêm **sempre** do inventário; `fps` só exis
   "items": [
     { "step": "limpeza", "product": "<Product>", "reason": "Limpeza suave para uso diário.", "alternativesCount": 9 }
   ],
+  "itemsTotalCents": 7745,
+  "discountPct": 10,
+  "discountCents": 775,
   "totalCents": 6970,
-  "listTotalCents": 6970,
+  "listTotalCents": 7990,
   "withinBudget": true,
   "alerts": [
     { "code": "fotossensibilizante", "severity": "atencao", "text": "…", "productIds": ["p048"] }
@@ -120,7 +123,7 @@ Invariantes que o emissor garante e o app pode assumir:
 
 1. Nenhuma etapa aparece em dois itens (`step` único; hidratante com FPS ocupa as etapas de `coversSteps`).
 2. Todo `product.stockQty > 0`.
-3. `totalCents` é a soma exata dos `priceCents`.
+3. `totalCents` = `itemsTotalCents − discountCents` (veja "Desconto do kit" abaixo); `itemsTotalCents` é a soma exata dos `priceCents`.
 4. Se `withinBudget` é verdadeiro, `totalCents <= intent.budgetCents`.
 5. Nenhum par de ingredientes `evitar` entre itens que ficam na pele. Pares `separar` só com períodos de uso diferentes, e geram o alerta `interacao_separar_periodos`.
 6. Se algum item é `fotossensibilizante` e não há proteção solar no kit, o alerta `sem_protetor_no_kit` é emitido.
@@ -133,9 +136,18 @@ Invariantes que o emissor garante e o app pode assumir:
 
 Invariantes novas:
 
-15. `cashbackCents` = soma de `floor(priceCents × cashbackPct / 100)` dos itens.
+15. `cashbackCents` = `floor(C × (100 − discountPct) / 100)`, onde C é a soma de `floor(priceCents × cashbackPct / 100)` dos itens (cashback sobre o que a pessoa paga, desde 23/10).
 16. `kit.storeId` = `intent.storeId` do pedido que gerou o kit.
 (A invariante 3, estoque, passa a usar o estoque da loja quando há loja.)
+
+## Desconto do kit (23/10, item #30)
+
+- `Kit.itemsTotalCents`: soma avulsa dos `priceCents` (o preço de cada item hoje). É a única âncora de preço riscado do kit no app (cartão, cesta e detalhe).
+- `Kit.discountPct`: 0 com 1 item, 10 com 2, 12 com 3, 15 com 4 ou mais.
+- `Kit.discountCents` = `floor((itemsTotalCents × discountPct + 50) / 100)`: meio centavo arredonda para cima, com aritmética inteira, igual no motor (Python) e no app (TS).
+- `Kit.listTotalCents` continua sendo a soma dos preços de tabela, só para referência.
+
+Invariante M3: com 2 itens ou mais, `totalCents < itemsTotalCents`, e o desconto segue a regra acima. O teste de paridade usa a mesma tabela de casos nos dois lados.
 
 ## Conversa, ações e privacidade (20/10)
 

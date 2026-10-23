@@ -3,7 +3,7 @@ import { TitleBar } from "../components/Bars";
 import { Icon } from "../components/Icon";
 import { useNav, useServices } from "../nav";
 import { money } from "../services/format";
-import { useApp, type Order } from "../state/app";
+import { rxPending, useApp, type Order } from "../state/app";
 import { useAsync } from "../useAsync";
 import { feeFor } from "./Delivery";
 
@@ -14,8 +14,9 @@ const PAYMENTS = [
 ] as const;
 
 export function Payment() {
-  const { lines, count, itemsCents, listCents, cashbackCents, mode, store, dispatch } = useApp();
-  const { resetAll } = useNav();
+  const { lines, count, itemsCents, listCents, cashbackCents, mode, store, dispatch, rxDocs } = useApp();
+  const rxMissing = rxPending(lines, rxDocs).length;   // #28: sem todas as receitas, não paga
+  const { resetAll, push } = useNav();
   const { commerce } = useServices();
   const [pay, setPay] = useState<(typeof PAYMENTS)[number]["id"]>("pix");
   const del = useAsync(() => commerce.delivery(), [commerce]);
@@ -24,6 +25,7 @@ export function Payment() {
   const total = itemsCents + fee;
 
   const confirm = () => {
+    if (rxMissing) return;
     if (!mode || !lines.length) return;
     const order: Order = {
       id: `SIM-${Date.now().toString(36).toUpperCase().slice(-6)}`,
@@ -76,7 +78,12 @@ export function Payment() {
         </div>
       </div>
       <div className="sticky">
-        <button className="btn primary block" disabled={!mode || !lines.length || !opt} onClick={confirm}>Finalizar pedido simulado</button>
+        {rxMissing ? (
+          <button className="note warn" style={{ textAlign: "left", width: "100%" }} onClick={() => push({ name: "prescriptions" })}>
+            <Icon name="alert" size={18} /><span>Falta anexar {rxMissing === 1 ? "1 receita" : `${rxMissing} receitas`}. Anexar receitas</span>
+          </button>
+        ) : null}
+        <button className="btn primary block" disabled={!mode || !lines.length || !opt || rxMissing > 0} onClick={confirm}>Finalizar pedido simulado</button>
       </div>
     </div>
   );

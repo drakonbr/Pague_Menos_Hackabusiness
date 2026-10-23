@@ -64,6 +64,7 @@ def card(p: dict) -> dict:
 
 def kit_card(k: dict) -> dict:
     return {"id": k["id"], "tier": k["tier"], "title": k["title"], "totalCents": k["totalCents"],
+            "itemsTotalCents": k.get("itemsTotalCents"), "discountPct": k.get("discountPct"),
             "cashbackCents": k.get("cashbackCents", 0), "withinBudget": k.get("withinBudget"),
             "items": [{"step": i["step"], "productId": i["product"]["id"], "name": i["product"]["name"],
                        "priceCents": i["product"]["priceCents"]} for i in k["items"]]}

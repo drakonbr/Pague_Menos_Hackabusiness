@@ -4,7 +4,7 @@ import { BottomSheet } from "../components/BottomSheet";
 import { Icon } from "../components/Icon";
 import { ProductImage } from "../components/ProductImage";
 import type { Intent, Kit, StepId, SwapOption } from "../contracts/types";
-import { STEP_LABEL, TIER_LABEL } from "../contracts/types";
+import { STEP_LABEL, TIER_LABEL, kitPrice } from "../contracts/types";
 import { useNav, useServices } from "../nav";
 import { delta, money } from "../services/format";
 import { useApp, type SubscriptionDays } from "../state/app";
@@ -51,7 +51,6 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
     }
   };
 
-  const saving = kit.listTotalCents - kit.totalCents;
   const overBudget = intent.budgetCents != null && !kit.withinBudget ? kit.totalCents - intent.budgetCents : 0;
   const complete = (avail.data ?? []).filter((s) => s.missingIds.length === 0);
   const fav = isFavKit(kit);
@@ -146,7 +145,7 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
 
       <div className="sticky">
         <div className="line1">
-          <span>{kit.items.length} itens{saving > 0 ? <small style={{ color: "var(--ok)", fontSize: 13 }}> · economiza {money(saving)}</small> : null}</span>
+          <span>{kit.items.length} itens{kit.discountCents > 0 ? <small className="kit-off"> · avulsos {money(kit.itemsTotalCents)} · desconto do kit {kit.discountPct}% (−{money(kit.discountCents)})</small> : null}</span>
           <b>{money(kit.totalCents)}</b>
         </div>
         <button className="btn primary block" onClick={() => dispatch({ type: "addKit", kit, intent, everyDays: every })}>
@@ -160,7 +159,9 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
           {!options && !error ? <div className="skeleton" style={{ height: 120 }} role="status" aria-label="Carregando opções" /> : null}
           {options?.length === 0 ? <p className="footnote">Nenhuma outra opção disponível para esta etapa.</p> : null}
           {options?.map((o) => {
-            const over = intent.budgetCents != null && kit.totalCents + o.deltaCents > intent.budgetCents;
+            const newTotal = kitPrice(kit.itemsTotalCents + o.deltaCents, kit.items.length).totalCents;
+            const kitDelta = newTotal - kit.totalCents;          // quanto o kit muda, já com o desconto (#30)
+            const over = intent.budgetCents != null && newTotal > intent.budgetCents;
             return (
               <button key={o.product.id} className="opt" disabled={!o.compatible} onClick={() => pick(o.product.id)}>
                 <ProductImage product={o.product} size={52} />
@@ -172,7 +173,7 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
                     {o.compatible && over ? " · passa do orçamento" : ""}
                   </small>
                 </span>
-                {o.compatible ? <span className={`d ${o.deltaCents > 0 ? "up" : o.deltaCents < 0 ? "down" : ""}`}>{delta(o.deltaCents)}</span> : null}
+                {o.compatible ? <span className={`d ${kitDelta > 0 ? "up" : kitDelta < 0 ? "down" : ""}`} aria-label={`kit ${delta(kitDelta)}`}>{delta(kitDelta)}<small> no kit</small></span> : null}
               </button>
             );
           })}

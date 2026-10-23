@@ -7,7 +7,7 @@ import { STEP_LABEL } from "../contracts/types";
 import { SIMULATED_LOCATION } from "../location";
 import { useNav, useServices } from "../nav";
 import { delta, money } from "../services/format";
-import { cartProductIds, useApp, type CartLine } from "../state/app";
+import { cartProductIds, rxPending, useApp, type CartLine } from "../state/app";
 import { useAsync } from "../useAsync";
 
 type TabId = "entrega" | "retirada";
@@ -24,7 +24,8 @@ interface Plan {
 }
 
 export function Delivery() {
-  const { lines, itemsCents, store, mode, dispatch } = useApp();
+  const { lines, itemsCents, store, mode, dispatch, rxDocs } = useApp();
+  const rxMissing = rxPending(lines, rxDocs).length > 0;   // #28: receita faltando leva antes às Receitas
   const { push } = useNav();
   const { commerce, search } = useServices();
   const [tab, setTab] = useState<TabId>(mode === "retirada" ? "retirada" : "entrega");
@@ -166,7 +167,9 @@ export function Delivery() {
         </div>
       </div>
       <div className="sticky">
-        <button className="btn primary block" disabled={!canContinue} onClick={() => push({ name: "payment" })}>Continuar para pagamento</button>
+        <button className="btn primary block" disabled={!canContinue} onClick={() => push(rxMissing ? { name: "prescriptions" } : { name: "payment" })}>
+          {rxMissing ? "Anexar receitas para continuar" : "Continuar para pagamento"}
+        </button>
       </div>
 
       {plan ? (

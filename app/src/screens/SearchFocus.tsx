@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Icon } from "../components/Icon";
+import { SEARCH_HINT } from "../components/SearchHint";
 import { useNav } from "../nav";
 import { useApp } from "../state/app";
 
@@ -34,8 +35,8 @@ export function SearchFocus({ initial = "" }: { initial?: string }) {
       <form className="bar" onSubmit={submit} role="search" style={{ boxShadow: "none" }}>
         <div className="searchfield" style={{ borderColor: "var(--brand)" }}>
           <Icon name="search" />
-          <label className="sr-only" htmlFor="q">O que você procura?</label>
-          <input id="q" autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Remédio, sintoma ou produto" autoComplete="off" enterKeyHint="search" />
+          <label className="sr-only" htmlFor="q">Buscar remédios, sintomas ou produtos</label>
+          <input id="q" autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder={SEARCH_HINT} autoComplete="off" enterKeyHint="search" />
           {q ? (
             <button type="button" className="icon-btn" style={{ width: 36, height: 36 }} onClick={() => setQ("")} aria-label="Apagar">
               <Icon name="close" size={18} />

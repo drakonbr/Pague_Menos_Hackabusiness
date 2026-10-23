@@ -271,3 +271,10 @@ A tarja segue o que é usual no varejo, a partir de conhecimento geral, **sem co
 | p215 | Ondansetrona 4 mg (genérico) — 10 comprimidos orodispersíveis | Ondansetrona | vermelha (receita) | R$ 24,90 |
 | p216 | Metoclopramida 10 mg — 20 comprimidos | Cloridrato de metoclopramida | vermelha (receita) | R$ 8,90 |
 | p217 | Domperidona 10 mg — 30 comprimidos | Domperidona | vermelha (receita) | R$ 19,90 |
+
+## 12. Desconto dos kits (#30, 23/10)
+
+- Todo kit com 2 itens ou mais tem desconto progressivo: 10% (2 itens), 12% (3), 15% (4 ou 5). O kit sempre sai mais barato que comprar os itens avulsos, sem exagero.
+- Vale também para os kits de medicamento. Decisão da Julia: o exemplo pedido foi o kit de dor de cabeça. Ressalva registrada: em produção, promoção de medicamento segue a RDC 96/2008 da Anvisa e precisa de revisão jurídica antes de ir ao ar. No protótipo, o desconto aparece como preço do kit, sem frase de apelo ao consumo.
+- O cashback é calculado sobre o que a pessoa paga: o cashback dos itens reduzido na mesma proporção do desconto.
+- Arredondamento: meio centavo para cima, em aritmética inteira, igual no motor e no app.

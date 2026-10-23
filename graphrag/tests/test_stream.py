@@ -37,7 +37,8 @@ class TestFluxo(unittest.TestCase):
         self.assertEqual([k["id"] for k in ev[1][1]["kits"]], [k["id"] for k in done["kits"]])
         self.assertEqual([p["id"] for p in ev[1][1]["products"]], [p["id"] for p in done["products"]])
         for k in ev[1][1]["kits"]:
-            self.assertEqual(k["totalCents"], sum(i["priceCents"] for i in k["items"]))
+            self.assertEqual(k["itemsTotalCents"], sum(i["priceCents"] for i in k["items"]))
+            self.assertLess(k["totalCents"], k["itemsTotalCents"])
         self.assertEqual(set(done["latencyMs"]), {"history", "engine", "total"})
         self.assertIn("context", done)
 

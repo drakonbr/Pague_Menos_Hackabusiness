@@ -64,9 +64,16 @@ def check_kit(kit: dict, intent: dict) -> list[str]:
         p = next(p for p in prods if p["id"] == pid)
         if p["priceCents"] != t["price"]:
             v.append(f"{tag} I12: preço de {pid}")
-    total = sum(t["price"] for t in truth if t)
-    if kit["totalCents"] != total:
-        v.append(f"{tag} I4: total {kit['totalCents']} != {total}")
+    items = sum(t["price"] for t in truth if t)
+    pct = 0 if len(ids) < 2 else {2: 10, 3: 12}.get(len(ids), 15)       # regra do doc 16 (#30), escrita de novo aqui
+    if kit.get("itemsTotalCents") != items:
+        v.append(f"{tag} I4: soma avulsa {kit.get('itemsTotalCents')} != {items}")
+    if kit.get("discountPct") != pct or kit.get("discountCents") != (items * pct + 50) // 100:
+        v.append(f"{tag} M3: desconto {kit.get('discountPct')}% / {kit.get('discountCents')} fora da regra")
+    if kit["totalCents"] != items - (items * pct + 50) // 100:
+        v.append(f"{tag} I4: total {kit['totalCents']} != soma {items} menos desconto")
+    if len(ids) >= 2 and not kit["totalCents"] < items:
+        v.append(f"{tag} M3: kit não sai mais barato que os itens avulsos")
     b = intent.get("budgetCents")
     if b is not None:
         if kit["withinBudget"] and kit["totalCents"] > b:
@@ -93,7 +100,7 @@ def check_kit(kit: dict, intent: dict) -> list[str]:
     if any(set(t["ings"]) & T.photo for t in truth if t) and "protecao_solar" not in covered \
             and not any(a["code"] == "sem_protetor_no_kit" for a in kit["alerts"]):
         v.append(f"{tag} I8: fotossensibilizante sem protetor e sem alerta")
-    cb = sum((t["price"] * t["cashbackPct"]) // 100 for t in truth if t)
+    cb = sum((t["price"] * t["cashbackPct"]) // 100 for t in truth if t) * (100 - pct) // 100
     if kit["cashbackCents"] != cb:
         v.append(f"{tag} I15: cashback {kit['cashbackCents']} != {cb}")
     if (intent.get("storeId") or None) != (kit.get("storeId") or None):
@@ -125,6 +132,11 @@ def check_response(res: dict, excluded=()) -> list[str]:
     sigs = [tuple(sorted(i["product"]["id"] for i in k["items"])) for k in res["kits"]]
     if len(set(sigs)) != len(sigs):
         v.append(f"{rid} I14: kits idênticos")
+    order = ["economico", "essencial", "completo"]                       # M4 (#31): ordem e preço crescentes
+    tiers, totals = [k["tier"] for k in res["kits"]], [k["totalCents"] for k in res["kits"]]
+    if tiers != sorted(tiers, key=order.index) or len(set(tiers)) != len(tiers) \
+            or any(a >= b for a, b in zip(totals, totals[1:])):
+        v.append(f"{rid} M4: faixas fora de ordem ou preço não crescente {list(zip(tiers, totals))}")
     if res["kitsStatus"] == "ok" and len(res["kits"]) < 2:
         v.append(f"{rid}: status ok com menos de 2 kits")
     if res["kitsStatus"] == "none_in_budget" and (res["kits"] or not res.get("closestKit")):

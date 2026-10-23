@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f8fb"/><stop offset="1" stop-color="#e9edf3"/></linearGradient><radialGradient id="sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>
+<rect width="1000" height="1000" fill="url(#bg)"/>
+<ellipse cx="530.0" cy="848" rx="330" ry="34" fill="url(#sh)"/>
+<polygon points="250,250 370,180 810,180 690,250" fill="#ffffff" stroke="#d9dee6" stroke-width="2"/>
+<polygon points="690,250 810,180 810,760 690,830" fill="#e6eaf0"/>
+<polygon points="690,734 810,664 810,760 690,830" fill="#141414"/>
+<rect x="250" y="250" width="440" height="580" fill="#ffffff" stroke="#d9dee6" stroke-width="2"/>
+<rect x="250" y="734" width="440" height="96" fill="#141414"/>
+<text x="470.0" y="794.0" text-anchor="middle" font-family="Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="1" fill="#ffffff">NECESSITA DE RECEITA</text>
+<g transform="translate(375.0,397.0) scale(4.75)"><rect width="40" height="40" rx="9" fill="#F23F5F"/><path d="M16 8h8v8h8v8h-8v8h-8v-8H8v-8h8z" fill="#fff"/></g>
+<line x1="690" y1="250" x2="690" y2="830" stroke="#c9d0da" stroke-width="2"/>
+</svg>

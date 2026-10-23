@@ -5,10 +5,9 @@ import { Icon } from "./Icon";
 import { ProductImage } from "./ProductImage";
 
 export function KitCard({ kit, onOpen, overBudgetBy }: { kit: Kit; onOpen: () => void; overBudgetBy?: number }) {
-  const saving = kit.listTotalCents - kit.totalCents;
   const attention = kit.alerts.filter((a) => a.severity === "atencao").length;
   return (
-    <button className="kit-card" onClick={onOpen} aria-label={`Abrir kit ${TIER_LABEL[kit.tier]}, ${money(kit.totalCents)}`}>
+    <button className="kit-card" onClick={onOpen} aria-label={`Abrir kit ${TIER_LABEL[kit.tier]}, ${money(kit.totalCents)}${kit.discountPct ? `, ${kit.discountPct}% de desconto no kit` : ""}`}>
       <div className="row" style={{ justifyContent: "space-between" }}>
         <span className={`tier ${kit.tier}`}>{TIER_LABEL[kit.tier]}</span>
         <span className="mini">{kit.items.length} itens</span>
@@ -36,8 +35,8 @@ export function KitCard({ kit, onOpen, overBudgetBy }: { kit: Kit; onOpen: () =>
       </div>
       <div className="price-row">
         <span className="price blue">{money(kit.totalCents)}</span>
-        {saving > 0 ? <span className="old">{money(kit.listTotalCents)}</span> : null}
-        {saving > 0 ? <span className="save">economiza {money(saving)}</span> : null}
+        {kit.discountCents > 0 ? <span className="old">{money(kit.itemsTotalCents)}</span> : null}
+        {kit.discountPct > 0 ? <span className="save">−{kit.discountPct}% no kit</span> : null}
       </div>
       {overBudgetBy ? <span className="over">{money(overBudgetBy)} acima do orçamento</span> : null}
     </button>

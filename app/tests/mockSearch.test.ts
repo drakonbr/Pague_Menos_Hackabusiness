@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Kit, SearchRequest, SkinType } from "../src/contracts/types";
+import { kitCashback, kitPrice, type Kit, type SearchRequest, type SkinType } from "../src/contracts/types";
 import { PRODUCT_BY_ID, PRODUCTS, STORES, stockAt } from "../src/services/mock/catalogData";
 import { createMockCommerceService } from "../src/services/mock/mockCommerceService";
 import { checkResponse } from "../src/services/contractChecks";
@@ -64,12 +64,12 @@ describe("casos de teste do doc 08", () => {
     }
   });
 
-  it("T6: nada dentro do orçamento mostra o kit mais próximo", async () => {
-    const r = await run("Acne, pele oleosa, até R$ 40");
+  it("T6: nada dentro do orçamento (mesmo com o desconto do kit) mostra o kit mais próximo", async () => {
+    const r = await run("Acne, pele oleosa, até R$ 35");
     expect(r.kitsStatus).toBe("none_in_budget");
     expect(r.kits).toHaveLength(0);
     expect(r.closestKit).toBeTruthy();
-    expect(r.closestKit!.totalCents).toBeGreaterThan(4000);
+    expect(r.closestKit!.totalCents).toBeGreaterThan(3500);
     expect(r.closestKit!.withinBudget).toBe(false);
     expect(r.products.length).toBeGreaterThan(0);
   });
@@ -214,7 +214,7 @@ describe("troca de item", () => {
         for (const o of opts.filter((x) => x.compatible).slice(0, 4)) {
           const nk = await svc.swap(kit, it.step, o.product.id, r.intent);
           expect(checkKit(nk, r.intent), `${kit.id} ${it.step} -> ${o.product.id}`).toEqual([]);
-          expect(nk.totalCents - kit.totalCents).toBe(o.deltaCents);
+          expect(nk.itemsTotalCents - kit.itemsTotalCents).toBe(o.deltaCents);
           applied++;
         }
         for (const o of opts.filter((x) => !x.compatible)) {
@@ -338,11 +338,11 @@ describe("lojas: estoque por loja, ajuste do kit e cashback", () => {
     expect(impossible).toBeGreaterThanOrEqual(0);
   }, 60_000);
 
-  it("T15: cashback do kit é a soma do cashback dos itens", async () => {
+  it("T15: cashback do kit é a soma do cashback dos itens, reduzida pelo desconto do kit", async () => {
     const r = await run("Preciso de produtos para tratamento de acne");
     for (const k of r.kits) {
       const sum = k.items.reduce((t, i) => t + Math.floor((i.product.priceCents * i.product.cashbackPct) / 100), 0);
-      expect(k.cashbackCents).toBe(sum);
+      expect(k.cashbackCents).toBe(kitCashback(sum, k.discountPct));
     }
     const bad = { ...r.kits[0], cashbackCents: r.kits[0].cashbackCents + 1 };
     expect(checkKit(bad, r.intent).join()).toMatch(/I15/);
@@ -381,5 +381,18 @@ describe("serviço de comércio (simulado)", () => {
     for (const sc of h.showcases) for (const id of sc.productIds ?? []) expect(PRODUCT_BY_ID.has(id)).toBe(true);
     for (const c of h.categories) for (const id of c.productIds) expect(PRODUCT_BY_ID.has(id)).toBe(true);
     expect(h.kitPresets.length).toBeGreaterThan(3);
+  });
+});
+
+describe("preço do kit (#30)", () => {
+  it("dá o mesmo desconto e cashback que o motor (tabela igual em graphrag/tests/test_engine.py)", () => {
+    const casos: [number, number, number, [number, number, number, number]][] = [
+      [17750, 4, 300, [15, 2663, 15087, 255]], [1850, 2, 37, [10, 185, 1665, 33]],
+      [2050, 2, 0, [10, 205, 1845, 0]], [4625, 3, 92, [12, 555, 4070, 80]], [990, 1, 19, [0, 0, 990, 19]],
+    ];
+    for (const [items, n, cb, esperado] of casos) {
+      const k = kitPrice(items, n);
+      expect([k.discountPct, k.discountCents, k.totalCents, kitCashback(cb, k.discountPct)]).toEqual(esperado);
+    }
   });
 });

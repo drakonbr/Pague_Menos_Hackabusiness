@@ -1,29 +1,19 @@
 import { BlueSearchBar, TitleBar } from "../components/Bars";
-import { Icon, type IconName } from "../components/Icon";
+import { Icon } from "../components/Icon";
+import { TOP_CATEGORIES } from "../topCategories";
 import { useNav, useServices } from "../nav";
 import { useAsync } from "../useAsync";
 import { ProductList } from "./Results";
 
-const TOP: Array<{ label: string; icon: IconName; id?: string }> = [
-  { label: "Medicamentos e saúde", icon: "pill", id: "saude" },
-  { label: "Dermo e beleza", icon: "lipstick", id: "dermo" },
-  { label: "Mamães e bebês", icon: "stroller" },
-  { label: "Vida saudável", icon: "dumbbell", id: "vida-saudavel" },
-  { label: "Higiene pessoal", icon: "bottle", id: "higiene" },
-  { label: "Conveniência", icon: "bag" },
-  { label: "Marcas exclusivas", icon: "cross" },
-  { label: "Pet shop", icon: "paw" },
-];
-
-export function CategoriesRoot() {
+export function CategoriesList() {
   const { push } = useNav();
   return (
     <div className="screen">
-      <TitleBar title="Categorias" back={false} />
+      <TitleBar title="Categorias" />
       <div className="scroll">
         <div className="pad">
           <div className="menulist">
-            {TOP.map((c) => (
+            {TOP_CATEGORIES.map((c) => (
               <button key={c.label} className="menurow" disabled={!c.id} onClick={() => c.id && push({ name: "category", id: c.id })}>
                 <span className="ico"><Icon name={c.icon} size={30} /></span>
                 <span>{c.label}</span>

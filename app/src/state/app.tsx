@@ -33,13 +33,23 @@ export interface ChatMsg {
   local?: boolean;
 }
 
+export type RxAsk =
+  | { kind: "product"; product: Product }
+  | { kind: "kit"; kit: Kit; intent: Intent; everyDays: SubscriptionDays };
+
 interface State {
   consent: ConsentFlags;
   chat: { messages: ChatMsg[]; context: ChatContext | null; pending: boolean };
   /** Reposição automática por produto (premissas fictícias). */
   refillAuto: Record<string, boolean>;
-  /** Receita SIMULADA anexada nesta sessão. */
+  /** Equivalente escolhido na reposição, por item; só vale na loja em que foi escolhido (o estoque era dela). */
+  refillPick: { storeId: string | null; picks: Record<string, Product> };
+  /** Receita SIMULADA anexada nesta sessão (reposição). */
   rxAttached: boolean;
+  /** Item com receita esperando a pessoa confirmar o aviso antes de entrar na cesta (#28). */
+  rxAsk: RxAsk | null;
+  /** Ids de produto da cesta com receita (simulada) anexada para este pedido. */
+  rxDocs: string[];
   lines: CartLine[];
   favorites: string[]; // ids de produto
   favoriteKits: Kit[];
@@ -58,11 +68,16 @@ type Action =
   | { type: "chatReset" }
   | { type: "setConsent"; key: keyof ConsentFlags; value: boolean }
   | { type: "setRefillAuto"; id: string; on: boolean }
+  | { type: "refillPick"; id: string; product: Product | null; storeId: string | null }
   | { type: "setRx"; on: boolean }
-  | { type: "addKit"; kit: Kit; intent: Intent; everyDays?: SubscriptionDays }
+  | { type: "addKit"; kit: Kit; intent: Intent; everyDays?: SubscriptionDays; confirmed?: boolean }
   | { type: "replaceKit"; key: string; kit: Kit; intent: Intent }
   | { type: "setEvery"; key: string; everyDays: SubscriptionDays }
-  | { type: "addProduct"; product: Product }
+  | { type: "addProduct"; product: Product; confirmed?: boolean }
+  | { type: "rxConfirm" }
+  | { type: "rxCancel" }
+  | { type: "attachRx"; ids: string[] }
+  | { type: "detachRx"; id: string }
   | { type: "setQty"; key: string; qty: number }
   | { type: "remove"; key: string }
   | { type: "toggleFav"; id: string }
@@ -80,7 +95,24 @@ const MAX_QTY = 9;
 export const kitSignature = (kit: Kit) => kit.items.map((i) => i.product.id).sort().join("-");
 const kitKey = (kit: Kit) => `kit:${kit.tier}:${kitSignature(kit)}`;
 
-function reducer(s: State, a: Action): State {
+/** Produtos de uma linha da cesta (o próprio produto, ou os itens do kit). */
+export const lineProducts = (l: CartLine): Product[] => (l.type === "kit" ? l.kit.items.map((i) => i.product) : [l.product]);
+/** Produtos únicos da cesta que exigem receita (avulsos e dentro de kits). */
+export const rxProducts = (lines: CartLine[]): Product[] => {
+  const seen = new Map<string, Product>();
+  for (const l of lines) for (const p of lineProducts(l)) if (p.rx) seen.set(p.id, p);
+  return [...seen.values()];
+};
+/** Itens com receita ainda sem receita anexada: enquanto houver algum, não se paga. */
+export const rxPending = (lines: CartLine[], rxDocs: string[]): Product[] => rxProducts(lines).filter((p) => !rxDocs.includes(p.id));
+
+/** Troca as linhas da cesta e esquece a receita de quem saiu dela (voltar a pôr pede a receita de novo). */
+const withLines = (s: State, lines: CartLine[]): State => {
+  const ids = new Set(rxProducts(lines).map((p) => p.id));
+  return { ...s, lines, rxDocs: s.rxDocs.filter((id) => ids.has(id)) };
+};
+
+export function reducer(s: State, a: Action): State {
   switch (a.type) {
     case "chatPush":
       return { ...s, chat: { ...s.chat, messages: [...s.chat.messages, a.msg] } };
@@ -94,9 +126,17 @@ function reducer(s: State, a: Action): State {
       return { ...s, consent: { ...s.consent, [a.key]: a.value } };
     case "setRefillAuto":
       return { ...s, refillAuto: { ...s.refillAuto, [a.id]: a.on }, toast: { text: a.on ? "Reposição automática ativada (simulada)" : "Reposição automática desativada" } };
+    case "refillPick": {
+      const base = s.refillPick.storeId === a.storeId ? { ...s.refillPick.picks } : {};
+      if (a.product) base[a.id] = a.product;
+      else delete base[a.id];
+      return { ...s, refillPick: { storeId: a.storeId, picks: base } };
+    }
     case "setRx":
       return { ...s, rxAttached: a.on };
     case "addKit": {
+      if (!a.confirmed && a.kit.items.some((i) => i.product.rx))
+        return { ...s, rxAsk: { kind: "kit", kit: a.kit, intent: a.intent, everyDays: a.everyDays ?? 0 } };
       const key = kitKey(a.kit);
       const found = s.lines.find((l) => l.key === key);
       const lines = found
@@ -104,14 +144,12 @@ function reducer(s: State, a: Action): State {
         : [...s.lines, { key, type: "kit" as const, kit: a.kit, intent: a.intent, qty: 1, everyDays: a.everyDays ?? 0 }];
       return { ...s, lines, toast: { text: "Kit adicionado à cesta", action: "cart" } };
     }
-    case "replaceKit":
-      return {
-        ...s,
-        lines: s.lines.map((l) => (l.key === a.key && l.type === "kit" ? { ...l, kit: a.kit, intent: a.intent, key: kitKey(a.kit) } : l)),
-      };
+    case "replaceKit":   // troca de loja na entrega: a receita de quem saiu é esquecida; a do novo item fica pendente
+      return withLines(s, s.lines.map((l) => (l.key === a.key && l.type === "kit" ? { ...l, kit: a.kit, intent: a.intent, key: kitKey(a.kit) } : l)));
     case "setEvery":
       return { ...s, lines: s.lines.map((l) => (l.key === a.key && l.type === "kit" ? { ...l, everyDays: a.everyDays } : l)) };
     case "addProduct": {
+      if (!a.confirmed && a.product.rx) return { ...s, rxAsk: { kind: "product", product: a.product } };
       const key = `p:${a.product.id}`;
       const found = s.lines.find((l) => l.key === key);
       const lines = found
@@ -119,15 +157,26 @@ function reducer(s: State, a: Action): State {
         : [...s.lines, { key, type: "product" as const, product: a.product, qty: 1 }];
       return { ...s, lines, toast: { text: "Produto adicionado à cesta", action: "cart" } };
     }
+    case "rxConfirm": {
+      const ask = s.rxAsk;
+      if (!ask) return s;
+      const next = { ...s, rxAsk: null };
+      return ask.kind === "product"
+        ? reducer(next, { type: "addProduct", product: ask.product, confirmed: true })
+        : reducer(next, { type: "addKit", kit: ask.kit, intent: ask.intent, everyDays: ask.everyDays, confirmed: true });
+    }
+    case "rxCancel":
+      return { ...s, rxAsk: null };
+    case "attachRx":
+      return { ...s, rxDocs: [...new Set([...s.rxDocs, ...a.ids])] };
+    case "detachRx":
+      return { ...s, rxDocs: s.rxDocs.filter((x) => x !== a.id) };
     case "setQty":
-      return {
-        ...s,
-        lines: s.lines
-          .map((l) => (l.key === a.key ? { ...l, qty: Math.max(0, Math.min(MAX_QTY, a.qty)) } : l))
-          .filter((l) => l.qty > 0),
-      };
+      return withLines(s, s.lines
+        .map((l) => (l.key === a.key ? { ...l, qty: Math.max(0, Math.min(MAX_QTY, a.qty)) } : l))
+        .filter((l) => l.qty > 0));
     case "remove":
-      return { ...s, lines: s.lines.filter((l) => l.key !== a.key) };
+      return withLines(s, s.lines.filter((l) => l.key !== a.key));
     case "toggleFav":
       return { ...s, favorites: s.favorites.includes(a.id) ? s.favorites.filter((x) => x !== a.id) : [...s.favorites, a.id] };
     case "toggleFavKit": {
@@ -149,9 +198,11 @@ function reducer(s: State, a: Action): State {
     case "setMode":
       return { ...s, mode: a.mode };
     case "placeOrder":
+      if (rxPending(s.lines, s.rxDocs).length) return s;   // #28: pedido com receita faltando é recusado aqui também
       return {
         ...s,
         lines: [],
+        rxDocs: [],
         orders: [a.order, ...s.orders],
         walletPendingCents: s.walletPendingCents + a.order.cashbackCents,
       };
@@ -163,7 +214,7 @@ function reducer(s: State, a: Action): State {
 }
 
 export const lineUnitCents = (l: CartLine) => (l.type === "kit" ? l.kit.totalCents : l.product.priceCents);
-export const lineListCents = (l: CartLine) => (l.type === "kit" ? l.kit.listTotalCents : l.product.listPriceCents);
+export const lineListCents = (l: CartLine) => (l.type === "kit" ? l.kit.itemsTotalCents : l.product.listPriceCents);
 export const lineTotalCents = (l: CartLine) => lineUnitCents(l) * l.qty;
 export const lineUnits = (l: CartLine) => (l.type === "kit" ? l.kit.items.length : 1) * l.qty;
 export const lineCashbackCents = (l: CartLine) =>
@@ -173,11 +224,14 @@ export const cartProductIds = (lines: CartLine[]) => [
   ...new Set(lines.flatMap((l) => (l.type === "kit" ? l.kit.items.map((i) => i.product.id) : [l.product.id]))),
 ];
 
-const initial: State = {
+export const initialState: State = {
   consent: PERSONA.privacy.consent,
   chat: { messages: [], context: null, pending: false },
   refillAuto: {},
+  refillPick: { storeId: null, picks: {} },
   rxAttached: false,
+  rxAsk: null,
+  rxDocs: [],
   lines: [],
   favorites: [],
   favoriteKits: [],
@@ -203,7 +257,7 @@ type Api = State & {
 const Ctx = createContext<Api | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [state, dispatchRaw] = useReducer(reducer, initial);
+  const [state, dispatchRaw] = useReducer(reducer, initialState);
   const dispatch = useCallback((a: Action) => dispatchRaw(a), []);
   const api = useMemo<Api>(() => {
     const favSet = new Set(state.favorites);

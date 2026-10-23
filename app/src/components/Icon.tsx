@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export type IconName =
   | "search" | "back" | "basket" | "basketPlus" | "mic" | "camera" | "barcode" | "receipt" | "bell"
-  | "home" | "grid" | "tag" | "heart" | "heartFill" | "more" | "pin" | "chevron" | "chevronDown" | "chevronUp"
+  | "home" | "tag" | "heart" | "heartFill" | "more" | "pin" | "chevron" | "chevronDown" | "chevronUp"
   | "close" | "filter" | "clock" | "share" | "trash" | "plus" | "minus" | "check" | "checkCircle" | "info"
   | "alert" | "shield" | "swap" | "store" | "truck" | "locker" | "map" | "cross" | "wallet" | "repeat"
   | "box" | "sparkle" | "pill" | "lipstick" | "stroller" | "dumbbell" | "bottle" | "bag" | "paw" | "image" | "user" | "send" | "chat" | "lock";
@@ -18,7 +18,6 @@ const P: Record<IconName, ReactNode> = {
   receipt: (<><path d="M7 3h7l4 4v14H7z" /><path d="M14 3v4h4M10 12h5M10 16h5" /></>),
   bell: (<><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20a2 2 0 0 0 4 0" /></>),
   home: (<><path d="M4 10.5L12 4l8 6.5V20h-5.5v-6h-5v6H4z" /></>),
-  grid: (<><rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="4.5" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><rect x="13" y="10.5" width="7" height="9.5" rx="1.5" /></>),
   tag: (<><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1 1 0 0 1 0 1.4l-7.3 7.3a1 1 0 0 1-1.4 0z" /><circle cx="8" cy="8" r="1.4" /></>),
   heart: <path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" />,
   heartFill: <path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" fill="currentColor" />,

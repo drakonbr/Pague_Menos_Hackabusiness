@@ -11,8 +11,8 @@ Não é um chatbot. É busca por intenção + composição de kit + compra.
 | Fase | Estado |
 | --- | --- |
 | Documentação (docs 01–16) | escrita e revisada em 21/10; o doc 16 é o prompt e o registro da rodada de medicamentos |
-| Catálogo sintético | 291 produtos (skin care, higiene, suplementos e 108 medicamentos em 16 áreas), 8 lojas, estoque por loja; 83 de 83 checagens |
-| **GraphRAG do zero** | **implementado e treinado**, com medicamentos (grafo de 750 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 61/65 fora do treino); 172 de 172 testes em 24/10 |
+| Catálogo sintético | 297 produtos (skin care, higiene, suplementos e 108 medicamentos: 100 de busca em 16 áreas + 8 de reposição), 8 lojas, estoque por loja; 83 de 83 checagens |
+| **GraphRAG do zero** | **implementado e treinado**, com medicamentos (grafo de 759 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 61/65 fora do treino); 173 de 173 testes em 24/10 |
 | App | logado como a persona Renata; busca de remédio e sintoma com kits; reposição; 46 testes; visto só em Chromium |
 | Fotos reais sem marca | **pendente**: emissão de chave da Pexels pausada; o app mostra desenhos de embalagem |
 | Hospedagem do protótipo | **pendente** (P-04, doc 09); a entrega pede acesso em funcionamento |
@@ -59,6 +59,7 @@ pague-menos-kits/
 | 14 | [docs/14-persona-e-privacidade.md](docs/14-persona-e-privacidade.md) | Persona Renata, conversa, reposição e privacidade |
 | 15 | [docs/15-graphrag-conversacional.md](docs/15-graphrag-conversacional.md) | Ontologia, ingestão incremental, busca em fluxo (SSE), latência |
 | 16 | [docs/16-prompt-medicamentos-e-ui.md](docs/16-prompt-medicamentos-e-ui.md) | Prompt, decisões e checklist da rodada de medicamentos e interface |
+| 17 | [docs/17-rodada-24-10-fallback-e-catalogo.md](docs/17-rodada-24-10-fallback-e-catalogo.md) | Fallback seletivo, cota visível e catálogo ampliado (297 produtos) |
 | — | [contracts/README.md](contracts/README.md) | Contratos entre módulos |
 
 ## Comandos rápidos

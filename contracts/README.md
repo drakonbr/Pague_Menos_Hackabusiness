@@ -9,7 +9,7 @@ Convenções: JSON em `camelCase`, valores em **centavos inteiros** (`priceCents
 | Nome | Valores |
 | --- | --- |
 | `StepId` | `limpeza`, `preparo`, `tratamento`, `hidratacao`, `protecao_solar`, `protecao_corporal`, `complemento`, além das etapas de suplementos e higiene premium (ver `catalog/data/steps.json`) |
-| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` e as áreas de saúde (doc 16): `dor_de_cabeca`, `dor_no_corpo`, `dor_muscular`, `dor_de_barriga`, `azia`, `gripe`, `tosse`, `tosse_seca`, `dor_de_garganta`, `alergia`, `diarreia`, `prisao_de_ventre`, `enjoo` |
+| `GoalId` | `acne`, `manchas`, `skincare_basico`, `protecao_solar`, `anti_idade`, `pele_sensivel`, `oleosidade`, `suplementos`, `higiene_premium` e as áreas de saúde (doc 16): `dor_de_cabeca`, `dor_no_corpo`, `dor_muscular`, `dor_de_barriga`, `azia`, `gripe`, `tosse`, `tosse_seca`, `dor_de_garganta`, `alergia`, `diarreia`, `prisao_de_ventre`, `enjoo`; desde 24/10 também `micose`, `infeccao_bacteriana`, `herpes` e `inflamacao_pele` |
 | `SkinType` | `oleosa`, `mista`, `seca`, `normal`, `sensível` |
 | `KitTier` | `economico`, `essencial`, `completo` (era `alternativo` até 23/10) |
 | `AlertCode` | `fotossensibilizante`, `consultar_se_gestante`, `evitar_contato_olhos`, `nao_usar_pele_irritada`, `teste_de_sensibilidade`, `interacao_separar_periodos`, `sem_protetor_no_kit` |

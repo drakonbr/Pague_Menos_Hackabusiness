@@ -4268,6 +4268,54 @@
    "domain": "higiene"
   },
   {
+   "id": "product:p292",
+   "kind": "product",
+   "label": "Spray de Limpeza Auricular",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p293",
+   "kind": "product",
+   "label": "Solução de Limpeza de Ouvido",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p294",
+   "kind": "product",
+   "label": "Lenços de Limpeza Auricular",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p295",
+   "kind": "product",
+   "label": "Spray Auricular Suave",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p296",
+   "kind": "product",
+   "label": "Solução Auricular com Aloe",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p297",
+   "kind": "product",
+   "label": "Lenços Umedecidos para Ouvido",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
    "id": "ptype:adesivo hidrocoloide",
    "kind": "ptype",
    "label": "adesivo hidrocoloide"
@@ -4703,6 +4751,11 @@
    "label": "leite de limpeza"
   },
   {
+   "id": "ptype:lenço auricular",
+   "kind": "ptype",
+   "label": "lenço auricular"
+  },
+  {
    "id": "ptype:lenço facial",
    "kind": "ptype",
    "label": "lenço facial"
@@ -4908,6 +4961,11 @@
    "label": "simeticona em gotas"
   },
   {
+   "id": "ptype:solução auricular",
+   "kind": "ptype",
+   "label": "solução auricular"
+  },
+  {
    "id": "ptype:solução nasal de cloreto de sódio",
    "kind": "ptype",
    "label": "solução nasal de cloreto de sódio"
@@ -4921,6 +4979,11 @@
    "id": "ptype:soro de reidratação pronto",
    "kind": "ptype",
    "label": "soro de reidratação pronto"
+  },
+  {
+   "id": "ptype:spray auricular",
+   "kind": "ptype",
+   "label": "spray auricular"
   },
   {
    "id": "ptype:spray para garganta",
@@ -17037,33 +17100,33 @@
   },
   {
    "from": "product:p119",
-   "to": "product:p121",
-   "type": "SIMILAR_TO",
-   "weight": 0.4777
-  },
-  {
-   "from": "product:p119",
-   "to": "product:p242",
-   "type": "SIMILAR_TO",
-   "weight": 0.737
-  },
-  {
-   "from": "product:p119",
    "to": "product:p243",
    "type": "SIMILAR_TO",
    "weight": 0.8443
   },
   {
    "from": "product:p119",
-   "to": "product:p244",
+   "to": "product:p292",
    "type": "SIMILAR_TO",
-   "weight": 0.5699
+   "weight": 0.7857
   },
   {
    "from": "product:p119",
-   "to": "product:p282",
+   "to": "product:p293",
    "type": "SIMILAR_TO",
-   "weight": 0.4513
+   "weight": 0.8213
+  },
+  {
+   "from": "product:p119",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.8299
+  },
+  {
+   "from": "product:p119",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.7656
   },
   {
    "from": "product:p119",
@@ -17124,12 +17187,6 @@
   },
   {
    "from": "product:p120",
-   "to": "product:p121",
-   "type": "SIMILAR_TO",
-   "weight": 0.6389
-  },
-  {
-   "from": "product:p120",
    "to": "product:p242",
    "type": "SIMILAR_TO",
    "weight": 0.9323
@@ -17142,15 +17199,21 @@
   },
   {
    "from": "product:p120",
-   "to": "product:p244",
+   "to": "product:p292",
    "type": "SIMILAR_TO",
-   "weight": 0.58
+   "weight": 0.7749
   },
   {
    "from": "product:p120",
-   "to": "product:p282",
+   "to": "product:p293",
    "type": "SIMILAR_TO",
-   "weight": 0.4449
+   "weight": 0.8124
+  },
+  {
+   "from": "product:p120",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.8199
   },
   {
    "from": "product:p120",
@@ -24937,21 +25000,9 @@
   },
   {
    "from": "product:p242",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.737
-  },
-  {
-   "from": "product:p242",
    "to": "product:p120",
    "type": "SIMILAR_TO",
    "weight": 0.9323
-  },
-  {
-   "from": "product:p242",
-   "to": "product:p121",
-   "type": "SIMILAR_TO",
-   "weight": 0.5787
   },
   {
    "from": "product:p242",
@@ -24961,15 +25012,27 @@
   },
   {
    "from": "product:p242",
-   "to": "product:p244",
+   "to": "product:p292",
    "type": "SIMILAR_TO",
-   "weight": 0.5259
+   "weight": 0.7431
   },
   {
    "from": "product:p242",
-   "to": "product:p278",
+   "to": "product:p293",
    "type": "SIMILAR_TO",
-   "weight": 0.5
+   "weight": 0.8018
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.7962
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.7563
   },
   {
    "from": "product:p242",
@@ -25031,27 +25094,27 @@
   },
   {
    "from": "product:p243",
-   "to": "product:p121",
+   "to": "product:p292",
    "type": "SIMILAR_TO",
-   "weight": 0.4733
+   "weight": 0.8409
   },
   {
    "from": "product:p243",
-   "to": "product:p242",
+   "to": "product:p293",
    "type": "SIMILAR_TO",
-   "weight": 0.7892
+   "weight": 0.9757
   },
   {
    "from": "product:p243",
-   "to": "product:p244",
+   "to": "product:p295",
    "type": "SIMILAR_TO",
-   "weight": 0.4659
+   "weight": 0.9848
   },
   {
    "from": "product:p243",
-   "to": "product:p282",
+   "to": "product:p296",
    "type": "SIMILAR_TO",
-   "weight": 0.4544
+   "weight": 0.8196
   },
   {
    "from": "product:p243",
@@ -28446,21 +28509,9 @@
   },
   {
    "from": "product:p288",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.4255
-  },
-  {
-   "from": "product:p288",
    "to": "product:p242",
    "type": "SIMILAR_TO",
    "weight": 0.469
-  },
-  {
-   "from": "product:p288",
-   "to": "product:p243",
-   "type": "SIMILAR_TO",
-   "weight": 0.4271
   },
   {
    "from": "product:p288",
@@ -28479,6 +28530,18 @@
    "to": "product:p291",
    "type": "SIMILAR_TO",
    "weight": 0.9899
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p294",
+   "type": "SIMILAR_TO",
+   "weight": 0.7597
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.6027
   },
   {
    "from": "product:p288",
@@ -28523,24 +28586,6 @@
   },
   {
    "from": "product:p289",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.437
-  },
-  {
-   "from": "product:p289",
-   "to": "product:p242",
-   "type": "SIMILAR_TO",
-   "weight": 0.5
-  },
-  {
-   "from": "product:p289",
-   "to": "product:p243",
-   "type": "SIMILAR_TO",
-   "weight": 0.4392
-  },
-  {
-   "from": "product:p289",
    "to": "product:p288",
    "type": "SIMILAR_TO",
    "weight": 0.819
@@ -28556,6 +28601,24 @@
    "to": "product:p291",
    "type": "SIMILAR_TO",
    "weight": 0.8267
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p294",
+   "type": "SIMILAR_TO",
+   "weight": 0.6366
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.5563
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.7763
   },
   {
    "from": "product:p289",
@@ -28595,21 +28658,9 @@
   },
   {
    "from": "product:p290",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.4226
-  },
-  {
-   "from": "product:p290",
    "to": "product:p242",
    "type": "SIMILAR_TO",
    "weight": 0.4612
-  },
-  {
-   "from": "product:p290",
-   "to": "product:p243",
-   "type": "SIMILAR_TO",
-   "weight": 0.424
   },
   {
    "from": "product:p290",
@@ -28628,6 +28679,18 @@
    "to": "product:p291",
    "type": "SIMILAR_TO",
    "weight": 0.9798
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p294",
+   "type": "SIMILAR_TO",
+   "weight": 0.753
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.5967
   },
   {
    "from": "product:p290",
@@ -28667,21 +28730,9 @@
   },
   {
    "from": "product:p291",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.4284
-  },
-  {
-   "from": "product:p291",
    "to": "product:p242",
    "type": "SIMILAR_TO",
    "weight": 0.4767
-  },
-  {
-   "from": "product:p291",
-   "to": "product:p243",
-   "type": "SIMILAR_TO",
-   "weight": 0.4301
   },
   {
    "from": "product:p291",
@@ -28703,6 +28754,18 @@
   },
   {
    "from": "product:p291",
+   "to": "product:p294",
+   "type": "SIMILAR_TO",
+   "weight": 0.7664
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.6086
+  },
+  {
+   "from": "product:p291",
    "to": "ptype:lenço facial",
    "type": "OF_TYPE"
   },
@@ -28713,6 +28776,503 @@
   },
   {
    "from": "product:p291",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p292",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p292",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p292",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p292",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p292",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p292",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p292",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.7857
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p120",
+   "type": "SIMILAR_TO",
+   "weight": 0.7749
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.8409
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p293",
+   "type": "SIMILAR_TO",
+   "weight": 0.8333
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.8433
+  },
+  {
+   "from": "product:p292",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.9766
+  },
+  {
+   "from": "product:p292",
+   "to": "ptype:spray auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p292",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p292",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p293",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p293",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p293",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p293",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p293",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p293",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.8213
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p120",
+   "type": "SIMILAR_TO",
+   "weight": 0.8124
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.9757
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p292",
+   "type": "SIMILAR_TO",
+   "weight": 0.8333
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.9892
+  },
+  {
+   "from": "product:p293",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.842
+  },
+  {
+   "from": "product:p293",
+   "to": "ptype:solução auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p293",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p293",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p294",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p294",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p294",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p294",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p294",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.6866
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p288",
+   "type": "SIMILAR_TO",
+   "weight": 0.7597
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p290",
+   "type": "SIMILAR_TO",
+   "weight": 0.753
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p291",
+   "type": "SIMILAR_TO",
+   "weight": 0.7664
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.6651
+  },
+  {
+   "from": "product:p294",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.8382
+  },
+  {
+   "from": "product:p294",
+   "to": "ptype:lenço auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p294",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p294",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p295",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p295",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p295",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p295",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p295",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p295",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.8299
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p120",
+   "type": "SIMILAR_TO",
+   "weight": 0.8199
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.9848
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p292",
+   "type": "SIMILAR_TO",
+   "weight": 0.8433
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p293",
+   "type": "SIMILAR_TO",
+   "weight": 0.9892
+  },
+  {
+   "from": "product:p295",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.8321
+  },
+  {
+   "from": "product:p295",
+   "to": "ptype:spray auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p295",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p295",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p296",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p296",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p296",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p296",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p296",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p296",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p296",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.7656
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.8196
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p292",
+   "type": "SIMILAR_TO",
+   "weight": 0.9766
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p293",
+   "type": "SIMILAR_TO",
+   "weight": 0.842
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p295",
+   "type": "SIMILAR_TO",
+   "weight": 0.8321
+  },
+  {
+   "from": "product:p296",
+   "to": "product:p297",
+   "type": "SIMILAR_TO",
+   "weight": 0.7738
+  },
+  {
+   "from": "product:p296",
+   "to": "ptype:solução auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p296",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p296",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p297",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p297",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p297",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p297",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p297",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p297",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.6763
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p289",
+   "type": "SIMILAR_TO",
+   "weight": 0.7763
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p292",
+   "type": "SIMILAR_TO",
+   "weight": 0.7565
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p293",
+   "type": "SIMILAR_TO",
+   "weight": 0.6679
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p294",
+   "type": "SIMILAR_TO",
+   "weight": 0.8382
+  },
+  {
+   "from": "product:p297",
+   "to": "product:p296",
+   "type": "SIMILAR_TO",
+   "weight": 0.7738
+  },
+  {
+   "from": "product:p297",
+   "to": "ptype:lenço auricular",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p297",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p297",
    "to": "step:higiene_corpo",
    "type": "COVERS",
    "primary": true
@@ -28727,30 +29287,30 @@
    "equiv": 2,
    "goal": 26,
    "ingredient": 139,
-   "product": 291,
-   "ptype": 156,
+   "product": 297,
+   "ptype": 159,
    "skin": 6,
    "step": 45,
    "warning": 8
   },
   "edges": {
-   "ADDRESSES": 420,
+   "ADDRESSES": 432,
    "CONFLICTS_WITH": 110,
-   "CONTAINS": 434,
-   "COVERS": 294,
+   "CONTAINS": 443,
+   "COVERS": 300,
    "EQUIVALENT_TO": 24,
-   "HAS_CLAIM": 167,
+   "HAS_CLAIM": 171,
    "HAS_WARNING": 76,
-   "IN_DOMAIN": 291,
+   "IN_DOMAIN": 297,
    "IN_EQUIV_GROUP": 8,
-   "OF_BRAND": 291,
-   "OF_TYPE": 291,
+   "OF_BRAND": 297,
+   "OF_TYPE": 297,
    "REQUIRES": 75,
-   "SIMILAR_TO": 1402,
-   "SUITS": 345,
+   "SIMILAR_TO": 1438,
+   "SUITS": 351,
    "TARGETS": 42
   },
-  "totalNodes": 750,
-  "totalEdges": 4270
+  "totalNodes": 759,
+  "totalEdges": 4361
  }
 }

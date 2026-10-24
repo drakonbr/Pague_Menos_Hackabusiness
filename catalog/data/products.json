@@ -10931,7 +10931,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "premium"
+    "price_tier": "intermediario"
   },
   {
     "id": "p283",
@@ -11117,7 +11117,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "intermediario"
+    "price_tier": "economico"
   },
   {
     "id": "p288",
@@ -11190,7 +11190,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "intermediario"
+    "price_tier": "economico"
   },
   {
     "id": "p290",
@@ -11263,5 +11263,238 @@
     "rx": null,
     "equivalence": null,
     "price_tier": "economico"
+  },
+  {
+    "id": "p292",
+    "name": "Spray de Limpeza Auricular",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "spray auricular",
+    "form": "spray",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Spray de Limpeza Auricular: produto de higiene (spray auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Aloe vera. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p293",
+    "name": "Solução de Limpeza de Ouvido",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "solução auricular",
+    "form": "dropper",
+    "size": {
+      "value": 15,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Solução de Limpeza de Ouvido: produto de higiene (solução auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p294",
+    "name": "Lenços de Limpeza Auricular",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "lenço auricular",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "algodao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Lenços de Limpeza Auricular: produto de higiene (lenço auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Algodão.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p295",
+    "name": "Spray Auricular Suave",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "spray auricular",
+    "form": "spray",
+    "size": {
+      "value": 30,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Spray Auricular Suave: produto de higiene (spray auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p296",
+    "name": "Solução Auricular com Aloe",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "solução auricular",
+    "form": "dropper",
+    "size": {
+      "value": 15,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Solução Auricular com Aloe: produto de higiene (solução auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Aloe vera. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p297",
+    "name": "Lenços Umedecidos para Ouvido",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "lenço auricular",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "algodao",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Lenços Umedecidos para Ouvido: produto de higiene (lenço auricular) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Algodão e Aloe vera.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
   }
 ]

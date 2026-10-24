@@ -1,6 +1,6 @@
 # catalog/ — banco de dados FICTÍCIO
 
-Catálogo sintético de 291 produtos: 100 de skin care, tratamento cosmético e proteção solar; 6 dermocosméticos anti-idade; 15 suplementos; 62 itens de higiene (6 por prateleira, incluindo creme para pentear, escovas, fio dental, talco, buchas e cotonetes); 8 itens de reposição fictícios; e 108 medicamentos em 16 áreas de saúde (incluindo antifúngicos, antibióticos, antivirais e corticoides em `medicines.py`). **Todos os dados são inventados.** Itens de reposição só servem à tela de reposição; o motor nunca os recomenda.
+Catálogo sintético de 297 produtos: 100 de skin care, tratamento cosmético e proteção solar; 6 dermocosméticos anti-idade; 15 suplementos; 68 itens de higiene (6 por prateleira, incluindo creme para pentear, escovas, fio dental, talco, buchas, cotonetes e limpeza auricular); 8 itens de reposição fictícios; e 108 medicamentos (100 de busca em 16 áreas de saúde, incluindo antifúngicos, antibióticos, antivirais e corticoides em `medicines.py`). **Todos os dados são inventados.** Itens de reposição só servem à tela de reposição; o motor nunca os recomenda.
 
 Este módulo é independente: não importa nada de `app/` nem de `graphrag/`. Ele só gera arquivos de dados.
 
@@ -11,7 +11,7 @@ Este módulo é independente: não importa nada de `app/` nem de `graphrag/`. El
 | `generate_catalog.py` | Gerador determinístico (seed fixa) |
 | `validate_catalog.py` | 83 checagens automáticas; sai com código 1 se algo falhar |
 | `persona_products.py`, `generate_persona.py` | produtos p101–p138 e `data/persona.json` (dados da persona; ficam no aparelho e o motor não os lê) |
-| `hygiene_products.py` | 50 itens de higiene adicionais (p242–p291), incluindo escovas, fio dental, creme para pentear, talco e buchas |
+| `hygiene_products.py` | 56 itens de higiene adicionais (p242–p297), incluindo escovas, fio dental, creme para pentear, talco, buchas e limpeza auricular |
 | `data/products.json` | Cadastro dos produtos (equivale ao PIM/catálogo real) |
 | `data/inventory.json` | Preço e estoque por produto (equivale ao ERP/estoque real) |
 | `data/ingredients.json` | Ingredientes (família, função, fotossensibilizante) |

@@ -62,6 +62,19 @@ class TestVocabulario(unittest.TestCase):
             self.assertTrue(any(tipo in p["productType"] for p in r["products"]),
                             (q, [p["productType"] for p in r["products"][:6]]))
 
+    def test_partes_do_corpo_sujas_vao_para_a_higiene(self):
+        r = E.search({"query": "meu ouvido ta sujo"})
+        self.assertTrue(r["products"] and all("auricular" in p["productType"] for p in r["products"]))
+        r = E.search({"query": "limpeza de ouvido"})
+        self.assertTrue(r["products"] and all("auricular" in p["productType"] for p in r["products"]))
+        for q in ("meu pe ta sujo", "meu umbigo ta sujo", "minha mao ta suja"):
+            r = E.search({"query": q})
+            self.assertTrue(r["products"], q)
+            self.assertTrue(all(p["step"] == "higiene_corpo" for p in r["products"]), q)
+        # continua sendo remédio ausente, não higiene
+        r = E.search({"query": "meu ouvido entupido"})
+        self.assertEqual((r["kits"], r["products"]), ([], []))
+
     def test_sem_acido_so_exclui_esfoliante_e_respeita_ingrediente_nomeado(self):
         _, r0 = goal("rotina para acne")
         for q, esperado in (("sem ácido por favor", {"acido_salicilico", "acido_glicolico", "acido_mandelico"}),

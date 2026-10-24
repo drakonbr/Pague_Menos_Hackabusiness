@@ -153,8 +153,9 @@ class ScopeResolver:
     HYGIENE = {"higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"}
 
     def _refine_concepts(self, present: list[Concept]) -> list[Concept]:
-        """Dois ajustes de bom senso: (1) conceito geral perde para o específico da mesma família ("suplemento para os
-        ossos" fica com vitaminas); (2) "sabonete" junto de cabelo/boca/desodorante é o sabonete do banho."""
+        """Três ajustes de bom senso: (1) conceito geral perde para o específico da mesma família ("suplemento para os
+        ossos" fica com vitaminas); (2) "sabonete" junto de cabelo/boca/desodorante é o sabonete do banho; (3) quando há
+        um conceito de saúde ("dor", queixa ou objetivo), "corpo"/"higiene" genéricos não puxam a busca para o banho."""
         out = list(present)
         for g in [c for c in out if c.id in GENERIC]:
             if any(o is not g and o.id not in GENERIC and set(o.steps) and set(o.steps) <= set(g.steps) for o in out):
@@ -165,6 +166,8 @@ class ScopeResolver:
                 out = [c for c in out if c.id != "sabonete"]
                 if not any(c.id == "banho" for c in out):
                     out.append(next(c for c in self.concepts if c.id == "banho"))
+        if any(c.id == "dor" or c.id.startswith(("queixa:", "saude:")) for c in out):
+            out = [c for c in out if c.id not in ("corpo", "higiene", "banho")]
         return out
 
     # ------------------------------------------------------------ resolução

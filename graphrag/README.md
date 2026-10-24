@@ -26,7 +26,7 @@ Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, s
 | `service/server.py` | HTTP local (`/v1/search`, `/v1/search-chat`, `/v1/similars`, …) |
 | `train.py` | gera `artifacts/` |
 | `eval/` | calibração dos pesos, conjuntos de ranking e de busca, invariantes independentes, latência |
-| `tests/` | 172 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos) |
+| `tests/` | 173 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos) |
 
 ## Comandos (a partir da raiz do repositório)
 
@@ -66,8 +66,9 @@ O fallback deixou de ser só "quando o grafo não entendeu" e ganhou três guard
 - **Gate de incerteza**: além de `_miss`, a conferência entra quando o ato é `desconhecido` ou quando a frase tem parte do corpo que o catálogo não trata (`urina`, `xixi`, `ouvido`, `dente`...) e o grafo caiu numa prateleira de pele. Se a DeepSeek não corrigir, a resposta é explícita ("Não está no banco de dados ainda."), nunca um kit de pele.
 - **Ato**: "não consigo cagar", "meu nariz não para de escorrer" e afins deixam de ser lidos como negação do turno anterior; são busca.
 - **Sugestões**: quando o grafo não entende, os chips vêm dos objetivos mais próximos pelo ranking, não de uma lista fixa.
+- **Partes do corpo + higiene**: "meu ouvido ta sujo" e "limpeza de ouvido" vão para a prateleira de limpeza auricular; "meu pé ta sujo" e "minha mão ta suja" vão para o banho e corpo. "Ouvido entupido"/"dor de ouvido" continuam remédio ausente.
 
-`slang.py` é um **cache determinístico** de fala popular/chula de alta frequência ("me caguei", "estou peidando", "tosse de cachorro", "coceira nos olhos"...). Ele não substitui o fallback: cobre o óbvio sem chamada de rede e deixa o caso geral para o gate. A lista é curadoria interna curta, não um dataset público — não existe dataset aberto que mapeie gíria de balcão para as 13 áreas do catálogo sem problema de licença.
+`slang.py` é um **cache determinístico** de fala popular/chula de alta frequência ("me caguei", "estou peidando", "tosse de cachorro", "coceira nos olhos"...). Ele não substitui o fallback: cobre o óbvio sem chamada de rede e deixa o caso geral para o gate. A lista é curadoria interna curta, não um dataset público — não existe dataset aberto que mapeie gíria de balcão para as 16 áreas do catálogo sem problema de licença.
 
 Limites que continuam: frases fora do catálogo não têm produto (a resposta correta é dizer isso); o fallback ainda não faz retrieval de candidatos nem escolha com confiança; a correção de falso positivo depende das guardas, não de um modelo.
 

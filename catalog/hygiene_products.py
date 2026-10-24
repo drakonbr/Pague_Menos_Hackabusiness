@@ -152,3 +152,17 @@ add("Noble Banho", "Algodão em Bolas 50 g", "algodão em bolas", "higiene_corpo
     ["higiene_diaria"], ["algodao"], None, "dia_noite", 7.90, [], [], [])
 add("Noble Banho", "Lenços Faciais 100 un", "lenço facial", "higiene_corpo", "higiene", "box", "100 un", "T",
     ["higiene_diaria"], ["algodao"], None, "dia_noite", 9.90, [], [], [])
+
+# ---- Limpeza de ouvido (6) ----
+add("Noble Banho", "Spray de Limpeza Auricular", "spray auricular", "higiene_corpo", "higiene", "spray", "30 ml", "T",
+    ["higiene_diaria", "cuidado_corporal"], ["glicerina", "aloe_vera"], None, "dia_noite", 29.90, [SF], [], [])
+add("Noble Banho", "Solução de Limpeza de Ouvido", "solução auricular", "higiene_corpo", "higiene", "dropper", "15 ml",
+    "T", ["higiene_diaria", "cuidado_corporal"], ["glicerina"], None, "dia_noite", 24.90, [SF], [], [])
+add("Noble Banho", "Lenços de Limpeza Auricular", "lenço auricular", "higiene_corpo", "higiene", "box", "30 un", "T",
+    ["higiene_diaria", "cuidado_corporal"], ["algodao"], None, "dia_noite", 14.90, [], [], [])
+add("Noble Banho", "Spray Auricular Suave", "spray auricular", "higiene_corpo", "higiene", "spray", "30 ml", "T",
+    ["higiene_diaria", "cuidado_corporal"], ["glicerina"], None, "dia_noite", 27.90, [SF], [], [])
+add("Noble Banho", "Solução Auricular com Aloe", "solução auricular", "higiene_corpo", "higiene", "dropper", "15 ml",
+    "T", ["higiene_diaria", "cuidado_corporal"], ["glicerina", "aloe_vera"], None, "dia_noite", 22.90, [SF], [], [])
+add("Noble Banho", "Lenços Umedecidos para Ouvido", "lenço auricular", "higiene_corpo", "higiene", "box", "30 un", "T",
+    ["higiene_diaria", "cuidado_corporal"], ["algodao", "aloe_vera"], None, "dia_noite", 16.90, [], [], [])

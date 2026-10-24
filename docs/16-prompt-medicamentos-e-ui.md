@@ -2,6 +2,8 @@
 
 Branch: `feat/medicamentos-e-ui` · Aberto em 21/10/2026 · Status: **implementado e treinado em 21/10** (checklist na seção 7, medições na seção 9). Nada commitado ainda.
 
+> **Nota 24/10:** os números desta página (79 medicamentos, 599 nós, 95 testes) são da rodada de 21/10. O estado atual está no [doc 17](17-rodada-24-10-fallback-e-catalogo.md): **297 produtos, 108 medicamentos em 16 áreas, 759 nós e 173 testes**.
+
 Este documento é o prompt de trabalho da rodada. Ele serve para conferir, no fim, se o que foi entregue segue o pedido. Cada item da seção 7 vira uma linha de "feito / não feito" com a prova (comando, teste ou tela).
 
 ## 1. Pedido original (resumo fiel)

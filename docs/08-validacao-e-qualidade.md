@@ -6,17 +6,17 @@ Como cada etapa é conferida, com o comando e o critério. O registro de execuç
 
 | Módulo | Comando | Critério de aprovação |
 | --- | --- | --- |
-| Catálogo | `python3 catalog/validate_catalog.py` | 76 de 76 checagens (31 em 15/10, 69 em 20/10), código de saída 0 |
+| Catálogo | `python3 catalog/validate_catalog.py` | 83 de 83 checagens (31 em 15/10, 69 em 20/10, 76 em 21/10, 83 em 24/10), código de saída 0 |
 | Catálogo (determinismo) | gerar duas vezes e comparar hash dos arquivos | hashes iguais |
-| Ponte catálogo → app | `python3 tools/export_app_mock.py` | 138 produtos exportados; app compila com eles |
+| Ponte catálogo → app | `python3 tools/export_app_mock.py` | 297 produtos exportados; app compila com eles |
 | Separação de módulos | `python3 tools/check_separation.py` | nenhuma referência proibida; `graphrag/` sem import de `app/` ou `catalog/` e sem escrita em `catalog/` |
 | App: tipos e build | `cd app && npm run build` | zero erros de tipo, build de produção gerado |
 | App: regras de kit | `cd app && npm test` | todos os casos T1 a T12 passam e as invariantes do contrato valem em todas as respostas |
 | App: telas | roteiro manual abaixo | todas as telas e estados do doc 03 alcançáveis |
-| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 95 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos); precisa de `pip install -r graphrag/requirements.txt` |
+| GraphRAG: testes | `python3 -m unittest discover -s graphrag/tests -t .` | 173 testes (motor, NLU, privacidade, ontologia, ingestão, streaming, escopo da busca, medicamentos); precisa de `pip install -r graphrag/requirements.txt` |
 | GraphRAG: treino e calibração | `python3 -m graphrag.train`; `python3 graphrag/eval/calibrate.py` | NLU 59/60 fora do treino; pesos gravados |
 | GraphRAG: invariantes independentes | usadas pelos testes (`graphrag/eval/invariants.py`) | I1–I16, M1, M2, X1 sobre o JSON bruto |
-| App com o motor | servidor em `:8787` + `cd app && npm test` | 46 testes; percurso no Chromium sem erro de console |
+| App com o motor | servidor em `:8787` + `cd app && npm test` | 103 testes; percurso no Chromium sem erro de console |
 
 ## Invariantes do contrato (checadas por código)
 
@@ -206,3 +206,16 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 
 - **Suítes:** motor 162 de 162 (sem rede); app 103 de 103; tipos e build ok; `search_quality` igual; blind5 só grafo A 41 / B 36 (igual).
 - **Limites:** o texto do ajuste (#52) só existe no motor real; o #54 não foi reproduzido; o classificador de atos tem 61 de 65 frases de teste.
+
+## Rodada 24/10: fallback seletivo e catálogo ampliado
+
+| Data | O que rodou | Resultado |
+| --- | --- | --- |
+| 24/10/2026 | `validate_catalog.py` com 297 produtos (68 de higiene, 108 medicamentos em 16 áreas) | **83 de 83** |
+| 24/10/2026 | `python3 -m graphrag.train` | grafo 759 nós / 4.361 arestas; vocabulário 1.530; ato de fala 61/65 |
+| 24/10/2026 | testes do GraphRAG | **173 de 173** |
+| 24/10/2026 | `npm test` e `npm run build` em `app/` | **103 de 103**; build ok |
+| 24/10/2026 | teste de fallback com 25 frases | antes: 3/25 com cota padrão e 8/25 com cota desligada; depois do gate + guardas + `slang.py`, as frases dentro do catálogo respondem direto e as fora dele (ardência para urinar, dor de ouvido, afta) dizem isso explicitamente |
+| 24/10/2026 | buscas novas no app/motor | fio dental 6, escova de dente 6, creme para pentear 6, talco 6, antibiótico 6, micose 6, “meu ouvido ta sujo” 6 (auricular) |
+
+Decisões e detalhes: [doc 17](17-rodada-24-10-fallback-e-catalogo.md). O que continua pendente: retrieval de candidatos, saída fechada com confiança, clarificação no app e feedback loop.

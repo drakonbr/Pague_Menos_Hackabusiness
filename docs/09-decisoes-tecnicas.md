@@ -42,6 +42,8 @@ Formato: decisão, motivo, alternativas e consequência. `P-xx` = pendente.
 | D-34 | Regras dos kits de remédio | Nunca o mesmo princípio ativo duas vezes (compositor); nunca dois anti-inflamatórios, nem expectorante com remédio para tosse seca (interações `evitar`) | Aceita pela Julia em 21/10 (doc 16, resposta 3) |
 | D-35 | Dados de medicamento | Princípios ativos e apresentações reais e comuns; marcas e laboratórios fictícios; nomes populares (Dorflex, Buscopan...) só como sinônimo de busca | Mantém o catálogo fictício (D-11) e aceita o jeito como as pessoas pedem |
 | D-36 | Prateleira de saúde gerada do catálogo | Um conceito por queixa e por objetivo, calculado dos produtos (`ScopeResolver.health_concepts`) | Produto novo de uma área entra na busca sem editar conceito à mão |
+| D-37 | Fallback seletivo | Gate de incerteza, guarda de parte do corpo, cota 100/h visível em `/v1/health`, ato "não consigo" = busca, sugestões por ranking e cache de gíria em `slang.py`; a DeepSeek continua só entendendo, nunca compondo kit | O fallback só era chamado quando o grafo admitia não entender; falsos positivos confiantes e cota silenciosa pioravam a busca sem aviso |
+| D-38 | Catálogo ampliado | 297 produtos: 68 de higiene (6 por prateleira, incluindo creme para pentear, escovas, fio dental, talco, buchas, cotonetes e limpeza auricular) e 108 medicamentos em 16 áreas (antifúngico, antibiótico, antiviral e corticoide, 6 cada) | Pedido do usuário em 24/10; ids antigos preservados, remédio continua fora de kit e validação cobre as novas classes |
 
 ## Premissas
 

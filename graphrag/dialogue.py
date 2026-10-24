@@ -214,7 +214,11 @@ class Engine:
         usable = rag and self.rag and req.get("allowExternal", self.external_default) is True
         words: list[str] = []
         # parte do corpo que o catálogo não trata + prateleira de pele = falso positivo confiante ("ardência para urinar")
-        conflict = bool(_BODY_OUT.search(norm(clean))) and (res.get("intent") or {}).get("primaryGoal") in DERMO_GOALS
+        # exceto quando o próprio grafo já resolveu para uma prateleira de higiene ("meu ouvido ta sujo" -> limpeza auricular)
+        scope_ctx = (res.get("context") or {}).get("scope") or {}
+        hygiene_scope = bool(set(scope_ctx.get("steps") or []) & {"higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"})
+        conflict = (bool(_BODY_OUT.search(norm(clean))) and (res.get("intent") or {}).get("primaryGoal") in DERMO_GOALS
+                    and not hygiene_scope)
         if usable and not miss and (res.get("act") in ("busca", "desconhecido") or conflict):
             words = self._unknown(clean, fixes)           # o grafo respondeu, mas viu palavra que não conhece: confere
             if conflict:

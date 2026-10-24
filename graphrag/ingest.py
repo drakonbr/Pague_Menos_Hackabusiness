@@ -171,6 +171,8 @@ def _build_product(cat: Catalog, rec: ProductRecord, pid: str, idx: dict[str, _I
     same_domain = [p["cashbackPct"] for p in cat.products if p["domain"] == d["domain"]]
     if d.get("cashbackPct") is None:
         d["cashbackPct"] = keep["cashbackPct"] if keep else int(statistics.median(same_domain or [2]))
+    if d["domain"] == "medicamento":
+        d["cashbackPct"] = 0          # #45 (RDC 96/2008): remédio não tem cashback promocional, venha o registro como vier
     d.update({"id": pid, "salesRank": keep["salesRank"] if keep else NEW_PRODUCT_RANK_BASE + int(pid[1:]),
               "categoryIds": keep["categoryIds"] if keep else [], "images": keep["images"] if keep else []})
     return d
@@ -179,8 +181,8 @@ def _build_product(cat: Catalog, rec: ProductRecord, pid: str, idx: dict[str, _I
 # --------------------------------------------------------------------------- aplicação
 def _apply(cat: Catalog, product: dict, store_stock: dict[str, int]) -> None:
     pid = product["id"]
-    if product.get("rx"):
-        product["listPriceCents"] = product["priceCents"]      # #41: remédio de prescrição nunca tem preço riscado
+    if product.get("rx") or product.get("domain") == "medicamento":
+        product["listPriceCents"] = product["priceCents"]      # #41/#45: remédio nunca tem preço riscado
     if pid in cat.by_id:
         cat.products[[p["id"] for p in cat.products].index(pid)] = product
     else:

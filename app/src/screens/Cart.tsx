@@ -7,10 +7,10 @@ import { BRAND } from "../brand";
 import { useNav, useServices } from "../nav";
 import { SIMULATED_LOCATION } from "../location";
 import { money } from "../services/format";
-import { lineListCents, lineProducts, lineTotalCents, rxPending, useApp, type CartLine, type SubscriptionDays } from "../state/app";
+import { RX_MAX_QTY, hasMedicine, lineListCents, maxQty, lineProducts, lineTotalCents, rxPending, useApp, type CartLine, type SubscriptionDays } from "../state/app";
 import { useAsync } from "../useAsync";
 
-export function FreeShippingRuler({ itemsCents, freeFrom }: { itemsCents: number; freeFrom: number }) {
+export function FreeShippingRuler({ itemsCents, freeFrom, hasMeds }: { itemsCents: number; freeFrom: number; hasMeds?: boolean }) {
   const missing = Math.max(0, freeFrom - itemsCents);
   const pct = Math.min(100, Math.round((itemsCents / freeFrom) * 100));
   return (
@@ -19,6 +19,7 @@ export function FreeShippingRuler({ itemsCents, freeFrom }: { itemsCents: number
         <span>{missing > 0 ? <>Faltam <b>{money(missing)}</b> para frete grátis.</> : <b style={{ color: "var(--ok)" }}>Você ganhou frete grátis na entrega!</b>}</span>
         <span title={`Frete grátis a partir de ${money(freeFrom)} (premissa do protótipo)`}><Icon name="info" size={20} /></span>
       </div>
+      {hasMeds ? <small style={{ color: "var(--text-2)" }}>Remédios não entram na conta do frete grátis.</small> : null}
       <div className="track" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} aria-label="Progresso para frete grátis">
         <div className="fill" style={{ width: `${Math.max(pct, 4)}%` }} />
       </div>
@@ -27,7 +28,7 @@ export function FreeShippingRuler({ itemsCents, freeFrom }: { itemsCents: number
 }
 
 export function Cart() {
-  const { lines, count, itemsCents, listCents, cashbackCents, dispatch, rxDocs } = useApp();
+  const { lines, count, itemsCents, shippingBaseCents, listCents, cashbackCents, dispatch, rxDocs } = useApp();
   const rxNeeded = rxPending(lines, rxDocs).length > 0;   // #28: com receita faltando, a cesta leva antes às Receitas
   const { push, resetTo } = useNav();
   const { commerce } = useServices();
@@ -90,7 +91,7 @@ export function Cart() {
             <div className="sumrow total"><span>Total ({count} {count === 1 ? "item" : "itens"}):</span><span>{money(itemsCents)}</span></div>
             {cashbackCents > 0 ? <div className="sumrow" style={{ color: "var(--ok)" }}><span>Cashback a receber (simulado)</span><span>{money(cashbackCents)}</span></div> : null}
             <div style={{ marginTop: 10 }}>
-              {info.data ? <FreeShippingRuler itemsCents={itemsCents} freeFrom={info.data.freeFrom} /> : null}
+              {info.data ? <FreeShippingRuler itemsCents={shippingBaseCents} freeFrom={info.data.freeFrom} hasMeds={hasMedicine(lines)} /> : null}
             </div>
             <span style={{ fontSize: 14, color: "var(--text-2)", marginTop: 6 }}>Aplicado para: {SIMULATED_LOCATION.label}</span>
           </div>
@@ -166,12 +167,13 @@ function Line({ line: l }: { line: CartLine }) {
             {off > 0 ? <span className="old">{money(unitList * l.qty)}</span> : null}
           </div>
           <span style={{ fontSize: 22, fontWeight: 500 }}>{money(lineTotalCents(l))}</span>
+          {l.type === "product" && l.product.rx ? <span className="unit">Limite da receita (simulado): até {RX_MAX_QTY} caixas</span> : null}
           {l.qty > 1 ? <span className="unit">{money(lineTotalCents(l) / l.qty)}/1und</span> : null}
         </div>
         <div className="qty" role="group" aria-label="Quantidade">
           <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty - 1 })} aria-label={`Diminuir quantidade de ${lineName}`}><Icon name="minus" /></button>
           <span aria-live="polite">{l.qty}</span>
-          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty + 1 })} aria-label={`Aumentar quantidade de ${lineName}`} disabled={l.qty >= 9}><Icon name="plus" /></button>
+          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty + 1 })} aria-label={`Aumentar quantidade de ${lineName}`} disabled={l.qty >= maxQty(l)}><Icon name="plus" /></button>
         </div>
       </div>
       {l.type === "kit" ? (

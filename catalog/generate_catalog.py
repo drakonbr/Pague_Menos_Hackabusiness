@@ -480,7 +480,7 @@ def build_products() -> tuple[list[dict], list[dict]]:
             "equivalence": extras.get("equivalence"),
         })
         cents = int(round(price * 100))
-        promo = rng.random() < 0.15 and not extras.get("rx")   # #41 (RDC 96/2008): remédio de prescrição nunca tem preço riscado
+        promo = rng.random() < 0.15 and domain != "medicamento"   # #41/#45 (RDC 96/2008): remédio, com ou sem receita, nunca tem preço riscado nem "Super oferta"
         list_cents = int(round(price * 1.2 / 0.1)) * 10 if promo else cents
         if list_cents < cents:
             list_cents = cents

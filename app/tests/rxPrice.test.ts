@@ -16,7 +16,8 @@ describe("remédio com receita (#41)", () => {
     }
     const promo = { ...rx[0], listPriceCents: rx[0].priceCents * 2 }; // mesmo que um dado novo traga "de/por"
     expect(discountPct(promo)).toBe(0);
-    expect(discountPct({ ...promo, rx: null })).toBeGreaterThan(0);   // e o item sem receita continua mostrando
+    expect(discountPct({ ...promo, rx: null })).toBe(0);                 // #45: sem receita, mas ainda remédio, também não
+    expect(discountPct({ ...promo, rx: null, domain: "dermo" })).toBeGreaterThan(0);   // só o que não é remédio mostra promoção
   });
   it("nenhum está em vitrine", () => {
     const ids = new Set(rx.map((p) => p.id));
@@ -27,8 +28,9 @@ describe("remédio com receita (#41)", () => {
     const vindo = { ...rx[0], listPriceCents: rx[0].priceCents * 3 };
     expect(noStrike(vindo).listPriceCents).toBe(vindo.priceCents);
     expect(withImages(vindo).listPriceCents).toBe(vindo.priceCents);
-    const sem = { ...vindo, rx: null };
-    expect(noStrike(sem).listPriceCents).toBe(sem.listPriceCents);   // sem receita, a promoção segue como está (#45)
+    expect(noStrike({ ...vindo, rx: null }).listPriceCents).toBe(vindo.priceCents);   // #45: remédio sem receita também
+    const sem = { ...vindo, rx: null, domain: "dermo" as const };
+    expect(noStrike(sem).listPriceCents).toBe(sem.listPriceCents);   // o que não é remédio segue com a promoção
   });
   it("a Reposição automática não risca o preço do remédio (tem desconto de 5%, mas sem \"de/por\")", () => {
     expect(refillSource).not.toMatch(/className="old"/);

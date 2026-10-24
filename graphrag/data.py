@@ -48,8 +48,8 @@ def camel_product(p: dict, inv: dict, commerce: dict, cats_of: dict) -> dict:
         "usagePeriod": p["usage_period"], "claims": p["claims"], "warnings": p["warnings"],
         "description": p["description"], "howToUse": p["how_to_use"], "priceTier": p["price_tier"],
         "priceCents": inv["price_cents"], "stockQty": inv["stock_qty"],
-        # #41 (RDC 96/2008): remédio de prescrição nunca tem preço riscado, venha o dado como vier
-        "listPriceCents": inv["price_cents"] if p.get("rx") else inv["list_price_cents"],
+        # #41/#45 (RDC 96/2008): remédio nunca tem preço riscado, venha o dado como vier
+        "listPriceCents": inv["price_cents"] if p.get("rx") or p["domain"] == "medicamento" else inv["list_price_cents"],
         "cashbackPct": commerce["cashbackPct"][p["id"]], "salesRank": commerce["salesRank"][p["id"]],
         "categoryIds": sorted(cats_of.get(p["id"], [])), "images": [],
         "domain": p["domain"], "rx": p["rx"], "equivalence": p["equivalence"],

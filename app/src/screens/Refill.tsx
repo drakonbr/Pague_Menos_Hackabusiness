@@ -8,7 +8,7 @@ import type { Product, SimilarsResponse, StoreAvailability } from "../contracts/
 import { useNav, useServices } from "../nav";
 import { DELIVERY_RANK, PERSONA, REFILL_RULES, daysLeft, needsRefill, runOutDate, type ContinuousMedication } from "../persona";
 import { delta, money } from "../services/format";
-import { useApp } from "../state/app";
+import { maxQty, useApp } from "../state/app";
 import { useAsync } from "../useAsync";
 
 const PRES: Record<string, string> = { referencia: "Referência", generico: "Genérico", similar: "Similar" };
@@ -16,7 +16,7 @@ const PRES: Record<string, string> = { referencia: "Referência", generico: "Gen
 export function Refill() {
   const { commerce } = useServices();
   const { push } = useNav();
-  const { store, storeId, dispatch, refillAuto, rxAttached, consent, refillPick } = useApp();
+  const { store, storeId, dispatch, refillAuto, rxAttached, consent, refillPick, lines } = useApp();
   const meds = PERSONA.continuousMedications;
   const ids = meds.map((m) => m.productId);
   const data = useAsync(async () => {
@@ -35,20 +35,22 @@ export function Refill() {
   const canBuy = lineItems.length > 0 && rxAttached;
 
   const buy = () => {
-    for (const { p } of lineItems) dispatch({ type: "addProduct", product: p, confirmed: true });
+    const full = lineItems.filter(({ p }) => lines.some((l) => l.type === "product" && l.product.id === p.id && l.qty >= maxQty(l)));   // #43: já no limite da receita
+    for (const { p } of lineItems) if (!full.some((f) => f.p.id === p.id)) dispatch({ type: "addProduct", product: p, confirmed: true });
     dispatch({ type: "attachRx", ids: lineItems.filter(({ p }) => p.rx).map(({ p }) => p.id) });   // receita anexada aqui mesmo
-    dispatch({ type: "toast", text: `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} da reposição na cesta`, action: "cart" });
+    const added = lineItems.length - full.length;
+    dispatch({ type: "toast", text: full.length ? `${added} ${added === 1 ? "item" : "itens"} da reposição na cesta; ${full.length === 1 ? "1 já estava" : `${full.length} já estavam`} no limite da receita` : `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} da reposição na cesta`, action: "cart" });
     push({ name: "cart" });
   };
 
   const options = useMemo(() => {
     const d = data.data?.delivery.options ?? [];
     return [...d].sort((a, b) => DELIVERY_RANK(a.id) - DELIVERY_RANK(b.id)).map((o) => {
-      const free = (o.freeFromCents != null && itemsCents >= o.freeFromCents) || (anyAuto && REFILL_RULES.freeShipping && o.id !== "retirada");
-      const fee = o.id === "retirada" ? 0 : free ? 0 : o.feeCents;
+      // #45 (RDC 96/2008): só remédio na cesta, então nenhum frete grátis (nem por valor, nem pela reposição automática)
+      const fee = o.id === "retirada" ? 0 : o.feeCents;
       return { o, fee, total: itemsCents + fee };
     });
-  }, [data.data, itemsCents, anyAuto]);
+  }, [data.data, itemsCents]);
   const best = options.length ? Math.min(...options.map((x) => x.total)) : 0;
 
   return (
@@ -198,7 +200,7 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
 
       <label className="switch auto">
         <input type="checkbox" checked={auto} onChange={(e) => onAuto(e.target.checked)} />
-        Reposição automática (frete grátis, premissa fictícia; o desconto de {REFILL_RULES.discountPct}% ainda não vale neste protótipo)
+        Reposição automática (sem frete grátis nem desconto: remédio não entra em promoção)
       </label>
       {auto ? <small className="foot">Avisamos {REFILL_RULES.alertDaysBefore} dias antes de acabar e você confirma antes de cada compra.</small> : null}
     </article>

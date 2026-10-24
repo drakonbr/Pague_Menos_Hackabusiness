@@ -1,7 +1,10 @@
-// Estado do app (só na memória da sessão: recarregar a página zera tudo, de propósito).
-import { createContext, useCallback, useContext, useMemo, useReducer, type ReactNode } from "react";
+// Estado do app. Cesta, receitas anexadas (simuladas), pedidos, loja e modo de entrega ficam neste aparelho (#48);
+// a conversa, favoritos e buscas recentes são só da sessão.
+import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, type ReactNode } from "react";
 import type { ChatContext, FulfillmentMode, Intent, Kit, Product, SearchResponse, Store } from "../contracts/types";
 import { PERSONA, type ConsentFlags } from "../persona";
+import { RX_MAX_QTY, clearSession, loadSession, saveSession } from "../services/cartStorage";
+export { RX_MAX_QTY };
 import { readExternalChoice, saveExternalChoice } from "../services/consentStorage";
 import { externalLanguage } from "../services/searchService";
 
@@ -90,10 +93,15 @@ type Action =
   | { type: "setStore"; store: Store | null }
   | { type: "setMode"; mode: FulfillmentMode | null }
   | { type: "placeOrder"; order: Order }
+  | { type: "clearSession" }
   | { type: "toast"; text: string; action?: "cart" }
   | { type: "hideToast" };
 
 const MAX_QTY = 9;
+/** Quantidade máxima de uma linha: remédio de receita fica no limite da receita. */
+export const maxQty = (l: CartLine) => (l.type === "product" && l.product.rx ? RX_MAX_QTY : MAX_QTY);
+/** Controlado não se vende a distância (RDC 44/2009); o catálogo não tem nenhum, e esta trava vale se um dia vier. */
+const isControlled = (p: Product) => !!p.rx && String(p.rx) !== "receita_simples";
 export const kitSignature = (kit: Kit) => kit.items.map((i) => i.product.id).sort().join("-");
 const kitKey = (kit: Kit) => `kit:${kit.tier}:${kitSignature(kit)}`;
 
@@ -151,11 +159,13 @@ export function reducer(s: State, a: Action): State {
     case "setEvery":
       return { ...s, lines: s.lines.map((l) => (l.key === a.key && l.type === "kit" ? { ...l, everyDays: a.everyDays } : l)) };
     case "addProduct": {
+      if (isControlled(a.product)) return { ...s, toast: { text: "Remédio controlado não é vendido a distância. Procure uma loja." } };
       if (!a.confirmed && a.product.rx) return { ...s, rxAsk: { kind: "product", product: a.product } };
       const key = `p:${a.product.id}`;
       const found = s.lines.find((l) => l.key === key);
+      if (found && found.qty >= maxQty(found)) return { ...s, toast: { text: `Limite da receita (simulado): até ${RX_MAX_QTY} caixas deste remédio.` } };
       const lines = found
-        ? s.lines.map((l) => (l.key === key ? { ...l, qty: Math.min(MAX_QTY, l.qty + 1) } : l))
+        ? s.lines.map((l) => (l.key === key ? { ...l, qty: Math.min(maxQty(l), l.qty + 1) } : l))
         : [...s.lines, { key, type: "product" as const, product: a.product, qty: 1 }];
       return { ...s, lines, toast: { text: "Produto adicionado à cesta", action: "cart" } };
     }
@@ -175,7 +185,7 @@ export function reducer(s: State, a: Action): State {
       return { ...s, rxDocs: s.rxDocs.filter((x) => x !== a.id) };
     case "setQty":
       return withLines(s, s.lines
-        .map((l) => (l.key === a.key ? { ...l, qty: Math.max(0, Math.min(MAX_QTY, a.qty)) } : l))
+        .map((l) => (l.key === a.key ? { ...l, qty: Math.max(0, Math.min(maxQty(l), a.qty)) } : l))
         .filter((l) => l.qty > 0));
     case "remove":
       return withLines(s, s.lines.filter((l) => l.key !== a.key));
@@ -208,6 +218,8 @@ export function reducer(s: State, a: Action): State {
         orders: [a.order, ...s.orders],
         walletPendingCents: s.walletPendingCents + a.order.cashbackCents,
       };
+    case "clearSession":   // "Apagar cesta e pedidos deste aparelho" (Privacidade)
+      return { ...s, lines: [], rxDocs: [], orders: [], walletPendingCents: 0, store: null, mode: null };
     case "toast":
       return { ...s, toast: { text: a.text, action: a.action } };
     case "hideToast":
@@ -218,6 +230,9 @@ export function reducer(s: State, a: Action): State {
 export const lineUnitCents = (l: CartLine) => (l.type === "kit" ? l.kit.totalCents : l.product.priceCents);
 export const lineListCents = (l: CartLine) => (l.type === "kit" ? l.kit.itemsTotalCents : l.product.listPriceCents);
 export const lineTotalCents = (l: CartLine) => lineUnitCents(l) * l.qty;
+/** #45 (RDC 96/2008): remédio não entra na conta do frete grátis. */
+export const shippingBaseCents = (lines: CartLine[]) => lines.reduce((t, l) => t + (l.type === "product" && l.product.domain === "medicamento" ? 0 : lineTotalCents(l)), 0);
+export const hasMedicine = (lines: CartLine[]) => lines.some((l) => l.type === "product" && l.product.domain === "medicamento");
 export const lineUnits = (l: CartLine) => (l.type === "kit" ? l.kit.items.length : 1) * l.qty;
 export const lineCashbackCents = (l: CartLine) =>
   (l.type === "kit" ? l.kit.cashbackCents : Math.floor((l.product.priceCents * l.product.cashbackPct) / 100)) * l.qty;
@@ -250,6 +265,7 @@ type Api = State & {
   storeId: string | null;
   count: number;
   itemsCents: number;
+  shippingBaseCents: number;
   listCents: number;
   cashbackCents: number;
   isFav: (id: string) => boolean;
@@ -261,8 +277,15 @@ const Ctx = createContext<Api | null>(null);
 export function AppProvider({ children }: { children: ReactNode }) {
   const [state, dispatchRaw] = useReducer(reducer, initialState, (s: State): State => {
     const saved = readExternalChoice();   // #42: a escolha da pessoa sobrevive a recarregar
-    return saved === undefined ? s : { ...s, consent: { ...s.consent, useExternalLanguageService: saved } };
+    const sess = loadSession();           // #48: cesta e pedidos também
+    const base: State = { ...s, ...sess, lines: sess.lines ?? s.lines, rxDocs: sess.rxDocs ?? s.rxDocs, orders: sess.orders ?? s.orders };
+    return saved === undefined ? base : { ...base, consent: { ...base.consent, useExternalLanguageService: saved } };
   });
+  useEffect(() => {
+    const { lines, rxDocs, orders, walletPendingCents, store, mode } = state;
+    if (!lines.length && !orders.length && !store && !mode && !rxDocs.length && !walletPendingCents) clearSession();
+    else saveSession({ lines, rxDocs, orders, walletPendingCents, store, mode });
+  }, [state.lines, state.rxDocs, state.orders, state.walletPendingCents, state.store, state.mode]);
   const dispatch = useCallback((a: Action) => {
     if (a.type === "setConsent" && a.key === "useExternalLanguageService") saveExternalChoice(a.value);
     dispatchRaw(a);
@@ -277,6 +300,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       storeId: state.store?.id ?? null,
       count: state.lines.reduce((n, l) => n + lineUnits(l), 0),
       itemsCents: state.lines.reduce((t, l) => t + lineTotalCents(l), 0),
+      shippingBaseCents: shippingBaseCents(state.lines),
       listCents: state.lines.reduce((t, l) => t + lineListCents(l) * l.qty, 0),
       cashbackCents: state.lines.reduce((t, l) => t + lineCashbackCents(l), 0),
       isFav: (id) => favSet.has(id),

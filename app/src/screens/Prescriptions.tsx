@@ -2,7 +2,7 @@ import { TitleBar } from "../components/Bars";
 import { Icon } from "../components/Icon";
 import { ProductImage } from "../components/ProductImage";
 import { useNav } from "../nav";
-import { rxPending, rxProducts, useApp } from "../state/app";
+import { RX_MAX_QTY, rxPending, rxProducts, useApp } from "../state/app";
 
 /** Anexar receitas (#28): vem depois de confirmar a cesta e antes da entrega e do pagamento. Receita simulada. */
 export function Prescriptions() {
@@ -21,7 +21,7 @@ export function Prescriptions() {
               : items.length === 0
               ? "Nenhum item da sua cesta precisa de receita. Pode seguir para a entrega."
               : <>{items.length === 1 ? "Este item da sua cesta precisa de receita." : `Estes ${items.length} itens da sua cesta precisam de receita.`}{" "}
-                Anexe a receita de cada um para seguir. Neste protótipo ela é simulada: nenhum documento real é enviado.</>}
+                Anexe a receita de cada um para seguir. Na loja real, um farmacêutico avalia a receita antes de o pedido ser separado, e a quantidade fica limitada à da receita (neste protótipo, {RX_MAX_QTY} caixas por item). Tudo aqui é simulado: nenhum documento é enviado e ninguém avalia a receita.</>}
           </p>
           <ul className="rx-attach">
             {items.map((p) => {
@@ -42,7 +42,7 @@ export function Prescriptions() {
       </div>
       <div className="summary">
         <small className="foot center" role="status">
-          {missing ? `Falta anexar ${missing === 1 ? "1 receita" : `${missing} receitas`}.` : items.length ? "Receitas anexadas. Pode seguir." : ""}
+          {missing ? `Falta anexar ${missing === 1 ? "1 receita" : `${missing} receitas`}.` : items.length ? "Receitas anexadas (simuladas)." : ""}
         </small>
         <button className="btn primary block" disabled={missing > 0 || !lines.length} onClick={() => push({ name: "delivery" })}>Continuar para entrega</button>
       </div>

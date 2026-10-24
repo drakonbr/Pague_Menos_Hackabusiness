@@ -46,6 +46,49 @@ class TestUsabilidade(unittest.TestCase):
                 q = f"cuidados para {E.cat.concerns.get(p['concerns'][0], p['concerns'][0])}"
             self.assertTrue(E.search({"query": q})["kits"], (p["id"], q))
 
+    def test_remedio_de_receita_vem_depois_na_busca_por_sintoma(self):   # #44, RDC 96/2008
+        for q in ("remédio para enjoo", "estou com azia", "remédio para alergia", "tosse seca", "diarreia"):
+            rx = ["R" if p.get("rx") else "o" for p in E.search({"query": q})["products"]]
+            self.assertIn("o", rx, q)
+            self.assertEqual("".join(rx), "".join(sorted(rx, key=lambda c: c == "R")), q)   # nenhum "o" depois de um "R"
+
+    def test_quem_pede_o_remedio_de_receita_pelo_nome_o_ve_primeiro(self):
+        r = E.search({"query": "metoclopramida"})
+        self.assertTrue(r["products"] and r["products"][0].get("rx"))
+
+    def test_remedio_nunca_tem_preco_riscado_no_motor(self):   # #45
+        meds = [p for p in E.cat.products if p["domain"] == "medicamento"]
+        self.assertTrue(meds)
+        for p in meds:
+            self.assertEqual(p["listPriceCents"], p["priceCents"], p["name"])
+
+    def test_mais_barato_nao_poe_receita_na_frente(self):   # #44
+        r1 = E.search({"query": "remédio para enjoo"})
+        r2 = E.search({"query": "mais barato", "context": r1["context"]})
+        rx = ["R" if p.get("rx") else "o" for p in r2["products"]]
+        self.assertTrue(rx)
+        self.assertEqual("".join(rx), "".join(sorted(rx, key=lambda c: c == "R")))
+
+    def test_similares_de_remedio_sem_receita_nao_poem_receita_na_frente(self):
+        otc = next(p for p in E.cat.products if p["domain"] == "medicamento" and not p.get("rx") and not p.get("equivalence"))
+        rx = ["R" if o["product"].get("rx") else "o" for o in E.similars(otc["id"])["options"]]
+        self.assertEqual("".join(rx), "".join(sorted(rx, key=lambda c: c == "R")))
+
+    def test_ingestao_de_remedio_sem_receita_perde_preco_riscado_e_cashback(self):   # #45
+        from graphrag.ingest import ingest_records
+        import copy
+        cat = copy.copy(E.cat)
+        cat.products = list(E.cat.products)
+        base = next(q for q in cat.products if q["domain"] == "medicamento" and not q.get("rx"))
+        rec = {k: base[k] for k in ("id", "name", "brand", "line", "step", "coversSteps", "productType", "form", "size", "skinTypes",
+                                    "concerns", "ingredients", "fps", "usagePeriod", "claims", "warnings", "description", "howToUse",
+                                    "priceTier", "domain", "rx", "equivalence") if k in base}
+        rec.update({"priceCents": base["priceCents"], "listPriceCents": base["priceCents"] * 2, "cashbackPct": 15, "stockQty": 5})
+        ingest_records(cat, [rec])
+        out = cat.by_id.get(base["id"]) or next(q for q in cat.products if q["id"] == base["id"])
+        self.assertEqual(out["listPriceCents"], out["priceCents"])
+        self.assertEqual(out["cashbackPct"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

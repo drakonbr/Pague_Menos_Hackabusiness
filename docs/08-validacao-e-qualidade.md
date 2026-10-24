@@ -181,3 +181,9 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 - **Suítes (24/10):** motor 137 de 137 (sem rede); app 80 de 80; tipos e build ok; catálogo 77 de 77; `search_quality` idêntico ao de antes (a descrição do suplemento mudou e o grafo foi retreinado).
 - **Navegador (375 px):** aviso dura 10 s e fechar com o mouse em cima não prende o próximo; página da Vitamina C sem queixa de saúde; cesta com nomes acessíveis e "3 itens".
 - **Revisor independente:** três rodadas (de 3,0 a 3,8); defeitos achados e corrigidos: pausa do aviso presa, atalho de kit para onde o motor não monta kit, plural fixo, `.lower()` em nome de ingrediente.
+
+## Rodada dos achados altos (24/10, itens #43, #44, #45, #48)
+
+- **Suítes (24/10):** motor 140 de 140 (sem rede); app 93 de 93; tipos e build ok; catálogo 78 de 78 (nova checagem: nenhum remédio com preço riscado).
+- **Busca:** `search_quality` igual ao de antes, exceto `medcego` (precisão 0,879 para 0,869, por causa da ordem de #44). `rag_eval` só com o grafo: AMPLO teste 12 de 15 (era 13).
+- **Navegador (375 px):** cesta guardada ao recarregar ("Cesta, 2 itens"), "+" para em 2 caixas com aviso, remédio de venda livre antes do de receita em "remédio para enjoo".

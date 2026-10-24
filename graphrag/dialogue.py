@@ -537,7 +537,8 @@ class Engine:
 
         def key(p):
             s = self.comp.score(p, ctx) if ctx else 0.0
-            return (p["id"] not in u.product_ids, -spec(p), -(10 * rel.get(p["id"], 0.0) + s), p["priceCents"], p["id"])
+            # #44 (RDC 96/2008): quem pediu o remédio pelo nome o vê primeiro; pelo sintoma, os de venda livre vêm antes dos de receita
+            return (p["id"] not in u.product_ids, bool(p.get("rx")), -spec(p), -(10 * rel.get(p["id"], 0.0) + s), p["priceCents"], p["id"])
         return sorted(use, key=key)[:limit]
 
     def _scope_label(self, scope: Scope) -> str:
@@ -732,7 +733,8 @@ class Engine:
             notes.append(f"Mostrando só itens até {money(u.budget_cents)}.")
             intent["budgetCents"] = u.budget_cents
         if u.cheaper:
-            prods = sorted(prods, key=lambda p: (p["priceCents"], p["id"]))
+            # #44: o preço ordena, mas remédio de receita continua depois dos de venda livre (só vai na frente se foi pedido pelo nome)
+            prods = sorted(prods, key=lambda p: (p["id"] not in u.product_ids, bool(p.get("rx")), p["priceCents"], p["id"]))
             notes.append("Ordenei do mais barato para o mais caro.")
         label = self._scope_label(scope)
         if not prods:
@@ -846,7 +848,7 @@ class Engine:
                 e = self.cat.by_id[sid]
                 opts.append({"product": e, "kind": "parecido", "score": w, "deltaCents": e["priceCents"] - p["priceCents"],
                              "inStock": stock(e) > 0, "storeIdsWithStock": stores_with(e), "needsPharmacistConfirmation": False})
-            opts.sort(key=lambda o: (not o["inStock"], -o["score"], o["product"]["id"]))
+            opts.sort(key=lambda o: (not o["inStock"], bool(o["product"].get("rx")), -o["score"], o["product"]["id"]))   # #44
         return {"productId": product_id, "domain": p["domain"], "storeId": store_id, "inStockHere": stock(p) > 0,
                 "options": opts[:limit]}
 

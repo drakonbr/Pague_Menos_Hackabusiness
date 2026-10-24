@@ -505,7 +505,10 @@ class Composer:
         use = strict if len(strict) >= min(3, len(pool)) else [p for p in pool if self.base_eligible(p, probe, True)]
         def key(p):
             return (-(probe.w_rel * 10 * rel.get(p["id"], 0.0) + (self.score(p, ctx) if ctx else 0)), p["priceCents"], p["id"])
-        return sorted(use, key=key)[:limit]
+        ranked = sorted(use, key=key)
+        # #44 (RDC 96/2008): remédio de venda sob prescrição não é indicado ao leigo pelo sintoma: vem depois dos de venda livre
+        ranked = [p for p in ranked if not p.get("rx")] + [p for p in ranked if p.get("rx")]
+        return ranked[:limit]
 
     # ------------------------------------------------------------ troca de item
     def _covered(self, prods: list[dict]) -> set[str]:

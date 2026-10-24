@@ -23,7 +23,7 @@ export function Privacy() {
           <div className="panel" style={{ gap: 8 }}>
             <div className="row"><Icon name="lock" size={22} /><b>O que acontece com os seus dados</b></div>
             <ul className="plain-list">
-              <li><b>Fica só neste aparelho:</b> seus medicamentos de uso contínuo, quantidades, receita e histórico de compras de saúde.</li>
+              <li><b>Fica só neste aparelho:</b> seus medicamentos de uso contínuo, quantidades, receita, histórico de compras de saúde, a cesta e os pedidos desta demonstração, que continuam aí mesmo depois de fechar o navegador (em aparelho compartilhado, apague abaixo).</li>
               <li><b>O assistente recebe:</b> a frase que você escreve, o contexto da conversa (ids de produto e preferências, como “vegano” ou “sem cheiro”) e a loja escolhida.</li>
               <li><b>O assistente nunca recebe sozinho:</b> a sua lista de medicamentos nem o seu histórico de saúde. Ele recebe só o que você digita na busca; se você escrever um nome ou algo sobre a sua saúde, isso também vai. Evite.</li>
               <li><b>Serviço externo, só quando o assistente não entende ou vê palavra que não conhece:</b> a frase vai a um serviço de linguagem no exterior (DeepSeek), depois de tentarmos tirar dados pessoais (sem garantia). Esse serviço pode manter registros conforme a política dele. Você pode desligar abaixo.</li>
@@ -40,6 +40,10 @@ export function Privacy() {
             ))}
           </section>
 
+          <button className="btn outline blue block"
+            onClick={() => { dispatch({ type: "clearSession" }); dispatch({ type: "toast", text: "Cesta e pedidos apagados deste aparelho" }); }}>
+            Apagar a cesta e os pedidos deste aparelho
+          </button>
           <button className="btn outline blue block" disabled={chat.messages.length === 0} onClick={() => { dispatch({ type: "chatReset" }); dispatch({ type: "toast", text: "Conversa apagada deste aparelho" }); }}>
             Apagar a conversa deste aparelho
           </button>

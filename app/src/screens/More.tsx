@@ -72,7 +72,7 @@ export function Orders() {
               <article key={o.id} className="panel" style={{ gap: 6 }}>
                 <div className="row" style={{ justifyContent: "space-between" }}>
                   <b style={{ fontWeight: 500 }}>Pedido {o.id}</b>
-                  <span className="mini green">{o.status}</span>
+                  <span className={`mini ${o.status.startsWith("Aguardando avaliação") ? "warn" : "green"}`}>{o.status}</span>
                 </div>
                 <small style={{ color: "var(--text-2)" }}>
                   {new Date(o.createdAt).toLocaleString("pt-BR")} · {o.mode === "retirada" ? `Retirar na ${o.storeName}` : o.mode === "expressa" ? `Entrega Expressa (${o.storeName})` : "Entrega Agendada"} · {o.payment}
@@ -130,7 +130,7 @@ export function Wallet() {
           <div className="panel" style={{ gap: 4 }}>
             <span className="section-title">Cashback a receber</span>
             <span className="price blue" style={{ fontSize: 28 }}>{money(walletPendingCents)}</span>
-            <small style={{ color: "var(--text-2)" }}>Dos pedidos simulados desta sessão</small>
+            <small style={{ color: "var(--text-2)" }}>Dos pedidos simulados guardados neste aparelho</small>
           </div>
           {cashbackCents > 0 ? <div className="note ok"><Icon name="wallet" size={18} /><p>A cesta atual rende {money(cashbackCents)} de cashback.</p></div> : null}
           <div className="note"><Icon name="info" size={18} /><p>Percentuais de cashback são premissas do protótipo. As regras reais do programa podem ser diferentes.</p></div>

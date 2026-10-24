@@ -6,7 +6,7 @@ import { Icon } from "./Icon";
 import { ProductImage } from "./ProductImage";
 
 export function discountPct(p: Product): number {
-  if (p.rx) return 0; // #41 (RDC 96/2008): remédio de prescrição nunca mostra preço riscado nem "Super oferta"
+  if (p.rx || p.domain === "medicamento") return 0; // #41/#45 (RDC 96/2008): remédio nunca mostra preço riscado nem "Super oferta"
   return p.listPriceCents > p.priceCents ? Math.round((1 - p.priceCents / p.listPriceCents) * 100) : 0;
 }
 

@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { RxPrompt } from "./components/RxPrompt";
 import { TabBar } from "./components/TabBar";
 import { Toast } from "./components/Toast";
@@ -32,7 +33,7 @@ export function App() {
         <NavProvider>
           <div className="stage">
             <main className="phone" aria-label="Aplicativo da farmácia (protótipo)">
-              <Shell />
+              <ErrorBoundary><Shell /></ErrorBoundary>
             </main>
           </div>
         </NavProvider>

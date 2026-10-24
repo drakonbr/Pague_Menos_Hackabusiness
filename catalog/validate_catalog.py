@@ -241,9 +241,10 @@ def main() -> int:
     check("medicamentos: fora das vitrines e sem cashback",
           not (meds_ids & in_showcase) and all(commerce["cashbackPct"][i] == 0 for i in meds_ids))
     rx_ids = {p["id"] for p in products if p["rx"]}
-    check("medicamento de prescrição: sem preço riscado e fora de toda vitrine (#41, RDC 96/2008)",
-          bool(rx_ids) and not (rx_ids & in_showcase)
-          and all(inventory[i]["list_price_cents"] == inventory[i]["price_cents"] for i in rx_ids), str(len(rx_ids)))
+    med_ids = {p["id"] for p in products if p["domain"] == "medicamento"}
+    check("medicamento de prescrição: fora de toda vitrine (#41, RDC 96/2008)", bool(rx_ids) and not (rx_ids & in_showcase), str(len(rx_ids)))
+    check("medicamento (com ou sem receita): sem preço riscado, nunca em promoção (#41, #45, RDC 96/2008)",
+          bool(med_ids) and all(inventory[i]["list_price_cents"] == inventory[i]["price_cents"] for i in med_ids), str(len(med_ids)))
     check("medicamentos: só na categoria 'Reposição de uso contínuo' (e nos agrupadores dela)",
           all(set(n["id"] for n in cats["nodes"] if pid in n["productIds"]) <= {"reposicao", "saude"} for pid in meds_ids))
     sups = [p for p in products if p["domain"] == "suplemento"]

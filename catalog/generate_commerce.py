@@ -271,8 +271,8 @@ def build_commerce(products, inventory, rng):
         ],
         "kitPresets": KIT_PRESETS,
         # reposição automática de medicamento de uso contínuo (premissas do protótipo)
-        "refill": {"freeShipping": True, "discountPct": 5, "alertDaysBefore": 7,
-                   "note": "Frete grátis e desconto na reposição automática são premissas fictícias."},
+        "refill": {"freeShipping": False, "discountPct": 5, "alertDaysBefore": 7,
+                   "note": "Remédio não entra em promoção (RDC 96/2008): a reposição automática não dá frete grátis; o desconto de 5% é premissa fictícia e ainda não vale."},
     }
 
 

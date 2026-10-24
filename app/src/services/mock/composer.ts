@@ -602,7 +602,9 @@ export function rankProducts(ctx: Ctx, limit = 30): Product[] {
   const same = med ? PRODUCTS.filter((p) => p.coversSteps.some((s) => goalSteps.has(s))) : PRODUCTS.filter((p) => p.domain !== "medicamento");
   const strict = same.filter((p) => baseEligible(p, ctx, false));
   const pool = strict.length >= 8 ? strict : same.filter((p) => baseEligible(p, ctx, true));
-  return [...pool].sort(cmpProducts(ctx)).slice(0, limit);
+  // #44 (RDC 96/2008): pelo sintoma, remédio de venda livre vem antes do de receita (igual ao motor)
+  const cmp = cmpProducts(ctx);
+  return [...pool].sort((a, b) => Number(!!a.rx) - Number(!!b.rx) || cmp(a, b)).slice(0, limit);
 }
 
 // ---------------------------------------------------------------------------

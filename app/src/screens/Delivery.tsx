@@ -24,7 +24,7 @@ interface Plan {
 }
 
 export function Delivery() {
-  const { lines, itemsCents, store, mode, dispatch, rxDocs } = useApp();
+  const { lines, shippingBaseCents, store, mode, dispatch, rxDocs } = useApp();
   const rxMissing = rxPending(lines, rxDocs).length > 0;   // #28: receita faltando leva antes às Receitas
   const { push } = useNav();
   const { commerce, search } = useServices();
@@ -104,7 +104,7 @@ export function Delivery() {
               {(["expressa", "agendada"] as const).map((id) => {
                 const o = opt(id)!;
                 const disabled = id === "expressa" ? !expressStore : !centralOk;
-                const fee = feeFor(o, itemsCents);
+                const fee = feeFor(o, shippingBaseCents);   // #45: sem remédio na conta do frete grátis
                 return (
                   <label key={id} className="radio" data-sel={mode === id} style={{ opacity: disabled ? 0.5 : 1 }}>
                     <input type="radio" name="mode" disabled={disabled} checked={mode === id}

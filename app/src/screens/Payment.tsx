@@ -3,7 +3,7 @@ import { TitleBar } from "../components/Bars";
 import { Icon } from "../components/Icon";
 import { useNav, useServices } from "../nav";
 import { money } from "../services/format";
-import { rxPending, useApp, type Order } from "../state/app";
+import { rxPending, rxProducts, useApp, type Order } from "../state/app";
 import { useAsync } from "../useAsync";
 import { feeFor } from "./Delivery";
 
@@ -14,14 +14,14 @@ const PAYMENTS = [
 ] as const;
 
 export function Payment() {
-  const { lines, count, itemsCents, listCents, cashbackCents, mode, store, dispatch, rxDocs } = useApp();
+  const { lines, count, itemsCents, shippingBaseCents, listCents, cashbackCents, mode, store, dispatch, rxDocs } = useApp();
   const rxMissing = rxPending(lines, rxDocs).length;   // #28: sem todas as receitas, não paga
   const { resetAll, push } = useNav();
   const { commerce } = useServices();
   const [pay, setPay] = useState<(typeof PAYMENTS)[number]["id"]>("pix");
   const del = useAsync(() => commerce.delivery(), [commerce]);
   const opt = del.data?.options.find((o) => o.id === mode);
-  const fee = feeFor(opt, itemsCents);
+  const fee = feeFor(opt, shippingBaseCents);
   const total = itemsCents + fee;
 
   const confirm = () => {
@@ -38,7 +38,7 @@ export function Payment() {
       mode,
       storeName: mode === "agendada" ? null : (store?.name ?? null),
       payment: PAYMENTS.find((p) => p.id === pay)!.label,
-      status: mode === "retirada" ? "Separando para retirada (simulado)" : pay === "pix" ? "Aguardando pagamento Pix (simulado)" : "Pedido recebido (simulado)",
+      status: rxProducts(lines).length ? "Aguardando avaliação da receita pelo farmacêutico (simulado)" : mode === "retirada" ? "Separando para retirada (simulado)" : pay === "pix" ? "Aguardando pagamento Pix (simulado)" : "Pedido recebido (simulado)",
     };
     dispatch({ type: "placeOrder", order });
     resetAll("mais", { name: "done", orderId: order.id });
@@ -50,6 +50,7 @@ export function Payment() {
       <div className="scroll">
         <div className="pad">
           <div className="note warn" role="note"><Icon name="info" size={18} /><p>Simulação: nenhum pagamento é processado e nenhum dado de pagamento é enviado.</p></div>
+          {rxProducts(lines).length ? <div className="note" role="note"><Icon name="receipt" size={18} /><p>Este pedido tem remédio com receita: na loja real, um farmacêutico avalia a receita antes de separar o pedido. Neste protótipo isso é só o aviso e o status do pedido: não há avaliação de verdade.</p></div> : null}
           <div className="panel" style={{ gap: 4 }}>
             <span className="section-title">Receber</span>
             <span style={{ fontSize: 15 }}>

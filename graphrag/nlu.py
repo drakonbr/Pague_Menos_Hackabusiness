@@ -22,6 +22,7 @@ from . import lexicon
 from .data import Catalog
 from .embed import WordVectors
 from .nlu_corpus import TRAIN
+from .slang import FIGURATIVE
 from .text import norm, parse_money_cents, stem, stemmed_all, tokens
 
 ACTS = list(TRAIN)
@@ -147,6 +148,8 @@ _TIER = [(re.compile(r"\b(economico|primeiro|mais barato de todos)\b"), "economi
 _REPOR = re.compile(r"\b(repor|reposicao|repoe|recompr\w+|comprar de novo|acabando|acabou|acabar|renovar|ficar sem|falta pouco|no fim)\b")
 _MED = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|medicacoes|uso continuo)\b")
 _MY_MEDS = re.compile(r"\b(meus|minhas|meu|minha) (remedio|remedios|medicamento|medicamentos|medicacao|medicacoes)\b|\buso continuo\b")
+# "não consigo cagar", "meu nariz não para de escorrer": é sintoma, não negação do que veio antes.
+_CANNOT = re.compile(r"\b(nao consigo|nao consigo mais|nao dou conta de|nao para de|nao para)\b")
 
 
 class Understander:
@@ -246,9 +249,10 @@ class Understander:
 
     # ------------------------------------------------------------ interface
     def understand(self, text: str, has_context: bool = False) -> Understanding:
-        q = _AFTER_BATH.sub(" ", norm(text))   # "repuxa depois do banho" é a pele, não o banho
+        clean = FIGURATIVE.sub(" ", text)      # "me caguei de medo" não é diarreia
+        q = _AFTER_BATH.sub(" ", norm(clean))   # "repuxa depois do banho" é a pele, não o banho
         u = Understanding(text=text)
-        toks, found = self._scan(text)
+        toks, found = self._scan(clean)
 
         concern_hits: Counter = Counter()
         goal_hits: Counter = Counter()
@@ -349,11 +353,13 @@ class Understander:
             u.want_products = True
 
         # ---- ato de fala
-        act, conf = self.clf.predict(text)
+        act, conf = self.clf.predict(clean)
         if _REPOR.search(q) and _MED.search(q):
             act, conf = "repor_medicamento", max(conf, 0.9)
         elif act == "repor_medicamento" and not (_REPOR.search(q) or _MY_MEDS.search(q)):
             act = "busca"                  # "remédio pra dor de cabeça" é busca; reposição precisa de repor/acabar/meus remédios
+        if act == "negacao" and _CANNOT.search(q) and (u.has_domain_signal or not has_context):
+            act = "busca"                  # "não consigo cagar" é sintoma, não negação do turno anterior
         if act in ("busca", "refinar") and has_context:
             only_modifiers = not (u.goals or u.steps or u.product_ids) or (
                 u.goals == ["oleosidade"] and u.skin == "oleosa" and len(u.concerns) <= 1 and len(toks) <= 4)

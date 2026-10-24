@@ -54,6 +54,14 @@ class TestCota(unittest.TestCase):
         self.assertEqual([q.allow(None, 5), q.allow(None, 6)], [True, False])   # sem cliente vale só o teto do dia (5 no total)
         self.assertTrue(q.allow("c", 86400 + 10))              # outro dia, contador zerado
 
+    def test_quota_snapshot(self):
+        q = Quota(per_client_hour=2, daily=5)
+        q.allow("a", 0)
+        q.allow("a", 1)
+        s = q.snapshot("a", 2)
+        self.assertEqual((s["perHour"], s["usedHour"], s["daily"], s["usedDay"]), (2, 2, 5, 2))
+        self.assertEqual(q.snapshot("b", 2)["usedHour"], 0)
+
     def test_zero_e_sem_limite(self):
         q = Quota(per_client_hour=0, daily=0)
         self.assertTrue(all(q.allow("a", i) for i in range(100)))
@@ -68,6 +76,7 @@ class TestCota(unittest.TestCase):
         self.assertEqual(fake.calls, 1)
         self.assertTrue(r1.get("rag"))
         self.assertFalse(r2.get("rag"))
+        self.assertIn("limite por hora", " ".join(r2.get("notes") or []))
         self.assertEqual(E.stats["limite"], 1)
         self.assertEqual(r2["products"], GRAPH.search({"query": "minha cabeça tá uma zona e piorando"})["products"])
         self.assertTrue(base is not None)

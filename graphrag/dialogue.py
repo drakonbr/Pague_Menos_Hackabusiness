@@ -30,6 +30,7 @@ from .rewrite import rewrite_query
 from .quota import Quota
 from .safety import assess, urgency
 from .scope import MAX_LIST, VOTE_REL, Scope, ScopeResolver
+from .slang import FIGURATIVE
 from .spell import COMMON, Speller
 from .text import STOPWORDS, money, norm, raw_tokens
 
@@ -53,6 +54,8 @@ MED_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|co
 # pode virar lista de remédios sobre uma resposta que não era de saúde
 HEALTH_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|pomada|gotas|"
                         r"dor|dores|doendo|doi|sintoma|sintomas|febre|tosse|enjoo|azia|nausea)\b")   # sem "tomar": "tomo sol" não é remédio
+# partes do corpo que o catálogo não trata: se o grafo cair numa prateleira de pele, é falso positivo (ex.: "ardência para urinar")
+_BODY_OUT = re.compile(r"\b(urina|urinar|uretra|xixi|bexiga|ouvido|ouvidos|otite|dente|dentes|gengiva|gengivas)\b")
 log = logging.getLogger("graphrag.rag")
 # palavras de fala corrente que o catálogo não tem e que não dizem o que a pessoa quer: não contam como "não entendi"
 FILLER = frozenset("fico fica ficou fique ficar vive vivo anda andou tomo sao pras pros tao tava tamos estao sinto sentindo seja parece parecem deixe deixa leve".split())
@@ -204,21 +207,35 @@ class Engine:
         """rag=False: nunca chama a DeepSeek (o replay do histórico do chat usa assim, para ser uma chamada por busca)."""
         orig_query = req.get("query", "")
         query, fixes = self.speller.fix(orig_query)
-        res = self._search(req, query, orig_query)
+        clean = FIGURATIVE.sub(" ", query)          # "me caguei de medo" não pode virar diarreia nem na recuperação
+        res = self._search(req, clean, orig_query)
         miss = res.pop("_miss", None)
         # #42: só vai à DeepSeek com allowExternal exatamente true (ou ausente, se o padrão for ligado); 0, "false" e null desligam
         usable = rag and self.rag and req.get("allowExternal", self.external_default) is True
         words: list[str] = []
-        if usable and not miss and res.get("act") == "busca":
-            words = self._unknown(query, fixes)           # o grafo respondeu, mas viu palavra que não conhece: confere
-            miss = "fraco" if words else None
+        # parte do corpo que o catálogo não trata + prateleira de pele = falso positivo confiante ("ardência para urinar")
+        conflict = bool(_BODY_OUT.search(norm(clean))) and (res.get("intent") or {}).get("primaryGoal") in DERMO_GOALS
+        if usable and not miss and (res.get("act") in ("busca", "desconhecido") or conflict):
+            words = self._unknown(clean, fixes)           # o grafo respondeu, mas viu palavra que não conhece: confere
+            if conflict:
+                miss = "incerto"                          # deixa a DeepSeek tentar corrigir a prateleira
+            elif words:
+                miss = "fraco"
         if miss and usable:
             if self.quota.allow(req.get("_client")):   # #64: teto por pessoa e por dia; passou, fica a resposta do grafo
                 res = self._rag(req, orig_query, res, miss, words)
             else:
                 self._count("limite")
+                note = "O serviço externo atingiu o limite por hora; a busca continuou com o motor local."
+                if note not in (res.get("notes") or []):
+                    res.setdefault("notes", []).append(note)
+        # se nem o fallback tirou a frase da prateleira errada, é melhor dizer que não temos do que montar kit de pele
+        if conflict and not res.get("rag") and (res.get("intent") or {}).get("primaryGoal") in DERMO_GOALS:
+            turn = max(0, int(((res.get("context") or {}).get("turn") or 1)) - 1)
+            carry = {**(res.get("intent") or {}), "goals": [], "primaryGoal": None}
+            res = self._med_missing(req, orig_query, res["safety"], carry, turn)
         res["query"] = orig_query
-        if fixes and canon_state(norm(orig_query)) == norm(orig_query):      # texto reescrito pela regra do corpo não é "correção"
+        if fixes and clean == query and canon_state(norm(orig_query)) == norm(orig_query):      # texto reescrito pela regra do corpo não é "correção"
             res["correctedQuery"] = query
         return res
 
@@ -470,9 +487,9 @@ class Engine:
     # ------------------------------------------------------------ busca nova
     def _search_new(self, req, query, u: Understanding, safety, cin, carry, turn):
         rel = self.ret.score(u, query)
-        scope = self.scope.resolve(u, query, rel)
+        scope = self.scope.resolve(u, FIGURATIVE.sub(" ", query), rel)
         if scope.kind == "unknown":
-            return self._not_found(req, query, safety, carry, cin, turn)
+            return self._not_found(req, query, safety, carry, cin, turn, rel=rel)
         intent = self._intent_from(u, req, None)
         if "storeId" not in req:
             intent["storeId"] = carry.get("storeId")
@@ -604,7 +621,7 @@ class Engine:
         notice = self._notice(scope)
         label = self._scope_label(scope)
         if not prods:
-            return self._not_found(req, query, safety, intent, {}, turn, label=label)
+            return self._not_found(req, query, safety, intent, {}, turn, label=label, rel=rel)
         n = len(prods)
         generic_med = scope.shelves == [MED_SHELF] and not scope.concerns     # só a palavra "remédio", sem o quê
         reply = f"Encontrei {n} {'item' if n == 1 else 'itens'} de {label}."
@@ -653,20 +670,36 @@ class Engine:
                          ctx_out={"intent": carry, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
                                   "turn": turn + 1})
 
-    def _not_found(self, req, query, safety, carry, cin, turn, label=None):
-        res = self._not_found_reply(req, query, safety, carry, cin, turn, label)
+    def _not_found(self, req, query, safety, carry, cin, turn, label=None, rel=None):
+        res = self._not_found_reply(req, query, safety, carry, cin, turn, label, rel)
         res["_miss"] = "busca"                           # o grafo não entendeu: a DeepSeek pode tentar (#34)
         return res
 
-    def _not_found_reply(self, req, query, safety, carry, cin, turn, label=None):
+    def _goal_suggestions(self, rel: dict[str, float] | None, limit: int = 3) -> list[str]:
+        """Sugestões para a pessoa tocar quando o grafo não entendeu: os objetivos mais próximos da frase, pelo ranking."""
+        if not rel or max(rel.values(), default=0.0) <= 0:
+            return []
+        tally: dict[str, float] = {}
+        for pid, score in rel.items():
+            p = self.cat.by_id.get(pid)
+            if not p or score <= 0:
+                continue
+            for g in self.cat.goals:
+                if set(p["concerns"]) & set(g["concerns"]):
+                    tally[g["id"]] = tally.get(g["id"], 0.0) + score
+        ranked = sorted(tally.items(), key=lambda kv: (-kv[1], kv[0]))[:limit]
+        return [self.cat.goal_by_id[g]["label"] for g, _ in ranked if g in self.cat.goal_by_id]
+
+    def _not_found_reply(self, req, query, safety, carry, cin, turn, label=None, rel=None):
         if MED_CUE.search(norm(query)):
             return self._med_missing(req, query, safety, carry, turn)
         what = f"itens de {label}" if label else "esse item"
         reply = (f"Não encontrei {what} no catálogo. Tente por categoria, como “higiene bucal”, “pele oleosa até R$ 100” "
                  "ou “kit de suplementos”.")
         notice = {"missing": [label or "item pedido"], "shelf": None, "message": f"Não encontrei {what} no catálogo."}
+        suggestions = self._goal_suggestions(rel) or ["Higiene bucal", "Kit de suplementos", "Pele oleosa até R$ 100", "Protetor solar"]
         return self._out(req, query, safety, carry, "busca", reply,
-                         suggestions=["Higiene bucal", "Kit de suplementos", "Pele oleosa até R$ 100", "Protetor solar"],
+                         suggestions=suggestions,
                          catalog_notice=notice, scope_info={"kind": "unknown", "label": label or "", "items": 0},
                          ctx_out={"intent": carry, "requested": [], "excluded": [], "kits": [], "lastAct": "busca",
                                   "turn": turn + 1})

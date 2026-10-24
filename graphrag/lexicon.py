@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import re
 
+from .slang import SLANG
+
 # ----------------------------------------------------------------- preocupações (id do catálogo -> falas)
 CONCERN_ALIASES: dict[str, list[str]] = {
     "acne": ["acne", "espinha", "espinhas", "cravo", "cravos", "acneica", "acneico", "pele com espinha", "espremi cravo", "espremer cravo", "muita espinha", "tem espinha", "espinha na cara", "problema de acne", "cravo no nariz",
@@ -61,7 +63,9 @@ CONCERN_ALIASES: dict[str, list[str]] = {
                     "pontada na cabeca", "cabeca pesada", "cabeca martelando", "cabeca pulsando"],
     "enxaqueca": ["enxaqueca", "enxaquecas", "crise de enxaqueca"],
     "febre": ["febre", "febril", "temperatura alta", "estou quente", "antitermico"],
-    "dor_no_corpo": ["dor no corpo", "dores no corpo", "corpo doendo", "corpo dolorido", "mal estar", "moido"],
+    "dor_no_corpo": ["dor no corpo", "dores no corpo", "corpo doendo", "corpo dolorido", "mal estar", "moido",
+                    "corpo travado", "corpo todo travado", "corpo duro", "corpo travado e dolorido",
+                    "corpo ta todo travado", "corpo esta todo travado", "corpo ta travado", "corpo esta travado"],
     "dor_muscular": ["dor muscular", "dores musculares", "torcicolo", "dor nas costas", "contratura", "lombar", "contusao", "pancada",
                     "dor no joelho", "dor nos joelhos", "dor na coluna", "dor no ombro", "dor nos ombros", "dor no braco", "dor na perna", "dor nas pernas", "dor nas juntas", "dor nas articulacoes", "dor no quadril", "dor no tornozelo", "dor no pescoco", "dor no cotovelo", "dor no punho", "dor no pulso"],
     "dor_de_barriga": ["dor de barriga", "colica", "colicas", "colica menstrual", "barriga doendo"],
@@ -84,6 +88,11 @@ CONCERN_ALIASES: dict[str, list[str]] = {
     "hipertensao": ["pressao alta", "hipertensao", "remedio de pressao", "remedio para pressao"],
     "colesterol": ["colesterol", "colesterol alto", "remedio de colesterol"],
 }
+
+# Fala popular/chula de alta frequência (graphrag/slang.py): atalho determinístico, não a solução geral.
+for _cid, _terms in SLANG.items():
+    _bucket = CONCERN_ALIASES.setdefault(_cid, [])
+    _bucket.extend(t for t in _terms if t not in _bucket)
 
 
 # Fala do dia a dia (#62). A palavra solta ("travado", "tapado") serve a assuntos demais ("poros tapados", "pia tapada"), e

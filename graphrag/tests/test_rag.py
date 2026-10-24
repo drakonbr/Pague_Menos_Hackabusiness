@@ -180,33 +180,48 @@ class TestRag(unittest.TestCase):
             self.assertEqual(f2.calls, 1)
 
     def test_palavra_desconhecida_so_confere_e_o_grafo_continua_valendo(self):
-        # #61: "melada" o catálogo não conhece. O grafo respondeu rotina básica. A DeepSeek só troca se EXPLICAR a palavra
+        # #61: "grudenta" o catálogo não conhece. O grafo respondeu rotina básica. A DeepSeek só troca se EXPLICAR a palavra
         # com algo do catálogo que o grafo não cobriu
-        q = "quero cuidar da pele que vive melada"
+        q = "quero cuidar da pele que vive grudenta"
         base = GRAPH.search({"query": q})
         self.assertEqual(base["intent"]["primaryGoal"], "skincare_basico")
-        fake = Fake({"melada": {"objetivos": ["oleosidade"], "palavras": {"melada": "oleosidade"}}})
+        fake = Fake({"grudenta": {"objetivos": ["oleosidade"], "palavras": {"grudenta": "oleosidade"}}})
         E = eng(fake)
         r = E.search({"query": q})
         self.assertEqual((fake.calls, r.get("rag"), r["intent"]["primaryGoal"]), (1, True, "oleosidade"))
         self.assertEqual((E.stats["fraco"], E.stats["trocou"]), (1, 1))
-        self.assertIn("Palavras que o catálogo não conhece: ", fake.sent[0]); self.assertIn("melada", fake.sent[0])
+        self.assertIn("Palavras que o catálogo não conhece: ", fake.sent[0]); self.assertIn("grudenta", fake.sent[0])
         # leu oleosidade mas NÃO explicou nenhuma palavra: era enchimento, vale o grafo, intacto
-        fake = Fake({"melada": {"objetivos": ["oleosidade"]}})
+        fake = Fake({"grudenta": {"objetivos": ["oleosidade"]}})
         r = eng(fake).search({"query": q}); r.pop("rag", None)
         self.assertEqual((fake.calls, r), (1, base))
         # explicou com algo que o grafo já cobria: também fica a do grafo
-        fake = Fake({"melada": {"objetivos": ["skincare_basico"], "palavras": {"melada": "skincare_basico"}}})
+        fake = Fake({"grudenta": {"objetivos": ["skincare_basico"], "palavras": {"grudenta": "skincare_basico"}}})
         r = eng(fake).search({"query": q}); r.pop("rag", None)
         self.assertEqual(r, base)
         # explicação inventada (id que não existe) não vale; nem palavra que não foi perguntada
-        fake = Fake({"melada": {"objetivos": ["oleosidade"], "palavras": {"melada": "inventado", "ontem": "oleosidade"}}})
+        fake = Fake({"grudenta": {"objetivos": ["oleosidade"], "palavras": {"grudenta": "inventado", "ontem": "oleosidade"}}})
         r = eng(fake).search({"query": q}); r.pop("rag", None)
         self.assertEqual(r, base)
         # e se ela não leu nada do catálogo, também fica a do grafo
         fake = Fake()
         r = eng(fake).search({"query": q}); r.pop("rag", None)
         self.assertEqual((fake.calls, r), (1, base))
+
+    def test_parte_do_corpo_fora_do_escopo_chama_o_fallback_e_abstem(self):
+        # "coceira no ouvido" não pode virar kit de pele; a DeepSeek tenta corrigir e, se não corrigir, a resposta é "não temos"
+        from graphrag.concepts import MED_MISSING
+        fake = Fake({"ouvido": {"objetivos": []}})
+        r = eng(fake).search({"query": "coceira no ouvido"})
+        self.assertEqual(fake.calls, 1)
+        self.assertEqual((r["kits"], r["products"]), ([], []))
+        self.assertEqual(r["reply"], MED_MISSING)
+        self.assertIsNone(r["intent"].get("primaryGoal"))
+        # se ela corrigir para uma prateleira que existe, a resposta corrigida vale
+        fake = Fake({"ouvido": {"objetivos": ["alergia"]}})
+        r = eng(fake).search({"query": "coceira no ouvido"})
+        self.assertTrue(r.get("rag"))
+        self.assertTrue(any("alergia" in p["concerns"] for p in r["products"]))
 
     def test_conferencia_nunca_vira_lista_de_remedio_sem_pedido_de_saude(self):
         # #61: o revisor provou na API real que "corpo arrebentado e cansado" virava ibuprofeno/naproxeno; agora a troca é recusada
@@ -242,10 +257,10 @@ class TestRag(unittest.TestCase):
             self.assertTrue(any(p["domain"] == "medicamento" for p in r["products"]), q)
 
     def test_troca_usa_so_o_que_a_deepseek_explicou(self):
-        # #61: ela leu oleosidade (explicou "melada") e também protetor solar e acne (sem explicar nada disso): só a explicada entra
-        q = "quero cuidar da pele que vive melada"
-        fake = Fake({"melada": {"objetivos": ["acne", "protecao_solar"], "preocupacoes": ["oleosidade"], "etapas": ["limpeza"],
-                                 "palavras": {"melada": "oleosidade"}}})
+        # #61: ela leu oleosidade (explicou "grudenta") e também protetor solar e acne (sem explicar nada disso): só a explicada entra
+        q = "quero cuidar da pele que vive grudenta"
+        fake = Fake({"grudenta": {"objetivos": ["acne", "protecao_solar"], "preocupacoes": ["oleosidade"], "etapas": ["limpeza"],
+                                 "palavras": {"grudenta": "oleosidade"}}})
         r = eng(fake).search({"query": q})
         self.assertTrue(r.get("rag"))
         self.assertEqual(r["intent"]["primaryGoal"], "oleosidade")                      # não virou acne nem proteção solar
@@ -312,9 +327,9 @@ class TestRag(unittest.TestCase):
 
     def test_caminho_do_objetivo_so_quando_o_grafo_estava_no_escuro(self):
         # explicou um objetivo, mas o grafo já tinha um objetivo próprio (não o de reserva): troca a palavra na frase, mantém o resto
-        q = "preciso de um protetor solar para a praia, pele melada"
+        q = "preciso de um protetor solar para a praia, pele grudenta"
         base = GRAPH.search({"query": q})
-        fake = Fake({"melada": {"objetivos": ["oleosidade"], "palavras": {"melada": "oleosidade"}}})
+        fake = Fake({"grudenta": {"objetivos": ["oleosidade"], "palavras": {"grudenta": "oleosidade"}}})
         self.assertEqual(base["intent"]["primaryGoal"], "protecao_solar")
         r = eng(fake).search({"query": q})
         self.assertTrue(r.get("rag"))                                        # a palavra foi explicada e a busca refeita...
@@ -323,7 +338,7 @@ class TestRag(unittest.TestCase):
     def test_conferencia_so_em_busca_nova_e_respeita_o_desligar(self):
         fake = Fake({"melada": {"objetivos": ["oleosidade"]}})
         E = eng(fake)
-        E.search({"query": "quero cuidar da pele que vive melada", "allowExternal": False})
+        E.search({"query": "quero cuidar da pele que vive grudenta", "allowExternal": False})
         self.assertEqual(fake.calls, 0)
         base = GRAPH.search({"query": "pele oleosa"})
         E.search({"query": "tira o que é melado", "context": base["context"]})       # ajuste de conversa: outro caminho

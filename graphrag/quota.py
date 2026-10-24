@@ -14,7 +14,7 @@ from collections import deque
 
 
 class Quota:
-    def __init__(self, per_client_hour: int = 20, daily: int = 1500, max_clients: int = 5000):
+    def __init__(self, per_client_hour: int = 100, daily: int = 1500, max_clients: int = 5000):
         self.per_client_hour, self.daily, self.max_clients = per_client_hour, daily, max_clients
         self.lock = threading.Lock()
         self.by_client: dict[str, deque] = {}
@@ -22,7 +22,7 @@ class Quota:
 
     @classmethod
     def from_env(cls) -> "Quota":
-        return cls(int(os.environ.get("RAG_PER_CLIENT_HOUR", "20")), int(os.environ.get("RAG_DAILY_CAP", "1500")))
+        return cls(int(os.environ.get("RAG_PER_CLIENT_HOUR", "100")), int(os.environ.get("RAG_DAILY_CAP", "1500")))
 
     def allow(self, client: str | None, now: float | None = None) -> bool:
         """Pede uma chamada. 0 em qualquer teto = sem limite. Sem cliente (uso local, avaliação), vale só o teto do dia."""
@@ -45,3 +45,15 @@ class Quota:
                         self.by_client.pop(k, None)
             self.day_count += 1
             return True
+
+    def snapshot(self, client: str | None, now: float | None = None) -> dict:
+        """Quanto do teto já foi usado, para /v1/health e para o app não degradar em silêncio."""
+        now = time.time() if now is None else now
+        today = time.strftime("%Y-%m-%d", time.gmtime(now))
+        with self.lock:
+            used_day = 0 if today != self.day else self.day_count
+            used_hour = 0
+            if client and self.per_client_hour:
+                used_hour = sum(1 for t in self.by_client.get(client, ()) if now - t <= 3600)
+            return {"perHour": self.per_client_hour, "usedHour": used_hour,
+                    "daily": self.daily, "usedDay": used_day}

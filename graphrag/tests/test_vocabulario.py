@@ -22,9 +22,37 @@ class TestVocabulario(unittest.TestCase):
 
     def test_alias_novo_nao_cria_falso_positivo(self):   # revisor: "filtro de linha" virava protetor solar, "caroço no seio" kit de acne
         for q in ("filtro de linha", "filtro para café", "caroço no seio", "carocinho na virilha", "soltura de ponto", "barriga mole de gordura",
-                  "a conta veio irregular", "caidinha de amor", "não sai nada de água da torneira", "cagando sangue", "urticária e língua inchada", "cabeça explodindo e rigidez no pescoço"):
+                  "a conta veio irregular", "caidinha de amor", "não sai nada de água da torneira", "cagando sangue", "urticária e língua inchada", "cabeça explodindo e rigidez no pescoço",
+                  "me caguei de medo", "me caguei de rir", "caguei pra isso"):
             r = E.search({"query": q})
             self.assertEqual((r["kits"], r["products"]), ([], []), q)
+
+    def test_girias_e_fala_chula_das_areas_de_saude(self):
+        for q, concern in (("me caguei", "diarreia"), ("me borrei", "diarreia"), ("estou cagando mole", "diarreia"),
+                           ("nao consigo cagar", "prisao_de_ventre"), ("estou peidando muito", "gases"),
+                           ("estomago embrulhado", "enjoo"), ("garganta arranhando", "dor_de_garganta"),
+                           ("torci o pe", "dor_muscular"), ("dei um mau jeito nas costas", "dor_muscular"),
+                           ("pele que vive melada", "oleosidade"), ("meu nariz nao para de escorrer", "nariz_entupido"),
+                           ("to soltando pum demais", "gases")):
+            r = E.search({"query": q})
+            self.assertTrue(r["products"], q)
+            self.assertTrue(any(concern in p["concerns"] for p in r["products"][:6]), (q, [p["name"] for p in r["products"][:6]]))
+
+    def test_parte_do_corpo_fora_do_escopo_nao_vira_kit_de_pele(self):
+        for q in ("ardencia para urinar", "coceira no ouvido", "dor de dente e pele sensivel", "afta", "dor nos olhos"):
+            r = E.search({"query": q})
+            self.assertNotEqual(r["intent"].get("primaryGoal"), "pele_sensivel", q)
+            self.assertFalse(any("sensibilidade" in p["concerns"] for p in r["products"]), q)
+
+    def test_tosse_de_cachorro_nao_vira_pet(self):
+        r = E.search({"query": "tosse de cachorro"})
+        self.assertNotIn("pet", (r.get("catalogNotice") or {}).get("shelf", ""))
+        self.assertTrue(any("tosse" in p["concerns"] for p in r["products"]))
+
+    def test_nao_consigo_cagar_e_sintoma_nao_negacao(self):
+        r = E.search({"query": "nao consigo cagar"})
+        self.assertEqual(r["act"], "busca")
+        self.assertTrue(any("prisao_de_ventre" in p["concerns"] for p in r["products"]))
 
     def test_sem_acido_so_exclui_esfoliante_e_respeita_ingrediente_nomeado(self):
         _, r0 = goal("rotina para acne")

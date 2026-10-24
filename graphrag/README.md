@@ -57,3 +57,17 @@ Conjunto de ranking pequeno (14 frases); entidades por regras; vetores treinados
 ## Medir o entendimento (24/10)
 
 `python -m graphrag.eval.blind5_run` mede o grafo no conjunto cego `rag_blind5.py` (escrito por agente independente); com `--live` mede também com a DeepSeek (precisa da chave no ambiente). A metade B só mostra a contagem: não ajuste o vocabulário olhando as falhas dela. Para ensinar fala nova: alias em `lexicon.py`, regra `canon_state` (parte do corpo + estado), exemplo de ajuste em `nlu_corpus.py`, e `python -m graphrag.train`.
+
+## Fallback seletivo (24/10)
+
+O fallback deixou de ser só "quando o grafo não entendeu" e ganhou três guardas:
+
+- **Cota visível**: o padrão passou a 100 chamadas/hora por cliente e `/v1/health` traz `quota` (`perHour`, `usedHour`, `daily`, `usedDay`). Quando o teto estoura, a resposta ganha uma nota em `notes` em vez de degradar em silêncio.
+- **Gate de incerteza**: além de `_miss`, a conferência entra quando o ato é `desconhecido` ou quando a frase tem parte do corpo que o catálogo não trata (`urina`, `xixi`, `ouvido`, `dente`...) e o grafo caiu numa prateleira de pele. Se a DeepSeek não corrigir, a resposta é explícita ("Não está no banco de dados ainda."), nunca um kit de pele.
+- **Ato**: "não consigo cagar", "meu nariz não para de escorrer" e afins deixam de ser lidos como negação do turno anterior; são busca.
+- **Sugestões**: quando o grafo não entende, os chips vêm dos objetivos mais próximos pelo ranking, não de uma lista fixa.
+
+`slang.py` é um **cache determinístico** de fala popular/chula de alta frequência ("me caguei", "estou peidando", "tosse de cachorro", "coceira nos olhos"...). Ele não substitui o fallback: cobre o óbvio sem chamada de rede e deixa o caso geral para o gate. A lista é curadoria interna curta, não um dataset público — não existe dataset aberto que mapeie gíria de balcão para as 13 áreas do catálogo sem problema de licença.
+
+Limites que continuam: frases fora do catálogo não têm produto (a resposta correta é dizer isso); o fallback ainda não faz retrieval de candidatos nem escolha com confiança; a correção de falso positivo depende das guardas, não de um modelo.
+

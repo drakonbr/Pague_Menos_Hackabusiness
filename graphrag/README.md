@@ -2,7 +2,7 @@
 
 > **Status (20/10): implementado e treinado.** Sem Ollama: só Python, networkx e numpy. Dados sintéticos; repositório privado.
 >
-> **RAG com DeepSeek (23/10):** `llm.py`. Só entra quando o grafo não entende o pedido (nunca nas 101 frases do conjunto de busca; nunca num simples "não", numa pergunta com "?" nem no replay do histórico do chat); a DeepSeek traduz a frase para ids do catálogo, o que não existe é descartado e o grafo busca de novo com esses rótulos. Kits continuam do compositor. Sem `DEEPSEEK_API_KEY` (ou com a API fora do ar), o motor responde como antes. Avaliação: `python -m graphrag.eval.rag_eval --live` (relatório em `eval/report_rag.md`).
+> **RAG com DeepSeek (23/10):** `llm.py`. Só entra quando o grafo não entende o pedido (nunca nas 101 frases do conjunto de busca; nunca num simples "não", numa pergunta com "?" nem no replay do histórico do chat); a DeepSeek traduz a frase para ids do catálogo, o que não existe é descartado e o grafo busca de novo com esses rótulos. Kits continuam do compositor. Quando o grafo responde mas vê palavra desconhecida, a DeepSeek só confere: a resposta do grafo muda apenas se ela EXPLICAR a palavra com algo do catálogo que o grafo não cobria (palavra negada nunca conta; nunca vira lista de remédios sem pedido de dor, remédio ou sintoma). Sem `DEEPSEEK_API_KEY` (ou com a API fora do ar), o motor responde como antes e avisa na partida e em `/v1/health` (`rag`, `ragCalls`). Avaliação: `python -m graphrag.eval.rag_eval --live` (relatório em `eval/report_rag.md`).
 
 Recebe uma frase (e o contexto da conversa) e devolve resposta, kits e ação, seguindo `../contracts/README.md`. Pensado para a persona Renata Almeida (doc 14), mas serve a qualquer pedido dentro do catálogo.
 

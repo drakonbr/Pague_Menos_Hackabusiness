@@ -47,7 +47,9 @@ export interface Ingredient {
   photosensitizing: boolean;
 }
 
-export const PRODUCTS = productsJson as unknown as Product[];
+/** #41 (RDC 96/2008): remédio de prescrição nunca tem preço riscado, venha o dado como vier. */
+export const noStrike = <T extends Product>(p: T): T => (p.rx && p.listPriceCents !== p.priceCents ? { ...p, listPriceCents: p.priceCents } : p);
+export const PRODUCTS = (productsJson as unknown as Product[]).map(noStrike);
 export const GOALS = goalsJson as unknown as GoalDef[];
 export const INTERACTIONS = interactionsJson as unknown as Interaction[];
 export const INGREDIENTS = ingredientsJson as unknown as Ingredient[];

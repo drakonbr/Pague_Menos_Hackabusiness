@@ -21,7 +21,7 @@ const nextId = () => `m${Date.now().toString(36)}${(seq++).toString(36)}`;
 
 export function Chat({ initial }: { initial?: string }) {
   const { search } = useServices();
-  const { chat, dispatch, storeId, store } = useApp();
+  const { chat, dispatch, storeId, store, consent } = useApp();
   const { pop, push, replace, depth, view, tab } = useNav();
   const inTab = showsTabBar(view, tab, depth);
   const [text, setText] = useState("");
@@ -94,6 +94,7 @@ export function Chat({ initial }: { initial?: string }) {
           <h1>Assistente de compras</h1>
           <small title={engine === "graphrag" ? "Motor GraphRAG local (treinado do zero no catálogo)" : "Servidor do GraphRAG não encontrado: usando o motor simulado de reserva"}>
             {engine === "graphrag" ? "Motor: GraphRAG local" : "Motor simulado (reserva)"}
+            {engine === "graphrag" && (!consent.useExternalLanguageService || search.external === false) ? " · serviço externo desligado (entende menos)" : ""}
           </small>
         </div>
         <button className="icon-btn" aria-label="Nova conversa" title="Nova conversa" onClick={() => { dispatch({ type: "chatReset" }); started.current = false; force((n) => n + 1); }}>
@@ -121,6 +122,12 @@ export function Chat({ initial }: { initial?: string }) {
           ))}
         </div>
       ) : null}
+      <p className="footnote chat-privacy">
+        {consent.useExternalLanguageService
+          ? "Se eu não entender, a frase pode ir a um serviço externo de linguagem (tentamos tirar dados pessoais; evite escrevê-los, nem dados de saúde). "
+          : "O serviço externo de linguagem está desligado: nenhuma frase sai daqui, e eu entendo menos. "}
+        <button type="button" className="link plain" onClick={() => push({ name: "privacy" })}>Privacidade e dados</button>
+      </p>
       <form className="composer" onSubmit={submit} role="search">
         <label className="sr-only" htmlFor="chat-q">Mensagem</label>
         <input id="chat-q" value={text} onChange={(e) => setText(e.target.value)} placeholder="Escreva aqui, do seu jeito" autoComplete="off" enterKeyHint="send" />

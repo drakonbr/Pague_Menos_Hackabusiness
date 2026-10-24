@@ -6,7 +6,7 @@ import { Icon } from "../components/Icon";
 import { ProductImage } from "../components/ProductImage";
 import type { Product, SimilarsResponse, StoreAvailability } from "../contracts/types";
 import { useNav, useServices } from "../nav";
-import { DELIVERY_RANK, PERSONA, REFILL_RULES, daysLeft, needsRefill, refillPrice, runOutDate, type ContinuousMedication } from "../persona";
+import { DELIVERY_RANK, PERSONA, REFILL_RULES, daysLeft, needsRefill, runOutDate, type ContinuousMedication } from "../persona";
 import { delta, money } from "../services/format";
 import { useApp } from "../state/app";
 import { useAsync } from "../useAsync";
@@ -30,7 +30,7 @@ export function Refill() {
 
   const chosen = (m: ContinuousMedication): Product | undefined => choice[m.productId] ?? data.data?.byId.get(m.productId);
   const lineItems = meds.filter((m) => picked[m.productId]).map((m) => ({ m, p: chosen(m) })).filter((x): x is { m: ContinuousMedication; p: Product } => !!x.p);
-  const itemsCents = lineItems.reduce((t, { m, p }) => t + refillPrice(p.priceCents, !!refillAuto[m.productId]), 0);
+  const itemsCents = lineItems.reduce((t, { p }) => t + p.priceCents, 0);   // #41: o total mostrado é o que a cesta cobra (o desconto da reposição automática não é aplicado no protótipo)
   const anyAuto = lineItems.some(({ m }) => refillAuto[m.productId]);
   const canBuy = lineItems.length > 0 && rxAttached;
 
@@ -96,7 +96,7 @@ export function Refill() {
             <section className="panel" aria-label="Total com entrega">
               <b>Total com entrega</b>
               <small style={{ color: "var(--text-2)" }}>
-                {lineItems.length} {lineItems.length === 1 ? "item" : "itens"} · {money(itemsCents)}{anyAuto ? ` (estimativa com ${REFILL_RULES.discountPct}% da reposição automática)` : ""}
+                {lineItems.length} {lineItems.length === 1 ? "item" : "itens"} · {money(itemsCents)}
               </small>
               <table className="quote">
                 <tbody>
@@ -173,7 +173,7 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
       <p className="sr-only" role="status">{said}</p>
       {swapped || inStockHere ? (
         <div className="med-price">
-          <div className="row"><span className="price blue">{money(refillPrice(cur.priceCents, auto))}</span>{auto ? <span className="old">{money(cur.priceCents)}</span> : null}
+          <div className="row"><span className="price blue">{money(cur.priceCents)}</span>
             {swapped ? <small className="swap-note">{delta(cur.priceCents - product.priceCents)} em relação ao original</small> : null}</div>
           {swapped ? <button className="link plain" onClick={undo}>Desfazer troca e voltar a {product.name}</button> : null}
         </div>
@@ -198,7 +198,7 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
 
       <label className="switch auto">
         <input type="checkbox" checked={auto} onChange={(e) => onAuto(e.target.checked)} />
-        Reposição automática ({REFILL_RULES.discountPct}% e frete grátis, premissas fictícias)
+        Reposição automática (frete grátis, premissa fictícia; o desconto de {REFILL_RULES.discountPct}% ainda não vale neste protótipo)
       </label>
       {auto ? <small className="foot">Avisamos {REFILL_RULES.alertDaysBefore} dias antes de acabar e você confirma antes de cada compra.</small> : null}
     </article>

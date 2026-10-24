@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from graphrag.chat_stream import BadRequest, search_chat_events, sse        # noqa: E402
 from graphrag.dialogue import Engine, api_adapt, api_swap, api_swap_options  # noqa: E402
-from graphrag.llm import DeepSeek  # noqa: E402
+from graphrag.llm import DeepSeek, rag_banner  # noqa: E402
 
 ENGINE: Engine | None = None
 ALLOW_INGEST = False
@@ -57,7 +57,8 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == "/v1/health":
             e = ENGINE
             self._send(200, {"ok": True, "products": len(e.cat.products), "graph": e.graph.stats()["totalNodes"],
-                             "vocab": len(e.wv.vocab), "weights": {k: e.weights[k] for k in ("bm25", "emb", "graph")}})
+                             "vocab": len(e.wv.vocab), "weights": {k: e.weights[k] for k in ("bm25", "emb", "graph")},
+                             "rag": e.rag is not None, "ragCalls": dict(e.stats)})   # #60: sem chave, a busca fica pior em silêncio
         else:
             self._send(404, {"error": "rota inexistente"})
 
@@ -125,6 +126,7 @@ def main():
     a = ap.parse_args()
     ALLOW_INGEST = a.allow_ingest
     ENGINE = Engine.build(llm=DeepSeek.from_env())     # sem DEEPSEEK_API_KEY: só o grafo
+    print(rag_banner(ENGINE), flush=True)
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
     print(f"GraphRAG local em http://{a.host}:{a.port}  (GET /v1/health)")
     srv.serve_forever()

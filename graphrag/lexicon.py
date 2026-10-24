@@ -8,6 +8,8 @@ Duas funções:
 """
 from __future__ import annotations
 
+import re
+
 # ----------------------------------------------------------------- preocupações (id do catálogo -> falas)
 CONCERN_ALIASES: dict[str, list[str]] = {
     "acne": ["acne", "espinha", "espinhas", "cravo", "cravos", "acneica", "acneico", "pele com espinha", "espremi cravo", "espremer cravo", "muita espinha", "tem espinha", "espinha na cara", "problema de acne", "cravo no nariz",
@@ -35,7 +37,9 @@ CONCERN_ALIASES: dict[str, list[str]] = {
     "textura": ["textura", "pele aspera", "aspereza", "pele lisa", "pele lisinha", "lisinha", "pele macia", "pele aveludada", "esfoliar", "esfoliante", "renovar a pele"],
     "desmaquilagem": ["demaquilar", "desmaquilante", "tirar maquiagem", "remover maquiagem", "agua micelar"],
     "nutricao": ["suplemento", "suplementos", "vitamina", "vitaminas", "nutricao", "bem estar", "omega", "omega 3",
-                 "magnesio", "vitamina d", "multivitaminico"],
+                 "magnesio", "vitamina d", "multivitaminico",
+                 # fala do dia a dia (#62): cansaço e falta de ânimo levam a suplementos
+                 "sem animo", "desanimo", "desanimada", "desanimado", "cansaco", "fadiga", "sem disposicao", "sem pique"],
     "beleza_interna": ["colageno", "colageno hidrolisado", "beleza de dentro", "beleza de dentro para fora"],
     "higiene_diaria": ["higiene", "higiene pessoal", "banho", "higiene premium"],
     "cuidado_cabelo": ["cabelo", "cabelos", "shampoo", "xampu", "condicionador", "mascara capilar", "capilar",
@@ -53,7 +57,7 @@ CONCERN_ALIASES: dict[str, list[str]] = {
     "gases": ["gases", "barriga inchada", "barriga estufada", "estufado", "estufada", "flatulencia"],
     "azia": ["azia", "queimacao", "ma digestao", "indigestao", "refluxo", "dor de estomago"],
     "gripe": ["gripe", "gripado", "gripada", "resfriado", "resfriada"],
-    "nariz_entupido": ["nariz entupido", "congestao nasal", "coriza", "nariz escorrendo", "sinusite"],
+    "nariz_entupido": ["nariz entupido", "congestao nasal", "coriza", "nariz escorrendo", "sinusite", "fanho", "fanha", "voz fanha"],
     "tosse": ["tosse", "tosse com catarro", "catarro", "peito carregado"],
     "tosse_seca": ["tosse seca", "tosse irritativa", "tosse sem catarro"],
     "dor_de_garganta": ["dor de garganta", "garganta inflamada", "garganta irritada", "garganta doendo"],
@@ -64,6 +68,31 @@ CONCERN_ALIASES: dict[str, list[str]] = {
     "hipertensao": ["pressao alta", "hipertensao", "remedio de pressao", "remedio para pressao"],
     "colesterol": ["colesterol", "colesterol alto", "remedio de colesterol"],
 }
+
+
+# Fala do dia a dia (#62). A palavra solta ("travado", "tapado") serve a assuntos demais ("poros tapados", "pia tapada"), e
+# ensiná-la ao vocabulário a faz parecer palavra de nariz na busca por semelhança. Então não entra como alias: canon_state REESCREVE
+# "parte do corpo + até 2 palavras quaisquer + estado" para um jeito que o grafo já entende, antes de qualquer outra etapa.
+_BODY = ("ombro", "ombros", "pescoco", "costas", "coluna", "joelho", "joelhos", "mandibula", "braco", "bracos", "perna", "pernas",
+         "mao", "maos", "pe", "pes", "quadril", "punho", "pulso", "cotovelo", "tornozelo", "nuca", "lombar")
+STATE_WORDS = frozenset(_BODY) | {"intestino", "barriga", "nariz"}   # entendidas pela regra abaixo, mesmo sem estar no vocabulário
+_GUT = ("intestino", "barriga")
+_STATE_RULES = [  # (partes, estados, reescrita)
+    (_BODY, ("travado", "travada", "travados", "travadas", "travou", "duro", "dura"), "{p} dor muscular"),
+    (_GUT, ("travado", "travada", "trancado", "trancada"), "intestino preso"),
+    (("nariz",), ("tapado", "tapada", "congestionado", "congestionada"), "nariz entupido"),
+]
+_STATE_RES = [(re.compile(r"\b(%s)\s+((?:[a-z]+\s+){0,2}?)(?:%s)\b" % ("|".join(p), "|".join(st))), out) for p, st, out in _STATE_RULES]
+_NEG = frozenset("nao nem sem nunca jamais".split())
+
+
+def canon_state(text: str) -> str:
+    """"meu ombro tá bem travado" -> "meu ombro dor muscular"; "nariz meio tapado" -> "nariz entupido"."""
+    text = re.sub(r"\s+", " ", re.sub(r"[,;]+", " ", text))
+    for rx, out in _STATE_RES:
+        # com "não", "sem", "nem" no meio a pessoa diz o contrário ("meu nariz não está tapado"): não reescreve
+        text = rx.sub(lambda m, out=out: m.group(0) if _NEG & set(m.group(2).split()) else out.format(p=m.group(1)), text)
+    return text
 
 # ----------------------------------------------------------------- tipos de pele
 SKIN_ALIASES: dict[str, list[str]] = {

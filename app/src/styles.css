@@ -404,3 +404,4 @@ table.quote tr.best td:last-child b { color: var(--ok); }
 .rx-attach li.ok { border-color: var(--ok); }
 .rx-attach li .grow { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .rx-attach li .btn { min-height: 44px; white-space: nowrap; }
+.chat-privacy { margin: 0; padding: 6px 14px 0; background: #fff; text-align: left; }   /* #42: nota ao vivo sobre o serviço externo */

@@ -49,7 +49,7 @@ export function Payment() {
       <TitleBar title="Pagamento" />
       <div className="scroll">
         <div className="pad">
-          <div className="note warn" role="note"><Icon name="info" size={18} /><p>Simulação: nenhum pagamento é processado e nenhum dado é enviado.</p></div>
+          <div className="note warn" role="note"><Icon name="info" size={18} /><p>Simulação: nenhum pagamento é processado e nenhum dado de pagamento é enviado.</p></div>
           <div className="panel" style={{ gap: 4 }}>
             <span className="section-title">Receber</span>
             <span style={{ fontSize: 15 }}>
@@ -109,7 +109,7 @@ export function Confirmation({ orderId }: { orderId: string }) {
               {o.cashbackCents ? <><br />{money(o.cashbackCents)} de cashback a receber (simulado)</> : null}
             </p>
           ) : null}
-          <div className="note" style={{ textAlign: "left" }}><Icon name="info" size={18} /><p>Demonstração: nada foi cobrado, enviado ou guardado fora deste navegador.</p></div>
+          <div className="note" style={{ textAlign: "left" }}><Icon name="info" size={18} /><p>Demonstração: nada foi cobrado e o pedido não foi enviado a nenhuma loja; ele fica só neste navegador. As frases da busca seguem as regras de Privacidade e dados.</p></div>
           <button className="btn primary block" onClick={() => replace({ name: "orders" })}>Ver meus pedidos</button>
           <button className="link" onClick={() => resetTo("home")}>Continuar comprando</button>
         </div>

@@ -7,14 +7,18 @@ Medicamento é busca como outra qualquer (doc 16): sem bloqueio e sem mandar pro
 from __future__ import annotations
 
 import hashlib
+from collections import Counter
 import json
 import logging
+import os
 import re
+import threading
 
 from . import embed
 from .composer import Composer, build_ctx, list_pt
 from .concepts import MED_MISSING, MED_SHELF
 from .data import Catalog, load_catalog
+from .lexicon import STATE_WORDS, canon_state
 from .graph import KnowledgeGraph, build_graph
 from .ingest import IngestReport, ingest_records, load_catalog_with_delta, write_delta
 from .llm import Reader, phrase
@@ -25,8 +29,8 @@ from .retrieval import Retriever, load_weights
 from .rewrite import rewrite_query
 from .safety import assess
 from .scope import MAX_LIST, VOTE_REL, Scope, ScopeResolver
-from .spell import Speller
-from .text import money, norm, raw_tokens
+from .spell import COMMON, Speller
+from .text import STOPWORDS, money, norm, raw_tokens
 
 SKIN_OPTIONS = [{"value": v, "label": l} for v, l in
                 [("oleosa", "Oleosa"), ("mista", "Mista"), ("seca", "Seca"), ("normal", "Normal"), ("sensível", "Sensível")]]
@@ -38,13 +42,22 @@ BARE_TERM_ACTS = {"trocar_item", "pergunta_produto", "similar"}
 SOFT_ACTS = {"negacao", "afirmacao", "saudacao", "agradecimento", "ajuda"}
 CTX_ACTS = {"trocar_item", "pergunta_produto", "similar", "entrega_frete"}
 DELIVERY_CUE = re.compile(r"\b(frete|entreg\w*|prazo|retir\w*|chega\w*|receb\w*|envio|enviar)\b")
-POINTING_CUE = re.compile(r"\?|\b(troc\w*|mud\w*|substitu\w*|outr[oa]s?|ess[ea]s?|est[ea]s?|isso|isto|aquel\w+|"
+POINTING_CUE = re.compile(r"\?|\b(troc\w*|mud\w*|substitu\w*|outr[oa]s?|ess[ea]s?(?!\s+(?:dias|tempos?|semanas|meses|ultimos))|est[ea]s?|isso|isto|aquel\w+|"
                           r"parecid\w*|similar\w*|equival\w*)\b")
 TIER_NAME = {"economico": "Econômico", "essencial": "Essencial", "completo": "Completo"}
 # a frase fala de remédio ou sintoma: se nada no catálogo atende, a resposta é só MED_MISSING (doc 16)
 MED_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|"
                      r"pomada|gotas|tomar|tomo|dor|dores|doendo|sintoma|sintomas|estou com|to com)\b")
+# sinais de que a pessoa pede alívio ou remédio (sem "tô com", que aparece em qualquer queixa): só com eles a conferência
+# pode virar lista de remédios sobre uma resposta que não era de saúde
+HEALTH_CUE = re.compile(r"\b(remedio|remedios|medicamento|medicamentos|medicacao|comprimido|comprimidos|capsula|xarope|pomada|gotas|"
+                        r"dor|dores|doendo|doi|sintoma|sintomas|febre|tosse|enjoo|azia|nausea)\b")   # sem "tomar": "tomo sol" não é remédio
 log = logging.getLogger("graphrag.rag")
+# palavras de fala corrente que o catálogo não tem e que não dizem o que a pessoa quer: não contam como "não entendi"
+FILLER = frozenset("fico fica ficou fique ficar vive vivo anda andou tomo sao pras pros tao tava tamos estao sinto sentindo seja parece parecem deixe deixa leve".split())
+NEGATORS_RAG = frozenset("nao nem sem nunca jamais menos nada nenhum nenhuma".split())
+CLAUSE_BREAK = frozenset("e mas porem ou".split())      # a negação não atravessa uma conjunção ("sem brilho E melada")
+GENERIC_GOALS = frozenset({"skincare_basico"})            # objetivo "de reserva": o grafo caiu nele sem pista melhor
 GRAPH_KEYS = ("goals", "primaryGoal", "budgetCents", "skinType", "preferences", "pregnancy")
 # "não", "não, obrigado", "não gostei": o grafo entendeu (negação); só chama a DeepSeek se sobrar conteúdo
 COURTESY = {"nao", "obrigado", "obrigada", "valeu", "gostei", "curti", "quero", "nada", "isso", "esse", "essa", "por", "favor",
@@ -57,6 +70,10 @@ class Engine:
     def __init__(self, cat: Catalog, graph: KnowledgeGraph, wv, clf: ActClassifier, weights: dict | None = None, llm=None):
         self.cat, self.graph, self.wv, self.clf = cat, graph, wv, clf
         self.rag = Reader(cat, llm) if llm else None        # DeepSeek só quando o grafo não entende (#34)
+        # #42: o que vale quando o pedido não traz allowExternal (cliente antigo). Em produção: RAG_EXTERNAL_DEFAULT=off
+        self.external_default = os.environ.get("RAG_EXTERNAL_DEFAULT", "on").strip().lower() != "off"
+        self.stats: Counter = Counter()                     # chamadas por motivo, para medir o custo (/v1/health)
+        self._stats_lock = threading.Lock()
         self.weights = weights or load_weights()
         self.nlu = Understander(cat, wv, clf)
         self.ret = Retriever(cat, graph, wv, self.weights)
@@ -187,31 +204,123 @@ class Engine:
         query, fixes = self.speller.fix(orig_query)
         res = self._search(req, query, orig_query)
         miss = res.pop("_miss", None)
-        if miss and rag and self.rag:
-            res = self._rag(req, orig_query, res, miss)
+        # #42: só vai à DeepSeek com allowExternal exatamente true (ou ausente, se o padrão for ligado); 0, "false" e null desligam
+        usable = rag and self.rag and req.get("allowExternal", self.external_default) is True
+        words: list[str] = []
+        if usable and not miss and res.get("act") == "busca":
+            words = self._unknown(query, fixes)           # o grafo respondeu, mas viu palavra que não conhece: confere
+            miss = "fraco" if words else None
+        if miss and usable:
+            res = self._rag(req, orig_query, res, miss, words)
         res["query"] = orig_query
-        if fixes:
+        if fixes and canon_state(norm(orig_query)) == norm(orig_query):      # texto reescrito pela regra do corpo não é "correção"
             res["correctedQuery"] = query
         return res
 
-    def _rag(self, req: dict, text: str, res: dict, miss: str) -> dict:
+    def _count(self, key: str) -> None:
+        with self._stats_lock:
+            self.stats[key] += 1
+
+    def _unknown(self, fixed_query: str, fixes: list) -> list[str]:
+        """Palavras que fazem o grafo duvidar de si: de conteúdo e desconhecidas do catálogo, ou que o corretor trocou de um
+        jeito suspeito (muda a 1ª letra ou o tamanho: "fanho" virou "banho"; o erro de digitação comum não conta).
+        Só dispara a conferência; quem troca a resposta é _rag, e só se a DeepSeek explicar uma delas com algo que o
+        grafo não cobriu."""
+        words = [t for t in raw_tokens(fixed_query) if len(t) >= 4 and t not in STOPWORDS and t not in COMMON and t not in FILLER
+                 and t not in STATE_WORDS]
+        doubt = [a for a, b in fixes if a[:1] != b[:1] or abs(len(a) - len(b)) >= 2]
+        return doubt + [t for t in words if t not in self.speller.vocab]
+
+    def _covered(self, res: dict, field: str, ident: str) -> bool:
+        """O que o grafo respondeu já cobre este id do catálogo? Escopo largo (mais de 3 etapas) não cobre etapa nenhuma."""
+        sc = (res.get("context") or {}).get("scope") or {}
+        goals = set(res["intent"].get("goals") or []) | ({res["intent"].get("primaryGoal")} - {None})
+        concerns = set(sc.get("concerns", [])) | {c for g in goals for c in self.cat.goal_by_id[g]["concerns"]}
+        steps = set(sc.get("steps", [])) if len(sc.get("steps", [])) <= 3 else set()
+        if field == "objetivos":
+            return ident in goals or bool(set(self.cat.goal_by_id[ident]["concerns"]) & concerns)
+        if field == "preocupacoes":
+            return ident in concerns
+        if field == "etapas":
+            return ident in steps
+        return ident in set(sc.get("ingredients", []))
+
+    @staticmethod
+    def _negated(text: str, word: str) -> bool:
+        toks = re.findall(r"[a-z0-9]+", norm(text))
+        for k, t in enumerate(toks):
+            if t != word:
+                continue
+            for b in range(k - 1, max(-1, k - 6), -1):        # olha até 5 palavras para trás, parando na conjunção
+                if toks[b] in CLAUSE_BREAK:
+                    break
+                if toks[b] in NEGATORS_RAG:
+                    return True
+        return False
+
+    def _label(self, field: str, ident: str) -> str:
+        c = self.cat
+        return {"objetivos": lambda: c.goal_by_id[ident]["label"].lower(), "preocupacoes": lambda: c.concerns[ident],
+                "etapas": lambda: c.steps[ident].lower(), "ingredientes": lambda: c.ingredients[ident]["name"].lower()}[field]()
+
+    def _substitute(self, text: str, explained: list) -> str:
+        t = norm(text)
+        for w, field, ident in explained:
+            t = re.sub(rf"\b{re.escape(w)}\b", self._label(field, ident), t)
+        return t
+
+    @staticmethod
+    def _health_answer(res: dict) -> bool:
+        return any(_health(p) for p in res.get("products", []))
+
+    def _rag(self, req: dict, text: str, res: dict, miss: str, words: list[str] | None = None) -> dict:
         """O grafo não entendeu: a DeepSeek traduz o pedido para ids do catálogo, montamos uma frase só com rótulos do
         catálogo e o grafo busca de novo (kits, regras e conversa continuam os do motor). Nada na tela diz que foi a
         DeepSeek; a frase entendida só vai para o registro do servidor."""
         cin = req.get("context") or {}
         conv = self._conv_labels(cin) if (cin.get("kits") or cin.get("scope")) else ""
-        p = self.rag.read(text, conv)
+        p = self.rag.read(text, conv, words or ())
         if p is None:
             return res                                   # sem resposta da API: fica a do grafo
-        q2 = phrase(self.cat, p, adjust=bool(conv))
+        self._count(miss)
+        if miss == "fraco":
+            # o grafo respondeu: só muda se a DeepSeek EXPLICAR uma palavra desconhecida com algo do catálogo que o grafo não
+            # cobriu. Sem explicação (palavra de enchimento) ou já coberto: vale o grafo, intacto.
+            # palavra negada ("que NÃO fique melado", "sem cheiro") descreve o que a pessoa não quer: nunca vira pedido
+            ex = [(w, f, i) for w, f, i in p["explicadas"] if not self._negated(text, w)]
+            if not ex or all(self._covered(res, f, i) for _w, f, i in ex):
+                self._count("confirmou")
+                return res
+        if miss == "fraco":
+            # a nova busca usa SÓ o que a DeepSeek explicou, não toda a leitura dela. Dois jeitos, cada um onde funciona:
+            # explicou um OBJETIVO do catálogo ("melada" = oleosidade): busca pelo objetivo, que dá o peso certo ao conceito;
+            # explicou outra coisa ("resseque" = ressecamento): troca a palavra na frase e mantém o resto ("xampu", "cabelo")
+            # o caminho do objetivo descarta o resto da frase: só quando o grafo estava no escuro (objetivo de reserva, voto fraco)
+            sc = (res.get("context") or {}).get("scope") or {}
+            dark = res["intent"].get("primaryGoal") in GENERIC_GOALS or sc.get("kind") in ("vote", "unknown", None)
+            if dark and any(f == "objetivos" or i in self.cat.goal_by_id for _w, f, i in ex):
+                only = {**p, **{f: [i for _w, g, i in ex if g == f] for f in ("objetivos", "preocupacoes", "etapas", "ingredientes")}}
+                q2 = phrase(self.cat, only, adjust=False)
+            else:
+                q2 = self.speller.fix(self._substitute(text, ex))[0]
+        else:
+            q2 = phrase(self.cat, p, adjust=bool(conv))
         if q2 and _PREGNANT.search(norm(text)):
             q2 += ", estou grávida"                      # gestação vale na nova busca: aviso e filtros de sempre (K11)
         if q2:
             r2 = self._search({**req, "query": q2}, q2, q2)
             g2 = r2["intent"].get("primaryGoal")              # None quando virou lista (objetivo de remédio, #40)
-            diverged = bool(p["objetivos"]) and not conv and g2 is not None and g2 not in p["objetivos"]
-            if not r2.pop("_miss", None) and not diverged:
-                log.info("rag entendeu: %s", q2)
+            diverged = miss != "fraco" and bool(p["objetivos"]) and not conv and g2 is not None and g2 not in p["objetivos"]
+            # trava: a conferência nunca vira lista de remédios sobre uma resposta que não era de saúde, a menos que a
+            # pessoa fale de dor, remédio ou sintoma ("corpo pesado e cansado" não é pedido de anti-inflamatório)
+            unsafe = (miss == "fraco" and self._health_answer(r2) and not self._health_answer(res)
+                      and not HEALTH_CUE.search(norm(text)))
+            if unsafe:
+                self._count("recusou")
+            if not r2.pop("_miss", None) and not diverged and not unsafe:
+                log.info("rag entendeu (%s): %s", miss, q2)
+                same = ([p["id"] for p in r2["products"]], r2["intent"].get("primaryGoal")) == ([p["id"] for p in res["products"]], res["intent"].get("primaryGoal"))
+                self._count("igual" if same else "trocou")
                 r2["rag"] = True
                 return r2
         if miss == "med_shelf":                          # só "remédio" genérico e nada no catálogo serve
@@ -274,6 +383,9 @@ class Engine:
         }.get(act)
         res = handler(req, query, u, safety, cin, carry, turn) if handler else \
             self._search_new(req, query, u, safety, cin, carry, turn)
+        if (not res.get("_miss") and act in ("pergunta_produto", "similar", "trocar_item") and not has_ctx
+                and not res.get("products") and not res.get("kits")):
+            res["_miss"] = "busca"                       # pergunta sobre um produto que não existe na conversa: o grafo não entendeu
         res["rewrittenQuery"] = rewrite_query(self.cat, u, res)
         return res
 
@@ -804,6 +916,8 @@ class Engine:
                             {"intent": carry, "kits": [], "lastAct": "pergunta_produto", "turn": turn + 1})
             if kits and ("?" not in query or ADJUST_CUE.search(norm(query))):
                 res["_miss"] = "ajuste"                  # "tira o que tem álcool" lido como pergunta sem produto
+            elif not cin:
+                res["_miss"] = "busca"                   # sem conversa e sem produto: nada para perguntar, o grafo não entendeu
             return res
         reply = self.answer_about(p, query, u)
         return self._out(req, query, safety, carry, "pergunta_produto", reply, kits_status="ok" if kits else "not_applicable",

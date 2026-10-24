@@ -62,6 +62,7 @@ def main():
                 "personalizeWithPurchaseHistory": True,     # recomendações com base em compras NÃO ligadas a saúde
                 "useHealthDataForRecommendations": False,   # nunca usar saúde para recomendar
                 "shareHealthDataWithPartners": False,
+                "useExternalLanguageService": True,         # #42: frase que o motor não entende pode ir a um serviço de linguagem externo (LGPD: informado e desligável)
             },
             "healthDataStays": "no_aparelho",
         },

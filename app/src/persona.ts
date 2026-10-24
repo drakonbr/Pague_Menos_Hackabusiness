@@ -18,6 +18,8 @@ export interface ConsentFlags {
   personalizeWithPurchaseHistory: boolean;
   useHealthDataForRecommendations: boolean;
   shareHealthDataWithPartners: boolean;
+  /** #42: frases que o motor não entende podem ser traduzidas por um serviço de linguagem externo (DeepSeek). */
+  useExternalLanguageService: boolean;
 }
 
 export interface PersonaOrder {

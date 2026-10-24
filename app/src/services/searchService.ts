@@ -10,7 +10,7 @@ import type {
   StepId,
   SwapOption,
 } from "../contracts/types";
-import { PRODUCT_BY_ID } from "./mock/catalogData";
+import { PRODUCT_BY_ID, noStrike } from "./mock/catalogData";
 import { createMockSearchService } from "./mock/mockSearchService";
 
 export const DEFAULT_ENGINE_URL = "http://127.0.0.1:8787";
@@ -18,7 +18,8 @@ export const DEFAULT_ENGINE_URL = "http://127.0.0.1:8787";
 /** O motor devolve produtos sem foto; as fotos (banco de imagens) moram no app. Preço e estoque vêm sempre do motor. */
 export function withImages<T extends Product>(p: T): T {
   const local = PRODUCT_BY_ID.get(p.id);
-  return local && local.images.length && !p.images.length ? { ...p, images: local.images } : p;
+  const q = noStrike(p);
+  return local && local.images.length && !q.images.length ? { ...q, images: local.images } : q;
 }
 function enrichKit(k: Kit): Kit {
   return { ...k, items: k.items.map((i) => ({ ...i, product: withImages(i.product) })) };
@@ -31,6 +32,9 @@ function enrichResponse(r: SearchResponse): SearchResponse {
  * Cliente HTTP do motor GraphRAG (graphrag/service/server.py). Segue o contrato em contracts/README.md.
  * O app envia a frase, o `context` da resposta anterior e ids de produto. Nunca dados de saúde da pessoa.
  */
+/** #42: espelho do consentimento "serviço de linguagem externo" (Privacidade). O AppProvider mantém este valor atualizado. */
+export const externalLanguage = { allowed: true };
+
 export class HttpSearchService implements SearchService {
   readonly engine = "graphrag" as const;
   constructor(
@@ -38,11 +42,22 @@ export class HttpSearchService implements SearchService {
     private readonly fetchImpl: typeof fetch = (...a) => fetch(...a),
   ) {}
 
+  /** Preenchido pela saúde do servidor: true = a DeepSeek está ligada lá; false = sem chave (#60). */
+  rag: boolean | undefined;
+
   async health(timeoutMs = 4000): Promise<boolean> {
     const ctl = new AbortController();
     const t = setTimeout(() => ctl.abort(), timeoutMs);
     try {
       const res = await this.fetchImpl(`${this.baseUrl}/v1/health`, { signal: ctl.signal });
+      if (res.ok) {
+        try {
+          const body = (await res.json()) as { rag?: unknown };
+          this.rag = typeof body.rag === "boolean" ? body.rag : undefined;
+        } catch {
+          this.rag = undefined;
+        }
+      }
       return res.ok;
     } catch {
       return false;
@@ -70,7 +85,7 @@ export class HttpSearchService implements SearchService {
   }
 
   async search(req: SearchRequest): Promise<SearchResponse> {
-    return enrichResponse(await this.post<SearchResponse>("/v1/search", req));
+    return enrichResponse(await this.post<SearchResponse>("/v1/search", { ...req, allowExternal: externalLanguage.allowed }));
   }
   async swapOptions(kit: Kit, step: StepId, intent: Intent): Promise<SwapOption[]> {
     const opts = await this.post<SwapOption[]>("/v1/kits/swap-options", { kit, step, intent });
@@ -103,6 +118,9 @@ class AutoSearchService implements SearchService {
   }
   get engine(): "graphrag" | "simulado" {
     return this.mode ?? "simulado";
+  }
+  get external(): boolean | undefined {
+    return this.mode === "graphrag" ? this.http.rag : undefined;
   }
   private async pick(): Promise<SearchService> {
     this.probe ??= this.http.health().then((ok) => {

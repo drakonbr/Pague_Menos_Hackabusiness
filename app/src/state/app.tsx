@@ -2,6 +2,8 @@
 import { createContext, useCallback, useContext, useMemo, useReducer, type ReactNode } from "react";
 import type { ChatContext, FulfillmentMode, Intent, Kit, Product, SearchResponse, Store } from "../contracts/types";
 import { PERSONA, type ConsentFlags } from "../persona";
+import { readExternalChoice, saveExternalChoice } from "../services/consentStorage";
+import { externalLanguage } from "../services/searchService";
 
 export type SubscriptionDays = 0 | 30 | 60;
 
@@ -257,8 +259,15 @@ type Api = State & {
 const Ctx = createContext<Api | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [state, dispatchRaw] = useReducer(reducer, initialState);
-  const dispatch = useCallback((a: Action) => dispatchRaw(a), []);
+  const [state, dispatchRaw] = useReducer(reducer, initialState, (s: State): State => {
+    const saved = readExternalChoice();   // #42: a escolha da pessoa sobrevive a recarregar
+    return saved === undefined ? s : { ...s, consent: { ...s.consent, useExternalLanguageService: saved } };
+  });
+  const dispatch = useCallback((a: Action) => {
+    if (a.type === "setConsent" && a.key === "useExternalLanguageService") saveExternalChoice(a.value);
+    dispatchRaw(a);
+  }, []);
+  externalLanguage.allowed = state.consent.useExternalLanguageService !== false;   // #42: vale já na próxima busca
   const api = useMemo<Api>(() => {
     const favSet = new Set(state.favorites);
     const favKits = new Set(state.favoriteKits.map(kitSignature));

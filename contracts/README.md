@@ -172,6 +172,8 @@ Regras de privacidade do contrato:
 
 ## RAG com DeepSeek (23/10)
 
+- `SearchRequest.allowExternal` (opcional): `true` deixa o motor consultar o serviço de linguagem externo quando não entende; `false`, `null` ou qualquer valor que não seja exatamente `true` o desliga; ausente vale o padrão do servidor (`RAG_EXTERNAL_DEFAULT`, desligado na Vercel). O app envia o que a pessoa escolheu em Privacidade e dados.
+- `/v1/health` traz `rag` (a DeepSeek está ligada?) e `ragCalls` (chamadas por motivo).
 - `SearchResponse.rag` (opcional, `true`): o grafo não entendeu e a resposta saiu do pedido traduzido pela DeepSeek. Só para depuração e avaliação: o app não mostra nada diferente. `query` continua sendo o texto que a pessoa digitou.
 - Todas as invariantes valem igual para essas respostas (kits continuam do compositor).
 

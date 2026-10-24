@@ -248,6 +248,7 @@ def build_commerce(products, inventory, rng):
     dermo = {p["id"] for p in products if domain_of(p) == "dermo"}
     shown_ok = {p["id"] for p in products if domain_of(p) != "medicamento"}   # ofertas: sem medicamento
     meds_ids = {p["id"] for p in products if p["line"].startswith("med_")}
+    rx_ids = {p["id"] for p in products if p.get("rx")}       # #41: remédio de prescrição fora das vitrines (RDC 96/2008)
     on_sale = [p["id"] for p in products
                if p["id"] in shown_ok
                and inv[p["id"]]["list_price_cents"] > inv[p["id"]]["price_cents"] and inv[p["id"]]["stock_qty"] > 0]
@@ -264,7 +265,7 @@ def build_commerce(products, inventory, rng):
             {"id": "ofertas", "title": "Ofertas da semana", "type": "products", "productIds": on_sale},
             {"id": "mais-vendidos", "title": "Mais vendidos em Dermo", "type": "products", "productIds": in_stock[:12]},
             {"id": "farmacia", "title": "Mais vendidos em Medicamentos", "type": "products",
-             "productIds": [pid for pid in ranking if inv[pid]["stock_qty"] > 0 and pid in meds_ids][:12]},
+             "productIds": [pid for pid in ranking if inv[pid]["stock_qty"] > 0 and pid in meds_ids and pid not in rx_ids][:12]},
             {"id": "protetor", "title": "Protetor solar facial", "type": "products",
              "productIds": [pid for pid in sun if inv[pid]["stock_qty"] > 0][:10]},
         ],

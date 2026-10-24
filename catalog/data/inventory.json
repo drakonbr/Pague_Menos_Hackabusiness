@@ -1094,7 +1094,7 @@
   {
     "id": "p157",
     "price_cents": 3290,
-    "list_price_cents": 3950,
+    "list_price_cents": 3290,
     "stock_qty": 46,
     "updated_at": "2026-10-15T00:00:00-03:00"
   },
@@ -1353,7 +1353,7 @@
   {
     "id": "p194",
     "price_cents": 2790,
-    "list_price_cents": 3350,
+    "list_price_cents": 2790,
     "stock_qty": 8,
     "updated_at": "2026-10-15T00:00:00-03:00"
   },
@@ -1374,7 +1374,7 @@
   {
     "id": "p197",
     "price_cents": 1190,
-    "list_price_cents": 1430,
+    "list_price_cents": 1190,
     "stock_qty": 27,
     "updated_at": "2026-10-15T00:00:00-03:00"
   },

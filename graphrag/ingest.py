@@ -179,6 +179,8 @@ def _build_product(cat: Catalog, rec: ProductRecord, pid: str, idx: dict[str, _I
 # --------------------------------------------------------------------------- aplicação
 def _apply(cat: Catalog, product: dict, store_stock: dict[str, int]) -> None:
     pid = product["id"]
+    if product.get("rx"):
+        product["listPriceCents"] = product["priceCents"]      # #41: remédio de prescrição nunca tem preço riscado
     if pid in cat.by_id:
         cat.products[[p["id"] for p in cat.products].index(pid)] = product
     else:

@@ -51,6 +51,8 @@ Regras:
    ("tira o que tem perfume", "mais barato", "pele sensível"): devolva só o que muda,
    em "ajuste", e mantenha o resto vazio.
 8. Tipo de pele, se dito, vai para "pele" (um id de TIPOS_DE_PELE); senão, null.
+10. Se vier "Palavras que o catálogo não conhece", diga em "palavras" qual id das listas cada uma quer dizer
+    (ex.: {{"melada": "oleosidade"}}). Se for só enchimento ou não corresponder a nada das listas, não a inclua.
 9. Só marque um objetivo se o pedido for claramente sobre ele. Quando a pessoa fala de um tipo de produto ou de
    uma parte do corpo (ex.: suor na axila = desodorante), use "etapas" e "preocupacoes", sem objetivo.
 
@@ -65,7 +67,8 @@ TIPOS_DE_PELE: {skin_types}
 Formato da resposta:
 {{"objetivos": [], "preocupacoes": [], "ingredientes": [], "etapas": [],
  "evitar": [], "preferencias": [], "orcamento_centavos": null, "pele": null,
- "ajuste": {{"evitar": [], "preferencias": [], "orcamento": "mais_barato | mais_caro | null", "pele": null}}}}"""
+ "ajuste": {{"evitar": [], "preferencias": [], "orcamento": "mais_barato | mais_caro | null", "pele": null}},
+ "palavras": {{}}}}"""
 
 _EMAIL = re.compile(r"\S+@\S+\.\S+")
 _PHONE = re.compile(r"(?:\+?\d[\d\s().-]{7,}\d)")
@@ -84,6 +87,14 @@ def scrub(text: str) -> str:
     text = _ADDR.sub("[endereço]", text)
     text = _AGE.sub("[idade]", text)
     return _PHONE.sub("[numero]", text).strip()
+
+
+def rag_banner(engine) -> str:
+    """Uma linha para o início do servidor: sem chave a busca continua, mas entende menos, e isso não pode ser silencioso (#60)."""
+    if engine.rag:
+        return "RAG com DeepSeek: LIGADO (só quando o grafo não entende ou vê palavra desconhecida)"
+    return ("ATENÇÃO, RAG com DeepSeek: DESLIGADO. Sem DEEPSEEK_API_KEY no ambiente nem em .env.local, frases fora do "
+            "vocabulário do catálogo ficam sem resposta melhor (\"Não encontrei esse item\").")
 
 
 def _env_key() -> str | None:
@@ -137,7 +148,7 @@ class Reader:
 
     def __init__(self, cat: Catalog, client, cache_size: int = 512):
         self.cat, self.client, self.cache_size = cat, client, cache_size
-        self.cache: OrderedDict[tuple[str, str], dict | None] = OrderedDict()
+        self.cache: OrderedDict[tuple, dict | None] = OrderedDict()
         self.lock = threading.Lock()
         self.allowed = {
             "objetivos": {g["id"]: g["label"] for g in cat.goals},
@@ -169,7 +180,7 @@ class Reader:
         v = norm(str(v or ""))
         return next((s for s in SKINS if norm(s) == v), None)
 
-    def _validate(self, raw: str | None) -> dict | None:
+    def _validate(self, raw: str | None, unknown: tuple = ()) -> dict | None:
         try:
             d = json.loads(raw or "")
         except (TypeError, ValueError):
@@ -184,21 +195,36 @@ class Reader:
         a = d.get("ajuste") if isinstance(d.get("ajuste"), dict) else {}
         orc = a.get("orcamento")
         a_prefs = self._ids("preferencias", (a.get("preferencias") or []) + (a.get("evitar") or []))
+        # significado que a DeepSeek deu às palavras que o catálogo não conhece (só ids que existem)
+        out["explicadas"] = []
+        asked = {self.key(w) for w in unknown}
+        for w, v in (d.get("palavras") or {}).items() if isinstance(d.get("palavras"), dict) else []:
+            if self.key(w) not in asked:
+                continue
+            for field in ("objetivos", "preocupacoes", "etapas", "ingredientes"):
+                k = self.lookup[field].get(self.key(v))
+                if k:
+                    out["explicadas"].append((self.key(w), field, k))
+                    break
         out["ajuste"] = {"evitar": self._ids("evitar", a.get("evitar")), "preferencias": a_prefs,
                          "orcamento": orc if orc in ("mais_barato", "mais_caro") else None, "pele": self._skin(a.get("pele"))}
         return out
 
-    def read(self, text: str, conversation: str = "") -> dict | None:
-        key = (scrub(text), conversation)
+    def read(self, text: str, conversation: str = "", unknown: tuple | list = ()) -> dict | None:
+        clean = scrub(text)
+        seen = set(re.findall(r"[a-z0-9]+", norm(clean)))
+        unknown = tuple(w for w in dict.fromkeys(unknown) if norm(w) in seen)       # só palavras que realmente seguem na frase enviada
+        key = (clean, conversation, unknown)
         with self.lock:
             if key in self.cache:
                 self.cache.move_to_end(key)
                 return self.cache[key]
-        user = f"Pedido: {key[0]}" + (f"\nConversa até aqui: {conversation}" if conversation else "")
+        user = (f"Pedido: {key[0]}" + (f"\nPalavras que o catálogo não conhece: {', '.join(unknown)}" if unknown else "")
+                + (f"\nConversa até aqui: {conversation}" if conversation else ""))
         raw = self.client.complete(self.system, user)
         if raw is None:
             return None                                  # falha da API não vai para o cache: a próxima tenta de novo
-        parsed = self._validate(raw)
+        parsed = self._validate(raw, unknown)
         with self.lock:
             self.cache[key] = parsed
             if len(self.cache) > self.cache_size:
@@ -222,10 +248,11 @@ def phrase(cat: Catalog, p: dict, adjust: bool) -> str:
         parts += [f"minha pele é {a['pele']}"] if a["pele"] else []
         return " e ".join(parts)
     parts = [GOAL_PHRASE.get(g, cat.goal_by_id[g]["label"].lower()) for g in p["objetivos"]]
-    covered = {c for g in p["objetivos"] for c in cat.goal_by_id[g].get("concerns", [])}
-    parts += [cat.concerns[c] for c in p["preocupacoes"] if c not in covered]
-    if not parts:
-        parts += [cat.steps[s].lower() for s in p["etapas"]]
+    covered_c = {c for g in p["objetivos"] for c in cat.goal_by_id[g].get("concerns", [])}
+    covered_s = {s for g in p["objetivos"] for s in cat.goal_by_id[g]["required_steps"] + cat.goal_by_id[g]["optional_steps"]}
+    # etapa e preocupação juntas: "dente sensível" = higiene bucal + sensibilidade (antes só a preocupação chegava ao grafo)
+    parts += [cat.steps[s].lower() for s in p["etapas"] if s not in covered_s]
+    parts += [cat.concerns[c] for c in p["preocupacoes"] if c not in covered_c]
     parts += [ing(i) for i in p["ingredientes"]]
     if not parts:
         return ""                                    # nada do catálogo serve: o grafo mantém a resposta dele

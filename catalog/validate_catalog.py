@@ -240,6 +240,10 @@ def main() -> int:
     in_showcase = {pid for sc in commerce["showcases"] if sc["type"] == "products" for pid in sc["productIds"]}
     check("medicamentos: fora das vitrines e sem cashback",
           not (meds_ids & in_showcase) and all(commerce["cashbackPct"][i] == 0 for i in meds_ids))
+    rx_ids = {p["id"] for p in products if p["rx"]}
+    check("medicamento de prescrição: sem preço riscado e fora de toda vitrine (#41, RDC 96/2008)",
+          bool(rx_ids) and not (rx_ids & in_showcase)
+          and all(inventory[i]["list_price_cents"] == inventory[i]["price_cents"] for i in rx_ids), str(len(rx_ids)))
     check("medicamentos: só na categoria 'Reposição de uso contínuo' (e nos agrupadores dela)",
           all(set(n["id"] for n in cats["nodes"] if pid in n["productIds"]) <= {"reposicao", "saude"} for pid in meds_ids))
     sups = [p for p in products if p["domain"] == "suplemento"]
@@ -258,7 +262,8 @@ def main() -> int:
           all(by_id[m["productId"]]["domain"] == "medicamento" for m in persona["continuousMedications"]))
     check("persona: consentimento — saúde nunca usada para recomendar nem compartilhada",
           persona["privacy"]["consent"]["useHealthDataForRecommendations"] is False
-          and persona["privacy"]["consent"]["shareHealthDataWithPartners"] is False)
+          and persona["privacy"]["consent"]["shareHealthDataWithPartners"] is False
+          and isinstance(persona["privacy"]["consent"]["useExternalLanguageService"], bool))
     check("persona: pedidos só citam produtos existentes",
           all(i["productId"] in by_id for o in persona["orderHistory"] for i in o["items"]))
     sq = {(x["storeId"], x["productId"]): x["qty"] for x in stock}

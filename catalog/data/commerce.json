@@ -519,8 +519,6 @@
       "title": "Mais vendidos em Medicamentos",
       "type": "products",
       "productIds": [
-        "p170",
-        "p197",
         "p146",
         "p139",
         "p183",
@@ -530,7 +528,9 @@
         "p192",
         "p203",
         "p182",
-        "p161"
+        "p161",
+        "p187",
+        "p164"
       ]
     },
     {

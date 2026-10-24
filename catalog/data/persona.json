@@ -37,7 +37,8 @@
       "refillReminders": true,
       "personalizeWithPurchaseHistory": true,
       "useHealthDataForRecommendations": false,
-      "shareHealthDataWithPartners": false
+      "shareHealthDataWithPartners": false,
+      "useExternalLanguageService": true
     },
     "healthDataStays": "no_aparelho"
   },

@@ -168,3 +168,10 @@ Achados que mudaram desde 15/10:
 
 Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2** (nenhum texto manda procurar médico ou farmacêutico). As antigas M1/M2 ("medicamento nunca em kit/lista") e I10 (bloqueio) saíram com a D-32.
 
+
+## Rodada dos críticos e do RAG melhorado (23/10, itens #41, #42, #60 a #62)
+
+- **Suítes (23/10):** motor 132 de 132 (sem rede); app 72 de 72; tipos e build do app ok; catálogo 77 de 77; `search_quality` igual ao de antes da rodada.
+- **Busca do dia a dia (`rag_eval`):** só com o grafo, 28 de 28 nas frases de treino (eram 24) e 13 de 15 nas frases separadas para teste; com a DeepSeek ligada, 14 de 15 nas de teste. Nenhuma frase que o grafo acertava foi estragada, e os 16 controles de risco (grafo já certo mais palavra desconhecida) foram mantidos.
+- **Custo:** a DeepSeek foi chamada em 33 de 283 frases (11,7%); de 10% a 25% nos conjuntos cegos.
+- **Limite:** o conjunto de risco não é amostra independente (parte foi escrita pelo revisor); os números de teste são de 15 frases.

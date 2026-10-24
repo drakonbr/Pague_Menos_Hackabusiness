@@ -182,6 +182,8 @@ export interface SearchRequest {
   context?: ChatContext | null;
   /** Produto em foco (só o id; nunca dados da pessoa). */
   focusProductId?: string | null;
+  /** #42: false = o motor nunca envia a frase a um serviço externo (a pessoa desligou na Privacidade). Ausente = true. */
+  allowExternal?: boolean;
 }
 
 /** Estado da conversa devolvido pelo motor e reenviado pelo app. Só ids e preferências de cosmético. */
@@ -358,6 +360,8 @@ export interface SearchService {
   similars(productId: string, storeId: string | null): Promise<SimilarsResponse>;
   /** Qual motor responde: "graphrag" (servidor Python) ou "simulado" (fallback local). */
   readonly engine: "graphrag" | "simulado";
+  /** #60: o motor tem o serviço de linguagem externo (DeepSeek) ligado? undefined = não sabemos (motor simulado ou ainda sem resposta). */
+  readonly external?: boolean;
 }
 
 export const STEP_ORDER: StepId[] = [

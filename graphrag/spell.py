@@ -12,7 +12,7 @@ from collections import Counter
 
 from .concepts import CONCEPTS
 from .data import Catalog
-from .lexicon import (CONCERN_ALIASES, INGREDIENT_ALIASES, PARAPHRASE_CORPUS, PREFERENCE_ALIASES, SKIN_ALIASES)
+from .lexicon import (CONCERN_ALIASES, INGREDIENT_ALIASES, PARAPHRASE_CORPUS, PREFERENCE_ALIASES, SKIN_ALIASES, STATE_WORDS, canon_state)
 from .text import STOPWORDS, norm
 
 COMMON = frozenset("""
@@ -91,7 +91,7 @@ class Speller:
         self.vocab = frozenset(freq)
 
     def correct_word(self, w: str) -> str:
-        if len(w) < 5 or w.isdigit() or w in self.vocab or w in STOPWORDS or w in COMMON:
+        if len(w) < 5 or w.isdigit() or w in self.vocab or w in STOPWORDS or w in COMMON or w in STATE_WORDS:   # "braço" não vira "branco"
             return w
         # palavra mais curta que a digitada ("secao" -> "seco") só vale em palavra longa: em palavra curta é troca de assunto
         cands = [c for c in _edits1(w) if c in self.vocab and len(c) >= 4 and c not in STOPWORDS and c not in COMMON
@@ -100,7 +100,8 @@ class Speller:
         if cands:
             return max(cands, key=lambda c: (self.freq[c], -abs(len(c) - len(w)), c))
         if len(w) >= 7:                                   # palavras longas aceitam 2 edições ("shampu" -> "shampoo")
-            near = [(d, c) for c in self.vocab if len(c) >= 6 and c not in STOPWORDS and c not in COMMON
+            # 2 edições só se a 1ª letra bate: erro de digitação raramente muda a primeira letra, e "atacada" não é "tapada"
+            near = [(d, c) for c in self.vocab if len(c) >= 6 and c[0] == w[0] and c not in STOPWORDS and c not in COMMON
                     and c + "s" != w and w + "s" != c and (d := _lev_le2(w, c)) <= 2]
             if near:
                 best = min(d for d, _ in near)
@@ -111,7 +112,7 @@ class Speller:
         """Devolve o texto corrigido (sem acentos, minúsculo, como o motor já normaliza) e a lista (antes, depois)."""
         changes: list[tuple[str, str]] = []
         out = []
-        for w in norm(text).split(" "):
+        for w in canon_state(norm(text)).split(" "):   # antes do corretor: "travado" nunca chega a ser "tratado"
             core = re.sub(r"[^a-z0-9]", "", w)
             if core and core == w:
                 c = self.correct_word(w)

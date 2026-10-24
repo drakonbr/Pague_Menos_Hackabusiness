@@ -96,7 +96,7 @@ describe("cliente HTTP do GraphRAG", () => {
     requestId: "r_x", query: "oi", safety: { decision: "allow" }, intent: { goals: [], primaryGoal: null, budgetCents: null, skinType: null, preferences: [], missing: [] },
     kitsStatus: "not_applicable", kits: [], closestKit: null, products: [], notes: [], reply: "Oi!", suggestions: [], action: { type: "none" },
   };
-  it("envia frase, contexto e loja; nada além disso", async () => {
+  it("envia frase, contexto, loja e a preferência do serviço externo; nada além disso", async () => {
     const f = vi.fn(async () => new Response(JSON.stringify(fakeRes), { status: 200 }));
     const http = new HttpSearchService("http://x", f as unknown as typeof fetch);
     const ctx = { intent: fakeRes.intent, requested: [], excluded: [], kits: [], lastAct: "busca", turn: 1 };
@@ -104,7 +104,10 @@ describe("cliente HTTP do GraphRAG", () => {
     expect(r.reply).toBe("Oi!");
     const [url, init] = f.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe("http://x/v1/search");
-    expect(Object.keys(JSON.parse(init.body as string)).sort()).toEqual(["context", "query", "storeId"]);
+    // allowExternal (#42) é só a preferência "serviço externo ligado ou desligado": um booleano, nada da pessoa
+    const body = JSON.parse(init.body as string);
+    expect(Object.keys(body).sort()).toEqual(["allowExternal", "context", "query", "storeId"]);
+    expect(typeof body.allowExternal).toBe("boolean");
   });
   it("mostra o erro do servidor", async () => {
     const f = vi.fn(async () => new Response(JSON.stringify({ error: "kit inválido" }), { status: 400 }));

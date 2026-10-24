@@ -212,3 +212,5 @@ Separado do motor de kits. No sistema real, são adaptadores para serviços que 
 ## Carrinho e checkout
 
 Simulados dentro do app (`app/src/state/cart`). Não fazem parte deste contrato. A proposta de integração real está no doc 10.
+
+- `Safety.decision` ganhou `"urgent"` (#63): risco de vida ou sinal de alerta; `category` é `risco_de_vida` ou `sinal_de_alerta`; `reply` e `message` trazem o texto fixo, `products`, `kits` e `suggestions` vêm vazios. O servidor ignora qualquer campo `_client` do corpo (#64).

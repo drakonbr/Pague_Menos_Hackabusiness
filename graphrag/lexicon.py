@@ -62,10 +62,12 @@ CONCERN_ALIASES: dict[str, list[str]] = {
     "enxaqueca": ["enxaqueca", "enxaquecas", "crise de enxaqueca"],
     "febre": ["febre", "febril", "temperatura alta", "estou quente", "antitermico"],
     "dor_no_corpo": ["dor no corpo", "dores no corpo", "corpo doendo", "corpo dolorido", "mal estar", "moido"],
-    "dor_muscular": ["dor muscular", "dores musculares", "torcicolo", "dor nas costas", "contratura", "lombar", "contusao", "pancada"],
+    "dor_muscular": ["dor muscular", "dores musculares", "torcicolo", "dor nas costas", "contratura", "lombar", "contusao", "pancada",
+                    "dor no joelho", "dor nos joelhos", "dor na coluna", "dor no ombro", "dor nos ombros", "dor no braco", "dor na perna", "dor nas pernas", "dor nas juntas", "dor nas articulacoes", "dor no quadril", "dor no tornozelo", "dor no pescoco", "dor no cotovelo", "dor no punho", "dor no pulso"],
     "dor_de_barriga": ["dor de barriga", "colica", "colicas", "colica menstrual", "barriga doendo"],
     "gases": ["gases", "barriga inchada", "barriga estufada", "estufado", "estufada", "flatulencia"],
-    "azia": ["azia", "queimacao", "ma digestao", "indigestao", "refluxo", "dor de estomago"],
+    "azia": ["azia", "queimacao", "ma digestao", "indigestao", "refluxo", "dor de estomago",
+                    "dor no estomago", "estomago doendo", "queimacao no estomago"],
     "gripe": ["gripe", "gripado", "gripada", "resfriado", "resfriada"],
     "nariz_entupido": ["nariz entupido", "congestao nasal", "coriza", "nariz escorrendo", "sinusite", "fanho", "fanha", "voz fanha"],
     "tosse": ["tosse", "tosse com catarro", "catarro", "peito carregado"],
@@ -98,6 +100,7 @@ _STATE_RULES = [  # (partes, estados, reescrita)
     (("nariz",), ("escorrendo", "pingando", "escorre", "correndo"), "nariz escorrendo"),
     (("cabeca",), ("latejando", "latejante", "pesada", "martelando", "pulsando", "pulsante"), "dor de cabeca"),
     (("barriga",), ("solta", "soltinha"), "diarreia"),
+    (("perna", "pernas", "pe", "pes"), ("inchada", "inchadas", "inchado", "inchados"), "pernas inchadas"),   # #65: circulação, fora do catálogo
 ]
 _STATE_RES = [(re.compile(r"\b(%s)\s+((?:[a-z]+\s+){0,2}?)(?:%s)\b" % ("|".join(p), "|".join(st))), out) for p, st, out in _STATE_RULES]
 _NEG = frozenset("nao nem sem nunca jamais".split())

@@ -110,7 +110,8 @@ function ResultBody({ res, storeName, onPatch, onRefine, onOpen, onStores }: {
   const label = res.scope?.label;
   const listTitle = label ? `Todos os itens de ${label}` : "Itens relacionados";
   const empty = !res.products.length && !res.kits.length && !res.closestKit;
-  const lead = res.reply && !hasKits ? res.reply : null;
+  const urgent = res.safety.decision === "urgent";
+  const lead = res.reply && !hasKits && !urgent ? res.reply : null;
   return (
     <>
       {res.correctedQuery ? (
@@ -126,6 +127,11 @@ function ResultBody({ res, storeName, onPatch, onRefine, onOpen, onStores }: {
           </div>
         </div>
       ) : null}
+      {urgent ? (
+        <div className="pad" style={{ paddingBottom: 0 }}>
+          <div className="note urgent" role="alert"><Icon name="alert" size={20} /><p>{res.safety.message}</p></div>
+        </div>
+      ) : null}
       {hasKits ? (
         <KitZone res={res} storeName={storeName} onPatch={onPatch} onOpen={onOpen} onStores={onStores} />
       ) : (
@@ -139,7 +145,7 @@ function ResultBody({ res, storeName, onPatch, onRefine, onOpen, onStores }: {
       )}
       {res.products.length ? (
         <ProductList products={res.products} title={hasKits ? `${listTitle} (${res.products.length})` : undefined} />
-      ) : empty && !res.catalogNotice && !lead ? (
+      ) : empty && !res.catalogNotice && !lead && !urgent ? (
         <p className="count">Não encontrei itens para esse pedido. Tente outras palavras ou escolha uma das sugestões abaixo.</p>
       ) : null}
       {res.suggestions?.length ? (

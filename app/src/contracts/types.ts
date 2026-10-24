@@ -202,8 +202,9 @@ export interface ChatContext {
 }
 
 // Desde o doc 16 não existe bloqueio nem encaminhamento: medicamento é busca como outra qualquer.
-export type SafetyDecision = "allow" | "caution";
-export type SafetyCategory = "gestacao_e_ativos";
+// Exceção estreita (#63): "urgent" = risco de vida ou sinal de alerta; resposta fixa, sem produtos.
+export type SafetyDecision = "allow" | "caution" | "urgent";
+export type SafetyCategory = "gestacao_e_ativos" | "risco_de_vida" | "sinal_de_alerta";
 
 export interface Safety {
   decision: SafetyDecision;

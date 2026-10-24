@@ -302,6 +302,8 @@ input[type="range"] { width: 100%; accent-color: var(--brand); height: 32px; }
 @keyframes sh { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
 @media (prefers-reduced-motion: reduce) { .skeleton, .sheet { animation: none; } }
 .footnote { font-size: 11.5px; color: var(--muted); text-align: center; line-height: 1.4; }
+.note.urgent { background: #fdecea; border: 1px solid #e0554a; color: #7a1a12; font-weight: 500; }
+.bubble.bot.urgent { background: #fdecea; border: 1px solid #e0554a; color: #7a1a12; }
 .toast { position: absolute; left: 16px; right: 16px; bottom: 84px; background: #23253a; color: #fff; border-radius: 10px; padding: 12px 14px; font-size: 14px; display: flex; gap: 10px; align-items: center; z-index: 30; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); }
 .toast button { color: #aab4ff; font-weight: 700; margin-left: auto; white-space: nowrap; }
 .toast span { flex: 1; min-width: 0; }

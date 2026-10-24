@@ -8,6 +8,7 @@ apenas a frase, o `context` devolvido na resposta anterior e ids de produto.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import traceback
@@ -22,6 +23,7 @@ from graphrag.llm import DeepSeek, rag_banner  # noqa: E402
 
 ENGINE: Engine | None = None
 ALLOW_INGEST = False
+MAX_QUERY = 500                  # #64: frase longa demais só gasta; a conversa de verdade cabe com folga
 LOCAL_ORIGINS = ("http://localhost", "http://127.0.0.1", "http://[::1]")
 
 
@@ -81,12 +83,20 @@ class Handler(BaseHTTPRequestHandler):
             pass                                   # a pessoa fechou a aba no meio da resposta
         self.close_connection = True
 
+    def _client_id(self) -> str:
+        """Quem está chamando, só como hash (nunca o IP): cabeçalho da Vercel, ou o endereço da conexão no uso local."""
+        ip = (self.headers.get("x-real-ip") or (self.headers.get("x-forwarded-for") or "").split(",")[0].strip()
+              or self.client_address[0])
+        return hashlib.sha256(("pm-quota|" + ip).encode()).hexdigest()[:16]
+
     def do_POST(self):
         try:
             n = int(self.headers.get("Content-Length", "0"))
             if n > 200_000:
                 return self._send(413, {"error": "corpo grande demais"})
             body = json.loads(self.rfile.read(n) or b"{}")
+            if isinstance(body, dict):
+                body["_client"] = self._client_id()      # #64: sempre posto aqui; o que vier do corpo é descartado
             e = ENGINE
             if self.path == "/v1/search-chat":
                 return self._stream_chat(body)
@@ -98,6 +108,8 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == "/v1/search":
                 if not isinstance(body.get("query"), str):
                     return self._send(400, {"error": "campo query é obrigatório"})
+                if len(body["query"]) > MAX_QUERY:
+                    return self._send(400, {"error": f"query passa de {MAX_QUERY} caracteres"})
                 return self._send(200, e.search(body))
             if self.path == "/v1/kits/swap-options":
                 return self._send(200, api_swap_options(e, body["kit"], body["step"], body["intent"]))

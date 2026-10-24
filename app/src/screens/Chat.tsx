@@ -150,7 +150,7 @@ function Message({ m, isLast, onSend, storeName, push }: { m: ChatMsg; isLast: b
     <div className="msg bot">
       <span className="bot-ico"><Icon name="sparkle" size={18} /></span>
       <div className="bot-col">
-        <div className={`bubble bot ${m.local ? "local" : ""}`}>{m.text}</div>
+        <div className={`bubble bot ${m.local ? "local" : ""} ${m.res?.safety.decision === "urgent" ? "urgent" : ""}`} role={m.res?.safety.decision === "urgent" ? "alert" : undefined}>{m.text}</div>
         {m.res ? <BotBody res={m.res} isLast={isLast} onSend={onSend} storeName={storeName} push={push} /> : null}
       </div>
     </div>

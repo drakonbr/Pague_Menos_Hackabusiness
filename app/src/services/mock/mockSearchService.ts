@@ -17,6 +17,7 @@ import type {
 } from "../../contracts/types";
 import { GOAL_LABEL, STEP_ORDER, TIER_LABEL } from "../../contracts/types";
 import { PRODUCTS, PRODUCT_BY_ID, STORES, stockAt } from "./catalogData";
+import { urgency } from "../urgency";
 import { adaptToStore, applySwap, buildCtx, compose, isHealthGoal, rankProducts, swapOptions } from "./composer";
 import { assessSafety, isRefillRequest, norm, parseIntent } from "./intent";
 
@@ -111,6 +112,15 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
         parsed.understood = true;
       }
       const { intent } = parsed;
+      const urgent = urgency(req.query);   // #63: antes de qualquer outra coisa
+      if (urgent) {
+        const intent0 = emptyIntent(req.storeId ?? null);
+        return {
+          requestId, query: req.query, safety: urgent, intent: intent0, closestKit: null, kitsStatus: "not_applicable", kits: [], products: [], notes: [],
+          act: "urgencia", reply: urgent.message ?? "", suggestions: [], action: { type: "none" },
+          context: { intent: intent0, requested: [], excluded: [], kits: [], lastAct: "urgencia", turn: turn + 1 },
+        };
+      }
       if (isRefillRequest(parsed.normalized)) {
         const safety = { decision: "allow" } as const;
         const base = { requestId, query: req.query, safety, intent: emptyIntent(req.storeId ?? null), closestKit: null, kitsStatus: "not_applicable" as const, kits: [], products: [], notes: [] };

@@ -288,7 +288,10 @@ CONCEPTS: list[Concept] = [
                                           "aciclovir", "micose", "antifungico", "frieira", "candidiase", "vermifugo", "verme",
                                           "vermes", "albendazol", "piolho", "corticoide", "prednisona", "dexametasona",
                                           "infeccao urinaria", "cistite", "otite", "dor de ouvido", "dor de dente",
-                                          "labirintite", "tontura", "gota", "acido urico", "osteoporose", "anemia"],
+                                          "labirintite", "tontura", "gota", "acido urico", "osteoporose", "anemia",
+                                          # #65: queixa de circulação, que o catálogo não cobre: "não está no banco", não lista de dor
+                                          "pernas inchadas", "perna inchada", "pe inchado", "pes inchados", "inchaco nas pernas", "varizes",
+                                          "retencao de liquido", "perna pesada", "pernas pesadas", "ma circulacao", "formigamento"],
       absent=True, shelf="medicamentos"),
 ]
 

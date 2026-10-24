@@ -27,7 +27,8 @@ from .nlu import ActClassifier, Understander, Understanding, _MED, _PREGNANT
 from .nlu_corpus import TRAIN
 from .retrieval import Retriever, load_weights
 from .rewrite import rewrite_query
-from .safety import assess
+from .quota import Quota
+from .safety import assess, urgency
 from .scope import MAX_LIST, VOTE_REL, Scope, ScopeResolver
 from .spell import COMMON, Speller
 from .text import STOPWORDS, money, norm, raw_tokens
@@ -71,6 +72,7 @@ class Engine:
         self.cat, self.graph, self.wv, self.clf = cat, graph, wv, clf
         self.rag = Reader(cat, llm) if llm else None        # DeepSeek só quando o grafo não entende (#34)
         # #42: o que vale quando o pedido não traz allowExternal (cliente antigo). Em produção: RAG_EXTERNAL_DEFAULT=off
+        self.quota = Quota.from_env()
         self.external_default = os.environ.get("RAG_EXTERNAL_DEFAULT", "on").strip().lower() != "off"
         self.stats: Counter = Counter()                     # chamadas por motivo, para medir o custo (/v1/health)
         self._stats_lock = threading.Lock()
@@ -211,7 +213,10 @@ class Engine:
             words = self._unknown(query, fixes)           # o grafo respondeu, mas viu palavra que não conhece: confere
             miss = "fraco" if words else None
         if miss and usable:
-            res = self._rag(req, orig_query, res, miss, words)
+            if self.quota.allow(req.get("_client")):   # #64: teto por pessoa e por dia; passou, fica a resposta do grafo
+                res = self._rag(req, orig_query, res, miss, words)
+            else:
+                self._count("limite")
         res["query"] = orig_query
         if fixes and canon_state(norm(orig_query)) == norm(orig_query):      # texto reescrito pela regra do corpo não é "correção"
             res["correctedQuery"] = query
@@ -345,6 +350,11 @@ class Engine:
 
     def _search(self, req: dict, query: str, orig_query: str = "") -> dict:
         cin = req.get("context") or {}
+        urg = urgency(orig_query or query) or urgency(query)
+        if urg:                       # #63: risco de vida e sinais de alerta: resposta fixa, sem lista, sem DeepSeek
+            return self._basic(req, query, urg, cin.get("intent") or {"goals": [], "primaryGoal": None, "budgetCents": None, "skinType": None, "preferences": [],
+                                                                  "pregnancy": False, "storeId": req.get("storeId"), "missing": []},
+                               cin, int(cin.get("turn", 0)), "urgencia", urg["message"], [], action={"type": "none"})
         prev_intent = cin.get("intent")
         has_ctx = bool(prev_intent and (cin.get("kits") or prev_intent.get("primaryGoal") or cin.get("scope")))
         turn = int(cin.get("turn", 0))

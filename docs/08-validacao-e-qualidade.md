@@ -195,3 +195,9 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 - **Conjuntos antigos:** só o grafo, `rag_eval`: TRAIN busca de 1 para 3 de 7, TEST busca de 0 para 3 de 6, AMPLO teste de 12 para 13 de 15; nenhuma frase que o grafo acertava foi estragada pela DeepSeek (algumas frases isoladas variam entre rodadas); chamadas à DeepSeek de 11,3% para 9,9%; precisão do `medcego` de 0,869 para 0,919.
 - **Custos e limites:** o classificador de atos de fala foi de 63 para 62 de 65 frases de teste; aliases soltos que a revisão provou criarem falso positivo (filtro, irregular, caroço, soltura, urticária e outros) foram tirados; um banco de 327 jeitos de falar gerado por outro agente não melhorou B e foi desfeito; frases de alerta de saúde seguem sem tratamento de urgência (#63, decisão da Julia).
 - **Suítes:** motor 151 de 151 (sem rede).
+
+## Rodada #63, #64, #65 (24/10)
+
+- **Suítes:** motor 160 de 160 (sem rede); app 98 de 98; tipos e build ok.
+- **Navegador (375 px):** "to com dor no peito e falta de ar" mostra o aviso fixo em destaque, sem produtos.
+- **Limites:** a lista de sinais de alerta é conservadora e não é parecer clínico; o teto de uso da DeepSeek é por instância.

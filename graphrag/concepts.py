@@ -47,7 +47,7 @@ CONCEPTS: list[Concept] = [
     C("creme_dental", "creme dental", ["toothpaste", "pasta que clareia", "pasta de dente que clareia", "pasta dental branqueadora", "dentifrice", "pasta de dente", "pasta dental", "creme dental", "creme de dente", "dentifricio",
                                        "pasta de dentes", "pasta com fluor", "creme dental com fluor", "creme dental branqueador"],
       steps=("higiene_oral",), types=("creme dental",), shelf="higiene bucal"),
-    C("enxaguante", "enxaguante bucal", ["mouthwash", "mouth wash", "enxaguatorio bucal", "antisseptico para a boca", "enxaguante", "enxaguante bucal", "antisseptico bucal", "bochecho", "colutorio",
+    C("enxaguante", "enxaguante bucal", ["mouthwash", "mouth wash", "enxaguatorio bucal", "antisseptico para a boca", "enxaguante", "enxaguante bucal", "antisseptico bucal", "fazer bochecho", "bochecho bucal", "colutorio",
                                          "enxaguatorio"],
       steps=("higiene_oral",), types=("enxaguante",), shelf="higiene bucal"),
     C("clarear_dentes", "clareamento dos dentes", ["dentes brancos", "dentes mais brancos", "branquear os dentes",

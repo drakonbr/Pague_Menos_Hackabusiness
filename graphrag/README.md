@@ -52,3 +52,8 @@ python3 -m graphrag.service.server --port 8787
 ## Limites
 
 Conjunto de ranking pequeno (14 frases); entidades por regras; vetores treinados só no catálogo; premissas de reposição fictícias. Ver doc 14, seção 7.
+
+
+## Medir o entendimento (24/10)
+
+`python -m graphrag.eval.blind5_run` mede o grafo no conjunto cego `rag_blind5.py` (escrito por agente independente); com `--live` mede também com a DeepSeek (precisa da chave no ambiente). A metade B só mostra a contagem: não ajuste o vocabulário olhando as falhas dela. Para ensinar fala nova: alias em `lexicon.py`, regra `canon_state` (parte do corpo + estado), exemplo de ajuste em `nlu_corpus.py`, e `python -m graphrag.train`.

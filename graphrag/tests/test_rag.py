@@ -62,16 +62,16 @@ class TestRag(unittest.TestCase):
                          [[i["product"]["id"] for i in k["items"]] for k in same])
 
     def test_sintoma_que_o_grafo_nao_entende_vira_lista_de_remedios(self):
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
-        r = eng(fake).search({"query": "minha cabeça tá latejando"})
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
+        r = eng(fake).search({"query": "minha cabeça tá uma zona"})
         self.assertTrue(r.get("rag"))
         self.assertEqual(r["kits"], [])                                     # #40: remédio nunca em kit
         self.assertTrue(r["products"] and all(p["domain"] == "medicamento" for p in r["products"]))
         self.assertFalse(check_response(r))
 
     def test_gestacao_vale_na_busca_feita_pela_deepseek(self):
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
-        q = "estou grávida e minha cabeça tá latejando"
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
+        q = "estou grávida e minha cabeça tá uma zona"
         r = eng(fake).search({"query": q})
         self.assertEqual(fake.calls, 1)
         self.assertTrue(r["intent"]["pregnancy"])
@@ -81,8 +81,8 @@ class TestRag(unittest.TestCase):
 
     def test_replay_do_chat_nao_chama_a_deepseek(self):
         from graphrag.chat_stream import replay
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
-        replay(eng(fake), ["minha cabeça tá latejando", "caganeira desde ontem"], {})
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
+        replay(eng(fake), ["minha cabeça tá uma zona", "caganeira desde ontem"], {})
         self.assertEqual(fake.calls, 0)
 
     def test_falha_da_api_nao_fica_no_cache_e_ha_teto_por_minuto(self):
@@ -106,8 +106,8 @@ class TestRag(unittest.TestCase):
         self.assertLessEqual(len(fake.sent[0]), 520)
 
     def test_sem_deepseek_a_resposta_e_a_do_grafo(self):
-        q = "minha cabeça tá latejando"
-        for fake in (None, Fake(raw="isto não é json"), Fake(raw=None), Fake({"latejando": {"objetivos": ["inventado"]}})):
+        q = "minha cabeça tá uma zona"
+        for fake in (None, Fake(raw="isto não é json"), Fake(raw=None), Fake({"zona": {"objetivos": ["inventado"]}})):
             E = GRAPH if fake is None else eng(fake)
             r = E.search({"query": q})
             r.pop("rag", None)
@@ -168,14 +168,14 @@ class TestRag(unittest.TestCase):
 
     def test_pessoa_pode_desligar_o_servico_externo(self):
         # #42 (LGPD): allowExternal=false nunca deixa a frase sair; ausente ou true funciona como antes
-        q = "minha cabeça tá latejando"
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
+        q = "minha cabeça tá uma zona"
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
         r = eng(fake).search({"query": q, "allowExternal": False})
         self.assertEqual(fake.calls, 0)
         r.pop("rag", None)
         self.assertEqual(r, GRAPH.search({"query": q, "allowExternal": False}))
         for req in ({"query": q}, {"query": q, "allowExternal": True}):
-            f2 = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
+            f2 = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
             self.assertTrue(eng(f2).search(req).get("rag"))
             self.assertEqual(f2.calls, 1)
 
@@ -209,35 +209,35 @@ class TestRag(unittest.TestCase):
         self.assertEqual((fake.calls, r), (1, base))
 
     def test_conferencia_nunca_vira_lista_de_remedio_sem_pedido_de_saude(self):
-        # #61: o revisor provou na API real que "corpo pesado e cansado" virava ibuprofeno/naproxeno; agora a troca é recusada
-        q = "sinto o corpo todo pesado e cansado"
+        # #61: o revisor provou na API real que "corpo arrebentado e cansado" virava ibuprofeno/naproxeno; agora a troca é recusada
+        q = "sinto o corpo todo arrebentado e cansado"
         base = GRAPH.search({"query": q})
         self.assertFalse(any(p["domain"] == "medicamento" for p in base["products"]))
-        fake = Fake({"pesado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"pesado": "dor_no_corpo"}}})
+        fake = Fake({"arrebentado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"arrebentado": "dor_no_corpo"}}})
         E = eng(fake)
         r = E.search({"query": q}); r.pop("rag", None)
         self.assertEqual(r, base)
         self.assertEqual(E.stats["recusou"], 1)
         # com palavra de saúde na frase a troca vale ("doendo" é pedido de alívio)
-        fake = Fake({"pesado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"pesado": "dor_no_corpo"}}})
-        r = eng(fake).search({"query": "sinto o corpo todo pesado e doendo"})
+        fake = Fake({"arrebentado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"arrebentado": "dor_no_corpo"}}})
+        r = eng(fake).search({"query": "sinto o corpo todo arrebentado e doendo"})
         self.assertTrue(any(p["domain"] == "medicamento" for p in r["products"]))
 
     def test_trava_de_remedio_nao_e_furada_por_to_com(self):
-        # #61 (revisor, 2ª rodada): "tô com o corpo todo pesado" tem "tô com", que aparece em qualquer queixa; não é pedido de remédio
-        for q in ("tô com o corpo todo pesado e cansado", "estou com o corpo todo pesado e cansado", "sinto o corpo todo pesado e cansado"):
+        # #61 (revisor, 2ª rodada): "tô com o corpo todo arrebentado" tem "tô com", que aparece em qualquer queixa; não é pedido de remédio
+        for q in ("tô com o corpo todo arrebentado e cansado", "estou com o corpo todo arrebentado e cansado", "sinto o corpo todo arrebentado e cansado"):
             base = GRAPH.search({"query": q})
-            fake = Fake({"pesado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"pesado": "dor_no_corpo"}}})
+            fake = Fake({"arrebentado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"arrebentado": "dor_no_corpo"}}})
             E = eng(fake)
             r = E.search({"query": q}); r.pop("rag", None)
             self.assertEqual((r, E.stats["recusou"]), (base, 1), q)
         # "tomo sol" e "tomar banho" não são pedido de remédio
-        fake = Fake({"pesada": {"preocupacoes": ["dor_no_corpo"], "palavras": {"pesada": "dor_no_corpo"}}})
+        fake = Fake({"arrebentada": {"preocupacoes": ["dor_no_corpo"], "palavras": {"arrebentada": "dor_no_corpo"}}})
         E = eng(fake)
-        r = E.search({"query": "tomo muito sol e minha pele fica pesada"})
+        r = E.search({"query": "tomo muito sol e minha pele fica arrebentada"})
         self.assertFalse(any(p["domain"] == "medicamento" for p in r["products"]))
-        for q in ("tô com dor no corpo todo pesado", "preciso de um remédio, o corpo está pesado"):   # pedido de alívio: vale
-            fake = Fake({"pesado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"pesado": "dor_no_corpo"}}})
+        for q in ("tô com dor no corpo todo arrebentado", "preciso de um remédio, o corpo está arrebentado"):   # pedido de alívio: vale
+            fake = Fake({"arrebentado": {"preocupacoes": ["dor_no_corpo"], "palavras": {"arrebentado": "dor_no_corpo"}}})
             r = eng(fake).search({"query": q})
             self.assertTrue(any(p["domain"] == "medicamento" for p in r["products"]), q)
 
@@ -269,8 +269,11 @@ class TestRag(unittest.TestCase):
         r = eng(fake).search({"query": "meu intestino está preso esses dias"})
         self.assertEqual(fake.calls, 1)
         # a negação não vira queixa: "meu nariz não está tapado" não pode trazer descongestionante
-        for q in ("meu nariz não está tapado", "meu ombro não está travado, é só o cotovelo", "meu intestino não é travado, é solto demais"):
+        for q in ("meu nariz não está tapado", "meu ombro não está travado, é só o cotovelo"):
             self.assertEqual(GRAPH.search({"query": q})["products"], [], q)
+        # #62 (blind5): "solto demais" É diarreia; a negação de "travado" não pode esconder isso
+        r = GRAPH.search({"query": "meu intestino não é travado, é solto demais"})
+        self.assertTrue(r["products"] and all("diarreia" in x["concerns"] for x in r["products"][:3]))
         # mais partes do corpo, vírgula no meio
         for q in ("meu braço está travado", "tô com a perna travada", "meu pé tá travado", "ombro, travado"):
             ps = GRAPH.search({"query": q})["products"]
@@ -396,12 +399,12 @@ class TestRag(unittest.TestCase):
 
     def test_servico_externo_falha_fechado(self):
         # #42: só allowExternal exatamente true (ou ausente, com o padrão ligado) leva a frase à DeepSeek
-        q = "minha cabeça tá latejando"
+        q = "minha cabeça tá uma zona"
         for valor in (False, 0, "false", None, "nao", []):
-            fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
+            fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
             eng(fake).search({"query": q, "allowExternal": valor})
             self.assertEqual(fake.calls, 0, repr(valor))
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
         E = eng(fake)
         E.external_default = False                      # produção: RAG_EXTERNAL_DEFAULT=off
         E.search({"query": q})                          # cliente antigo, sem o campo
@@ -415,10 +418,10 @@ class TestRag(unittest.TestCase):
             self.assertTrue(eng(Fake()).external_default)
 
     def test_cache_nao_repete_a_chamada(self):
-        fake = Fake({"latejando": {"objetivos": ["dor_de_cabeca"]}})
+        fake = Fake({"zona": {"objetivos": ["dor_de_cabeca"]}})
         E = eng(fake)
-        E.search({"query": "minha cabeça tá latejando"})
-        E.search({"query": "minha cabeça tá latejando"})
+        E.search({"query": "minha cabeça tá uma zona"})
+        E.search({"query": "minha cabeça tá uma zona"})
         self.assertEqual(fake.calls, 1)
 
     def test_chave_vem_do_ambiente_e_nunca_vai_para_o_app(self):

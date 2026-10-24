@@ -120,6 +120,7 @@ class ScopeResolver:
 
     # ------------------------------------------------------------ casamento de frases
     def match(self, text: str) -> list[tuple[Concept, str]]:
+        text = re.sub(r"\b(depois|antes|apos|pos)\s+(d[oa]\s+)?banho\b", " ", norm(text))   # "repuxa depois do banho" é a pele, não o banho
         toks = stemmed_all(text)
         cand: list[tuple[int, int, int, Concept, str]] = []     # (-tamanho, início, fim, conceito, frase)
         for i, t in enumerate(toks):

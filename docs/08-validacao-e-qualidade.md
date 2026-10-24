@@ -187,3 +187,11 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 - **Suítes (24/10):** motor 140 de 140 (sem rede); app 93 de 93; tipos e build ok; catálogo 78 de 78 (nova checagem: nenhum remédio com preço riscado).
 - **Busca:** `search_quality` igual ao de antes, exceto `medcego` (precisão 0,879 para 0,869, por causa da ordem de #44). `rag_eval` só com o grafo: AMPLO teste 12 de 15 (era 13).
 - **Navegador (375 px):** cesta guardada ao recarregar ("Cesta, 2 itens"), "+" para em 2 caixas com aviso, remédio de venda livre antes do de receita em "remédio para enjoo".
+
+## Treinamento do RAG (24/10, itens #66 a #68)
+
+- **Medida nova:** `graphrag/eval/rag_blind5.py` (100 casos escritos por agente independente, sem ver o código) e `python -m graphrag.eval.blind5_run [--live]`. Metade A para diagnosticar, metade B só contagem.
+- **Resultado (A / B):** só o grafo 33 / 34 antes e 41 / 36 depois; grafo + DeepSeek 40 / 41 antes e 43 / 43 depois. Com 50 casos por metade, +2 em B está dentro do ruído; o ganho em A é em parte ajuste às frases dela.
+- **Conjuntos antigos:** só o grafo, `rag_eval`: TRAIN busca de 1 para 3 de 7, TEST busca de 0 para 3 de 6, AMPLO teste de 12 para 13 de 15; nenhuma frase que o grafo acertava foi estragada pela DeepSeek (algumas frases isoladas variam entre rodadas); chamadas à DeepSeek de 11,3% para 9,9%; precisão do `medcego` de 0,869 para 0,919.
+- **Custos e limites:** o classificador de atos de fala foi de 63 para 62 de 65 frases de teste; aliases soltos que a revisão provou criarem falso positivo (filtro, irregular, caroço, soltura, urticária e outros) foram tirados; um banco de 327 jeitos de falar gerado por outro agente não melhorou B e foi desfeito; frases de alerta de saúde seguem sem tratamento de urgência (#63, decisão da Julia).
+- **Suítes:** motor 151 de 151 (sem rede).

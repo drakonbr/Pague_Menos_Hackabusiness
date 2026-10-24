@@ -134,9 +134,12 @@ class Understanding:
         return bool(self.goals or self.concerns or self.steps or self.requested_ingredients or self.product_ids)
 
 
-_NEG_CUES = ("sem", "tira", "tirar", "retira", "remove", "evitar", "evita", "nada de", "nao quero", "nao use", "sem o", "sem a")
-_CHEAPER = re.compile(r"\b(mais barato|mais barata|mais em conta|mais economico|menor preco|baratinho|economizar|gastar menos|orcamento menor|menos de uns)\b")
-_RICHER = re.compile(r"\b(mais completo|mais completa|gastar mais|aumenta o orcamento|aumentar o orcamento|premium|melhor qualidade|mais caro)\b")
+_NEG_CUES = ("sem", "tira", "tirar", "retira", "remove", "evitar", "evita", "nada de", "nada com", "nao quero", "nao use", "sem o", "sem a",
+             "nenhum", "nenhuma", "nao quero nada", "livre de", "longe de", "dispenso")
+_AFTER_BATH = re.compile(r"\b(depois|antes|apos|pos)\s+(d[oa]\s+)?banho\b")
+_NO_ACID = re.compile(r"\b(sem|nada de|nada com|nao quero|nao use|evitar|evita|tira|tirar|livre de|nenhum|nao pode)\s+(os\s+|o\s+)?acidos?\b(?!\s+(hialuronico|ascorbico|folico|acetilsalicilico|tranexamico|azelaico|salicilico|glicolico|mandelico|graxos?|lactico|kojico))")
+_CHEAPER = re.compile(r"\b(reduzir o valor|diminuir o preco|diminuir o valor|baixar o preco|baixar o valor|reduzir o preco|ta salgado|esta salgado|muito caro|ta caro|fora do orcamento|pesou no bolso|mais barato|mais barata|mais em conta|mais economico|menor preco|baratinho|economizar|gastar menos|orcamento menor|menos de uns)\b")
+_RICHER = re.compile(r"\b(mais top|opcao melhor|algo melhor|top de linha|o melhor que tiver|mais completo|mais completa|gastar mais|aumenta o orcamento|aumentar o orcamento|premium|melhor qualidade|mais caro)\b")
 _PREGNANT = re.compile(r"\b(gravida|gestante|gravidez|gestacao|amamentando|amamentacao|lactante|gravidinha)\b")
 _TIER = [(re.compile(r"\b(economico|primeiro|mais barato de todos)\b"), "economico"),
          (re.compile(r"\b(essencial|segundo)\b"), "essencial"),
@@ -208,6 +211,7 @@ class Understander:
 
     # ------------------------------------------------------------ varredura de entidades
     def _scan(self, text: str):
+        text = _AFTER_BATH.sub(" ", norm(text))
         toks = stemmed_all(text)
         i, found = 0, []
         while i < len(toks):
@@ -225,7 +229,7 @@ class Understander:
         return toks, found
 
     def _negated(self, toks: list[str], start: int) -> bool:
-        window = " ".join(toks[max(0, start - 3):start])
+        window = " ".join(toks[max(0, start - 4):start])
         return any(re.search(r"(^|\s)" + re.escape(" ".join(stemmed_all(c))) + r"(\s|$)", window) for c in _NEG_CUES)
 
     def match_products(self, text: str, limit: int = 2) -> list[str]:
@@ -242,7 +246,7 @@ class Understander:
 
     # ------------------------------------------------------------ interface
     def understand(self, text: str, has_context: bool = False) -> Understanding:
-        q = norm(text)
+        q = _AFTER_BATH.sub(" ", norm(text))   # "repuxa depois do banho" é a pele, não o banho
         u = Understanding(text=text)
         toks, found = self._scan(text)
 
@@ -265,6 +269,11 @@ class Understander:
                         u.requested_ingredients.append(key)
                 elif kind == "goal":
                     goal_hits[key] += 3
+        # "sem ácido, por favor": os ácidos esfoliantes saem (salicílico, glicólico, mandélico), não um ingrediente só
+        if _NO_ACID.search(q):
+            for k in ("acido_salicilico", "acido_glicolico", "acido_mandelico"):   # os esfoliantes; azelaico e tranexâmico só saem se pedidos pelo nome
+                if k not in u.excluded_ingredients:
+                    u.excluded_ingredients.append(k)
         # "sem fragrância" etc. não podem virar pedido do ingrediente; já são preferências.
         u.concerns = [c for c, _ in concern_hits.most_common()]
         for c, n in concern_hits.items():

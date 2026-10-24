@@ -15,7 +15,7 @@ import re
 import threading
 
 from . import embed
-from .composer import Composer, build_ctx, list_pt
+from .composer import Composer, build_ctx, list_pt, lower_name
 from .concepts import MED_MISSING, MED_SHELF
 from .data import Catalog, load_catalog
 from .lexicon import STATE_WORDS, canon_state
@@ -261,7 +261,7 @@ class Engine:
     def _label(self, field: str, ident: str) -> str:
         c = self.cat
         return {"objetivos": lambda: c.goal_by_id[ident]["label"].lower(), "preocupacoes": lambda: c.concerns[ident],
-                "etapas": lambda: c.steps[ident].lower(), "ingredientes": lambda: c.ingredients[ident]["name"].lower()}[field]()
+                "etapas": lambda: c.steps[ident].lower(), "ingredientes": lambda: lower_name(c.ingredients[ident]["name"])}[field]()
 
     def _substitute(self, text: str, explained: list) -> str:
         t = norm(text)
@@ -546,7 +546,7 @@ class Engine:
         if scope.kind == "concern":
             return list_pt([self.cat.concerns.get(c, c) for c in sorted(scope.concerns)][:3]) or "cuidados com a pele"
         if scope.kind == "ingredient":
-            return list_pt([self.cat.ingredients[i]["name"].lower() for i in scope.ingredients if i in self.cat.ingredients][:3])
+            return list_pt([lower_name(self.cat.ingredients[i]["name"]) for i in scope.ingredients if i in self.cat.ingredients][:3])
         if scope.steps:
             return list_pt([self.cat.steps[s].lower() for s in sorted(scope.steps) if s in self.cat.steps][:3])
         return "o que você descreveu"
@@ -740,7 +740,7 @@ class Engine:
             sug = ["Tirar uma preferência", "Recomeçar"]
         else:
             n = len(prods)
-            extra = f" Sem {list_pt([self.cat.ingredients[i]['name'].lower() for i in excluded if i in self.cat.ingredients])}." \
+            extra = f" Sem {list_pt([lower_name(self.cat.ingredients[i]['name']) for i in excluded if i in self.cat.ingredients])}." \
                 if excluded and any(i in self.cat.ingredients for i in excluded) else ""
             pref = f" Filtro: {list_pt(intent['preferences'])}." if intent.get("preferences") else ""
             reply = f"Ajustei: {n} {'item' if n == 1 else 'itens'} de {label}.{pref}{extra} {' '.join(notes)}".strip()
@@ -951,9 +951,9 @@ class Engine:
             req_ing = [cat.ingredients[i]["name"] for i in u.requested_ingredients if i in cat.ingredients]
             if req_ing:
                 have = [n for n in req_ing if n in ings]
-                return (f"Sim, {name} tem {list_pt([n.lower() for n in have])}." if have
-                        else f"Não, {name} não tem {list_pt([n.lower() for n in req_ing])} no cadastro. Ativos: {list_pt([i.lower() for i in ings]) or 'não informados'}.")
-            return f"Ativos de {name}: {list_pt([i.lower() for i in ings]) or 'não informados'}."
+                return (f"Sim, {name} tem {list_pt([lower_name(n) for n in have])}." if have
+                        else f"Não, {name} não tem {list_pt([lower_name(n) for n in req_ing])} no cadastro. Ativos: {list_pt([lower_name(i) for i in ings]) or 'não informados'}.")
+            return f"Ativos de {name}: {list_pt([lower_name(i) for i in ings]) or 'não informados'}."
         if re.search(r"\b(alerta|aviso|cuidado|por que)\b", q):
             ws = [cat.warnings[w] for w in p["warnings"]]
             return " ".join(ws) if ws else f"{name} não tem avisos especiais no cadastro."
@@ -979,7 +979,7 @@ class Engine:
         head = "Ajustei" if refined else "Montei"
         extra = ""
         if refined and excluded:
-            names = [self.cat.ingredients[i]["name"].lower() for i in excluded if i in self.cat.ingredients]
+            names = [lower_name(self.cat.ingredients[i]["name"]) for i in excluded if i in self.cat.ingredients]
             if names:
                 extra = f" Sem {list_pt(names)}."
         if ctx.pregnancy:

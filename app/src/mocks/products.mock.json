@@ -5697,7 +5697,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Ômega 3 1000 mg EPA/DHA: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA). Sem glúten.",
+  "description": "Ômega 3 1000 mg EPA/DHA: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Componentes: Ômega 3 (EPA e DHA). Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "economico",
   "priceCents": 3990,
@@ -5747,7 +5747,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Ômega 3 Alta Concentração: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Ômega 3 (EPA e DHA) e Vitamina E. Sem glúten.",
+  "description": "Ômega 3 Alta Concentração: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Essência Nutri. Componentes: Ômega 3 (EPA e DHA) e Vitamina E. Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "intermediario",
   "priceCents": 7990,
@@ -5797,7 +5797,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Ômega 3 Vegano de Algas: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Ômega 3 de algas (DHA). Vegano e sem glúten.",
+  "description": "Ômega 3 Vegano de Algas: suplemento alimentar (suplemento de ômega 3 em cápsulas) da marca Vita Verde. Componentes: Ômega 3 de algas (DHA). Vegano e sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "premium",
   "priceCents": 8990,
@@ -5846,7 +5846,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Colágeno Hidrolisado em Pó Neutro: suplemento alimentar (suplemento de colágeno em pó) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+  "description": "Colágeno Hidrolisado em Pó Neutro: suplemento alimentar (suplemento de colágeno em pó) da marca Essência Nutri. Componentes: Colágeno hidrolisado. Sem açúcar.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "intermediario",
   "priceCents": 6990,
@@ -5895,7 +5895,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Colágeno Hidrolisado em Cápsulas: suplemento alimentar (suplemento de colágeno em cápsulas) da marca Essência Nutri. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado. Sem açúcar.",
+  "description": "Colágeno Hidrolisado em Cápsulas: suplemento alimentar (suplemento de colágeno em cápsulas) da marca Essência Nutri. Componentes: Colágeno hidrolisado. Sem açúcar.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "economico",
   "priceCents": 5990,
@@ -5946,7 +5946,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Colágeno com Vitamina C e Ácido Hialurônico em Pó: suplemento alimentar (suplemento de colágeno em pó) da marca Lume Lab. Foco em beleza de dentro para fora. Componentes: Colágeno hidrolisado, Vitamina C e Ácido hialurônico. Sem açúcar.",
+  "description": "Colágeno com Vitamina C e Ácido Hialurônico em Pó: suplemento alimentar (suplemento de colágeno em pó) da marca Lume Lab. Componentes: Colágeno hidrolisado, Vitamina C e Ácido hialurônico. Sem açúcar.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "premium",
   "priceCents": 9990,
@@ -5995,7 +5995,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Magnésio Dimalato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio dimalato. Sem glúten.",
+  "description": "Magnésio Dimalato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Componentes: Magnésio dimalato. Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "economico",
   "priceCents": 3490,
@@ -6044,7 +6044,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Magnésio Bisglicinato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Magnésio bisglicinato. Sem glúten.",
+  "description": "Magnésio Bisglicinato: suplemento alimentar (suplemento de magnésio em cápsulas) da marca Essência Nutri. Componentes: Magnésio bisglicinato. Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "premium",
   "priceCents": 5490,
@@ -6094,7 +6094,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Citrato de Magnésio em Pó: suplemento alimentar (suplemento de magnésio em pó) da marca Vita Verde. Foco em nutrição e bem-estar. Componentes: Magnésio citrato. Vegano e sem açúcar.",
+  "description": "Citrato de Magnésio em Pó: suplemento alimentar (suplemento de magnésio em pó) da marca Vita Verde. Componentes: Magnésio citrato. Vegano e sem açúcar.",
   "howToUse": "Use a quantidade indicada na embalagem.",
   "priceTier": "intermediario",
   "priceCents": 4490,
@@ -6143,7 +6143,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Vitamina D3 2000 UI: suplemento alimentar (suplemento de vitamina D em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3. Sem glúten.",
+  "description": "Vitamina D3 2000 UI: suplemento alimentar (suplemento de vitamina D em cápsulas) da marca Essência Nutri. Componentes: Vitamina D3. Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "economico",
   "priceCents": 2490,
@@ -6193,7 +6193,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Vitamina D3 + K2: suplemento alimentar (suplemento de vitaminas D e K em cápsulas) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Vitamina D3 e Vitamina K2. Sem glúten.",
+  "description": "Vitamina D3 + K2: suplemento alimentar (suplemento de vitaminas D e K em cápsulas) da marca Essência Nutri. Componentes: Vitamina D3 e Vitamina K2. Sem glúten.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "intermediario",
   "priceCents": 4990,
@@ -6240,7 +6240,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Multivitamínico Mulher 45+: suplemento alimentar (suplemento multivitamínico em comprimidos) da marca Essência Nutri. Foco em nutrição e bem-estar. Componentes: Complexo multivitamínico.",
+  "description": "Multivitamínico Mulher 45+: suplemento alimentar (suplemento multivitamínico em comprimidos) da marca Essência Nutri. Componentes: Complexo multivitamínico.",
   "howToUse": "Use a quantidade indicada na embalagem, junto a uma refeição.",
   "priceTier": "premium",
   "priceCents": 6490,
@@ -8967,7 +8967,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Vitamina C 1 g Efervescente — 10 comprimidos: suplemento alimentar (vitamina C efervescente) da marca Farmanorte. Foco em gripe e resfriado. Componentes: Ácido ascórbico (vitamina C).",
+  "description": "Vitamina C 1 g Efervescente — 10 comprimidos: suplemento alimentar (vitamina C efervescente) da marca Farmanorte. Componentes: Ácido ascórbico (vitamina C).",
   "howToUse": "Dissolva 1 comprimido em um copo de água, conforme a embalagem.",
   "priceTier": "economico",
   "priceCents": 1390,
@@ -10555,7 +10555,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Psyllium (Plantago ovata) Pó — 10 sachês: suplemento alimentar (fibra em pó) da marca Vitalis Farma. Foco em prisão de ventre. Componentes: Psyllium (Plantago ovata).",
+  "description": "Psyllium (Plantago ovata) Pó — 10 sachês: suplemento alimentar (fibra em pó) da marca Vitalis Farma. Componentes: Psyllium (Plantago ovata).",
   "howToUse": "Misture 1 sachê em um copo de água e beba em seguida, conforme a embalagem.",
   "priceTier": "economico",
   "priceCents": 2990,
@@ -10602,7 +10602,7 @@
   "warnings": [
    "consultar_se_medicacao"
   ],
-  "description": "Psyllium (Plantago ovata) Pó — 30 sachês: suplemento alimentar (fibra em pó) da marca Farmanorte. Foco em prisão de ventre. Componentes: Psyllium (Plantago ovata).",
+  "description": "Psyllium (Plantago ovata) Pó — 30 sachês: suplemento alimentar (fibra em pó) da marca Farmanorte. Componentes: Psyllium (Plantago ovata).",
   "howToUse": "Misture 1 sachê em um copo de água e beba em seguida, conforme a embalagem.",
   "priceTier": "intermediario",
   "priceCents": 6990,

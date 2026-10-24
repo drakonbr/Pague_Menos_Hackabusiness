@@ -105,7 +105,7 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
               <div className="step-head">
                 <span className="step-label">{STEP_LABEL[it.step]}</span>
                 {it.alternativesCount !== 0 ? (
-                  <button className="textbtn" onClick={() => openSwap(it.step)}><Icon name="swap" size={16} /> Trocar</button>
+                  <button className="textbtn" aria-label={`Trocar ${it.product.name}`} onClick={() => openSwap(it.step)}><Icon name="swap" size={16} /> Trocar</button>
                 ) : null}
               </div>
               <button className="row" style={{ textAlign: "left" }} onClick={() => push({ name: "product", id: it.product.id })}>
@@ -117,7 +117,7 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
                 </span>
               </button>
               <p className="reason">{it.reason}</p>
-              <button className="textbtn" style={{ alignSelf: "flex-start" }} onClick={() => dispatch({ type: "addProduct", product: it.product })}>
+              <button className="textbtn" style={{ alignSelf: "flex-start" }} aria-label={`Levar só este: ${it.product.name}`} onClick={() => dispatch({ type: "addProduct", product: it.product })}>
                 <Icon name="plus" size={16} /> Levar só este
               </button>
             </section>
@@ -142,7 +142,7 @@ export function KitDetail({ initialKit, intent }: { initialKit: Kit; intent: Int
 
       <div className="sticky">
         <div className="line1">
-          <span>{kit.items.length} itens{kit.discountCents > 0 ? <small className="kit-off"> · avulsos {money(kit.itemsTotalCents)} · desconto do kit {kit.discountPct}% (−{money(kit.discountCents)})</small> : null}</span>
+          <span>{kit.items.length} {kit.items.length === 1 ? "item" : "itens"}{kit.discountCents > 0 ? <small className="kit-off"> · avulsos {money(kit.itemsTotalCents)} · desconto do kit {kit.discountPct}% (−{money(kit.discountCents)})</small> : null}</span>
           <b>{money(kit.totalCents)}</b>
         </div>
         <button className="btn primary block" onClick={() => dispatch({ type: "addKit", kit, intent, everyDays: every })}>

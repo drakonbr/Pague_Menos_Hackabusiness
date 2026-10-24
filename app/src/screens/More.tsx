@@ -46,7 +46,7 @@ export function More() {
               </button>
             ))}
           </div>
-          <p className="footnote">{BRAND.protoNote} Medicamentos só em reposição (sem recomendação); convênios ficam fora do escopo.</p>
+          <p className="footnote">{BRAND.protoNote} Medicamentos aparecem só avulsos, nunca em kit; convênios ficam fora do escopo.</p>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@ export function Orders() {
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 14, color: "var(--text-2)" }}>
                   {o.lines.map((l) => (
                     <li key={l.key}>
-                      {l.qty}× {l.type === "kit" ? `Kit ${l.kit.title} (${l.kit.items.length} itens)${l.everyDays ? `, assinatura a cada ${l.everyDays} dias` : ""}` : l.product.name}
+                      {l.qty}× {l.type === "kit" ? `Kit ${l.kit.title} (${l.kit.items.length} ${l.kit.items.length === 1 ? "item" : "itens"})${l.everyDays ? `, assinatura a cada ${l.everyDays} dias` : ""}` : l.product.name}
                     </li>
                   ))}
                 </ul>

@@ -10,6 +10,9 @@ import { useAsync } from "../useAsync";
 
 const joinPt = (xs: string[]) => (xs.length <= 1 ? xs.join("") : `${xs.slice(0, -1).join(", ")} e ${xs[xs.length - 1]}`);
 
+/** conceitos de pele que o motor não transforma em kit (conferido em 24/10): o atalho cai no kit de skin care */
+const NO_KIT_CONCERNS = new Set(["desmaquilagem", "textura", "olheiras"]);
+
 export function ProductPage({ id }: { id: string }) {
   const { commerce } = useServices();
   const { pop, push } = useNav();
@@ -79,11 +82,23 @@ export function ProductPage({ id }: { id: string }) {
                   </button>
                 </>
               )}
-              <button className="note" style={{ textAlign: "left", width: "100%" }}
-                onClick={() => push({ name: "results", req: { query: `${med ? "remédio para" : "cuidados para"} ${d.labels.concerns[p.concerns[0]] ?? "a pele"}`, storeId } })}>
-                <Icon name="sparkle" size={20} />
-                <span>Monte um kit para <b>{d.labels.concerns[p.concerns[0]] ?? "a sua pele"}</b>: {med ? "opções que se completam, sem repetir princípio ativo." : "rotina completa, sem repetir produto."}</span>
-              </button>
+              {/* #49: o atalho só promete kit onde o motor monta kit; remédio não entra em kit (#40) */}
+              {(() => {
+                const what = d.labels.concerns[p.concerns[0]] ?? "a sua pele";
+                const sup = p.domain === "suplemento", hyg = p.domain === "higiene";
+                const kitOk = !med && !NO_KIT_CONCERNS.has(p.concerns[0]);
+                const label = med ? what : sup ? "suplementos" : hyg ? "higiene" : kitOk ? what : "skin care";
+                const text = med ? `Veja outros itens avulsos para ${what} (remédio não entra em kit).` : `Monte um kit de ${label}: rotina completa, sem repetir produto.`;
+                const query = med ? `remédio para ${what}` : sup ? "kit de suplementos" : hyg ? "kit de higiene" : kitOk ? `cuidados para ${what}` : "kit de skin care";
+                if (med && p.concerns[0] === "reposicao") return null;   // remédio de reposição não tem lista por sintoma
+                return (
+                  <button className="note" style={{ textAlign: "left", width: "100%" }} aria-label={text}
+                    onClick={() => push({ name: "results", req: { query, storeId } })}>
+                    <Icon name="sparkle" size={20} />
+                    <span>{med ? "Veja outros itens avulsos para " : "Monte um kit de "}<b>{label}</b>{med ? " (remédio não entra em kit)." : ": rotina completa, sem repetir produto."}</span>
+                  </button>
+                );
+              })()}
             </div>
             <details className="acc" open>
               <summary>APRESENTAÇÃO <Icon name="chevronDown" size={20} /></summary>
@@ -92,7 +107,7 @@ export function ProductPage({ id }: { id: string }) {
             <details className="acc">
               <summary>BENEFÍCIOS <Icon name="chevronDown" size={20} /></summary>
               <p className="txt">
-                {med ? "Para" : "Atua em"} {joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. {med ? "Princípio ativo" : "Ativos"}: {joinPt(p.ingredients.map((i) => d.labels.ingredients[i] ?? i))}.
+                {p.domain === "suplemento" ? "Composição" : med ? "Para" : "Atua em"}{p.domain === "suplemento" ? ": " : " "}{p.domain === "suplemento" ? "" : `${joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. ${med ? "Princípio ativo" : "Ativos"}: `}{joinPt(p.ingredients.map((i) => d.labels.ingredients[i] ?? i))}.
                 {p.claims.length ? ` ${joinPt(p.claims)}.` : ""}
               </p>
             </details>
@@ -103,7 +118,7 @@ export function ProductPage({ id }: { id: string }) {
                   <>Indicado para {joinPt(p.concerns.map((c) => d.labels.concerns[c] ?? c))}. Classe: {STEP_LABEL[p.step]}.</>
                 ) : (
                   <>
-                    Etapa da rotina: {STEP_LABEL[p.step]}. Indicado para {p.skinTypes.includes("todas") ? "todos os tipos de pele" : `pele ${joinPt(p.skinTypes)}`}.
+                    Etapa da rotina: {STEP_LABEL[p.step]}. {p.domain === "dermo" ? <>Indicado para {p.skinTypes.includes("todas") ? "todos os tipos de pele" : `pele ${joinPt(p.skinTypes)}`}. </> : null}
                     Uso: {p.usagePeriod === "dia" ? "de dia" : p.usagePeriod === "noite" ? "à noite" : "de dia e à noite"}.
                   </>
                 )}

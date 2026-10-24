@@ -438,7 +438,8 @@ def build_products() -> tuple[list[dict], list[dict]]:
         if domain == "dermo":
             desc = f"{name}: produto do tipo {ptype}, da marca {brand}, indicado para {skins_txt}. Foco em {conc_txt}. Principais ativos: {ing_txt}."
         elif domain == "suplemento":
-            desc = f"{name}: suplemento alimentar ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
+            # #47 (RDC 243/2018): suplemento só traz composição e uso, nunca queixa de saúde
+            desc = f"{name}: suplemento alimentar ({ptype}) da marca {brand}. Componentes: {ing_txt}."
         elif domain == "higiene":
             desc = f"{name}: produto de higiene ({ptype}) da marca {brand}. Foco em {conc_txt}. Componentes: {ing_txt}."
         elif not extras.get("equivalence"):

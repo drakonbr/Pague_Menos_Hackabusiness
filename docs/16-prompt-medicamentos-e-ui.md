@@ -311,3 +311,10 @@ A tarja segue o que é usual no varejo, a partir de conhecimento geral, **sem co
 - **#61 (conferência):** a DeepSeek também confere quando o grafo respondeu mas viu palavra desconhecida; só troca a resposta se explicar a palavra com algo que o grafo não cobria, nunca com palavra negada, e nunca vira lista de remédios sem pedido de dor, remédio ou sintoma.
 - **#62:** `canon_state` reescreve "parte do corpo + até 2 palavras + estado" (não se há "não", "sem" ou "nem" no meio) para apelidos já conhecidos, sem acrescentar palavras soltas ao vocabulário. O corretor só aceita correção de 2 erros se a 1ª letra bate.
 - **Limites conhecidos:** "tá tapado meu nariz" (estado antes da parte) e 3ª pessoa com 3+ palavras não casam; duas queixas na mesma frase e negação coordenada ficam sem tratamento; "pele melada depois da praia" vai para oleosidade (antes, proteção solar), o que é discutível.
+
+## 17. Achados curtos do teste de usabilidade (#47, #49, #55 a #59, 24/10)
+
+- **#47 (RDC 243/2018):** suplemento não mostra queixa de saúde na descrição nem na página (BENEFÍCIOS vira "Composição"; PARA QUE SERVE não fala de tipo de pele). A busca por sintoma continua achando esses suplementos pelos conceitos do catálogo, que não são exibidos.
+- **#49:** o atalho da página do produto só promete kit onde o motor monta kit (suplementos, higiene, pele; desmaquilagem, textura e olheiras caem em "kit de skin care"); remédio mostra "Veja outros itens avulsos" e remédio de reposição não mostra atalho.
+- **#55 a #59:** aviso dura 10 s (8 s sem ação), tem botão Fechar e pausa com mouse ou foco; botões repetidos levam o nome do item; aba Locker com nome acessível; três textos atualizados; "1 item" no singular; "Lojas próximas"; ingredientes sem perder sigla ("ômega 3 (EPA e DHA)", "vitamina E") no motor e no simulador.
+- **Limites:** os testes do app conferem o texto do código-fonte, não renderizam; "psyllium (plantago ovata)" sai com o gênero em minúscula; a lista de conceitos de pele sem kit está fixa no app; o #54 não foi reproduzido.

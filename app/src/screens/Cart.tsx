@@ -87,7 +87,7 @@ export function Cart() {
             <b style={{ fontWeight: 500, color: "var(--text-2)" }}>Resumo pacote 1</b>
             <div className="sumrow"><span>Subtotal</span><span>{money(listCents)}</span></div>
             {discounts > 0 ? <div className="sumrow"><span>Descontos</span><span>- {money(discounts)}</span></div> : null}
-            <div className="sumrow total"><span>Total ({count} itens):</span><span>{money(itemsCents)}</span></div>
+            <div className="sumrow total"><span>Total ({count} {count === 1 ? "item" : "itens"}):</span><span>{money(itemsCents)}</span></div>
             {cashbackCents > 0 ? <div className="sumrow" style={{ color: "var(--ok)" }}><span>Cashback a receber (simulado)</span><span>{money(cashbackCents)}</span></div> : null}
             <div style={{ marginTop: 10 }}>
               {info.data ? <FreeShippingRuler itemsCents={itemsCents} freeFrom={info.data.freeFrom} /> : null}
@@ -100,7 +100,7 @@ export function Cart() {
         <div className="row" style={{ justifyContent: "space-between", color: "var(--text-2)", fontSize: 17 }}>
           <span>Resumo da compra</span>
         </div>
-        <div className="tot"><span>Total ({count} itens)</span><b>{money(itemsCents)}</b></div>
+        <div className="tot"><span>Total ({count} {count === 1 ? "item" : "itens"})</span><b>{money(itemsCents)}</b></div>
         <button className="btn primary block" onClick={() => push(rxNeeded ? { name: "prescriptions" } : { name: "delivery" })}>
           {rxNeeded ? "Confirmar cesta e anexar receitas" : "Seguir para entrega"}
         </button>
@@ -112,6 +112,7 @@ export function Cart() {
 
 function Line({ line: l }: { line: CartLine }) {
   const { dispatch, rxDocs } = useApp();
+  const lineName = l.type === "kit" ? l.kit.title : l.product.name;
   const rxHere = lineProducts(l).filter((p) => p.rx);
   const rxMissingHere = rxHere.filter((p) => !rxDocs.includes(p.id)).length;
   const { push } = useNav();
@@ -138,7 +139,7 @@ function Line({ line: l }: { line: CartLine }) {
           ) : null}
           <button style={{ textAlign: "left", fontSize: 16.5, lineHeight: 1.3 }}
             onClick={() => (l.type === "kit" ? push({ name: "kit", kit: l.kit, intent: l.intent }) : push({ name: "product", id: l.product.id }))}>
-            {l.type === "kit" ? `${l.kit.title} (${l.kit.items.length} itens)` : l.product.name}
+            {l.type === "kit" ? `${l.kit.title} (${l.kit.items.length} ${l.kit.items.length === 1 ? "item" : "itens"})` : l.product.name}
           </button>
           {l.type === "kit" ? (
             <small style={{ color: "var(--text-2)", lineHeight: 1.4 }}>
@@ -154,7 +155,7 @@ function Line({ line: l }: { line: CartLine }) {
             </span>
           ) : null}
         </div>
-        <button className="icon-btn" style={{ color: "var(--brand)" }} onClick={() => dispatch({ type: "remove", key: l.key })} aria-label="Remover da cesta">
+        <button className="icon-btn" style={{ color: "var(--brand)" }} onClick={() => dispatch({ type: "remove", key: l.key })} aria-label={`Remover ${lineName} da cesta`}>
           <Icon name="trash" />
         </button>
       </div>
@@ -168,9 +169,9 @@ function Line({ line: l }: { line: CartLine }) {
           {l.qty > 1 ? <span className="unit">{money(lineTotalCents(l) / l.qty)}/1und</span> : null}
         </div>
         <div className="qty" role="group" aria-label="Quantidade">
-          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty - 1 })} aria-label="Diminuir"><Icon name="minus" /></button>
+          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty - 1 })} aria-label={`Diminuir quantidade de ${lineName}`}><Icon name="minus" /></button>
           <span aria-live="polite">{l.qty}</span>
-          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty + 1 })} aria-label="Aumentar" disabled={l.qty >= 9}><Icon name="plus" /></button>
+          <button onClick={() => dispatch({ type: "setQty", key: l.key, qty: l.qty + 1 })} aria-label={`Aumentar quantidade de ${lineName}`} disabled={l.qty >= 9}><Icon name="plus" /></button>
         </div>
       </div>
       {l.type === "kit" ? (

@@ -154,7 +154,7 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
       const products = rankProducts(ctx);
       const comp = isHealthGoal(ctx.primary)
         ? { status: "not_applicable" as const, kits: [], closestKit: null,
-            notes: [`Encontrei ${products.length} itens de ${GOAL_LABEL[ctx.primary].toLowerCase()}. Toque numa sugestão para ajustar a lista.`] }
+            notes: [`Encontrei ${products.length} ${products.length === 1 ? "item" : "itens"} de ${GOAL_LABEL[ctx.primary].toLowerCase()}. Toque numa sugestão para ajustar a lista.`] }
         : compose(ctx, requestId);
       const clarification: Clarification | undefined = intent.missing.includes("skinType")
         ? { id: "skinType", question: "Como é a sua pele?", options: SKIN_OPTIONS }

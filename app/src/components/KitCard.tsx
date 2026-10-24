@@ -10,7 +10,7 @@ export function KitCard({ kit, onOpen, overBudgetBy }: { kit: Kit; onOpen: () =>
     <button className="kit-card" onClick={onOpen} aria-label={`Abrir kit ${TIER_LABEL[kit.tier]}, ${money(kit.totalCents)}${kit.discountPct ? `, ${kit.discountPct}% de desconto no kit` : ""}`}>
       <div className="row" style={{ justifyContent: "space-between" }}>
         <span className={`tier ${kit.tier}`}>{TIER_LABEL[kit.tier]}</span>
-        <span className="mini">{kit.items.length} itens</span>
+        <span className="mini">{kit.items.length} {kit.items.length === 1 ? "item" : "itens"}</span>
       </div>
       <h3>{kit.title}</h3>
       <div className="kit-thumbs">

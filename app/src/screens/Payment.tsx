@@ -67,7 +67,7 @@ export function Payment() {
             ))}
           </fieldset>
           <div className="panel" style={{ gap: 4 }}>
-            <div className="sumrow"><span>Subtotal ({count} itens)</span><span>{money(listCents)}</span></div>
+            <div className="sumrow"><span>Subtotal ({count} {count === 1 ? "item" : "itens"})</span><span>{money(listCents)}</span></div>
             {listCents > itemsCents ? <div className="sumrow"><span>Descontos</span><span>- {money(listCents - itemsCents)}</span></div> : null}
             <div className="sumrow"><span>Entrega</span><span>{fee ? money(fee) : "Grátis"}</span></div>
             <div className="sumrow total" style={{ fontSize: 18, borderTop: "1px dashed var(--line)", paddingTop: 8, marginTop: 4 }}>

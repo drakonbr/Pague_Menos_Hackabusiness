@@ -76,6 +76,11 @@ def kit_cashback(items_cashback: int, pct: int) -> int:
     return items_cashback * (100 - pct) // 100
 
 
+def lower_name(s: str) -> str:
+    """minúsculas, menos siglas e letras de vitamina (EPA, DHA, E, D3): "Ômega 3 (EPA e DHA)" -> "ômega 3 (EPA e DHA)" (#59)"""
+    return " ".join(w if w.isupper() else w.lower() for w in s.split())
+
+
 def list_pt(items: list[str]) -> str:
     if len(items) <= 1:
         return "".join(items)
@@ -214,7 +219,7 @@ class Composer:
         if p["domain"] == q["domain"] == "medicamento":
             same = set(p["ingredients"]) & set(q["ingredients"])
             if same:
-                name = self.cat.ingredients[sorted(same)[0]]["name"].lower()
+                name = lower_name(self.cat.ingredients[sorted(same)[0]]["name"])
                 return {"severity": "evitar", "reason": f"Os dois têm {name}; o kit não repete princípio ativo."}
         if p["step"] == "limpeza" or q["step"] == "limpeza":
             return None
@@ -286,7 +291,7 @@ class Composer:
     def explain_item(self, p: dict, ctx: Ctx, step: str) -> str:
         cat = self.cat
         matched = [cat.concerns.get(c, c) for c in p["concerns"] if c in ctx.concerns]
-        actives = [cat.ingredients[i]["name"].lower() for i in p["ingredients"]
+        actives = [lower_name(cat.ingredients[i]["name"]) for i in p["ingredients"]
                    if i not in GENERIC_ING and i in cat.ingredients][:2]
         parts = []
         if matched:

@@ -175,3 +175,9 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 - **Busca do dia a dia (`rag_eval`):** só com o grafo, 28 de 28 nas frases de treino (eram 24) e 13 de 15 nas frases separadas para teste; com a DeepSeek ligada, 14 de 15 nas de teste. Nenhuma frase que o grafo acertava foi estragada, e os 16 controles de risco (grafo já certo mais palavra desconhecida) foram mantidos.
 - **Custo:** a DeepSeek foi chamada em 33 de 283 frases (11,7%); de 10% a 25% nos conjuntos cegos.
 - **Limite:** o conjunto de risco não é amostra independente (parte foi escrita pelo revisor); os números de teste são de 15 frases.
+
+## Rodada dos achados curtos (24/10, itens #47, #49, #55 a #59)
+
+- **Suítes (24/10):** motor 137 de 137 (sem rede); app 80 de 80; tipos e build ok; catálogo 77 de 77; `search_quality` idêntico ao de antes (a descrição do suplemento mudou e o grafo foi retreinado).
+- **Navegador (375 px):** aviso dura 10 s e fechar com o mouse em cima não prende o próximo; página da Vitamina C sem queixa de saúde; cesta com nomes acessíveis e "3 itens".
+- **Revisor independente:** três rodadas (de 3,0 a 3,8); defeitos achados e corrigidos: pausa do aviso presa, atalho de kit para onde o motor não monta kit, plural fixo, `.lower()` em nome de ingrediente.

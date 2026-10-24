@@ -149,7 +149,7 @@ export function Home() {
             <Shelf key={s.id} title={s.id === "ofertas" ? "Aproveite as Melhores Ofertas para Você!" : s.title} products={products}
               tag={s.id === "ofertas" ? "Super oferta" : undefined} />
           ))}
-          <p className="footnote">{BRAND.protoNote} Fotos: Pexels (créditos em Mais).</p>
+          <p className="footnote">{BRAND.protoNote}</p>
         </div>
       </div>
     </div>

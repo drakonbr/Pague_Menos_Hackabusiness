@@ -303,6 +303,11 @@ const DEFAULT_REASON: Record<StepId, string> = {
   antiemetico: "Contra enjoo.",
 };
 
+/** minúsculas, menos siglas e letras de vitamina (EPA, DHA, E, D3): igual ao lower_name do motor (#59) */
+export function lowerName(s: string): string {
+  return s.split(/\s+/).map((w) => (w === w.toUpperCase() && w !== w.toLowerCase() ? w : w.toLowerCase())).join(" ");
+}
+
 function listPt(items: string[]): string {
   if (items.length <= 1) return items.join("");
   return `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`;
@@ -313,7 +318,7 @@ export function explainItem(p: Product, ctx: Ctx, step: StepId): string {
   const actives = p.ingredients
     .filter((i) => !GENERIC_ING.has(i))
     .slice(0, 2)
-    .map((i) => (INGREDIENT_NAME.get(i) ?? i).toLowerCase());
+    .map((i) => lowerName(INGREDIENT_NAME.get(i) ?? i));
   const parts: string[] = [];
   if (matched.length) {
     parts.push(`Atende ${listPt(matched.slice(0, 3))}${actives.length ? `, com ${listPt(actives)}` : ""}.`);

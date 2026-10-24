@@ -84,7 +84,7 @@ export function Delivery() {
       <div className="tabs3" role="tablist">
         <button role="tab" aria-selected={tab === "entrega"} onClick={() => setTab("entrega")}><Icon name="truck" /> Entrega</button>
         <button role="tab" aria-selected={tab === "retirada"} onClick={() => setTab("retirada")}><Icon name="store" /> Retirar na loja</button>
-        <button role="tab" aria-selected={false} disabled title="Fora do protótipo"><Icon name="locker" /> Locker</button>
+        <button role="tab" aria-selected={false} disabled aria-label="Locker, fora do protótipo" title="Fora do protótipo"><Icon name="locker" /> Locker</button>
       </div>
       <div className="scroll">
         <div className="pad">
@@ -129,8 +129,8 @@ export function Delivery() {
           {tab === "retirada" && data.data ? (
             <>
               <div>
-                <h2 style={{ fontSize: 22 }}>Lojas próximas à</h2>
-                <p style={{ color: "var(--text-2)", marginTop: 4 }}>{SIMULATED_LOCATION.label}</p>
+                <h2 style={{ fontSize: 22 }}>Lojas próximas</h2>
+                <p style={{ color: "var(--text-2)", marginTop: 4 }}>Perto de {SIMULATED_LOCATION.label}</p>
               </div>
               <div className="seg" role="group" aria-label="Filtrar lojas">
                 <button aria-pressed={!onlyStock} onClick={() => setOnlyStock(false)}>Todas as lojas</button>

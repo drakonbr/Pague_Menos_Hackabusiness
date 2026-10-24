@@ -371,6 +371,8 @@ class Engine:
             if heard and (act in SOFT_ACTS or (not has_ctx and not POINTING_CUE.search(nq.replace("?", ""))
                                                 and not (act == "entrega_frete" and DELIVERY_CUE.search(nq)))):
                 act = u.act = "busca"
+        if act == "negacao" and has_ctx and (u.excluded_ingredients or u.preferences or u.skin):
+            act = u.act = "refinar"                      # "não quero ácido" no meio da conversa é ajuste, não um "não"
         if act == "repor_medicamento" and not _MED.search(norm(query)) and (self.scope.match(query) or u.has_domain_signal):
             act = u.act = "busca"                       # "acabar com os cravos" não é reposição de remédio
         blank_intent = {"goals": [], "primaryGoal": None, "budgetCents": None, "skinType": None, "preferences": [],
@@ -715,7 +717,8 @@ class Engine:
         ctx = build_ctx(self.cat, intent, requested, excluded, rel, self.weights["ret_in_kit"])
         comp = self.comp.compose(ctx, self._rid(req))
         focus = u.tier if u.tier and any(k["tier"] == u.tier for k in comp["kits"]) else None
-        reply = self._reply_kits(comp, intent, ctx, u, refined=True, excluded=excluded, only=focus)
+        reply = self._reply_kits(comp, intent, ctx, u, refined=True, excluded=excluded, only=focus,
+                                 change=self._change_text(prev_kits, comp, carry, intent, u))
         clar = {"id": "skinType", "question": "Como é a sua pele?", "options": SKIN_OPTIONS} if "skinType" in intent["missing"] else None
         res = self._out(req, query, safety, intent, "refinar", reply, kits_status=comp["status"], kits=comp["kits"],
                         closest=comp["closestKit"], products=self.comp.rank_products(ctx, [], rel, limit=12),
@@ -851,7 +854,8 @@ class Engine:
                 opts.append({"product": e, "kind": "equivalente", "presentation": e["equivalence"]["presentation"],
                              "sameActive": True, "sameDose": e["equivalence"]["dose"] == p["equivalence"]["dose"],
                              "deltaCents": e["priceCents"] - p["priceCents"], "inStock": stock(e) > 0,
-                             "storeIdsWithStock": stores_with(e), "needsPharmacistConfirmation": False})
+                             "storeIdsWithStock": stores_with(e),
+                             "needsPharmacistConfirmation": bool(p.get("rx") or e.get("rx"))})   # #46: trocar remédio de receita é com o farmacêutico (Lei 9.787/1999)
             opts.sort(key=lambda o: (not o["inStock"], o["deltaCents"], o["product"]["id"]))
         else:
             for sid, w in self.graph.similar(product_id, k=12):
@@ -890,8 +894,9 @@ class Engine:
         n_in = sum(1 for o in sim["options"] if o["inStock"])
         if p["equivalence"]:
             if sim["options"]:
-                reply = (f"Encontrei {len(sim['options'])} equivalentes com o mesmo princípio ativo e a mesma dose, "
-                         f"{n_in} com estoque agora. Eles aparecem abaixo com preço, apresentação e lojas com estoque.")
+                reply = (f"Encontrei {len(sim['options'])} equivalentes sugeridos (mesmo princípio ativo e dose, pelo cadastro), "
+                         f"{n_in} com estoque agora. A troca só vale depois que o farmacêutico confirmar. "
+                         "Eles aparecem abaixo com preço, apresentação e lojas com estoque.")
             else:
                 reply = "Não encontrei equivalente para esse item."
         else:
@@ -972,7 +977,28 @@ class Engine:
         return f"{p['description']} {p['howToUse']}".strip()
 
     # ------------------------------------------------------------ textos de resposta
-    def _reply_kits(self, comp, intent, ctx, u, refined=False, excluded=(), only=None) -> str:
+    def _change_text(self, prev_kits: list[dict], comp: dict, carry: dict, intent: dict, u) -> str:
+        """#52: diz o que o ajuste aplicou e como os preços andaram, para a pessoa não achar que o preço subiu sem motivo."""
+        if comp["status"] not in ("ok", "partial") or not comp["kits"]:
+            return ""
+        applied = [p for p in intent.get("preferences", []) if p not in (carry.get("preferences") or [])]
+        if intent.get("skinType") and intent.get("skinType") != carry.get("skinType"):
+            applied.append(f"pele {intent['skinType']}")
+        if intent.get("budgetCents") is not None and intent.get("budgetCents") != carry.get("budgetCents"):
+            applied.append(f"orçamento até {money(intent['budgetCents'])}")
+        old = {k["tier"]: k["totalCents"] for k in prev_kits}
+        shifts = [f"{TIER_NAME[k['tier']]} de {money(old[k['tier']])} para {money(k['totalCents'])}" for k in comp["kits"]
+                  if k["tier"] in old and k["totalCents"] != old[k["tier"]]]
+        out = f" Apliquei: {list_pt(applied)}." if applied else ""
+        if shifts:
+            out += " Preços: " + "; ".join(shifts) + "."
+            ups = [k for k in comp["kits"] if k["tier"] in old and k["totalCents"] > old[k["tier"]] * 1.15]
+            # só explica quando os mesmos kits continuam existindo (se sumiu opção, a causa é outra e não é afirmada)
+            if ups and (applied or u.excluded_ingredients) and {k["tier"] for k in comp["kits"]} == set(old):
+                out += " Subiu porque, com esse pedido, os itens que sobram para cada etapa custam mais."
+        return out
+
+    def _reply_kits(self, comp, intent, ctx, u, refined=False, excluded=(), only=None, change="") -> str:
         goal = self.cat.goal_by_id[intent["primaryGoal"]]["label"].lower()
         budget = f" até {money(intent['budgetCents'])}" if intent.get("budgetCents") is not None else ""
         store = f" com estoque na {self.store_names[intent['storeId']]}" if intent.get("storeId") in self.store_names else ""
@@ -994,6 +1020,7 @@ class Engine:
             names = [lower_name(self.cat.ingredients[i]["name"]) for i in excluded if i in self.cat.ingredients]
             if names:
                 extra = f" Sem {list_pt(names)}."
+        extra += change
         if ctx.pregnancy:
             extra += " Retirei o que tem restrição na gestação."
         n = len(kits)

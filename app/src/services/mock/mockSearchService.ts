@@ -201,7 +201,7 @@ export function createMockSearchService(opts: MockOptions = {}): SearchService {
           deltaCents: q.priceCents - p.priceCents,
           inStock: stockAt(q.id, storeId) > 0,
           storeIdsWithStock: withStock(q),
-          needsPharmacistConfirmation: false,
+          needsPharmacistConfirmation: !!(p.rx || q.rx),   // #46: trocar remédio de receita é com o farmacêutico
         }))
         .sort((a, b) => Number(b.inStock) - Number(a.inStock) || a.deltaCents - b.deltaCents || a.product.id.localeCompare(b.product.id))
         .slice(0, 6);

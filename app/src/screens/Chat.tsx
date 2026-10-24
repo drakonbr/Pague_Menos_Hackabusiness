@@ -297,13 +297,13 @@ function SimilarsBlock({ res, action, push }: { res: SearchResponse; action: Ext
   const isMed = action.options.some((o) => o.kind === "equivalente");
   return (
     <section className="panel" aria-label="Opções equivalentes">
-      {action.options.map((o) => {
+      {action.options.filter((o) => o.kind !== "equivalente" || o.sameDose !== false).map((o) => {   // #46: só os de mesma dose
         const p = byId.get(o.productId);
         return p ? <SimilarCard key={o.productId} o={o} product={p} stores={stores.data ?? new Map()} push={push} /> : null;
       })}
       {isMed ? (
         <>
-          <div className="note"><Icon name="info" size={18} /><p>Mesmo princípio ativo e mesma dose, conforme a sua receita.</p></div>
+          <div className="note"><Icon name="info" size={18} /><p>Sugestão pelo cadastro (mesmo princípio ativo e mesma dose). A troca só vale depois que o farmacêutico confirmar; na loja, ele segue a lista de intercambiáveis da Anvisa. Neste protótipo ninguém confirma de verdade.</p></div>
           <button className="btn primary block" onClick={() => push({ name: "refill" })}><Icon name="pill" size={20} /> Abrir Meus medicamentos</button>
         </>
       ) : null}

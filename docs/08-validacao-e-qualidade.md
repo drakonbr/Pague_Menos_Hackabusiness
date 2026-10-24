@@ -201,3 +201,8 @@ Invariantes novas: **M1** (kit de remédio não repete princípio ativo) e **M2*
 - **Suítes:** motor 160 de 160 (sem rede); app 98 de 98; tipos e build ok.
 - **Navegador (375 px):** "to com dor no peito e falta de ar" mostra o aviso fixo em destaque, sem produtos.
 - **Limites:** a lista de sinais de alerta é conservadora e não é parecer clínico; o teto de uso da DeepSeek é por instância.
+
+## Rodada #46 e #50 a #54 (24/10)
+
+- **Suítes:** motor 162 de 162 (sem rede); app 103 de 103; tipos e build ok; `search_quality` igual; blind5 só grafo A 41 / B 36 (igual).
+- **Limites:** o texto do ajuste (#52) só existe no motor real; o #54 não foi reproduzido; o classificador de atos tem 61 de 65 frases de teste.

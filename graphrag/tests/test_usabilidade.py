@@ -89,6 +89,38 @@ class TestUsabilidade(unittest.TestCase):
         self.assertEqual(out["listPriceCents"], out["priceCents"])
         self.assertEqual(out["cashbackPct"], 0)
 
+    def test_ajuste_diz_o_que_mudou_e_como_os_precos_andaram(self):   # #52
+        r1 = E.search({"query": "pele oleosa"})
+        r2 = E.search({"query": "sem fragrância", "context": r1["context"]})
+        self.assertIn("Apliquei: sem fragrância", r2["reply"])
+        self.assertIn("Preços:", r2["reply"])
+        r3 = E.search({"query": "tira tudo que tem cheiro", "context": r1["context"]})
+        self.assertRegex(r3["reply"], r"Apliquei: sem fragr")
+        old = {k["tier"]: k["totalCents"] for k in r1["kits"]}
+        for k in r3["kits"]:
+            if k["tier"] in old and k["totalCents"] > old[k["tier"]] * 1.15:
+                self.assertIn("Subiu porque", r3["reply"])
+                break
+
+    def test_resposta_de_equivalente_nao_afirma_troca_pronta(self):   # #46
+        r = E.search({"query": "tem equivalente?", "focusProductId": "p136", "storeId": "s01"})
+        self.assertEqual(r["act"], "similar")
+        self.assertIn("farmacêutico", r["reply"])
+        self.assertNotIn("com o mesmo princípio ativo e a mesma dose,", r["reply"])
+
+    def test_explicacao_do_aumento_so_quando_os_mesmos_kits_continuam(self):   # #52
+        r1 = E.search({"query": "pele oleosa"})
+        r2 = E.search({"query": "só vegano", "context": r1["context"]})
+        if {k["tier"] for k in r2["kits"]} != {k["tier"] for k in r1["kits"]}:
+            self.assertNotIn("Subiu porque", r2["reply"])
+
+    def test_lista_nao_encolhe_por_causa_do_orcamento(self):   # #54: a lista mostra o que existe, não só o que cabe no kit
+        sem = {g: len(E.search({"query": g})["products"]) for g in ("pele oleosa", "acne", "manchas")}
+        for g, n in sem.items():
+            for b in (20, 30, 45, 60):
+                r = E.search({"query": f"{g} até R$ {b}"})
+                self.assertGreaterEqual(len(r["products"]), min(n, 10), (g, b, r["kitsStatus"]))
+
 
 if __name__ == "__main__":
     unittest.main()

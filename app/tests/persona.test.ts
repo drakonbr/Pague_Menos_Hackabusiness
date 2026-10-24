@@ -67,7 +67,7 @@ describe("reposição sem recomendar (modo simulado)", () => {
     expect(stockAt("p136", "s01")).toBe(0);
     const r = await svc.similars("p136", "s01");
     expect(r.inStockHere).toBe(false);
-    expect(r.options.every((o) => o.sameActive && !o.needsPharmacistConfirmation)).toBe(true);
+    expect(r.options.every((o) => o.sameActive && o.needsPharmacistConfirmation)).toBe(true);   // #46: trocar remédio de receita é com o farmacêutico
     expect(r.options[0].inStock).toBe(true);
   });
 });

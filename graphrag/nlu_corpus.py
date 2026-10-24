@@ -98,6 +98,7 @@ TRAIN: dict[str, list[str]] = {
         "o que usar para a pele ficar lisinha",
     ],
     "refinar": [
+        "tira o que tem cheiro", "retira tudo que tem perfume",
         "dá pra baixar o preço", "isso tá muito salgado", "ficou pesado no bolso, tem algo mais em conta", "pode reduzir o valor",
         "quero uma opção mais top", "tem algo premium", "quero uma versão mais chique", "prefiro a opção mais cara e melhor",
         "mais barato",

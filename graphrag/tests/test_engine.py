@@ -261,7 +261,8 @@ class TestPersona(unittest.TestCase):
         ids = {o["product"]["id"]: o for o in r["options"]}
         self.assertTrue({"p137", "p138"} <= set(ids))
         self.assertTrue(ids["p138"]["inStock"]); self.assertTrue(all(o["sameActive"] for o in r["options"]))
-        self.assertFalse(any(o["needsPharmacistConfirmation"] for o in r["options"]))   # doc 16: sem encaminhamento
+        # #46: equivalente de remédio de receita é sugestão sujeita à confirmação do farmacêutico (Lei 9.787/1999)
+        self.assertTrue(all(o["needsPharmacistConfirmation"] for o in r["options"] if o["product"].get("rx") or E.cat.by_id["p136"].get("rx")))
         self.assertTrue(all(r["options"][i]["inStock"] >= r["options"][i + 1]["inStock"] for i in range(len(r["options"]) - 1)))
 
     def test_kit_de_remedio_nunca_repete_ativo_nem_junta_dois_antiinflamatorios(self):

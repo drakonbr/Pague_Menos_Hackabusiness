@@ -126,7 +126,7 @@ SKIN_ALIASES: dict[str, list[str]] = {
 # ----------------------------------------------------------------- preferências (-> claim do catálogo)
 PREFERENCE_ALIASES: dict[str, list[str]] = {
     "vegano": ["vegano", "vegana", "veganos", "veganas", "sem origem animal", "100 vegano", "cruelty free vegano"],
-    "sem fragrância": ["sem fragrancia", "sem perfume", "sem cheiro", "sem aroma", "sem essencia", "nao perfumado"],
+    "sem fragrância": ["tira tudo que tem cheiro", "tira o que tem cheiro", "tira tudo que tem perfume", "tira o que tem perfume", "retira tudo que tem perfume", "sem cheiro nenhum", "nada de cheiro", "nada de perfume", "sem fragrancia", "sem perfume", "sem cheiro", "sem aroma", "sem essencia", "nao perfumado"],
     "sem álcool": ["sem alcool", "livre de alcool", "alcool free"],
     "oil free": ["oil free", "oilfree", "sem oleo", "livre de oleo", "sem oleosidade extra"],
     "filtro mineral": ["mineral", "filtro mineral", "filtro fisico", "protetor mineral", "protetor fisico"],

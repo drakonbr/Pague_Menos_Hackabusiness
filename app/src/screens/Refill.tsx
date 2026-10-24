@@ -7,6 +7,7 @@ import { ProductImage } from "../components/ProductImage";
 import type { Product, SimilarsResponse, StoreAvailability } from "../contracts/types";
 import { useNav, useServices } from "../nav";
 import { DELIVERY_RANK, PERSONA, REFILL_RULES, daysLeft, needsRefill, runOutDate, type ContinuousMedication } from "../persona";
+import { hasStockHere } from "../refillStock";
 import { delta, money } from "../services/format";
 import { maxQty, useApp } from "../state/app";
 import { useAsync } from "../useAsync";
@@ -29,7 +30,12 @@ export function Refill() {
   const [picked, setPicked] = useState<Record<string, boolean>>(() => Object.fromEntries(meds.map((m) => [m.productId, needsRefill(m)])));
 
   const chosen = (m: ContinuousMedication): Product | undefined => choice[m.productId] ?? data.data?.byId.get(m.productId);
-  const lineItems = meds.filter((m) => picked[m.productId]).map((m) => ({ m, p: chosen(m) })).filter((x): x is { m: ContinuousMedication; p: Product } => !!x.p);
+  // #50: item que a loja escolhida não tem só entra na conta (e na retirada) depois que a pessoa escolhe um equivalente em estoque
+  const hasHere = (m: ContinuousMedication) => hasStockHere({ productId: m.productId, chosenId: choice[m.productId]?.id, avail: data.data?.avail, storeId,
+                                                              centralStockQty: data.data?.byId.get(m.productId)?.stockQty });
+  const marked = meds.filter((m) => picked[m.productId]);
+  const unavailable = marked.filter((m) => !hasHere(m));
+  const lineItems = marked.filter(hasHere).map((m) => ({ m, p: chosen(m) })).filter((x): x is { m: ContinuousMedication; p: Product } => !!x.p);
   const itemsCents = lineItems.reduce((t, { p }) => t + p.priceCents, 0);   // #41: o total mostrado é o que a cesta cobra (o desconto da reposição automática não é aplicado no protótipo)
   const anyAuto = lineItems.some(({ m }) => refillAuto[m.productId]);
   const canBuy = lineItems.length > 0 && rxAttached;
@@ -39,7 +45,8 @@ export function Refill() {
     for (const { p } of lineItems) if (!full.some((f) => f.p.id === p.id)) dispatch({ type: "addProduct", product: p, confirmed: true });
     dispatch({ type: "attachRx", ids: lineItems.filter(({ p }) => p.rx).map(({ p }) => p.id) });   // receita anexada aqui mesmo
     const added = lineItems.length - full.length;
-    dispatch({ type: "toast", text: full.length ? `${added} ${added === 1 ? "item" : "itens"} da reposição na cesta; ${full.length === 1 ? "1 já estava" : `${full.length} já estavam`} no limite da receita` : `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} da reposição na cesta`, action: "cart" });
+    const trocados = lineItems.filter(({ m, p }) => p.id !== m.productId).length;   // #46: equivalente escolhido segue sujeito ao farmacêutico
+    dispatch({ type: "toast", text: (full.length ? `${added} ${added === 1 ? "item" : "itens"} da reposição na cesta; ${full.length === 1 ? "1 já estava" : `${full.length} já estavam`} no limite da receita` : `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} da reposição na cesta`) + (trocados ? " Troca por equivalente: sujeita à confirmação do farmacêutico." : ""), action: "cart" });
     push({ name: "cart" });
   };
 
@@ -120,7 +127,8 @@ export function Refill() {
       </div>
       <div className="summary">
         <small className="foot center" role="status">
-          {!lineItems.length ? "Marque o que quer repor." : !rxAttached ? "Anexe a receita simulada para repor." : `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} · ${money(itemsCents)}`}
+          {!marked.length ? "Marque o que quer repor." : !rxAttached ? "Anexe a receita simulada para repor." : !lineItems.length ? "Escolha um equivalente em estoque para seguir."
+            : `${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} · ${money(itemsCents)}${unavailable.length ? ` · fora da conta: ${unavailable.map((m) => m.label).join(", ")} (sem estoque nesta loja)` : ""}`}
         </small>
         <button className="btn primary block" disabled={!canBuy} onClick={buy}>
           <Icon name="basketPlus" size={22} /> {lineItems.length ? `Repor ${lineItems.length} ${lineItems.length === 1 ? "item" : "itens"} na cesta` : "Repor na cesta"}
@@ -176,20 +184,20 @@ function MedCard({ m, product, avail, storeId, picked, onPick, auto, onAuto, rem
       {swapped || inStockHere ? (
         <div className="med-price">
           <div className="row"><span className="price blue">{money(cur.priceCents)}</span>
-            {swapped ? <small className="swap-note">{delta(cur.priceCents - product.priceCents)} em relação ao original</small> : null}</div>
+            {swapped ? <small className="swap-note">{delta(cur.priceCents - product.priceCents)} em relação ao original · sujeito à confirmação do farmacêutico</small> : null}</div>
           {swapped ? <button className="link plain" onClick={undo}>Desfazer troca e voltar a {product.name}</button> : null}
         </div>
       ) : (
         <div className="equiv" aria-label="Equivalentes disponíveis">
           <b>Equivalentes com estoque</b>
-          <small className="foot">Mesmo princípio ativo e mesma dose, conforme a sua receita.</small>
+          <small className="foot">Mesmo princípio ativo e mesma dose. Critério deste protótipo, pelo cadastro. A troca é uma sugestão: só vale depois que o farmacêutico confirmar, e na loja ele segue a lista de intercambiáveis da Anvisa (Lei 9.787/1999 e RDC 58/2014). Aqui ninguém confirma de verdade.</small>
           {sims.loading ? <div className="skeleton" style={{ height: 60 }} /> : null}
-          {(sims.data?.options ?? []).filter((o) => o.inStock).map((o) => (
+          {(sims.data?.options ?? []).filter((o) => o.inStock && o.sameDose !== false).map((o) => (   // só os de mesmo princípio ativo e mesma dose
             <div key={o.product.id} className="swap-opt">
               <ProductImage product={o.product} size={44} />
               <span className="grow">
                 <b>{o.product.name}</b>
-                <small>{PRES[o.presentation ?? "similar"]} · {money(o.product.priceCents)} ({delta(o.deltaCents)})</small>
+                <small>{PRES[o.presentation ?? "similar"]} · {money(o.product.priceCents)} ({delta(o.deltaCents)}){o.needsPharmacistConfirmation ? " · sujeito à confirmação do farmacêutico" : ""}</small>
               </span>
               <button className="btn outline blue" aria-label={`Escolher ${o.product.name}`} onClick={() => choose(o.product)}>Escolher</button>
             </div>

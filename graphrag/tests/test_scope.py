@@ -41,8 +41,8 @@ class TestShelf(unittest.TestCase):
 
 class TestAbsent(unittest.TestCase):
     def test_item_que_nao_existe_avisa(self):
-        r = S("escova de dente")
-        self.assertIn("Não temos escova de dente", r["catalogNotice"]["message"])
+        r = S("aparelho nos dentes")
+        self.assertIn("Não temos", r["catalogNotice"]["message"])
         self.assertEqual(r["catalogNotice"]["shelf"], "higiene bucal")
         self.assertTrue(r["products"])             # mostra a prateleira vizinha
 

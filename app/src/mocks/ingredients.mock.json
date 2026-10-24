@@ -301,6 +301,62 @@
   "photosensitizing": false
  },
  {
+  "id": "nylon",
+  "name": "Nylon",
+  "family": "material",
+  "function": "cerdas e fio dental",
+  "photosensitizing": false
+ },
+ {
+  "id": "plastico_reciclado",
+  "name": "Plástico reciclado",
+  "family": "material",
+  "function": "corpo de escovas e pentes",
+  "photosensitizing": false
+ },
+ {
+  "id": "talco_mineral",
+  "name": "Talco mineral",
+  "family": "mineral",
+  "function": "absorção de umidade",
+  "photosensitizing": false
+ },
+ {
+  "id": "amido_milho",
+  "name": "Amido de milho",
+  "family": "vegetal",
+  "function": "absorção de umidade",
+  "photosensitizing": false
+ },
+ {
+  "id": "menta_extrato",
+  "name": "Extrato de menta",
+  "family": "extrato vegetal",
+  "function": "frescor",
+  "photosensitizing": false
+ },
+ {
+  "id": "fibra_vegetal",
+  "name": "Fibra vegetal",
+  "family": "material",
+  "function": "esfoliação corporal",
+  "photosensitizing": false
+ },
+ {
+  "id": "esponja_sintetica",
+  "name": "Esponja sintética",
+  "family": "material",
+  "function": "espuma e limpeza",
+  "photosensitizing": false
+ },
+ {
+  "id": "algodao",
+  "name": "Algodão",
+  "family": "material",
+  "function": "higiene e limpeza",
+  "photosensitizing": false
+ },
+ {
   "id": "dipirona",
   "name": "Dipirona monoidratada",
   "family": "princípio ativo",
@@ -753,6 +809,167 @@
   "name": "Domperidona",
   "family": "princípio ativo",
   "function": "contra enjoo",
+  "photosensitizing": false
+ },
+ {
+  "id": "clotrimazol",
+  "name": "Clotrimazol",
+  "family": "princípio ativo",
+  "function": "antifúngico de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "miconazol",
+  "name": "Nitrato de miconazol",
+  "family": "princípio ativo",
+  "function": "antifúngico de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "ketoconazol",
+  "name": "Cetoconazol",
+  "family": "princípio ativo",
+  "function": "antifúngico",
+  "photosensitizing": false
+ },
+ {
+  "id": "terbinafina",
+  "name": "Cloridrato de terbinafina",
+  "family": "princípio ativo",
+  "function": "antifúngico",
+  "photosensitizing": false
+ },
+ {
+  "id": "fluconazol",
+  "name": "Fluconazol",
+  "family": "princípio ativo",
+  "function": "antifúngico sistêmico",
+  "photosensitizing": false
+ },
+ {
+  "id": "nistatina",
+  "name": "Nistatina",
+  "family": "princípio ativo",
+  "function": "antifúngico",
+  "photosensitizing": false
+ },
+ {
+  "id": "amoxicilina",
+  "name": "Amoxicilina",
+  "family": "princípio ativo",
+  "function": "antibiótico",
+  "photosensitizing": false
+ },
+ {
+  "id": "azitromicina",
+  "name": "Azitromicina",
+  "family": "princípio ativo",
+  "function": "antibiótico",
+  "photosensitizing": false
+ },
+ {
+  "id": "cefalexina",
+  "name": "Cefalexina",
+  "family": "princípio ativo",
+  "function": "antibiótico",
+  "photosensitizing": false
+ },
+ {
+  "id": "ciprofloxacino",
+  "name": "Cloridrato de ciprofloxacino",
+  "family": "princípio ativo",
+  "function": "antibiótico",
+  "photosensitizing": false
+ },
+ {
+  "id": "doxiciclina",
+  "name": "Cloridrato de doxiciclina",
+  "family": "princípio ativo",
+  "function": "antibiótico",
+  "photosensitizing": false
+ },
+ {
+  "id": "metronidazol",
+  "name": "Metronidazol",
+  "family": "princípio ativo",
+  "function": "antibiótico e antiprotozoário",
+  "photosensitizing": false
+ },
+ {
+  "id": "aciclovir",
+  "name": "Aciclovir",
+  "family": "princípio ativo",
+  "function": "antiviral",
+  "photosensitizing": false
+ },
+ {
+  "id": "valaciclovir",
+  "name": "Cloridrato de valaciclovir",
+  "family": "princípio ativo",
+  "function": "antiviral",
+  "photosensitizing": false
+ },
+ {
+  "id": "oseltamivir",
+  "name": "Fosfato de oseltamivir",
+  "family": "princípio ativo",
+  "function": "antiviral",
+  "photosensitizing": false
+ },
+ {
+  "id": "penciclovir",
+  "name": "Penciclovir",
+  "family": "princípio ativo",
+  "function": "antiviral de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "famciclovir",
+  "name": "Famciclovir",
+  "family": "princípio ativo",
+  "function": "antiviral",
+  "photosensitizing": false
+ },
+ {
+  "id": "hidrocortisona",
+  "name": "Hidrocortisona",
+  "family": "princípio ativo",
+  "function": "corticoide de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "prednisona",
+  "name": "Prednisona",
+  "family": "princípio ativo",
+  "function": "corticoide sistêmico",
+  "photosensitizing": false
+ },
+ {
+  "id": "dexametasona",
+  "name": "Dexametasona",
+  "family": "princípio ativo",
+  "function": "corticoide sistêmico",
+  "photosensitizing": false
+ },
+ {
+  "id": "betametasona",
+  "name": "Valerato de betametasona",
+  "family": "princípio ativo",
+  "function": "corticoide de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "mometasona",
+  "name": "Furoato de mometasona",
+  "family": "princípio ativo",
+  "function": "corticoide de uso local",
+  "photosensitizing": false
+ },
+ {
+  "id": "budesonida",
+  "name": "Budesonida",
+  "family": "princípio ativo",
+  "function": "corticoide",
   "photosensitizing": false
  }
 ]

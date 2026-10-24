@@ -37,5 +37,11 @@
  "reidratacao": "Reidratação oral",
  "laxante": "Laxante",
  "fibra": "Fibra",
- "antiemetico": "Contra enjoo"
+ "antiemetico": "Contra enjoo",
+ "antifungico_topico": "Antifúngico tópico",
+ "antifungico_oral": "Antifúngico oral",
+ "antibiotico": "Antibiótico",
+ "antiviral": "Antiviral",
+ "corticoide_topico": "Corticoide tópico",
+ "corticoide_oral": "Corticoide oral"
 }

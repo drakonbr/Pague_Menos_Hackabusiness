@@ -41,7 +41,7 @@ describe("persona (Renata) e reposição", () => {
 });
 
 describe("pedido que não é de remédio não traz remédio", () => {
-  const queries = ["kit de suplementos", "rotina anti idade", "higiene premium", "Quero cuidar da pele", "tratamento de acne", "quero meu remédio"];
+  const queries = ["kit de suplementos", "rotina anti idade", "higiene premium", "Quero cuidar da pele", "tratamento de acne", "quero meu shampoo"];
   it.each(queries)("%s", async (q) => {
     const r = await svc.search({ query: q });
     expect(checkResponse(r)).toEqual([]);

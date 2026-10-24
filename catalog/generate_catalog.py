@@ -23,6 +23,7 @@ from pathlib import Path
 
 import medicines as MED
 import persona_products as PP
+import hygiene_products as HG
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -191,6 +192,7 @@ GOALS = [
 STEPS.update(PP.EXTRA_STEPS)
 CONCERNS.update(PP.EXTRA_CONCERNS)
 INGREDIENTS.extend(PP.EXTRA_INGREDIENTS)
+INGREDIENTS.extend(HG.HYGIENE_INGREDIENTS)
 WARNINGS.update(PP.EXTRA_WARNINGS)
 GOALS.extend(PP.EXTRA_GOALS)
 
@@ -418,7 +420,7 @@ def build_products() -> tuple[list[dict], list[dict]]:
     ing_names = {i[0]: i[1] for i in INGREDIENTS}
     products: list[dict] = []
     inventory: list[dict] = []
-    for n, row in enumerate(P + PP.EXTRA_PRODUCTS + MED.MED_PRODUCTS, start=1):
+    for n, row in enumerate(P + PP.EXTRA_PRODUCTS + MED.MED_PRODUCTS + HG.HIGIENE_PRODUCTS, start=1):
         (brand, name, ptype, step, line, form, size, skins, concerns, ings, fps, period,
          price, claims, warns, covers_extra) = row[:16]
         extras = row[16] if len(row) > 16 else {}

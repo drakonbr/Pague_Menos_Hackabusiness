@@ -4822,7 +4822,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "economico"
+    "price_tier": "premium"
   },
   {
     "id": "p120",
@@ -4862,7 +4862,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "intermediario"
+    "price_tier": "premium"
   },
   {
     "id": "p121",
@@ -4939,7 +4939,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "economico"
+    "price_tier": "premium"
   },
   {
     "id": "p123",
@@ -4978,7 +4978,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "intermediario"
+    "price_tier": "premium"
   },
   {
     "id": "p124",
@@ -5055,7 +5055,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "intermediario"
+    "price_tier": "premium"
   },
   {
     "id": "p126",
@@ -5093,7 +5093,7 @@
     "domain": "higiene",
     "rx": null,
     "equivalence": null,
-    "price_tier": "economico"
+    "price_tier": "premium"
   },
   {
     "id": "p127",
@@ -8525,5 +8525,2743 @@
     "rx": "receita_simples",
     "equivalence": null,
     "price_tier": "premium"
+  },
+  {
+    "id": "p218",
+    "name": "Clotrimazol Creme 1% — 20 g",
+    "brand": "Vitalis Farma",
+    "line": "med_micose",
+    "step": "antifungico_topico",
+    "covers_steps": [
+      "antifungico_topico"
+    ],
+    "product_type": "creme antifúngico",
+    "form": "tube",
+    "size": {
+      "value": 20,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "clotrimazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Clotrimazol Creme 1% — 20 g: medicamento (creme antifúngico) do laboratório Vitalis Farma. Princípio ativo: Clotrimazol. Para micose e fungos.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p219",
+    "name": "Miconazol Creme 2% — 30 g",
+    "brand": "Farmanorte",
+    "line": "med_micose",
+    "step": "antifungico_topico",
+    "covers_steps": [
+      "antifungico_topico"
+    ],
+    "product_type": "creme antifúngico",
+    "form": "tube",
+    "size": {
+      "value": 30,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "miconazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Miconazol Creme 2% — 30 g: medicamento (creme antifúngico) do laboratório Farmanorte. Princípio ativo: Nitrato de miconazol. Para micose e fungos.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p220",
+    "name": "Cetoconazol Shampoo 2% — 100 mL",
+    "brand": "Lab Aurora",
+    "line": "med_micose",
+    "step": "antifungico_topico",
+    "covers_steps": [
+      "antifungico_topico"
+    ],
+    "product_type": "shampoo antifúngico",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "ketoconazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Cetoconazol Shampoo 2% — 100 mL: medicamento (shampoo antifúngico) do laboratório Lab Aurora. Princípio ativo: Cetoconazol. Para micose e fungos.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p221",
+    "name": "Terbinafina Creme 1% — 15 g",
+    "brand": "Lab Genérico Sul",
+    "line": "med_micose",
+    "step": "antifungico_topico",
+    "covers_steps": [
+      "antifungico_topico"
+    ],
+    "product_type": "creme antifúngico",
+    "form": "tube",
+    "size": {
+      "value": 15,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "terbinafina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Terbinafina Creme 1% — 15 g: medicamento (creme antifúngico) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de terbinafina. Para micose e fungos.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p222",
+    "name": "Fluconazol 150 mg — 1 cápsula",
+    "brand": "Lab Nova Via",
+    "line": "med_micose",
+    "step": "antifungico_oral",
+    "covers_steps": [
+      "antifungico_oral"
+    ],
+    "product_type": "antifúngico oral",
+    "form": "caps",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "fluconazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fluconazol 150 mg — 1 cápsula: medicamento (antifúngico oral) do laboratório Lab Nova Via. Princípio ativo: Fluconazol. Para micose e fungos. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p223",
+    "name": "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL",
+    "brand": "Vitalis Farma",
+    "line": "med_micose",
+    "step": "antifungico_oral",
+    "covers_steps": [
+      "antifungico_oral"
+    ],
+    "product_type": "suspensão antifúngica",
+    "form": "bottle",
+    "size": {
+      "value": 50,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "micose"
+    ],
+    "ingredients": [
+      "nistatina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL: medicamento (suspensão antifúngica) do laboratório Vitalis Farma. Princípio ativo: Nistatina. Para micose e fungos. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p224",
+    "name": "Amoxicilina 500 mg — 21 cápsulas",
+    "brand": "Lab Genérico Sul",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 21,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "amoxicilina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Amoxicilina 500 mg — 21 cápsulas: medicamento (antibiótico em cápsulas) do laboratório Lab Genérico Sul. Princípio ativo: Amoxicilina. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p225",
+    "name": "Azitromicina 500 mg — 5 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 5,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "azitromicina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Azitromicina 500 mg — 5 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Azitromicina. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p226",
+    "name": "Cefalexina 500 mg — 20 cápsulas",
+    "brand": "Farmanorte",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 20,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "cefalexina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Cefalexina 500 mg — 20 cápsulas: medicamento (antibiótico em cápsulas) do laboratório Farmanorte. Princípio ativo: Cefalexina. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p227",
+    "name": "Ciprofloxacino 500 mg — 14 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 14,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "ciprofloxacino"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Ciprofloxacino 500 mg — 14 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de ciprofloxacino. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p228",
+    "name": "Doxiciclina 100 mg — 10 comprimidos",
+    "brand": "Lab Aurora",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "doxiciclina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Doxiciclina 100 mg — 10 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Aurora. Princípio ativo: Cloridrato de doxiciclina. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p229",
+    "name": "Metronidazol 400 mg — 14 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_infeccao_bacteriana",
+    "step": "antibiotico",
+    "covers_steps": [
+      "antibiotico"
+    ],
+    "product_type": "antibiótico em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 14,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "infeccao_bacteriana"
+    ],
+    "ingredients": [
+      "metronidazol"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Metronidazol 400 mg — 14 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Metronidazol. Para infecção bacteriana. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p230",
+    "name": "Aciclovir Creme 5% — 10 g",
+    "brand": "Vitalis Farma",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "creme antiviral",
+    "form": "tube",
+    "size": {
+      "value": 10,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "aciclovir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Aciclovir Creme 5% — 10 g: medicamento (creme antiviral) do laboratório Vitalis Farma. Princípio ativo: Aciclovir. Para herpes.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p231",
+    "name": "Penciclovir Creme 1% — 10 g",
+    "brand": "Farmanorte",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "creme antiviral",
+    "form": "tube",
+    "size": {
+      "value": 10,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "penciclovir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Penciclovir Creme 1% — 10 g: medicamento (creme antiviral) do laboratório Farmanorte. Princípio ativo: Penciclovir. Para herpes.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p232",
+    "name": "Aciclovir 400 mg — 30 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "antiviral em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "aciclovir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Aciclovir 400 mg — 30 comprimidos: medicamento (antiviral em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Aciclovir. Para herpes. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p233",
+    "name": "Valaciclovir 500 mg — 10 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "antiviral em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "valaciclovir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Valaciclovir 500 mg — 10 comprimidos: medicamento (antiviral em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de valaciclovir. Para herpes. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p234",
+    "name": "Oseltamivir 75 mg — 10 cápsulas",
+    "brand": "Lab Aurora",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "antiviral em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "oseltamivir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Oseltamivir 75 mg — 10 cápsulas: medicamento (antiviral em cápsulas) do laboratório Lab Aurora. Princípio ativo: Fosfato de oseltamivir. Para herpes. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p235",
+    "name": "Famciclovir 500 mg — 10 comprimidos",
+    "brand": "Vitalis Farma",
+    "line": "med_herpes",
+    "step": "antiviral",
+    "covers_steps": [
+      "antiviral"
+    ],
+    "product_type": "antiviral em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "herpes"
+    ],
+    "ingredients": [
+      "famciclovir"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Famciclovir 500 mg — 10 comprimidos: medicamento (antiviral em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Famciclovir. Para herpes. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p236",
+    "name": "Hidrocortisona Creme 1% — 20 g",
+    "brand": "Vitalis Farma",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_topico",
+    "covers_steps": [
+      "corticoide_topico"
+    ],
+    "product_type": "creme corticoide",
+    "form": "tube",
+    "size": {
+      "value": 20,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "hidrocortisona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Hidrocortisona Creme 1% — 20 g: medicamento (creme corticoide) do laboratório Vitalis Farma. Princípio ativo: Hidrocortisona. Para inflamação da pele.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p237",
+    "name": "Betametasona Creme 0,1% — 20 g",
+    "brand": "Farmanorte",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_topico",
+    "covers_steps": [
+      "corticoide_topico"
+    ],
+    "product_type": "creme corticoide",
+    "form": "tube",
+    "size": {
+      "value": 20,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "betametasona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Betametasona Creme 0,1% — 20 g: medicamento (creme corticoide) do laboratório Farmanorte. Princípio ativo: Valerato de betametasona. Para inflamação da pele. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p238",
+    "name": "Mometasona Creme 0,1% — 20 g",
+    "brand": "Lab Aurora",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_topico",
+    "covers_steps": [
+      "corticoide_topico"
+    ],
+    "product_type": "creme corticoide",
+    "form": "tube",
+    "size": {
+      "value": 20,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "mometasona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Mometasona Creme 0,1% — 20 g: medicamento (creme corticoide) do laboratório Lab Aurora. Princípio ativo: Furoato de mometasona. Para inflamação da pele. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p239",
+    "name": "Prednisona 20 mg — 10 comprimidos",
+    "brand": "Lab Genérico Sul",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_oral",
+    "covers_steps": [
+      "corticoide_oral"
+    ],
+    "product_type": "corticoide em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "prednisona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Prednisona 20 mg — 10 comprimidos: medicamento (corticoide em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Prednisona. Para inflamação da pele. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p240",
+    "name": "Dexametasona 4 mg — 10 comprimidos",
+    "brand": "Lab Nova Via",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_oral",
+    "covers_steps": [
+      "corticoide_oral"
+    ],
+    "product_type": "corticoide em comprimidos",
+    "form": "box",
+    "size": {
+      "value": 10,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "dexametasona"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Dexametasona 4 mg — 10 comprimidos: medicamento (corticoide em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Dexametasona. Para inflamação da pele. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p241",
+    "name": "Budesonida 3 mg — 30 cápsulas",
+    "brand": "Vitalis Farma",
+    "line": "med_inflamacao_pele",
+    "step": "corticoide_oral",
+    "covers_steps": [
+      "corticoide_oral"
+    ],
+    "product_type": "corticoide em cápsulas",
+    "form": "caps",
+    "size": {
+      "value": 30,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "inflamacao_pele"
+    ],
+    "ingredients": [
+      "budesonida"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Budesonida 3 mg — 30 cápsulas: medicamento (corticoide em cápsulas) do laboratório Vitalis Farma. Princípio ativo: Budesonida. Para inflamação da pele. Venda sob prescrição.",
+    "how_to_use": "Siga as instruções da bula.",
+    "image": null,
+    "domain": "medicamento",
+    "rx": "receita_simples",
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p242",
+    "name": "Sabonete em Barra Hidratante",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "sabonete em barra",
+    "form": "bar",
+    "size": {
+      "value": 120,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina",
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano",
+      "sem parabenos"
+    ],
+    "warnings": [],
+    "description": "Sabonete em Barra Hidratante: produto de higiene (sabonete em barra) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Manteiga de karité. Vegano e sem parabenos.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p243",
+    "name": "Gel de Banho Relaxante Lavanda",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "gel de banho",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria",
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Gel de Banho Relaxante Lavanda: produto de higiene (gel de banho) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p244",
+    "name": "Óleo de Banho Nutritivo",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "óleo de banho",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "manteiga_karite",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Óleo de Banho Nutritivo: produto de higiene (óleo de banho) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Manteiga de karité e Óleo de argan. Vegano.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p245",
+    "name": "Shampoo Anticaspa Equilíbrio",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "shampoo anticaspa",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "zinco_pca",
+      "enxofre"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem sulfato"
+    ],
+    "warnings": [],
+    "description": "Shampoo Anticaspa Equilíbrio: produto de higiene (shampoo anticaspa) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Zinco PCA e Enxofre. Sem sulfato.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p246",
+    "name": "Shampoo Hidratante Óleo de Argan",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "shampoo",
+    "form": "bottle",
+    "size": {
+      "value": 300,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "oleo_argan",
+      "queratina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem sulfato"
+    ],
+    "warnings": [],
+    "description": "Shampoo Hidratante Óleo de Argan: produto de higiene (shampoo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Óleo de argan e Queratina. Sem sulfato.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p247",
+    "name": "Máscara Capilar Reconstrução",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "máscara capilar",
+    "form": "jar",
+    "size": {
+      "value": 250,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina",
+      "oleo_argan",
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Máscara Capilar Reconstrução: produto de higiene (máscara capilar) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina, Óleo de argan e Manteiga de karité. Vegano.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p248",
+    "name": "Creme Dental Branqueador Carvão",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "creme dental",
+    "form": "tube",
+    "size": {
+      "value": 90,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "com flúor"
+    ],
+    "warnings": [],
+    "description": "Creme Dental Branqueador Carvão: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p249",
+    "name": "Creme Dental Dentes Sensíveis",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "creme dental",
+    "form": "tube",
+    "size": {
+      "value": 90,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "com flúor"
+    ],
+    "warnings": [],
+    "description": "Creme Dental Dentes Sensíveis: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p250",
+    "name": "Enxaguante Bucal Menta Sem Álcool",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "enxaguante bucal",
+    "form": "bottle",
+    "size": {
+      "value": 500,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "fluoreto"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem álcool"
+    ],
+    "warnings": [],
+    "description": "Enxaguante Bucal Menta Sem Álcool: produto de higiene (enxaguante bucal) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Sem álcool.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p251",
+    "name": "Desodorante Stick Sem Alumínio",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante stick",
+    "form": "stick",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio"
+    ],
+    "warnings": [],
+    "description": "Desodorante Stick Sem Alumínio: produto de higiene (desodorante stick) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p252",
+    "name": "Desodorante Spray 48h",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante aerossol",
+    "form": "spray",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio"
+    ],
+    "warnings": [],
+    "description": "Desodorante Spray 48h: produto de higiene (desodorante aerossol) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p253",
+    "name": "Desodorante Creme Pele Sensível",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "desodorante",
+    "covers_steps": [
+      "desodorante"
+    ],
+    "product_type": "desodorante em creme",
+    "form": "jar",
+    "size": {
+      "value": 55,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "desodorizacao"
+    ],
+    "ingredients": [
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "dia",
+    "claims": [
+      "sem alumínio",
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Desodorante Creme Pele Sensível: produto de higiene (desodorante em creme) da marca Noble Banho. Foco em desodorização. Componentes: Manteiga de karité. Sem alumínio e sem fragrância.",
+    "how_to_use": "Aplique nas axilas limpas e secas.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p254",
+    "name": "Creme para Pentear Hidratante",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "creme para pentear",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Creme para Pentear Hidratante: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem fragrância.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p255",
+    "name": "Creme para Pentear Antifrizz",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "creme para pentear",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Creme para Pentear Antifrizz: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Óleo de argan. Sem fragrância.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p256",
+    "name": "Leave-in Protetor Térmico",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "leave-in",
+    "form": "spray",
+    "size": {
+      "value": 150,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Leave-in Protetor Térmico: produto de higiene (leave-in) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina. Sem fragrância.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p257",
+    "name": "Creme para Pentear Cachos Definidos",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "creme para pentear",
+    "form": "jar",
+    "size": {
+      "value": 250,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "manteiga_karite"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Creme para Pentear Cachos Definidos: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Manteiga de karité. Vegano.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p258",
+    "name": "Creme para Pentear Sem Enxágue",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "creme para pentear",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "glicerina"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Creme para Pentear Sem Enxágue: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Glicerina. Sem fragrância.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p259",
+    "name": "Creme para Pentear Reparador",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "creme para pentear",
+    "form": "bottle",
+    "size": {
+      "value": 200,
+      "unit": "ml"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "queratina",
+      "oleo_argan"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Creme para Pentear Reparador: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem fragrância.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p260",
+    "name": "Escova de Dente Macia",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente Macia: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p261",
+    "name": "Escova de Dente Média",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente Média: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p262",
+    "name": "Escova de Dente Extra Macia",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente Extra Macia: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p263",
+    "name": "Escova de Dente Compacta",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente Compacta: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p264",
+    "name": "Escova de Dente com Cerdas Macias (2 un)",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 2,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente com Cerdas Macias (2 un): produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p265",
+    "name": "Escova de Dente Elétrica",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "escova de dente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon",
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Dente Elétrica: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon e Plástico reciclado.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p266",
+    "name": "Escova de Cabelo Desembaraçadora",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "escova de cabelo",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "nylon",
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Cabelo Desembaraçadora: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p267",
+    "name": "Escova de Cabelo Ventilada",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "escova de cabelo",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "nylon",
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Cabelo Ventilada: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p268",
+    "name": "Escova de Cabelo Oval",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "escova de cabelo",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "nylon",
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Cabelo Oval: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p269",
+    "name": "Pente Garfo",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "pente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pente Garfo: produto de higiene (pente) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p270",
+    "name": "Pente Fino",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "pente",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Pente Fino: produto de higiene (pente) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p271",
+    "name": "Escova de Cabelo para Cachos",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_cabelo",
+    "covers_steps": [
+      "higiene_cabelo"
+    ],
+    "product_type": "escova de cabelo",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_cabelo"
+    ],
+    "ingredients": [
+      "nylon",
+      "plastico_reciclado"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Escova de Cabelo para Cachos: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+    "how_to_use": "Aplique nos cabelos molhados, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p272",
+    "name": "Fio Dental 50 m",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fio dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fio Dental 50 m: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p273",
+    "name": "Fita Dental 25 m",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fita dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fita Dental 25 m: produto de higiene (fita dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p274",
+    "name": "Fio Dental com Cera",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fio dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fio Dental com Cera: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p275",
+    "name": "Fio Dental Sabor Menta",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fio dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon",
+      "menta_extrato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fio Dental Sabor Menta: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon e Extrato de menta.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p276",
+    "name": "Fio Dental Expandível",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fio dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fio Dental Expandível: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p277",
+    "name": "Fio Dental Deslizante",
+    "brand": "Sorriso Pleno",
+    "line": "higiene",
+    "step": "higiene_oral",
+    "covers_steps": [
+      "higiene_oral"
+    ],
+    "product_type": "fio dental",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_oral"
+    ],
+    "ingredients": [
+      "nylon"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Fio Dental Deslizante: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+    "how_to_use": "Use na higiene bucal diária, conforme a embalagem.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p278",
+    "name": "Talco Corporal Clássico",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco corporal",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "talco_mineral"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco Corporal Clássico: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p279",
+    "name": "Talco para Pés Antiodor",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco para pés",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "talco_mineral",
+      "menta_extrato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco para Pés Antiodor: produto de higiene (talco para pés) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Extrato de menta. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p280",
+    "name": "Talco Corporal com Amido de Milho",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco corporal",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "amido_milho"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco Corporal com Amido de Milho: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Amido de milho. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p281",
+    "name": "Talco Refrescante Menta",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco corporal",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "talco_mineral",
+      "menta_extrato"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco Refrescante Menta: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Extrato de menta. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p282",
+    "name": "Talco para Pés com Aloe",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco para pés",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "talco_mineral",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco para Pés com Aloe: produto de higiene (talco para pés) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Aloe vera. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "premium"
+  },
+  {
+    "id": "p283",
+    "name": "Talco Corporal Suave",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "talco corporal",
+    "form": "bottle",
+    "size": {
+      "value": 100,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "amido_milho"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "sem fragrância"
+    ],
+    "warnings": [],
+    "description": "Talco Corporal Suave: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Amido de milho. Sem fragrância.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p284",
+    "name": "Bucha Vegetal",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "bucha",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "fibra_vegetal"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Bucha Vegetal: produto de higiene (bucha) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal. Vegano.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p285",
+    "name": "Esponja de Banho",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "esponja de banho",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "esponja_sintetica"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Esponja de Banho: produto de higiene (esponja de banho) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Esponja sintética.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p286",
+    "name": "Luva Esfoliante",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "luva esfoliante",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "fibra_vegetal"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Luva Esfoliante: produto de higiene (luva esfoliante) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p287",
+    "name": "Bucha Natural com Corda",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "bucha",
+    "form": "box",
+    "size": {
+      "value": 1,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "cuidado_corporal"
+    ],
+    "ingredients": [
+      "fibra_vegetal"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [
+      "vegano"
+    ],
+    "warnings": [],
+    "description": "Bucha Natural com Corda: produto de higiene (bucha) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal. Vegano.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p288",
+    "name": "Cotonetes 75 un",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "cotonete",
+    "form": "box",
+    "size": {
+      "value": 75,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria"
+    ],
+    "ingredients": [
+      "algodao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Cotonetes 75 un: produto de higiene (cotonete) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p289",
+    "name": "Lenços Umedecidos 50 un",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "lenço umedecido",
+    "form": "box",
+    "size": {
+      "value": 50,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria"
+    ],
+    "ingredients": [
+      "algodao",
+      "aloe_vera"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Lenços Umedecidos 50 un: produto de higiene (lenço umedecido) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão e Aloe vera.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "intermediario"
+  },
+  {
+    "id": "p290",
+    "name": "Algodão em Bolas 50 g",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "algodão em bolas",
+    "form": "box",
+    "size": {
+      "value": 50,
+      "unit": "g"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria"
+    ],
+    "ingredients": [
+      "algodao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Algodão em Bolas 50 g: produto de higiene (algodão em bolas) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
+  },
+  {
+    "id": "p291",
+    "name": "Lenços Faciais 100 un",
+    "brand": "Noble Banho",
+    "line": "higiene",
+    "step": "higiene_corpo",
+    "covers_steps": [
+      "higiene_corpo"
+    ],
+    "product_type": "lenço facial",
+    "form": "box",
+    "size": {
+      "value": 100,
+      "unit": "un"
+    },
+    "skin_types": [
+      "todas"
+    ],
+    "concerns": [
+      "higiene_diaria"
+    ],
+    "ingredients": [
+      "algodao"
+    ],
+    "fps": null,
+    "usage_period": "dia_noite",
+    "claims": [],
+    "warnings": [],
+    "description": "Lenços Faciais 100 un: produto de higiene (lenço facial) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+    "how_to_use": "Use no banho, massageie e enxágue.",
+    "image": null,
+    "domain": "higiene",
+    "rx": null,
+    "equivalence": null,
+    "price_tier": "economico"
   }
 ]

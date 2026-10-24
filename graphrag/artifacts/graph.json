@@ -256,6 +256,11 @@
    "label": "gripe e resfriado"
   },
   {
+   "id": "concern:herpes",
+   "kind": "concern",
+   "label": "herpes"
+  },
+  {
    "id": "concern:higiene_diaria",
    "kind": "concern",
    "label": "higiene diária"
@@ -271,6 +276,16 @@
    "label": "pressão alta"
   },
   {
+   "id": "concern:infeccao_bacteriana",
+   "kind": "concern",
+   "label": "infecção bacteriana"
+  },
+  {
+   "id": "concern:inflamacao_pele",
+   "kind": "concern",
+   "label": "inflamação da pele"
+  },
+  {
    "id": "concern:limpeza_diaria",
    "kind": "concern",
    "label": "limpeza diária"
@@ -279,6 +294,11 @@
    "id": "concern:manchas",
    "kind": "concern",
    "label": "manchas"
+  },
+  {
+   "id": "concern:micose",
+   "kind": "concern",
+   "label": "micose e fungos"
   },
   {
    "id": "concern:nariz_entupido",
@@ -601,6 +621,20 @@
    ]
   },
   {
+   "id": "goal:herpes",
+   "kind": "goal",
+   "label": "Herpes",
+   "synonyms": [
+    "herpes",
+    "herpes labial",
+    "herpes simples",
+    "herpes genital",
+    "aciclovir",
+    "virose",
+    "antiviral"
+   ]
+  },
+  {
    "id": "goal:higiene_premium",
    "kind": "goal",
    "label": "Higiene premium",
@@ -619,6 +653,42 @@
    ]
   },
   {
+   "id": "goal:infeccao_bacteriana",
+   "kind": "goal",
+   "label": "Infecção bacteriana",
+   "synonyms": [
+    "antibiótico",
+    "antibiotico",
+    "antibióticos",
+    "antibioticos",
+    "infecção",
+    "infeccao",
+    "bactéria",
+    "bacteria",
+    "amoxicilina",
+    "azitromicina",
+    "cefalexina",
+    "infecção de garganta",
+    "infeccao de garganta"
+   ]
+  },
+  {
+   "id": "goal:inflamacao_pele",
+   "kind": "goal",
+   "label": "Inflamação da pele",
+   "synonyms": [
+    "inflamação da pele",
+    "inflamacao da pele",
+    "dermatite",
+    "eczema",
+    "coceira na pele",
+    "pele inflamada",
+    "corticoide",
+    "prednisona",
+    "dexametasona"
+   ]
+  },
+  {
    "id": "goal:manchas",
    "kind": "goal",
    "label": "Uniformizar manchas",
@@ -629,6 +699,26 @@
     "clarear",
     "tom da pele",
     "pós-acne"
+   ]
+  },
+  {
+   "id": "goal:micose",
+   "kind": "goal",
+   "label": "Micose e fungos",
+   "synonyms": [
+    "micose",
+    "micoses",
+    "fungo",
+    "fungos",
+    "frieira",
+    "pé de atleta",
+    "pe de atleta",
+    "candidíase",
+    "candidiase",
+    "coceira na virilha",
+    "unha com fungo",
+    "antifúngico",
+    "antifungico"
    ]
   },
   {
@@ -746,6 +836,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:aciclovir",
+   "kind": "ingredient",
+   "label": "Aciclovir",
+   "family": "princípio ativo",
+   "function": "antiviral",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:acido_acetilsalicilico",
    "kind": "ingredient",
    "label": "Ácido acetilsalicílico",
@@ -834,6 +932,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:algodao",
+   "kind": "ingredient",
+   "label": "Algodão",
+   "family": "material",
+   "function": "higiene e limpeza",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:aloe_vera",
    "kind": "ingredient",
    "label": "Aloe vera",
@@ -850,6 +956,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:amido_milho",
+   "kind": "ingredient",
+   "label": "Amido de milho",
+   "family": "vegetal",
+   "function": "absorção de umidade",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:amilmetacresol",
    "kind": "ingredient",
    "label": "Amilmetacresol + álcool diclorobenzílico",
@@ -858,11 +972,27 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:amoxicilina",
+   "kind": "ingredient",
+   "label": "Amoxicilina",
+   "family": "princípio ativo",
+   "function": "antibiótico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:argila",
    "kind": "ingredient",
    "label": "Argila",
    "family": "mineral",
    "function": "absorção de oleosidade",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:azitromicina",
+   "kind": "ingredient",
+   "label": "Azitromicina",
+   "family": "princípio ativo",
+   "function": "antibiótico",
    "photosensitizing": false
   },
   {
@@ -890,6 +1020,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:betametasona",
+   "kind": "ingredient",
+   "label": "Valerato de betametasona",
+   "family": "princípio ativo",
+   "function": "corticoide de uso local",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:bicarbonato_sodio",
    "kind": "ingredient",
    "label": "Bicarbonato de sódio",
@@ -911,6 +1049,14 @@
    "label": "Cloridrato de bromexina",
    "family": "princípio ativo",
    "function": "expectorante",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:budesonida",
+   "kind": "ingredient",
+   "label": "Budesonida",
+   "family": "princípio ativo",
+   "function": "corticoide",
    "photosensitizing": false
   },
   {
@@ -962,6 +1108,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:cefalexina",
+   "kind": "ingredient",
+   "label": "Cefalexina",
+   "family": "princípio ativo",
+   "function": "antibiótico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:centella_asiatica",
    "kind": "ingredient",
    "label": "Centella asiática",
@@ -1002,6 +1156,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:ciprofloxacino",
+   "kind": "ingredient",
+   "label": "Cloridrato de ciprofloxacino",
+   "family": "princípio ativo",
+   "function": "antibiótico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:cloreto_sodio",
    "kind": "ingredient",
    "label": "Cloreto de sódio 0,9%",
@@ -1018,6 +1180,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:clotrimazol",
+   "kind": "ingredient",
+   "label": "Clotrimazol",
+   "family": "princípio ativo",
+   "function": "antifúngico de uso local",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:colageno_hidrolisado",
    "kind": "ingredient",
    "label": "Colágeno hidrolisado",
@@ -1031,6 +1201,14 @@
    "label": "Desloratadina",
    "family": "princípio ativo",
    "function": "antialérgico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:dexametasona",
+   "kind": "ingredient",
+   "label": "Dexametasona",
+   "family": "princípio ativo",
+   "function": "corticoide sistêmico",
    "photosensitizing": false
   },
   {
@@ -1098,6 +1276,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:doxiciclina",
+   "kind": "ingredient",
+   "label": "Cloridrato de doxiciclina",
+   "family": "princípio ativo",
+   "function": "antibiótico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:dropropizina",
    "kind": "ingredient",
    "label": "Dropropizina",
@@ -1130,6 +1316,22 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:esponja_sintetica",
+   "kind": "ingredient",
+   "label": "Esponja sintética",
+   "family": "material",
+   "function": "espuma e limpeza",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:famciclovir",
+   "kind": "ingredient",
+   "label": "Famciclovir",
+   "family": "princípio ativo",
+   "function": "antiviral",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:fenilefrina",
    "kind": "ingredient",
    "label": "Cloridrato de fenilefrina",
@@ -1146,11 +1348,27 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:fibra_vegetal",
+   "kind": "ingredient",
+   "label": "Fibra vegetal",
+   "family": "material",
+   "function": "esfoliação corporal",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:filtro_uv",
    "kind": "ingredient",
    "label": "Filtros UVA/UVB",
    "family": "filtro químico",
    "function": "proteção solar",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:fluconazol",
+   "kind": "ingredient",
+   "label": "Fluconazol",
+   "family": "princípio ativo",
+   "function": "antifúngico sistêmico",
    "photosensitizing": false
   },
   {
@@ -1194,6 +1412,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:hidrocortisona",
+   "kind": "ingredient",
+   "label": "Hidrocortisona",
+   "family": "princípio ativo",
+   "function": "corticoide de uso local",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:hidroxido_aluminio",
    "kind": "ingredient",
    "label": "Hidróxido de alumínio",
@@ -1223,6 +1449,14 @@
    "label": "Mucato de isometepteno",
    "family": "princípio ativo",
    "function": "vasoconstritor para enxaqueca",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:ketoconazol",
+   "kind": "ingredient",
+   "label": "Cetoconazol",
+   "family": "princípio ativo",
+   "function": "antifúngico",
    "photosensitizing": false
   },
   {
@@ -1306,6 +1540,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:menta_extrato",
+   "kind": "ingredient",
+   "label": "Extrato de menta",
+   "family": "extrato vegetal",
+   "function": "frescor",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:mentol",
    "kind": "ingredient",
    "label": "Mentol",
@@ -1319,6 +1561,30 @@
    "label": "Cloridrato de metoclopramida",
    "family": "princípio ativo",
    "function": "contra enjoo",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:metronidazol",
+   "kind": "ingredient",
+   "label": "Metronidazol",
+   "family": "princípio ativo",
+   "function": "antibiótico e antiprotozoário",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:miconazol",
+   "kind": "ingredient",
+   "label": "Nitrato de miconazol",
+   "family": "princípio ativo",
+   "function": "antifúngico de uso local",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:mometasona",
+   "kind": "ingredient",
+   "label": "Furoato de mometasona",
+   "family": "princípio ativo",
+   "function": "corticoide de uso local",
    "photosensitizing": false
   },
   {
@@ -1362,11 +1628,27 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:nistatina",
+   "kind": "ingredient",
+   "label": "Nistatina",
+   "family": "princípio ativo",
+   "function": "antifúngico",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:nitazoxanida",
    "kind": "ingredient",
    "label": "Nitazoxanida",
    "family": "princípio ativo",
    "function": "antiparasitário",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:nylon",
+   "kind": "ingredient",
+   "label": "Nylon",
+   "family": "material",
+   "function": "cerdas e fio dental",
    "photosensitizing": false
   },
   {
@@ -1418,6 +1700,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:oseltamivir",
+   "kind": "ingredient",
+   "label": "Fosfato de oseltamivir",
+   "family": "princípio ativo",
+   "function": "antiviral",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:oxido_de_zinco",
    "kind": "ingredient",
    "label": "Óxido de zinco",
@@ -1458,6 +1748,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:penciclovir",
+   "kind": "ingredient",
+   "label": "Penciclovir",
+   "family": "princípio ativo",
+   "function": "antiviral de uso local",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:peptideos",
    "kind": "ingredient",
    "label": "Peptídeos",
@@ -1479,6 +1777,22 @@
    "label": "Piridoxina (vitamina B6)",
    "family": "princípio ativo",
    "function": "vitamina B6",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:plastico_reciclado",
+   "kind": "ingredient",
+   "label": "Plástico reciclado",
+   "family": "material",
+   "function": "corpo de escovas e pentes",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:prednisona",
+   "kind": "ingredient",
+   "label": "Prednisona",
+   "family": "princípio ativo",
+   "function": "corticoide sistêmico",
    "photosensitizing": false
   },
   {
@@ -1546,6 +1860,14 @@
    "photosensitizing": false
   },
   {
+   "id": "ingredient:talco_mineral",
+   "kind": "ingredient",
+   "label": "Talco mineral",
+   "family": "mineral",
+   "function": "absorção de umidade",
+   "photosensitizing": false
+  },
+  {
    "id": "ingredient:tensivalol_potassico",
    "kind": "ingredient",
    "label": "Tensivalol potássico (fictício)",
@@ -1559,6 +1881,22 @@
    "label": "Tensoativo suave",
    "family": "limpeza",
    "function": "limpeza suave",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:terbinafina",
+   "kind": "ingredient",
+   "label": "Cloridrato de terbinafina",
+   "family": "princípio ativo",
+   "function": "antifúngico",
+   "photosensitizing": false
+  },
+  {
+   "id": "ingredient:valaciclovir",
+   "kind": "ingredient",
+   "label": "Cloridrato de valaciclovir",
+   "family": "princípio ativo",
+   "function": "antiviral",
    "photosensitizing": false
   },
   {
@@ -3338,14 +3676,626 @@
    "domain": "medicamento"
   },
   {
+   "id": "product:p218",
+   "kind": "product",
+   "label": "Clotrimazol Creme 1% — 20 g",
+   "brand": "Vitalis Farma",
+   "step": "antifungico_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p219",
+   "kind": "product",
+   "label": "Miconazol Creme 2% — 30 g",
+   "brand": "Farmanorte",
+   "step": "antifungico_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p220",
+   "kind": "product",
+   "label": "Cetoconazol Shampoo 2% — 100 mL",
+   "brand": "Lab Aurora",
+   "step": "antifungico_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p221",
+   "kind": "product",
+   "label": "Terbinafina Creme 1% — 15 g",
+   "brand": "Lab Genérico Sul",
+   "step": "antifungico_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p222",
+   "kind": "product",
+   "label": "Fluconazol 150 mg — 1 cápsula",
+   "brand": "Lab Nova Via",
+   "step": "antifungico_oral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p223",
+   "kind": "product",
+   "label": "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL",
+   "brand": "Vitalis Farma",
+   "step": "antifungico_oral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p224",
+   "kind": "product",
+   "label": "Amoxicilina 500 mg — 21 cápsulas",
+   "brand": "Lab Genérico Sul",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p225",
+   "kind": "product",
+   "label": "Azitromicina 500 mg — 5 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p226",
+   "kind": "product",
+   "label": "Cefalexina 500 mg — 20 cápsulas",
+   "brand": "Farmanorte",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p227",
+   "kind": "product",
+   "label": "Ciprofloxacino 500 mg — 14 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p228",
+   "kind": "product",
+   "label": "Doxiciclina 100 mg — 10 comprimidos",
+   "brand": "Lab Aurora",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p229",
+   "kind": "product",
+   "label": "Metronidazol 400 mg — 14 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antibiotico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p230",
+   "kind": "product",
+   "label": "Aciclovir Creme 5% — 10 g",
+   "brand": "Vitalis Farma",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p231",
+   "kind": "product",
+   "label": "Penciclovir Creme 1% — 10 g",
+   "brand": "Farmanorte",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p232",
+   "kind": "product",
+   "label": "Aciclovir 400 mg — 30 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p233",
+   "kind": "product",
+   "label": "Valaciclovir 500 mg — 10 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p234",
+   "kind": "product",
+   "label": "Oseltamivir 75 mg — 10 cápsulas",
+   "brand": "Lab Aurora",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p235",
+   "kind": "product",
+   "label": "Famciclovir 500 mg — 10 comprimidos",
+   "brand": "Vitalis Farma",
+   "step": "antiviral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p236",
+   "kind": "product",
+   "label": "Hidrocortisona Creme 1% — 20 g",
+   "brand": "Vitalis Farma",
+   "step": "corticoide_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p237",
+   "kind": "product",
+   "label": "Betametasona Creme 0,1% — 20 g",
+   "brand": "Farmanorte",
+   "step": "corticoide_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p238",
+   "kind": "product",
+   "label": "Mometasona Creme 0,1% — 20 g",
+   "brand": "Lab Aurora",
+   "step": "corticoide_topico",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p239",
+   "kind": "product",
+   "label": "Prednisona 20 mg — 10 comprimidos",
+   "brand": "Lab Genérico Sul",
+   "step": "corticoide_oral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p240",
+   "kind": "product",
+   "label": "Dexametasona 4 mg — 10 comprimidos",
+   "brand": "Lab Nova Via",
+   "step": "corticoide_oral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p241",
+   "kind": "product",
+   "label": "Budesonida 3 mg — 30 cápsulas",
+   "brand": "Vitalis Farma",
+   "step": "corticoide_oral",
+   "domain": "medicamento"
+  },
+  {
+   "id": "product:p242",
+   "kind": "product",
+   "label": "Sabonete em Barra Hidratante",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p243",
+   "kind": "product",
+   "label": "Gel de Banho Relaxante Lavanda",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p244",
+   "kind": "product",
+   "label": "Óleo de Banho Nutritivo",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p245",
+   "kind": "product",
+   "label": "Shampoo Anticaspa Equilíbrio",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p246",
+   "kind": "product",
+   "label": "Shampoo Hidratante Óleo de Argan",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p247",
+   "kind": "product",
+   "label": "Máscara Capilar Reconstrução",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p248",
+   "kind": "product",
+   "label": "Creme Dental Branqueador Carvão",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p249",
+   "kind": "product",
+   "label": "Creme Dental Dentes Sensíveis",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p250",
+   "kind": "product",
+   "label": "Enxaguante Bucal Menta Sem Álcool",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p251",
+   "kind": "product",
+   "label": "Desodorante Stick Sem Alumínio",
+   "brand": "Noble Banho",
+   "step": "desodorante",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p252",
+   "kind": "product",
+   "label": "Desodorante Spray 48h",
+   "brand": "Noble Banho",
+   "step": "desodorante",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p253",
+   "kind": "product",
+   "label": "Desodorante Creme Pele Sensível",
+   "brand": "Noble Banho",
+   "step": "desodorante",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p254",
+   "kind": "product",
+   "label": "Creme para Pentear Hidratante",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p255",
+   "kind": "product",
+   "label": "Creme para Pentear Antifrizz",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p256",
+   "kind": "product",
+   "label": "Leave-in Protetor Térmico",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p257",
+   "kind": "product",
+   "label": "Creme para Pentear Cachos Definidos",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p258",
+   "kind": "product",
+   "label": "Creme para Pentear Sem Enxágue",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p259",
+   "kind": "product",
+   "label": "Creme para Pentear Reparador",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p260",
+   "kind": "product",
+   "label": "Escova de Dente Macia",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p261",
+   "kind": "product",
+   "label": "Escova de Dente Média",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p262",
+   "kind": "product",
+   "label": "Escova de Dente Extra Macia",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p263",
+   "kind": "product",
+   "label": "Escova de Dente Compacta",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p264",
+   "kind": "product",
+   "label": "Escova de Dente com Cerdas Macias (2 un)",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p265",
+   "kind": "product",
+   "label": "Escova de Dente Elétrica",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p266",
+   "kind": "product",
+   "label": "Escova de Cabelo Desembaraçadora",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p267",
+   "kind": "product",
+   "label": "Escova de Cabelo Ventilada",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p268",
+   "kind": "product",
+   "label": "Escova de Cabelo Oval",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p269",
+   "kind": "product",
+   "label": "Pente Garfo",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p270",
+   "kind": "product",
+   "label": "Pente Fino",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p271",
+   "kind": "product",
+   "label": "Escova de Cabelo para Cachos",
+   "brand": "Noble Banho",
+   "step": "higiene_cabelo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p272",
+   "kind": "product",
+   "label": "Fio Dental 50 m",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p273",
+   "kind": "product",
+   "label": "Fita Dental 25 m",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p274",
+   "kind": "product",
+   "label": "Fio Dental com Cera",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p275",
+   "kind": "product",
+   "label": "Fio Dental Sabor Menta",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p276",
+   "kind": "product",
+   "label": "Fio Dental Expandível",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p277",
+   "kind": "product",
+   "label": "Fio Dental Deslizante",
+   "brand": "Sorriso Pleno",
+   "step": "higiene_oral",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p278",
+   "kind": "product",
+   "label": "Talco Corporal Clássico",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p279",
+   "kind": "product",
+   "label": "Talco para Pés Antiodor",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p280",
+   "kind": "product",
+   "label": "Talco Corporal com Amido de Milho",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p281",
+   "kind": "product",
+   "label": "Talco Refrescante Menta",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p282",
+   "kind": "product",
+   "label": "Talco para Pés com Aloe",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p283",
+   "kind": "product",
+   "label": "Talco Corporal Suave",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p284",
+   "kind": "product",
+   "label": "Bucha Vegetal",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p285",
+   "kind": "product",
+   "label": "Esponja de Banho",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p286",
+   "kind": "product",
+   "label": "Luva Esfoliante",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p287",
+   "kind": "product",
+   "label": "Bucha Natural com Corda",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p288",
+   "kind": "product",
+   "label": "Cotonetes 75 un",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p289",
+   "kind": "product",
+   "label": "Lenços Umedecidos 50 un",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p290",
+   "kind": "product",
+   "label": "Algodão em Bolas 50 g",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
+   "id": "product:p291",
+   "kind": "product",
+   "label": "Lenços Faciais 100 un",
+   "brand": "Noble Banho",
+   "step": "higiene_corpo",
+   "domain": "higiene"
+  },
+  {
    "id": "ptype:adesivo hidrocoloide",
    "kind": "ptype",
    "label": "adesivo hidrocoloide"
   },
   {
+   "id": "ptype:algodão em bolas",
+   "kind": "ptype",
+   "label": "algodão em bolas"
+  },
+  {
    "id": "ptype:analgésico para enxaqueca",
    "kind": "ptype",
    "label": "analgésico para enxaqueca"
+  },
+  {
+   "id": "ptype:antibiótico em comprimidos",
+   "kind": "ptype",
+   "label": "antibiótico em comprimidos"
+  },
+  {
+   "id": "ptype:antibiótico em cápsulas",
+   "kind": "ptype",
+   "label": "antibiótico em cápsulas"
+  },
+  {
+   "id": "ptype:antifúngico oral",
+   "kind": "ptype",
+   "label": "antifúngico oral"
   },
   {
    "id": "ptype:antigripal em comprimidos",
@@ -3356,6 +4306,16 @@
    "id": "ptype:antigripal em cápsulas",
    "kind": "ptype",
    "label": "antigripal em cápsulas"
+  },
+  {
+   "id": "ptype:antiviral em comprimidos",
+   "kind": "ptype",
+   "label": "antiviral em comprimidos"
+  },
+  {
+   "id": "ptype:antiviral em cápsulas",
+   "kind": "ptype",
+   "label": "antiviral em cápsulas"
   },
   {
    "id": "ptype:antiácido efervescente",
@@ -3371,6 +4331,11 @@
    "id": "ptype:antiácido para refluxo",
    "kind": "ptype",
    "label": "antiácido para refluxo"
+  },
+  {
+   "id": "ptype:bucha",
+   "kind": "ptype",
+   "label": "bucha"
   },
   {
    "id": "ptype:bálsamo labial",
@@ -3403,9 +4368,39 @@
    "label": "contorno dos olhos"
   },
   {
+   "id": "ptype:corticoide em comprimidos",
+   "kind": "ptype",
+   "label": "corticoide em comprimidos"
+  },
+  {
+   "id": "ptype:corticoide em cápsulas",
+   "kind": "ptype",
+   "label": "corticoide em cápsulas"
+  },
+  {
+   "id": "ptype:cotonete",
+   "kind": "ptype",
+   "label": "cotonete"
+  },
+  {
+   "id": "ptype:creme antifúngico",
+   "kind": "ptype",
+   "label": "creme antifúngico"
+  },
+  {
    "id": "ptype:creme antissinais",
    "kind": "ptype",
    "label": "creme antissinais"
+  },
+  {
+   "id": "ptype:creme antiviral",
+   "kind": "ptype",
+   "label": "creme antiviral"
+  },
+  {
+   "id": "ptype:creme corticoide",
+   "kind": "ptype",
+   "label": "creme corticoide"
   },
   {
    "id": "ptype:creme de retinol",
@@ -3431,6 +4426,11 @@
    "id": "ptype:creme noturno",
    "kind": "ptype",
    "label": "creme noturno"
+  },
+  {
+   "id": "ptype:creme para pentear",
+   "kind": "ptype",
+   "label": "creme para pentear"
   },
   {
    "id": "ptype:descongestionante nasal em gotas",
@@ -3461,6 +4461,11 @@
    "id": "ptype:desodorante roll-on",
    "kind": "ptype",
    "label": "desodorante roll-on"
+  },
+  {
+   "id": "ptype:desodorante stick",
+   "kind": "ptype",
+   "label": "desodorante stick"
   },
   {
    "id": "ptype:dexclorfeniramina em comprimidos",
@@ -3523,6 +4528,16 @@
    "label": "escopolamina em gotas"
   },
   {
+   "id": "ptype:escova de cabelo",
+   "kind": "ptype",
+   "label": "escova de cabelo"
+  },
+  {
+   "id": "ptype:escova de dente",
+   "kind": "ptype",
+   "label": "escova de dente"
+  },
+  {
    "id": "ptype:esfoliante corporal",
    "kind": "ptype",
    "label": "esfoliante corporal"
@@ -3543,6 +4558,11 @@
    "label": "esomeprazol em comprimidos"
   },
   {
+   "id": "ptype:esponja de banho",
+   "kind": "ptype",
+   "label": "esponja de banho"
+  },
+  {
    "id": "ptype:espuma de limpeza",
    "kind": "ptype",
    "label": "espuma de limpeza"
@@ -3561,6 +4581,16 @@
    "id": "ptype:fibra em pó",
    "kind": "ptype",
    "label": "fibra em pó"
+  },
+  {
+   "id": "ptype:fio dental",
+   "kind": "ptype",
+   "label": "fio dental"
+  },
+  {
+   "id": "ptype:fita dental",
+   "kind": "ptype",
+   "label": "fita dental"
   },
   {
    "id": "ptype:gargarejo para garganta",
@@ -3663,9 +4693,24 @@
    "label": "laxante em xarope"
   },
   {
+   "id": "ptype:leave-in",
+   "kind": "ptype",
+   "label": "leave-in"
+  },
+  {
    "id": "ptype:leite de limpeza",
    "kind": "ptype",
    "label": "leite de limpeza"
+  },
+  {
+   "id": "ptype:lenço facial",
+   "kind": "ptype",
+   "label": "lenço facial"
+  },
+  {
+   "id": "ptype:lenço umedecido",
+   "kind": "ptype",
+   "label": "lenço umedecido"
   },
   {
    "id": "ptype:loperamida em comprimidos",
@@ -3686,6 +4731,11 @@
    "id": "ptype:loção secativa",
    "kind": "ptype",
    "label": "loção secativa"
+  },
+  {
+   "id": "ptype:luva esfoliante",
+   "kind": "ptype",
+   "label": "luva esfoliante"
   },
   {
    "id": "ptype:metoclopramida em comprimidos",
@@ -3758,6 +4808,11 @@
    "label": "pastilha antisséptica"
   },
   {
+   "id": "ptype:pente",
+   "kind": "ptype",
+   "label": "pente"
+  },
+  {
    "id": "ptype:pomada para dor muscular",
    "kind": "ptype",
    "label": "pomada para dor muscular"
@@ -3803,6 +4858,11 @@
    "label": "relaxante muscular combinado"
   },
   {
+   "id": "ptype:sabonete em barra",
+   "kind": "ptype",
+   "label": "sabonete em barra"
+  },
+  {
    "id": "ptype:sabonete facial em barra",
    "kind": "ptype",
    "label": "sabonete facial em barra"
@@ -3821,6 +4881,16 @@
    "id": "ptype:shampoo",
    "kind": "ptype",
    "label": "shampoo"
+  },
+  {
+   "id": "ptype:shampoo anticaspa",
+   "kind": "ptype",
+   "label": "shampoo anticaspa"
+  },
+  {
+   "id": "ptype:shampoo antifúngico",
+   "kind": "ptype",
+   "label": "shampoo antifúngico"
   },
   {
    "id": "ptype:simeticona em comprimidos",
@@ -3898,6 +4968,11 @@
    "label": "suplemento multivitamínico em comprimidos"
   },
   {
+   "id": "ptype:suspensão antifúngica",
+   "kind": "ptype",
+   "label": "suspensão antifúngica"
+  },
+  {
    "id": "ptype:sérum",
    "kind": "ptype",
    "label": "sérum"
@@ -3906,6 +4981,16 @@
    "id": "ptype:sérum de retinol",
    "kind": "ptype",
    "label": "sérum de retinol"
+  },
+  {
+   "id": "ptype:talco corporal",
+   "kind": "ptype",
+   "label": "talco corporal"
+  },
+  {
+   "id": "ptype:talco para pés",
+   "kind": "ptype",
+   "label": "talco para pés"
   },
   {
    "id": "ptype:tônico esfoliante",
@@ -3946,6 +5031,11 @@
    "id": "ptype:água micelar",
    "kind": "ptype",
    "label": "água micelar"
+  },
+  {
+   "id": "ptype:óleo de banho",
+   "kind": "ptype",
+   "label": "óleo de banho"
   },
   {
    "id": "ptype:óleo de limpeza",
@@ -4008,6 +5098,11 @@
    "label": "Antialérgico"
   },
   {
+   "id": "step:antibiotico",
+   "kind": "step",
+   "label": "Antibiótico"
+  },
+  {
    "id": "step:antidiarreico",
    "kind": "step",
    "label": "Antidiarreico"
@@ -4021,6 +5116,16 @@
    "id": "step:antiespasmodico",
    "kind": "step",
    "label": "Para cólica"
+  },
+  {
+   "id": "step:antifungico_oral",
+   "kind": "step",
+   "label": "Antifúngico oral"
+  },
+  {
+   "id": "step:antifungico_topico",
+   "kind": "step",
+   "label": "Antifúngico tópico"
   },
   {
    "id": "step:antigases",
@@ -4043,6 +5148,11 @@
    "label": "Para tosse seca"
   },
   {
+   "id": "step:antiviral",
+   "kind": "step",
+   "label": "Antiviral"
+  },
+  {
    "id": "step:colageno",
    "kind": "step",
    "label": "Colágeno"
@@ -4051,6 +5161,16 @@
    "id": "step:complemento",
    "kind": "step",
    "label": "Complemento (olhos e lábios)"
+  },
+  {
+   "id": "step:corticoide_oral",
+   "kind": "step",
+   "label": "Corticoide oral"
+  },
+  {
+   "id": "step:corticoide_topico",
+   "kind": "step",
+   "label": "Corticoide tópico"
   },
   {
    "id": "step:descongestionante_nasal",
@@ -4528,6 +5648,17 @@
    "required": false
   },
   {
+   "from": "goal:herpes",
+   "to": "concern:herpes",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:herpes",
+   "to": "step:antiviral",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
    "from": "goal:higiene_premium",
    "to": "concern:cuidado_cabelo",
    "type": "TARGETS"
@@ -4577,6 +5708,34 @@
    "required": true
   },
   {
+   "from": "goal:infeccao_bacteriana",
+   "to": "concern:infeccao_bacteriana",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:infeccao_bacteriana",
+   "to": "step:antibiotico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:inflamacao_pele",
+   "to": "concern:inflamacao_pele",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:inflamacao_pele",
+   "to": "step:corticoide_oral",
+   "type": "REQUIRES",
+   "required": false
+  },
+  {
+   "from": "goal:inflamacao_pele",
+   "to": "step:corticoide_topico",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
    "from": "goal:manchas",
    "to": "concern:manchas",
    "type": "TARGETS"
@@ -4602,6 +5761,23 @@
   {
    "from": "goal:manchas",
    "to": "step:tratamento",
+   "type": "REQUIRES",
+   "required": true
+  },
+  {
+   "from": "goal:micose",
+   "to": "concern:micose",
+   "type": "TARGETS"
+  },
+  {
+   "from": "goal:micose",
+   "to": "step:antifungico_oral",
+   "type": "REQUIRES",
+   "required": false
+  },
+  {
+   "from": "goal:micose",
+   "to": "step:antifungico_topico",
    "type": "REQUIRES",
    "required": true
   },
@@ -15867,6 +17043,30 @@
   },
   {
    "from": "product:p119",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.737
+  },
+  {
+   "from": "product:p119",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.8443
+  },
+  {
+   "from": "product:p119",
+   "to": "product:p244",
+   "type": "SIMILAR_TO",
+   "weight": 0.5699
+  },
+  {
+   "from": "product:p119",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.4513
+  },
+  {
+   "from": "product:p119",
    "to": "ptype:sabonete líquido corporal",
    "type": "OF_TYPE"
   },
@@ -15930,6 +17130,30 @@
   },
   {
    "from": "product:p120",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.9323
+  },
+  {
+   "from": "product:p120",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.8325
+  },
+  {
+   "from": "product:p120",
+   "to": "product:p244",
+   "type": "SIMILAR_TO",
+   "weight": 0.58
+  },
+  {
+   "from": "product:p120",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.4449
+  },
+  {
+   "from": "product:p120",
    "to": "ptype:gel de banho",
    "type": "OF_TYPE"
   },
@@ -15971,15 +17195,39 @@
   },
   {
    "from": "product:p121",
-   "to": "product:p119",
-   "type": "SIMILAR_TO",
-   "weight": 0.4777
-  },
-  {
-   "from": "product:p121",
    "to": "product:p120",
    "type": "SIMILAR_TO",
    "weight": 0.6389
+  },
+  {
+   "from": "product:p121",
+   "to": "product:p244",
+   "type": "SIMILAR_TO",
+   "weight": 0.84
+  },
+  {
+   "from": "product:p121",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6354
+  },
+  {
+   "from": "product:p121",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6332
+  },
+  {
+   "from": "product:p121",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.6376
+  },
+  {
+   "from": "product:p121",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.6399
   },
   {
    "from": "product:p121",
@@ -16035,9 +17283,33 @@
   },
   {
    "from": "product:p122",
-   "to": "product:p124",
+   "to": "product:p246",
    "type": "SIMILAR_TO",
-   "weight": 0.7714
+   "weight": 0.986
+  },
+  {
+   "from": "product:p122",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8769
+  },
+  {
+   "from": "product:p122",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.9599
+  },
+  {
+   "from": "product:p122",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.83
+  },
+  {
+   "from": "product:p122",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
   },
   {
    "from": "product:p122",
@@ -16093,9 +17365,33 @@
   },
   {
    "from": "product:p123",
-   "to": "product:p124",
+   "to": "product:p246",
    "type": "SIMILAR_TO",
-   "weight": 0.7714
+   "weight": 0.986
+  },
+  {
+   "from": "product:p123",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8769
+  },
+  {
+   "from": "product:p123",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.9599
+  },
+  {
+   "from": "product:p123",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.83
+  },
+  {
+   "from": "product:p123",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
   },
   {
    "from": "product:p123",
@@ -16157,6 +17453,30 @@
   },
   {
    "from": "product:p124",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8928
+  },
+  {
+   "from": "product:p124",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.7999
+  },
+  {
+   "from": "product:p124",
+   "to": "product:p257",
+   "type": "SIMILAR_TO",
+   "weight": 0.8028
+  },
+  {
+   "from": "product:p124",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.7642
+  },
+  {
+   "from": "product:p124",
    "to": "ptype:máscara capilar",
    "type": "OF_TYPE"
   },
@@ -16210,6 +17530,30 @@
   },
   {
    "from": "product:p125",
+   "to": "product:p248",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p125",
+   "to": "product:p249",
+   "type": "SIMILAR_TO",
+   "weight": 0.996
+  },
+  {
+   "from": "product:p125",
+   "to": "product:p250",
+   "type": "SIMILAR_TO",
+   "weight": 0.9926
+  },
+  {
+   "from": "product:p125",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.6799
+  },
+  {
+   "from": "product:p125",
    "to": "ptype:creme dental",
    "type": "OF_TYPE"
   },
@@ -16260,6 +17604,30 @@
    "to": "product:p127",
    "type": "SIMILAR_TO",
    "weight": 0.9766
+  },
+  {
+   "from": "product:p126",
+   "to": "product:p248",
+   "type": "SIMILAR_TO",
+   "weight": 0.9869
+  },
+  {
+   "from": "product:p126",
+   "to": "product:p249",
+   "type": "SIMILAR_TO",
+   "weight": 0.9958
+  },
+  {
+   "from": "product:p126",
+   "to": "product:p250",
+   "type": "SIMILAR_TO",
+   "weight": 0.9851
+  },
+  {
+   "from": "product:p126",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.6869
   },
   {
    "from": "product:p126",
@@ -16316,6 +17684,30 @@
   },
   {
    "from": "product:p127",
+   "to": "product:p248",
+   "type": "SIMILAR_TO",
+   "weight": 0.9666
+  },
+  {
+   "from": "product:p127",
+   "to": "product:p249",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p127",
+   "to": "product:p250",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
+  },
+  {
+   "from": "product:p127",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.6666
+  },
+  {
+   "from": "product:p127",
    "to": "ptype:enxaguante bucal",
    "type": "OF_TYPE"
   },
@@ -16366,6 +17758,24 @@
    "to": "product:p130",
    "type": "SIMILAR_TO",
    "weight": 0.9666
+  },
+  {
+   "from": "product:p128",
+   "to": "product:p251",
+   "type": "SIMILAR_TO",
+   "weight": 0.9869
+  },
+  {
+   "from": "product:p128",
+   "to": "product:p252",
+   "type": "SIMILAR_TO",
+   "weight": 0.9713
+  },
+  {
+   "from": "product:p128",
+   "to": "product:p253",
+   "type": "SIMILAR_TO",
+   "weight": 0.6666
   },
   {
    "from": "product:p128",
@@ -16427,6 +17837,24 @@
   },
   {
    "from": "product:p129",
+   "to": "product:p251",
+   "type": "SIMILAR_TO",
+   "weight": 0.692
+  },
+  {
+   "from": "product:p129",
+   "to": "product:p252",
+   "type": "SIMILAR_TO",
+   "weight": 0.6892
+  },
+  {
+   "from": "product:p129",
+   "to": "product:p253",
+   "type": "SIMILAR_TO",
+   "weight": 0.9833
+  },
+  {
+   "from": "product:p129",
    "to": "ptype:desodorante em creme",
    "type": "OF_TYPE"
   },
@@ -16482,6 +17910,24 @@
    "to": "product:p129",
    "type": "SIMILAR_TO",
    "weight": 0.6833
+  },
+  {
+   "from": "product:p130",
+   "to": "product:p251",
+   "type": "SIMILAR_TO",
+   "weight": 0.9766
+  },
+  {
+   "from": "product:p130",
+   "to": "product:p252",
+   "type": "SIMILAR_TO",
+   "weight": 0.9933
+  },
+  {
+   "from": "product:p130",
+   "to": "product:p253",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
   },
   {
    "from": "product:p130",
@@ -22068,41 +23514,5243 @@
    "to": "step:antiemetico",
    "type": "COVERS",
    "primary": true
+  },
+  {
+   "from": "product:p218",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p218",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p218",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p218",
+   "to": "ingredient:clotrimazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p218",
+   "to": "product:p219",
+   "type": "SIMILAR_TO",
+   "weight": 0.5825
+  },
+  {
+   "from": "product:p218",
+   "to": "product:p220",
+   "type": "SIMILAR_TO",
+   "weight": 0.5542
+  },
+  {
+   "from": "product:p218",
+   "to": "product:p221",
+   "type": "SIMILAR_TO",
+   "weight": 0.5632
+  },
+  {
+   "from": "product:p218",
+   "to": "ptype:creme antifúngico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p218",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p218",
+   "to": "step:antifungico_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p219",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p219",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p219",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p219",
+   "to": "ingredient:miconazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p219",
+   "to": "product:p218",
+   "type": "SIMILAR_TO",
+   "weight": 0.5825
+  },
+  {
+   "from": "product:p219",
+   "to": "product:p220",
+   "type": "SIMILAR_TO",
+   "weight": 0.5656
+  },
+  {
+   "from": "product:p219",
+   "to": "product:p221",
+   "type": "SIMILAR_TO",
+   "weight": 0.5766
+  },
+  {
+   "from": "product:p219",
+   "to": "ptype:creme antifúngico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p219",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p219",
+   "to": "step:antifungico_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p220",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p220",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p220",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p220",
+   "to": "ingredient:ketoconazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p220",
+   "to": "product:p218",
+   "type": "SIMILAR_TO",
+   "weight": 0.5542
+  },
+  {
+   "from": "product:p220",
+   "to": "product:p219",
+   "type": "SIMILAR_TO",
+   "weight": 0.5656
+  },
+  {
+   "from": "product:p220",
+   "to": "product:p221",
+   "type": "SIMILAR_TO",
+   "weight": 0.5857
+  },
+  {
+   "from": "product:p220",
+   "to": "ptype:shampoo antifúngico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p220",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p220",
+   "to": "step:antifungico_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p221",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p221",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p221",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p221",
+   "to": "ingredient:terbinafina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p221",
+   "to": "product:p218",
+   "type": "SIMILAR_TO",
+   "weight": 0.5632
+  },
+  {
+   "from": "product:p221",
+   "to": "product:p219",
+   "type": "SIMILAR_TO",
+   "weight": 0.5766
+  },
+  {
+   "from": "product:p221",
+   "to": "product:p220",
+   "type": "SIMILAR_TO",
+   "weight": 0.5857
+  },
+  {
+   "from": "product:p221",
+   "to": "ptype:creme antifúngico",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p221",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p221",
+   "to": "step:antifungico_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p222",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p222",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p222",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p222",
+   "to": "ingredient:fluconazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p222",
+   "to": "product:p223",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p222",
+   "to": "ptype:antifúngico oral",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p222",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p222",
+   "to": "step:antifungico_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p223",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p223",
+   "to": "concern:micose",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p223",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p223",
+   "to": "ingredient:nistatina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p223",
+   "to": "product:p222",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p223",
+   "to": "ptype:suspensão antifúngica",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p223",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p223",
+   "to": "step:antifungico_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p224",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p224",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p224",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p224",
+   "to": "ingredient:amoxicilina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p224",
+   "to": "product:p225",
+   "type": "SIMILAR_TO",
+   "weight": 0.5833
+  },
+  {
+   "from": "product:p224",
+   "to": "product:p226",
+   "type": "SIMILAR_TO",
+   "weight": 0.5757
+  },
+  {
+   "from": "product:p224",
+   "to": "product:p227",
+   "type": "SIMILAR_TO",
+   "weight": 0.5892
+  },
+  {
+   "from": "product:p224",
+   "to": "product:p228",
+   "type": "SIMILAR_TO",
+   "weight": 0.588
+  },
+  {
+   "from": "product:p224",
+   "to": "product:p229",
+   "type": "SIMILAR_TO",
+   "weight": 0.6759
+  },
+  {
+   "from": "product:p224",
+   "to": "ptype:antibiótico em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p224",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p224",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p225",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p225",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p225",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p225",
+   "to": "ingredient:azitromicina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p225",
+   "to": "product:p224",
+   "type": "SIMILAR_TO",
+   "weight": 0.5833
+  },
+  {
+   "from": "product:p225",
+   "to": "product:p226",
+   "type": "SIMILAR_TO",
+   "weight": 0.5909
+  },
+  {
+   "from": "product:p225",
+   "to": "product:p227",
+   "type": "SIMILAR_TO",
+   "weight": 0.5933
+  },
+  {
+   "from": "product:p225",
+   "to": "product:p228",
+   "type": "SIMILAR_TO",
+   "weight": 0.5732
+  },
+  {
+   "from": "product:p225",
+   "to": "product:p229",
+   "type": "SIMILAR_TO",
+   "weight": 0.5632
+  },
+  {
+   "from": "product:p225",
+   "to": "ptype:antibiótico em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p225",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p225",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p226",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p226",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p226",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p226",
+   "to": "ingredient:cefalexina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p226",
+   "to": "product:p224",
+   "type": "SIMILAR_TO",
+   "weight": 0.5757
+  },
+  {
+   "from": "product:p226",
+   "to": "product:p225",
+   "type": "SIMILAR_TO",
+   "weight": 0.5909
+  },
+  {
+   "from": "product:p226",
+   "to": "product:p227",
+   "type": "SIMILAR_TO",
+   "weight": 0.5848
+  },
+  {
+   "from": "product:p226",
+   "to": "product:p228",
+   "type": "SIMILAR_TO",
+   "weight": 0.5666
+  },
+  {
+   "from": "product:p226",
+   "to": "product:p229",
+   "type": "SIMILAR_TO",
+   "weight": 0.5574
+  },
+  {
+   "from": "product:p226",
+   "to": "ptype:antibiótico em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p226",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p226",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p227",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p227",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p227",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p227",
+   "to": "ingredient:ciprofloxacino",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p227",
+   "to": "product:p224",
+   "type": "SIMILAR_TO",
+   "weight": 0.5892
+  },
+  {
+   "from": "product:p227",
+   "to": "product:p225",
+   "type": "SIMILAR_TO",
+   "weight": 0.5933
+  },
+  {
+   "from": "product:p227",
+   "to": "product:p226",
+   "type": "SIMILAR_TO",
+   "weight": 0.5848
+  },
+  {
+   "from": "product:p227",
+   "to": "product:p228",
+   "type": "SIMILAR_TO",
+   "weight": 0.5785
+  },
+  {
+   "from": "product:p227",
+   "to": "product:p229",
+   "type": "SIMILAR_TO",
+   "weight": 0.5677
+  },
+  {
+   "from": "product:p227",
+   "to": "ptype:antibiótico em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p227",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p227",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p228",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p228",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p228",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p228",
+   "to": "ingredient:doxiciclina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p228",
+   "to": "product:p224",
+   "type": "SIMILAR_TO",
+   "weight": 0.588
+  },
+  {
+   "from": "product:p228",
+   "to": "product:p225",
+   "type": "SIMILAR_TO",
+   "weight": 0.5732
+  },
+  {
+   "from": "product:p228",
+   "to": "product:p226",
+   "type": "SIMILAR_TO",
+   "weight": 0.5666
+  },
+  {
+   "from": "product:p228",
+   "to": "product:p227",
+   "type": "SIMILAR_TO",
+   "weight": 0.5785
+  },
+  {
+   "from": "product:p228",
+   "to": "product:p229",
+   "type": "SIMILAR_TO",
+   "weight": 0.5863
+  },
+  {
+   "from": "product:p228",
+   "to": "ptype:antibiótico em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p228",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p228",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p229",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p229",
+   "to": "concern:infeccao_bacteriana",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p229",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p229",
+   "to": "ingredient:metronidazol",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p229",
+   "to": "product:p224",
+   "type": "SIMILAR_TO",
+   "weight": 0.6759
+  },
+  {
+   "from": "product:p229",
+   "to": "product:p225",
+   "type": "SIMILAR_TO",
+   "weight": 0.5632
+  },
+  {
+   "from": "product:p229",
+   "to": "product:p226",
+   "type": "SIMILAR_TO",
+   "weight": 0.5574
+  },
+  {
+   "from": "product:p229",
+   "to": "product:p227",
+   "type": "SIMILAR_TO",
+   "weight": 0.5677
+  },
+  {
+   "from": "product:p229",
+   "to": "product:p228",
+   "type": "SIMILAR_TO",
+   "weight": 0.5863
+  },
+  {
+   "from": "product:p229",
+   "to": "ptype:antibiótico em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p229",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p229",
+   "to": "step:antibiotico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p230",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p230",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p230",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p230",
+   "to": "ingredient:aciclovir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p230",
+   "to": "product:p231",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p230",
+   "to": "product:p232",
+   "type": "SIMILAR_TO",
+   "weight": 0.8869
+  },
+  {
+   "from": "product:p230",
+   "to": "product:p233",
+   "type": "SIMILAR_TO",
+   "weight": 0.5499
+  },
+  {
+   "from": "product:p230",
+   "to": "product:p234",
+   "type": "SIMILAR_TO",
+   "weight": 0.5221
+  },
+  {
+   "from": "product:p230",
+   "to": "product:p235",
+   "type": "SIMILAR_TO",
+   "weight": 0.6362
+  },
+  {
+   "from": "product:p230",
+   "to": "ptype:creme antiviral",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p230",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p230",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p231",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p231",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p231",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p231",
+   "to": "ingredient:penciclovir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p231",
+   "to": "product:p230",
+   "type": "SIMILAR_TO",
+   "weight": 0.5799
+  },
+  {
+   "from": "product:p231",
+   "to": "product:p232",
+   "type": "SIMILAR_TO",
+   "weight": 0.592
+  },
+  {
+   "from": "product:p231",
+   "to": "product:p233",
+   "type": "SIMILAR_TO",
+   "weight": 0.5624
+  },
+  {
+   "from": "product:p231",
+   "to": "product:p234",
+   "type": "SIMILAR_TO",
+   "weight": 0.5277
+  },
+  {
+   "from": "product:p231",
+   "to": "product:p235",
+   "type": "SIMILAR_TO",
+   "weight": 0.5454
+  },
+  {
+   "from": "product:p231",
+   "to": "ptype:creme antiviral",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p231",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p231",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p232",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p232",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p232",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p232",
+   "to": "ingredient:aciclovir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p232",
+   "to": "product:p230",
+   "type": "SIMILAR_TO",
+   "weight": 0.8869
+  },
+  {
+   "from": "product:p232",
+   "to": "product:p231",
+   "type": "SIMILAR_TO",
+   "weight": 0.592
+  },
+  {
+   "from": "product:p232",
+   "to": "product:p233",
+   "type": "SIMILAR_TO",
+   "weight": 0.5574
+  },
+  {
+   "from": "product:p232",
+   "to": "product:p234",
+   "type": "SIMILAR_TO",
+   "weight": 0.5255
+  },
+  {
+   "from": "product:p232",
+   "to": "product:p235",
+   "type": "SIMILAR_TO",
+   "weight": 0.5417
+  },
+  {
+   "from": "product:p232",
+   "to": "ptype:antiviral em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p232",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p232",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p233",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p233",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p233",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p233",
+   "to": "ingredient:valaciclovir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p233",
+   "to": "product:p230",
+   "type": "SIMILAR_TO",
+   "weight": 0.5499
+  },
+  {
+   "from": "product:p233",
+   "to": "product:p231",
+   "type": "SIMILAR_TO",
+   "weight": 0.5624
+  },
+  {
+   "from": "product:p233",
+   "to": "product:p232",
+   "type": "SIMILAR_TO",
+   "weight": 0.5574
+  },
+  {
+   "from": "product:p233",
+   "to": "product:p234",
+   "type": "SIMILAR_TO",
+   "weight": 0.5444
+  },
+  {
+   "from": "product:p233",
+   "to": "product:p235",
+   "type": "SIMILAR_TO",
+   "weight": 0.5727
+  },
+  {
+   "from": "product:p233",
+   "to": "ptype:antiviral em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p233",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p233",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p234",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p234",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p234",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p234",
+   "to": "ingredient:oseltamivir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p234",
+   "to": "product:p230",
+   "type": "SIMILAR_TO",
+   "weight": 0.5221
+  },
+  {
+   "from": "product:p234",
+   "to": "product:p231",
+   "type": "SIMILAR_TO",
+   "weight": 0.5277
+  },
+  {
+   "from": "product:p234",
+   "to": "product:p232",
+   "type": "SIMILAR_TO",
+   "weight": 0.5255
+  },
+  {
+   "from": "product:p234",
+   "to": "product:p233",
+   "type": "SIMILAR_TO",
+   "weight": 0.5444
+  },
+  {
+   "from": "product:p234",
+   "to": "product:p235",
+   "type": "SIMILAR_TO",
+   "weight": 0.5611
+  },
+  {
+   "from": "product:p234",
+   "to": "ptype:antiviral em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p234",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p234",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p235",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p235",
+   "to": "concern:herpes",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p235",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p235",
+   "to": "ingredient:famciclovir",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p235",
+   "to": "product:p230",
+   "type": "SIMILAR_TO",
+   "weight": 0.6362
+  },
+  {
+   "from": "product:p235",
+   "to": "product:p231",
+   "type": "SIMILAR_TO",
+   "weight": 0.5454
+  },
+  {
+   "from": "product:p235",
+   "to": "product:p232",
+   "type": "SIMILAR_TO",
+   "weight": 0.5417
+  },
+  {
+   "from": "product:p235",
+   "to": "product:p233",
+   "type": "SIMILAR_TO",
+   "weight": 0.5727
+  },
+  {
+   "from": "product:p235",
+   "to": "product:p234",
+   "type": "SIMILAR_TO",
+   "weight": 0.5611
+  },
+  {
+   "from": "product:p235",
+   "to": "ptype:antiviral em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p235",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p235",
+   "to": "step:antiviral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p236",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p236",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p236",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p236",
+   "to": "ingredient:hidrocortisona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p236",
+   "to": "product:p237",
+   "type": "SIMILAR_TO",
+   "weight": 0.5849
+  },
+  {
+   "from": "product:p236",
+   "to": "product:p238",
+   "type": "SIMILAR_TO",
+   "weight": 0.5484
+  },
+  {
+   "from": "product:p236",
+   "to": "ptype:creme corticoide",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p236",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p236",
+   "to": "step:corticoide_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p237",
+   "to": "brand:Farmanorte",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p237",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p237",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p237",
+   "to": "ingredient:betametasona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p237",
+   "to": "product:p236",
+   "type": "SIMILAR_TO",
+   "weight": 0.5849
+  },
+  {
+   "from": "product:p237",
+   "to": "product:p238",
+   "type": "SIMILAR_TO",
+   "weight": 0.557
+  },
+  {
+   "from": "product:p237",
+   "to": "ptype:creme corticoide",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p237",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p237",
+   "to": "step:corticoide_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p238",
+   "to": "brand:Lab Aurora",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p238",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p238",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p238",
+   "to": "ingredient:mometasona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p238",
+   "to": "product:p236",
+   "type": "SIMILAR_TO",
+   "weight": 0.5484
+  },
+  {
+   "from": "product:p238",
+   "to": "product:p237",
+   "type": "SIMILAR_TO",
+   "weight": 0.557
+  },
+  {
+   "from": "product:p238",
+   "to": "ptype:creme corticoide",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p238",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p238",
+   "to": "step:corticoide_topico",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p239",
+   "to": "brand:Lab Genérico Sul",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p239",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p239",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p239",
+   "to": "ingredient:prednisona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p239",
+   "to": "product:p240",
+   "type": "SIMILAR_TO",
+   "weight": 0.5767
+  },
+  {
+   "from": "product:p239",
+   "to": "product:p241",
+   "type": "SIMILAR_TO",
+   "weight": 0.5198
+  },
+  {
+   "from": "product:p239",
+   "to": "ptype:corticoide em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p239",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p239",
+   "to": "step:corticoide_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p240",
+   "to": "brand:Lab Nova Via",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p240",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p240",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p240",
+   "to": "ingredient:dexametasona",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p240",
+   "to": "product:p239",
+   "type": "SIMILAR_TO",
+   "weight": 0.5767
+  },
+  {
+   "from": "product:p240",
+   "to": "product:p241",
+   "type": "SIMILAR_TO",
+   "weight": 0.5259
+  },
+  {
+   "from": "product:p240",
+   "to": "ptype:corticoide em comprimidos",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p240",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p240",
+   "to": "step:corticoide_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p241",
+   "to": "brand:Vitalis Farma",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p241",
+   "to": "concern:inflamacao_pele",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p241",
+   "to": "domain:medicamento",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p241",
+   "to": "ingredient:budesonida",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p241",
+   "to": "product:p239",
+   "type": "SIMILAR_TO",
+   "weight": 0.5198
+  },
+  {
+   "from": "product:p241",
+   "to": "product:p240",
+   "type": "SIMILAR_TO",
+   "weight": 0.5259
+  },
+  {
+   "from": "product:p241",
+   "to": "ptype:corticoide em cápsulas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p241",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p241",
+   "to": "step:corticoide_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p242",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p242",
+   "to": "claim:sem parabenos",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p242",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p242",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p242",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p242",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p242",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p242",
+   "to": "ingredient:manteiga_karite",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.737
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p120",
+   "type": "SIMILAR_TO",
+   "weight": 0.9323
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p121",
+   "type": "SIMILAR_TO",
+   "weight": 0.5787
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.7892
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p244",
+   "type": "SIMILAR_TO",
+   "weight": 0.5259
+  },
+  {
+   "from": "product:p242",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.5
+  },
+  {
+   "from": "product:p242",
+   "to": "ptype:sabonete em barra",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p242",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p242",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p243",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p243",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p243",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p243",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p243",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p243",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.8443
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p120",
+   "type": "SIMILAR_TO",
+   "weight": 0.8325
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p121",
+   "type": "SIMILAR_TO",
+   "weight": 0.4733
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.7892
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p244",
+   "type": "SIMILAR_TO",
+   "weight": 0.4659
+  },
+  {
+   "from": "product:p243",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.4544
+  },
+  {
+   "from": "product:p243",
+   "to": "ptype:gel de banho",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p243",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p243",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p244",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p244",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p244",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p244",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p244",
+   "to": "ingredient:manteiga_karite",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p244",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p121",
+   "type": "SIMILAR_TO",
+   "weight": 0.84
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6319
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6299
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.6339
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.6359
+  },
+  {
+   "from": "product:p244",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.6299
+  },
+  {
+   "from": "product:p244",
+   "to": "ptype:óleo de banho",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p244",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p244",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p245",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p245",
+   "to": "claim:sem sulfato",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p245",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p245",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p245",
+   "to": "ingredient:enxofre",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p245",
+   "to": "ingredient:zinco_pca",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.693
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.6875
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p257",
+   "type": "SIMILAR_TO",
+   "weight": 0.6925
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.6889
+  },
+  {
+   "from": "product:p245",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p245",
+   "to": "ptype:shampoo anticaspa",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p245",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p245",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p246",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p246",
+   "to": "claim:sem sulfato",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p246",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p246",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p246",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p246",
+   "to": "ingredient:queratina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.986
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.986
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8661
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.9697
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.843
+  },
+  {
+   "from": "product:p246",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.9955
+  },
+  {
+   "from": "product:p246",
+   "to": "ptype:shampoo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p246",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p246",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p247",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p247",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p247",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p247",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p247",
+   "to": "ingredient:manteiga_karite",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p247",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p247",
+   "to": "ingredient:queratina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.8769
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.8769
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p124",
+   "type": "SIMILAR_TO",
+   "weight": 0.8928
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.8661
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.8461
+  },
+  {
+   "from": "product:p247",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.8692
+  },
+  {
+   "from": "product:p247",
+   "to": "ptype:máscara capilar",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p247",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p247",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p248",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p248",
+   "to": "claim:com flúor",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p248",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p248",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p248",
+   "to": "ingredient:fluoreto",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p125",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p126",
+   "type": "SIMILAR_TO",
+   "weight": 0.9869
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p127",
+   "type": "SIMILAR_TO",
+   "weight": 0.9666
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p249",
+   "type": "SIMILAR_TO",
+   "weight": 0.9833
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p250",
+   "type": "SIMILAR_TO",
+   "weight": 0.974
+  },
+  {
+   "from": "product:p248",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p248",
+   "to": "ptype:creme dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p248",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p248",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p249",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p249",
+   "to": "claim:com flúor",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p249",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p249",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p249",
+   "to": "ingredient:fluoreto",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p125",
+   "type": "SIMILAR_TO",
+   "weight": 0.996
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p126",
+   "type": "SIMILAR_TO",
+   "weight": 0.9958
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p127",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p248",
+   "type": "SIMILAR_TO",
+   "weight": 0.9833
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p250",
+   "type": "SIMILAR_TO",
+   "weight": 0.9888
+  },
+  {
+   "from": "product:p249",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.6833
+  },
+  {
+   "from": "product:p249",
+   "to": "ptype:creme dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p249",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p249",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p250",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p250",
+   "to": "claim:sem álcool",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p250",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p250",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p250",
+   "to": "ingredient:fluoreto",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p125",
+   "type": "SIMILAR_TO",
+   "weight": 0.9926
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p126",
+   "type": "SIMILAR_TO",
+   "weight": 0.9851
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p127",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p248",
+   "type": "SIMILAR_TO",
+   "weight": 0.974
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p249",
+   "type": "SIMILAR_TO",
+   "weight": 0.9888
+  },
+  {
+   "from": "product:p250",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.674
+  },
+  {
+   "from": "product:p250",
+   "to": "ptype:enxaguante bucal",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p250",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p250",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p251",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p251",
+   "to": "claim:sem alumínio",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p251",
+   "to": "concern:desodorizacao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p251",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p251",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p251",
+   "to": "product:p128",
+   "type": "SIMILAR_TO",
+   "weight": 0.9869
+  },
+  {
+   "from": "product:p251",
+   "to": "product:p129",
+   "type": "SIMILAR_TO",
+   "weight": 0.692
+  },
+  {
+   "from": "product:p251",
+   "to": "product:p130",
+   "type": "SIMILAR_TO",
+   "weight": 0.9766
+  },
+  {
+   "from": "product:p251",
+   "to": "product:p252",
+   "type": "SIMILAR_TO",
+   "weight": 0.9821
+  },
+  {
+   "from": "product:p251",
+   "to": "product:p253",
+   "type": "SIMILAR_TO",
+   "weight": 0.6766
+  },
+  {
+   "from": "product:p251",
+   "to": "ptype:desodorante stick",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p251",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p251",
+   "to": "step:desodorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p252",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p252",
+   "to": "claim:sem alumínio",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p252",
+   "to": "concern:desodorizacao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p252",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p252",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p252",
+   "to": "product:p128",
+   "type": "SIMILAR_TO",
+   "weight": 0.9713
+  },
+  {
+   "from": "product:p252",
+   "to": "product:p129",
+   "type": "SIMILAR_TO",
+   "weight": 0.6892
+  },
+  {
+   "from": "product:p252",
+   "to": "product:p130",
+   "type": "SIMILAR_TO",
+   "weight": 0.9933
+  },
+  {
+   "from": "product:p252",
+   "to": "product:p251",
+   "type": "SIMILAR_TO",
+   "weight": 0.9821
+  },
+  {
+   "from": "product:p252",
+   "to": "product:p253",
+   "type": "SIMILAR_TO",
+   "weight": 0.6933
+  },
+  {
+   "from": "product:p252",
+   "to": "ptype:desodorante aerossol",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p252",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p252",
+   "to": "step:desodorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p253",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p253",
+   "to": "claim:sem alumínio",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p253",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p253",
+   "to": "concern:desodorizacao",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p253",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p253",
+   "to": "ingredient:manteiga_karite",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p253",
+   "to": "product:p128",
+   "type": "SIMILAR_TO",
+   "weight": 0.6666
+  },
+  {
+   "from": "product:p253",
+   "to": "product:p129",
+   "type": "SIMILAR_TO",
+   "weight": 0.9833
+  },
+  {
+   "from": "product:p253",
+   "to": "product:p130",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p253",
+   "to": "product:p251",
+   "type": "SIMILAR_TO",
+   "weight": 0.6766
+  },
+  {
+   "from": "product:p253",
+   "to": "product:p252",
+   "type": "SIMILAR_TO",
+   "weight": 0.6933
+  },
+  {
+   "from": "product:p253",
+   "to": "ptype:desodorante em creme",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p253",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p253",
+   "to": "step:desodorante",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p254",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p254",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p254",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p254",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p254",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p254",
+   "to": "ingredient:queratina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.9599
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.9599
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.9697
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8461
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.8357
+  },
+  {
+   "from": "product:p254",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.9666
+  },
+  {
+   "from": "product:p254",
+   "to": "ptype:creme para pentear",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p254",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p254",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p255",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p255",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p255",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p255",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p255",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.8199
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.8199
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p124",
+   "type": "SIMILAR_TO",
+   "weight": 0.7999
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.8314
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.8357
+  },
+  {
+   "from": "product:p255",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.8277
+  },
+  {
+   "from": "product:p255",
+   "to": "ptype:creme para pentear",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p255",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p255",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p256",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p256",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p256",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p256",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p256",
+   "to": "ingredient:queratina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.83
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.83
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.843
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.7615
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.8249
+  },
+  {
+   "from": "product:p256",
+   "to": "product:p259",
+   "type": "SIMILAR_TO",
+   "weight": 0.8389
+  },
+  {
+   "from": "product:p256",
+   "to": "ptype:leave-in",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p256",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p256",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p257",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p257",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p257",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p257",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p257",
+   "to": "ingredient:manteiga_karite",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p124",
+   "type": "SIMILAR_TO",
+   "weight": 0.8028
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p245",
+   "type": "SIMILAR_TO",
+   "weight": 0.6925
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.7569
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.6946
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.6925
+  },
+  {
+   "from": "product:p257",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.6946
+  },
+  {
+   "from": "product:p257",
+   "to": "ptype:creme para pentear",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p257",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p257",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p258",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p258",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p258",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p258",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p258",
+   "to": "ingredient:glicerina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.6833
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.6713
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p257",
+   "type": "SIMILAR_TO",
+   "weight": 0.6675
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.6833
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.6713
+  },
+  {
+   "from": "product:p258",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.6757
+  },
+  {
+   "from": "product:p258",
+   "to": "ptype:creme para pentear",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p258",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p258",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p259",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p259",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p259",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p259",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p259",
+   "to": "ingredient:oleo_argan",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p259",
+   "to": "ingredient:queratina",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p122",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p123",
+   "type": "SIMILAR_TO",
+   "weight": 0.99
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p246",
+   "type": "SIMILAR_TO",
+   "weight": 0.9955
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p247",
+   "type": "SIMILAR_TO",
+   "weight": 0.8692
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.9666
+  },
+  {
+   "from": "product:p259",
+   "to": "product:p256",
+   "type": "SIMILAR_TO",
+   "weight": 0.8389
+  },
+  {
+   "from": "product:p259",
+   "to": "ptype:creme para pentear",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p259",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p259",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p260",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p260",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p260",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p260",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p261",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p263",
+   "type": "SIMILAR_TO",
+   "weight": 0.9922
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9763
+  },
+  {
+   "from": "product:p260",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9721
+  },
+  {
+   "from": "product:p260",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p260",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p260",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p261",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p261",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p261",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p261",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p260",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9664
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p263",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9664
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9586
+  },
+  {
+   "from": "product:p261",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9553
+  },
+  {
+   "from": "product:p261",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p261",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p261",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p262",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p262",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p262",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p262",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p260",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p263",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 1.0
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9882
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p262",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.9788
+  },
+  {
+   "from": "product:p262",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p262",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p262",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p263",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p263",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p263",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p263",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p260",
+   "type": "SIMILAR_TO",
+   "weight": 0.9922
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p261",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9704
+  },
+  {
+   "from": "product:p263",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9665
+  },
+  {
+   "from": "product:p263",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p263",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p263",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p264",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p264",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p264",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p264",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9849
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p276",
+   "type": "SIMILAR_TO",
+   "weight": 1.0
+  },
+  {
+   "from": "product:p264",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.995
+  },
+  {
+   "from": "product:p264",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p264",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p264",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p265",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p265",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p265",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p265",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p265",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.7666
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.7721
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.7688
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.7699
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p276",
+   "type": "SIMILAR_TO",
+   "weight": 0.7721
+  },
+  {
+   "from": "product:p265",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.771
+  },
+  {
+   "from": "product:p265",
+   "to": "ptype:escova de dente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p265",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p265",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p266",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p266",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p266",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p266",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p266",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p254",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.9857
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p269",
+   "type": "SIMILAR_TO",
+   "weight": 0.7931
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p270",
+   "type": "SIMILAR_TO",
+   "weight": 0.7831
+  },
+  {
+   "from": "product:p266",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.9909
+  },
+  {
+   "from": "product:p266",
+   "to": "ptype:escova de cabelo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p266",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p266",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p267",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p267",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p267",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p267",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p267",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.9857
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.9875
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p269",
+   "type": "SIMILAR_TO",
+   "weight": 0.787
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p270",
+   "type": "SIMILAR_TO",
+   "weight": 0.7784
+  },
+  {
+   "from": "product:p267",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.9943
+  },
+  {
+   "from": "product:p267",
+   "to": "ptype:escova de cabelo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p267",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p267",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p268",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p268",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p268",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p268",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p268",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p245",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.9875
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p269",
+   "type": "SIMILAR_TO",
+   "weight": 0.7823
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p270",
+   "type": "SIMILAR_TO",
+   "weight": 0.7748
+  },
+  {
+   "from": "product:p268",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.9825
+  },
+  {
+   "from": "product:p268",
+   "to": "ptype:escova de cabelo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p268",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p268",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p269",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p269",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p269",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p269",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p258",
+   "type": "SIMILAR_TO",
+   "weight": 0.6518
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.7931
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.787
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.7823
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p270",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p269",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.7892
+  },
+  {
+   "from": "product:p269",
+   "to": "ptype:pente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p269",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p269",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p270",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p270",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p270",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p270",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p258",
+   "type": "SIMILAR_TO",
+   "weight": 0.6398
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.7831
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.7784
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.7748
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p269",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p270",
+   "to": "product:p271",
+   "type": "SIMILAR_TO",
+   "weight": 0.7801
+  },
+  {
+   "from": "product:p270",
+   "to": "ptype:pente",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p270",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p270",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p271",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p271",
+   "to": "concern:cuidado_cabelo",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p271",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p271",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p271",
+   "to": "ingredient:plastico_reciclado",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p255",
+   "type": "SIMILAR_TO",
+   "weight": 0.6943
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p266",
+   "type": "SIMILAR_TO",
+   "weight": 0.9909
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p267",
+   "type": "SIMILAR_TO",
+   "weight": 0.9943
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p268",
+   "type": "SIMILAR_TO",
+   "weight": 0.9825
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p269",
+   "type": "SIMILAR_TO",
+   "weight": 0.7892
+  },
+  {
+   "from": "product:p271",
+   "to": "product:p270",
+   "type": "SIMILAR_TO",
+   "weight": 0.7801
+  },
+  {
+   "from": "product:p271",
+   "to": "ptype:escova de cabelo",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p271",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p271",
+   "to": "step:higiene_cabelo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p272",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p272",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p272",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p272",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p260",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 1.0
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p263",
+   "type": "SIMILAR_TO",
+   "weight": 0.9799
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9882
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p272",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.9788
+  },
+  {
+   "from": "product:p272",
+   "to": "ptype:fio dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p272",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p272",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p273",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p273",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p273",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p273",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9882
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.9849
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9882
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9944
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p276",
+   "type": "SIMILAR_TO",
+   "weight": 0.9849
+  },
+  {
+   "from": "product:p273",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.9894
+  },
+  {
+   "from": "product:p273",
+   "to": "ptype:fita dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p273",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p273",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p274",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p274",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p274",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p274",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9832
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9944
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p276",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p274",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.9947
+  },
+  {
+   "from": "product:p274",
+   "to": "ptype:fio dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p274",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p274",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p275",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p275",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p275",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p275",
+   "to": "ingredient:menta_extrato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p275",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p260",
+   "type": "SIMILAR_TO",
+   "weight": 0.8311
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.8437
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.8437
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.8441
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.8388
+  },
+  {
+   "from": "product:p275",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.8341
+  },
+  {
+   "from": "product:p275",
+   "to": "ptype:fio dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p275",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p275",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p276",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p276",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p276",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p276",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 1.0
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9749
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9849
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p276",
+   "to": "product:p277",
+   "type": "SIMILAR_TO",
+   "weight": 0.995
+  },
+  {
+   "from": "product:p276",
+   "to": "ptype:fio dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p276",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p276",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p277",
+   "to": "brand:Sorriso Pleno",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p277",
+   "to": "concern:higiene_oral",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p277",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p277",
+   "to": "ingredient:nylon",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p262",
+   "type": "SIMILAR_TO",
+   "weight": 0.9788
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p264",
+   "type": "SIMILAR_TO",
+   "weight": 0.995
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p272",
+   "type": "SIMILAR_TO",
+   "weight": 0.9788
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p273",
+   "type": "SIMILAR_TO",
+   "weight": 0.9894
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p274",
+   "type": "SIMILAR_TO",
+   "weight": 0.9947
+  },
+  {
+   "from": "product:p277",
+   "to": "product:p276",
+   "type": "SIMILAR_TO",
+   "weight": 0.995
+  },
+  {
+   "from": "product:p277",
+   "to": "ptype:fio dental",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p277",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p277",
+   "to": "step:higiene_oral",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p278",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p278",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p278",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p278",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p278",
+   "to": "ingredient:talco_mineral",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.8311
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6866
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.8263
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.8221
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6928
+  },
+  {
+   "from": "product:p278",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p278",
+   "to": "ptype:talco corporal",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p278",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p278",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p279",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p279",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p279",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p279",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p279",
+   "to": "ingredient:menta_extrato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p279",
+   "to": "ingredient:talco_mineral",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.8311
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6937
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.9941
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.7888
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6874
+  },
+  {
+   "from": "product:p279",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.6937
+  },
+  {
+   "from": "product:p279",
+   "to": "ptype:talco para pés",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p279",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p279",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p280",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p280",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p280",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p280",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p280",
+   "to": "ingredient:amido_milho",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.6866
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6937
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.9933
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p280",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.6866
+  },
+  {
+   "from": "product:p280",
+   "to": "ptype:talco corporal",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p280",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p280",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p281",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p281",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p281",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p281",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p281",
+   "to": "ingredient:menta_extrato",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p281",
+   "to": "ingredient:talco_mineral",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.8263
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.9941
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p282",
+   "type": "SIMILAR_TO",
+   "weight": 0.7944
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6822
+  },
+  {
+   "from": "product:p281",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p281",
+   "to": "ptype:talco corporal",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p281",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p281",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p282",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p282",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p282",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p282",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p282",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p282",
+   "to": "ingredient:talco_mineral",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.8221
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.7888
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6832
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.7944
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6777
+  },
+  {
+   "from": "product:p282",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.6832
+  },
+  {
+   "from": "product:p282",
+   "to": "ptype:talco para pés",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p282",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p282",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p283",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p283",
+   "to": "claim:sem fragrância",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p283",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p283",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p283",
+   "to": "ingredient:amido_milho",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.6928
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6874
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.9933
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.6822
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.6933
+  },
+  {
+   "from": "product:p283",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.6928
+  },
+  {
+   "from": "product:p283",
+   "to": "ptype:talco corporal",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p283",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p283",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p284",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p284",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p284",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p284",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p284",
+   "to": "ingredient:fibra_vegetal",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.6767
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6664
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6712
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p285",
+   "type": "SIMILAR_TO",
+   "weight": 0.6798
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.9664
+  },
+  {
+   "from": "product:p284",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p284",
+   "to": "ptype:bucha",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p284",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p284",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p285",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p285",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p285",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p285",
+   "to": "ingredient:esponja_sintetica",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.6612
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.653
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6568
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p284",
+   "type": "SIMILAR_TO",
+   "weight": 0.6798
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.653
+  },
+  {
+   "from": "product:p285",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.6612
+  },
+  {
+   "from": "product:p285",
+   "to": "ptype:esponja de banho",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p285",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p285",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p286",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p286",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p286",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p286",
+   "to": "ingredient:fibra_vegetal",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6937
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p281",
+   "type": "SIMILAR_TO",
+   "weight": 0.6882
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6933
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p284",
+   "type": "SIMILAR_TO",
+   "weight": 0.9664
+  },
+  {
+   "from": "product:p286",
+   "to": "product:p287",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p286",
+   "to": "ptype:luva esfoliante",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p286",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p286",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p287",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p287",
+   "to": "claim:vegano",
+   "type": "HAS_CLAIM"
+  },
+  {
+   "from": "product:p287",
+   "to": "concern:cuidado_corporal",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p287",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p287",
+   "to": "ingredient:fibra_vegetal",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p278",
+   "type": "SIMILAR_TO",
+   "weight": 0.7
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p279",
+   "type": "SIMILAR_TO",
+   "weight": 0.6811
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p280",
+   "type": "SIMILAR_TO",
+   "weight": 0.6866
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p283",
+   "type": "SIMILAR_TO",
+   "weight": 0.6928
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p284",
+   "type": "SIMILAR_TO",
+   "weight": 0.9767
+  },
+  {
+   "from": "product:p287",
+   "to": "product:p286",
+   "type": "SIMILAR_TO",
+   "weight": 0.9866
+  },
+  {
+   "from": "product:p287",
+   "to": "ptype:bucha",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p287",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p287",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p288",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p288",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p288",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p288",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.4255
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.469
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.4271
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p289",
+   "type": "SIMILAR_TO",
+   "weight": 0.819
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p290",
+   "type": "SIMILAR_TO",
+   "weight": 0.9888
+  },
+  {
+   "from": "product:p288",
+   "to": "product:p291",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p288",
+   "to": "ptype:cotonete",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p288",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p288",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p289",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p289",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p289",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p289",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p289",
+   "to": "ingredient:aloe_vera",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.437
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.5
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.4392
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p288",
+   "type": "SIMILAR_TO",
+   "weight": 0.819
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p290",
+   "type": "SIMILAR_TO",
+   "weight": 0.8112
+  },
+  {
+   "from": "product:p289",
+   "to": "product:p291",
+   "type": "SIMILAR_TO",
+   "weight": 0.8267
+  },
+  {
+   "from": "product:p289",
+   "to": "ptype:lenço umedecido",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p289",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p289",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p290",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p290",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p290",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p290",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.4226
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.4612
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.424
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p288",
+   "type": "SIMILAR_TO",
+   "weight": 0.9888
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p289",
+   "type": "SIMILAR_TO",
+   "weight": 0.8112
+  },
+  {
+   "from": "product:p290",
+   "to": "product:p291",
+   "type": "SIMILAR_TO",
+   "weight": 0.9798
+  },
+  {
+   "from": "product:p290",
+   "to": "ptype:algodão em bolas",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p290",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p290",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
+  },
+  {
+   "from": "product:p291",
+   "to": "brand:Noble Banho",
+   "type": "OF_BRAND"
+  },
+  {
+   "from": "product:p291",
+   "to": "concern:higiene_diaria",
+   "type": "ADDRESSES"
+  },
+  {
+   "from": "product:p291",
+   "to": "domain:higiene",
+   "type": "IN_DOMAIN"
+  },
+  {
+   "from": "product:p291",
+   "to": "ingredient:algodao",
+   "type": "CONTAINS"
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p119",
+   "type": "SIMILAR_TO",
+   "weight": 0.4284
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p242",
+   "type": "SIMILAR_TO",
+   "weight": 0.4767
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p243",
+   "type": "SIMILAR_TO",
+   "weight": 0.4301
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p288",
+   "type": "SIMILAR_TO",
+   "weight": 0.9899
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p289",
+   "type": "SIMILAR_TO",
+   "weight": 0.8267
+  },
+  {
+   "from": "product:p291",
+   "to": "product:p290",
+   "type": "SIMILAR_TO",
+   "weight": 0.9798
+  },
+  {
+   "from": "product:p291",
+   "to": "ptype:lenço facial",
+   "type": "OF_TYPE"
+  },
+  {
+   "from": "product:p291",
+   "to": "skin:todas",
+   "type": "SUITS"
+  },
+  {
+   "from": "product:p291",
+   "to": "step:higiene_corpo",
+   "type": "COVERS",
+   "primary": true
   }
  ],
  "stats": {
   "nodes": {
    "brand": 15,
    "claim": 15,
-   "concern": 39,
+   "concern": 43,
    "domain": 4,
    "equiv": 2,
-   "goal": 22,
-   "ingredient": 108,
-   "product": 217,
-   "ptype": 124,
+   "goal": 26,
+   "ingredient": 139,
+   "product": 291,
+   "ptype": 156,
    "skin": 6,
-   "step": 39,
+   "step": 45,
    "warning": 8
   },
   "edges": {
-   "ADDRESSES": 344,
+   "ADDRESSES": 420,
    "CONFLICTS_WITH": 110,
-   "CONTAINS": 342,
-   "COVERS": 220,
+   "CONTAINS": 434,
+   "COVERS": 294,
    "EQUIVALENT_TO": 24,
-   "HAS_CLAIM": 139,
+   "HAS_CLAIM": 167,
    "HAS_WARNING": 76,
-   "IN_DOMAIN": 217,
+   "IN_DOMAIN": 291,
    "IN_EQUIV_GROUP": 8,
-   "OF_BRAND": 217,
-   "OF_TYPE": 217,
-   "REQUIRES": 69,
-   "SIMILAR_TO": 974,
-   "SUITS": 271,
-   "TARGETS": 38
+   "OF_BRAND": 291,
+   "OF_TYPE": 291,
+   "REQUIRES": 75,
+   "SIMILAR_TO": 1402,
+   "SUITS": 345,
+   "TARGETS": 42
   },
-  "totalNodes": 599,
-  "totalEdges": 3266
+  "totalNodes": 750,
+  "totalEdges": 4270
  }
 }

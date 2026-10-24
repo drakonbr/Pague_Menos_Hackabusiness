@@ -39,6 +39,12 @@ MED_STEPS = {
     "laxante": "Laxante",
     "fibra": "Fibra",
     "antiemetico": "Contra enjoo",
+    "antifungico_topico": "Antifúngico tópico",
+    "antifungico_oral": "Antifúngico oral",
+    "antibiotico": "Antibiótico",
+    "antiviral": "Antiviral",
+    "corticoide_topico": "Corticoide tópico",
+    "corticoide_oral": "Corticoide oral",
 }
 
 MED_CONCERNS = {
@@ -62,6 +68,11 @@ MED_CONCERNS = {
     # reposição de uso contínuo (medicamentos fictícios da persona): passam a ser achados pela busca
     "hipertensao": "pressão alta",
     "colesterol": "colesterol alto",
+    # novas classes (24/10): antifúngico, antibiótico, antiviral e corticoide
+    "micose": "micose e fungos",
+    "infeccao_bacteriana": "infecção bacteriana",
+    "herpes": "herpes",
+    "inflamacao_pele": "inflamação da pele",
 }
 
 # id, nome, família, função, fotossensibilizante
@@ -132,6 +143,33 @@ MED_INGREDIENTS = [
     ("ondansetrona", "Ondansetrona", A, "contra enjoo", False),
     ("metoclopramida", "Cloridrato de metoclopramida", A, "contra enjoo", False),
     ("domperidona", "Domperidona", A, "contra enjoo", False),
+    # antifúngicos
+    ("clotrimazol", "Clotrimazol", A, "antifúngico de uso local", False),
+    ("miconazol", "Nitrato de miconazol", A, "antifúngico de uso local", False),
+    ("ketoconazol", "Cetoconazol", A, "antifúngico", False),
+    ("terbinafina", "Cloridrato de terbinafina", A, "antifúngico", False),
+    ("fluconazol", "Fluconazol", A, "antifúngico sistêmico", False),
+    ("nistatina", "Nistatina", A, "antifúngico", False),
+    # antibióticos
+    ("amoxicilina", "Amoxicilina", A, "antibiótico", False),
+    ("azitromicina", "Azitromicina", A, "antibiótico", False),
+    ("cefalexina", "Cefalexina", A, "antibiótico", False),
+    ("ciprofloxacino", "Cloridrato de ciprofloxacino", A, "antibiótico", False),
+    ("doxiciclina", "Cloridrato de doxiciclina", A, "antibiótico", False),
+    ("metronidazol", "Metronidazol", A, "antibiótico e antiprotozoário", False),
+    # antivirais
+    ("aciclovir", "Aciclovir", A, "antiviral", False),
+    ("valaciclovir", "Cloridrato de valaciclovir", A, "antiviral", False),
+    ("oseltamivir", "Fosfato de oseltamivir", A, "antiviral", False),
+    ("penciclovir", "Penciclovir", A, "antiviral de uso local", False),
+    ("famciclovir", "Famciclovir", A, "antiviral", False),
+    # corticoides
+    ("hidrocortisona", "Hidrocortisona", A, "corticoide de uso local", False),
+    ("prednisona", "Prednisona", A, "corticoide sistêmico", False),
+    ("dexametasona", "Dexametasona", A, "corticoide sistêmico", False),
+    ("betametasona", "Valerato de betametasona", A, "corticoide de uso local", False),
+    ("mometasona", "Furoato de mometasona", A, "corticoide de uso local", False),
+    ("budesonida", "Budesonida", A, "corticoide", False),
 ]
 
 # Regra aceita: nunca dois anti-inflamatórios no mesmo kit (inclui gel, pastilha e AAS).
@@ -210,6 +248,21 @@ MED_GOALS = [
           ["antiemetico", "reidratacao"], [],
           ["enjoo", "enjoado", "enjoada", "náusea", "nausea", "náuseas", "nauseas", "vômito", "vomito",
            "vomitando", "ânsia", "ansia", "enjoo de viagem", "enjoo no carro"]),
+    _goal("micose", "Micose e fungos", ["micose"],
+          ["antifungico_topico"], ["antifungico_oral"],
+          ["micose", "micoses", "fungo", "fungos", "frieira", "pé de atleta", "pe de atleta", "candidíase",
+           "candidiase", "coceira na virilha", "unha com fungo", "antifúngico", "antifungico"]),
+    _goal("infeccao_bacteriana", "Infecção bacteriana", ["infeccao_bacteriana"],
+          ["antibiotico"], [],
+          ["antibiótico", "antibiotico", "antibióticos", "antibioticos", "infecção", "infeccao", "bactéria",
+           "bacteria", "amoxicilina", "azitromicina", "cefalexina", "infecção de garganta", "infeccao de garganta"]),
+    _goal("herpes", "Herpes", ["herpes"],
+          ["antiviral"], [],
+          ["herpes", "herpes labial", "herpes simples", "herpes genital", "aciclovir", "virose", "antiviral"]),
+    _goal("inflamacao_pele", "Inflamação da pele", ["inflamacao_pele"],
+          ["corticoide_topico"], ["corticoide_oral"],
+          ["inflamação da pele", "inflamacao da pele", "dermatite", "eczema", "coceira na pele", "pele inflamada",
+           "corticoide", "prednisona", "dexametasona"]),
 ]
 
 # ------------------------------------------------------------------ produtos
@@ -417,6 +470,62 @@ med("Lab Nova Via", "Metoclopramida 10 mg — 20 comprimidos", "metoclopramida e
     "box", "20 un", EN, ["metoclopramida"], 8.90, RX)
 med("Vitalis Farma", "Domperidona 10 mg — 30 comprimidos", "domperidona em comprimidos", "antiemetico", "enjoo", "box",
     "30 un", EN + ["azia"], ["domperidona"], 19.90, RX)
+
+# ---- MICOSE E FUNGOS (6) ----
+med("Vitalis Farma", "Clotrimazol Creme 1% — 20 g", "creme antifúngico", "antifungico_topico", "micose", "tube",
+    "20 g", ["micose"], ["clotrimazol"], 18.90)
+med("Farmanorte", "Miconazol Creme 2% — 30 g", "creme antifúngico", "antifungico_topico", "micose", "tube",
+    "30 g", ["micose"], ["miconazol"], 22.90)
+med("Lab Aurora", "Cetoconazol Shampoo 2% — 100 mL", "shampoo antifúngico", "antifungico_topico", "micose", "bottle",
+    "100 ml", ["micose"], ["ketoconazol"], 34.90)
+med("Lab Genérico Sul", "Terbinafina Creme 1% — 15 g", "creme antifúngico", "antifungico_topico", "micose", "tube",
+    "15 g", ["micose"], ["terbinafina"], 29.90)
+med("Lab Nova Via", "Fluconazol 150 mg — 1 cápsula", "antifúngico oral", "antifungico_oral", "micose", "caps",
+    "1 un", ["micose"], ["fluconazol"], 19.90, RX)
+med("Vitalis Farma", "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL", "suspensão antifúngica", "antifungico_oral",
+    "micose", "bottle", "50 ml", ["micose"], ["nistatina"], 24.90, RX)
+
+# ---- ANTIBIÓTICOS (6) ----
+med("Lab Genérico Sul", "Amoxicilina 500 mg — 21 cápsulas", "antibiótico em cápsulas", "antibiotico",
+    "infeccao_bacteriana", "caps", "21 un", ["infeccao_bacteriana"], ["amoxicilina"], 24.90, RX)
+med("Lab Nova Via", "Azitromicina 500 mg — 5 comprimidos", "antibiótico em comprimidos", "antibiotico",
+    "infeccao_bacteriana", "box", "5 un", ["infeccao_bacteriana"], ["azitromicina"], 29.90, RX)
+med("Farmanorte", "Cefalexina 500 mg — 20 cápsulas", "antibiótico em cápsulas", "antibiotico",
+    "infeccao_bacteriana", "caps", "20 un", ["infeccao_bacteriana"], ["cefalexina"], 32.90, RX)
+med("Vitalis Farma", "Ciprofloxacino 500 mg — 14 comprimidos", "antibiótico em comprimidos", "antibiotico",
+    "infeccao_bacteriana", "box", "14 un", ["infeccao_bacteriana"], ["ciprofloxacino"], 27.90, RX)
+med("Lab Aurora", "Doxiciclina 100 mg — 10 comprimidos", "antibiótico em comprimidos", "antibiotico",
+    "infeccao_bacteriana", "box", "10 un", ["infeccao_bacteriana"], ["doxiciclina"], 21.90, RX)
+med("Lab Genérico Sul", "Metronidazol 400 mg — 14 comprimidos", "antibiótico em comprimidos", "antibiotico",
+    "infeccao_bacteriana", "box", "14 un", ["infeccao_bacteriana"], ["metronidazol"], 18.90, RX)
+
+# ---- ANTIVIRAIS (6) ----
+med("Vitalis Farma", "Aciclovir Creme 5% — 10 g", "creme antiviral", "antiviral", "herpes", "tube", "10 g",
+    ["herpes"], ["aciclovir"], 19.90)
+med("Farmanorte", "Penciclovir Creme 1% — 10 g", "creme antiviral", "antiviral", "herpes", "tube", "10 g",
+    ["herpes"], ["penciclovir"], 24.90)
+med("Lab Genérico Sul", "Aciclovir 400 mg — 30 comprimidos", "antiviral em comprimidos", "antiviral", "herpes", "box",
+    "30 un", ["herpes"], ["aciclovir"], 22.90, RX)
+med("Lab Nova Via", "Valaciclovir 500 mg — 10 comprimidos", "antiviral em comprimidos", "antiviral", "herpes", "box",
+    "10 un", ["herpes"], ["valaciclovir"], 39.90, RX)
+med("Lab Aurora", "Oseltamivir 75 mg — 10 cápsulas", "antiviral em cápsulas", "antiviral", "herpes", "caps",
+    "10 un", ["herpes"], ["oseltamivir"], 89.90, RX)
+med("Vitalis Farma", "Famciclovir 500 mg — 10 comprimidos", "antiviral em comprimidos", "antiviral", "herpes", "box",
+    "10 un", ["herpes"], ["famciclovir"], 54.90, RX)
+
+# ---- CORTICOIDES (6) ----
+med("Vitalis Farma", "Hidrocortisona Creme 1% — 20 g", "creme corticoide", "corticoide_topico", "inflamacao_pele",
+    "tube", "20 g", ["inflamacao_pele"], ["hidrocortisona"], 16.90)
+med("Farmanorte", "Betametasona Creme 0,1% — 20 g", "creme corticoide", "corticoide_topico", "inflamacao_pele",
+    "tube", "20 g", ["inflamacao_pele"], ["betametasona"], 19.90, RX)
+med("Lab Aurora", "Mometasona Creme 0,1% — 20 g", "creme corticoide", "corticoide_topico", "inflamacao_pele", "tube",
+    "20 g", ["inflamacao_pele"], ["mometasona"], 34.90, RX)
+med("Lab Genérico Sul", "Prednisona 20 mg — 10 comprimidos", "corticoide em comprimidos", "corticoide_oral",
+    "inflamacao_pele", "box", "10 un", ["inflamacao_pele"], ["prednisona"], 9.90, RX)
+med("Lab Nova Via", "Dexametasona 4 mg — 10 comprimidos", "corticoide em comprimidos", "corticoide_oral",
+    "inflamacao_pele", "box", "10 un", ["inflamacao_pele"], ["dexametasona"], 12.90, RX)
+med("Vitalis Farma", "Budesonida 3 mg — 30 cápsulas", "corticoide em cápsulas", "corticoide_oral",
+    "inflamacao_pele", "caps", "30 un", ["inflamacao_pele"], ["budesonida"], 49.90, RX)
 
 MED_HOW_TO = {s: "Siga as instruções da bula." for s in MED_STEPS}
 # vitamina C efervescente e psyllium viraram suplemento (#40): modo de uso de suplemento, não de bula

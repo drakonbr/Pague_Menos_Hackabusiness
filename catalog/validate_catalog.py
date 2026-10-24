@@ -62,7 +62,7 @@ def main() -> int:
     by_id = {p["id"]: p for p in products}
 
     # 1. Tamanho e unicidade
-    check("tamanho do catálogo entre 200 e 240", 200 <= len(products) <= 240, f"{len(products)} produtos")
+    check("tamanho do catálogo entre 200 e 320", 200 <= len(products) <= 320, f"{len(products)} produtos")
     check("domínios válidos", all(p.get("domain") in DOMAINS for p in products))
     by_domain = Counter(p["domain"] for p in products)
     check("os 100 produtos de skin care originais continuam (p001–p100, domínio dermo)",
@@ -255,7 +255,16 @@ def main() -> int:
         check(f"suplementos: pelo menos 3 itens de {step}", n >= 3, str(n))
     for step in ("higiene_corpo", "higiene_cabelo", "higiene_oral", "desodorante"):
         n = sum(1 for p in products if p["step"] == step)
-        check(f"higiene premium: pelo menos 3 itens de {step}", n >= 3, str(n))
+        check(f"higiene premium: pelo menos 6 itens de {step}", n >= 6, str(n))
+    for label, pred in (
+        ("escova de dente", lambda p: "escova de dente" in p["product_type"]),
+        ("fio dental", lambda p: "fio dental" in p["product_type"] or "fita dental" in p["product_type"]),
+        ("creme para pentear", lambda p: "creme para pentear" in p["product_type"] or "leave-in" in p["product_type"]),
+        ("talco", lambda p: "talco" in p["product_type"]),
+        ("bucha/esponja", lambda p: any(t in p["product_type"] for t in ("bucha", "esponja", "luva esfoliante"))),
+    ):
+        n = sum(1 for p in products if p["domain"] == "higiene" and pred(p))
+        check(f"higiene: pelo menos 3 itens de {label}", n >= 3, str(n))
     new_anti = [p for p in products if p["domain"] == "dermo" and "p101" <= p["id"] <= "p106" and "sinais_idade" in p["concerns"]]
     check("anti-idade: pelo menos 3 itens novos para a persona", len(new_anti) >= 3, str(len(new_anti)))
     persona = load("persona.json")

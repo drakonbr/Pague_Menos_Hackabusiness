@@ -37,5 +37,9 @@
   "prisao_de_ventre": "prisão de ventre",
   "enjoo": "enjoo e náusea",
   "hipertensao": "pressão alta",
-  "colesterol": "colesterol alto"
+  "colesterol": "colesterol alto",
+  "micose": "micose e fungos",
+  "infeccao_bacteriana": "infecção bacteriana",
+  "herpes": "herpes",
+  "inflamacao_pele": "inflamação da pele"
 }

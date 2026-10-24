@@ -54,6 +54,14 @@ class TestVocabulario(unittest.TestCase):
         self.assertEqual(r["act"], "busca")
         self.assertTrue(any("prisao_de_ventre" in p["concerns"] for p in r["products"]))
 
+    def test_itens_obvios_de_higiene_agora_existem(self):
+        for q, tipo in (("fio dental", "fio dental"), ("escova de dente", "escova de dente"),
+                        ("creme para pentear", "creme para pentear"), ("talco", "talco"),
+                        ("bucha", "bucha"), ("shampoo anticaspa", "shampoo anticaspa")):
+            r = E.search({"query": q})
+            self.assertTrue(any(tipo in p["productType"] for p in r["products"]),
+                            (q, [p["productType"] for p in r["products"][:6]]))
+
     def test_sem_acido_so_exclui_esfoliante_e_respeita_ingrediente_nomeado(self):
         _, r0 = goal("rotina para acne")
         for q, esperado in (("sem ácido por favor", {"acido_salicilico", "acido_glicolico", "acido_mandelico"}),

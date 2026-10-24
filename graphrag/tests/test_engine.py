@@ -180,10 +180,18 @@ class TestScenariosDoc08(unittest.TestCase):
 
     def test_sem_remedio_no_catalogo_diz_so_que_nao_esta(self):
         # doc 16, A6
-        for q in ["remédio para diabetes", "remédio pra dormir", "antibiótico", "dor de dente"]:
+        for q in ["remédio para diabetes", "remédio pra dormir", "insulina", "dor de dente"]:
             r = S(q)
             self.assertEqual(r["reply"], "Não está no banco de dados ainda.", q)
             self.assertEqual((r["kits"], r["products"]), ([], []), q)
+
+    def test_novas_classes_de_remedio_entram_na_busca(self):
+        for q, concern in (("antibiótico", "infeccao_bacteriana"), ("micose", "micose"),
+                           ("herpes", "herpes"), ("corticoide", "inflamacao_pele")):
+            r = S(q)
+            self.assertTrue(r["products"], q)
+            self.assertTrue(any(concern in p["concerns"] for p in r["products"]),
+                            (q, [p["name"] for p in r["products"][:3]]))
 
     def test_nenhuma_resposta_manda_procurar_profissional(self):
         # doc 16, A5 (a invariante M2 varre resposta, sugestões, notas e segurança)

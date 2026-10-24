@@ -41,7 +41,7 @@
   "listPriceCents": 2490,
   "stockQty": 5,
   "cashbackPct": 0,
-  "salesRank": 45,
+  "salesRank": 37,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -95,7 +95,7 @@
   "listPriceCents": 1990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 43,
+  "salesRank": 3,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -146,7 +146,7 @@
   "listPriceCents": 1490,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 5,
+  "salesRank": 7,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -197,7 +197,7 @@
   "listPriceCents": 2150,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 1,
+  "salesRank": 2,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -247,7 +247,7 @@
   "listPriceCents": 1690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 2,
+  "salesRank": 1,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -300,7 +300,7 @@
   "listPriceCents": 5490,
   "stockQty": 6,
   "cashbackPct": 10,
-  "salesRank": 109,
+  "salesRank": 176,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -353,7 +353,7 @@
   "listPriceCents": 7550,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 143,
+  "salesRank": 126,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -407,7 +407,7 @@
   "listPriceCents": 2990,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 120,
+  "salesRank": 18,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -463,7 +463,7 @@
   "listPriceCents": 5390,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 150,
+  "salesRank": 131,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -518,7 +518,7 @@
   "listPriceCents": 3990,
   "stockQty": 48,
   "cashbackPct": 2,
-  "salesRank": 39,
+  "salesRank": 57,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -573,7 +573,7 @@
   "listPriceCents": 4290,
   "stockQty": 18,
   "cashbackPct": 10,
-  "salesRank": 127,
+  "salesRank": 247,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -625,7 +625,7 @@
   "listPriceCents": 3190,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 186,
+  "salesRank": 252,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -674,7 +674,7 @@
   "listPriceCents": 1390,
   "stockQty": 59,
   "cashbackPct": 10,
-  "salesRank": 6,
+  "salesRank": 42,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -726,7 +726,7 @@
   "listPriceCents": 2630,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 84,
+  "salesRank": 10,
   "categoryIds": [
    "dermo",
    "micelar",
@@ -779,7 +779,7 @@
   "listPriceCents": 5990,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 72,
+  "salesRank": 157,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -833,7 +833,7 @@
   "listPriceCents": 2290,
   "stockQty": 13,
   "cashbackPct": 0,
-  "salesRank": 122,
+  "salesRank": 141,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -884,7 +884,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 5,
-  "salesRank": 16,
+  "salesRank": 142,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -938,7 +938,7 @@
   "listPriceCents": 7990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 206,
+  "salesRank": 244,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -992,7 +992,7 @@
   "listPriceCents": 8990,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 189,
+  "salesRank": 263,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -1046,7 +1046,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 74,
+  "salesRank": 212,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -1099,7 +1099,7 @@
   "listPriceCents": 1890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 9,
+  "salesRank": 152,
   "categoryIds": [
    "dermo",
    "esfoliante",
@@ -1152,7 +1152,7 @@
   "listPriceCents": 3690,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 95,
+  "salesRank": 190,
   "categoryIds": [
    "dermo",
    "mascara",
@@ -1205,7 +1205,7 @@
   "listPriceCents": 2630,
   "stockQty": 28,
   "cashbackPct": 0,
-  "salesRank": 112,
+  "salesRank": 114,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1258,7 +1258,7 @@
   "listPriceCents": 4790,
   "stockQty": 22,
   "cashbackPct": 5,
-  "salesRank": 49,
+  "salesRank": 69,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1310,7 +1310,7 @@
   "listPriceCents": 2290,
   "stockQty": 43,
   "cashbackPct": 0,
-  "salesRank": 59,
+  "salesRank": 27,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -1360,7 +1360,7 @@
   "listPriceCents": 1490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 17,
+  "salesRank": 45,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1411,7 +1411,7 @@
   "listPriceCents": 2990,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 101,
+  "salesRank": 43,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1467,7 +1467,7 @@
   "listPriceCents": 2270,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 38,
+  "salesRank": 85,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1521,7 +1521,7 @@
   "listPriceCents": 9490,
   "stockQty": 22,
   "cashbackPct": 0,
-  "salesRank": 162,
+  "salesRank": 271,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1581,7 +1581,7 @@
   "listPriceCents": 7990,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 179,
+  "salesRank": 283,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1636,7 +1636,7 @@
   "listPriceCents": 5990,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 62,
+  "salesRank": 171,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1692,7 +1692,7 @@
   "listPriceCents": 8490,
   "stockQty": 33,
   "cashbackPct": 2,
-  "salesRank": 152,
+  "salesRank": 259,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -1749,7 +1749,7 @@
   "listPriceCents": 4490,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 61,
+  "salesRank": 169,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1804,7 +1804,7 @@
   "listPriceCents": 3890,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 32,
+  "salesRank": 88,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1857,7 +1857,7 @@
   "listPriceCents": 4990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 123,
+  "salesRank": 210,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -1912,7 +1912,7 @@
   "listPriceCents": 6990,
   "stockQty": 47,
   "cashbackPct": 3,
-  "salesRank": 136,
+  "salesRank": 86,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -1962,7 +1962,7 @@
   "listPriceCents": 3490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 88,
+  "salesRank": 30,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2014,7 +2014,7 @@
   "listPriceCents": 3990,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 14,
+  "salesRank": 137,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2066,7 +2066,7 @@
   "listPriceCents": 2490,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 124,
+  "salesRank": 33,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2120,7 +2120,7 @@
   "listPriceCents": 6990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 131,
+  "salesRank": 70,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2173,7 +2173,7 @@
   "listPriceCents": 7490,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 55,
+  "salesRank": 215,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2228,7 +2228,7 @@
   "listPriceCents": 10990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 166,
+  "salesRank": 277,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2282,7 +2282,7 @@
   "listPriceCents": 12990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 210,
+  "salesRank": 211,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2338,7 +2338,7 @@
   "listPriceCents": 5290,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 119,
+  "salesRank": 148,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2393,7 +2393,7 @@
   "listPriceCents": 5890,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 83,
+  "salesRank": 208,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2447,7 +2447,7 @@
   "listPriceCents": 5990,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 116,
+  "salesRank": 108,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -2500,7 +2500,7 @@
   "listPriceCents": 3290,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 167,
+  "salesRank": 228,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2553,7 +2553,7 @@
   "listPriceCents": 3990,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 21,
+  "salesRank": 56,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2609,7 +2609,7 @@
   "listPriceCents": 7990,
   "stockQty": 24,
   "cashbackPct": 0,
-  "salesRank": 182,
+  "salesRank": 197,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2663,7 +2663,7 @@
   "listPriceCents": 8990,
   "stockQty": 35,
   "cashbackPct": 2,
-  "salesRank": 204,
+  "salesRank": 284,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2721,7 +2721,7 @@
   "listPriceCents": 13990,
   "stockQty": 45,
   "cashbackPct": 5,
-  "salesRank": 184,
+  "salesRank": 225,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2775,7 +2775,7 @@
   "listPriceCents": 11990,
   "stockQty": 20,
   "cashbackPct": 3,
-  "salesRank": 211,
+  "salesRank": 214,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -2829,7 +2829,7 @@
   "listPriceCents": 7790,
   "stockQty": 51,
   "cashbackPct": 10,
-  "salesRank": 140,
+  "salesRank": 177,
   "categoryIds": [
    "dermo",
    "retinol",
@@ -2884,7 +2884,7 @@
   "listPriceCents": 5990,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 125,
+  "salesRank": 124,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -2941,7 +2941,7 @@
   "listPriceCents": 5490,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 52,
+  "salesRank": 207,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -2996,7 +2996,7 @@
   "listPriceCents": 7490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 174,
+  "salesRank": 264,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -3052,7 +3052,7 @@
   "listPriceCents": 1790,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 31,
+  "salesRank": 77,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3104,7 +3104,7 @@
   "listPriceCents": 1990,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 97,
+  "salesRank": 44,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3153,7 +3153,7 @@
   "listPriceCents": 1590,
   "stockQty": 59,
   "cashbackPct": 2,
-  "salesRank": 85,
+  "salesRank": 49,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3204,7 +3204,7 @@
   "listPriceCents": 2030,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 20,
+  "salesRank": 68,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3258,7 +3258,7 @@
   "listPriceCents": 3290,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 89,
+  "salesRank": 138,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3314,7 +3314,7 @@
   "listPriceCents": 3890,
   "stockQty": 8,
   "cashbackPct": 10,
-  "salesRank": 129,
+  "salesRank": 102,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3367,7 +3367,7 @@
   "listPriceCents": 4490,
   "stockQty": 42,
   "cashbackPct": 0,
-  "salesRank": 80,
+  "salesRank": 167,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3422,7 +3422,7 @@
   "listPriceCents": 5690,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 117,
+  "salesRank": 179,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3476,7 +3476,7 @@
   "listPriceCents": 7490,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 208,
+  "salesRank": 260,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3532,7 +3532,7 @@
   "listPriceCents": 6990,
   "stockQty": 4,
   "cashbackPct": 2,
-  "salesRank": 215,
+  "salesRank": 288,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -3587,7 +3587,7 @@
   "listPriceCents": 8490,
   "stockQty": 11,
   "cashbackPct": 5,
-  "salesRank": 176,
+  "salesRank": 202,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3643,7 +3643,7 @@
   "listPriceCents": 2790,
   "stockQty": 38,
   "cashbackPct": 2,
-  "salesRank": 36,
+  "salesRank": 14,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3697,7 +3697,7 @@
   "listPriceCents": 3690,
   "stockQty": 53,
   "cashbackPct": 3,
-  "salesRank": 53,
+  "salesRank": 193,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3754,7 +3754,7 @@
   "listPriceCents": 5990,
   "stockQty": 11,
   "cashbackPct": 2,
-  "salesRank": 168,
+  "salesRank": 163,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3811,7 +3811,7 @@
   "listPriceCents": 7990,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 172,
+  "salesRank": 280,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3864,7 +3864,7 @@
   "listPriceCents": 2990,
   "stockQty": 50,
   "cashbackPct": 0,
-  "salesRank": 28,
+  "salesRank": 79,
   "categoryIds": [
    "dermo",
    "hidratante",
@@ -3918,7 +3918,7 @@
   "listPriceCents": 2490,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 34,
+  "salesRank": 36,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -3967,7 +3967,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 4,
+  "salesRank": 9,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4018,7 +4018,7 @@
   "listPriceCents": 2790,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 30,
+  "salesRank": 4,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4069,7 +4069,7 @@
   "listPriceCents": 2290,
   "stockQty": 0,
   "cashbackPct": 10,
-  "salesRank": 183,
+  "salesRank": 254,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4123,7 +4123,7 @@
   "listPriceCents": 3690,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 3,
+  "salesRank": 6,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -4178,7 +4178,7 @@
   "listPriceCents": 4290,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 96,
+  "salesRank": 116,
   "categoryIds": [
    "dermo",
    "oleosa-acneica",
@@ -4228,7 +4228,7 @@
   "listPriceCents": 3990,
   "stockQty": 52,
   "cashbackPct": 0,
-  "salesRank": 29,
+  "salesRank": 5,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4279,7 +4279,7 @@
   "listPriceCents": 4490,
   "stockQty": 53,
   "cashbackPct": 0,
-  "salesRank": 79,
+  "salesRank": 15,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4332,7 +4332,7 @@
   "listPriceCents": 5990,
   "stockQty": 4,
   "cashbackPct": 10,
-  "salesRank": 41,
+  "salesRank": 17,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4382,7 +4382,7 @@
   "listPriceCents": 5490,
   "stockQty": 35,
   "cashbackPct": 10,
-  "salesRank": 7,
+  "salesRank": 8,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4433,7 +4433,7 @@
   "listPriceCents": 8390,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 121,
+  "salesRank": 204,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4490,7 +4490,7 @@
   "listPriceCents": 8990,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 130,
+  "salesRank": 170,
   "categoryIds": [
    "dermo",
    "niacinamida",
@@ -4546,7 +4546,7 @@
   "listPriceCents": 9490,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 139,
+  "salesRank": 140,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4598,7 +4598,7 @@
   "listPriceCents": 14390,
   "stockQty": 60,
   "cashbackPct": 3,
-  "salesRank": 128,
+  "salesRank": 233,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -4651,7 +4651,7 @@
   "listPriceCents": 4690,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 114,
+  "salesRank": 98,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4706,7 +4706,7 @@
   "listPriceCents": 5990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 214,
+  "salesRank": 253,
   "categoryIds": [
    "dermo",
    "seca-sensivel",
@@ -4755,7 +4755,7 @@
   "listPriceCents": 3490,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 8,
+  "salesRank": 31,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4805,7 +4805,7 @@
   "listPriceCents": 4490,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 151,
+  "salesRank": 209,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4853,7 +4853,7 @@
   "listPriceCents": 2990,
   "stockQty": 12,
   "cashbackPct": 0,
-  "salesRank": 10,
+  "salesRank": 109,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4903,7 +4903,7 @@
   "listPriceCents": 5990,
   "stockQty": 39,
   "cashbackPct": 2,
-  "salesRank": 181,
+  "salesRank": 221,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -4954,7 +4954,7 @@
   "listPriceCents": 6990,
   "stockQty": 0,
   "cashbackPct": 0,
-  "salesRank": 216,
+  "salesRank": 290,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5005,7 +5005,7 @@
   "listPriceCents": 5290,
   "stockQty": 42,
   "cashbackPct": 2,
-  "salesRank": 170,
+  "salesRank": 81,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5055,7 +5055,7 @@
   "listPriceCents": 1290,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 105,
+  "salesRank": 133,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5105,7 +5105,7 @@
   "listPriceCents": 1990,
   "stockQty": 52,
   "cashbackPct": 2,
-  "salesRank": 107,
+  "salesRank": 120,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5156,7 +5156,7 @@
   "listPriceCents": 4990,
   "stockQty": 16,
   "cashbackPct": 0,
-  "salesRank": 63,
+  "salesRank": 180,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5208,7 +5208,7 @@
   "listPriceCents": 2490,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 165,
+  "salesRank": 93,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5259,7 +5259,7 @@
   "listPriceCents": 1490,
   "stockQty": 45,
   "cashbackPct": 0,
-  "salesRank": 111,
+  "salesRank": 52,
   "categoryIds": [
    "dermo",
    "labial",
@@ -5312,7 +5312,7 @@
   "listPriceCents": 9990,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 201,
+  "salesRank": 232,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5368,7 +5368,7 @@
   "listPriceCents": 5990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 135,
+  "salesRank": 192,
   "categoryIds": [
    "dermo",
    "limpeza",
@@ -5426,7 +5426,7 @@
   "listPriceCents": 14990,
   "stockQty": 25,
   "cashbackPct": 5,
-  "salesRank": 198,
+  "salesRank": 249,
   "categoryIds": [
    "dermo",
    "manchas",
@@ -5485,7 +5485,7 @@
   "listPriceCents": 20390,
   "stockQty": 39,
   "cashbackPct": 5,
-  "salesRank": 207,
+  "salesRank": 205,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5541,7 +5541,7 @@
   "listPriceCents": 8990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 180,
+  "salesRank": 222,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5598,7 +5598,7 @@
   "listPriceCents": 11390,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 103,
+  "salesRank": 178,
   "categoryIds": [
    "dermo",
    "normal-mista",
@@ -5651,7 +5651,7 @@
   "listPriceCents": 11990,
   "stockQty": 18,
   "cashbackPct": 0,
-  "salesRank": 192,
+  "salesRank": 258,
   "categoryIds": [
    "dermo",
    "hialuronico",
@@ -5704,7 +5704,7 @@
   "listPriceCents": 4790,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 11,
+  "salesRank": 94,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5754,7 +5754,7 @@
   "listPriceCents": 7990,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 50,
+  "salesRank": 223,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5804,7 +5804,7 @@
   "listPriceCents": 8990,
   "stockQty": 21,
   "cashbackPct": 2,
-  "salesRank": 191,
+  "salesRank": 266,
   "categoryIds": [
    "omega3",
    "vida-saudavel"
@@ -5853,7 +5853,7 @@
   "listPriceCents": 6990,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 57,
+  "salesRank": 187,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -5902,7 +5902,7 @@
   "listPriceCents": 5990,
   "stockQty": 50,
   "cashbackPct": 10,
-  "salesRank": 24,
+  "salesRank": 21,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -5953,7 +5953,7 @@
   "listPriceCents": 9990,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 157,
+  "salesRank": 245,
   "categoryIds": [
    "colageno",
    "vida-saudavel"
@@ -6002,7 +6002,7 @@
   "listPriceCents": 3490,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 54,
+  "salesRank": 87,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6051,7 +6051,7 @@
   "listPriceCents": 5490,
   "stockQty": 0,
   "cashbackPct": 3,
-  "salesRank": 217,
+  "salesRank": 291,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6101,7 +6101,7 @@
   "listPriceCents": 4490,
   "stockQty": 16,
   "cashbackPct": 5,
-  "salesRank": 118,
+  "salesRank": 173,
   "categoryIds": [
    "magnesio",
    "vida-saudavel"
@@ -6150,7 +6150,7 @@
   "listPriceCents": 2990,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 115,
+  "salesRank": 28,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6200,7 +6200,7 @@
   "listPriceCents": 4990,
   "stockQty": 31,
   "cashbackPct": 5,
-  "salesRank": 70,
+  "salesRank": 155,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6247,7 +6247,7 @@
   "listPriceCents": 6490,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 195,
+  "salesRank": 216,
   "categoryIds": [
    "vida-saudavel",
    "vitaminas"
@@ -6292,12 +6292,12 @@
   "warnings": [],
   "description": "Sabonete Líquido Corporal Óleos Naturais: produto de higiene (sabonete líquido corporal) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Óleo de argan. Vegano e sem parabenos.",
   "howToUse": "Use no banho, massageie e enxágue.",
-  "priceTier": "economico",
+  "priceTier": "premium",
   "priceCents": 3490,
   "listPriceCents": 3490,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 110,
+  "salesRank": 286,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6341,12 +6341,12 @@
   "warnings": [],
   "description": "Gel de Banho Hidratante Karité: produto de higiene (gel de banho) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Manteiga de karité e Glicerina. Sem parabenos.",
   "howToUse": "Use no banho, massageie e enxágue.",
-  "priceTier": "intermediario",
+  "priceTier": "premium",
   "priceCents": 3990,
   "listPriceCents": 3990,
   "stockQty": 45,
   "cashbackPct": 0,
-  "salesRank": 155,
+  "salesRank": 229,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6393,7 +6393,7 @@
   "listPriceCents": 5390,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 187,
+  "salesRank": 238,
   "categoryIds": [
    "banho",
    "higiene"
@@ -6436,12 +6436,12 @@
   "warnings": [],
   "description": "Shampoo Reparador Premium: produto de higiene (shampoo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
   "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
-  "priceTier": "economico",
+  "priceTier": "premium",
   "priceCents": 4990,
   "listPriceCents": 4990,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 66,
+  "salesRank": 206,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6484,12 +6484,12 @@
   "warnings": [],
   "description": "Condicionador Reparador Premium: produto de higiene (condicionador) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem sulfato.",
   "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
-  "priceTier": "intermediario",
+  "priceTier": "premium",
   "priceCents": 4990,
   "listPriceCents": 4990,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 163,
+  "salesRank": 237,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6537,7 +6537,7 @@
   "listPriceCents": 6990,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 212,
+  "salesRank": 248,
   "categoryIds": [
    "cabelos",
    "higiene"
@@ -6579,12 +6579,12 @@
   "warnings": [],
   "description": "Creme Dental Branqueador Premium: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
   "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
-  "priceTier": "intermediario",
+  "priceTier": "premium",
   "priceCents": 2490,
   "listPriceCents": 2490,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 146,
+  "salesRank": 272,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6626,12 +6626,12 @@
   "warnings": [],
   "description": "Creme Dental para Dentes Sensíveis: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
   "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
-  "priceTier": "economico",
+  "priceTier": "premium",
   "priceCents": 2290,
   "listPriceCents": 2290,
   "stockQty": 33,
   "cashbackPct": 0,
-  "salesRank": 94,
+  "salesRank": 236,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6678,7 +6678,7 @@
   "listPriceCents": 2990,
   "stockQty": 8,
   "cashbackPct": 10,
-  "salesRank": 194,
+  "salesRank": 255,
   "categoryIds": [
    "bucal",
    "higiene"
@@ -6725,7 +6725,7 @@
   "listPriceCents": 1990,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 26,
+  "salesRank": 153,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6773,7 +6773,7 @@
   "listPriceCents": 2490,
   "stockQty": 10,
   "cashbackPct": 0,
-  "salesRank": 100,
+  "salesRank": 89,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6821,7 +6821,7 @@
   "listPriceCents": 3590,
   "stockQty": 38,
   "cashbackPct": 5,
-  "salesRank": 178,
+  "salesRank": 201,
   "categoryIds": [
    "desodorantes",
    "higiene"
@@ -6870,7 +6870,7 @@
   "listPriceCents": 6890,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 138,
+  "salesRank": 149,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -6924,7 +6924,7 @@
   "listPriceCents": 3190,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 87,
+  "salesRank": 110,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -6978,7 +6978,7 @@
   "listPriceCents": 5890,
   "stockQty": 30,
   "cashbackPct": 0,
-  "salesRank": 149,
+  "salesRank": 175,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7032,7 +7032,7 @@
   "listPriceCents": 3990,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 76,
+  "salesRank": 34,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7086,7 +7086,7 @@
   "listPriceCents": 9290,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 197,
+  "salesRank": 234,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7140,7 +7140,7 @@
   "listPriceCents": 4490,
   "stockQty": 4,
   "cashbackPct": 0,
-  "salesRank": 71,
+  "salesRank": 84,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7194,7 +7194,7 @@
   "listPriceCents": 8290,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 200,
+  "salesRank": 268,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7248,7 +7248,7 @@
   "listPriceCents": 5290,
   "stockQty": 54,
   "cashbackPct": 0,
-  "salesRank": 161,
+  "salesRank": 159,
   "categoryIds": [
    "reposicao",
    "saude"
@@ -7300,7 +7300,7 @@
   "listPriceCents": 790,
   "stockQty": 31,
   "cashbackPct": 0,
-  "salesRank": 18,
+  "salesRank": 12,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7347,7 +7347,7 @@
   "listPriceCents": 1190,
   "stockQty": 50,
   "cashbackPct": 0,
-  "salesRank": 90,
+  "salesRank": 224,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7393,7 +7393,7 @@
   "listPriceCents": 990,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 108,
+  "salesRank": 66,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7440,7 +7440,7 @@
   "listPriceCents": 1290,
   "stockQty": 35,
   "cashbackPct": 0,
-  "salesRank": 91,
+  "salesRank": 165,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7487,7 +7487,7 @@
   "listPriceCents": 1990,
   "stockQty": 22,
   "cashbackPct": 0,
-  "salesRank": 153,
+  "salesRank": 270,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7533,7 +7533,7 @@
   "listPriceCents": 1090,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 126,
+  "salesRank": 112,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7581,7 +7581,7 @@
   "listPriceCents": 2490,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 205,
+  "salesRank": 276,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7628,7 +7628,7 @@
   "listPriceCents": 890,
   "stockQty": 24,
   "cashbackPct": 0,
-  "salesRank": 15,
+  "salesRank": 58,
   "categoryIds": [
    "med-dor-febre",
    "saude"
@@ -7676,7 +7676,7 @@
   "listPriceCents": 1490,
   "stockQty": 41,
   "cashbackPct": 0,
-  "salesRank": 47,
+  "salesRank": 25,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7722,7 +7722,7 @@
   "listPriceCents": 1890,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 159,
+  "salesRank": 115,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7768,7 +7768,7 @@
   "listPriceCents": 1690,
   "stockQty": 7,
   "cashbackPct": 0,
-  "salesRank": 92,
+  "salesRank": 189,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7815,7 +7815,7 @@
   "listPriceCents": 1790,
   "stockQty": 9,
   "cashbackPct": 0,
-  "salesRank": 67,
+  "salesRank": 139,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7861,7 +7861,7 @@
   "listPriceCents": 2290,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 190,
+  "salesRank": 251,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7907,7 +7907,7 @@
   "listPriceCents": 2190,
   "stockQty": 47,
   "cashbackPct": 0,
-  "salesRank": 154,
+  "salesRank": 285,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -7953,7 +7953,7 @@
   "listPriceCents": 1290,
   "stockQty": 29,
   "cashbackPct": 0,
-  "salesRank": 104,
+  "salesRank": 39,
   "categoryIds": [
    "med-dor-corpo",
    "saude"
@@ -8001,7 +8001,7 @@
   "listPriceCents": 990,
   "stockQty": 60,
   "cashbackPct": 0,
-  "salesRank": 25,
+  "salesRank": 16,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8049,7 +8049,7 @@
   "listPriceCents": 2790,
   "stockQty": 41,
   "cashbackPct": 0,
-  "salesRank": 69,
+  "salesRank": 158,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8094,7 +8094,7 @@
   "listPriceCents": 2490,
   "stockQty": 43,
   "cashbackPct": 0,
-  "salesRank": 93,
+  "salesRank": 105,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8139,7 +8139,7 @@
   "listPriceCents": 3290,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 177,
+  "salesRank": 256,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8188,7 +8188,7 @@
   "listPriceCents": 2990,
   "stockQty": 37,
   "cashbackPct": 0,
-  "salesRank": 158,
+  "salesRank": 128,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8233,7 +8233,7 @@
   "listPriceCents": 2690,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 137,
+  "salesRank": 95,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8280,7 +8280,7 @@
   "listPriceCents": 1490,
   "stockQty": 49,
   "cashbackPct": 0,
-  "salesRank": 60,
+  "salesRank": 151,
   "categoryIds": [
    "med-dor-muscular",
    "saude"
@@ -8325,7 +8325,7 @@
   "listPriceCents": 1690,
   "stockQty": 20,
   "cashbackPct": 0,
-  "salesRank": 37,
+  "salesRank": 107,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8370,7 +8370,7 @@
   "listPriceCents": 1890,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 106,
+  "salesRank": 184,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8416,7 +8416,7 @@
   "listPriceCents": 2290,
   "stockQty": 33,
   "cashbackPct": 0,
-  "salesRank": 193,
+  "salesRank": 265,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8462,7 +8462,7 @@
   "listPriceCents": 890,
   "stockQty": 52,
   "cashbackPct": 0,
-  "salesRank": 42,
+  "salesRank": 50,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8508,7 +8508,7 @@
   "listPriceCents": 1290,
   "stockQty": 4,
   "cashbackPct": 0,
-  "salesRank": 86,
+  "salesRank": 92,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8554,7 +8554,7 @@
   "listPriceCents": 1490,
   "stockQty": 40,
   "cashbackPct": 0,
-  "salesRank": 199,
+  "salesRank": 203,
   "categoryIds": [
    "med-colica",
    "saude"
@@ -8602,7 +8602,7 @@
   "listPriceCents": 2490,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 141,
+  "salesRank": 91,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8649,7 +8649,7 @@
   "listPriceCents": 490,
   "stockQty": 36,
   "cashbackPct": 0,
-  "salesRank": 56,
+  "salesRank": 74,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8695,7 +8695,7 @@
   "listPriceCents": 2990,
   "stockQty": 26,
   "cashbackPct": 0,
-  "salesRank": 213,
+  "salesRank": 231,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8740,7 +8740,7 @@
   "listPriceCents": 1590,
   "stockQty": 60,
   "cashbackPct": 0,
-  "salesRank": 12,
+  "salesRank": 162,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8785,7 +8785,7 @@
   "listPriceCents": 3990,
   "stockQty": 22,
   "cashbackPct": 0,
-  "salesRank": 58,
+  "salesRank": 164,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8830,7 +8830,7 @@
   "listPriceCents": 5490,
   "stockQty": 57,
   "cashbackPct": 0,
-  "salesRank": 209,
+  "salesRank": 246,
   "categoryIds": [
    "med-azia",
    "saude"
@@ -8879,7 +8879,7 @@
   "listPriceCents": 1790,
   "stockQty": 23,
   "cashbackPct": 0,
-  "salesRank": 134,
+  "salesRank": 75,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -8927,7 +8927,7 @@
   "listPriceCents": 1590,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 99,
+  "salesRank": 80,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -8974,7 +8974,7 @@
   "listPriceCents": 1390,
   "stockQty": 4,
   "cashbackPct": 0,
-  "salesRank": 64,
+  "salesRank": 67,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -9021,7 +9021,7 @@
   "listPriceCents": 690,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 98,
+  "salesRank": 90,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -9067,7 +9067,7 @@
   "listPriceCents": 790,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 133,
+  "salesRank": 213,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -9113,7 +9113,7 @@
   "listPriceCents": 2490,
   "stockQty": 60,
   "cashbackPct": 0,
-  "salesRank": 173,
+  "salesRank": 242,
   "categoryIds": [
    "med-gripe",
    "saude"
@@ -9158,7 +9158,7 @@
   "listPriceCents": 1690,
   "stockQty": 11,
   "cashbackPct": 0,
-  "salesRank": 156,
+  "salesRank": 185,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9203,7 +9203,7 @@
   "listPriceCents": 4490,
   "stockQty": 51,
   "cashbackPct": 0,
-  "salesRank": 185,
+  "salesRank": 235,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9248,7 +9248,7 @@
   "listPriceCents": 1890,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 147,
+  "salesRank": 83,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9293,7 +9293,7 @@
   "listPriceCents": 1490,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 35,
+  "salesRank": 46,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9338,7 +9338,7 @@
   "listPriceCents": 1290,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 19,
+  "salesRank": 123,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9383,7 +9383,7 @@
   "listPriceCents": 1790,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 23,
+  "salesRank": 119,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9428,7 +9428,7 @@
   "listPriceCents": 3890,
   "stockQty": 35,
   "cashbackPct": 0,
-  "salesRank": 51,
+  "salesRank": 132,
   "categoryIds": [
    "med-tosse",
    "saude"
@@ -9475,7 +9475,7 @@
   "listPriceCents": 1390,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 78,
+  "salesRank": 51,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9522,7 +9522,7 @@
   "listPriceCents": 1290,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 40,
+  "salesRank": 60,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9567,7 +9567,7 @@
   "listPriceCents": 2990,
   "stockQty": 21,
   "cashbackPct": 0,
-  "salesRank": 164,
+  "salesRank": 241,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9612,7 +9612,7 @@
   "listPriceCents": 1990,
   "stockQty": 25,
   "cashbackPct": 0,
-  "salesRank": 148,
+  "salesRank": 174,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9657,7 +9657,7 @@
   "listPriceCents": 2490,
   "stockQty": 44,
   "cashbackPct": 0,
-  "salesRank": 142,
+  "salesRank": 78,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9702,7 +9702,7 @@
   "listPriceCents": 2190,
   "stockQty": 14,
   "cashbackPct": 0,
-  "salesRank": 44,
+  "salesRank": 35,
   "categoryIds": [
    "med-garganta",
    "saude"
@@ -9747,7 +9747,7 @@
   "listPriceCents": 990,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 27,
+  "salesRank": 54,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -9792,7 +9792,7 @@
   "listPriceCents": 1490,
   "stockQty": 39,
   "cashbackPct": 0,
-  "salesRank": 160,
+  "salesRank": 196,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -9837,7 +9837,7 @@
   "listPriceCents": 2790,
   "stockQty": 8,
   "cashbackPct": 0,
-  "salesRank": 202,
+  "salesRank": 289,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -9882,7 +9882,7 @@
   "listPriceCents": 1290,
   "stockQty": 48,
   "cashbackPct": 0,
-  "salesRank": 81,
+  "salesRank": 134,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -9927,7 +9927,7 @@
   "listPriceCents": 3490,
   "stockQty": 38,
   "cashbackPct": 0,
-  "salesRank": 171,
+  "salesRank": 239,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -9972,7 +9972,7 @@
   "listPriceCents": 1190,
   "stockQty": 27,
   "cashbackPct": 0,
-  "salesRank": 13,
+  "salesRank": 53,
   "categoryIds": [
    "med-alergia",
    "saude"
@@ -10017,7 +10017,7 @@
   "listPriceCents": 1190,
   "stockQty": 13,
   "cashbackPct": 0,
-  "salesRank": 102,
+  "salesRank": 38,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10062,7 +10062,7 @@
   "listPriceCents": 3990,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 144,
+  "salesRank": 219,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10107,7 +10107,7 @@
   "listPriceCents": 4290,
   "stockQty": 54,
   "cashbackPct": 0,
-  "salesRank": 203,
+  "salesRank": 227,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10152,7 +10152,7 @@
   "listPriceCents": 3490,
   "stockQty": 6,
   "cashbackPct": 0,
-  "salesRank": 22,
+  "salesRank": 23,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10197,7 +10197,7 @@
   "listPriceCents": 3990,
   "stockQty": 17,
   "cashbackPct": 0,
-  "salesRank": 113,
+  "salesRank": 188,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10243,7 +10243,7 @@
   "listPriceCents": 390,
   "stockQty": 46,
   "cashbackPct": 0,
-  "salesRank": 33,
+  "salesRank": 160,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10289,7 +10289,7 @@
   "listPriceCents": 990,
   "stockQty": 53,
   "cashbackPct": 0,
-  "salesRank": 132,
+  "salesRank": 145,
   "categoryIds": [
    "med-diarreia",
    "saude"
@@ -10334,7 +10334,7 @@
   "listPriceCents": 1290,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 46,
+  "salesRank": 13,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10379,7 +10379,7 @@
   "listPriceCents": 1990,
   "stockQty": 43,
   "cashbackPct": 0,
-  "salesRank": 65,
+  "salesRank": 125,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10424,7 +10424,7 @@
   "listPriceCents": 2190,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 82,
+  "salesRank": 97,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10470,7 +10470,7 @@
   "listPriceCents": 1390,
   "stockQty": 55,
   "cashbackPct": 0,
-  "salesRank": 48,
+  "salesRank": 11,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10515,7 +10515,7 @@
   "listPriceCents": 3490,
   "stockQty": 60,
   "cashbackPct": 0,
-  "salesRank": 196,
+  "salesRank": 281,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10562,7 +10562,7 @@
   "listPriceCents": 2990,
   "stockQty": 15,
   "cashbackPct": 0,
-  "salesRank": 77,
+  "salesRank": 41,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10609,7 +10609,7 @@
   "listPriceCents": 6990,
   "stockQty": 25,
   "cashbackPct": 0,
-  "salesRank": 169,
+  "salesRank": 172,
   "categoryIds": [
    "med-intestino-preso",
    "saude"
@@ -10654,7 +10654,7 @@
   "listPriceCents": 1490,
   "stockQty": 30,
   "cashbackPct": 0,
-  "salesRank": 75,
+  "salesRank": 118,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10700,7 +10700,7 @@
   "listPriceCents": 1690,
   "stockQty": 59,
   "cashbackPct": 0,
-  "salesRank": 145,
+  "salesRank": 144,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10745,7 +10745,7 @@
   "listPriceCents": 1590,
   "stockQty": 19,
   "cashbackPct": 0,
-  "salesRank": 73,
+  "salesRank": 194,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10790,7 +10790,7 @@
   "listPriceCents": 2490,
   "stockQty": 54,
   "cashbackPct": 0,
-  "salesRank": 188,
+  "salesRank": 230,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10835,7 +10835,7 @@
   "listPriceCents": 890,
   "stockQty": 28,
   "cashbackPct": 0,
-  "salesRank": 68,
+  "salesRank": 32,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10881,7 +10881,7 @@
   "listPriceCents": 1990,
   "stockQty": 58,
   "cashbackPct": 0,
-  "salesRank": 175,
+  "salesRank": 218,
   "categoryIds": [
    "med-enjoo",
    "saude"
@@ -10889,6 +10889,3410 @@
   "images": [],
   "domain": "medicamento",
   "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p218",
+  "name": "Clotrimazol Creme 1% — 20 g",
+  "brand": "Vitalis Farma",
+  "line": "med_micose",
+  "step": "antifungico_topico",
+  "coversSteps": [
+   "antifungico_topico"
+  ],
+  "productType": "creme antifúngico",
+  "form": "tube",
+  "size": {
+   "value": 20,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "clotrimazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Clotrimazol Creme 1% — 20 g: medicamento (creme antifúngico) do laboratório Vitalis Farma. Princípio ativo: Clotrimazol. Para micose e fungos.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 16,
+  "cashbackPct": 0,
+  "salesRank": 100,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p219",
+  "name": "Miconazol Creme 2% — 30 g",
+  "brand": "Farmanorte",
+  "line": "med_micose",
+  "step": "antifungico_topico",
+  "coversSteps": [
+   "antifungico_topico"
+  ],
+  "productType": "creme antifúngico",
+  "form": "tube",
+  "size": {
+   "value": 30,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "miconazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Miconazol Creme 2% — 30 g: medicamento (creme antifúngico) do laboratório Farmanorte. Princípio ativo: Nitrato de miconazol. Para micose e fungos.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 33,
+  "cashbackPct": 0,
+  "salesRank": 101,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p220",
+  "name": "Cetoconazol Shampoo 2% — 100 mL",
+  "brand": "Lab Aurora",
+  "line": "med_micose",
+  "step": "antifungico_topico",
+  "coversSteps": [
+   "antifungico_topico"
+  ],
+  "productType": "shampoo antifúngico",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "ketoconazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Cetoconazol Shampoo 2% — 100 mL: medicamento (shampoo antifúngico) do laboratório Lab Aurora. Princípio ativo: Cetoconazol. Para micose e fungos.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 56,
+  "cashbackPct": 0,
+  "salesRank": 287,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p221",
+  "name": "Terbinafina Creme 1% — 15 g",
+  "brand": "Lab Genérico Sul",
+  "line": "med_micose",
+  "step": "antifungico_topico",
+  "coversSteps": [
+   "antifungico_topico"
+  ],
+  "productType": "creme antifúngico",
+  "form": "tube",
+  "size": {
+   "value": 15,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "terbinafina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Terbinafina Creme 1% — 15 g: medicamento (creme antifúngico) do laboratório Lab Genérico Sul. Princípio ativo: Cloridrato de terbinafina. Para micose e fungos.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 18,
+  "cashbackPct": 0,
+  "salesRank": 150,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p222",
+  "name": "Fluconazol 150 mg — 1 cápsula",
+  "brand": "Lab Nova Via",
+  "line": "med_micose",
+  "step": "antifungico_oral",
+  "coversSteps": [
+   "antifungico_oral"
+  ],
+  "productType": "antifúngico oral",
+  "form": "caps",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "fluconazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fluconazol 150 mg — 1 cápsula: medicamento (antifúngico oral) do laboratório Lab Nova Via. Princípio ativo: Fluconazol. Para micose e fungos. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 62,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p223",
+  "name": "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL",
+  "brand": "Vitalis Farma",
+  "line": "med_micose",
+  "step": "antifungico_oral",
+  "coversSteps": [
+   "antifungico_oral"
+  ],
+  "productType": "suspensão antifúngica",
+  "form": "bottle",
+  "size": {
+   "value": 50,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "micose"
+  ],
+  "ingredients": [
+   "nistatina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Nistatina Suspensão Oral 100.000 UI/mL — 50 mL: medicamento (suspensão antifúngica) do laboratório Vitalis Farma. Princípio ativo: Nistatina. Para micose e fungos. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 25,
+  "cashbackPct": 0,
+  "salesRank": 156,
+  "categoryIds": [
+   "med-antifungico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p224",
+  "name": "Amoxicilina 500 mg — 21 cápsulas",
+  "brand": "Lab Genérico Sul",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 21,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "amoxicilina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Amoxicilina 500 mg — 21 cápsulas: medicamento (antibiótico em cápsulas) do laboratório Lab Genérico Sul. Princípio ativo: Amoxicilina. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 96,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p225",
+  "name": "Azitromicina 500 mg — 5 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 5,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "azitromicina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Azitromicina 500 mg — 5 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Azitromicina. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 21,
+  "cashbackPct": 0,
+  "salesRank": 269,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p226",
+  "name": "Cefalexina 500 mg — 20 cápsulas",
+  "brand": "Farmanorte",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 20,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "cefalexina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Cefalexina 500 mg — 20 cápsulas: medicamento (antibiótico em cápsulas) do laboratório Farmanorte. Princípio ativo: Cefalexina. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3290,
+  "listPriceCents": 3290,
+  "stockQty": 36,
+  "cashbackPct": 0,
+  "salesRank": 279,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p227",
+  "name": "Ciprofloxacino 500 mg — 14 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 14,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "ciprofloxacino"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Ciprofloxacino 500 mg — 14 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Cloridrato de ciprofloxacino. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2790,
+  "listPriceCents": 2790,
+  "stockQty": 57,
+  "cashbackPct": 0,
+  "salesRank": 181,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p228",
+  "name": "Doxiciclina 100 mg — 10 comprimidos",
+  "brand": "Lab Aurora",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "doxiciclina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Doxiciclina 100 mg — 10 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Aurora. Princípio ativo: Cloridrato de doxiciclina. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2190,
+  "listPriceCents": 2190,
+  "stockQty": 5,
+  "cashbackPct": 0,
+  "salesRank": 63,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p229",
+  "name": "Metronidazol 400 mg — 14 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_infeccao_bacteriana",
+  "step": "antibiotico",
+  "coversSteps": [
+   "antibiotico"
+  ],
+  "productType": "antibiótico em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 14,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "ingredients": [
+   "metronidazol"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Metronidazol 400 mg — 14 comprimidos: medicamento (antibiótico em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Metronidazol. Para infecção bacteriana. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 20,
+  "cashbackPct": 0,
+  "salesRank": 55,
+  "categoryIds": [
+   "med-antibiotico",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p230",
+  "name": "Aciclovir Creme 5% — 10 g",
+  "brand": "Vitalis Farma",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "creme antiviral",
+  "form": "tube",
+  "size": {
+   "value": 10,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "aciclovir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Aciclovir Creme 5% — 10 g: medicamento (creme antiviral) do laboratório Vitalis Farma. Princípio ativo: Aciclovir. Para herpes.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 20,
+  "cashbackPct": 0,
+  "salesRank": 61,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p231",
+  "name": "Penciclovir Creme 1% — 10 g",
+  "brand": "Farmanorte",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "creme antiviral",
+  "form": "tube",
+  "size": {
+   "value": 10,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "penciclovir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Penciclovir Creme 1% — 10 g: medicamento (creme antiviral) do laboratório Farmanorte. Princípio ativo: Penciclovir. Para herpes.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 42,
+  "cashbackPct": 0,
+  "salesRank": 129,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p232",
+  "name": "Aciclovir 400 mg — 30 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "antiviral em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "aciclovir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Aciclovir 400 mg — 30 comprimidos: medicamento (antiviral em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Aciclovir. Para herpes. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 50,
+  "cashbackPct": 0,
+  "salesRank": 143,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p233",
+  "name": "Valaciclovir 500 mg — 10 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "antiviral em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "valaciclovir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Valaciclovir 500 mg — 10 comprimidos: medicamento (antiviral em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Cloridrato de valaciclovir. Para herpes. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 31,
+  "cashbackPct": 0,
+  "salesRank": 200,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p234",
+  "name": "Oseltamivir 75 mg — 10 cápsulas",
+  "brand": "Lab Aurora",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "antiviral em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "oseltamivir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Oseltamivir 75 mg — 10 cápsulas: medicamento (antiviral em cápsulas) do laboratório Lab Aurora. Princípio ativo: Fosfato de oseltamivir. Para herpes. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 8990,
+  "listPriceCents": 8990,
+  "stockQty": 36,
+  "cashbackPct": 0,
+  "salesRank": 261,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p235",
+  "name": "Famciclovir 500 mg — 10 comprimidos",
+  "brand": "Vitalis Farma",
+  "line": "med_herpes",
+  "step": "antiviral",
+  "coversSteps": [
+   "antiviral"
+  ],
+  "productType": "antiviral em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "herpes"
+  ],
+  "ingredients": [
+   "famciclovir"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Famciclovir 500 mg — 10 comprimidos: medicamento (antiviral em comprimidos) do laboratório Vitalis Farma. Princípio ativo: Famciclovir. Para herpes. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 5490,
+  "listPriceCents": 5490,
+  "stockQty": 40,
+  "cashbackPct": 0,
+  "salesRank": 198,
+  "categoryIds": [
+   "med-antiviral",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p236",
+  "name": "Hidrocortisona Creme 1% — 20 g",
+  "brand": "Vitalis Farma",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_topico",
+  "coversSteps": [
+   "corticoide_topico"
+  ],
+  "productType": "creme corticoide",
+  "form": "tube",
+  "size": {
+   "value": 20,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "hidrocortisona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Hidrocortisona Creme 1% — 20 g: medicamento (creme corticoide) do laboratório Vitalis Farma. Princípio ativo: Hidrocortisona. Para inflamação da pele.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 6,
+  "cashbackPct": 0,
+  "salesRank": 19,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p237",
+  "name": "Betametasona Creme 0,1% — 20 g",
+  "brand": "Farmanorte",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_topico",
+  "coversSteps": [
+   "corticoide_topico"
+  ],
+  "productType": "creme corticoide",
+  "form": "tube",
+  "size": {
+   "value": 20,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "betametasona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Betametasona Creme 0,1% — 20 g: medicamento (creme corticoide) do laboratório Farmanorte. Princípio ativo: Valerato de betametasona. Para inflamação da pele. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 4,
+  "cashbackPct": 0,
+  "salesRank": 104,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p238",
+  "name": "Mometasona Creme 0,1% — 20 g",
+  "brand": "Lab Aurora",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_topico",
+  "coversSteps": [
+   "corticoide_topico"
+  ],
+  "productType": "creme corticoide",
+  "form": "tube",
+  "size": {
+   "value": 20,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "mometasona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Mometasona Creme 0,1% — 20 g: medicamento (creme corticoide) do laboratório Lab Aurora. Princípio ativo: Furoato de mometasona. Para inflamação da pele. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 55,
+  "cashbackPct": 0,
+  "salesRank": 267,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p239",
+  "name": "Prednisona 20 mg — 10 comprimidos",
+  "brand": "Lab Genérico Sul",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_oral",
+  "coversSteps": [
+   "corticoide_oral"
+  ],
+  "productType": "corticoide em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "prednisona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Prednisona 20 mg — 10 comprimidos: medicamento (corticoide em comprimidos) do laboratório Lab Genérico Sul. Princípio ativo: Prednisona. Para inflamação da pele. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 50,
+  "cashbackPct": 0,
+  "salesRank": 59,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p240",
+  "name": "Dexametasona 4 mg — 10 comprimidos",
+  "brand": "Lab Nova Via",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_oral",
+  "coversSteps": [
+   "corticoide_oral"
+  ],
+  "productType": "corticoide em comprimidos",
+  "form": "box",
+  "size": {
+   "value": 10,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "dexametasona"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Dexametasona 4 mg — 10 comprimidos: medicamento (corticoide em comprimidos) do laboratório Lab Nova Via. Princípio ativo: Dexametasona. Para inflamação da pele. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 51,
+  "cashbackPct": 0,
+  "salesRank": 99,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p241",
+  "name": "Budesonida 3 mg — 30 cápsulas",
+  "brand": "Vitalis Farma",
+  "line": "med_inflamacao_pele",
+  "step": "corticoide_oral",
+  "coversSteps": [
+   "corticoide_oral"
+  ],
+  "productType": "corticoide em cápsulas",
+  "form": "caps",
+  "size": {
+   "value": 30,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "ingredients": [
+   "budesonida"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Budesonida 3 mg — 30 cápsulas: medicamento (corticoide em cápsulas) do laboratório Vitalis Farma. Princípio ativo: Budesonida. Para inflamação da pele. Venda sob prescrição.",
+  "howToUse": "Siga as instruções da bula.",
+  "priceTier": "premium",
+  "priceCents": 4990,
+  "listPriceCents": 4990,
+  "stockQty": 27,
+  "cashbackPct": 0,
+  "salesRank": 195,
+  "categoryIds": [
+   "med-corticoide",
+   "saude"
+  ],
+  "images": [],
+  "domain": "medicamento",
+  "rx": "receita_simples",
+  "equivalence": null
+ },
+ {
+  "id": "p242",
+  "name": "Sabonete em Barra Hidratante",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "sabonete em barra",
+  "form": "bar",
+  "size": {
+   "value": 120,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria",
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "glicerina",
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano",
+   "sem parabenos"
+  ],
+  "warnings": [],
+  "description": "Sabonete em Barra Hidratante: produto de higiene (sabonete em barra) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina e Manteiga de karité. Vegano e sem parabenos.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 72,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p243",
+  "name": "Gel de Banho Relaxante Lavanda",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "gel de banho",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria",
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "glicerina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Gel de Banho Relaxante Lavanda: produto de higiene (gel de banho) da marca Noble Banho. Foco em higiene diária e cuidado com o corpo. Componentes: Glicerina. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 3290,
+  "listPriceCents": 3290,
+  "stockQty": 43,
+  "cashbackPct": 0,
+  "salesRank": 282,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p244",
+  "name": "Óleo de Banho Nutritivo",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "óleo de banho",
+  "form": "bottle",
+  "size": {
+   "value": 200,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "manteiga_karite",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Óleo de Banho Nutritivo: produto de higiene (óleo de banho) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Manteiga de karité e Óleo de argan. Vegano.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 4990,
+  "listPriceCents": 4990,
+  "stockQty": 58,
+  "cashbackPct": 2,
+  "salesRank": 262,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p245",
+  "name": "Shampoo Anticaspa Equilíbrio",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "shampoo anticaspa",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "zinco_pca",
+   "enxofre"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem sulfato"
+  ],
+  "warnings": [],
+  "description": "Shampoo Anticaspa Equilíbrio: produto de higiene (shampoo anticaspa) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Zinco PCA e Enxofre. Sem sulfato.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 4790,
+  "stockQty": 23,
+  "cashbackPct": 0,
+  "salesRank": 186,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p246",
+  "name": "Shampoo Hidratante Óleo de Argan",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "shampoo",
+  "form": "bottle",
+  "size": {
+   "value": 300,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "oleo_argan",
+   "queratina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem sulfato"
+  ],
+  "warnings": [],
+  "description": "Shampoo Hidratante Óleo de Argan: produto de higiene (shampoo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Óleo de argan e Queratina. Sem sulfato.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 4290,
+  "listPriceCents": 4290,
+  "stockQty": 46,
+  "cashbackPct": 3,
+  "salesRank": 243,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p247",
+  "name": "Máscara Capilar Reconstrução",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "máscara capilar",
+  "form": "jar",
+  "size": {
+   "value": 250,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina",
+   "oleo_argan",
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Máscara Capilar Reconstrução: produto de higiene (máscara capilar) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina, Óleo de argan e Manteiga de karité. Vegano.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 6490,
+  "listPriceCents": 6490,
+  "stockQty": 29,
+  "cashbackPct": 2,
+  "salesRank": 240,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p248",
+  "name": "Creme Dental Branqueador Carvão",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "creme dental",
+  "form": "tube",
+  "size": {
+   "value": 90,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "com flúor"
+  ],
+  "warnings": [],
+  "description": "Creme Dental Branqueador Carvão: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 217,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p249",
+  "name": "Creme Dental Dentes Sensíveis",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "creme dental",
+  "form": "tube",
+  "size": {
+   "value": 90,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "com flúor"
+  ],
+  "warnings": [],
+  "description": "Creme Dental Dentes Sensíveis: produto de higiene (creme dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Com flúor.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "premium",
+  "priceCents": 2390,
+  "listPriceCents": 2870,
+  "stockQty": 30,
+  "cashbackPct": 0,
+  "salesRank": 275,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p250",
+  "name": "Enxaguante Bucal Menta Sem Álcool",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "enxaguante bucal",
+  "form": "bottle",
+  "size": {
+   "value": 500,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "fluoreto"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem álcool"
+  ],
+  "warnings": [],
+  "description": "Enxaguante Bucal Menta Sem Álcool: produto de higiene (enxaguante bucal) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Fluoreto. Sem álcool.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "premium",
+  "priceCents": 2690,
+  "listPriceCents": 2690,
+  "stockQty": 28,
+  "cashbackPct": 3,
+  "salesRank": 278,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p251",
+  "name": "Desodorante Stick Sem Alumínio",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante stick",
+  "form": "stick",
+  "size": {
+   "value": 50,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio"
+  ],
+  "warnings": [],
+  "description": "Desodorante Stick Sem Alumínio: produto de higiene (desodorante stick) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "economico",
+  "priceCents": 2290,
+  "listPriceCents": 2290,
+  "stockQty": 15,
+  "cashbackPct": 5,
+  "salesRank": 135,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p252",
+  "name": "Desodorante Spray 48h",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante aerossol",
+  "form": "spray",
+  "size": {
+   "value": 150,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio"
+  ],
+  "warnings": [],
+  "description": "Desodorante Spray 48h: produto de higiene (desodorante aerossol) da marca Noble Banho. Foco em desodorização. Componentes: Aloe vera. Sem alumínio.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "intermediario",
+  "priceCents": 2790,
+  "listPriceCents": 2790,
+  "stockQty": 23,
+  "cashbackPct": 0,
+  "salesRank": 154,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p253",
+  "name": "Desodorante Creme Pele Sensível",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "desodorante",
+  "coversSteps": [
+   "desodorante"
+  ],
+  "productType": "desodorante em creme",
+  "form": "jar",
+  "size": {
+   "value": 55,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "desodorizacao"
+  ],
+  "ingredients": [
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "dia",
+  "claims": [
+   "sem alumínio",
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Desodorante Creme Pele Sensível: produto de higiene (desodorante em creme) da marca Noble Banho. Foco em desodorização. Componentes: Manteiga de karité. Sem alumínio e sem fragrância.",
+  "howToUse": "Aplique nas axilas limpas e secas.",
+  "priceTier": "premium",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 57,
+  "cashbackPct": 0,
+  "salesRank": 257,
+  "categoryIds": [
+   "desodorantes",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p254",
+  "name": "Creme para Pentear Hidratante",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "creme para pentear",
+  "form": "bottle",
+  "size": {
+   "value": 200,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Creme para Pentear Hidratante: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem fragrância.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 2990,
+  "listPriceCents": 3590,
+  "stockQty": 22,
+  "cashbackPct": 0,
+  "salesRank": 65,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p255",
+  "name": "Creme para Pentear Antifrizz",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "creme para pentear",
+  "form": "bottle",
+  "size": {
+   "value": 200,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Creme para Pentear Antifrizz: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Óleo de argan. Sem fragrância.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 130,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p256",
+  "name": "Leave-in Protetor Térmico",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "leave-in",
+  "form": "spray",
+  "size": {
+   "value": 150,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Leave-in Protetor Térmico: produto de higiene (leave-in) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina. Sem fragrância.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 3990,
+  "stockQty": 45,
+  "cashbackPct": 0,
+  "salesRank": 71,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p257",
+  "name": "Creme para Pentear Cachos Definidos",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "creme para pentear",
+  "form": "jar",
+  "size": {
+   "value": 250,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "manteiga_karite"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Creme para Pentear Cachos Definidos: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Manteiga de karité. Vegano.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3690,
+  "listPriceCents": 3690,
+  "stockQty": 32,
+  "cashbackPct": 0,
+  "salesRank": 191,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p258",
+  "name": "Creme para Pentear Sem Enxágue",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "creme para pentear",
+  "form": "bottle",
+  "size": {
+   "value": 200,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "glicerina"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Creme para Pentear Sem Enxágue: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Glicerina. Sem fragrância.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 2490,
+  "listPriceCents": 2490,
+  "stockQty": 17,
+  "cashbackPct": 3,
+  "salesRank": 22,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p259",
+  "name": "Creme para Pentear Reparador",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "creme para pentear",
+  "form": "bottle",
+  "size": {
+   "value": 200,
+   "unit": "ml"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "queratina",
+   "oleo_argan"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Creme para Pentear Reparador: produto de higiene (creme para pentear) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Queratina e Óleo de argan. Sem fragrância.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 4490,
+  "listPriceCents": 4490,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 273,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p260",
+  "name": "Escova de Dente Macia",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente Macia: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 54,
+  "cashbackPct": 0,
+  "salesRank": 117,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p261",
+  "name": "Escova de Dente Média",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente Média: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 46,
+  "cashbackPct": 10,
+  "salesRank": 26,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p262",
+  "name": "Escova de Dente Extra Macia",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente Extra Macia: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1790,
+  "stockQty": 36,
+  "cashbackPct": 0,
+  "salesRank": 121,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p263",
+  "name": "Escova de Dente Compacta",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente Compacta: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 1190,
+  "listPriceCents": 1190,
+  "stockQty": 43,
+  "cashbackPct": 0,
+  "salesRank": 48,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p264",
+  "name": "Escova de Dente com Cerdas Macias (2 un)",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 2,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente com Cerdas Macias (2 un): produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 1990,
+  "stockQty": 56,
+  "cashbackPct": 2,
+  "salesRank": 106,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p265",
+  "name": "Escova de Dente Elétrica",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "escova de dente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon",
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Dente Elétrica: produto de higiene (escova de dente) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon e Plástico reciclado.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "premium",
+  "priceCents": 8990,
+  "listPriceCents": 8990,
+  "stockQty": 19,
+  "cashbackPct": 3,
+  "salesRank": 250,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p266",
+  "name": "Escova de Cabelo Desembaraçadora",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "escova de cabelo",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "nylon",
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Cabelo Desembaraçadora: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 2990,
+  "listPriceCents": 2990,
+  "stockQty": 18,
+  "cashbackPct": 0,
+  "salesRank": 76,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p267",
+  "name": "Escova de Cabelo Ventilada",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "escova de cabelo",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "nylon",
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Cabelo Ventilada: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3490,
+  "listPriceCents": 3490,
+  "stockQty": 13,
+  "cashbackPct": 3,
+  "salesRank": 220,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p268",
+  "name": "Escova de Cabelo Oval",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "escova de cabelo",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "nylon",
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Cabelo Oval: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 3990,
+  "listPriceCents": 4790,
+  "stockQty": 19,
+  "cashbackPct": 5,
+  "salesRank": 73,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p269",
+  "name": "Pente Garfo",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "pente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pente Garfo: produto de higiene (pente) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 43,
+  "cashbackPct": 0,
+  "salesRank": 136,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p270",
+  "name": "Pente Fino",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "pente",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Pente Fino: produto de higiene (pente) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 8,
+  "cashbackPct": 0,
+  "salesRank": 29,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p271",
+  "name": "Escova de Cabelo para Cachos",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_cabelo",
+  "coversSteps": [
+   "higiene_cabelo"
+  ],
+  "productType": "escova de cabelo",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_cabelo"
+  ],
+  "ingredients": [
+   "nylon",
+   "plastico_reciclado"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Escova de Cabelo para Cachos: produto de higiene (escova de cabelo) da marca Noble Banho. Foco em cuidado com o cabelo. Componentes: Nylon e Plástico reciclado.",
+  "howToUse": "Aplique nos cabelos molhados, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 3290,
+  "listPriceCents": 3290,
+  "stockQty": 60,
+  "cashbackPct": 3,
+  "salesRank": 40,
+  "categoryIds": [
+   "cabelos",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p272",
+  "name": "Fio Dental 50 m",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fio dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fio Dental 50 m: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 16,
+  "cashbackPct": 0,
+  "salesRank": 127,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p273",
+  "name": "Fita Dental 25 m",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fita dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fita Dental 25 m: produto de higiene (fita dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 28,
+  "cashbackPct": 0,
+  "salesRank": 183,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p274",
+  "name": "Fio Dental com Cera",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fio dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fio Dental com Cera: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1790,
+  "listPriceCents": 1790,
+  "stockQty": 19,
+  "cashbackPct": 2,
+  "salesRank": 147,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p275",
+  "name": "Fio Dental Sabor Menta",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fio dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon",
+   "menta_extrato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fio Dental Sabor Menta: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon e Extrato de menta.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "economico",
+  "priceCents": 1590,
+  "listPriceCents": 1910,
+  "stockQty": 48,
+  "cashbackPct": 5,
+  "salesRank": 122,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p276",
+  "name": "Fio Dental Expandível",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fio dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fio Dental Expandível: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1990,
+  "listPriceCents": 2390,
+  "stockQty": 52,
+  "cashbackPct": 0,
+  "salesRank": 161,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p277",
+  "name": "Fio Dental Deslizante",
+  "brand": "Sorriso Pleno",
+  "line": "higiene",
+  "step": "higiene_oral",
+  "coversSteps": [
+   "higiene_oral"
+  ],
+  "productType": "fio dental",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_oral"
+  ],
+  "ingredients": [
+   "nylon"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Fio Dental Deslizante: produto de higiene (fio dental) da marca Sorriso Pleno. Foco em higiene bucal. Componentes: Nylon.",
+  "howToUse": "Use na higiene bucal diária, conforme a embalagem.",
+  "priceTier": "intermediario",
+  "priceCents": 1890,
+  "listPriceCents": 1890,
+  "stockQty": 60,
+  "cashbackPct": 0,
+  "salesRank": 168,
+  "categoryIds": [
+   "bucal",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p278",
+  "name": "Talco Corporal Clássico",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco corporal",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "talco_mineral"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco Corporal Clássico: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 1290,
+  "listPriceCents": 1550,
+  "stockQty": 31,
+  "cashbackPct": 2,
+  "salesRank": 47,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p279",
+  "name": "Talco para Pés Antiodor",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco para pés",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "talco_mineral",
+   "menta_extrato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco para Pés Antiodor: produto de higiene (talco para pés) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Extrato de menta. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1590,
+  "listPriceCents": 1590,
+  "stockQty": 55,
+  "cashbackPct": 0,
+  "salesRank": 182,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p280",
+  "name": "Talco Corporal com Amido de Milho",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco corporal",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "amido_milho"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco Corporal com Amido de Milho: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Amido de milho. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 37,
+  "cashbackPct": 0,
+  "salesRank": 199,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p281",
+  "name": "Talco Refrescante Menta",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco corporal",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "talco_mineral",
+   "menta_extrato"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco Refrescante Menta: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Extrato de menta. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1690,
+  "listPriceCents": 1690,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 113,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p282",
+  "name": "Talco para Pés com Aloe",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco para pés",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "talco_mineral",
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco para Pés com Aloe: produto de higiene (talco para pés) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Talco mineral e Aloe vera. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "premium",
+  "priceCents": 1790,
+  "listPriceCents": 1790,
+  "stockQty": 58,
+  "cashbackPct": 0,
+  "salesRank": 274,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p283",
+  "name": "Talco Corporal Suave",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "talco corporal",
+  "form": "bottle",
+  "size": {
+   "value": 100,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "amido_milho"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "sem fragrância"
+  ],
+  "warnings": [],
+  "description": "Talco Corporal Suave: produto de higiene (talco corporal) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Amido de milho. Sem fragrância.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1390,
+  "listPriceCents": 1670,
+  "stockQty": 12,
+  "cashbackPct": 0,
+  "salesRank": 166,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p284",
+  "name": "Bucha Vegetal",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "bucha",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "fibra_vegetal"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Bucha Vegetal: produto de higiene (bucha) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal. Vegano.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 46,
+  "cashbackPct": 0,
+  "salesRank": 64,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p285",
+  "name": "Esponja de Banho",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "esponja de banho",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "esponja_sintetica"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Esponja de Banho: produto de higiene (esponja de banho) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Esponja sintética.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 790,
+  "listPriceCents": 790,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 24,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p286",
+  "name": "Luva Esfoliante",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "luva esfoliante",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "fibra_vegetal"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Luva Esfoliante: produto de higiene (luva esfoliante) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1490,
+  "listPriceCents": 1490,
+  "stockQty": 52,
+  "cashbackPct": 0,
+  "salesRank": 111,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p287",
+  "name": "Bucha Natural com Corda",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "bucha",
+  "form": "box",
+  "size": {
+   "value": 1,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "cuidado_corporal"
+  ],
+  "ingredients": [
+   "fibra_vegetal"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [
+   "vegano"
+  ],
+  "warnings": [],
+  "description": "Bucha Natural com Corda: produto de higiene (bucha) da marca Noble Banho. Foco em cuidado com o corpo. Componentes: Fibra vegetal. Vegano.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 43,
+  "cashbackPct": 3,
+  "salesRank": 82,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p288",
+  "name": "Cotonetes 75 un",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "cotonete",
+  "form": "box",
+  "size": {
+   "value": 75,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria"
+  ],
+  "ingredients": [
+   "algodao"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Cotonetes 75 un: produto de higiene (cotonete) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 890,
+  "listPriceCents": 890,
+  "stockQty": 36,
+  "cashbackPct": 0,
+  "salesRank": 103,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p289",
+  "name": "Lenços Umedecidos 50 un",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "lenço umedecido",
+  "form": "box",
+  "size": {
+   "value": 50,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria"
+  ],
+  "ingredients": [
+   "algodao",
+   "aloe_vera"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Lenços Umedecidos 50 un: produto de higiene (lenço umedecido) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão e Aloe vera.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "intermediario",
+  "priceCents": 1290,
+  "listPriceCents": 1290,
+  "stockQty": 39,
+  "cashbackPct": 0,
+  "salesRank": 226,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p290",
+  "name": "Algodão em Bolas 50 g",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "algodão em bolas",
+  "form": "box",
+  "size": {
+   "value": 50,
+   "unit": "g"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria"
+  ],
+  "ingredients": [
+   "algodao"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Algodão em Bolas 50 g: produto de higiene (algodão em bolas) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 790,
+  "listPriceCents": 790,
+  "stockQty": 14,
+  "cashbackPct": 0,
+  "salesRank": 20,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
+  "equivalence": null
+ },
+ {
+  "id": "p291",
+  "name": "Lenços Faciais 100 un",
+  "brand": "Noble Banho",
+  "line": "higiene",
+  "step": "higiene_corpo",
+  "coversSteps": [
+   "higiene_corpo"
+  ],
+  "productType": "lenço facial",
+  "form": "box",
+  "size": {
+   "value": 100,
+   "unit": "un"
+  },
+  "skinTypes": [
+   "todas"
+  ],
+  "concerns": [
+   "higiene_diaria"
+  ],
+  "ingredients": [
+   "algodao"
+  ],
+  "fps": null,
+  "usagePeriod": "dia_noite",
+  "claims": [],
+  "warnings": [],
+  "description": "Lenços Faciais 100 un: produto de higiene (lenço facial) da marca Noble Banho. Foco em higiene diária. Componentes: Algodão.",
+  "howToUse": "Use no banho, massageie e enxágue.",
+  "priceTier": "economico",
+  "priceCents": 990,
+  "listPriceCents": 990,
+  "stockQty": 34,
+  "cashbackPct": 0,
+  "salesRank": 146,
+  "categoryIds": [
+   "banho",
+   "higiene"
+  ],
+  "images": [],
+  "domain": "higiene",
+  "rx": null,
   "equivalence": null
  }
 ]

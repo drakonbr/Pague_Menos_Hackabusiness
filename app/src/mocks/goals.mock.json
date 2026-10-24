@@ -567,5 +567,103 @@
    "enjoo de viagem",
    "enjoo no carro"
   ]
+ },
+ {
+  "id": "micose",
+  "label": "Micose e fungos",
+  "concerns": [
+   "micose"
+  ],
+  "requiredSteps": [
+   "antifungico_topico"
+  ],
+  "optionalSteps": [
+   "antifungico_oral"
+  ],
+  "synonyms": [
+   "micose",
+   "micoses",
+   "fungo",
+   "fungos",
+   "frieira",
+   "pé de atleta",
+   "pe de atleta",
+   "candidíase",
+   "candidiase",
+   "coceira na virilha",
+   "unha com fungo",
+   "antifúngico",
+   "antifungico"
+  ]
+ },
+ {
+  "id": "infeccao_bacteriana",
+  "label": "Infecção bacteriana",
+  "concerns": [
+   "infeccao_bacteriana"
+  ],
+  "requiredSteps": [
+   "antibiotico"
+  ],
+  "optionalSteps": [],
+  "synonyms": [
+   "antibiótico",
+   "antibiotico",
+   "antibióticos",
+   "antibioticos",
+   "infecção",
+   "infeccao",
+   "bactéria",
+   "bacteria",
+   "amoxicilina",
+   "azitromicina",
+   "cefalexina",
+   "infecção de garganta",
+   "infeccao de garganta"
+  ]
+ },
+ {
+  "id": "herpes",
+  "label": "Herpes",
+  "concerns": [
+   "herpes"
+  ],
+  "requiredSteps": [
+   "antiviral"
+  ],
+  "optionalSteps": [],
+  "synonyms": [
+   "herpes",
+   "herpes labial",
+   "herpes simples",
+   "herpes genital",
+   "aciclovir",
+   "virose",
+   "antiviral"
+  ]
+ },
+ {
+  "id": "inflamacao_pele",
+  "label": "Inflamação da pele",
+  "concerns": [
+   "inflamacao_pele"
+  ],
+  "requiredSteps": [
+   "corticoide_topico"
+  ],
+  "optionalSteps": [
+   "corticoide_oral"
+  ],
+  "synonyms": [
+   "inflamação da pele",
+   "inflamacao da pele",
+   "dermatite",
+   "eczema",
+   "coceira na pele",
+   "pele inflamada",
+   "corticoide",
+   "prednisona",
+   "dexametasona"
+  ]
  }
 ]

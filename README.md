@@ -16,8 +16,6 @@ Não é um chatbot. É busca por intenção + composição de kit + compra.
 | Catálogo sintético | 297 produtos (skin care, higiene, suplementos e 108 medicamentos: 100 de busca em 16 áreas + 8 de reposição), 8 lojas, estoque por loja; 83 de 83 checagens |
 | **GraphRAG do zero** | **implementado e treinado**, com medicamentos (grafo de 759 nós, vetores PPMI+SVD, BM25, Naive Bayes de ato de fala 61/65 fora do treino); 173 de 173 testes em 24/10 |
 | App | logado como a persona Renata; busca de remédio e sintoma com kits; reposição; 46 testes; visto só em Chromium |
-| Fotos reais sem marca | **pendente**: emissão de chave da Pexels pausada; o app mostra desenhos de embalagem |
-| Hospedagem do protótipo | **pendente** (P-04, doc 09); a entrega pede acesso em funcionamento |
 
 Limites conhecidos: conjunto de ranking pequeno (14 frases), entidades por regras, premissas de reposição fictícias, nenhuma regra clínica validada, acessibilidade não medida. Detalhes no [doc 14](docs/14-persona-e-privacidade.md) e no [doc 08](docs/08-validacao-e-qualidade.md).
 

@@ -1,6 +1,8 @@
 # Kits Inteligentes — IA Commerce (Hackathon Pague Menos)
 
-> **CONFIDENCIAL.** O enunciado do desafio e qualquer informação recebida são confidenciais. Manter este repositório **privado**. Não publicar, não identificar a empresa em locais públicos, não usar em portfólio, trabalho acadêmico ou processo seletivo. Prazo de submissão: **26/10/2026**.
+**Produto testável:** [kits-inteligentes-demo.vercel.app](https://kits-inteligentes-demo.vercel.app)
+
+Prazo de submissão: **26/10/2026**.
 
 Uma camada de **kits inteligentes** sobre a busca: a pessoa descreve a intenção em linguagem natural ("preciso de produtos para tratamento de acne até R$ 120") e recebe de 2 a 3 kits prontos, sem itens repetidos, com preços diferentes, editáveis e prontos para o carrinho. O catálogo individual continua logo abaixo.
 
@@ -39,7 +41,7 @@ pague-menos-kits/
 3. `graphrag/` só **lê** os arquivos permitidos de `catalog/` (nunca `persona.json`) e **expõe** o contrato de busca.
 4. A única ponte entre módulos é `tools/export_app_mock.py` (catálogo para dados simulados do app), de mão única.
 
-## Documentação (leia nesta ordem)
+## Documentação
 
 | # | Arquivo | Para que serve |
 | --- | --- | --- |
